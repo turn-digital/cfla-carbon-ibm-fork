@@ -13,14 +13,14 @@ import storyDocs from './vertejuma-parskatisana-story.mdx';
 
 export const Default = () => {
   return html`
-  trol1
-  <cds-page-valuation-review></cds-page-valuation-review>
+    trol1
+    <cds-page-valuation-review></cds-page-valuation-review>
   `;
 };
 
 export const Playground = () => {
   return html`
-  trol2
+    trol2
     <cds-page-valuation-review></cds-page-valuation-review>
   `;
 };

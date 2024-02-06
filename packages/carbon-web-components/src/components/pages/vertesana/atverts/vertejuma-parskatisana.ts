@@ -13,22 +13,165 @@ import styles from './vertejuma-parskatisana.scss';
 import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
 
 /**
- * 
+ *
  * VĒRTĒJUMA PĀRSKATĪŠANA
- * 
+ *
  */
 
 @customElement(`${prefix}-page-valuation-open`)
 class CDSPValuationOpen extends LitElement {
-
   render() {
-
     return html`
-    Page valuation open
+    <h1
+                style="
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            margin-bottom: 12px;
+          ">
+                Saistītie dokumenti
+              </h1>
+              <cds-link
+                href="https://www.ibm.com"
+                style="display: flex; align-items: center">
+                Saistītais PI
+                <svg
+                  id="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 32 32">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: none;
+                      }
+                    </style>
+                  </defs>
+                  <path
+                    d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
+                  <polygon
+                    points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
+                  <rect
+                    id="_Transparent_Rectangle_"
+                    data-name="&lt;Transparent Rectangle&gt;"
+                    class="cls-1"
+                    width="32"
+                    height="32" />
+                </svg>
+              </cds-link>
+              <cds-link
+                href="https://www.ibm.com"
+                style="display: flex; align-items: center">
+                <svg
+                  id="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 32 32">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: none;
+                      }
+                    </style>
+                  </defs>
+                  <title>certificate--check</title>
+                  <rect x="6" y="16" width="6" height="2" />
+                  <rect x="6" y="12" width="10" height="2" />
+                  <rect x="6" y="8" width="10" height="2" />
+                  <path
+                    d="M14,26H4V6H28V16h2V6a2,2,0,0,0-2-2H4A2,2,0,0,0,2,6V26a2,2,0,0,0,2,2H14Z" />
+                  <polygon
+                    points="22 25.59 19.41 23 18 24.41 22 28.41 30 20.41 28.59 19 22 25.59" />
+                  <rect
+                    id="_Transparent_Rectangle_"
+                    data-name="&lt;Transparent Rectangle&gt;"
+                    class="cls-1"
+                    width="32"
+                    height="32" />
+                </svg>
+                Vērtēšanas veidlapa
+                <svg
+                  id="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 32 32">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: none;
+                      }
+                    </style>
+                  </defs>
+                  <path
+                    d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
+                  <polygon
+                    points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
+                  <rect
+                    id="_Transparent_Rectangle_"
+                    data-name="&lt;Transparent Rectangle&gt;"
+                    class="cls-1"
+                    width="32"
+                    height="32" />
+                </svg>
+              </cds-link>
+              <cds-link
+                href="https://www.ibm.com"
+                style="display: flex; align-items: center">
+                Vērtēšanas veidlapa
+              </cds-link>
+            </div>
+           <div style="padding: 20px">
+           <h3 style="font-weight: 400; font-size: 20px">Vērtējuma pārskatīšanas būtība</h3>
+           <div style="margin-top: 20px;">
+           <p style="font-weight: 400; font-size: 12px">
+Apstrīdēšanas iesnieguma saņemšanas datums
+</p>
+<p style="font-weight: 400; font-size: 14px">
+23.03.2023
+</p>
+           </div>
+           <div style="margin-top: 20px;">
+           <p style="font-weight: 400; font-size: 12px">
+           Pārskatīšanas veids
+</p>
+<p style="font-weight: 400; font-size: 14px">
+Tiesvedība
+</p>
+           </div>
+           <div style="margin-top: 20px;">
+           <p style="font-weight: 400; font-size: 12px">
+           Pārskatīšanas lēmums
+</p>
+<p style="font-weight: 400; font-size: 14px">
+<cds-radio-button-group
+  label-position="right"
+  orientation="vertical"
+  name="radio-group">
+  <cds-radio-button label-text="VI Lēmumu atstāj spēkā" value="spēkā"></cds-radio-button>
+  <cds-radio-button
+    label-text="Atcelt lēmumu pilnībā"
+    value="pilnībā"></cds-radio-button>
+  <cds-radio-button
+    label-text="Atcelt lēmumu kādā daļā"
+    value="daļā"></cds-radio-button>
+  <cds-radio-button
+    label-text="Lietas izskatīšana izbeigta"
+    value="izbeigta"></cds-radio-button>
+  <cds-radio-button
+    label-text="Izdot satura ziņā citu lēmumu"
+    value="lēmumu"></cds-radio-button>
+</cds-radio-button-group>
+</p>
+           </div>
+
+           </div>
     `;
   }
 
-   static styles = styles; // `styles` here is a `CSSResult` generated by custom WebPack loader
+  static styles = styles; // `styles` here is a `CSSResult` generated by custom WebPack loader
 }
 
 export default CDSPValuationOpen;
