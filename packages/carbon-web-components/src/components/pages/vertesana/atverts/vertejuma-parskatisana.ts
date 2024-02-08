@@ -11,6 +11,7 @@ import { LitElement, html } from 'lit';
 import { prefix } from '../../../../globals/settings';
 import styles from './vertejuma-parskatisana.scss';
 import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
+import Add16 from '@carbon/web-components/es/icons/add/16';
 
 /**
  *
@@ -166,7 +167,40 @@ Tiesvedība
 </cds-radio-button-group>
 </p>
            </div>
-
+<p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
+text input here
+<p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
+text input here
+           </div>
+           <div>
+           <cds-table>
+  <cds-table-header-title slot="title">Dokumenti</cds-table-header-title>
+  <cds-table-toolbar slot="toolbar">
+      <cds-table-toolbar-content>
+      <cds-button size="lg" kind="secondary" tooltip-alignment="" tooltip-position="top" type="button" has-main-content="">Pievienot ${Add16(
+        { slot: 'icon' }
+      )}</cds-button>
+    </cds-table-toolbar>
+  <cds-table-head>
+    <cds-table-header-row>
+      <cds-table-header-cell>Nosaukums</cds-table-header-cell>
+      <cds-table-header-cell>Pievienošanas datums</cds-table-header-cell>
+      <cds-table-header-cell>Pievienotājs</cds-table-header-cell>
+    </cds-table-header-row>
+  </cds-table-head>
+  <cds-table-body>
+    <cds-table-row>
+      <cds-table-cell>vērtējums1.pdf</cds-table-cell>
+      <cds-table-cell>22.03.2023 10:15</cds-table-cell>
+      <cds-table-cell>Anna Bērziņa</cds-table-cell>
+    </cds-table-row>
+    <cds-table-row>
+    <cds-table-cell>vērtējums2.pdf</cds-table-cell>
+    <cds-table-cell>22.03.2023 10:20</cds-table-cell>
+    <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
+    </cds-table-row>
+  </cds-table-body>
+</cds-table>
            </div>
     `;
   }
