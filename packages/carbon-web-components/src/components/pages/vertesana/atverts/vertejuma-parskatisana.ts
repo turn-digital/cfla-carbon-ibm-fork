@@ -146,7 +146,7 @@ Tiesvedība
            <p style="font-weight: 400; font-size: 12px">
            Pārskatīšanas lēmums
 </p>
-<p style="font-weight: 400; font-size: 14px">
+<p style="font-weight: 400; font-size: 14px"></p>
 <cds-radio-button-group
   label-position="right"
   orientation="vertical"
@@ -165,7 +165,6 @@ Tiesvedība
     label-text="Izdot satura ziņā citu lēmumu"
     value="lēmumu"></cds-radio-button>
 </cds-radio-button-group>
-</p>
            </div>
 <p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
 text input here
