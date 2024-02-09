@@ -189,12 +189,12 @@ text input here
   </cds-table-head>
   <cds-table-body>
     <cds-table-row>
-      <cds-table-cell>vērtējums1.pdf</cds-table-cell>
+      <cds-table-cell><a href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" download style="text-decoration: none;">vērtējums1.pdf</a></cds-table-cell>
       <cds-table-cell>22.03.2023 10:15</cds-table-cell>
       <cds-table-cell>Anna Bērziņa</cds-table-cell>
     </cds-table-row>
     <cds-table-row>
-    <cds-table-cell>vērtējums2.pdf</cds-table-cell>
+    <cds-table-cell><a href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" download style="text-decoration: none;">vērtējums2.pdf</a></cds-table-cell>
     <cds-table-cell>22.03.2023 10:20</cds-table-cell>
     <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
     </cds-table-row>
