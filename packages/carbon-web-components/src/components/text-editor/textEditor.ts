@@ -19,7 +19,9 @@ import Super16 from '@carbon/icons/lib/text--superscript/16';
 import Sub16 from '@carbon/icons/lib/text--subscript/16';
 
 import styles from './textEditor.scss';
-
+interface Translation {
+  [key: string]: string;
+}
 @customElement(`${prefix}-text-editor`)
 export class TextEditor extends LitElement {
   private quill: Quill | null = null;
@@ -28,77 +30,79 @@ export class TextEditor extends LitElement {
   static get properties() {
     return {
       buttons: { type: Array },
+      translations: { type: Object },
     };
   }
+  translations: Translation = {};
 
   buttons = [{
     id: "bold",
-    title: 'Bold',
+    type: 'bold',
     icon: TextBold16,
-    action: () => this.applyFormat('bold')
+    action: () => this.translations.bold || this.applyFormat('bold')
   },
   {
     id: "italic",
-    title: 'Italic',
+    type: 'italic',
     icon: TextItalic16, // Replace with your desired icon
     action: () => this.applyFormat('italic')
   },
   {
     id: "underline",
-    title: 'Underline',
+    type: 'underline',
     icon: TextUnderline16, // Replace with your desired icon
     action: () => this.applyFormat('underline')
   },
   {
     id: "align-left",
-    title: 'left',
+    type: 'alignLeft',
     icon: AlignLeft16, // Replace with your desired icon
     action: () => this.applyAlignment('left')
   },
   {
     id: "align-center",
-    title: 'center',
+    type: 'alignCenter',
     icon: AlignCenter16, // Replace with your desired icon
     action: () => this.applyAlignment('center')
   },
   {
     id: "align-right",
-    title: 'right',
+    type: 'alignRight',
     icon: AlignRight16, // Replace with your desired icon
     action: () => this.applyAlignment('right')
   },
   {
     id: "align-justify",
-    title: 'justify',
+    type: 'alignJustify',
     icon: AlignJustify16, // Replace with your desired icon
     action: () => this.applyAlignment('justify')
   },
   {
     id: "unordered-list",
-    title: 'Unordered List',
+    type: 'unorderedList',
     icon: ListBullet16,
     action: () => this.toggleList('bullet')
   },
   {
     id: "ordered-list",
-    title: 'Ordered List',
+    type: 'orderedList',
     icon: ListNum16,
     action: () => this.toggleList('ordered')
   },
   {
     id: "indent",
-    title: 'Indent',
+    type: 'indent',
     icon: IndentMore16,
     action: () => this.indent()
   },
   {
     id: "outdent",
-    title: 'Outdent',
+    type: 'outdent',
     icon: IndentLess16,
     action: () => this.outdent()
   },{
     id: "insert-link",
-    title: 'Insert Link',
+    type: 'textLink',
     icon: Link16,
     action: () => {
       const url = prompt('Enter the URL:'); // Prompt the user to enter the URL
@@ -109,13 +113,13 @@ export class TextEditor extends LitElement {
   },
   {
     id: "superscript",
-    title: 'Superscript',
+    type: 'superscript',
     icon: Super16,
     action: () => this.toggleSuperscript()
   },
   {
     id: "subscript",
-    title: 'Subscript',
+    type: 'subscript',
     icon: Sub16,
     action: () => this.toggleSubscript()
   }]; 
@@ -128,16 +132,15 @@ export class TextEditor extends LitElement {
         <div id="editor"></div>
 
         <!-- Carbon Web Components buttons outside of the editor -->
-
         <div class="cc-text-editor__toolbar">
           ${this.buttons.map(
             button => html`
             <cds-button 
               id="${button.id}" 
               kind="ghost" 
-              title="${button.title}" 
+              title="${this.translations[button.type]}" 
               size="sm"
-              tooltip-text="${button.title}" 
+              tooltip-text="${this.translations[button.type]}" 
               tooltip-position="top" 
               tooltop-alignment="center"
               icon="${button.icon}"
@@ -173,7 +176,6 @@ export class TextEditor extends LitElement {
   firstUpdated() {
     this.init();
     this.setupFullscreen();
-    this.updateButtonStates(); // Update button states on first render
 
   }
 
@@ -193,18 +195,6 @@ export class TextEditor extends LitElement {
   this.quill.on('text-change', () => {
     this.updateButtonStates();
   });
-
-    // this.quill.on('selection-change', (range, oldRange, source) => {
-    //   if (range) {
-    //     const formats = this.quill.getFormat(range.index, range.length);
-    //     if (formats.header) {
-    //       this.currentFormat = `heading${formats.header}`;
-    //     } else {
-    //       this.currentFormat = 'paragraph';
-    //     }
-    //     this.requestUpdate();
-    //   }
-    // });
   }
 
   getCurrentFormatting() {
