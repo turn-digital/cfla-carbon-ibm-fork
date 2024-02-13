@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import './textEditor';
 
 export const Default = () => {
-  return html` <cds-text-editor></cds-text-editor> `;
+  return html`<cds-text-editor></cds-text-editor> `;
 };
 
 Default.storyName = 'Default';

@@ -11,7 +11,7 @@ import { LitElement, html } from 'lit';
 import { prefix } from '../../../../globals/settings';
 import styles from './vertejuma-parskatisana.scss';
 import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
-import Add16 from '@carbon/web-components/es/icons/add/16';
+import Add16 from '@carbon/icons/lib/add/16';
 
 /**
  *
