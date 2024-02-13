@@ -1,7 +1,7 @@
 import { prefix } from '../../globals/settings';
 import { html, LitElement } from 'lit-element';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
-import Quill from './quill/quill.min.js';
+import Quill from './quill/quill.js';
 import '@carbon/web-components/es/components/button/button.js';
 import TextBold16 from '@carbon/icons/lib/text--bold/16';
 import TextItalic16 from '@carbon/icons/lib/text--italic/16';
@@ -39,7 +39,7 @@ export class TextEditor extends LitElement {
     id: "bold",
     type: 'bold',
     icon: TextBold16,
-    action: () => this.translations.bold || this.applyFormat('bold')
+    action: () => this.applyFormat('bold')
   },
   {
     id: "italic",
