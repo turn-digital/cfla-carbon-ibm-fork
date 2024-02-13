@@ -1,7 +1,7 @@
 /**
  * @license
  *
- * Copyright IBM Corp. 2019, 2023
+ * Copyright IBM Corp. 2019, 2024
  *
  * This source code is licensed under the Apache-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
@@ -89,6 +89,7 @@ class CDSTableHeaderCell extends FocusMixin(LitElement) {
       this._hasSlug = Boolean(hasContent);
       (hasContent[0] as HTMLElement).setAttribute('size', 'mini');
     }
+
     this.requestUpdate();
   }
 
@@ -129,13 +130,13 @@ class CDSTableHeaderCell extends FocusMixin(LitElement) {
   /**
    * `true` if the table has expandable rows
    */
-  @property({ type: Boolean, reflect: true, attribute: 'is-sortable' })
+  @property({ type: Boolean, reflect: true, attribute: 'expandable' })
   isExpandable = false;
 
   /**
    * `true` if this table has selectable rows
    */
-  @property({ type: Boolean, reflect: true, attribute: 'is-sortable' })
+  @property({ type: Boolean, reflect: true, attribute: 'is-selectable' })
   isSelectable = false;
   /**
    * `true` if this table header column should be sortable
@@ -174,11 +175,16 @@ class CDSTableHeaderCell extends FocusMixin(LitElement) {
     if (!this.hasAttribute('role')) {
       this.setAttribute('role', 'columnheader');
     }
+
     super.connectedCallback();
   }
 
   updated(changedProperties) {
-    if (this.isSortable && !changedProperties.has('sortDirection')) {
+    if (
+      this.isSortable &&
+      !changedProperties.has('sortDirection') &&
+      !this.sortDirection
+    ) {
       this.sortDirection = TABLE_SORT_DIRECTION.NONE;
     }
     if (this._hasSlug) {
@@ -228,7 +234,6 @@ class CDSTableHeaderCell extends FocusMixin(LitElement) {
       ><slot name="slug" @slotchange="${this._handleSlugSlotChange}"></slot
     ></span> `;
   }
-
   /**
    * A selector that will return the slug item.
    */
