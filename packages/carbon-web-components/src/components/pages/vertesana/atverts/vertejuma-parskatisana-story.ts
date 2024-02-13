@@ -12,17 +12,11 @@ import './index';
 import storyDocs from './vertejuma-parskatisana-story.mdx';
 
 export const Default = () => {
-  return html`
-  trol1
-  <cds-page-valuation-open></cds-page-valuation-open>
-  `;
+  return html` <cds-page-valuation-open></cds-page-valuation-open> `;
 };
 
 export const Playground = () => {
-  return html`
-  trol2
-    <cds-page-valuation-open></cds-page-valuation-open>
-  `;
+  return html` <cds-page-valuation-open></cds-page-valuation-open> `;
 };
 
 export default {

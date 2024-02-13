@@ -3,87 +3,334 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
 
 # Tag
 
-> 💡 Check our
-> [CodeSandbox](https://codesandbox.io/s/github/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/carbon-web-components/examples/codesandbox/basic/components/tag)
-> example implementation.
-
-[![Edit carbon-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/carbon-web-components/examples/codesandbox/basic/components/tag)
-
-Tags are used for items that need to be labeled, categorized, or organized using
-keywords that describe them.
-
-Multiple or single tags can be used to categorize items.
-
-Use tags when content is mapped to multiple categories, and the user needs a way
-to differentiate between them.
-
-## Getting started
-
-Here's a quick example to get you started.
-
-### JS (via import)
-
-```javascript
-import '@carbon/web-components/es/components/tag/index.js';
-```
-
-<Description markdown={`${cdnJs({ components: ['tag'] })}`} />
-<Description markdown={`${cdnCss()}`} />
-
 ### HTML
 
 ```html
-<cds-tag type="gray" title="tag-example"> This is a tag </cds-tag>
-```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="module"
+      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/data-table.min.js"></script>
+    <script
+      type="module"
+      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/link.min.js"></script>
 
-## Filter tag
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/themes.css" />
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
+  </head>
 
-Use the `filter` attribute to turn the tag into a filterable element.
+  <body>
+    <cds-table expandable>
+      <cds-table-toolbar slot="toolbar" role="section" size="lg">
+        <cds-table-toolbar-content size="lg" tabindex="">
+          <cds-table-toolbar-search
+            placeholder="Filter table"
+            role="search"
+            size="lg"></cds-table-toolbar-search>
+        </cds-table-toolbar-content>
+      </cds-table-toolbar>
+      <cds-table-head>
+        <cds-table-header-row>
+          <cds-table-header-cell>
+            Projekta iesnieguma(PI) NR
+          </cds-table-header-cell>
+          <cds-table-header-cell>Status</cds-table-header-cell>
+          <cds-table-header-cell>Statusa datums</cds-table-header-cell>
+          <cds-table-header-cell>Pārskatīšanas iemesls</cds-table-header-cell>
+          <cds-table-header-cell>Pārskatīšanas virzība</cds-table-header-cell>
+        </cds-table-header-row>
+      </cds-table-head>
+      <cds-table-body>
+        <cds-table-row>
+          <cds-table-cell
+            ><cds-link href="https://www.ibm.com">
+              1.1.1.1/1/23/A</cds-link
+            ></cds-table-cell
+          >
+          <cds-table-cell>Sagatavošanā</cds-table-cell>
+          <cds-table-cell>01.02.2023</cds-table-cell>
+          <cds-table-cell>FS iesniegums</cds-table-cell>
+          <cds-table-cell>Nodot VI </cds-table-cell>
+        </cds-table-row>
+        <cds-table-expanded-row>
+          <div
+            style="
+          width: 100%;
+          height: 100%;
+          padding: 16px, 24px, 16px, 54px;
+          gap: 24px;
+        ">
+            <div style="margin: 24px 0px">
+              <h6 style="font-size: 12px; font-weight: 400; line-height: 16px">
+                PI nosaukums
+              </h6>
+              <h2 style="font-size: 14px; font-weight: 400; line-height: 18px">
+                Pētniecības pakalpojumi
+              </h2>
+            </div>
 
-```html
-<cds-tag filter type="gray" title="Clear selection"> This is a tag </cds-tag>
-```
+            <div style="margin: 24px 0px">
+              <h6 style="font-size: 12px; font-weight: 400; line-height: 16px">
+                Iesniedzējs
+              </h6>
+              <h2 style="font-size: 14px; font-weight: 400; line-height: 18px">
+                Latvijas Universitāte
+              </h2>
+            </div>
 
-You can use the events to catch the closing of the tag.
+            <h1
+              style="
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            margin-bottom: 12px;
+          ">
+              Saistītie dokumenti
+            </h1>
+            <cds-link
+              href="https://www.ibm.com"
+              style="display: flex; align-items: center">
+              Saistītais PI
+              <svg
+                id="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 32 32">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: none;
+                    }
+                  </style>
+                </defs>
+                <path
+                  d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
+                <polygon
+                  points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
+                <rect
+                  id="_Transparent_Rectangle_"
+                  data-name="&lt;Transparent Rectangle&gt;"
+                  class="cls-1"
+                  width="32"
+                  height="32" />
+              </svg>
+            </cds-link>
+            <cds-link
+              href="https://www.ibm.com"
+              style="display: flex; align-items: center">
+              <svg
+                id="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 32 32">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: none;
+                    }
+                  </style>
+                </defs>
+                <title>certificate--check</title>
+                <rect x="6" y="16" width="6" height="2" />
+                <rect x="6" y="12" width="10" height="2" />
+                <rect x="6" y="8" width="10" height="2" />
+                <path
+                  d="M14,26H4V6H28V16h2V6a2,2,0,0,0-2-2H4A2,2,0,0,0,2,6V26a2,2,0,0,0,2,2H14Z" />
+                <polygon
+                  points="22 25.59 19.41 23 18 24.41 22 28.41 30 20.41 28.59 19 22 25.59" />
+                <rect
+                  id="_Transparent_Rectangle_"
+                  data-name="&lt;Transparent Rectangle&gt;"
+                  class="cls-1"
+                  width="32"
+                  height="32" />
+              </svg>
+              Vērtēšanas veidlapa
+              <svg
+                id="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 32 32">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: none;
+                    }
+                  </style>
+                </defs>
+                <path
+                  d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
+                <polygon
+                  points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
+                <rect
+                  id="_Transparent_Rectangle_"
+                  data-name="&lt;Transparent Rectangle&gt;"
+                  class="cls-1"
+                  width="32"
+                  height="32" />
+              </svg>
+            </cds-link>
+            <cds-link
+              href="https://www.ibm.com"
+              style="display: flex; align-items: center">
+              Vērtēšanas veidlapa
+            </cds-link>
+          </div>
+        </cds-table-expanded-row>
+        <cds-table-row>
+          <cds-table-cell
+            ><cds-link href="https://www.ibm.com">
+              1.1.1.1/1/23/A</cds-link
+            ></cds-table-cell
+          >
+          <cds-table-cell>
+            <cds-tag type="green" title="tag-example"> Ir spēkā </cds-tag>
+          </cds-table-cell>
+          <cds-table-cell>13.09.2022</cds-table-cell>
+          <cds-table-cell>Tiesvedība</cds-table-cell>
+          <cds-table-cell>Sākt pārvērtēšanu CFLA uzreiz</cds-table-cell>
+        </cds-table-row>
+        <cds-table-expanded-row>
+          <div
+            style="
+          width: 100%;
+          height: 100%;
+          padding: 16px, 24px, 16px, 54px;
+          gap: 24px;
+        ">
+            <div style="margin: 24px 0px">
+              <h6 style="font-size: 12px; font-weight: 400; line-height: 16px">
+                PI nosaukums
+              </h6>
+              <h2 style="font-size: 14px; font-weight: 400; line-height: 18px">
+                Pētniecības pakalpojumi
+              </h2>
+            </div>
 
-```js
-document.addEventListener('cds-tag-closed', (event) => {
-  // use values here
-});
-```
+            <div style="margin: 24px 0px">
+              <h6 style="font-size: 12px; font-weight: 400; line-height: 16px">
+                Iesniedzējs
+              </h6>
+              <h2 style="font-size: 14px; font-weight: 400; line-height: 18px">
+                Latvijas Universitāte
+              </h2>
+            </div>
 
-## Custom icon
-
-If you'd like to use a custom icon other than the `Close` button, import another
-icon and insert it within the tag element as such:
-
-```html
-<cds-tag filter type="gray" title="Clear selection"> This is a tag </cds-tag>
-```
-
-```javascript
-import Download16 from '@carbon/web-components/es/icons/download/16';
-
-function App() {
-  return (
-    html`  <cds-tag filter type="gray" title="Clear selection">This is a tag ${Download16({ slot: 'icon' })}</cds-tag>`
-  );
-}
-
-
-## `<cds-tag>` attributes and properties
-
-Note: For `boolean` attributes, `true` means simply setting the attribute (e.g.
-`<cds-tag disabled>`) and `false` means not setting the attribute (e.g.
-`<cds-tag>` without `disabled` attribute).
-
-<Props of="cds-tag" />
-
-## `<cds-filter-tag>` attributes and properties
-
-Note: For `boolean` attributes, `true` means simply setting the attribute (e.g.
-`<cds-filter-tag disabled>`) and `false` means not setting the attribute (e.g.
-`<cds-filter-tag>` without `disabled` attribute).
-
-<Props of="cds-filter-tag" />
+            <h1
+              style="
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            margin-bottom: 12px;
+          ">
+              Saistītie dokumenti
+            </h1>
+            <cds-link
+              href="https://www.ibm.com"
+              style="display: flex; align-items: center">
+              Saistītais PI
+              <svg
+                id="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 32 32">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: none;
+                    }
+                  </style>
+                </defs>
+                <path
+                  d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
+                <polygon
+                  points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
+                <rect
+                  id="_Transparent_Rectangle_"
+                  data-name="&lt;Transparent Rectangle&gt;"
+                  class="cls-1"
+                  width="32"
+                  height="32" />
+              </svg>
+            </cds-link>
+            <cds-link
+              href="https://www.ibm.com"
+              style="display: flex; align-items: center">
+              <svg
+                id="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 32 32">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: none;
+                    }
+                  </style>
+                </defs>
+                <title>certificate--check</title>
+                <rect x="6" y="16" width="6" height="2" />
+                <rect x="6" y="12" width="10" height="2" />
+                <rect x="6" y="8" width="10" height="2" />
+                <path
+                  d="M14,26H4V6H28V16h2V6a2,2,0,0,0-2-2H4A2,2,0,0,0,2,6V26a2,2,0,0,0,2,2H14Z" />
+                <polygon
+                  points="22 25.59 19.41 23 18 24.41 22 28.41 30 20.41 28.59 19 22 25.59" />
+                <rect
+                  id="_Transparent_Rectangle_"
+                  data-name="&lt;Transparent Rectangle&gt;"
+                  class="cls-1"
+                  width="32"
+                  height="32" />
+              </svg>
+              Vērtēšanas veidlapa
+              <svg
+                id="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 32 32">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: none;
+                    }
+                  </style>
+                </defs>
+                <path
+                  d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
+                <polygon
+                  points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
+                <rect
+                  id="_Transparent_Rectangle_"
+                  data-name="&lt;Transparent Rectangle&gt;"
+                  class="cls-1"
+                  width="32"
+                  height="32" />
+              </svg>
+            </cds-link>
+            <cds-link
+              href="https://www.ibm.com"
+              style="display: flex; align-items: center">
+              Vērtēšanas veidlapa
+            </cds-link>
+          </div>
+        </cds-table-expanded-row>
+      </cds-table-body>
+    </cds-table>
+  </body>
+</html>
 ```

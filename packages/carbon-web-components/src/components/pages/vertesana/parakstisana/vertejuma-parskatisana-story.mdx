@@ -3,87 +3,224 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
 
 # Tag
 
-> 💡 Check our
-> [CodeSandbox](https://codesandbox.io/s/github/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/carbon-web-components/examples/codesandbox/basic/components/tag)
-> example implementation.
-
-[![Edit carbon-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/carbon-web-components/examples/codesandbox/basic/components/tag)
-
-Tags are used for items that need to be labeled, categorized, or organized using
-keywords that describe them.
-
-Multiple or single tags can be used to categorize items.
-
-Use tags when content is mapped to multiple categories, and the user needs a way
-to differentiate between them.
-
-## Getting started
-
-Here's a quick example to get you started.
-
-### JS (via import)
-
-```javascript
-import '@carbon/web-components/es/components/tag/index.js';
-```
-
-<Description markdown={`${cdnJs({ components: ['tag'] })}`} />
-<Description markdown={`${cdnCss()}`} />
-
 ### HTML
 
 ```html
-<cds-tag type="gray" title="tag-example"> This is a tag </cds-tag>
-```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="module"
+      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/data-table.min.js"></script>
+    <script
+      type="module"
+      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/link.min.js"></script>
+    <script
+      type="module"
+      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/file-uploader.min.js"></script>
+    <script
+      type="module"
+      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/date-picker.min.js"></script>
+    <script
+      type="module"
+      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/radio-button.min.js"></script>
+    <script
+      type="module"
+      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/progress-indicator.min.js"></script>
+    <script
+      type="module"
+      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/button.min.js"></script>
 
-## Filter tag
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/themes.css" />
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
+  </head>
 
-Use the `filter` attribute to turn the tag into a filterable element.
+  <body>
+    <div style="width: 100%">
+      <cds-progress-indicator>
+        <cds-progress-step
+          label="Pārskatīšanas veids"
+          description="Step 1: Register a onChange event"
+          state="current"></cds-progress-step>
+        <cds-progress-step
+          label="Pamatinfo"
+          description="The progress indicator will listen for clicks on the steps"
+          state="incomplete"></cds-progress-step>
+        <cds-progress-step
+          label="Priekšskatījums"
+          description="The progress indicator will listen for clicks on the steps"
+          state="incomplete"></cds-progress-step>
+      </cds-progress-indicator>
+      <div style="margin-top: 40px;">
+        <p style="font-weight: 400; font-size: 14px">Pārskatīšanas iemesls</p>
+        <cds-radio-button-group
+          label-position="right"
+          orientation="vertical"
+          name="radio-group">
+          <cds-radio-button
+            label-text="Finansējuma pārpalikums"
+            value="Finansējuma pārpalikums"></cds-radio-button>
+          <cds-radio-button
+            label-text="Apstrīdējums"
+            value="Apstrīdējums"></cds-radio-button>
+          <cds-radio-button
+            label-text="CFLA iekšējā pārvērtēšana"
+            value="CFLA iekšējā pārvērtēšana"></cds-radio-button>
+          <cds-radio-button
+            label-text="Tiesvedība"
+            value="Tiesvedība"></cds-radio-button>
+        </cds-radio-button-group>
+      </div>
 
-```html
-<cds-tag filter type="gray" title="Clear selection"> This is a tag </cds-tag>
-```
+      <div style="margin-top: 20px;">
+        <p style="font-weight: 400; font-size: 14px">Pārskatīšanas virzība</p>
+        <cds-radio-button-group
+          label-position="right"
+          orientation="vertical"
+          name="radio-group">
+          <cds-radio-button
+            label-text="Nodot VI"
+            value="Nodot VI "></cds-radio-button>
+          <cds-radio-button
+            label-text="Sākt pārvērtēšanu  CFLA uzreiz"
+            value="Sākt pārvērtēšanu  CFLA uzreiz"></cds-radio-button>
+        </cds-radio-button-group>
+      </div>
+      <div style="margin-top: 40px">
+        <cds-button-set>
+          <cds-button href="https://www.ibm.com">Atcelt</cds-button>
+          <cds-button href="https://www.ibm.com">Turpināt</cds-button>
+        </cds-button-set>
+      </div>
+    </div>
 
-You can use the events to catch the closing of the tag.
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
-```js
-document.addEventListener('cds-tag-closed', (event) => {
-  // use values here
-});
-```
+    <cds-progress-indicator>
+      <cds-progress-step
+        label="Pārskatīšanas veids"
+        description="Step 1: Register a onChange event"
+        state="complete"></cds-progress-step>
+      <cds-progress-step
+        label="Pamatinfo"
+        description="The progress indicator will listen for clicks on the steps"
+        state="current"></cds-progress-step>
+      <cds-progress-step
+        label="Priekšskatījums"
+        description="The progress indicator will listen for clicks on the steps"
+        state="incomplete"></cds-progress-step>
+    </cds-progress-indicator>
+    <div style="margin-top: 40px;">
+      <cds-date-picker class="cds-theme-zone-white">
+        <cds-date-picker-input
+          label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
+          placeholder="mm/dd/yyyy">
+        </cds-date-picker-input>
+      </cds-date-picker>
 
-## Custom icon
+      <div style="margin-top: 40px;"></div>
+      <cds-file-uploader
+        label-description="Max file size is 500kb. Supported file types are .jpg and .png."
+        label-title="Augšupielādēt pārskatīšanas/apstrīdējuma iesniegumu">
+        <cds-file-uploader-drop-container
+          accept="image/jpeg image/png"
+          name=""
+          slot="drop-container"
+          class="cds-theme-zone-white">
+          Ievelciet un nometiet failus šeit vai spiediet, lai augšupielādētu
+        </cds-file-uploader-drop-container>
+      </cds-file-uploader>
 
-If you'd like to use a custom icon other than the `Close` button, import another
-icon and insert it within the tag element as such:
+      <div style="margin-top: 40px;">
+        <p style="font-size: 12px">Pārskatīšanas būtība</p>
+        Text input here
+      </div>
+      <div style="margin-top: 40px;">
+        <div style="margin-top: 40px;">
+          <cds-button-set>
+            <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
+            <cds-button href="https://www.ibm.com">Turpināt</cds-button>
+          </cds-button-set>
+        </div>
+      </div>
 
-```html
-<cds-tag filter type="gray" title="Clear selection"> This is a tag </cds-tag>
-```
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
-```javascript
-import Download16 from '@carbon/web-components/es/icons/download/16';
+      <cds-progress-indicator>
+        <cds-progress-step
+          label="Pārskatīšanas veids"
+          description="Step 1: Register a onChange event"
+          state="complete"></cds-progress-step>
+        <cds-progress-step
+          label="Pamatinfo"
+          description="The progress indicator will listen for clicks on the steps"
+          state="complete"></cds-progress-step>
+        <cds-progress-step
+          label="Priekšskatījums"
+          description="The progress indicator will listen for clicks on the steps"
+          state="current"></cds-progress-step>
+      </cds-progress-indicator>
 
-function App() {
-  return (
-    html`  <cds-tag filter type="gray" title="Clear selection">This is a tag ${Download16({ slot: 'icon' })}</cds-tag>`
-  );
-}
+      <div style="margin-top: 40px;">
+        <div style="margin-top: 40px">custom components here</div>
 
+        <div style="margin-top: 40px">
+          <p style="font-size: 12px">Pārskatīšanas iemesls</p>
+          <p style="font-size: 14px">Finansējuma pārpalikums</p>
+        </div>
+        <div style="margin-top: 40px">
+          <p style="font-size: 12px">Pārskatīšanas virzība</p>
+          <p style="font-size: 14px">Sākt pārvērtēšanu CFLA uzreiz</p>
+        </div>
+        <div style="margin-top: 40px">
+          <p style="font-size: 12px">
+            Apstrīdējuma iesnieguma saņemšanas datums
+          </p>
+          <p style="font-size: 14px">01.01.2024</p>
+        </div>
+        <div style="margin-top: 40px">
+          <p style="font-size: 12px">
+            Apstrīdējuma iesnieguma saņemšanas datums
+          </p>
+          <p style="font-size: 14px"><cds-link>Filename.png</cds-link></p>
+        </div>
+        <div style="margin-top: 40px">
+          <p style="font-size: 12px">Apstrīdējuma būtība</p>
+          <p style="font-size: 14px">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+            condimentum diam id diam blandit congue. Phasellus dictum augue
+            rutrum justo consectetur, vel posuere purus porta. Aenean finibus
+            pretium eros, in tempor est aliquam vel.
+          </p>
+        </div>
 
-## `<cds-tag>` attributes and properties
-
-Note: For `boolean` attributes, `true` means simply setting the attribute (e.g.
-`<cds-tag disabled>`) and `false` means not setting the attribute (e.g.
-`<cds-tag>` without `disabled` attribute).
-
-<Props of="cds-tag" />
-
-## `<cds-filter-tag>` attributes and properties
-
-Note: For `boolean` attributes, `true` means simply setting the attribute (e.g.
-`<cds-filter-tag disabled>`) and `false` means not setting the attribute (e.g.
-`<cds-filter-tag>` without `disabled` attribute).
-
-<Props of="cds-filter-tag" />
+        <div style="margin-top: 40px;">
+          <cds-button-set>
+            <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
+            <cds-button href="https://www.ibm.com">Izveidot</cds-button>
+          </cds-button-set>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 ```
