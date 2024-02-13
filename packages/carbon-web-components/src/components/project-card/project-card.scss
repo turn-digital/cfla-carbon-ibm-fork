@@ -1,0 +1,59 @@
+.project-card-container {
+  background-color: #f4f4f4;
+  border: 1px;
+  border-radius: 8px;
+  padding: 8px;
+  gap: 8px;
+}
+
+.project-card-header {
+  display: flex;
+  height: 18px;
+  font-size: 12px;
+}
+
+.project-header-id {
+  padding-right: 10px;
+}
+
+.project-card-desc {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.project-card-info {
+  display: flex;
+}
+.project-card-info-section {
+  display: flex;
+  padding-right: 40px;
+}
+
+.project-card-info-item {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+  }
+}
+
+.project-card-info-image {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
