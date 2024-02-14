@@ -26,5 +26,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Custom compnents/Back-to',
+  title: 'Custom-components/Back-to',
 };

@@ -17,15 +17,17 @@ import ShoppingCart from '@carbon/icons/lib/shopping--cart/16';
 
 @customElement(`${prefix}-project-card`)
 class ProjectCard extends LitElement {
-  @property() projId = '1.1.1.1/16/A/004';
+  @property() projectId = '1.1.1.1/16/A/004';
   @property() tagTitle = 'Apstiprināts ar nosacījumu';
   @property() tagType = 'purple';
+  @property() projectDateInfo = '05.01.2021 - 30.05.2028';
+  @property() projectCostInfo = '500 345';
 
   render() {
     return html`
       <div class="project-card-container">
         <div class="project-card-header">
-          <p class="project-header-id">Projekts - ${this.projId}</p>
+          <p class="project-header-id">Projekts - ${this.projectId}</p>
           <cds-tag
             type="${this.tagType}"
             title="${this.tagTitle}"
@@ -44,7 +46,7 @@ class ProjectCard extends LitElement {
             </div>
             <div class="project-card-info-item">
               <p>Projekta īstenošanas termiņš</p>
-              <h3>05.01.2021 - 30.05.2028</h3>
+              <h3>${this.projectDateInfo}</h3>
             </div>
           </div>
           <div class="project-card-info-section">
@@ -53,7 +55,7 @@ class ProjectCard extends LitElement {
             </div>
             <div class="project-card-info-item">
               <p>Projekta kopējas izmaksas EUR</p>
-              <h3>500 345</h3>
+              <h3>${this.projectCostInfo}</h3>
             </div>
           </div>
         </div>

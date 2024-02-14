@@ -22,5 +22,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Custom compnents/Page title',
+  title: 'Custom-components/Page title',
 };

@@ -16,7 +16,13 @@ export const Default = () => {
 };
 export const Propsed = () => {
   return html`
-    <cds-project-card title="Propsed page title"></cds-project-card>
+    <cds-project-card
+      projectId="1.1.1.1/123213123"
+      tagTitle="Apstiprināts asdasd title"
+      tagType="green"
+      projectDateInfo="05.01.2034 - 12.05.2086"
+      projectCostInfo="999 999">
+    </cds-project-card>
   `;
 };
 
@@ -24,5 +30,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Custom compnents/Project card',
+  title: 'Custom-components/Project card',
 };

@@ -22,6 +22,7 @@ import { carbonElement as customElement } from '../../../../globals/decorators/c
 class CDSPValuationList extends LitElement {
   render() {
     return html`
+      <cds-page-title title="Vērtējuma pārskatīšana"></cds-page-title>
       <cds-table expandable>
         <cds-table-toolbar slot="toolbar" role="section" size="lg">
           <cds-table-toolbar-content size="lg" tabindex="">
