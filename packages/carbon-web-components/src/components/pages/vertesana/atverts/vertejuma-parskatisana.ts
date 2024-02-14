@@ -23,6 +23,7 @@ import Add16 from '@carbon/icons/lib/add/16';
 class CDSPValuationOpen extends LitElement {
   render() {
     return html`
+    <cds-page-title title="Vērtējuma pāsrkatīšana"></cds-page-title>
     <h1
                 style="
             font-size: 14px;
@@ -167,9 +168,9 @@ Tiesvedība
 </cds-radio-button-group>
            </div>
 <p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
-text input here
+<cds-text-editor></cds-text-editor>
 <p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
-text input here
+<cds-text-editor></cds-text-editor>
            </div>
            <div>
            <cds-table>
