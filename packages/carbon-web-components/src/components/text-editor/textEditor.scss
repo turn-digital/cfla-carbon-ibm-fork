@@ -20,15 +20,29 @@
 
 .cc-text-editor {
     background-color: $background;
+
+    &--text-limit {
+        .cc-text-editor__head-limit {
+            color: $text-error;
+        }
+        & + .ql-container.ql-snow {
+            border-color: $support-error;
+        }
+    }
     
     &__head,
-    &__meta {
+    &__meta,
+    &__limit {
         @include type-style("body-01", true);
     }
 
     &__head {
         display: flex;
         justify-content: space-between;
+    }
+
+    &__limit {
+        color: $text-error;
     }
 }
    

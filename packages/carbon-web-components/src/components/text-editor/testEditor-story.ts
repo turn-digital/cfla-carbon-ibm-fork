@@ -7,6 +7,7 @@ const translations = {
   statusSaving: 'Saving',
   statusBad: 'Error saving data',
   statusLoad: 'Loading',
+  textLimit: "Text is over the limit!",
   bold: 'Bold Translation',
   italic: 'Italic Translation',
   underline: "Underlined",

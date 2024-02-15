@@ -156,20 +156,21 @@ export class TextEditor extends LitElement {
   render() {
     // Use the buttonsSets object to get the desired set of buttons based on toolbarType
     const buttons = this.buttonsSets[this.toolbarType];
-    
+    const isOverLimits = this.textLength >this.textLimit;
     return html`
       <!-- Include stylesheet -->
-      <div id="cc-text-editor" class="cc-text-editor">
-      <div class="cc-text-editor__head">
-        <div class="cc-text-editor__head-title">${this.translations.title}</div>
-          ${this.isReadOnly ? html ``: 
-            html `
-              <div class="cc-text-editor__head-content">
-                <span>${this.translations.statusSave}</span>
-                <span>${this.textLength}/${this.textLimit}</span>
-              </div>
-            `
-          }
+      <div id="cc-text-editor" class="cc-text-editor ${isOverLimits ? "cc-text-editor--text-limit": ""}">
+        <div class="cc-text-editor__head">
+          <div class="cc-text-editor__head-title">${this.translations.title}</div>
+            ${this.isReadOnly ? html ``: 
+              html `
+                <div class="cc-text-editor__head-content">
+                  <span class="cc-text-editor__head-status">${this.translations.statusSave}</span>
+                  <span class="cc-text-editor__head-limit">${this.textLength}/${this.textLimit}</span>
+                </div>
+              `
+            }
+          </div>
         </div>
 
         ${this.isReadOnly ?
@@ -223,12 +224,14 @@ export class TextEditor extends LitElement {
             </cds-button>        
           </div>
         `}
+
+        ${isOverLimits ? html `<p class="cc-text-editor__limit">${this.translations.textLimit}</p>`: ""}
         
+        ${this.userMeta?.name ? 
+          html `<p class="cc-text-editor__meta">${this.userMeta.date} ${this.userMeta.name}</p>
+          `: ""
+        }
       </div>
-      ${this.userMeta?.name && 
-        html `<p class="cc-text-editor__meta">${this.userMeta.date} ${this.userMeta.name}</p>
-        `
-      }
     `;
   }
 
@@ -239,7 +242,6 @@ export class TextEditor extends LitElement {
 
   updated(changedProperties) {
     super.updated(changedProperties);
-    console.log('isReadOnly:', this.isReadOnly);
 
     if (changedProperties.has('textLength')) {
       this.dispatchEvent(new CustomEvent('text-length-changed', { detail: { textLength: this.textLength } }));
