@@ -29,13 +29,19 @@ interface Translation {
 interface UserMeta {
   [key: string]: string;
 }
+interface TextEditorProps {
+  onTextChangedOutsideEditor: () => void;
+}
 
 @customElement(`${prefix}-text-editor`)
 export class TextEditor extends LitElement {
   @property({ type: String }) toolbarType: string = 'full';
+  @property({ type: Number }) textLength: number = 0; // Track the length of the entered text
+  @property({ type: Object }) props: TextEditorProps = { onTextChangedOutsideEditor: () => {} };
 
   private quill: Quill | null = null;
-  private textLength: number = 0; // Track the length of the entered text
+  private isTextChanged = false;
+
 
   // Define button configurations outside of the class
   private buttonConfigurations = {
@@ -109,16 +115,29 @@ export class TextEditor extends LitElement {
   userMeta: UserMeta = {};
   textLimit: number = 0; 
   
-  // need add callbacks 
   connectedCallback() {
+    // Call the parent class connectedCallback method
     super.connectedCallback();
-    //for heading dropdown to initialize it
+    
+    // Add an event listener for the 'cds-dropdown-selected' event, which is emitted when a dropdown item is selected
+    // Bind 'this' context to the event handler function
     this.addEventListener('cds-dropdown-selected', this.handleDropdownSelected);
+  
+    // Add a global click event listener to handle clicks outside of the editor
+    // Bind 'this' context to the handleEditorClickOutSide event handler function
+    document.addEventListener('click', this.handleEditorClickOutSide.bind(this));
   }
-
+  
   disconnectedCallback() {
+    // Call the parent class disconnectedCallback method
     super.disconnectedCallback();
+    
+    // Remove the event listener for the 'cds-dropdown-selected' event when the component is disconnected
     this.removeEventListener('cds-dropdown-selected', this.handleDropdownSelected);
+  
+    // Remove the global click event listener when the component is disconnected
+    // Bind 'this' context to the handleEditorClickOutSide event handler function
+    document.removeEventListener('click', this.handleEditorClickOutSide.bind(this));
   }
 
   handleDropdownSelected(event) {
@@ -189,7 +208,6 @@ export class TextEditor extends LitElement {
         </cds-button>        
         </div>
       </div>
-      ${console.log('this.userMeta',this.userMeta)}
       ${this.userMeta?.name && 
         html `<p class="cc-text-editor__meta">${this.userMeta.date} ${this.userMeta.name}</p>
         `
@@ -209,6 +227,7 @@ export class TextEditor extends LitElement {
     }
   }
 
+  // main quill initialization and giving some events
   init() {
     const selector = this.shadowRoot?.querySelector('#editor');
     if (selector) {
@@ -221,14 +240,51 @@ export class TextEditor extends LitElement {
     }
 
     this.quill.on('text-change', () => {
-      this.textLength = this.quill?.getText().trim().length || 0;
+      this.isTextChanged = true;
+      this.textLength = (this.quill?.getText() || '').trim().length;
       this.requestUpdate();
     });
 
-    // Prevent editor from losing focus
-    this.quill.root.addEventListener('mousedown', () => {
-      this.quill?.focus();
-    });
+    // Add event listener for Quill's focus event directly to the Quill editor's root element
+    // this.quill.root.addEventListener('focus', () => {
+    //   console.log('Quill editor is focused');
+    // });
+
+    // Add click event listener to the entire editor component
+    this.shadowRoot?.addEventListener('click', this.handleEditorClickOutSide.bind(this));
+
+  }
+
+  handleEditorClickOutSide(event) {
+    // Get the bounding rectangle of the editor component
+    const editor = this.shadowRoot?.getElementById('cc-text-editor');
+    const editorRect = editor?.getBoundingClientRect();
+  
+    // Check if the click event occurred within the editor component
+    const isClickWithinEditor = editorRect &&
+      event.clientX >= editorRect.left &&
+      event.clientX <= editorRect.right &&
+      event.clientY >= editorRect.top &&
+      event.clientY <= editorRect.bottom;
+  
+    // Check if the click event occurred on a toolbar button
+    const toolbar = this.shadowRoot?.querySelector('.cc-text-editor__toolbar');
+    const isToolbarButton = toolbar?.contains(event.target);
+  
+    // Check if the click event occurred within a dropdown select element
+    const selectDropdown = this.shadowRoot?.querySelector('cds-dropdown');
+    const isSelectDropdown = selectDropdown?.contains(event.target);
+  
+    // Check if the click event occurred outside of the editor, toolbar, and dropdown
+    const isClickOutsideEditor = !isClickWithinEditor && !isToolbarButton && !isSelectDropdown;
+  
+    // If the text has been changed and the click occurred outside of the editor,
+    // call the callback function provided as a property
+    if (this.isTextChanged && isClickOutsideEditor) {
+      this.props.onTextChangedOutsideEditor();
+      // Reset the boolean variable after handling the click event
+      this.isTextChanged = false;
+    }
   }
 
   getCurrentFormatting() {

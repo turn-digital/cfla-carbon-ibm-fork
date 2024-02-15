@@ -39,13 +39,18 @@ const userMeta = {
   date: "01.01.2001 20:01"
 }
 
+const handleTextChangedOutsideEditor = () => {
+  console.log('Text has been changed and clicked outside editor! Can execute some save function!');
+};
+
 export const Default = () => {
   return html`
     <cds-text-editor 
         toolbarType="full"
         .translations="${translations}" 
         .userMeta="${userMeta}"
-        .textLimit="${1000}">
+        .textLimit="${1000}"
+        .props=${{ onTextChangedOutsideEditor: handleTextChangedOutsideEditor }}>
     </cds-text-editor>
   `;
 };
