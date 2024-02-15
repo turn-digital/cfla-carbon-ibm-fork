@@ -44,9 +44,14 @@ const handleTextChangedOutsideEditor = () => {
 };
 
 export const Default = () => {
+  //The properties with the dot . notation are being bound to properties of the cds-text-editor component. 
+  //This allows you to pass data from your LitElement component to the custom element.
+  // without dot can be passed static values (strings)
   return html`
     <cds-text-editor 
         toolbarType="full"
+        value="Here is existing <p>content</p><p>content</p><p>content</p>"
+        .isReadOnly="${false}"
         .translations="${translations}" 
         .userMeta="${userMeta}"
         .textLimit="${1000}"
