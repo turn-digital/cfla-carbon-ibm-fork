@@ -2,6 +2,11 @@ import { html } from 'lit-html';
 import './textEditor';
 
 const translations = {
+  title: 'Description',
+  statusSave: 'Saved',
+  statusSaving: 'Saving',
+  statusBad: 'Error saving data',
+  statusLoad: 'Loading',
   bold: 'Bold Translation',
   italic: 'Italic Translation',
   underline: "Underlined",
@@ -29,8 +34,19 @@ const translations = {
   heading6: "Heading 6",
 };
 
+const userMeta = {
+  name: "Reinis",
+  date: "01.01.2001 20:01"
+}
+
 export const Default = () => {
-  return html`<cds-text-editor .translations="${translations}"></cds-text-editor> `;
+  return html`
+    <cds-text-editor 
+        .translations="${translations}" 
+        .userMeta="${userMeta}"
+        .textLimit="${1000}">
+    </cds-text-editor>
+  `;
 };
 
 Default.storyName = 'Default';

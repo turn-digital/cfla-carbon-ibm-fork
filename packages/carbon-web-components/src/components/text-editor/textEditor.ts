@@ -26,19 +26,27 @@ import styles from './textEditor.scss';
 interface Translation {
   [key: string]: string;
 }
+interface UserMeta {
+  [key: string]: string;
+}
 @customElement(`${prefix}-text-editor`)
 export class TextEditor extends LitElement {
   private quill: Quill | null = null;
-  // private currentFormat: string = 'paragraph'; // Default to paragraph format
+  private textLength: number = 0; // Track the length of the entered text
 
   static get properties() {
     return {
       buttons: { type: Array },
       translations: { type: Object },
+      userMeta: { type: Object },
+      textLimit: { type: Number },
     };
   }
-  translations: Translation = {};
 
+  // Initialize with a default value
+  translations: Translation = {};
+  userMeta: Translation = {};
+  textLimit: number = 0; 
   buttons = [{
     id: "bold",
     type: 'bold',
@@ -153,9 +161,10 @@ export class TextEditor extends LitElement {
   // }
 ]; 
 
-// need add callback for heading dropdown to initialize it
+// need add callbacks 
   connectedCallback() {
     super.connectedCallback();
+    //for heading dropdown to initialize it
     this.addEventListener('cds-dropdown-selected', this.handleDropdownSelected);
   }
 
@@ -175,9 +184,17 @@ export class TextEditor extends LitElement {
     return html`
       <!-- Include stylesheet -->
       <div id="cc-text-editor" class="cc-text-editor">
+      <div class="cc-text-editor__head">
+        <div class="cc-text-editor__head-title">${this.translations.title}</div>
+          <div class="cc-text-editor__head-content">
+            <span>${this.translations.statusSave}</span>
+            <span>${this.textLength}/${this.textLimit}</span>
+          </div>
+        </div>
+
         <!-- Create the editor container -->
         <div id="editor"></div>
-
+        
         <!-- Carbon Web Components buttons outside of the editor -->
         <div class="cc-text-editor__toolbar">
 
@@ -221,13 +238,24 @@ export class TextEditor extends LitElement {
         </cds-button>        
         </div>
       </div>
+      ${console.log('this.userMeta',this.userMeta)}
+      ${this.userMeta?.name && 
+        html `<p class="cc-text-editor__meta">${this.userMeta.date} ${this.userMeta.name}</p>
+        `
+      }
     `;
   }
 
   firstUpdated() {
     this.init();
     this.setupFullscreen();
+  }
 
+  updated(changedProperties) {
+    super.updated(changedProperties);
+    if (changedProperties.has('textLength')) {
+      this.dispatchEvent(new CustomEvent('text-length-changed', { detail: { textLength: this.textLength } }));
+    }
   }
 
   init() {
@@ -237,15 +265,19 @@ export class TextEditor extends LitElement {
         modules: {
           toolbar: false,
         },
-        placeholder: 'Compose an epic...',
         theme: 'snow'
       });
     }
 
-    // Other initialization code
-  this.quill.on('text-change', () => {
-    this.updateButtonStates();
-  });
+    this.quill.on('text-change', () => {
+      this.textLength = this.quill?.getText().trim().length || 0;
+      this.requestUpdate();
+    });
+
+    // Prevent editor from losing focus
+    this.quill.root.addEventListener('mousedown', () => {
+      this.quill?.focus();
+    });
   }
 
   getCurrentFormatting() {
@@ -256,17 +288,17 @@ export class TextEditor extends LitElement {
     }
     return {};
   }
-  updateButtonStates() {
-    const formatting = this.getCurrentFormatting();
-    const buttons = this.buttons;
-    buttons.forEach(button => {
-      const isActive = formatting[button.id]; // Use button.format to represent the format
-      const buttonElement = this.shadowRoot?.getElementById(button.id);
-      if (buttonElement) {
-        buttonElement.classList.toggle('active', isActive);
-      }
-    });
-  }
+  // updateButtonStates() {
+  //   const formatting = this.getCurrentFormatting();
+  //   const buttons = this.buttons;
+  //   buttons.forEach(button => {
+  //     const isActive = formatting[button.id]; // Use button.format to represent the format
+  //     const buttonElement = this.shadowRoot?.getElementById(button.id);
+  //     if (buttonElement) {
+  //       buttonElement.classList.toggle('active', isActive);
+  //     }
+  //   });
+  // }
 
   applyAlignment(align) {
     if (this.quill) {
@@ -474,7 +506,7 @@ export class TextEditor extends LitElement {
   handleButtonClick(button) {
     if (button.action) {
       button.action();
-      this.updateButtonStates(); // Update button states after action
+      // this.updateButtonStates(); // Update button states after action
     }
   }
 

@@ -1,8 +1,6 @@
 @import "./quill/quill.snow.scss";
+@import '@carbon/styles/index.scss';
 
-#editor-container {
-    background-color: #fff;
-}
 #editor-container cds-button::part(button) {
     padding: 4px;
 }
@@ -19,3 +17,18 @@
         fill: var(--cds-link-primary);
     }
 }
+
+.cc-text-editor {
+    background-color: $background;
+    
+    &__head,
+    &__meta {
+        @include type-style("body-01", true);
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+   
