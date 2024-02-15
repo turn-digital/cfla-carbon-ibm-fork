@@ -1,5 +1,5 @@
 import { prefix } from '../../globals/settings';
-import { html, LitElement } from 'lit-element';
+import { html, LitElement,property } from 'lit-element';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import Quill from './quill/quill.js';
 import '@carbon/web-components/es/components/button/button.js';
@@ -29,14 +29,75 @@ interface Translation {
 interface UserMeta {
   [key: string]: string;
 }
+
 @customElement(`${prefix}-text-editor`)
 export class TextEditor extends LitElement {
+  @property({ type: String }) toolbarType: string = 'full';
+
   private quill: Quill | null = null;
   private textLength: number = 0; // Track the length of the entered text
 
+  // Define button configurations outside of the class
+  private buttonConfigurations = {
+    bold: { id: "bold", type: 'bold', icon: TextBold16, action: () => this.applyFormat('bold') },
+    italic: { id: "italic", type: 'italic', icon: TextItalic16, action: () => this.applyFormat('italic') },
+    underline: {id: "underline", type: 'underline',icon: TextUnderline16, action: () => this.applyFormat('underline')},
+    alignLeft: {id: "align-left",      type: 'alignLeft',      icon: AlignLeft16,action: () => this.applyAlignment('left')},
+    alignCenter: {id: "align-center",type: 'alignCenter',icon: AlignCenter16,action: () => this.applyAlignment('center')},
+    alignRight: {id: "align-right",type: 'alignRight',icon: AlignRight16, action: () => this.applyAlignment('right')},
+    alignJustify: {id: "align-justify",type: 'alignJustify',icon: AlignJustify16, action: () => this.applyAlignment('justify')},
+    unorderedList: {id: "unordered-list",type: 'unorderedList',icon: ListBullet16,action: () => this.toggleList('bullet')},
+    orderedList: {id: "ordered-list",type: 'orderedList',icon: ListNum16,action: () => this.toggleList('ordered')},
+    indent: {id: "indent",type: 'indent',icon: IndentMore16,action: () => this.indent()},
+    outdent: {id: "outdent",type: 'outdent',icon: IndentLess16,action: () => this.outdent()},
+    textLink: { id: "insert-link",type: 'textLink',icon: Link16,action: () => {const url = prompt('Enter the URL:');if (url) {this.insertLink(url);}}},
+    superscript: {id: "superscript",type: 'superscript',icon: Super16,action: () => this.toggleSuperscript()},
+    subscript: {id: "subscript",type: 'subscript',icon: Sub16,action: () => this.toggleSubscript()},
+    clearFormatting: {id: "clear-formatting",type: 'clearFormatting',icon: Clear16,action: () => this.clearFormatting()},
+    undo: {id: "undo",type: 'undo',icon: Undo16,action: () => this.applyUndo()},
+    redo: {id: "redo",type: 'redo',icon: Redo16,action: () => this.applyRedo()}
+ // fullScreen :{ // something is not working correct if using here
+  //   id: "fullScreen",
+  //   type: 'fullScreen',
+  //   icon: FitScreen16,
+  //   action: () => this.setupFullscreen()
+  // }
+  };
+
+  // set buttons visibility by toolbar type
+  private buttonsSets = {
+    full: [
+      this.buttonConfigurations.bold,
+      this.buttonConfigurations.italic,
+      this.buttonConfigurations.underline,
+      this.buttonConfigurations.alignLeft,
+      this.buttonConfigurations.alignCenter,
+      this.buttonConfigurations.alignRight,
+      this.buttonConfigurations.alignJustify,
+      this.buttonConfigurations.unorderedList,
+      this.buttonConfigurations.orderedList,
+      this.buttonConfigurations.indent,
+      this.buttonConfigurations.outdent,
+      this.buttonConfigurations.textLink,
+      this.buttonConfigurations.superscript,
+      this.buttonConfigurations.subscript,
+      this.buttonConfigurations.clearFormatting,
+      this.buttonConfigurations.undo,
+      this.buttonConfigurations.redo
+    ],
+    half: [
+      this.buttonConfigurations.bold,
+      // Include other buttons as needed...
+    ],
+    minimal: [
+      this.buttonConfigurations.bold,
+      // Include other minimal set of buttons...
+    ],
+  };
+
   static get properties() {
     return {
-      buttons: { type: Array },
+      buttonConfigurations: { type: Array },
       translations: { type: Object },
       userMeta: { type: Object },
       textLimit: { type: Number },
@@ -45,123 +106,10 @@ export class TextEditor extends LitElement {
 
   // Initialize with a default value
   translations: Translation = {};
-  userMeta: Translation = {};
+  userMeta: UserMeta = {};
   textLimit: number = 0; 
-  buttons = [{
-    id: "bold",
-    type: 'bold',
-    icon: TextBold16,
-    action: () => this.applyFormat('bold')
-  },
-  {
-    id: "italic",
-    type: 'italic',
-    icon: TextItalic16, // Replace with your desired icon
-    action: () => this.applyFormat('italic')
-  },
-  {
-    id: "underline",
-    type: 'underline',
-    icon: TextUnderline16, // Replace with your desired icon
-    action: () => this.applyFormat('underline')
-  },
-  {
-    id: "align-left",
-    type: 'alignLeft',
-    icon: AlignLeft16, // Replace with your desired icon
-    action: () => this.applyAlignment('left')
-  },
-  {
-    id: "align-center",
-    type: 'alignCenter',
-    icon: AlignCenter16, // Replace with your desired icon
-    action: () => this.applyAlignment('center')
-  },
-  {
-    id: "align-right",
-    type: 'alignRight',
-    icon: AlignRight16, // Replace with your desired icon
-    action: () => this.applyAlignment('right')
-  },
-  {
-    id: "align-justify",
-    type: 'alignJustify',
-    icon: AlignJustify16, // Replace with your desired icon
-    action: () => this.applyAlignment('justify')
-  },
-  {
-    id: "unordered-list",
-    type: 'unorderedList',
-    icon: ListBullet16,
-    action: () => this.toggleList('bullet')
-  },
-  {
-    id: "ordered-list",
-    type: 'orderedList',
-    icon: ListNum16,
-    action: () => this.toggleList('ordered')
-  },
-  {
-    id: "indent",
-    type: 'indent',
-    icon: IndentMore16,
-    action: () => this.indent()
-  },
-  {
-    id: "outdent",
-    type: 'outdent',
-    icon: IndentLess16,
-    action: () => this.outdent()
-  },{
-    id: "insert-link",
-    type: 'textLink',
-    icon: Link16,
-    action: () => {
-      const url = prompt('Enter the URL:'); // Prompt the user to enter the URL
-      if (url) {
-        this.insertLink(url);
-      }
-    }
-  },
-  {
-    id: "superscript",
-    type: 'superscript',
-    icon: Super16,
-    action: () => this.toggleSuperscript()
-  },
-  {
-    id: "subscript",
-    type: 'subscript',
-    icon: Sub16,
-    action: () => this.toggleSubscript()
-  },
-  {
-    id: "clear-formatting",
-    type: 'clearFormatting',
-    icon: Clear16, // Replace ClearFormattingIcon with your desired icon
-    action: () => this.clearFormatting()
-  },
-  {
-    id: "undo",
-    type: 'undo',
-    icon: Undo16,
-    action: () => this.applyUndo()
-  },
-  {
-    id: "redo",
-    type: 'redo',
-    icon: Redo16,
-    action: () => this.applyRedo()
-  }
-  // { // something is not working correct if using here
-  //   id: "fullScreen",
-  //   type: 'fullScreen',
-  //   icon: FitScreen16,
-  //   action: () => this.setupFullscreen()
-  // }
-]; 
-
-// need add callbacks 
+  
+  // need add callbacks 
   connectedCallback() {
     super.connectedCallback();
     //for heading dropdown to initialize it
@@ -181,6 +129,9 @@ export class TextEditor extends LitElement {
 
   }
   render() {
+    // Use the buttonsSets object to get the desired set of buttons based on toolbarType
+    const buttons = this.buttonsSets[this.toolbarType];
+    
     return html`
       <!-- Include stylesheet -->
       <div id="cc-text-editor" class="cc-text-editor">
@@ -209,7 +160,7 @@ export class TextEditor extends LitElement {
             <cds-dropdown-item value="heading6">${this.translations.heading6}</cds-dropdown-item>
           </cds-dropdown>
 
-          ${this.buttons.map(
+          ${buttons.map(
             button => html`
             <cds-button 
               id="${button.id}" 

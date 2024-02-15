@@ -42,6 +42,7 @@ const userMeta = {
 export const Default = () => {
   return html`
     <cds-text-editor 
+        toolbarType="full"
         .translations="${translations}" 
         .userMeta="${userMeta}"
         .textLimit="${1000}">
