@@ -6,3 +6,16 @@
 #editor-container cds-button::part(button) {
     padding: 4px;
 }
+
+#fullscreenButton {
+    &::part(button) {
+        width: 32px;
+        height: 32px;
+        padding: 7px;
+    }
+
+    svg path, 
+    svg polygon {
+        fill: var(--cds-link-primary);
+    }
+}

@@ -17,6 +17,10 @@ import IndentLess16 from '@carbon/icons/lib/text--indent--less/16';
 import Link16 from '@carbon/icons/lib/link/16';
 import Super16 from '@carbon/icons/lib/text--superscript/16';
 import Sub16 from '@carbon/icons/lib/text--subscript/16';
+import Clear16 from '@carbon/icons/lib/text--clear-format/16';
+import Undo16 from '@carbon/icons/lib/undo/16';
+import Redo16 from '@carbon/icons/lib/redo/16';
+// import FitScreen16 from '@carbon/icons/lib/fit-to-screen/16';
 
 import styles from './textEditor.scss';
 interface Translation {
@@ -122,8 +126,51 @@ export class TextEditor extends LitElement {
     type: 'subscript',
     icon: Sub16,
     action: () => this.toggleSubscript()
-  }]; 
+  },
+  {
+    id: "clear-formatting",
+    type: 'clearFormatting',
+    icon: Clear16, // Replace ClearFormattingIcon with your desired icon
+    action: () => this.clearFormatting()
+  },
+  {
+    id: "undo",
+    type: 'undo',
+    icon: Undo16,
+    action: () => this.applyUndo()
+  },
+  {
+    id: "redo",
+    type: 'redo',
+    icon: Redo16,
+    action: () => this.applyRedo()
+  }
+  // { // something is not working correct if using here
+  //   id: "fullScreen",
+  //   type: 'fullScreen',
+  //   icon: FitScreen16,
+  //   action: () => this.setupFullscreen()
+  // }
+]; 
 
+// need add callback for heading dropdown to initialize it
+  connectedCallback() {
+    super.connectedCallback();
+    this.addEventListener('cds-dropdown-selected', this.handleDropdownSelected);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.removeEventListener('cds-dropdown-selected', this.handleDropdownSelected);
+  }
+
+  handleDropdownSelected(event) {
+    const selectedItem = event.detail.item;
+    const selectedValue = selectedItem.getAttribute('value');
+    console.log('Selected value:', selectedValue);
+    this.applyHeading(selectedValue);
+
+  }
   render() {
     return html`
       <!-- Include stylesheet -->
@@ -133,6 +180,18 @@ export class TextEditor extends LitElement {
 
         <!-- Carbon Web Components buttons outside of the editor -->
         <div class="cc-text-editor__toolbar">
+
+          <!-- Select dropdown for heading and paragraph -->
+          <cds-dropdown value="paragraph" type="inline" size="sm" @cds-change="${this.handleDropdownSelected}">
+            <cds-dropdown-item value="paragraph">${this.translations.paragraph}</cds-dropdown-item>
+            <cds-dropdown-item value="heading1">${this.translations.heading1}</cds-dropdown-item>
+            <cds-dropdown-item value="heading2">${this.translations.heading2}</cds-dropdown-item>
+            <cds-dropdown-item value="heading3">${this.translations.heading3}</cds-dropdown-item>
+            <cds-dropdown-item value="heading4">${this.translations.heading4}</cds-dropdown-item>
+            <cds-dropdown-item value="heading5">${this.translations.heading5}</cds-dropdown-item>
+            <cds-dropdown-item value="heading6">${this.translations.heading6}</cds-dropdown-item>
+          </cds-dropdown>
+
           ${this.buttons.map(
             button => html`
             <cds-button 
@@ -149,25 +208,17 @@ export class TextEditor extends LitElement {
             </cds-button>
           `
         )}
-        <!-- Select dropdown for heading and paragraph -->
-          <select @change="${this.handleSelectChange}">
-            <option value="paragraph">Paragraph</option>
-            <option value="heading1">Heading 1</option>
-            <option value="heading2">Heading 2</option>
-            <option value="heading3">Heading 3</option>
-          </select>
 
-          <cds-button 
-              id="fullscreenButton" 
-              kind="ghost" 
-              title="Izvērst uz pilnekrānu" 
-              size="sm"
-              tooltip-text="Izvērst uz pilnekrānu" 
-              tooltip-position="top" 
-              tooltop-alignment="center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>Izvērst uz pilnekrānu</title><polygon points="22 16 24 16 24 8 16 8 16 10 22 10 22 16"/><polygon points="8 24 16 24 16 22 10 22 10 16 8 16 8 24"/><path d="M26,28H6a2.0023,2.0023,0,0,1-2-2V6A2.0023,2.0023,0,0,1,6,4H26a2.0023,2.0023,0,0,1,2,2V26A2.0023,2.0023,0,0,1,26,28ZM6,6V26H26.0012L26,6Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
-          </cds-button>
-          <!-- Add other Carbon buttons as needed -->
+        <cds-button 
+          id="fullscreenButton" 
+          kind="ghost" 
+          title="${this.translations.fullScreen}" 
+          size="sm"
+          tooltip-text="${this.translations.fullScreen}" 
+          tooltip-position="top" 
+          tooltop-alignment="center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>Izvērst uz pilnekrānu</title><polygon points="22 16 24 16 24 8 16 8 16 10 22 10 22 16"/><polygon points="8 24 16 24 16 22 10 22 10 16 8 16 8 24"/><path d="M26,28H6a2.0023,2.0023,0,0,1-2-2V6A2.0023,2.0023,0,0,1,6,4H26a2.0023,2.0023,0,0,1,2,2V26A2.0023,2.0023,0,0,1,26,28ZM6,6V26H26.0012L26,6Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+        </cds-button>        
         </div>
       </div>
     `;
@@ -230,23 +281,6 @@ export class TextEditor extends LitElement {
   }
   
   applyFormat(format: 'bold' | 'italic' | 'underline') {
-    // if (this.quill) {
-    //   const selection = this.quill.getSelection();
-    //   if (selection) {
-    //     const [line, offset] = this.quill.getLine(selection.index);
-    //     if (line) {
-    //       if (format.startsWith('heading')) {
-    //         const headerSize = parseInt(format.substring(7)); // Extract the heading level from the format string
-    //         this.quill.format('header', headerSize);
-    //       } else {
-    //         // If the format is not a heading, remove any existing header format
-    //         this.quill.format('header', false);
-    //       }
-    //     }
-    //   } else {
-    //     console.error('No text selected');
-    //   }
-    // }
     if (this.quill) {
       const selection = this.quill.getSelection();
       if (selection) {
@@ -261,24 +295,46 @@ export class TextEditor extends LitElement {
     if (this.quill) {
       const selection = this.quill.getSelection();
       if (selection) {
-        switch (format) {
-          case 'paragraph':
-            this.quill.format('header', false);
-            break;
-          case 'heading1':
-            this.quill.format('header', 1);
-            break;
-          case 'heading2':
-            this.quill.format('header', 2);
-            break;
-          case 'heading3':
-            this.quill.format('header', 3);
-            break;
-          default:
-            console.error('Invalid format:', format);
+        if (!this.quill.hasFocus()) {
+          // If the editor doesn't have focus, focus it first
+          this.quill.focus();
         }
-      } else {
-        console.error('No text selected');
+  
+        const [line, offset] = this.quill.getLine(selection.index);
+        if (line) {
+          const currentFormat = line.formats();
+          const isHeader = currentFormat['header'];
+          
+          if (format === 'paragraph') {
+            if (isHeader) {
+              this.quill.formatLine(selection.index, 1, 'header', false);
+            }
+          } else {
+            let headerLevel;
+            switch (format) {
+              case 'heading1':
+                headerLevel = 1;
+                break;
+              case 'heading2':
+                headerLevel = 2;
+                break;
+              case 'heading3':
+                headerLevel = 3;
+                break;
+              default:
+                console.error('Invalid format:', format);
+                return;
+            }
+            
+            if (isHeader && currentFormat['header'] === headerLevel) {
+              this.quill.formatLine(selection.index, 1, 'header', false);
+            } else {
+              this.quill.formatLine(selection.index, 1, 'header', headerLevel);
+            }
+          }
+        } else {
+          console.error('No text selected');
+        }
       }
     }
   }
@@ -394,16 +450,32 @@ export class TextEditor extends LitElement {
     }
   }
 
+  clearFormatting() {
+    if (this.quill) {
+      const selection = this.quill.getSelection();
+      if (selection) {
+        this.quill.removeFormat(selection.index, selection.length);
+      }
+    }
+  }
+
+  applyUndo() {
+    if (this.quill) {
+      this.quill.history.undo();
+    }
+  }
+  
+  applyRedo() {
+    if (this.quill) {
+      this.quill.history.redo();
+    }
+  }
+
   handleButtonClick(button) {
     if (button.action) {
       button.action();
       this.updateButtonStates(); // Update button states after action
     }
-  }
-
- handleSelectChange(event) {
-    const value = event.target.value;
-    this.applyHeading(value);
   }
 
   static styles = styles
