@@ -51,7 +51,7 @@ export const Default = () => {
   return html`
     <cds-text-editor 
         toolbarType="full"
-        value="<p>Here is existing</p><p>content</p><p>content</p><p>content</p>"
+        value="<h2>Here is existing</h2><p>content</p><p>content</p><p>content</p>"
         .isReadOnly="${false}"
         .translations="${translations}" 
         .userMeta="${userMeta}"

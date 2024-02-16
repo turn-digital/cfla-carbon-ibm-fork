@@ -149,9 +149,37 @@ export class TextEditor extends LitElement {
   handleDropdownSelected(event) {
     const selectedItem = event.detail.item;
     const selectedValue = selectedItem.getAttribute('value');
-    console.log('Selected value:', selectedValue);
     this.applyHeading(selectedValue);
 
+    // Check the current format at the cursor position
+    const currentFormat = this.getCurrentFormat();
+    if (!currentFormat || !currentFormat['header']) {
+      // If the cursor is not in a heading, update the dropdown to the paragraph value
+      this.updateDropdownValue('paragraph');
+    }
+  }
+
+  updateDropdownValue(newValue) {
+    const dropdown = this.shadowRoot?.querySelector('cds-dropdown');
+    if (dropdown) {
+      // @ts-ignore
+      dropdown.value = newValue;
+      this.requestUpdate();
+    }
+    // this.toolbarDropdownValue = value;
+  }
+
+  getCurrentFormat() {
+    if (this.quill) {
+      const selection = this.quill.getSelection();
+      if (selection) {
+        const [line] = this.quill.getLine(selection.index);
+        if (line) {
+          return line.formats();
+        }
+      }
+    }
+    return null;
   }
   render() {
     // Use the buttonsSets object to get the desired set of buttons based on toolbarType
@@ -377,6 +405,31 @@ export class TextEditor extends LitElement {
     // Get the bounding rectangle of the editor component
     const editor = this.shadowRoot?.getElementById('cc-text-editor');
     const editorRect = editor?.getBoundingClientRect();
+
+    const quill = this.quill;
+
+    // Check if Quill instance is available
+    // to check where is user targeted cursor, if in the text P , then show p, if h2, then in drop show h2
+    if (quill) {
+        // Get the cursor position
+        const cursorPosition = quill.getSelection()?.index;
+
+        // Check if cursor position is available
+        if (cursorPosition !== undefined && cursorPosition !== null) {
+            // Get the line format at the cursor position
+            const lineFormat = quill.getFormat(cursorPosition);
+
+            // Check if the cursor is in a heading
+            if (lineFormat && lineFormat['header']) {
+                // Update the dropdown value to the corresponding heading level
+                const headingLevel = lineFormat['header'];
+                this.updateDropdownValue(`heading${headingLevel}`);
+            } else {
+                // Cursor is in a paragraph, update the dropdown value to 'paragraph'
+                this.updateDropdownValue('paragraph');
+            }
+        }
+    }
   
     // Check if the click event occurred within the editor component
     const isClickWithinEditor = editorRect &&
