@@ -21,6 +21,10 @@
 .cc-text-editor {
     background-color: $background;
 
+    &--opened {
+        background-color: gold;
+    }
+
     &--text-limit {
         .cc-text-editor__head-limit {
             color: $text-error;

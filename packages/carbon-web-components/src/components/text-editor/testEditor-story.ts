@@ -52,6 +52,7 @@ export const Default = () => {
     <cds-text-editor 
         toolbarType="full"
         value="Here is existing <p>content</p><p>content</p><p>content</p>"
+        .isStrechy="${true}"
         .isReadOnly="${false}"
         .translations="${translations}" 
         .userMeta="${userMeta}"

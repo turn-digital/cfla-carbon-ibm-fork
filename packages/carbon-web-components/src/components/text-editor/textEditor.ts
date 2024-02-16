@@ -42,10 +42,12 @@ export class TextEditor extends LitElement {
   @property({ type: Number }) textLength: number = 0; // Track the length of the entered text
   @property({ type: Object }) props: TextEditorProps = { onTextChangedOutsideEditor: () => {} };
   @property({ type: Boolean }) isReadOnly: boolean = false;
+  @property({ type: Boolean }) isStrechy: boolean = false;
   @property({ type: String }) value: string = '';
 
   private quill: Quill | null = null;
   private isTextChanged = false;
+  private isStretchedBox = false;
 
   // Define button configurations outside of the class
   private buttonConfigurations = {
@@ -112,6 +114,7 @@ export class TextEditor extends LitElement {
       userMeta: { type: Object },
       textLimit: { type: Number },
       isReadOnly: { type: Boolean },
+      isStrechy: { type: Boolean },
       value: { type: String },
     };
   }
@@ -128,7 +131,7 @@ export class TextEditor extends LitElement {
     // Add an event listener for the 'cds-dropdown-selected' event, which is emitted when a dropdown item is selected
     // Bind 'this' context to the event handler function
     this.addEventListener('cds-dropdown-selected', this.handleDropdownSelected);
-  
+    this.quill.root.addEventListener('focus', this.handleEditorFocus);
     // Add a global click event listener to handle clicks outside of the editor
     // Bind 'this' context to the handleEditorClickOutSide event handler function
     document.addEventListener('click', this.handleEditorClickOutSide.bind(this));
@@ -137,7 +140,7 @@ export class TextEditor extends LitElement {
   disconnectedCallback() {
     // Call the parent class disconnectedCallback method
     super.disconnectedCallback();
-    
+    this.quill.root.removeEventListener('focus', this.handleEditorFocus);
     // Remove the event listener for the 'cds-dropdown-selected' event when the component is disconnected
     this.removeEventListener('cds-dropdown-selected', this.handleDropdownSelected);
   
@@ -159,7 +162,12 @@ export class TextEditor extends LitElement {
     const isOverLimits = this.textLength >this.textLimit;
     return html`
       <!-- Include stylesheet -->
-      <div id="cc-text-editor" class="cc-text-editor ${isOverLimits ? "cc-text-editor--text-limit": ""}">
+      ${  console.log('............', this.isStrechy)}
+      ${  console.log('isStretchedBox', this.isStretchedBox)}
+      <div id="cc-text-editor" 
+        class="cc-text-editor ${isOverLimits ? "cc-text-editor--text-limit": ""}
+        ${this.isStretchedBox ? "cc-text-editor--opened": ""}
+        ">
         <div class="cc-text-editor__head">
           <div class="cc-text-editor__head-title">${this.translations.title}</div>
             ${this.isReadOnly ? html ``: 
@@ -269,7 +277,12 @@ export class TextEditor extends LitElement {
 
     // Add event listener for Quill's focus event directly to the Quill editor's root element
     // this.quill.root.addEventListener('focus', () => {
-    //   console.log('Quill editor is focused');
+    //   console.log('FOOCCUUSSS', this.isStrechy)
+    //   if (this.isStrechy) {
+    //     this.isStretchedBox = true;
+    //     console.log('upp?', this.isStretchedBox)
+    //     this.requestUpdate();
+    //   }
     // });
 
     // Add click event listener to the entire editor component
@@ -286,6 +299,13 @@ export class TextEditor extends LitElement {
       this.quill.root.innerHTML = this.value;
     }
   }
+
+  handleEditorFocus() {
+      // Set isStretchedBox to true when the editor gains focus
+      this.isStretchedBox = true;
+      this.requestUpdate();
+  }
+
   handleEditorClickOutSide(event) {
     // Get the bounding rectangle of the editor component
     const editor = this.shadowRoot?.getElementById('cc-text-editor');
@@ -308,7 +328,13 @@ export class TextEditor extends LitElement {
   
     // Check if the click event occurred outside of the editor, toolbar, and dropdown
     const isClickOutsideEditor = !isClickWithinEditor && !isToolbarButton && !isSelectDropdown;
-  
+
+  // If the editor is currently stretched and the click occurred outside of it,
+    // close it; otherwise, keep it open
+    if (this.isStretchedBox && isClickOutsideEditor) {
+      this.isStretchedBox = false;
+      this.requestUpdate();
+  }
     // If the text has been changed and the click occurred outside of the editor,
     // call the callback function provided as a property
     if (this.isTextChanged && isClickOutsideEditor) {
