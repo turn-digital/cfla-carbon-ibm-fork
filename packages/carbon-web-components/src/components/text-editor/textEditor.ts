@@ -190,15 +190,14 @@ export class TextEditor extends LitElement {
       <div id="cc-text-editor" class="cc-text-editor ${isOverLimits ? "cc-text-editor--text-limit": ""}">
         <div class="cc-text-editor__head">
           <div class="cc-text-editor__head-title">${this.translations.title}</div>
-            ${this.isReadOnly ? html ``: 
-              html `
-                <div class="cc-text-editor__head-content">
-                  <span class="cc-text-editor__head-status">${this.translations.statusSave}</span>
-                  <span class="cc-text-editor__head-limit">${this.textLength}/${this.textLimit}</span>
-                </div>
-              `
-            }
-          </div>
+          ${this.isReadOnly ? html ``: 
+            html `
+              <div class="cc-text-editor__head-content">
+                <!--<span class="cc-text-editor__head-status">${this.translations.statusSave}</span>-->
+                <span class="cc-text-editor__head-limit">${this.textLength}/${this.textLimit}</span>
+              </div>
+            `
+          }
         </div>
 
         ${this.isReadOnly ?
@@ -256,7 +255,7 @@ export class TextEditor extends LitElement {
         ${isOverLimits ? html `<p class="cc-text-editor__limit">${this.translations.textLimit}</p>`: ""}
         
         ${this.userMeta?.name ? 
-          html `<p class="cc-text-editor__meta">${this.userMeta.date} ${this.userMeta.name}</p>
+          html `<p class="cc-text-editor__meta">${this.userMeta.name} ${this.userMeta.date}</p>
           `: ""
         }
       </div>

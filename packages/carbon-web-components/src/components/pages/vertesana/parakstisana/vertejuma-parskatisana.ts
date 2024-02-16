@@ -18,6 +18,51 @@ import { carbonElement as customElement } from '../../../../globals/decorators/c
  *
  */
 
+// those objects should be passed from story, here should be defined and used for texteditor
+const translations = {
+  title: 'Pārskatīšanas būtība',
+  statusSave: 'Saved',
+  statusSaving: 'Saving',
+  statusBad: 'Error saving data',
+  statusLoad: 'Loading',
+  textLimit: "Text is over the limit!",
+  bold: 'Bold Translation',
+  italic: 'Italic Translation',
+  underline: "Underlined",
+  alignLeft: "from left",
+  alignCenter : "from center",
+  alignRight : "from Right",
+  alignJustify : "style justify",
+  unorderedList: "list with points",
+  orderedList: "list with numbers",
+  indent: "indent",
+  outdent: "outdent",
+  textLink: "Insert the link",
+  superscript: "superscript",
+  subscript:"subscript",
+  clearFormatting: "Clear format style",
+  fullScreen: "Show in fullscreen",
+  redo: "Redo action",
+  undo: "Undo action",
+  paragraph: "Paragrāfs",
+  heading1: "Virsraksts 1",
+  heading2: "Virsraksts 2",
+  heading3: "Virsraksts 3",
+  heading4: "Virsraksts 4",
+  heading5: "Virsraksts 5",
+  heading6: "Virsraksts 6",
+};
+
+const userMeta = {
+  name: "FS: Jānis Bērziņš",
+  date: "01.01.2001 20:01"
+}
+
+const handleTextChangedOutsideEditor = () => {
+  console.log('Text has been changed and clicked outside editor! Can execute some save function!');
+};
+const editor = "";
+
 @customElement(`${prefix}-page-valuation-review`)
 class CDSPValuationReview extends LitElement {
   render() {
@@ -156,8 +201,15 @@ class CDSPValuationReview extends LitElement {
           </cds-file-uploader>
 
           <div style="margin-top: 40px;">
-            <p style="font-size: 12px">Pārskatīšanas būtība</p>
-            <cds-text-editor></cds-text-editor>
+            <cds-text-editor 
+              toolbarType="full"
+              value="${editor}"
+              .isReadOnly="${false}"
+              .translations="${translations}" 
+              .userMeta="${userMeta}"
+              .textLimit="${1000}"
+              .props=${{ onTextChangedOutsideEditor: handleTextChangedOutsideEditor }}>
+            </cds-text-editor>
           </div>
           <div style="margin-top: 40px;">
             <div style="margin-top: 40px;">

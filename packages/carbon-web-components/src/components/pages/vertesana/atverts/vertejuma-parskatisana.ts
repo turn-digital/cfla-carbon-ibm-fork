@@ -19,6 +19,87 @@ import Add16 from '@carbon/icons/lib/add/16';
  *
  */
 
+// those objects should be passed from story, here should be defined and used for texteditor
+const translations1 = {
+  title: 'Pārskatīšanas būtība',
+  statusSave: 'Saved',
+  statusSaving: 'Saving',
+  statusBad: 'Error saving data',
+  statusLoad: 'Loading',
+  textLimit: "Text is over the limit!",
+  bold: 'Bold Translation',
+  italic: 'Italic Translation',
+  underline: "Underlined",
+  alignLeft: "from left",
+  alignCenter : "from center",
+  alignRight : "from Right",
+  alignJustify : "style justify",
+  unorderedList: "list with points",
+  orderedList: "list with numbers",
+  indent: "indent",
+  outdent: "outdent",
+  textLink: "Insert the link",
+  superscript: "superscript",
+  subscript:"subscript",
+  clearFormatting: "Clear format style",
+  fullScreen: "Show in fullscreen",
+  redo: "Redo action",
+  undo: "Undo action",
+  paragraph: "Paragrāfs",
+  heading1: "Virsraksts 1",
+  heading2: "Virsraksts 2",
+  heading3: "Virsraksts 3",
+  heading4: "Virsraksts 4",
+  heading5: "Virsraksts 5",
+  heading6: "Virsraksts 6",
+};
+const translations2 = {
+  title: 'Pārskatīšnas / Apstrīdēšanas gaitas piezīmes',
+  statusSave: 'Saved',
+  statusSaving: 'Saving',
+  statusBad: 'Error saving data',
+  statusLoad: 'Loading',
+  textLimit: "Text is over the limit!",
+  bold: 'Bold Translation',
+  italic: 'Italic Translation',
+  underline: "Underlined",
+  alignLeft: "from left",
+  alignCenter : "from center",
+  alignRight : "from Right",
+  alignJustify : "style justify",
+  unorderedList: "list with points",
+  orderedList: "list with numbers",
+  indent: "indent",
+  outdent: "outdent",
+  textLink: "Insert the link",
+  superscript: "superscript",
+  subscript:"subscript",
+  clearFormatting: "Clear format style",
+  fullScreen: "Show in fullscreen",
+  redo: "Redo action",
+  undo: "Undo action",
+  paragraph: "Paragrāfs",
+  heading1: "Virsraksts 1",
+  heading2: "Virsraksts 2",
+  heading3: "Virsraksts 3",
+  heading4: "Virsraksts 4",
+  heading5: "Virsraksts 5",
+  heading6: "Virsraksts 6",
+};
+
+const userMeta = {
+  name: "FS: Jānis Bērziņš",
+  date: "01.01.2001 20:01"
+}
+
+const handleTextChangedOutsideEditor = () => {
+  console.log('Text has been changed and clicked outside editor! Can execute some save function!');
+};
+
+const editor1 = "<h2>Here is existing</h2><p>content</p><p>content</p><p>content</p>";
+const editor2 = "";
+
+
 @customElement(`${prefix}-page-valuation-open`)
 class CDSPValuationOpen extends LitElement {
   render() {
@@ -167,17 +248,31 @@ Tiesvedība
     value="lēmumu"></cds-radio-button>
 </cds-radio-button-group>
            </div>
-<p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
-<cds-text-editor></cds-text-editor>
-<p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
-<cds-text-editor></cds-text-editor>
+           <cds-text-editor 
+           toolbarType="full"
+           value="${editor1}"
+           .isReadOnly="${false}"
+           .translations="${translations1}" 
+           .userMeta="${userMeta}"
+           .textLimit="${1000}"
+           .props=${{ onTextChangedOutsideEditor: handleTextChangedOutsideEditor }}>
+       </cds-text-editor>
+       <cds-text-editor 
+       toolbarType="full"
+       value="${editor2}"
+       .isReadOnly="${false}"
+       .translations="${translations2}" 
+       .userMeta="${userMeta}"
+       .textLimit="${1000}"
+       .props=${{ onTextChangedOutsideEditor: handleTextChangedOutsideEditor }}>
+   </cds-text-editor>
            </div>
            <div>
            <cds-table>
   <cds-table-header-title slot="title">Dokumenti</cds-table-header-title>
   <cds-table-toolbar slot="toolbar">
       <cds-table-toolbar-content>
-      <cds-button size="lg" kind="secondary" tooltip-alignment="" tooltip-position="top" type="button" has-main-content="">Pievienot ${Add16(
+      <cds-button size="sm" kind="secondary" tooltip-alignment="" tooltip-position="top" type="button" has-main-content="">Pievienot ${Add16(
         { slot: 'icon' }
       )}</cds-button>
     </cds-table-toolbar>
