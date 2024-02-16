@@ -308,13 +308,17 @@ export class TextEditor extends LitElement {
   
     // Check if the click event occurred outside of the editor, toolbar, and dropdown
     const isClickOutsideEditor = !isClickWithinEditor && !isToolbarButton && !isSelectDropdown;
-  
+
     // If the text has been changed and the click occurred outside of the editor,
     // call the callback function provided as a property
     if (this.isTextChanged && isClickOutsideEditor) {
-      this.props.onTextChangedOutsideEditor();
-      // Reset the boolean variable after handling the click event
-      this.isTextChanged = false;
+      // Check if the text value has changed from the initial value
+      const currentValue = this.quill?.root.innerHTML.trim() || '';
+      const initialValue = this.value.trim(); // Use the initial value of this.value
+      if (currentValue !== initialValue) {
+        this.isTextChanged = false;
+        this.props.onTextChangedOutsideEditor();
+      }    
     }
   }
 
