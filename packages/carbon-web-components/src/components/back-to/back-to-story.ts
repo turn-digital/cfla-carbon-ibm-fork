@@ -18,7 +18,8 @@ export const Propsed = () => {
   return html`
     <cds-back-to
       title="Custom title"
-      link="http://localhost:9000/?path=/story/custom-compnents-back-to--default"></cds-back-to>
+      link="http://localhost:9000/?path=/story/custom-compnents-back-to--default">
+    </cds-back-to>
   `;
 };
 
