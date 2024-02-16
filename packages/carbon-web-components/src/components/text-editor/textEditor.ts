@@ -259,6 +259,98 @@ export class TextEditor extends LitElement {
         theme: 'snow',
         readOnly: this.isReadOnly, // Set readonly mode based on the property value
       });
+
+     // Manually handle tab key press event
+      selector.addEventListener('keydown', event => {
+        const TAB_KEY_CODE = 9;
+        const selection = this.quill?.getSelection();
+        //@ts-ignore
+        if (event.shiftKey && event.keyCode === TAB_KEY_CODE && selection) {
+          // Prevent the default behavior of shift + tab
+          event.preventDefault();
+          // Check if there's a tab character in the selection
+          const cursorIndex = selection.index;
+          const textBeforeCursor = this.quill?.getText(0, cursorIndex);
+          const tabExists = textBeforeCursor?.indexOf('\t') !== -1;
+          const text = this.quill?.getText(selection.index, selection.length);
+          const tabIndex = text?.indexOf('\t');
+          // Get the contents of the line before the cursor
+          // const lineBeforeCursor = this.quill?.getText(0, cursorIndex);
+          // // Find the last occurrence of '\n' to determine the start of the previous line
+          // const lastNewLineIndex = lineBeforeCursor?.lastIndexOf('\n');
+          // // Calculate the position to move the cursor to (start of the previous line)
+          // const newCursorPosition = lastNewLineIndex !== -1 ? lastNewLineIndex + 1 : 0;
+      
+          if (tabExists) {
+              // Remove the tab character
+              this.quill?.deleteText(selection.index + tabIndex, 1, 'user');
+          }  
+          //  it is possible to shift+tab get outside of box, but need to do more hacks
+          // else {
+          //   this.quill?.setSelection(newCursorPosition, newCursorPosition, 'user');
+          // }
+          //@ts-ignore
+      } else if (event.keyCode === TAB_KEY_CODE) {
+          // Prevent the default tab behavior
+          event.preventDefault();
+          // Insert a tab character at the current cursor position
+          const selection = this.quill?.getSelection();
+          if (selection) {
+            this.quill?.insertText(selection.index, '\t');
+          }
+        }
+
+        // Check if Ctrl key is pressed (event.ctrlKey) along with the corresponding key
+        //@ts-ignore
+        if (event.ctrlKey) {
+          //@ts-ignore
+          switch (event.keyCode) {
+            case 66: // Ctrl + B for bold
+              event.preventDefault();
+              this.applyFormat('bold');
+              break;
+            case 73: // Ctrl + I for italic
+              event.preventDefault();
+              this.applyFormat('italic');
+              break;
+            case 85: // Ctrl + U for underline
+              event.preventDefault();
+              this.applyFormat('underline');
+              break;
+            case 90: // Ctrl + Z for undo
+              event.preventDefault();
+              this.applyUndo();
+              break;
+            case 89: // Ctrl + Y for redo
+              event.preventDefault();
+              this.applyRedo();
+              break;
+            case 83: // Ctrl + S for save
+              event.preventDefault();
+              // Call the save method here
+              break;
+            case 88: // Ctrl + X for cut
+              event.preventDefault();
+              document.execCommand('cut');
+              break;
+            case 67: // Ctrl + C for copy
+              event.preventDefault();
+              document.execCommand('copy');
+              break;
+            // case 86: // Ctrl + V for paste
+            // if added this, then not working correctly by default is working
+            //   event.preventDefault();
+            //   document.execCommand('paste');
+            //   break;
+            case 65: // Ctrl + A for select all
+              event.preventDefault();
+              document.execCommand('selectAll');
+              break;
+            default:
+              break;
+          }
+        }
+      });
     }
 
     this.quill.on('text-change', () => {
@@ -266,11 +358,6 @@ export class TextEditor extends LitElement {
       this.textLength = (this.quill?.getText() || '').trim().length;
       this.requestUpdate();
     });
-
-    // Add event listener for Quill's focus event directly to the Quill editor's root element
-    // this.quill.root.addEventListener('focus', () => {
-    //   console.log('Quill editor is focused');
-    // });
 
     // Add click event listener to the entire editor component
     this.shadowRoot?.addEventListener('click', this.handleEditorClickOutSide.bind(this));
@@ -448,8 +535,8 @@ export class TextEditor extends LitElement {
       const selection = this.quill.getSelection();
       if (selection) {
         const format = this.quill.getFormat(selection.index, selection.length);
-        const currentIndent = parseInt(format['indent'] || 0);
-        const newIndent = Math.max(0, currentIndent - 1);
+        const currentIndent = parseInt(format['indent'] || '0', 10); // Ensure default is 0
+        const newIndent = Math.max(0, currentIndent - 1); // Ensure newIndent is not negative
         this.quill.format('indent', newIndent);
       }
     }
