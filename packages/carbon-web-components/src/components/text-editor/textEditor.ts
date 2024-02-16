@@ -22,7 +22,10 @@ import Clear16 from '@carbon/icons/lib/text--clear-format/16';
 import Undo16 from '@carbon/icons/lib/undo/16';
 import Redo16 from '@carbon/icons/lib/redo/16';
 // import FitScreen16 from '@carbon/icons/lib/fit-to-screen/16';
+import Send16 from '@carbon/icons/lib/send--filled/16';
 import styles from './textEditor.scss';
+
+import {applyAlignment, applyFormat, indent, outdent, clearFormatting, applyUndo, applyRedo} from "./textEditorToolbarAction";
 
 interface Translation {
   [key: string]: string;
@@ -42,6 +45,7 @@ export class TextEditor extends LitElement {
   @property({ type: Number }) textLength: number = 0; // Track the length of the entered text
   @property({ type: Object }) props: TextEditorProps = { onTextChangedOutsideEditor: () => {} };
   @property({ type: Boolean }) isReadOnly: boolean = false;
+  @property({ type: Boolean }) isClickable: boolean = false;
   @property({ type: String }) value: string = '';
 
   private quill: Quill | null = null;
@@ -49,23 +53,23 @@ export class TextEditor extends LitElement {
 
   // Define button configurations outside of the class
   private buttonConfigurations = {
-    bold: { id: "bold", type: 'bold', icon: TextBold16, action: () => this.applyFormat('bold') },
-    italic: { id: "italic", type: 'italic', icon: TextItalic16, action: () => this.applyFormat('italic') },
-    underline: {id: "underline", type: 'underline',icon: TextUnderline16, action: () => this.applyFormat('underline')},
-    alignLeft: {id: "align-left",      type: 'alignLeft',      icon: AlignLeft16,action: () => this.applyAlignment('left')},
-    alignCenter: {id: "align-center",type: 'alignCenter',icon: AlignCenter16,action: () => this.applyAlignment('center')},
-    alignRight: {id: "align-right",type: 'alignRight',icon: AlignRight16, action: () => this.applyAlignment('right')},
-    alignJustify: {id: "align-justify",type: 'alignJustify',icon: AlignJustify16, action: () => this.applyAlignment('justify')},
+    bold: { id: "bold", type: 'bold', icon: TextBold16, action: () => applyFormat(this.quill, 'bold') },
+    italic: { id: "italic", type: 'italic', icon: TextItalic16, action: () => applyFormat(this.quill, 'italic') },
+    underline: {id: "underline", type: 'underline',icon: TextUnderline16, action: () => applyFormat(this.quill, 'underline')},
+    alignLeft: {id: "align-left",      type: 'alignLeft',      icon: AlignLeft16,action: () => applyAlignment(this.quill, 'left')},
+    alignCenter: {id: "align-center",type: 'alignCenter',icon: AlignCenter16,action: () => applyAlignment(this.quill, 'center')},
+    alignRight: {id: "align-right",type: 'alignRight',icon: AlignRight16, action: () => applyAlignment(this.quill, 'right')},
+    alignJustify: {id: "align-justify",type: 'alignJustify',icon: AlignJustify16, action: () => applyAlignment(this.quill, 'justify')},
     unorderedList: {id: "unordered-list",type: 'unorderedList',icon: ListBullet16,action: () => this.toggleList('bullet')},
     orderedList: {id: "ordered-list",type: 'orderedList',icon: ListNum16,action: () => this.toggleList('ordered')},
-    indent: {id: "indent",type: 'indent',icon: IndentMore16,action: () => this.indent()},
-    outdent: {id: "outdent",type: 'outdent',icon: IndentLess16,action: () => this.outdent()},
+    indent: {id: "indent",type: 'indent',icon: IndentMore16,action: () => indent(this.quill)},
+    outdent: {id: "outdent",type: 'outdent',icon: IndentLess16,action: () => outdent(this.quill)},
     textLink: { id: "insert-link",type: 'textLink',icon: Link16,action: () => {const url = prompt('Enter the URL:');if (url) {this.insertLink(url);}}},
     superscript: {id: "superscript",type: 'superscript',icon: Super16,action: () => this.toggleSuperscript()},
     subscript: {id: "subscript",type: 'subscript',icon: Sub16,action: () => this.toggleSubscript()},
-    clearFormatting: {id: "clear-formatting",type: 'clearFormatting',icon: Clear16,action: () => this.clearFormatting()},
-    undo: {id: "undo",type: 'undo',icon: Undo16,action: () => this.applyUndo()},
-    redo: {id: "redo",type: 'redo',icon: Redo16,action: () => this.applyRedo()}
+    clearFormatting: {id: "clear-formatting",type: 'clearFormatting',icon: Clear16,action: () => clearFormatting(this.quill)},
+    undo: {id: "undo",type: 'undo',icon: Undo16,action: () => applyUndo(this.quill)},
+    redo: {id: "redo",type: 'redo',icon: Redo16,action: () => applyRedo(this.quill)}
  // fullScreen :{ // something is not working correct if using here
   //   id: "fullScreen",
   //   type: 'fullScreen',
@@ -112,6 +116,7 @@ export class TextEditor extends LitElement {
       userMeta: { type: Object },
       textLimit: { type: Number },
       isReadOnly: { type: Boolean },
+      isClickable: { type: Boolean },
       value: { type: String },
     };
   }
@@ -248,7 +253,24 @@ export class TextEditor extends LitElement {
               tooltip-position="top" 
               tooltop-alignment="center">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>Izvērst uz pilnekrānu</title><polygon points="22 16 24 16 24 8 16 8 16 10 22 10 22 16"/><polygon points="8 24 16 24 16 22 10 22 10 16 8 16 8 24"/><path d="M26,28H6a2.0023,2.0023,0,0,1-2-2V6A2.0023,2.0023,0,0,1,6,4H26a2.0023,2.0023,0,0,1,2,2V26A2.0023,2.0023,0,0,1,26,28ZM6,6V26H26.0012L26,6Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
-            </cds-button>        
+            </cds-button> 
+            
+            ${this.isClickable ? 
+              html`
+                <cds-button 
+                  id="send" 
+                  kind="ghost" 
+                  title="${this.translations.send}" 
+                  size="sm"
+                  tooltip-text="${this.translations.send}" 
+                  tooltip-position="top" 
+                  tooltop-alignment="center"
+                  icon="${Send16}"
+                  @click="${() => this.props.onTextChangedOutsideEditor()}">
+                  ${Send16({ slot: 'icon' })}
+                </cds-button>
+              `
+              : ""}
           </div>
         `}
 
@@ -334,23 +356,23 @@ export class TextEditor extends LitElement {
           switch (event.keyCode) {
             case 66: // Ctrl + B for bold
               event.preventDefault();
-              this.applyFormat('bold');
+              applyFormat(this.quill, 'bold');
               break;
             case 73: // Ctrl + I for italic
               event.preventDefault();
-              this.applyFormat('italic');
+              applyFormat(this.quill, 'italic');
               break;
             case 85: // Ctrl + U for underline
               event.preventDefault();
-              this.applyFormat('underline');
+              applyFormat(this.quill, 'underline');
               break;
             case 90: // Ctrl + Z for undo
               event.preventDefault();
-              this.applyUndo();
+              applyUndo(this.quill);
               break;
             case 89: // Ctrl + Y for redo
               event.preventDefault();
-              this.applyRedo();
+              applyRedo(this.quill);
               break;
             case 83: // Ctrl + S for save
               event.preventDefault();
@@ -430,34 +452,37 @@ export class TextEditor extends LitElement {
         }
     }
   
-    // Check if the click event occurred within the editor component
-    const isClickWithinEditor = editorRect &&
-      event.clientX >= editorRect.left &&
-      event.clientX <= editorRect.right &&
-      event.clientY >= editorRect.top &&
-      event.clientY <= editorRect.bottom;
-  
-    // Check if the click event occurred on a toolbar button
-    const toolbar = this.shadowRoot?.querySelector('.cc-text-editor__toolbar');
-    const isToolbarButton = toolbar?.contains(event.target);
-  
-    // Check if the click event occurred within a dropdown select element
-    const selectDropdown = this.shadowRoot?.querySelector('cds-dropdown');
-    const isSelectDropdown = selectDropdown?.contains(event.target);
-  
-    // Check if the click event occurred outside of the editor, toolbar, and dropdown
-    const isClickOutsideEditor = !isClickWithinEditor && !isToolbarButton && !isSelectDropdown;
+    // if component is not clickable (no send btn) then allow functionality for click outside of component 
+    if (!this.isClickable) {
+       // Check if the click event occurred within the editor component
+      const isClickWithinEditor = editorRect &&
+        event.clientX >= editorRect.left &&
+        event.clientX <= editorRect.right &&
+        event.clientY >= editorRect.top &&
+        event.clientY <= editorRect.bottom;
 
-    // If the text has been changed and the click occurred outside of the editor,
-    // call the callback function provided as a property
-    if (this.isTextChanged && isClickOutsideEditor) {
-      // Check if the text value has changed from the initial value
-      const currentValue = this.quill?.root.innerHTML.trim() || '';
-      const initialValue = this.value.trim(); // Use the initial value of this.value
-      if (currentValue !== initialValue) {
-        this.isTextChanged = false;
-        this.props.onTextChangedOutsideEditor();
-      }    
+      // Check if the click event occurred on a toolbar button
+      const toolbar = this.shadowRoot?.querySelector('.cc-text-editor__toolbar');
+      const isToolbarButton = toolbar?.contains(event.target);
+
+      // Check if the click event occurred within a dropdown select element
+      const selectDropdown = this.shadowRoot?.querySelector('cds-dropdown');
+      const isSelectDropdown = selectDropdown?.contains(event.target);
+
+      // Check if the click event occurred outside of the editor, toolbar, and dropdown
+      const isClickOutsideEditor = !isClickWithinEditor && !isToolbarButton && !isSelectDropdown;
+
+      // If the text has been changed and the click occurred outside of the editor,
+      // call the callback function provided as a property
+      if (this.isTextChanged && isClickOutsideEditor) {
+        // Check if the text value has changed from the initial value
+        const currentValue = this.quill?.root.innerHTML.trim() || '';
+        const initialValue = this.value.trim(); // Use the initial value of this.value
+        if (currentValue !== initialValue) {
+          this.isTextChanged = false;
+          this.props.onTextChangedOutsideEditor();
+        }    
+      }
     }
   }
 
@@ -480,29 +505,6 @@ export class TextEditor extends LitElement {
   //     }
   //   });
   // }
-
-  applyAlignment(align) {
-    if (this.quill) {
-      const selection = this.quill.getSelection();
-    if (selection) {
-      this.quill.format('align', align);
-    } else {
-      // No active selection, apply alignment to entire editor content
-      this.quill.root.style.textAlign = align;
-    }
-    }
-  }
-  
-  applyFormat(format: 'bold' | 'italic' | 'underline') {
-    if (this.quill) {
-      const selection = this.quill.getSelection();
-      if (selection) {
-        this.quill.format(format, !this.quill.getFormat()[format]);
-      } else {
-        console.error('No text selected');
-      }
-    }
-  }
 
   applyHeading(format) {
     if (this.quill) {
@@ -570,29 +572,7 @@ export class TextEditor extends LitElement {
     }
   }
 
-  indent() {
-    if (this.quill) {
-      const selection = this.quill.getSelection();
-      if (selection) {
-        const format = this.quill.getFormat(selection.index, selection.length);
-        const currentIndent = parseInt(format['indent'] || 0);
-        const newIndent = currentIndent + 1;
-        this.quill.format('indent', newIndent);
-      }
-    }
-  }
-  
-  outdent() {
-    if (this.quill) {
-      const selection = this.quill.getSelection();
-      if (selection) {
-        const format = this.quill.getFormat(selection.index, selection.length);
-        const currentIndent = parseInt(format['indent'] || '0', 10); // Ensure default is 0
-        const newIndent = Math.max(0, currentIndent - 1); // Ensure newIndent is not negative
-        this.quill.format('indent', newIndent);
-      }
-    }
-  }
+
 
   insertLink(url) {
     if (this.quill && url) {
@@ -614,6 +594,8 @@ export class TextEditor extends LitElement {
     }
   }
 
+  // append some fixes to work better, in history were working fine those lines...
+  // then move to toolbar actions
   toggleSuperscript() {
     if (this.quill) {
       const selection = this.quill.getSelection();
@@ -660,27 +642,6 @@ export class TextEditor extends LitElement {
       });
     } else {
       document.exitFullscreen();
-    }
-  }
-
-  clearFormatting() {
-    if (this.quill) {
-      const selection = this.quill.getSelection();
-      if (selection) {
-        this.quill.removeFormat(selection.index, selection.length);
-      }
-    }
-  }
-
-  applyUndo() {
-    if (this.quill) {
-      this.quill.history.undo();
-    }
-  }
-  
-  applyRedo() {
-    if (this.quill) {
-      this.quill.history.redo();
     }
   }
 

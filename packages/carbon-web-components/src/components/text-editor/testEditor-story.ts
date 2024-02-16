@@ -33,6 +33,7 @@ const translations = {
   heading4: "Heading 4",
   heading5: "Heading 5",
   heading6: "Heading 6",
+  send: "Send"
 };
 
 const userMeta = {
@@ -53,6 +54,7 @@ export const Default = () => {
         toolbarType="full"
         value="<h2>Here is existing</h2><p>content</p><p>content</p><p>content</p>"
         .isReadOnly="${false}"
+        .isClickable="${true}"
         .translations="${translations}" 
         .userMeta="${userMeta}"
         .textLimit="${1000}"
