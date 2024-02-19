@@ -17,7 +17,7 @@ export const Default = () => {
 export const Propsed = () => {
   return html`
     <cds-back-to
-      title="Custom title"
+      title="Custom title!"
       link="http://localhost:9000/?path=/story/custom-compnents-back-to--default"></cds-back-to>
   `;
 };
