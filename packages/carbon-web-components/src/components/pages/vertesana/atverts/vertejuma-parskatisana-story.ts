@@ -23,5 +23,6 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Layout/Vērtēšana/Vērtējuma pārskatīšana atvērts',
+  title:
+    'Views/Vērtēšana/Vērtējuma pārskatīšana Globali/Vērtējuma pārskatīšana atvērts',
 };

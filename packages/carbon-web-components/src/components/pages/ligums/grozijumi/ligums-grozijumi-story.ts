@@ -23,5 +23,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Layout/Ligums/Ligums grozijumi',
+  title: 'Views/Ligums/Līguma grozījumi_CFLA/Ligums grozijumi',
 };
