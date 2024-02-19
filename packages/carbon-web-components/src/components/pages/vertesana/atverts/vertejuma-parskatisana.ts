@@ -23,7 +23,7 @@ import Add16 from '@carbon/icons/lib/add/16';
 class CDSPValuationOpen extends LitElement {
   render() {
     return html`
-    <cds-page-title title="Vērtējuma pāsrkatīšana"></cds-page-title>
+    <cds-page-title title="Vērtējuma pārskatīšana"></cds-page-title>
     <h1
                 style="
             font-size: 14px;
@@ -178,8 +178,8 @@ Tiesvedība
   <cds-table-toolbar slot="toolbar">
       <cds-table-toolbar-content>
       <cds-button size="lg" kind="secondary" tooltip-alignment="" tooltip-position="top" type="button" has-main-content="">Pievienot ${Add16(
-        { slot: 'icon' }
-      )}</cds-button>
+      { slot: 'icon' }
+    )}</cds-button>
     </cds-table-toolbar>
   <cds-table-head>
     <cds-table-header-row>
