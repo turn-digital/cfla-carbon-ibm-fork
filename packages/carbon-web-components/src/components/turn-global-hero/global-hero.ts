@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { prefix } from '../../globals/settings';
+import styles from './global-hero.scss';
 
 @customElement(`${prefix}-global-hero`)
 class GlobalHero extends LitElement {
@@ -66,7 +67,6 @@ class GlobalHero extends LitElement {
     console.log(this.translations);
 
     return html`
-      test
       <div class="hero hero--new">
         ${kods !== null && kods !== undefined
           ? html`
@@ -468,6 +468,7 @@ class GlobalHero extends LitElement {
       </div>
     `;
   }
+  static styles = styles;
 }
 
 export default GlobalHero;
