@@ -22,4 +22,27 @@ $css--plex: true !default;
   .#{$prefix}--link__icon[hidden] {
     display: none;
   }
+
+  .#{$prefix}--link__icon-before {
+    fill: $icon-primary;
+  }
+}
+
+.documents {
+  &__links {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__link-icon {
+    display: inline-block; 
+    width: 16px; 
+    height: 16px; 
+    vertical-align: middle; 
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
 }

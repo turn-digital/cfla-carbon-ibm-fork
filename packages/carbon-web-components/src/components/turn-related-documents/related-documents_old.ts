@@ -13,7 +13,7 @@ import { LitElement, html } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { prefix } from '../../globals/settings';
 import FocusMixin from '../../globals/mixins/focus';
-import styles from './link-with-icons.scss';
+import styles from './related-documents.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
 /**
@@ -40,6 +40,7 @@ class CDSLinkWithIcons extends FocusMixin(LitElement) {
    * `true` if there is an icon.
    */
   private _hasIcon = false;
+  private _hasIconBefore = false;
 
   /**
    * Handles `slotchange` event.
@@ -52,6 +53,7 @@ class CDSLinkWithIcons extends FocusMixin(LitElement) {
         (node) => node.nodeType !== Node.TEXT_NODE || node!.textContent!.trim()
       );
     this[name === 'icon' ? '_hasIcon' : ''] = hasContent;
+    this[name === 'icon-before' ? '_hasIconBefore' : ''] = hasContent;
     this.requestUpdate();
   }
 
@@ -62,11 +64,12 @@ class CDSLinkWithIcons extends FocusMixin(LitElement) {
    * The CSS class list for the link node.
    */
   protected get _classes() {
-    const { disabled, size, inline, visited, _hasIcon } = this;
+    const { disabled, size, inline, visited, _hasIcon, _hasIconBefore } = this;
     return classMap({
       [`${prefix}--link`]: true,
       [`${prefix}--link--disabled`]: disabled,
       [`${prefix}--link--icon`]: _hasIcon,
+      [`${prefix}--link--icon-before`]: _hasIconBefore,
       [`${prefix}--link--inline`]: inline,
       [`${prefix}--link--${size}`]: size,
       [`${prefix}--link--visited`]: visited,
@@ -84,8 +87,12 @@ class CDSLinkWithIcons extends FocusMixin(LitElement) {
    */
   // eslint-disable-next-line class-methods-use-this
   protected _renderInner() {
-    const { _hasIcon: hasIcon, _handleSlotChange: handleSlotChange } = this;
+    const { _hasIcon: hasIcon, _hasIconBefore: hasIconBefore, _handleSlotChange: handleSlotChange } = this;
+
     return html`
+      <div ?hidden="${!hasIconBefore}" class="${prefix}--link__icon-before">
+        <slot name="icon-before" @slotchange="${handleSlotChange}"></slot>
+      </div>
       <slot @slotchange="${handleSlotChange}"></slot>
       <div ?hidden="${!hasIcon}" class="${prefix}--link__icon">
         <slot name="icon" @slotchange="${handleSlotChange}"></slot>
