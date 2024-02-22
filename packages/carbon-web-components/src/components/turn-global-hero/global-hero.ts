@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { prefix } from '../../globals/settings';
 import styles from './global-hero.scss';
+import userAvatar16 from '@carbon/icons/lib/user--avatar/20';
 
 @customElement(`${prefix}-global-hero`)
 class GlobalHero extends LitElement {
@@ -35,7 +36,7 @@ class GlobalHero extends LitElement {
 
   render() {
     const {
-      kods,
+      nosaukums,
       detalas,
       autori,
       versijasInfo,
@@ -44,10 +45,11 @@ class GlobalHero extends LitElement {
       automatiskieStatusi,
       pogas,
       iesniegsanasTermins,
+      // paraksti,
       ikonas,
     } = this.data || {};
 
-    // const {projectId, page, setResp, setDisableBtn, disableBtn } = this.meta;
+    const { kods, apraksts } = detalas || {};
 
     const projectId = this.meta ? this.meta : 0;
     const page = this.meta ? this.meta : 0;
@@ -71,7 +73,7 @@ class GlobalHero extends LitElement {
         ${kods !== null && kods !== undefined
           ? html`
               <div class="hero__head">
-                <cds-accordion>
+                <cds-accordion inline>
                   <cds-accordion-item class="cds--label" title=${kods}>
                     ${detalas?.apraksts.map(
                       (item, i) =>
@@ -96,16 +98,21 @@ class GlobalHero extends LitElement {
                           <span key=${i} class="hero__person cds--label">
                             ${item.grupa === 'PV'
                               ? html`
-                                  <cds-user-avatar
-                                    size="16"
-                                    class="avatar-icon"></cds-user-avatar>
+                                  <span style="padding-bottom: 5px;">
+                                    ${userAvatar16({
+                                      slot: 'icon',
+                                      class: 'avatar-icon',
+                                    })}
+                                  </span>
                                   ${this.translations?.GLOBAL_PERSON_PV}:
                                   ${item.vardsUzvards}
                                 `
                               : html`
-                                  <cds-user
-                                    size="16"
-                                    class="avatar-icon"></cds-user>
+                                  <span style="padding-bot: 10px;">
+                                    ${userAvatar16({
+                                      slot: 'icon',
+                                    })}
+                                  </span>
                                   ${item.vardsUzvards}
                                 `}
                           </span>

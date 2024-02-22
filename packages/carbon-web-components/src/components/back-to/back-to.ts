@@ -13,6 +13,7 @@ import styles from './back-to.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import ArrowLeft from '@carbon/icons/lib/arrow--left/32';
+import './tinymce-webcomponent.js';
 
 @customElement(`${prefix}-back-to`)
 class BackTo extends LitElement {
@@ -27,6 +28,22 @@ class BackTo extends LitElement {
         </a>
         <p class="title">${this.title}</p>
       </div>
+
+      <tinymce-editor
+        height="300"
+        menubar="false"
+        plugins="advlist autolink lists link image charmap print preview anchor 
+    searchreplace visualblocks code fullscreen 
+    insertdatetime media table paste code help wordcount"
+        toolbar="undo redo | formatselect | bold italic backcolor | 
+    alignleft aligncenter alignright alignjustify | 
+    bullist numlist outdent indent | removeformat | help | link"
+        content_css="//www.tiny.cloud/css/codepen.min.css"
+        promotion="false">
+        &lt;p&gt;This recreates the same settings as the &lt;a
+        href=&quot;https://www.tiny.cloud/docs/demo/basic-example/&quot;&gt;basic
+        example&lt;/a&gt;&lt;p&gt;
+      </tinymce-editor>
     `;
   }
 
