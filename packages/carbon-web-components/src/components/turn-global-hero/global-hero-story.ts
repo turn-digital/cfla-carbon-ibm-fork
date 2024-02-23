@@ -10,20 +10,6 @@
 import { html } from 'lit';
 import './index';
 
-const translations = {
-  GLOBAL_PERSON_PV: 'PV',
-  PEC_SINGLE_CR_DROP_PLACEHOLDER: 'asdasdasd',
-  GLOBAL_EXPLANATION: 'asdasdasd',
-  GLOBAL_PERSOAUTO_ADDED_STATUSN_PV: 'asdasdasd',
-  GLOBAL_EDIT: 'asdasdasd',
-  GLOBAL_PUBLIC_PERIOD: 'asdasdasd',
-  GLOBAL_AGREEMENT_AMENDMENT_CONSTRUCTOR: 'asdasdasd',
-  PROJECT_QUESTION_RELATED_DOCUMENTS: 'asdasdasd',
-  GLOBAL_STANDART_CONTRACT: 'asdasdasd',
-  AGREEMENT_CHANGEMODAL_HEADING: 'asdasdasd',
-  GLOBAL_ERROR: 'asdasdasd',
-};
-
 const data = {
   detalas: {
     kods: '14.3.1.0/1/22/A/011',
@@ -119,46 +105,30 @@ const data = {
   ],
   paraksti: null,
 };
-const meta = {
-  projectId: '1',
-  page: 'ELZPSecretaryEvaluationForm',
-  disableBtn: false,
+
+const translations = {
+  GLOBAL_PERSON_PV: 'PV',
+  PEC_SINGLE_CR_DROP_PLACEHOLDER: 'asdasdasd',
+  GLOBAL_EXPLANATION: 'asdasdasd',
+  GLOBAL_PERSOAUTO_ADDED_STATUSN_PV: 'asdasdasd',
+  GLOBAL_EDIT: 'asdasdasd',
+  GLOBAL_PUBLIC_PERIOD: 'asdasdasd',
+  GLOBAL_AGREEMENT_AMENDMENT_CONSTRUCTOR: 'asdasdasd',
+  PROJECT_QUESTION_RELATED_DOCUMENTS: 'asdasdasd',
+  GLOBAL_STANDART_CONTRACT: 'asdasdasd',
+  AGREEMENT_CHANGEMODAL_HEADING: 'asdasdasd',
+  GLOBAL_ERROR: 'asdasdasd',
 };
-const versijasInfo = {};
-const statusModalData = {};
-const notifyErr = {};
-const relatedDocuments = [
-  {
-    nosaukums: 'Saistītais PI',
-    saite: '/CflaIntC9/LV/React/Index/projekts/9710',
-  },
-];
-const showStatusModal = false;
-const changeModal = false;
-const changeContentModal = 'changeContentModal';
 
 export const Default = () => {
   return html`
-    <cds-global-hero
-      .translations="${translations}"
+    <cds-global-hero-1
       .data="${data}"
-      .meta="${meta}"
-      .statusModalData="${statusModalData}"
-      .versijasInfo="${versijasInfo}"
-      .notifyErr="${notifyErr}"
-      .relatedDocuments="${relatedDocuments}"
-      .showStatusModal="${showStatusModal}"
-      .changeModal="${changeModal}"
-      .changeContentModal="${changeContentModal}">
-    </cds-global-hero>
+      .translations="${translations}"></cds-global-hero-1>
   `;
-};
-
-export const Propsed = () => {
-  return html` <cds-global-hero></cds-global-hero> `;
 };
 
 export default {
   parameters: {},
-  title: 'Custom-components/Global Hero',
+  title: 'Custom-components/Global hero',
 };
