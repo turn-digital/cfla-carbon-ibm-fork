@@ -17,22 +17,40 @@ import ShoppingCart from '@carbon/icons/lib/shopping--cart/16';
 
 @customElement(`${prefix}-project-card`)
 class ProjectCard extends LitElement {
+  /**
+   * Link `href`. If present, this button is rendered as `<a>`.
+   */
   @property() projectId = '1.1.1.1/16/A/004';
+  /**
+   * Link `href`. If present, this button is rendered as `<a>`.
+   */
   @property() tagTitle = 'Apstiprināts ar nosacījumu';
+  /**
+   * Link `href`. If present, this button is rendered as `<a>`.
+   */
   @property() tagType = 'purple';
+  /**
+   * Link `href`. If present, this button is rendered as `<a>`.
+   */
   @property() projectDateInfo = '05.01.2021 - 30.05.2028';
+  /**
+   * Link `href`. If present, this button is rendered as `<a>`.
+   */
   @property() projectCostInfo = '500 345';
 
   render() {
+    const { projectId, tagType, tagTitle, projectDateInfo, projectCostInfo } =
+      this;
+
     return html`
       <div class="project-card-container">
         <div class="project-card-header">
-          <p class="project-header-id">Projekts - ${this.projectId}</p>
+          <p class="project-header-id">Projekts - ${projectId}</p>
           <cds-tag
-            type="${this.tagType}"
-            title="${this.tagTitle}"
+            type="${tagType}"
+            title="${tagTitle}"
             class="project-header-tag">
-            ${this.tagTitle}
+            ${tagTitle}
           </cds-tag>
         </div>
         <p class="project-card-desc">
@@ -46,7 +64,7 @@ class ProjectCard extends LitElement {
             </div>
             <div class="project-card-info-item">
               <p>Projekta īstenošanas termiņš</p>
-              <h3>${this.projectDateInfo}</h3>
+              <h3>${projectDateInfo}</h3>
             </div>
           </div>
           <div class="project-card-info-section">
@@ -55,7 +73,7 @@ class ProjectCard extends LitElement {
             </div>
             <div class="project-card-info-item">
               <p>Projekta kopējas izmaksas EUR</p>
-              <h3>${this.projectCostInfo}</h3>
+              <h3>${projectCostInfo}</h3>
             </div>
           </div>
         </div>
