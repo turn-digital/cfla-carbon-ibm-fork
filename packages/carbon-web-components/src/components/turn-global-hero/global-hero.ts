@@ -63,7 +63,7 @@ class GlobalHero1 extends LitElement {
     } = this.data || {};
     //@ts-ignore
     const { kods, apraksts } = detalas || {};
-    //@ts-ignore
+
     const { aktivaVersija } = versijasInfo || {}; // versijuVesture
 
     //@ts-ignore
@@ -86,173 +86,190 @@ class GlobalHero1 extends LitElement {
     // };
 
     return html`
-    <div style="width: 100%">
-      ${
-        kods !== null && kods !== undefined
-          ? html`
-              <div style=" width: 100%">
-                <cds-accordion style="background-color: #F5F5F5; width: 100%">
-                  <cds-accordion-item
-                    style="background-color: #F5F5F5"
-                    title=${kods}>
-                    ${detalas?.apraksts.map(
-                      (item, i) =>
-                        html`<p key=${i} class="hero__author label-01">
-                          ${item}
-                        </p>`
-                    )}
-                  </cds-accordion-item>
-                </cds-accordion>
-              </div>
-            `
-          : ''
-      }
-
-      <div style="padding-top: 20px;">
-            <div
-              style="display: flex; justify-content: space-between; align-items: center">
-              <div style="display: flex; align-items: center">
-                <h3
-                  style="font-size: 20px; line-height: 28px; font-weight: 400">
-                  ${this.data?.nosaukums}
-                </h3>
-                <span style="padding-top: 8px;">
-                <cds-button kind="ghost" size="sm"
-                    >${Edit16({ slot: 'icon', fill: '#027070' })}</cds-button
-                  >
-                </span>
-                  
-              </div>
-              <div>
-                <cds-button
-                  kind="secondary"
-                  size="sm"
-                  style="padding-right: 13px"
-                  >Saglabāt
-                </cds-button>
-                <cds-button
-                  kind="primary"
-                  size="sm"
-                  style="background-color: green"
-                  >Mainīt statusu ${ChevronDown16({ slot: 'icon' })}
-                </cds-button>
-              </div>
-            </div>
-        </div>
-        <div>
+      <div style="width: 100%">
         ${
-          autori !== null
+          kods !== null && kods !== undefined
             ? html`
-                ${autori?.map(
-                  (item, i) => html`
-                    <span
-                      key=${i}
-                      style=" display: flex; align-items: center; font-size: 12px">
-                      ${item.grupa === 'PV'
-                        ? html`
-                            <div style="display: flex; align-items: center">
-                              ${UserAvatar16({
-                                slot: 'icon',
-                              })}
-                              <p style="padding-left: 5px">
-                                ${this.translations?.GLOBAL_PERSON_PV}:
-                                ${item.vardsUzvards}
-                              </p>
-                            </div>
-                          `
-                        : html`
-                            <div style="display: flex; align-items: center">
-                              ${Avatar16({
-                                slot: 'icon',
-                              })}
-                              <p style="padding-left: 5px">
-                                ${item.vardsUzvards}
-                              </p>
-                            </div>
-                          `}
-                    </span>
-                  `
-                )}
+                <div style=" width: 100%">
+                  <cds-accordion style="background-color: #F5F5F5; width: 100%">
+                    <cds-accordion-item
+                      style="background-color: #F5F5F5"
+                      title=${kods}>
+                      ${detalas?.apraksts.map(
+                        (item, i) =>
+                          html`<p key=${i} class="hero__author label-01">
+                            ${item}
+                          </p>`
+                      )}
+                    </cds-accordion-item>
+                  </cds-accordion>
+                </div>
               `
             : ''
         }
+
+        <div style="padding-top: 20px;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center">
+            <div style="display: flex; align-items: center">
+              <h3 style="font-size: 20px; line-height: 28px; font-weight: 400">
+                ${this.data?.nosaukums}
+              </h3>
+              <span style="padding-top: 8px;">
+                <cds-button kind="ghost" size="sm"
+                  >${Edit16({ slot: 'icon', fill: '#027070' })}</cds-button
+                >
+              </span>
+            </div>
+            <div>
+              <cds-button kind="secondary" size="sm" style="padding-right: 13px"
+                >Saglabāt
+              </cds-button>
+              <cds-button
+                kind="primary"
+                size="sm"
+                style="background-color: green"
+                >Mainīt statusu ${ChevronDown16({ slot: 'icon' })}
+              </cds-button>
+            </div>
+          </div>
+        </div>
+        <div>
+          ${
+            autori !== null
+              ? html`
+                  ${autori?.map(
+                    (item, i) => html`
+                      <span
+                        key=${i}
+                        style=" display: flex; align-items: center; font-size: 12px">
+                        ${item.grupa === 'PV'
+                          ? html`
+                              <div style="display: flex; align-items: center">
+                                ${UserAvatar16({
+                                  slot: 'icon',
+                                })}
+                                <p style="padding-left: 5px">
+                                  ${this.translations?.GLOBAL_PERSON_PV}:
+                                  ${item.vardsUzvards}
+                                </p>
+                              </div>
+                            `
+                          : html`
+                              <div style="display: flex; align-items: center">
+                                ${Avatar16({
+                                  slot: 'icon',
+                                })}
+                                <p style="padding-left: 5px">
+                                  ${item.vardsUzvards}
+                                </p>
+                              </div>
+                            `}
+                      </span>
+                    `
+                  )}
+                `
+              : ''
+          }
         </div>
 
         <div style="width: 50%">
-        ${
-          statusuVesture !== null
-            ? //change to statusuVesture.length > 1
-              statusuVesture
-              ? html`
-                  <cds-expandable-tile>
-                    <cds-tile-above-the-fold-content
-                      slot="above-the-fold-content">
-                      <div style="display: flex; align-items: center; ">
-                        <cds-tag type="blue" title=${statuss?.nosaukums}>
-                          ${statuss?.nosaukums}
-                        </cds-tag>
-                        <div style="padding-left: 15px">${statuss?.datums}</div>
+          ${
+            statusuVesture !== null
+              ? //change to statusuVesture.length > 1
+                statusuVesture.length > 1
+                ? html`
+                    <cds-expandable-tile>
+                      <cds-tile-above-the-fold-content
+                        slot="above-the-fold-content">
+                        <div style="display: flex; align-items: center; ">
+                          <cds-tag type="blue" title=${statuss?.nosaukums}>
+                            ${statuss?.nosaukums}
+                          </cds-tag>
+                          <div style="padding-left: 15px">
+                            ${statuss?.datums}
+                          </div>
+                        </div>
+                      </cds-tile-above-the-fold-content>
+                      <cds-tile-below-the-fold-content>
+                        ${statusuVesture.map(
+                          //@ts-ignore
+                          (item, i) => html` <p
+                            key="{i}"
+                            className="hero__statuss-text">
+                            ${item.datums} ${item.nosaukums} ${item.persona}
+                            ${' '}
+                            ${(item?.komentars &&
+                              item.komentars !== '' &&
+                              html`<cds-button kind="ghost" size="sm">
+                                ${Edit16({ slot: 'icon', fill: '#027070' })}
+                              </cds-button>`) ||
+                            html``}
+                          </p>`
+                        )}
+                      </cds-tile-below-the-fold-content>
+                    </cds-expandable-tile>
+                  `
+                : html`
+                    <div style="display: flex; align-items: center;">
+                      <cds-tag type="blue" title=${statuss?.nosaukums}>
+                        ${statuss?.nosaukums}
+                      </cds-tag>
+                      <div style="padding-left: 15px; font-size:12px">
+                        ${statuss?.datums}
                       </div>
-                    </cds-tile-above-the-fold-content>
-                    <cds-tile-below-the-fold-content>
-                      here needs to be array map
-                      <p>adasdasdasd a asd asd asd asd asd</p>
-                      <p>adasdasdasd a asd asd asd asd asd</p>
-                    </cds-tile-below-the-fold-content>
-                  </cds-expandable-tile>
-                `
-              : html`
-                  <div style="display: flex; align-items: center;">
-                    <cds-tag type="blue" title=${statuss?.nosaukums}>
-                      ${statuss?.nosaukums}
-                    </cds-tag>
-                    <div style="padding-left: 15px">${statuss?.datums}</div>
-                  </div>
-                `
-            : ''
-        }
+                    </div>
+                  `
+              : ''
+          }
         </div>
       </div>
       ${
         automatiskieStatusi !== null && automatiskieStatusi.length > 0
           ? html`
-              <div style="font-size: 12px">
-                <p>Automātiski tiks piešķirti statusi:</p>
+              <div style="font-size: 12px; margin-top: 20px;">
+                <p style="margin: 0;">Automātiski tiks piešķirti statusi:</p>
+                ${automatiskieStatusi.map(
+                  //@ts-ignore
+                  (item, i) => html`
+                    <li key="{i}">
+                      <span className="cds--label">
+                        ${item.nosaukums} - ${item.datums} ${item.laiks}
+                        <cds-button kind="ghost" size="sm">
+                          ${Edit16({ slot: 'icon', fill: '#027070' })}
+                        </cds-button>
+                      </span>
+                    </li>
+                  `
+                )}
               </div>
             `
           : ``
       }
 
-      <div style="font-size: 12px; margin-top: 20px">
-        <p style="margin: 0">Automātiski tiks piešķirti statusi:</p>
-        <div style="display: flex; align-items: center; margin: 0; padding: 0;">
-        <p>
-        Atvērts komisijas komentāriem
-        </p>
-        <p>
-         - 20.04.2022 10:00 
-        </p>
-        <cds-button kind="ghost" size="sm"
-          >${Edit16({ slot: 'icon', fill: '#027070' })}</cds-button
-        >
-        </div>
-        <div style="display: flex; align-items: center; margin: 0; padding: 0;">
-        <p>
-        Atvērts komisijas komentāriem
-        </p>
-        <p>
-         - 20.04.2022 10:00 
-        </p>
-        <cds-button kind="ghost" size="sm"
-          >${Edit16({ slot: 'icon', fill: '#027070' })}</cds-button
-        >
-        </div>
-        
-   
-      </div>
+      ${
+        versijasInfo !== null
+          ? html` 
+              <div style="font-size: 12px; margin-top: 20px>
+                ${aktivaVersija.versijasNr} Publicēšanas datums :${' '}
+                ${
+                  aktivaVersija.publicesanasPeriods.datumsNo === null
+                    ? 'n/a'
+                    : aktivaVersija.publicesanasPeriods.datumsNo
+                }
+                ${
+                  aktivaVersija.publicesanasPeriods.datumsLidz === null
+                    ? ''
+                    : ` - ${aktivaVersija.publicesanasPeriods.datumsLidz}`
+                }
+              </div>
+            `
+          : ''
+      }
       
-    </div>
 
+       
+      </div>
     `;
   }
 
