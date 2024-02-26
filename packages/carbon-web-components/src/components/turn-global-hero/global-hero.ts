@@ -55,7 +55,7 @@ class GlobalHero1 extends LitElement {
       versijasInfo,
       statuss,
       statusuVesture,
-      // automatiskieStatusi,
+      automatiskieStatusi,
       // pogas,
       // iesniegsanasTermins,
       // paraksti,
@@ -86,11 +86,12 @@ class GlobalHero1 extends LitElement {
     // };
 
     return html`
+    <div style="width: 100%">
       ${
         kods !== null && kods !== undefined
           ? html`
-              <div class="hero__head">
-                <cds-accordion style="background-color: #F5F5F5">
+              <div style=" width: 100%">
+                <cds-accordion style="background-color: #F5F5F5; width: 100%">
                   <cds-accordion-item
                     style="background-color: #F5F5F5"
                     title=${kods}>
@@ -115,11 +116,12 @@ class GlobalHero1 extends LitElement {
                   style="font-size: 20px; line-height: 28px; font-weight: 400">
                   ${this.data?.nosaukums}
                 </h3>
-                <span style="padding-top: 8px">
-                  <cds-button kind="ghost"
+                <span style="padding-top: 8px;">
+                <cds-button kind="ghost" size="sm"
                     >${Edit16({ slot: 'icon', fill: '#027070' })}</cds-button
                   >
                 </span>
+                  
               </div>
               <div>
                 <cds-button
@@ -176,16 +178,16 @@ class GlobalHero1 extends LitElement {
         }
         </div>
 
-        <div class="cds--css-grid-column cds--sm:col-span-4">
+        <div style="width: 50%">
         ${
           statusuVesture !== null
-            ? statusuVesture
+            ? //change to statusuVesture.length > 1
+              statusuVesture
               ? html`
                   <cds-expandable-tile>
                     <cds-tile-above-the-fold-content
-                      slot="above-the-fold-content"
-                      style="width: 50%">
-                      <div style="display: flex; align-items: center;">
+                      slot="above-the-fold-content">
+                      <div style="display: flex; align-items: center; ">
                         <cds-tag type="blue" title=${statuss?.nosaukums}>
                           ${statuss?.nosaukums}
                         </cds-tag>
@@ -193,6 +195,7 @@ class GlobalHero1 extends LitElement {
                       </div>
                     </cds-tile-above-the-fold-content>
                     <cds-tile-below-the-fold-content>
+                      here needs to be array map
                       <p>adasdasdasd a asd asd asd asd asd</p>
                       <p>adasdasdasd a asd asd asd asd asd</p>
                     </cds-tile-below-the-fold-content>
@@ -210,6 +213,46 @@ class GlobalHero1 extends LitElement {
         }
         </div>
       </div>
+      ${
+        automatiskieStatusi !== null && automatiskieStatusi.length > 0
+          ? html`
+              <div style="font-size: 12px">
+                <p>Automātiski tiks piešķirti statusi:</p>
+              </div>
+            `
+          : ``
+      }
+
+      <div style="font-size: 12px; margin-top: 20px">
+        <p style="margin: 0">Automātiski tiks piešķirti statusi:</p>
+        <div style="display: flex; align-items: center; margin: 0; padding: 0;">
+        <p>
+        Atvērts komisijas komentāriem
+        </p>
+        <p>
+         - 20.04.2022 10:00 
+        </p>
+        <cds-button kind="ghost" size="sm"
+          >${Edit16({ slot: 'icon', fill: '#027070' })}</cds-button
+        >
+        </div>
+        <div style="display: flex; align-items: center; margin: 0; padding: 0;">
+        <p>
+        Atvērts komisijas komentāriem
+        </p>
+        <p>
+         - 20.04.2022 10:00 
+        </p>
+        <cds-button kind="ghost" size="sm"
+          >${Edit16({ slot: 'icon', fill: '#027070' })}</cds-button
+        >
+        </div>
+        
+   
+      </div>
+      
+    </div>
+
     `;
   }
 
