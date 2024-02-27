@@ -8,7 +8,7 @@
  */
 
 import { LitElement, html } from 'lit';
-import { property, query } from 'lit/decorators.js';
+import { property } from 'lit/decorators.js';
 import { prefix } from '../../globals/settings';
 import FocusMixin from '../../globals/mixins/focus';
 import styles from './related-documents.scss';
@@ -17,8 +17,6 @@ import Launch16 from '@carbon/icons/lib/launch/16';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import DOMPurify from 'dompurify';
 
-
-
 /**
  * Related documents.
  *
@@ -26,30 +24,28 @@ import DOMPurify from 'dompurify';
  */
 @customElement(`${prefix}-related-documents`)
 class CDSRelatedDocuments extends FocusMixin(LitElement) {
-
-  @property() title = 'Saistītie dokumenti';
-  @property() documents = [
+  @property({ type: String }) title = 'Saistītie dokumenti';
+  @property({ type: Array }) documents = [
     {
-      linkUrl: "www.example.com/doc1",
-      linkTitle: "Document 1 Title",
-      linkIcon: "Icon 1",
-      target: "_blank"
+      linkUrl: 'www.example.com/doc1',
+      linkTitle: 'Document 1 Title',
+      linkIcon: 'Icon 1',
+      target: '_blank',
     },
     {
-      linkUrl: "www.example.com/doc2",
-      linkTitle: "Document 2 Title",
-      linkIcon: "Icon 2"
+      linkUrl: 'www.example.com/doc2',
+      linkTitle: 'Document 2 Title',
+      linkIcon: 'Icon 2',
     },
   ];
 
-  
   sanitizeIcon(icon) {
     return DOMPurify.sanitize(icon, { ADD_TAGS: ['svg'], ADD_ATTR: ['xmlns'] });
   }
 
   /**
- * Handles `slotchange` event.
- */
+   * Handles `slotchange` event.
+   */
   // protected _handleSlotChange({ target }: Event) {
   //   const { name } = target as HTMLSlotElement;
   //   const hasContent = (target as HTMLSlotElement)
@@ -60,31 +56,34 @@ class CDSRelatedDocuments extends FocusMixin(LitElement) {
   //   this.requestUpdate();
   // }
 
-
   render() {
     // const { _handleSlotChange: handleSlotChange } = this;
     return html`
       <div class="related-documents">
-        <p class="related-documents__title">
-          ${this.title}
-        </p>
+        <p class="related-documents__title">${this.title}</p>
         <ul class="related-documents__links">
-          ${this.documents.map(document => html`
-            <li class="related-documents__links-item">
-              <span class="related-documents__link-icon">${unsafeHTML(this.sanitizeIcon(document.linkIcon))}</span>
-              <cds-link
-                href="${document.linkUrl}"
-                target="${document.target || '_self'}">
-                ${document.linkTitle}
-                ${document.target === '_blank' ? Launch16({ slot: 'icon' }) : ''}
-              </cds-link>
-            </li>
-          `)}
+          ${this.documents.map(
+            (document) => html`
+              <li class="related-documents__links-item">
+                <span class="related-documents__link-icon"
+                  >${unsafeHTML(this.sanitizeIcon(document.linkIcon))}</span
+                >
+                <cds-link
+                  href="${document.linkUrl}"
+                  target="${document.target || '_self'}">
+                  ${document.linkTitle}
+                  ${document.target === '_blank'
+                    ? Launch16({ slot: 'icon' })
+                    : ''}
+                </cds-link>
+              </li>
+            `
+          )}
         </ul>
       </div>
     `;
   }
-  
+
   // static shadowRootOptions = {
   //   ...LitElement.shadowRootOptions,
   //   delegatesFocus: true,
