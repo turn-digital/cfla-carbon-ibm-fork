@@ -1,8 +1,0 @@
-@import "./quill/quill.snow.scss";
-
-#editor-container {
-    background-color: #fff;
-}
-#editor-container cds-button::part(button) {
-    padding: 4px;
-}

@@ -1,0 +1,61 @@
+//
+// Copyright IBM Corp. 2019, 2023
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+$css--plex: true !default;
+
+@use '@carbon/styles/scss/config' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/utilities' as *;
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/motion' as *;
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/components/link';
+
+:host(#{$prefix}-link) {
+  outline: none;
+
+  // Re-define the ruleset so this wins over `.#{$prefix}--link:visited`, etc.
+  .#{$prefix}--link--disabled {
+    color: $text-disabled;
+  }
+
+  .#{$prefix}--link__icon[hidden] {
+    display: none;
+  }
+
+}
+
+.related-documents {
+  &__title {
+    @include type-style('heading-01');
+    margin: 0 0 $spacing-03 0;
+  }
+
+  &__links {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  &__links-item {
+    margin-bottom: $spacing-02;
+  }
+
+  &__link-icon {
+    display: inline-block; 
+    max-width: 16px; 
+    max-height: 16px; 
+    vertical-align: middle; 
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+  }
+
+}
