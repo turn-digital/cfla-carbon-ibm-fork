@@ -64,34 +64,27 @@ class CDSRelatedDocuments extends FocusMixin(LitElement) {
   render() {
     // const { _handleSlotChange: handleSlotChange } = this;
     return html`
-      <div class="documents">
-        <cds-page-title title="${this.title}"></cds-page-title>
-        <ul class="documents__links">
-         
+      <div class="related-documents">
+        <p class="related-documents__title">
+          ${this.title}
+        </p>
+        <ul class="related-documents__links">
           ${this.documents.map(document => html`
-            <li class="documents__links-item">
-              <span class="documents__link-icon">${unsafeHTML(this.sanitizeIcon(document.linkIcon))}</span>
+            <li class="related-documents__links-item">
+              <span class="related-documents__link-icon">${unsafeHTML(this.sanitizeIcon(document.linkIcon))}</span>
               <cds-link
                 href="${document.linkUrl}"
                 target="${document.target || '_self'}">
                 ${document.linkTitle}
+                ${document.target === '_blank' ? Launch16({ slot: 'icon' }) : ''}
               </cds-link>
-              <span ?hidden="${document.target !== '_blank'}" class="">
-                ${Launch16()}
-              </span>
             </li>
           `)}
-
         </ul>
       </div>
     `;
   }
   
-
-//   <div ?hidden="${document.target === '_blank'}" class="${prefix}--link__icon-out">
-//   <slot name="icon" @slotchange="${handleSlotChange}"></slot>
-// </div>
-
   // static shadowRootOptions = {
   //   ...LitElement.shadowRootOptions,
   //   delegatesFocus: true,

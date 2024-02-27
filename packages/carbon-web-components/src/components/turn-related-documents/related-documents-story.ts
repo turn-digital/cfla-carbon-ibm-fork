@@ -56,6 +56,10 @@ export const Default = () => {
       <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
     </svg>
     `
+    },
+    {
+      linkUrl: "www.example.com/3",
+      linkTitle: "Document 3 Title",
     }
   ];
 

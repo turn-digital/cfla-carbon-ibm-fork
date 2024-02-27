@@ -9,6 +9,11 @@ $css--plex: true !default;
 
 @use '@carbon/styles/scss/config' as *;
 @use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/utilities' as *;
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/motion' as *;
+@use '@carbon/styles/scss/type' as *;
 @use '@carbon/styles/scss/components/link';
 
 :host(#{$prefix}-link) {
@@ -23,25 +28,33 @@ $css--plex: true !default;
     display: none;
   }
 
-  .#{$prefix}--link__icon-before {
-    fill: $icon-primary;
-  }
 }
 
-.documents {
+.related-documents {
+  &__title {
+    @include type-style('heading-01');
+    margin: 0 0 $spacing-03 0;
+  }
+
   &__links {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
+  }
+
+  &__links-item {
+    margin-bottom: $spacing-02;
   }
 
   &__link-icon {
     display: inline-block; 
-    width: 16px; 
-    height: 16px; 
+    max-width: 16px; 
+    max-height: 16px; 
     vertical-align: middle; 
     svg {
       width: 100%;
       height: 100%;
+      fill: currentColor;
     }
   }
 
