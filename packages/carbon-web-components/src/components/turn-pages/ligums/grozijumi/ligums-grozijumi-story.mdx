@@ -3,6 +3,8 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
 
 # Tag
 
+[Kā lietot Lietot Storybook](https://github.com/turn-digital/cfla-how-to-use)
+
 ### HTML
 
 ```html
@@ -14,13 +16,13 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
     <title>Document</title>
     <script
       type="module"
-      src="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/data-table.min.js"></script>
+      src="https://demo.turn.lv/cfla_dist/data-table.min.js"></script>
     <script
       type="module"
-      src="local for cfla or our cdn/page-title.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://1.www.s81c.com/common/carbon/web-components/tag/v2/latest/themes.css" />
+      src="https://demo.turn.lv/cfla_dist/page-title.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/overflow-menu.min.js"></script>
     <link
       rel="stylesheet"
       href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
@@ -64,48 +66,15 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
                 <circle cx="16" cy="16" r="2"></circle>
                 <circle cx="16" cy="24" r="2"></circle>
               </svg>
-              <span slot="tooltip-content"> Options </span>
+              <span slot="tooltip-content"
+                >Darbības ar 1.1.1.1/16/A projektu</span
+              >
               <cds-overflow-menu-body>
                 <cds-overflow-menu-item>Izveidot</cds-overflow-menu-item>
                 <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
                 <cds-overflow-menu-item divider danger
                   >Izdzēst</cds-overflow-menu-item
                 >
-              </cds-overflow-menu-body>
-            </cds-overflow-menu>
-          </cds-table-cell>
-        </cds-table-row>
-      </cds-table-body>
-    </cds-table>
-
-    <cds-page-title title="Līgums un grozījumi"></cds-page-title>
-    <cds-table>
-      <cds-table-head>
-        <cds-table-header-row>
-          <cds-table-header-cell>Projekta ID</cds-table-header-cell>
-          <cds-table-header-cell>Projekta nosaukums</cds-table-header-cell>
-          <cds-table-header-cell>Iestādes nosaukums</cds-table-header-cell>
-          <cds-table-header-cell>Projekta st.</cds-table-header-cell>
-          <cds-table-header-cell>Līguma stat.</cds-table-header-cell>
-          <cds-table-header-cell></cds-table-header-cell>
-        </cds-table-header-row>
-      </cds-table-head>
-      <cds-table-body>
-        <cds-table-row>
-          <cds-table-cell>1.1.1.1/16/A</cds-table-cell>
-          <cds-table-cell
-            >Neironu tīkli fleksīvo dabisko valodu apstrādei</cds-table-cell
-          >
-          <cds-table-cell>Latvijas Universitāte</cds-table-cell>
-          <cds-table-cell>Sagatavošanā</cds-table-cell>
-          <cds-table-cell>Neizveidots</cds-table-cell>
-          <cds-table-cell>
-            <cds-overflow-menu toolbar-action>
-              <span slot="tooltip-content"> Options </span>
-              <cds-overflow-menu-body>
-                <cds-overflow-menu-item> Stop app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Restart app </cds-overflow-menu-item>
-                <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
               </cds-overflow-menu-body>
             </cds-overflow-menu>
           </cds-table-cell>
