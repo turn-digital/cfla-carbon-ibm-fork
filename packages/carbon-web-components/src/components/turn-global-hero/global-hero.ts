@@ -56,7 +56,7 @@ class GlobalHero1 extends LitElement {
       statuss,
       statusuVesture,
       automatiskieStatusi,
-      // pogas,
+      pogas,
       // iesniegsanasTermins,
       // paraksti,
       // ikonas,
@@ -71,12 +71,12 @@ class GlobalHero1 extends LitElement {
       ? this.meta
       : {};
 
-    // const leftSideButtons = pogas?.saraksts.filter(
-    //   (item) => item.pozicija === 1
-    // );
-    // const rightSideButtons = pogas?.saraksts.filter(
-    //   (item) => item.pozicija === 2
-    // );
+    const leftSideButtons = pogas?.saraksts.filter(
+      (item) => item.pozicija === 1
+    );
+    const rightSideButtons = pogas?.saraksts.filter(
+      (item) => item.pozicija === 2
+    );
 
     // const extractLastTwoItemsFromURL = (url) => {
     //   const parts = url.split('/'); // Split the URL by '/'
@@ -108,6 +108,7 @@ class GlobalHero1 extends LitElement {
             : ''
         }
 
+        //add needed buttons with left and right buttons from actual global
         <div style="padding-top: 20px;">
           <div
             style="display: flex; justify-content: space-between; align-items: center">
@@ -128,12 +129,12 @@ class GlobalHero1 extends LitElement {
               <cds-button
                 kind="primary"
                 size="sm"
-                style="background-color: green"
                 >Mainīt statusu ${ChevronDown16({ slot: 'icon' })}
               </cds-button>
             </div>
           </div>
         </div>
+
         <div>
           ${
             autori !== null
@@ -224,6 +225,8 @@ class GlobalHero1 extends LitElement {
           }
         </div>
       </div>
+
+
       ${
         automatiskieStatusi !== null && automatiskieStatusi.length > 0
           ? html`
@@ -266,8 +269,6 @@ class GlobalHero1 extends LitElement {
             `
           : ''
       }
-      
-
        
       </div>
     `;
