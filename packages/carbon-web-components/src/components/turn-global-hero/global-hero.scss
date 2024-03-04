@@ -12,3 +12,12 @@ $css--plex: true !default;
 @use '@carbon/styles/scss/components/ui-shell/header';
 @use '@carbon/styles/scss/components/ui-shell/header-panel';
 @use '@carbon/styles/scss/components/ui-shell/switcher';
+
+.countdown-timer {
+  width: 175px;
+  height: 102px;
+  padding: 16px, 24px, 16px, 24px;
+  border-radius: 8px;
+  border: 1px;
+  gap: 12px;
+}
