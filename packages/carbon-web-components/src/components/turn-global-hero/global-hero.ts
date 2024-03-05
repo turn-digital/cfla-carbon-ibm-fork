@@ -36,8 +36,8 @@ class GlobalHero1 extends LitElement {
   @property({ type: Object }) countdownDate = {
     years: 0,
     days: 0,
-    hours: 0,
-    minutes: 0,
+    hours: '0',
+    minutes: '0',
   };
 
   extractLastTwoItemsFromURL(url) {
@@ -93,12 +93,11 @@ class GlobalHero1 extends LitElement {
     // };
 
     // const apiDate = new Date(iesniegsanasTermins);
-    const deadline = new Date('2024-12-16T00:00:00');
+    const deadline = new Date('2024-12-05T00:00:00');
 
-    const formattedDate = `${(deadline.getMonth() + 1)
-      .toString()
-      .padStart(2, '0')}.${deadline
-      .getDate()
+    const formattedDate = `${deadline.getDate().toString().padStart(2, '0')}.${(
+      deadline.getMonth() + 1
+    )
       .toString()
       .padStart(2, '0')}.${deadline.getFullYear()} ${deadline
       .getHours()
@@ -117,10 +116,14 @@ class GlobalHero1 extends LitElement {
     );
     const hours = Math.floor(
       (timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
-    );
+    )
+      .toString()
+      .padStart(2, '0');
     const minutes = Math.floor(
       (timeDifference % (60 * 60 * 1000)) / (60 * 1000)
-    );
+    )
+      .toString()
+      .padStart(2, '0');
 
     this.countdownDate = { years, days, hours, minutes };
 
