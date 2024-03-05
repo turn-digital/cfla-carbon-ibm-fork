@@ -13,11 +13,43 @@ $css--plex: true !default;
 @use '@carbon/styles/scss/components/ui-shell/header-panel';
 @use '@carbon/styles/scss/components/ui-shell/switcher';
 
+@use '@carbon/type';
+
+.right-container {
+  position: relative;
+}
+
 .countdown-timer {
   width: 175px;
-  height: 102px;
-  padding: 16px, 24px, 16px, 24px;
+  padding: 16px 24px;
   border-radius: 8px;
-  border: 1px;
-  gap: 12px;
+  border: 1px solid #e0e0e0;
+  margin-top: 20px;
+
+  position: absolute;
+  right: 0;
+
+  &__title {
+    text-align: center;
+    @include type.type-style('label-01');
+  }
+
+  &__overdue {
+    text-align: center;
+    color: #a2191f;
+    @include type.type-style('heading-03');
+  }
+
+  &__time-left {
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+    color: #064a4a;
+  }
+  &__time-actual {
+    text-align: center;
+    margin-top: 10px;
+    @include type.type-style('label-01');
+  }
 }

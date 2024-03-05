@@ -33,6 +33,13 @@ class GlobalHero1 extends LitElement {
 
   @property({ type: Object }) notifyErr = null;
 
+  @property({ type: Object }) countdownDate = {
+    years: 0,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+  };
+
   extractLastTwoItemsFromURL(url) {
     const parts = url.split('/');
     const lastThreeItems = parts.slice(-2).join('/');
@@ -57,7 +64,7 @@ class GlobalHero1 extends LitElement {
       statusuVesture,
       automatiskieStatusi,
       pogas,
-      // iesniegsanasTermins,
+      iesniegsanasTermins,
       // paraksti,
       // ikonas,
     } = this.data || {};
@@ -84,6 +91,38 @@ class GlobalHero1 extends LitElement {
 
     //   return lastThreeItems;
     // };
+
+    // const apiDate = new Date(iesniegsanasTermins);
+    const deadline = new Date('2024-12-16T00:00:00');
+
+    const formattedDate = `${(deadline.getMonth() + 1)
+      .toString()
+      .padStart(2, '0')}.${deadline
+      .getDate()
+      .toString()
+      .padStart(2, '0')}.${deadline.getFullYear()} ${deadline
+      .getHours()
+      .toString()
+      .padStart(2, '0')}:${deadline.getMinutes().toString().padStart(2, '0')}`;
+
+    const currentDate = new Date();
+    const isDeadlineOver = deadline.getTime() < currentDate.getTime();
+
+    //@ts-ignore
+    const timeDifference = deadline - currentDate;
+
+    const years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
+    const days = Math.floor(
+      (timeDifference % (365.25 * 24 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)
+    );
+    const hours = Math.floor(
+      (timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
+    );
+    const minutes = Math.floor(
+      (timeDifference % (60 * 60 * 1000)) / (60 * 1000)
+    );
+
+    this.countdownDate = { years, days, hours, minutes };
 
     return html`
       <div style="width: 100%">
@@ -251,6 +290,29 @@ class GlobalHero1 extends LitElement {
                 >Mainīt statusu ${ChevronDown16({ slot: 'icon' })}
               </cds-button>
             </div>
+            ${true
+              ? html`
+                  ${isDeadlineOver
+                    ? html`<div class="countdown-timer">
+                        <p class="countdown-timer__overdue">
+                          Laiks ir beidzies
+                        </p>
+                      </div>`
+                    : html`<div class="countdown-timer">
+                        <div class="countdown-timer__title">
+                          Atlikušais laiks līdz iesniegšanai
+                        </div>
+                        <div class="countdown-timer__time-left">
+                          ${this.countdownDate.days !== 0
+                            ? `${this.countdownDate.days} dienas ${this.countdownDate.hours}:${this.countdownDate.minutes}`
+                            : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
+                        </div>
+                        <div class="countdown-timer__time-actual">
+                          ${formattedDate}
+                        </div>
+                      </div>`}
+                `
+              : ''}
           </div>
         </div>
       </div>
