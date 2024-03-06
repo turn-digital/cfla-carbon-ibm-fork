@@ -131,7 +131,7 @@ class GlobalHero1 extends LitElement {
       <div style="width: 100%">
         ${kods !== null && kods !== undefined
           ? html`
-              <div style=" width: 100%">
+              <div>
                 <cds-accordion style="background-color: #F5F5F5; width: 100%">
                   <cds-accordion-item
                     style="background-color: #F5F5F5"
@@ -149,9 +149,11 @@ class GlobalHero1 extends LitElement {
           : ''}
 
         <div
-          class="main-container"
-          style="display: flex; justify-content: space-between; width: 100%">
-          <div class="left-conteiner" style="width: 60%">
+          style="display: flex; justify-content: space-between; width: 100%"
+          class="main-container">
+          <div
+            class="left-conteiner"
+            class="cds--col-sm-1 cds--col-md-2 cds--col-lg-4">
             <div style="display: flex; align-items: center">
               <h3 style="font-size: 20px; line-height: 28px; font-weight: 400">
                 ${this.data?.nosaukums}
@@ -199,40 +201,42 @@ class GlobalHero1 extends LitElement {
                 : ''}
             </div>
 
-            <div style="width: 50%">
+            <div>
               ${statusuVesture !== null
                 ? //change to statusuVesture.length > 1
                   statusuVesture.length > 1
                   ? html`
-                      <cds-expandable-tile>
-                        <cds-tile-above-the-fold-content
-                          slot="above-the-fold-content">
-                          <div style="display: flex; align-items: center; ">
-                            <cds-tag type="blue" title=${statuss?.nosaukums}>
-                              ${statuss?.nosaukums}
-                            </cds-tag>
-                            <div style="padding-left: 15px">
-                              ${statuss?.datums}
+                      <div style="width: 50%">
+                        <cds-expandable-tile>
+                          <cds-tile-above-the-fold-content
+                            slot="above-the-fold-content">
+                            <div style="display: flex; align-items: center; ">
+                              <cds-tag type="blue" title=${statuss?.nosaukums}>
+                                ${statuss?.nosaukums}
+                              </cds-tag>
+                              <div style="padding-left: 15px">
+                                ${statuss?.datums}
+                              </div>
                             </div>
-                          </div>
-                        </cds-tile-above-the-fold-content>
-                        <cds-tile-below-the-fold-content>
-                          ${statusuVesture.map(
-                            (item, i) => html` <p
-                              key="${i}"
-                              className="hero__statuss-text">
-                              ${item.datums} ${item.nosaukums} ${item.persona}
-                              ${' '}
-                              ${(item?.komentars &&
-                                item.komentars !== '' &&
-                                html`<cds-button kind="ghost" size="sm">
-                                  ${Edit16({ slot: 'icon', fill: '#027070' })}
-                                </cds-button>`) ||
-                              html``}
-                            </p>`
-                          )}
-                        </cds-tile-below-the-fold-content>
-                      </cds-expandable-tile>
+                          </cds-tile-above-the-fold-content>
+                          <cds-tile-below-the-fold-content>
+                            ${statusuVesture.map(
+                              (item, i) => html` <p
+                                key="${i}"
+                                className="hero__statuss-text">
+                                ${item.datums} ${item.nosaukums} ${item.persona}
+                                ${' '}
+                                ${(item?.komentars &&
+                                  item.komentars !== '' &&
+                                  html`<cds-button kind="ghost" size="sm">
+                                    ${Edit16({ slot: 'icon', fill: '#027070' })}
+                                  </cds-button>`) ||
+                                html``}
+                              </p>`
+                            )}
+                          </cds-tile-below-the-fold-content>
+                        </cds-expandable-tile>
+                      </div>
                     `
                   : html`
                       <div style="display: flex; align-items: center;">

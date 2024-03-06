@@ -15,6 +15,11 @@ $css--plex: true !default;
 
 @use '@carbon/type';
 
+@use '@carbon/grid';
+
+// Emit the flex-grid styles
+@include grid.flex-grid();
+
 .right-container {
   position: relative;
 }
