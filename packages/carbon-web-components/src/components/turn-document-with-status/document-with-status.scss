@@ -1,0 +1,63 @@
+//
+// Copyright IBM Corp. 2019, 2023
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+$css--plex: true !default;
+
+@use '@carbon/styles/scss/config' as *;
+// @use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/utilities' as *;
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/motion' as *;
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/components/link';
+
+// @use '@carbon/themes/scss/themes';
+// @use '@carbon/themes' with (
+//   $fallback: themes.$g100,
+//   $theme: (
+//     token-01: #000000,
+//   )
+// );
+
+
+
+.document-with-status {
+
+  border: 1px solid #E0E0E0;
+  display: flex;
+  align-items: center;
+
+  &__link {   
+    flex: 1;
+    text-align: right;
+    padding-right: $spacing-05;
+  }
+
+  &__title {
+    @include type-style('body-compact-01');
+    margin: $spacing-04 0 $spacing-02 $spacing-05;
+  }
+
+  &__status-text {
+    @include type-style('label-01');
+  }
+
+  &__status {
+    display: flex;
+  }
+
+  &__status-icon {
+    margin-left: $spacing-05;
+    fill: currentColor;
+  }
+
+  &__status-text {
+    margin: 0 0 $spacing-03 $spacing-03;
+  }
+
+}
