@@ -14,8 +14,7 @@ import FocusMixin from '../../globals/mixins/focus';
 import styles from './document-with-status.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import Circle16 from '@carbon/icons/lib/circle-fill';
-// import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
-// import DOMPurify from 'dompurify';
+import { green, gray, red, yellow } from '@carbon/colors';
 
 /**
  * Related documents.
@@ -25,19 +24,39 @@ import Circle16 from '@carbon/icons/lib/circle-fill';
 @customElement(`${prefix}-document-with-status`)
 class CDSDocumentsWithStatus extends FocusMixin(LitElement) {
   @property({ type: String }) title = 'Projekta satura izmaiņu salīdzināšana';
-  @property({ type: Boolean }) status = false;
+  @property({ type: String }) status = 'information';
   @property({ type: String }) statusText = 'Izmaiņas ir veiktas';
   @property({ type: String }) linkUrl = 'https://google.com';
   @property({ type: String }) linkText = 'Apskatīt';
  
   render() {
     const{title, status, statusText, linkUrl, linkText} = this;
+    let fillColor: string;
+  
+    // Set fill color based on status
+    switch (status) {
+      case 'success':
+        fillColor = green[40];
+        break;
+      case 'information':
+        fillColor = gray[40];
+        break;
+      case 'error':
+        fillColor = red[50];
+        break;
+      case 'warning':
+        fillColor = yellow[30];
+        break;
+      default:
+        fillColor = gray[40];
+    }
+
     return html`
       <div class="document-with-status">
         <div class="document-with-status__content">
           <p class="document-with-status__title">${title}</p>
           <div class="document-with-status__status">
-            <span class="document-with-status__status-icon">${Circle16({fill: status? 'green' : 'grey'})}</span>
+            <span class="document-with-status__status-icon">${Circle16({fill: fillColor})}</span>
             <p class="document-with-status__status-text">${statusText}</p>
           </div>
         </div>

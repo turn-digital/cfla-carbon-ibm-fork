@@ -8,27 +8,17 @@
 $css--plex: true !default;
 
 @use '@carbon/styles/scss/config' as *;
-// @use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/theme' as *;
 @use '@carbon/styles/scss/utilities' as *;
 @use '@carbon/styles/scss/breakpoint' as *;
 @use '@carbon/styles/scss/spacing' as *;
-@use '@carbon/styles/scss/motion' as *;
 @use '@carbon/styles/scss/type' as *;
-@use '@carbon/styles/scss/components/link';
-
-// @use '@carbon/themes/scss/themes';
-// @use '@carbon/themes' with (
-//   $fallback: themes.$g100,
-//   $theme: (
-//     token-01: #000000,
-//   )
-// );
-
+@use '@carbon/colors';
 
 
 .document-with-status {
 
-  border: 1px solid #E0E0E0;
+  border: 1px solid colors.$gray-20;
   display: flex;
   align-items: center;
 
@@ -53,7 +43,6 @@ $css--plex: true !default;
 
   &__status-icon {
     margin-left: $spacing-05;
-    fill: currentColor;
   }
 
   &__status-text {
