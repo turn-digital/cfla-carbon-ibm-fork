@@ -13,38 +13,36 @@ import styles from './text-editor.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import './tinymce-webcomponent.js';
+
 @customElement(`${prefix}-text-editor`)
 class TextEditor extends LitElement {
   @property({ type: Boolean }) readonly = false;
-  @property({ type: String }) textEditorTitle = 'Vertejuma pamatojums';
-  @property({ type: String }) limit = '1000';
   @property({ type: String }) editorId = 'editor';
+  @property({ type: String }) onServerValidationErrorText = '';
+  @property({ type: String }) onServerLastEditor = '';
   @property({ type: Object }) editorConfig = {
+    editorTitle: 'Custom title 1',
     height: 200,
-    highlight_on_focus: true,
-    promotion: false,
-    ajax_url: 'https://httpbin.org/post',
-    max_length: 1000,
+    highlight_on_focus: false,
+    branding: false,
+    language_url: 'http://localhost:8001/plugins/languages/lv.js',
+    language: 'lv',
+    fetch_obj: {
+      url: 'https://jsonplaceholder.typicode.com/posts',
+      method: 'POST',
+      errorAlertMessages: 'Error occured while fetching data',
+    },
+    max_length: 100,
     external_plugins: {
-      pluginId:
-        'http://localhost:8001/plugins/background_color_change/plugin.min.js',
+      pluginId: 'http://localhost:8001/plugins/length_validation/plugin.min.js',
     },
   };
-
-  // toggleReadonly() {
-  //   this.readonly = !this.readonly;
-  // }
 
   render() {
     //@ts-ignore
     window['config_' + this.editorId] = this.editorConfig;
 
-    console.log('editorConfig', this.editorConfig);
     return html`
-      <p>${this.textEditorTitle}</p>
-      <p>
-        ${window['config_' + this.editorId + '.actual_length']}/${this.limit}
-      </p>
       <tinymce-editor
         id="${this.editorId}"
         config="${'config_' + this.editorId}"
@@ -53,13 +51,27 @@ class TextEditor extends LitElement {
         toolbar="undo redo | formatselect | bold italic backcolor | 
     alignleft aligncenter alignright alignjustify | 
     bullist numlist outdent indent | removeformat | help | link"
-        plugins="background_color_change advlist autosave save sender autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
+        plugins="length_validation advlist autosave save sender autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
         content_css="//www.tiny.cloud/css/codepen.min.css"
         promotion="false">
         &lt;p&gt;This recreates the same settings as the &lt;a
         href=&quot;https://www.tiny.cloud/docs/demo/basic-example/&quot;&gt;basic
         example&lt;/a&gt;&lt;p&gt;
       </tinymce-editor>
+      ${this.onServerValidationErrorText?.length > 0
+        ? html`<div>
+            <p style="color: red">${this.onServerValidationErrorText}</p>
+          </div>`
+        : ''}
+      ${this.onServerLastEditor?.length > 0
+        ? html`<div>
+        <p style="color: grey"
+        <span>Name Surname </span> 
+        <span>21.03.2024 </span> 
+        <span>18:34:21</span>
+        </p>
+          </div>`
+        : ''}
     `;
   }
 
