@@ -15,28 +15,18 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 import Calendar from '@carbon/icons/lib/calendar/16';
 import ShoppingCart from '@carbon/icons/lib/shopping--cart/16';
 
+/**
+ * Related documents.
+ *
+ * @element cds-project-card
+ */
 @customElement(`${prefix}-project-card`)
 class ProjectCard extends LitElement {
-  /**
-   * Link `href`. If present, this button is rendered as `<a>`.
-   */
-  @property() projectId = '1.1.1.1/16/A/004';
-  /**
-   * Link `href`. If present, this button is rendered as `<a>`.
-   */
-  @property() tagTitle = 'Apstiprināts ar nosacījumu';
-  /**
-   * Link `href`. If present, this button is rendered as `<a>`.
-   */
-  @property() tagType = 'purple';
-  /**
-   * Link `href`. If present, this button is rendered as `<a>`.
-   */
-  @property() projectDateInfo = '05.01.2021 - 30.05.2028';
-  /**
-   * Link `href`. If present, this button is rendered as `<a>`.
-   */
-  @property() projectCostInfo = '500 345';
+  @property({ type: String }) projectId = '1.1.1.1/16/A/004';
+  @property({ type: String }) tagTitle = 'Apstiprināts ar nosacījumu';
+  @property({ type: String }) tagType = 'purple';
+  @property({ type: String }) projectDateInfo = '05.01.2021 - 30.05.2028';
+  @property({ type: String }) projectCostInfo = '500 345';
 
   render() {
     const { projectId, tagType, tagTitle, projectDateInfo, projectCostInfo } =
