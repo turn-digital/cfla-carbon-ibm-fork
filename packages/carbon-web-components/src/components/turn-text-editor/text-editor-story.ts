@@ -12,7 +12,10 @@ import './index';
 import storyDocs from './text-editor-story.mdx';
 
 export const Default = () => {
-  return html` <cds-text-editor></cds-text-editor> `;
+  return html`
+    <cds-text-editor
+      onServerValidationErrorText="onServerValidationErrorText"></cds-text-editor>
+  `;
 };
 
 export default {
