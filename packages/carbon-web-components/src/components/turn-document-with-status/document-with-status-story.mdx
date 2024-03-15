@@ -7,6 +7,25 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
 Here's a quick example to get you started.
 
+### Description
+Related form with a status that is important to see before opening. The possibility to display a prompt for action, for example, review, compare, fill out.
+
+### Anatomy
+* Title: form name
+* Status name: describes the form's status
+* Status icon: visually represents what is happening with the form
+* Link to where it leads: form link
+* Link name: the name of the action that opens the form
+
+### Design and UX comments
+* The link always opens in a new window
+* The status icon and status name are unrelated to each other
+* There are four types of status icons:
+success - work with the form is completed
+information - all other statuses in between
+error - if there are problems with the form (for example, interrupted, rejected)
+warning - clarifications/corrections needed
+
 ### JS (via import)
 
 ```javascript
