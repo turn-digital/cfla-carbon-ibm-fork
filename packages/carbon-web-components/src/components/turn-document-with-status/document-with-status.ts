@@ -24,8 +24,11 @@ import { green, gray, red, yellow } from '@carbon/colors';
 @customElement(`${prefix}-document-with-status`)
 class CDSDocumentsWithStatus extends FocusMixin(LitElement) {
   @property({ type: String }) title = 'Projekta satura izmaiņu salīdzināšana';
+  /**
+   * Can be one of: information, success, error or warning.
+   */
   @property({ type: String }) status = 'information';
-  @property({ type: String }) statusText = 'Izmaiņas ir veiktas';
+  @property({ type: String }) statusText = 'Izmaiņu nav';
   @property({ type: String }) linkUrl = 'https://google.com';
   @property({ type: String }) linkText = 'Apskatīt';
  
