@@ -17,7 +17,6 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 import Launch16 from '@carbon/icons/lib/launch/16';
 
 //libs for cleaning html
-import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
 import DOMPurify from 'dompurify';
 
 /**
@@ -30,37 +29,26 @@ class CDSRelatedDocumentsItem extends LitElement {
   @property({ type: String }) linkTitle = 'Saistītas PI';
   @property({ type: String }) linkUrl = 'https://www.google.com';
   /**
-    * Can be one of: _blank, _self
-  */
+   * Can be one of: _blank, _self
+   */
   @property({ type: String }) target = '_blank';
-  @property({ type: String }) linkIcon = '';
-
 
   sanitizeIcon(icon) {
     return DOMPurify.sanitize(icon, { ADD_TAGS: ['svg'], ADD_ATTR: ['xmlns'] });
   }
 
   render() {
-    const { linkTitle, linkUrl, linkIcon, target } = this;
-    const isLinkIconEmpty = !linkIcon;
+    const { linkTitle, linkUrl, target } = this;
 
     return html`
       <li class="related-documents__links-item">
-        <span class="related-documents__link-icon" ?hidden="${isLinkIconEmpty}">
-          ${unsafeHTML(this.sanitizeIcon(linkIcon))}  
-        </span>
-        <cds-link
-          href="${linkUrl}"
-          target="${target || '_blank'}"
-        >
-          ${linkTitle}
-          ${target === '_self' ? '' : Launch16({ slot: 'icon' })}
+        <slot class="related-documents__link-icon" name="icon"></slot>
+        <cds-link href="${linkUrl}" target="${target || '_blank'}">
+          ${linkTitle} ${target === '_self' ? '' : Launch16({ slot: 'icon' })}
         </cds-link>
       </li>
     `;
   }
-
-
 
   static styles = styles;
 }
