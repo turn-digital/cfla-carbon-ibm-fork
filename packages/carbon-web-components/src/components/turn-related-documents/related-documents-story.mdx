@@ -1,55 +1,70 @@
 import { Props, Description } from '@storybook/addon-docs/blocks';
 import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
-# Link
-
-> 💡 Check our
-> [CodeSandbox](https://codesandbox.io/s/github/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/carbon-web-components/examples/codesandbox/basic/components/link)
-> example implementation.
-
-[![Edit carbon-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/carbon-web-components/examples/codesandbox/basic/components/link)
-
-Represents a link. Provided for convenience purpose, you can alternatively use
-`<a class="cds--link">` with Carbon style in place in light DOM.
+# Related documents
 
 ## Getting started
 
 Here's a quick example to get you started.
 
+### Description
+Related form with a status that is important to see before opening. The possibility to display a prompt for action, for example, review, compare, fill out.
+
+
 ### JS (via import)
 
 ```javascript
-import '@carbon/web-components/es/components/list/index.js';
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-related-documenents.min.js"></script>
 ```
 
-<Description markdown={`${cdnJs({ components: ['list'] })}`} />
-<Description markdown={`${cdnCss()}`} />
+
 
 ### HTML
 
 ```html
-<cds-link href="https://www.ibm.com"> Link </cds-link>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-related-documenents.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/latest/plex.css" />
+    <title>Related documents</title>
+  </head>
+
+  <body>
+    <cds-related-documents title="Projekta satura izmaiņu salīdzināšana">
+      <cds-related-documents-item
+        linkTitle="Document 2 Title"
+        linkUrl="https://google.com"
+        target="_blank",
+        linkIcon=""
+      >
+      <cds-related-documents-item
+        linkTitle="Document 2 Title"
+        linkUrl="https://google.com"
+        target="_blank"
+      >
+      <cds-related-documents-item
+        linkTitle="Document 2 Title"
+        linkUrl="https://google.com"
+        target="_blank"
+      >
+    </cds-related-documents>
+  </body>
+</html>
 ```
 
-## Paired with icon
+## `<cds-related-documents>` attributes and properties
 
-Import the desired icon and incorporate with the link text:
+<Props of="cds-related-documents" />
 
-```javascript
-import Download16 from '@carbon/web-components/es/icons/download/16';
 
-function App() {
-  return html`<cds-link href="https://www.ibm.com">
-    Download ${Download16({ slot: 'icon' })}</cds-link
-  >`;
-}
-```
 
-## `<cds-link>` attributes and properties
+## `<cds-related-documents-item>` attributes and properties
 
-Note: For `boolean` attributes, `true` means simply setting the attribute (e.g.
-`<cds-link disabled>`) and `false` means not setting the attribute (e.g.
-`<cds-link>` without `disabled` attribute).
-
-<Props of="cds-link" />
-````
+<Props of="cds-related-documents-item" />
