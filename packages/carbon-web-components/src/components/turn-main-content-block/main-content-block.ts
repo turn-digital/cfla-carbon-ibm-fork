@@ -16,8 +16,13 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 class CDSMainContentBlock extends LitElement {
   render() {
     return html`
+      <link
+        rel="stylesheet"
+        href="https://demo.turn.lv/cfla_dist/assets/turn-carbon-grid.css" />
       <main class="page_main">
-        <slot></slot>
+        <div class="cds--css-grid  cds--css-grid--narrow">
+          <slot></slot>
+        </div>
       </main>
     `;
   }

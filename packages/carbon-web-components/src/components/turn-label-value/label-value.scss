@@ -1,0 +1,25 @@
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/spacing' as *;
+
+@use '@carbon/styles/scss/theme' as *;
+
+.container {
+  padding: 0;
+  margin: 0;
+  &--sm {
+    margin-top: $spacing-05;
+    margin-bottom: $spacing-05;
+  }
+  &--lg {
+    margin-top: $spacing-07;
+    margin-bottom: $spacing-07;
+  }
+}
+.label {
+  color: $text-secondary;
+  @include type-style('label-01');
+  padding-bottom: $spacing-02;
+}
+.value {
+  @include type-style('body-compact-01');
+}

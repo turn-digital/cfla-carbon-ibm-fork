@@ -11,6 +11,7 @@ import { LitElement, html } from 'lit';
 import { prefix } from '../../../../globals/settings';
 import styles from './vertejuma-parskatisana.scss';
 import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
+import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 
 /**
  *
@@ -21,15 +22,29 @@ import { carbonElement as customElement } from '../../../../globals/decorators/c
 @customElement(`${prefix}-page-valuation-list`)
 class CDSPValuationList extends LitElement {
   render() {
+    const linkIconToolBox = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="16" height="16" fill="white" style="mix-blend-mode:multiply"/>
+  <path d="M13.5 4.5H12V3C12 2.73478 11.8946 2.48043 11.7071 2.29289C11.5196 2.10536 11.2652 2 11 2H5C4.73478 2 4.48043 2.10536 4.29289 2.29289C4.10536 2.48043 4 2.73478 4 3V4.5H2.5C2.10218 4.5 1.72064 4.65804 1.43934 4.93934C1.15804 5.22064 1 5.60218 1 6V13C1 13.2652 1.10536 13.5196 1.29289 13.7071C1.48043 13.8946 1.73478 14 2 14H14C14.2652 14 14.5196 13.8946 14.7071 13.7071C14.8946 13.5196 15 13.2652 15 13V6C15 5.60218 14.842 5.22064 14.5607 4.93934C14.2794 4.65804 13.8978 4.5 13.5 4.5ZM5 3H11V4.5H5V3ZM14 13H2V8.5H6V11H10V8.5H14V13ZM7 8.5H9V10H7V8.5ZM2 7.5V6C2 5.86739 2.05268 5.74021 2.14645 5.64645C2.24021 5.55268 2.36739 5.5 2.5 5.5H13.5C13.6326 5.5 13.7598 5.55268 13.8536 5.64645C13.9473 5.74021 14 5.86739 14 6V7.5H2Z" fill="#161616"/>
+  </svg>`;
+
+    const linkIconCert = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="16" height="16" fill="white" style="mix-blend-mode:multiply"/>
+  <path d="M6 8H3V9H6V8Z" fill="#161616"/>
+  <path d="M8 6H3V7H8V6Z" fill="#161616"/>
+  <path d="M8 4H3V5H8V4Z" fill="#161616"/>
+  <path d="M7 13H2V3H14V8H15V3C15 2.73478 14.8946 2.48043 14.7071 2.29289C14.5196 2.10536 14.2652 2 14 2H2C1.73478 2 1.48043 2.10536 1.29289 2.29289C1.10536 2.48043 1 2.73478 1 3V13C1 13.2652 1.10536 13.5196 1.29289 13.7071C1.48043 13.8946 1.73478 14 2 14H7V13Z" fill="#161616"/>
+  <path d="M11 12.795L9.705 11.5L9 12.205L11 14.205L15 10.205L14.295 9.5L11 12.795Z" fill="#161616"/>
+  </svg>`;
     return html`
-      <cds-page-title title="Vērtējuma pārskatīšana"></cds-page-title>
-      <cds-table expandable>
-        <cds-table-toolbar slot="toolbar" role="section" size="lg">
-          <cds-table-toolbar-content size="lg" tabindex="">
+      <cds-main-content-title title="Vērtējuma pārskatīšana">
+      </cds-main-content-title>
+      <cds-table expandable size="xs">
+        <cds-table-toolbar slot="toolbar" role="section" size="xs">
+          <cds-table-toolbar-content size="xs" tabindex="">
             <cds-table-toolbar-search
               placeholder="Filter table"
               role="search"
-              size="lg"></cds-table-toolbar-search>
+              size="xs"></cds-table-toolbar-search>
           </cds-table-toolbar-content>
         </cds-table-toolbar>
         <cds-table-head>
@@ -41,6 +56,7 @@ class CDSPValuationList extends LitElement {
             <cds-table-header-cell>Statusa datums</cds-table-header-cell>
             <cds-table-header-cell>Pārskatīšanas iemesls</cds-table-header-cell>
             <cds-table-header-cell>Pārskatīšanas virzība</cds-table-header-cell>
+            <cds-table-header-cell></cds-table-header-cell>
           </cds-table-header-row>
         </cds-table-head>
         <cds-table-body>
@@ -54,138 +70,78 @@ class CDSPValuationList extends LitElement {
             <cds-table-cell>01.02.2023</cds-table-cell>
             <cds-table-cell>FS iesniegums</cds-table-cell>
             <cds-table-cell>Nodot VI </cds-table-cell>
+            <cds-overflow-menu toolbar-action data-table="true">
+              ${OverflowMenuVertical16({
+                class: `${prefix}--overflow-menu__icon`,
+              })}
+              <span slot="tooltip-content"> Options </span>
+              <cds-overflow-menu-body>
+                <cds-overflow-menu-item> Stop app </cds-overflow-menu-item>
+                <cds-overflow-menu-item> Restart app </cds-overflow-menu-item>
+                <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
+              </cds-overflow-menu-body>
+            </cds-overflow-menu>
           </cds-table-row>
           <cds-table-expanded-row>
-            <div
-              style="
-          width: 100%;
-          height: 100%;
-          padding: 16px, 24px, 16px, 54px;
-          gap: 24px;
-        ">
-              <div style="margin: 24px 0px">
-                <h6
-                  style="font-size: 12px; font-weight: 400; line-height: 16px">
-                  PI nosaukums
-                </h6>
-                <h2
-                  style="font-size: 14px; font-weight: 400; line-height: 18px">
-                  Pētniecības pakalpojumi
-                </h2>
-              </div>
-
-              <div style="margin: 24px 0px">
-                <h6
-                  style="font-size: 12px; font-weight: 400; line-height: 16px">
-                  Iesniedzējs
-                </h6>
-                <h2
-                  style="font-size: 14px; font-weight: 400; line-height: 18px">
-                  Latvijas Universitāte
-                </h2>
-              </div>
-
-              <h1
-                style="
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 20px;
-            margin-bottom: 12px;
-          ">
-                Saistītie dokumenti
-              </h1>
-              <cds-link
-                href="https://www.ibm.com"
-                style="display: flex; align-items: center">
-                Saistītais PI
+            <cds-label-value
+              label="PI nosaukums"
+              value="Pētniecības pakalpojumi"></cds-label-value>
+            <cds-label-value
+              label="Iesniedzējs"
+              value="Latvijas Universitāte"></cds-label-value>
+            <cds-related-documents title="Saistītie dokumenti">
+              <cds-related-documents-item
+                linkTitle="Saistītais PI"
+                linkUrl="https://google.com">
                 <svg
-                  id="icon"
-                  xmlns="http://www.w3.org/2000/svg"
+                  slot="icon"
                   width="16"
                   height="16"
-                  viewBox="0 0 32 32">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        fill: none;
-                      }
-                    </style>
-                  </defs>
-                  <path
-                    d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
-                  <polygon
-                    points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <rect
-                    id="_Transparent_Rectangle_"
-                    data-name="&lt;Transparent Rectangle&gt;"
-                    class="cls-1"
-                    width="32"
-                    height="32" />
+                    width="16"
+                    height="16"
+                    fill="white"
+                    style="mix-blend-mode:multiply" />
+                  <path
+                    d="M13.5 4.5H12V3C12 2.73478 11.8946 2.48043 11.7071 2.29289C11.5196 2.10536 11.2652 2 11 2H5C4.73478 2 4.48043 2.10536 4.29289 2.29289C4.10536 2.48043 4 2.73478 4 3V4.5H2.5C2.10218 4.5 1.72064 4.65804 1.43934 4.93934C1.15804 5.22064 1 5.60218 1 6V13C1 13.2652 1.10536 13.5196 1.29289 13.7071C1.48043 13.8946 1.73478 14 2 14H14C14.2652 14 14.5196 13.8946 14.7071 13.7071C14.8946 13.5196 15 13.2652 15 13V6C15 5.60218 14.842 5.22064 14.5607 4.93934C14.2794 4.65804 13.8978 4.5 13.5 4.5ZM5 3H11V4.5H5V3ZM14 13H2V8.5H6V11H10V8.5H14V13ZM7 8.5H9V10H7V8.5ZM2 7.5V6C2 5.86739 2.05268 5.74021 2.14645 5.64645C2.24021 5.55268 2.36739 5.5 2.5 5.5H13.5C13.6326 5.5 13.7598 5.55268 13.8536 5.64645C13.9473 5.74021 14 5.86739 14 6V7.5H2Z"
+                    fill="#161616" />
                 </svg>
-              </cds-link>
-              <cds-link
-                href="https://www.ibm.com"
-                style="display: flex; align-items: center">
+              </cds-related-documents-item>
+              <cds-related-documents-item
+                linkTitle="Vērtēšanas veidlapa"
+                linkUrl="https://google.com">
                 <svg
-                  id="icon"
-                  xmlns="http://www.w3.org/2000/svg"
+                  slot="icon"
                   width="16"
                   height="16"
-                  viewBox="0 0 32 32">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        fill: none;
-                      }
-                    </style>
-                  </defs>
-                  <title>certificate--check</title>
-                  <rect x="6" y="16" width="6" height="2" />
-                  <rect x="6" y="12" width="10" height="2" />
-                  <rect x="6" y="8" width="10" height="2" />
-                  <path
-                    d="M14,26H4V6H28V16h2V6a2,2,0,0,0-2-2H4A2,2,0,0,0,2,6V26a2,2,0,0,0,2,2H14Z" />
-                  <polygon
-                    points="22 25.59 19.41 23 18 24.41 22 28.41 30 20.41 28.59 19 22 25.59" />
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <rect
-                    id="_Transparent_Rectangle_"
-                    data-name="&lt;Transparent Rectangle&gt;"
-                    class="cls-1"
-                    width="32"
-                    height="32" />
-                </svg>
-                Vērtēšanas veidlapa
-                <svg
-                  id="icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 32 32">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        fill: none;
-                      }
-                    </style>
-                  </defs>
+                    width="16"
+                    height="16"
+                    fill="white"
+                    style="mix-blend-mode:multiply" />
+                  <path d="M6 8H3V9H6V8Z" fill="#161616" />
+                  <path d="M8 6H3V7H8V6Z" fill="#161616" />
+                  <path d="M8 4H3V5H8V4Z" fill="#161616" />
                   <path
-                    d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
-                  <polygon
-                    points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
-                  <rect
-                    id="_Transparent_Rectangle_"
-                    data-name="&lt;Transparent Rectangle&gt;"
-                    class="cls-1"
-                    width="32"
-                    height="32" />
+                    d="M7 13H2V3H14V8H15V3C15 2.73478 14.8946 2.48043 14.7071 2.29289C14.5196 2.10536 14.2652 2 14 2H2C1.73478 2 1.48043 2.10536 1.29289 2.29289C1.10536 2.48043 1 2.73478 1 3V13C1 13.2652 1.10536 13.5196 1.29289 13.7071C1.48043 13.8946 1.73478 14 2 14H7V13Z"
+                    fill="#161616" />
+                  <path
+                    d="M11 12.795L9.705 11.5L9 12.205L11 14.205L15 10.205L14.295 9.5L11 12.795Z"
+                    fill="#161616" />
                 </svg>
-              </cds-link>
-              <cds-link
-                href="https://www.ibm.com"
-                style="display: flex; align-items: center">
-                Vērtēšanas veidlapa
-              </cds-link>
-            </div>
+              </cds-related-documents-item>
+              <cds-related-documents-item
+                linkTitle="Iesniegums par pārsūdzību"
+                target="_self"
+                linkUrl="https://google.com">
+              </cds-related-documents-item>
+            </cds-related-documents>
           </cds-table-expanded-row>
           <cds-table-row>
             <cds-table-cell
@@ -193,144 +149,84 @@ class CDSPValuationList extends LitElement {
                 1.1.1.1/1/23/A</cds-link
               ></cds-table-cell
             >
-            <cds-table-cell>
-              <cds-tag type="green" title="tag-example"> Ir spēkā </cds-tag>
-            </cds-table-cell>
-            <cds-table-cell>13.09.2022</cds-table-cell>
-            <cds-table-cell>Tiesvedība</cds-table-cell>
-            <cds-table-cell>Sākt pārvērtēšanu CFLA uzreiz</cds-table-cell>
+            <cds-table-cell
+              ><cds-tag type="green">Ir spēkā</cds-tag></cds-table-cell
+            >
+            <cds-table-cell>01.02.2023</cds-table-cell>
+            <cds-table-cell>FS iesniegums</cds-table-cell>
+            <cds-table-cell>Nodot VI </cds-table-cell>
+            <cds-overflow-menu toolbar-action data-table="true">
+              ${OverflowMenuVertical16({
+                class: `${prefix}--overflow-menu__icon`,
+              })}
+              <span slot="tooltip-content"> Options </span>
+              <cds-overflow-menu-body>
+                <cds-overflow-menu-item> Stop app </cds-overflow-menu-item>
+                <cds-overflow-menu-item> Restart app </cds-overflow-menu-item>
+                <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
+              </cds-overflow-menu-body>
+            </cds-overflow-menu>
           </cds-table-row>
           <cds-table-expanded-row>
-            <div
-              style="
-          width: 100%;
-          height: 100%;
-          padding: 16px, 24px, 16px, 54px;
-          gap: 24px;
-        ">
-              <div style="margin: 24px 0px">
-                <h6
-                  style="font-size: 12px; font-weight: 400; line-height: 16px">
-                  PI nosaukums
-                </h6>
-                <h2
-                  style="font-size: 14px; font-weight: 400; line-height: 18px">
-                  Pētniecības pakalpojumi
-                </h2>
-              </div>
-
-              <div style="margin: 24px 0px">
-                <h6
-                  style="font-size: 12px; font-weight: 400; line-height: 16px">
-                  Iesniedzējs
-                </h6>
-                <h2
-                  style="font-size: 14px; font-weight: 400; line-height: 18px">
-                  Latvijas Universitāte
-                </h2>
-              </div>
-
-              <h1
-                style="
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 20px;
-            margin-bottom: 12px;
-          ">
-                Saistītie dokumenti
-              </h1>
-              <cds-link
-                href="https://www.ibm.com"
-                style="display: flex; align-items: center">
-                Saistītais PI
+            <cds-label-value
+              label="PI nosaukums"
+              value="Pētniecības pakalpojumi"></cds-label-value>
+            <cds-label-value
+              label="Iesniedzējs"
+              value="Latvijas Universitāte"></cds-label-value>
+            <cds-related-documents title="Saistītie dokumenti">
+              <cds-related-documents-item
+                linkTitle="Saistītais PI"
+                linkUrl="https://google.com">
                 <svg
-                  id="icon"
-                  xmlns="http://www.w3.org/2000/svg"
+                  slot="icon"
                   width="16"
                   height="16"
-                  viewBox="0 0 32 32">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        fill: none;
-                      }
-                    </style>
-                  </defs>
-                  <path
-                    d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
-                  <polygon
-                    points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <rect
-                    id="_Transparent_Rectangle_"
-                    data-name="&lt;Transparent Rectangle&gt;"
-                    class="cls-1"
-                    width="32"
-                    height="32" />
+                    width="16"
+                    height="16"
+                    fill="white"
+                    style="mix-blend-mode:multiply" />
+                  <path
+                    d="M13.5 4.5H12V3C12 2.73478 11.8946 2.48043 11.7071 2.29289C11.5196 2.10536 11.2652 2 11 2H5C4.73478 2 4.48043 2.10536 4.29289 2.29289C4.10536 2.48043 4 2.73478 4 3V4.5H2.5C2.10218 4.5 1.72064 4.65804 1.43934 4.93934C1.15804 5.22064 1 5.60218 1 6V13C1 13.2652 1.10536 13.5196 1.29289 13.7071C1.48043 13.8946 1.73478 14 2 14H14C14.2652 14 14.5196 13.8946 14.7071 13.7071C14.8946 13.5196 15 13.2652 15 13V6C15 5.60218 14.842 5.22064 14.5607 4.93934C14.2794 4.65804 13.8978 4.5 13.5 4.5ZM5 3H11V4.5H5V3ZM14 13H2V8.5H6V11H10V8.5H14V13ZM7 8.5H9V10H7V8.5ZM2 7.5V6C2 5.86739 2.05268 5.74021 2.14645 5.64645C2.24021 5.55268 2.36739 5.5 2.5 5.5H13.5C13.6326 5.5 13.7598 5.55268 13.8536 5.64645C13.9473 5.74021 14 5.86739 14 6V7.5H2Z"
+                    fill="#161616" />
                 </svg>
-              </cds-link>
-              <cds-link
-                href="https://www.ibm.com"
-                style="display: flex; align-items: center">
+              </cds-related-documents-item>
+              <cds-related-documents-item
+                linkTitle="Vērtēšanas veidlapa"
+                linkUrl="https://google.com">
                 <svg
-                  id="icon"
-                  xmlns="http://www.w3.org/2000/svg"
+                  slot="icon"
                   width="16"
                   height="16"
-                  viewBox="0 0 32 32">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        fill: none;
-                      }
-                    </style>
-                  </defs>
-                  <title>certificate--check</title>
-                  <rect x="6" y="16" width="6" height="2" />
-                  <rect x="6" y="12" width="10" height="2" />
-                  <rect x="6" y="8" width="10" height="2" />
-                  <path
-                    d="M14,26H4V6H28V16h2V6a2,2,0,0,0-2-2H4A2,2,0,0,0,2,6V26a2,2,0,0,0,2,2H14Z" />
-                  <polygon
-                    points="22 25.59 19.41 23 18 24.41 22 28.41 30 20.41 28.59 19 22 25.59" />
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <rect
-                    id="_Transparent_Rectangle_"
-                    data-name="&lt;Transparent Rectangle&gt;"
-                    class="cls-1"
-                    width="32"
-                    height="32" />
-                </svg>
-                Vērtēšanas veidlapa
-                <svg
-                  id="icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 32 32">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        fill: none;
-                      }
-                    </style>
-                  </defs>
+                    width="16"
+                    height="16"
+                    fill="white"
+                    style="mix-blend-mode:multiply" />
+                  <path d="M6 8H3V9H6V8Z" fill="#161616" />
+                  <path d="M8 6H3V7H8V6Z" fill="#161616" />
+                  <path d="M8 4H3V5H8V4Z" fill="#161616" />
                   <path
-                    d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z" />
-                  <polygon
-                    points="20 2 20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2" />
-                  <rect
-                    id="_Transparent_Rectangle_"
-                    data-name="&lt;Transparent Rectangle&gt;"
-                    class="cls-1"
-                    width="32"
-                    height="32" />
+                    d="M7 13H2V3H14V8H15V3C15 2.73478 14.8946 2.48043 14.7071 2.29289C14.5196 2.10536 14.2652 2 14 2H2C1.73478 2 1.48043 2.10536 1.29289 2.29289C1.10536 2.48043 1 2.73478 1 3V13C1 13.2652 1.10536 13.5196 1.29289 13.7071C1.48043 13.8946 1.73478 14 2 14H7V13Z"
+                    fill="#161616" />
+                  <path
+                    d="M11 12.795L9.705 11.5L9 12.205L11 14.205L15 10.205L14.295 9.5L11 12.795Z"
+                    fill="#161616" />
                 </svg>
-              </cds-link>
-              <cds-link
-                href="https://www.ibm.com"
-                style="display: flex; align-items: center">
-                Vērtēšanas veidlapa
-              </cds-link>
-            </div>
+              </cds-related-documents-item>
+              <cds-related-documents-item
+                linkTitle="Iesniegums par pārsūdzību"
+                target="_self"
+                linkUrl="https://google.com">
+              </cds-related-documents-item>
+            </cds-related-documents>
           </cds-table-expanded-row>
         </cds-table-body>
       </cds-table>
