@@ -30,9 +30,9 @@ class CDSRelatedDocumentsItem extends LitElement {
   @property({ type: String }) linkTitle = 'Saistītas PI';
   @property({ type: String }) linkUrl = 'https://www.google.com';
   /**
-    * Can be one of: _blank, _self, _parent, _top
+    * Can be one of: _blank, _self
   */
-  @property({ type: String }) target = '_self';
+  @property({ type: String }) target = '_blank';
   @property({ type: String }) linkIcon = '';
 
 
@@ -51,10 +51,10 @@ class CDSRelatedDocumentsItem extends LitElement {
         </span>
         <cds-link
           href="${linkUrl}"
-          target="${target || '_self'}"
+          target="${target || '_blank'}"
         >
           ${linkTitle}
-          ${target === '_blank' ? Launch16({ slot: 'icon' }): ''}
+          ${target === '_self' ? '' : Launch16({ slot: 'icon' })}
         </cds-link>
       </li>
     `;
