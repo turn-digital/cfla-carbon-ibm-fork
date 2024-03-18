@@ -58,4 +58,8 @@ $css--plex: true !default;
     }
   }
 
+  &__link-icon[hidden] {
+    display: none;
+  }
+
 }
