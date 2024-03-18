@@ -1,55 +1,68 @@
 import { Props, Description } from '@storybook/addon-docs/blocks';
 import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
-# Link
-
-> 💡 Check our
-> [CodeSandbox](https://codesandbox.io/s/github/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/carbon-web-components/examples/codesandbox/basic/components/link)
-> example implementation.
-
-[![Edit carbon-web-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/carbon-design-system/carbon-for-ibm-dotcom/tree/main/packages/carbon-web-components/examples/codesandbox/basic/components/link)
-
-Represents a link. Provided for convenience purpose, you can alternatively use
-`<a class="cds--link">` with Carbon style in place in light DOM.
+# Document with status
 
 ## Getting started
 
 Here's a quick example to get you started.
 
+### Description
+Related form with a status that is important to see before opening. The possibility to display a prompt for action, for example, review, compare, fill out.
+
+### Anatomy
+* Title: form name
+* Status name: describes the form's status
+* Status icon: visually represents what is happening with the form
+* Link to where it leads: form link
+* Link name: the name of the action that opens the form
+
+### Design and UX comments
+* The link always opens in a new window
+* The status icon and status name are unrelated to each other
+* There are four types of status icons:
+success - work with the form is completed
+information - all other statuses in between
+error - if there are problems with the form (for example, interrupted, rejected)
+warning - clarifications/corrections needed
+
 ### JS (via import)
 
 ```javascript
-import '@carbon/web-components/es/components/list/index.js';
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-document-with-status.min.js"></script>
 ```
 
-<Description markdown={`${cdnJs({ components: ['list'] })}`} />
-<Description markdown={`${cdnCss()}`} />
+
 
 ### HTML
 
 ```html
-<cds-link href="https://www.ibm.com"> Link </cds-link>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-document-with-status.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/latest/plex.css" />
+    <title>Document with status</title>
+  </head>
+
+  <body>
+    <cds-document-with-status
+      title="Projekta satura izmaiņu salīdzināšana"
+      status="success"
+      statusText="Izmaiņas ir veiktas"
+      linkUrl="https://google.com"
+      linkText="Apskatīt">
+    </cds-document-with-status>
+  </body>
+</html>
 ```
 
-## Paired with icon
+## `<cds-document-with-status>` attributes and properties
 
-Import the desired icon and incorporate with the link text:
-
-```javascript
-import Download16 from '@carbon/web-components/es/icons/download/16';
-
-function App() {
-  return html`<cds-link href="https://www.ibm.com">
-    Download ${Download16({ slot: 'icon' })}</cds-link
-  >`;
-}
-```
-
-## `<cds-link>` attributes and properties
-
-Note: For `boolean` attributes, `true` means simply setting the attribute (e.g.
-`<cds-link disabled>`) and `false` means not setting the attribute (e.g.
-`<cds-link>` without `disabled` attribute).
-
-<Props of="cds-link" />
-````
+<Props of="cds-document-with-status" />
