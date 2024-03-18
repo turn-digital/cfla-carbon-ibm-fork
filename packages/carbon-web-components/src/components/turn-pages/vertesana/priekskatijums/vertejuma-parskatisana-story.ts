@@ -23,6 +23,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title:
-    'Views/Vērtēšana/Vērtējuma pārskatīšana Globali/Vērtējuma pārskatīšana izveidošana',
+  title: 'Views/Vērtēšana/Vērtējuma pārskatīšana Globali/Priekskatijums',
 };
