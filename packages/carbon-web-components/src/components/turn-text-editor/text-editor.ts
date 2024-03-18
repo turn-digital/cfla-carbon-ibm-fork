@@ -25,16 +25,19 @@ class TextEditor extends LitElement {
     height: 200,
     highlight_on_focus: false,
     branding: false,
-    language_url: 'http://localhost:8001/plugins/languages/lv.js',
-    language: 'lv',
+    max_length: 100,
     fetch_obj: {
-      url: 'https://jsonplaceholder.typicode.com/posts',
-      method: 'POST',
+      urlToFetch: 'https://jsonplaceholder.typicode.com/posts',
+      fetchMethod: 'POST',
       errorAlertMessages: 'Error occured while fetching data',
     },
-    max_length: 100,
+    // need this part to be able to use local plugin so we can test some stuff
+    // external_plugins: {
+    //   pluginId: 'http://localhost:8001/plugins/length_validation/plugin.min.js',
+    // },
     external_plugins: {
-      pluginId: 'http://localhost:8001/plugins/length_validation/plugin.min.js',
+      pluginId:
+        'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
     },
   };
 
