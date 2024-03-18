@@ -9,12 +9,12 @@
 
 import { LitElement, html } from 'lit';
 import { prefix } from '../../globals/settings';
-import styles from './page-title.scss';
+import styles from './main-content-title.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
-@customElement(`${prefix}-page-title`)
-class PageTitle extends LitElement {
+@customElement(`${prefix}-main-content-title`)
+class CDSMainContentTitle extends LitElement {
   static styles = styles;
 
   @property() title = 'Default page title';
@@ -22,10 +22,10 @@ class PageTitle extends LitElement {
   render() {
     return html`
       <div class="container">
-        <h3 class="title">${this.title}</h3>
+        <h1 class="title">${this.title}</h1>
       </div>
     `;
   }
 }
 
-export default PageTitle;
+export default CDSMainContentTitle;
