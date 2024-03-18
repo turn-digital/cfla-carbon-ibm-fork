@@ -7,4 +7,4 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import './page-title';
+import './main-content-title';
