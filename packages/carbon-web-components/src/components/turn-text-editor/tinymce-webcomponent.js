@@ -385,7 +385,15 @@
       this._getTinymce().init(conf);
     }
     _getTinymceSrc() {
-      return 'https://demo.turn.lv/tinymce/tinymce.min.js';
+      console.log(window.location.origin);
+      var href = window.location.origin;
+      var urlToTinymce =
+        href == 'http://localhost:9000'
+          ? 'https://demo.turn.lv/cfla_dist/assets/tinymce/tinymce.min.js'
+          : 'https://demo.turn.lv/cfla_dist/assets/tinymce/tinymce.min.js';
+
+      console.log('urlToTinymce', urlToTinymce);
+      return urlToTinymce;
     }
     _loadTinyDoInit() {
       if (this._getTinymce()) {

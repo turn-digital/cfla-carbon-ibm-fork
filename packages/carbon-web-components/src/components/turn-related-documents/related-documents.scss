@@ -38,7 +38,7 @@ $css--plex: true !default;
 
   &__links {
     list-style-type: none;
-    padding-left: 0;
+    padding: $spacing-01;
     margin: 0;
   }
 
@@ -56,6 +56,10 @@ $css--plex: true !default;
       height: 100%;
       fill: currentColor;
     }
+  }
+
+  &__link-icon[hidden] {
+    display: none;
   }
 
 }

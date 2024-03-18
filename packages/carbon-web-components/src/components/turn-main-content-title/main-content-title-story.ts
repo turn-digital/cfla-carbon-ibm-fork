@@ -9,18 +9,20 @@
 
 import { html } from 'lit';
 import './index';
-import storyDocs from './page-title-story.mdx';
+import storyDocs from './main-content-title-story.mdx';
 
 export const Default = () => {
-  return html` <cds-page-title></cds-page-title> `;
+  return html` <cds-main-content-title></cds-main-content-title> `;
 };
 export const Propsed = () => {
-  return html` <cds-page-title title="Propsed page title"></cds-page-title> `;
+  return html`
+    <cds-main-content-title title="Propsed page title"></cds-main-content-title>
+  `;
 };
 
 export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Custom-components/Page title',
+  title: 'Custom-components/Main content title',
 };
