@@ -38,7 +38,7 @@ $css--plex: true !default;
 
   &__links {
     list-style-type: none;
-    padding-left: 0;
+    padding: $spacing-01;
     margin: 0;
   }
 
