@@ -65,8 +65,9 @@ class CDSDocumentsWithStatus extends FocusMixin(LitElement) {
         </div>
         <div class="document-with-status__link">
           <cds-link
-            href="${linkUrl}">
-            ${linkText}      
+            href="${linkUrl}"
+            target="_blank">
+            ${linkText}   
           </cds-link>
         </div>
       </div>
