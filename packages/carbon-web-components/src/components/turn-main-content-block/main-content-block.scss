@@ -1,0 +1,10 @@
+.page_main {
+  margin-left: 0px;
+  margin-top: 48px;
+}
+
+@media screen and (min-width: 1056px) {
+  .page_main {
+    margin-left: 256px;
+  }
+}
