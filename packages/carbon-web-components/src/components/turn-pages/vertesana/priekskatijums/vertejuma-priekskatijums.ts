@@ -22,7 +22,6 @@ import { carbonElement as customElement } from '../../../../globals/decorators/c
 class CDSPValuationReview extends LitElement {
   render() {
     return html`
-    <div>
       <cds-back-to class="cds--css-grid-column cds--col-span-100 cds--grid-column" title="Uz sarakstu"
       link="#"></cds-back-to>
   <cds-main-content-title class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
@@ -42,12 +41,13 @@ class CDSPValuationReview extends LitElement {
               state="current"></cds-progress-step>
       </cds-progress-indicator>
   </div>
-
+  <cds-main-content-item size="08">
   <cds-project-card class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10"
       projectId="1.1.1.1/16/A/004" tagTitle="Apstiprināts ar nosacījumu" tagType="purple"
       projectDateInfo="05.01.2021 - 30.05.2028" projectCostInfo="500 345">
   </cds-project-card>
-
+  </cds-main-content-item>
+  <cds-main-content-item size="08">
   <div
       class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
       <cds-label-value label="Pārskatīšanas iemesls" value="Finansējuma pārpalikums" size="lg">
@@ -65,13 +65,13 @@ class CDSPValuationReview extends LitElement {
       </cds-label-value>
       </cds-label-value>
   </div>
+  </cds-main-content-item>
   <div class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10">
       <cds-button-set>
           <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
           <cds-button href="https://www.ibm.com">Izveidot</cds-button>
       </cds-button-set>
   </div>
-      </div>
     `;
   }
 

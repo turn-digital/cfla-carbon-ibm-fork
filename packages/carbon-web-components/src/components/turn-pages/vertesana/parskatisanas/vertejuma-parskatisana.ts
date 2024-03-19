@@ -22,35 +22,34 @@ import { carbonElement as customElement } from '../../../../globals/decorators/c
 class CDSPValuationReview extends LitElement {
   render() {
     return html`
-      <div>
-        <cds-back-to
-          class="cds--css-grid-column cds--col-span-100 cds--grid-column"
-          title="Uz sarakstu"
-          link="#"></cds-back-to>
-        <cds-main-content-title
-          class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
-          title="Vērtējuma pārskatīšanas izveidosāna">
-        </cds-main-content-title>
+      <cds-back-to
+        class="cds--css-grid-column cds--col-span-100 cds--grid-column"
+        title="Uz sarakstu"
+        link="#"></cds-back-to>
+      <cds-main-content-title
+        class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+        title="Vērtējuma pārskatīšanas izveidosāna">
+      </cds-main-content-title>
 
-        <div
-          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-          <cds-progress-indicator space-equally>
-            <cds-progress-step
-              style="max-inline-size: none;"
-              label="Pārskatīšanas veids"
-              description="Step 1: Register a onChange event"
-              state="complete"></cds-progress-step>
-            <cds-progress-step
-              label="Pamatinfo"
-              description="The progress indicator will listen for clicks on the steps"
-              state="complete"></cds-progress-step>
-            <cds-progress-step
-              label="Priekšskatījums"
-              description="The progress indicator will listen for clicks on the steps"
-              state="current"></cds-progress-step>
-          </cds-progress-indicator>
-        </div>
-
+      <div
+        class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+        <cds-progress-indicator space-equally>
+          <cds-progress-step
+            style="max-inline-size: none;"
+            label="Pārskatīšanas veids"
+            description="Step 1: Register a onChange event"
+            state="complete"></cds-progress-step>
+          <cds-progress-step
+            label="Pamatinfo"
+            description="The progress indicator will listen for clicks on the steps"
+            state="complete"></cds-progress-step>
+          <cds-progress-step
+            label="Priekšskatījums"
+            description="The progress indicator will listen for clicks on the steps"
+            state="current"></cds-progress-step>
+        </cds-progress-indicator>
+      </div>
+      <cds-main-content-item size="08">
         <cds-project-card
           class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10"
           projectId="1.1.1.1/16/A/004"
@@ -59,7 +58,8 @@ class CDSPValuationReview extends LitElement {
           projectDateInfo="05.01.2021 - 30.05.2028"
           projectCostInfo="500 345">
         </cds-project-card>
-
+      </cds-main-content-item>
+      <cds-main-content-item size="08">
         <div
           class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
           <cds-radio-button-group
@@ -81,6 +81,8 @@ class CDSPValuationReview extends LitElement {
               value="Tiesvedība"></cds-radio-button>
           </cds-radio-button-group>
         </div>
+      </cds-main-content-item>
+      <cds-main-content-item size="08">
         <div
           class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
           <cds-radio-button-group
@@ -96,13 +98,14 @@ class CDSPValuationReview extends LitElement {
               value="Sākt pārvērtēšanu  CFLA uzreiz"></cds-radio-button>
           </cds-radio-button-group>
         </div>
-        <div
-          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10">
-          <cds-button-set>
-            <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
-            <cds-button href="https://www.ibm.com">Izveidot</cds-button>
-          </cds-button-set>
-        </div>
+      </cds-main-content-item>
+
+      <div
+        class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10">
+        <cds-button-set>
+          <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
+          <cds-button href="https://www.ibm.com">Izveidot</cds-button>
+        </cds-button-set>
       </div>
     `;
   }

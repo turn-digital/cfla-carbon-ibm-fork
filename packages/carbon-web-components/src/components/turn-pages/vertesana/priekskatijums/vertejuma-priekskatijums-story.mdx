@@ -14,20 +14,22 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/turn-carbon-grid.css" />
-    <script type="module" src="http://localhost:8001/turn-main-content-block.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-back-to.min.js"></script>
-    <script type="module" src="http://localhost:8001/turn-label-value.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-title.min.js"></script>
+
     <script type="module" src="https://demo.turn.lv/cfla_dist/button.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/data-table.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/tag.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/link.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/progress-indicator.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-related-documents.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/overflow-menu.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-related-documents.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-block.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-item.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-back-to.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-title.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-project-card.min.js"></script>
+    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/turn-carbon-grid.css" />
     <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
 </head>
 
@@ -52,12 +54,13 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
               state="current"></cds-progress-step>
       </cds-progress-indicator>
   </div>
-
+  <cds-main-content-item size="08">
   <cds-project-card class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10"
       projectId="1.1.1.1/16/A/004" tagTitle="Apstiprināts ar nosacījumu" tagType="purple"
       projectDateInfo="05.01.2021 - 30.05.2028" projectCostInfo="500 345">
   </cds-project-card>
-
+  </cds-main-content-item>
+  <cds-main-content-item size="08">
   <div
       class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
       <cds-label-value label="Pārskatīšanas iemesls" value="Finansējuma pārpalikums" size="lg">
@@ -75,6 +78,7 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
       </cds-label-value>
       </cds-label-value>
   </div>
+  </cds-main-content-item>
   <div class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10">
       <cds-button-set>
           <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>

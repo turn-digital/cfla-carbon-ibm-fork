@@ -25,6 +25,7 @@ class TextEditor extends LitElement {
     height: 200,
     highlight_on_focus: false,
     branding: false,
+    menubar: false,
     max_length: 100,
     fetch_obj: {
       urlToFetch: 'https://jsonplaceholder.typicode.com/posts',
