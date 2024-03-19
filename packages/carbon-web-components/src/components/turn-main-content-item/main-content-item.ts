@@ -15,7 +15,7 @@ import { property } from 'lit/decorators.js';
 
 @customElement(`${prefix}-main-content-item`)
 class CDSMainContentItem extends LitElement {
-  @property() size = 'sm';
+  @property() size = '05';
   render() {
     return html`
       <div class="size--${this.size}">
