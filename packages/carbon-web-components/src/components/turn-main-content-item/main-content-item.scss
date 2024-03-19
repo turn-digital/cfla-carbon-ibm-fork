@@ -4,36 +4,56 @@
 .size {
   margin-top: 0px;
   margin-bottom: 0px;
-  &--xxs {
+  &--01 {
     margin-top: $spacing-03;
     margin-bottom: $spacing-03;
   }
-  &--xs {
+  &--02 {
+    margin-top: $spacing-03;
+    margin-bottom: $spacing-03;
+  }
+  &--03 {
+    margin-top: $spacing-03;
+    margin-bottom: $spacing-03;
+  }
+  &--04 {
     margin-top: $spacing-04;
     margin-bottom: $spacing-04;
   }
-  &--sm {
+  &--05 {
     margin-top: $spacing-05;
     margin-bottom: $spacing-05;
   }
-  &--md {
+  &--06 {
     margin-top: $spacing-06;
     margin-bottom: $spacing-06;
   }
-  &--lg {
+  &--07 {
     margin-top: $spacing-07;
     margin-bottom: $spacing-07;
   }
-  &--xl {
+  &--08 {
     margin-top: $spacing-08;
     margin-bottom: $spacing-08;
   }
-  &--2xl {
+  &--09 {
     margin-top: $spacing-09;
     margin-bottom: $spacing-09;
   }
-  &--3xl {
+  &--10 {
     margin-top: $spacing-10;
     margin-bottom: $spacing-10;
+  }
+  &--11 {
+    margin-top: $spacing-11;
+    margin-bottom: $spacing-11;
+  }
+  &--12 {
+    margin-top: $spacing-12;
+    margin-bottom: $spacing-12;
+  }
+  &--13 {
+    margin-top: $spacing-13;
+    margin-bottom: $spacing-13;
   }
 }
