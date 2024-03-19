@@ -9,19 +9,15 @@
 
 import { html } from 'lit';
 import './index';
-import storyDocs from './vertejuma-parskatisana-story.mdx';
+import storyDocs from './vertejuma-pamatinfo-story.mdx';
 
 export const Default = () => {
-  return html` <cds-page-valuation-review></cds-page-valuation-review> `;
-};
-
-export const Playground = () => {
-  return html` <cds-page-valuation-review></cds-page-valuation-review> `;
+  return html` <cds-page-pamatinfo></cds-page-pamatinfo> `;
 };
 
 export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Views/Vērtēšana/Vērtējuma pārskatīšana Globali/Priekskatijums',
+  title: 'Views/Vērtēšana/Vērtējuma pārskatīšana Globali/Pamatinfo',
 };
