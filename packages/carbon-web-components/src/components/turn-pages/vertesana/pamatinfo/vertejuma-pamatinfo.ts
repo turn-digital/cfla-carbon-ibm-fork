@@ -30,7 +30,6 @@ class CDSPValuationReview extends LitElement {
         class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
         title="Vērtējuma pārskatīšanas izveidosāna">
       </cds-main-content-title>
-
       <div
         class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
         <cds-progress-indicator space-equally>
@@ -49,37 +48,42 @@ class CDSPValuationReview extends LitElement {
             state="incomplete"></cds-progress-step>
         </cds-progress-indicator>
       </div>
-      <div
-        class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-        <cds-date-picker>
-          <cds-date-picker-input
-            size="lg"
-            style="width: 100%"
-            label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
-            placeholder="mm/dd/yyyy">
-          </cds-date-picker-input>
-        </cds-date-picker>
-      </div>
-      <div
-        class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-        <cds-file-uploader
-          label-description="Max file size is 500kb. Supported file types are .jpg and .png."
-          label-title="Augšupielādēt pārskatīšanas/apstrīdējuma iesniegumu">
-          <cds-file-uploader-drop-container
-            accept="image/jpeg image/png"
-            name=""
-            slot="drop-container">
-            Ievelciet un nometiet failus šeit vai spiediet, lai augšupielādētu
-          </cds-file-uploader-drop-container>
-        </cds-file-uploader>
-        <cds-file-uploader-item state="edit">
-          Filename.png
-        </cds-file-uploader-item>
-      </div>
-      <div
-        class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-        <cds-text-editor></cds-text-editor>
-      </div>
+      <cds-main-content-item size="08">
+        <div
+          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+          <cds-date-picker>
+            <cds-date-picker-input
+              size="lg"
+              style="width: 100%"
+              label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
+              placeholder="mm/dd/yyyy">
+            </cds-date-picker-input>
+          </cds-date-picker>
+        </div>
+        <cds-main-content-item size="08">
+          <div
+            class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-file-uploader
+              label-description="Max file size is 500kb. Supported file types are .jpg and .png."
+              label-title="Augšupielādēt pārskatīšanas/apstrīdējuma iesniegumu">
+              <cds-file-uploader-drop-container
+                accept="image/jpeg image/png"
+                name=""
+                slot="drop-container">
+                Ievelciet un nometiet failus šeit vai spiediet, lai
+                augšupielādētu
+              </cds-file-uploader-drop-container>
+            </cds-file-uploader>
+            <cds-file-uploader-item state="edit">
+              Filename.png
+            </cds-file-uploader-item>
+          </div>
+        </cds-main-content-item>
+        <div
+          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+          <cds-text-editor></cds-text-editor>
+        </div>
+      </cds-main-content-item>
       <div
         class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10">
         <cds-button-set>
