@@ -1,0 +1,39 @@
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/spacing' as *;
+
+.size {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  &--xxs {
+    margin-top: $spacing-03;
+    margin-bottom: $spacing-03;
+  }
+  &--xs {
+    margin-top: $spacing-04;
+    margin-bottom: $spacing-04;
+  }
+  &--sm {
+    margin-top: $spacing-05;
+    margin-bottom: $spacing-05;
+  }
+  &--md {
+    margin-top: $spacing-06;
+    margin-bottom: $spacing-06;
+  }
+  &--lg {
+    margin-top: $spacing-07;
+    margin-bottom: $spacing-07;
+  }
+  &--xl {
+    margin-top: $spacing-08;
+    margin-bottom: $spacing-08;
+  }
+  &--2xl {
+    margin-top: $spacing-09;
+    margin-bottom: $spacing-09;
+  }
+  &--3xl {
+    margin-top: $spacing-10;
+    margin-bottom: $spacing-10;
+  }
+}
