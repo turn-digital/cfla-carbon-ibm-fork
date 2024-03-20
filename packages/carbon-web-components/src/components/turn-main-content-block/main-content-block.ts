@@ -18,7 +18,7 @@ class CDSMainContentBlock extends LitElement {
     return html`
       <link
         rel="stylesheet"
-        href="https://demo.turn.lv/cfla_dist/assets/turn-carbon-grid.css" />
+        href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
       <main class="page_main">
         <div class="cds--css-grid  cds--css-grid--narrow">
           <slot></slot>
