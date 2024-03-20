@@ -6,6 +6,7 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
 ### HTML
 
 ```html
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -60,6 +61,9 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
     <script
       type="module"
       src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-text-editor.min.js"></script>
     <link
       rel="stylesheet"
       href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
@@ -99,21 +103,21 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
             state="incomplete"></cds-progress-step>
         </cds-progress-indicator>
       </div>
-      <cds-main-content-item size="08">
-        <div
-          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-          <cds-date-picker>
-            <cds-date-picker-input
-              size="lg"
-              style="width: 100%"
-              label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
-              placeholder="mm/dd/yyyy">
-            </cds-date-picker-input>
-          </cds-date-picker>
-        </div>
-        <cds-main-content-item size="08">
-          <div
-            class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+      <cds-main-content-item
+        size="08"
+        class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+        <cds-date-picker>
+          <cds-date-picker-input
+            size="lg"
+            style="width: 100%"
+            label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
+            placeholder="mm/dd/yyyy">
+          </cds-date-picker-input>
+        </cds-date-picker>
+        <cds-main-content-item
+          size="08"
+          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 ">
+          <div>
             <cds-file-uploader
               label-description="Max file size is 500kb. Supported file types are .jpg and .png."
               label-title="Augšupielādēt pārskatīšanas/apstrīdējuma iesniegumu">
@@ -131,7 +135,7 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
           </div>
         </cds-main-content-item>
         <div
-          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 ">
           <cds-text-editor
             editorId="editor1"
             editorConfig='{
