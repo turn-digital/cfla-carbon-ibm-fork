@@ -21,7 +21,7 @@ class CDSMainContentTitle extends LitElement {
 
   render() {
     return html`
-      <div>
+      <div class="container">
         <h1 class="title">${this.title}</h1>
       </div>
     `;

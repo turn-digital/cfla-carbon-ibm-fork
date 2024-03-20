@@ -11,15 +11,17 @@ import { LitElement, html } from 'lit';
 import { prefix } from '../../globals/settings';
 import styles from './main-content-block.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
+import { property } from 'lit/decorators';
 
 @customElement(`${prefix}-main-content-block`)
 class CDSMainContentBlock extends LitElement {
+  @property({ type: Boolean }) storybook = false;
   render() {
     return html`
       <link
         rel="stylesheet"
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
-      <main class="page_main">
+      <main class="${this.storybook === false ? 'page_main' : ''}">
         <div class="cds--css-grid  cds--css-grid--narrow">
           <slot></slot>
         </div>

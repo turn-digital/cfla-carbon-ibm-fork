@@ -1,0 +1,89 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
+
+# Tag
+
+### HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <script type="module" src="https://demo.turn.lv/cfla_dist/button.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/data-table.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/tag.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/link.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/progress-indicator.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/overflow-menu.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/turn-related-documents.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-block.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-item.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/turn-back-to.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-title.min.js"></script>
+  <script type="module" src="https://demo.turn.lv/cfla_dist/turn-project-card.min.js"></script>
+  <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+  <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
+  <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
+</head>
+
+<body class="cds-theme-zone-white">
+  <cds-main-content-block>
+<cds-back-to class="cds--css-grid-column cds--col-span-100 cds--grid-column" title="Uz sarakstu"
+          link="#"></cds-back-to>
+        <cds-main-content-title class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+          title="Vērtējuma pārskatīšana">
+        </cds-main-content-title>
+
+        <div class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+          <cds-progress-indicator space-equally>
+            <cds-progress-step style="max-inline-size: none;" label="Pārskatīšanas veids"
+              description="Step 1: Register a onChange event" state="complete"></cds-progress-step>
+            <cds-progress-step label="Pamatinfo" description="The progress indicator will listen for clicks on the steps"
+              state="complete"></cds-progress-step>
+            <cds-progress-step label="Priekšskatījums"
+              description="The progress indicator will listen for clicks on the steps" state="current"></cds-progress-step>
+          </cds-progress-indicator>
+        </div>
+        <cds-main-content-item size="08"
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+          <cds-project-card projectId="1.1.1.1/16/A/004" tagTitle="Apstiprināts ar nosacījumu" tagType="purple"
+            projectDateInfo="05.01.2021 - 30.05.2028" projectCostInfo="500 345">
+          </cds-project-card>
+          <cds-main-content-item size="05">
+            <div
+              class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+              <cds-label-value label="Pārskatīšanas iemesls" value="Finansējuma pārpalikums" size="lg">
+              </cds-label-value>
+              <cds-label-value label="Pārskatīšanas virzība" value="Sākt pārvērtēšanu  CFLA uzreiz" size="lg">
+              </cds-label-value>
+              <cds-label-value label="Apstrīdējuma iesnieguma saņemšanas datums" value="01.01.2024" size="lg">
+              </cds-label-value>
+              <cds-label-value label="Apstrīdējuma iesnieguma saņemšanas datums" size="lg">
+                <cds-link target="_blank"
+                  href="https://demo.turn.lv/peteris/screens/pngtree-starry-sky-summer-background-image_2116955.jpg">Filename.png</cds-link>
+              </cds-label-value>
+              <cds-label-value label="Apstrīdējuma būtība" size="lg"
+                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum diam id diam blandit congue. Phasellus dictum augue rutrum justo consectetur, vel posuere purus porta. Aenean finibus pretium eros, in tempor est aliquam vel. ">
+              </cds-label-value>
+              </cds-label-value>
+            </div>
+          </cds-main-content-item>
+          <div class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+            <cds-button-set>
+              <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
+              <cds-button href="https://www.ibm.com">Izveidot</cds-button>
+            </cds-button-set>
+          </div>
+  </cds-main-content-block>
+</body>
+
+</html>
+```

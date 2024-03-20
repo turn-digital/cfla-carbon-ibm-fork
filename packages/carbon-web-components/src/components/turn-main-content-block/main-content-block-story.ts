@@ -12,10 +12,10 @@ import './index';
 
 export const Default = () => {
   return html`
-    <cds-main-content-item>Some content inside</cds-main-content-item>
+    <cds-main-content-clock>Some content inside</cds-main-content-clock>
   `;
 };
 
 export default {
-  title: 'Custom-components/Main content item',
+  title: 'Custom-components/Main content block',
 };

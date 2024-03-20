@@ -15,10 +15,6 @@ export const Default = () => {
   return html` <cds-page-valuation-open></cds-page-valuation-open> `;
 };
 
-export const Playground = () => {
-  return html` <cds-page-valuation-open></cds-page-valuation-open> `;
-};
-
 export default {
   parameters: {
     ...storyDocs.parameters,

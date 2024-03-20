@@ -23,13 +23,18 @@ import Add16 from '@carbon/icons/lib/add/16';
 class CDSPValuationOpen extends LitElement {
   render() {
     return html`
-      <cds-main-content-item size="08">
+      <link
+        rel="stylesheet"
+        href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+      <cds-main-content-block storybook>
         <cds-main-content-title
-          class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+          class="cds--css-grid-column cds--col-span-100"
           title="Vērtējuma pārskatīšanas izveidosāna">
         </cds-main-content-title>
 
-        <cds-main-content-item size="08">
+        <cds-main-content-item
+          size="08"
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
           <cds-label-value
             label="Apstrīdēšanas iesnieguma saņemšanas datums"
             value="23.03.2023">
@@ -38,7 +43,9 @@ class CDSPValuationOpen extends LitElement {
           </cds-label-value>
         </cds-main-content-item>
 
-        <cds-main-content-item size="08">
+        <cds-main-content-item
+          size="08"
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
           <cds-radio-button-group
             legend-text="Pārskatīšanas lēmums"
             label-position="right"
@@ -61,7 +68,9 @@ class CDSPValuationOpen extends LitElement {
               value="Izdot satura ziņā citu lēmumu"></cds-radio-button>
           </cds-radio-button-group>
         </cds-main-content-item>
-        <cds-main-content-item size="08">
+        <cds-main-content-item
+          size="08"
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
           <cds-text-editor
             editorId="editor1"
             editorConfig='{
@@ -83,7 +92,9 @@ class CDSPValuationOpen extends LitElement {
         }
       }'></cds-text-editor>
         </cds-main-content-item>
-        <cds-main-content-item size="08">
+        <cds-main-content-item
+          size="08"
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
           <cds-text-editor
             editorId="editor2"
             editorConfig='{
@@ -105,60 +116,63 @@ class CDSPValuationOpen extends LitElement {
         }
       }'></cds-text-editor>
         </cds-main-content-item>
-        <cds-table>
-          <cds-table-header-title slot="title"
-            >Dokumenti</cds-table-header-title
-          >
-          <cds-table-toolbar slot="toolbar">
-            <cds-table-toolbar-content>
-              <cds-button
-                size="lg"
-                kind="secondary"
-                tooltip-alignment=""
-                tooltip-position="top"
-                type="button"
-                has-main-content="">
-                Pievienot ${Add16({ slot: 'icon' })}
-              </cds-button>
-            </cds-table-toolbar-content>
-          </cds-table-toolbar>
-          <cds-table-head>
-            <cds-table-header-row>
-              <cds-table-header-cell>Nosaukums</cds-table-header-cell>
-              <cds-table-header-cell
-                >Pievienošanas datums</cds-table-header-cell
-              >
-              <cds-table-header-cell>Pievienotājs</cds-table-header-cell>
-            </cds-table-header-row>
-          </cds-table-head>
-          <cds-table-body>
-            <cds-table-row>
-              <cds-table-cell>
-                <a
-                  href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
-                  download
-                  style="text-decoration: none;">
-                  vērtējums1.pdf
-                </a>
-              </cds-table-cell>
-              <cds-table-cell>22.03.2023 10:15</cds-table-cell>
-              <cds-table-cell>Anna Bērziņa</cds-table-cell>
-            </cds-table-row>
-            <cds-table-row>
-              <cds-table-cell>
-                <a
-                  href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
-                  download
-                  style="text-decoration: none;">
-                  vērtējums2.pdf
-                </a>
-              </cds-table-cell>
-              <cds-table-cell>22.03.2023 10:20</cds-table-cell>
-              <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
-            </cds-table-row>
-          </cds-table-body>
-        </cds-table>
-      </cds-main-content-item>
+        <cds-main-content-item
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+          <cds-table>
+            <cds-table-header-title slot="title"
+              >Dokumenti</cds-table-header-title
+            >
+            <cds-table-toolbar slot="toolbar">
+              <cds-table-toolbar-content>
+                <cds-button
+                  size="lg"
+                  kind="secondary"
+                  tooltip-alignment=""
+                  tooltip-position="top"
+                  type="button"
+                  has-main-content="">
+                  Pievienot ${Add16({ slot: 'icon' })}
+                </cds-button>
+              </cds-table-toolbar-content>
+            </cds-table-toolbar>
+            <cds-table-head>
+              <cds-table-header-row>
+                <cds-table-header-cell>Nosaukums</cds-table-header-cell>
+                <cds-table-header-cell
+                  >Pievienošanas datums</cds-table-header-cell
+                >
+                <cds-table-header-cell>Pievienotājs</cds-table-header-cell>
+              </cds-table-header-row>
+            </cds-table-head>
+            <cds-table-body>
+              <cds-table-row>
+                <cds-table-cell>
+                  <a
+                    href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                    download
+                    style="text-decoration: none;">
+                    vērtējums1.pdf
+                  </a>
+                </cds-table-cell>
+                <cds-table-cell>22.03.2023 10:15</cds-table-cell>
+                <cds-table-cell>Anna Bērziņa</cds-table-cell>
+              </cds-table-row>
+              <cds-table-row>
+                <cds-table-cell>
+                  <a
+                    href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                    download
+                    style="text-decoration: none;">
+                    vērtējums2.pdf
+                  </a>
+                </cds-table-cell>
+                <cds-table-cell>22.03.2023 10:20</cds-table-cell>
+                <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
+              </cds-table-row>
+            </cds-table-body>
+          </cds-table>
+        </cds-main-content-item>
+      </cds-main-content-block>
     `;
   }
 
