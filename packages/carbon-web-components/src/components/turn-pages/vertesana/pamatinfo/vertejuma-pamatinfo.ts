@@ -21,6 +21,9 @@ import { carbonElement as customElement } from '../../../../globals/decorators/c
 @customElement(`${prefix}-page-pamatinfo`)
 class CDSPValuationReview extends LitElement {
   render() {
+    const onFileChange = () => {
+      console.log('asdasdasdsadasda');
+    };
     return html`
       <cds-back-to
         class="cds--css-grid-column cds--col-span-100 cds--grid-column"
@@ -67,6 +70,7 @@ class CDSPValuationReview extends LitElement {
               label-description="Max file size is 500kb. Supported file types are .jpg and .png."
               label-title="Augšupielādēt pārskatīšanas/apstrīdējuma iesniegumu">
               <cds-file-uploader-drop-container
+                @cds-file-uploader-drop-container-changed="${onFileChange}"
                 accept="image/jpeg image/png"
                 name=""
                 slot="drop-container">
