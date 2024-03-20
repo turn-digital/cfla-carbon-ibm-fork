@@ -64,3 +64,4 @@ TEMP_RELEASENOTES.md
 install-state.gz
 
 !packages/carbon-web-components/assets/fonts/css/
+!packages/carbon-web-components/assets/css/
