@@ -86,7 +86,7 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
         title="Vērtējuma pārskatīšanas izveidosāna">
       </cds-main-content-title>
       <div
-        class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+        class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
         <cds-progress-indicator space-equally>
           <cds-progress-step
             style="max-inline-size: none;"
@@ -105,18 +105,18 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
       </div>
       <cds-main-content-item
         size="08"
-        class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-        <cds-date-picker>
+        class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+        <cds-date-picker date-format="d.m.Y">
           <cds-date-picker-input
             size="lg"
             style="width: 100%"
             label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
-            placeholder="mm/dd/yyyy">
+            placeholder="mm.dd.yyyy">
           </cds-date-picker-input>
         </cds-date-picker>
         <cds-main-content-item
           size="08"
-          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 ">
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 ">
           <div>
             <cds-file-uploader
               label-description="Max file size is 500kb. Supported file types are .jpg and .png."
@@ -135,31 +135,31 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
           </div>
         </cds-main-content-item>
         <div
-          class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 ">
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 ">
           <cds-text-editor
             editorId="editor1"
             editorConfig='{
-        "editorTitle": "Pārskatīšanas būtība",
-        "branding": false,
-        "menubar": false,
-        "height": 200,
-        "highlight_on_focus": true,
-        "promotion": true,
-        "max_length": 100,
-        "fetch_obj": {
-          "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-          "fetchMethod": "POST",
-          "errorAlertMessages": "Error occurred while fetching data",
-          "savedAlertMessages": "All data saved successfully"
-        },
-        "external_plugins": {
-          "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
-        }
-      }'></cds-text-editor>
+          "editorTitle": "Pārskatīšanas būtība",
+          "branding": false,
+          "menubar": false,
+          "height": 200,
+          "highlight_on_focus": true,
+          "promotion": true,
+          "max_length": 100,
+          "fetch_obj": {
+            "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+            "fetchMethod": "POST",
+            "errorAlertMessages": "Error occurred while fetching data",
+            "savedAlertMessages": "All data saved successfully"
+          },
+          "external_plugins": {
+            "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+          }
+        }'></cds-text-editor>
         </div>
       </cds-main-content-item>
       <div
-        class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10">
+        class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
         <cds-button-set>
           <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
           <cds-button href="https://www.ibm.com">Izveidot</cds-button>

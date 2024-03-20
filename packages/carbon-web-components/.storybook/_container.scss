@@ -21,6 +21,7 @@
 
 // Emit the flex-grid styles
 @include grid.flex-grid();
+@include grid.css-grid();
 
 *,
 *::before,
