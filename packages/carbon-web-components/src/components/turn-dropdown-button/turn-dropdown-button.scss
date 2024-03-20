@@ -22,10 +22,6 @@ $css--plex: true !default;
 
 
 
-
-
-
-
 :host(#{$prefix}-dropdown) {
   outline: none;
 
@@ -195,14 +191,14 @@ $css--plex: true !default;
 // }
 
 // //dropdown box
-// .cds--dropdown {
-//   width: 240px;
-//   background-color: green;
-// }
+.cds--dropdown {
+  width: 240px;
+  // background-color: green;
+}
 
-// .cds--list-box__field {
-//   justify-content: center;
-// }
+.cds--list-box__field {
+  justify-content: center;
+}
 
 // //dropdown item 
 // .cds--list-box__menu-item__option {
