@@ -35,13 +35,16 @@ class ProjectCard extends LitElement {
     return html`
       <div class="project-card-container">
         <div class="project-card-header">
-          <p class="project-header-id">Projekts - ${projectId}</p>
-          <cds-tag
-            type="${tagType}"
-            title="${tagTitle}"
-            class="project-header-tag">
-            ${tagTitle}
-          </cds-tag>
+          <div class="project-card-projects">
+            <span class="project-header-id">Projekts - ${projectId}</span>
+            <cds-tag
+              type="${tagType}"
+              title="${tagTitle}"
+              class="project-header-tag">
+              ${tagTitle}
+            </cds-tag>
+          </div>
+          <div>CFLA</div>
         </div>
         <p class="project-card-desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut

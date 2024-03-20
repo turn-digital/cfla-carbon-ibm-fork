@@ -21,7 +21,7 @@ class TextEditor extends LitElement {
   @property({ type: String }) onServerValidationErrorText = '';
   @property({ type: String }) onServerLastEditor = '';
   @property({ type: Object }) editorConfig = {
-    editorTitle: 'Custom title 1',
+    editorTitle: 'Default title 1',
     height: 200,
     highlight_on_focus: false,
     branding: false,

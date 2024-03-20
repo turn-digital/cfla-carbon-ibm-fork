@@ -19,5 +19,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Views/Vērtēšana/Vērtējuma pārskatīšana Globali/Parskatisanas',
+  title: 'Views/Vērtēšana/Vērtējuma pārskatīšana Globali/Parskatisanas veids',
 };

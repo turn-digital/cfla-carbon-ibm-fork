@@ -12,7 +12,6 @@ import { prefix } from '../../../../globals/settings';
 import styles from './vertejuma-parskatisana.scss';
 import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
 import Add16 from '@carbon/icons/lib/add/16';
-import Launch16 from '@carbon/icons/lib/launch/16';
 
 /**
  *
@@ -24,71 +23,88 @@ import Launch16 from '@carbon/icons/lib/launch/16';
 class CDSPValuationOpen extends LitElement {
   render() {
     return html`
-      <cds-page-title title="Vērtējuma pārskatīšana"></cds-page-title>
+      <cds-main-content-item size="08">
+        <cds-main-content-title
+          class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+          title="Vērtējuma pārskatīšanas izveidosāna">
+        </cds-main-content-title>
 
-      <h1
-        style="
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 20px;
-        margin-bottom: 12px;
-      ">
-        Saistītie dokumenti
-      </h1>
+        <cds-main-content-item size="08">
+          <cds-label-value
+            label="Apstrīdēšanas iesnieguma saņemšanas datums"
+            value="23.03.2023">
+          </cds-label-value>
+          <cds-label-value label="Pārskatīšanas veids" value="Tiesvedība">
+          </cds-label-value>
+        </cds-main-content-item>
 
-      <cds-link
-        href="https://www.ibm.com"
-        style="display: flex; align-items: center">
-        Saistītais PI ${Launch16({ slot: 'icon' })}
-      </cds-link>
-
-      <cds-link
-        href="https://www.ibm.com"
-        style="display: flex; align-items: center">
-        Vērtēšanas veidlapa ${Launch16({ slot: 'icon' })}
-      </cds-link>
-
-      <cds-link
-        href="https://www.ibm.com"
-        style="display: flex; align-items: center">
-        Vērtēšanas veidlapa
-      </cds-link>
-
-      <div style="padding: 20px">
-        <h3 style="font-weight: 400; font-size: 20px">
-          Vērtējuma pārskatīšanas būtība
-        </h3>
-
-        <div style="margin-top: 20px;">
-          <p style="font-weight: 400; font-size: 12px">
-            Apstrīdēšanas iesnieguma saņemšanas datums
-          </p>
-          <p style="font-weight: 400; font-size: 14px">23.03.2023</p>
-        </div>
-
-        <div style="margin-top: 20px;">
-          <p style="font-weight: 400; font-size: 12px">Pārskatīšanas veids</p>
-          <p style="font-weight: 400; font-size: 14px">Tiesvedība</p>
-        </div>
-
-        <div style="margin-top: 20px;">
-          <p style="font-weight: 400; font-size: 12px">Pārskatīšanas lēmums</p>
-          <p style="font-weight: 400; font-size: 14px"></p>
+        <cds-main-content-item size="08">
           <cds-radio-button-group
+            legend-text="Pārskatīšanas lēmums"
             label-position="right"
             orientation="vertical"
             name="radio-group">
-            <!-- Radio button content -->
+            <cds-radio-button
+              label-text="VI Lēmumu atstāj spēkā"
+              value="VI Lēmumu atstāj spēkā"></cds-radio-button>
+            <cds-radio-button
+              label-text="Atcelt lēmumu pilnībā"
+              value="Atcelt lēmumu pilnībā"></cds-radio-button>
+            <cds-radio-button
+              label-text="Atcelt lēmumu kādā daļā"
+              value="Atcelt lēmumu kādā daļā"></cds-radio-button>
+            <cds-radio-button
+              label-text="Lietas izskatīšana izbeigta"
+              value="Lietas izskatīšana izbeigta"></cds-radio-button>
+            <cds-radio-button
+              label-text="Izdot satura ziņā citu lēmumu"
+              value="Izdot satura ziņā citu lēmumu"></cds-radio-button>
           </cds-radio-button-group>
-        </div>
-
-        <p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
-        <cds-text-editor></cds-text-editor>
-        <p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
-        <cds-text-editor></cds-text-editor>
-      </div>
-
-      <div>
+        </cds-main-content-item>
+        <cds-main-content-item size="08">
+          <cds-text-editor
+            editorId="editor1"
+            editorConfig='{
+        "editorTitle": "Pārskatīšanas būtība",
+        "branding": false,
+        "menubar": false,
+        "height": 200,
+        "highlight_on_focus": true,
+        "promotion": true,
+        "max_length": 100,
+        "fetch_obj": {
+          "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+          "fetchMethod": "POST",
+          "errorAlertMessages": "Error occurred while fetching data",
+          "savedAlertMessages": "All data saved successfully"
+        },
+        "external_plugins": {
+          "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+        }
+      }'></cds-text-editor>
+        </cds-main-content-item>
+        <cds-main-content-item size="08">
+          <cds-text-editor
+            editorId="editor2"
+            editorConfig='{
+        "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+        "branding": false,
+        "menubar": false,
+        "height": 200,
+        "highlight_on_focus": true,
+        "promotion": true,
+        "max_length": 100,
+        "fetch_obj": {
+          "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+          "fetchMethod": "POST",
+          "errorAlertMessages": "Error occurred while fetching data",
+          "savedAlertMessages": "All data saved successfully"
+        },
+        "external_plugins": {
+          "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+        }
+      }'></cds-text-editor>
+        </cds-main-content-item>
         <cds-table>
           <cds-table-header-title slot="title"
             >Dokumenti</cds-table-header-title
@@ -142,7 +158,7 @@ class CDSPValuationOpen extends LitElement {
             </cds-table-row>
           </cds-table-body>
         </cds-table>
-      </div>
+      </cds-main-content-item>
     `;
   }
 

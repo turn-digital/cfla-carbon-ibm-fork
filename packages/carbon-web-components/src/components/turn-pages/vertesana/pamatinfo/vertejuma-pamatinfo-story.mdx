@@ -132,7 +132,26 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
         </cds-main-content-item>
         <div
           class="cds--css-grid-column cds--sm:col-span-2 cds--md:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-          <cds-text-editor></cds-text-editor>
+          <cds-text-editor
+            editorId="editor1"
+            editorConfig='{
+        "editorTitle": "Pārskatīšanas būtība",
+        "branding": false,
+        "menubar": false,
+        "height": 200,
+        "highlight_on_focus": true,
+        "promotion": true,
+        "max_length": 100,
+        "fetch_obj": {
+          "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+          "fetchMethod": "POST",
+          "errorAlertMessages": "Error occurred while fetching data",
+          "savedAlertMessages": "All data saved successfully"
+        },
+        "external_plugins": {
+          "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+        }
+      }'></cds-text-editor>
         </div>
       </cds-main-content-item>
       <div
