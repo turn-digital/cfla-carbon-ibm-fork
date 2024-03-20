@@ -21,9 +21,6 @@ import { carbonElement as customElement } from '../../../../globals/decorators/c
 @customElement(`${prefix}-page-pamatinfo`)
 class CDSPValuationReview extends LitElement {
   render() {
-    const onFileChange = () => {
-      console.log('asdasdasdsadasda');
-    };
     return html`
       <link
         rel="stylesheet"
