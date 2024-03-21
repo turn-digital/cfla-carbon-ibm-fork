@@ -1,0 +1,67 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Label value horizontal
+
+## Getting started
+
+
+
+### JS (via import)
+
+```javascript
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value-horizontal.min.js"></script>
+```
+
+
+
+### HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-label-value-horizontal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/latest/plex.css" />
+    <title>Label value horizontal</title>
+  </head>
+
+  <body>
+    <cds-label-value-horizontal
+      label="Atlases nosaukums"
+    >
+      Latvijas Universitāte
+    </cds-label-value-horizontal>
+
+    <cds-label-value-horizontal
+      label="Atlases nosaukums"
+    >
+      <cds-link
+        href="#saite"
+      >
+        Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
+      </cds-link>
+    </cds-label-value-horizontal>
+
+    <cds-label-value-horizontal
+      label="Atlases nosaukums"
+    >
+      <cds-tag
+        type="blue"
+      >
+        Noslēgusies
+      </cds-tag> 25.10.2019 10:34
+    </cds-label-value-horizontal>
+  </body>
+</html>
+```
+
+## `<cds-label-value-horizontal>` attributes and properties
+
+<Props of="cds-label-value-horizontal" />
