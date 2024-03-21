@@ -22,16 +22,13 @@ class CDSDropdownButtonTest extends LitElement {
 
   render() {
     return html`
-      <link
-        rel="stylesheet"
-        href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
-      <div class="cds-theme-zone-turn-dropdown-button dropdown-container">
-        <cds-dropdown
+      <div class="dropdown-container">
+        <cds-dropdown class="cds-theme-zone-turn-dropdown-button"
           label="Mainīt statusu"
           @cds-dropdown-selected="${this.dropdownHandler}">
           ${this.accordionItems?.map(
             (item) => html`
-              <cds-dropdown-item value="${item.value}"
+              <cds-dropdown-item class="cds-theme-zone-turn-dropdown-button-test" value="${item.value}"
                 >${item.text}</cds-dropdown-item
               >
             `
