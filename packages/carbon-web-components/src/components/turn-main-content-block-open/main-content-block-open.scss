@@ -1,0 +1,27 @@
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/spacing' as *;
+.green-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 66px;
+  background-color: #064a4a;
+  z-index: -1; /* Move the green block behind the container */
+}
+.container {
+  position: relative;
+  padding: 16px 16px 0 16px;
+  background-color: #f4f4f4;
+  z-index: 0; /* Ensure the container is above the green block */
+}
+.header-block {
+  background-color: white;
+  padding: 0 16px 16px 16px;
+  min-height: $spacing-10;
+}
+.content-block {
+  background-color: white;
+  padding: $spacing-05;
+  margin-top: $spacing-05; /* Add margin between inner divs */
+}
