@@ -22,7 +22,9 @@ class CDSDropdownButtonTest extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="http://localhost:8001/themes.css" />
+      <link
+        rel="stylesheet"
+        href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
       <div class="cds-theme-zone-turn-dropdown-button dropdown-container">
         <cds-dropdown
           label="Mainīt statusu"
