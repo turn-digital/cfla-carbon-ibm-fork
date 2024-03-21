@@ -30,8 +30,10 @@ class CDSPValuationOpen extends LitElement {
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
 
       <cds-main-content-block-open>
-        <span slot="header" class="cds--css-grid-column cds--col-span-100">
-          <cds-accordion alignment="start">
+        <div slot="header" class="cds--css-grid-column cds--col-span-100">
+          <cds-accordion
+            alignment="start"
+            class="cds--css-grid-column cds--col-span-100">
             <cds-accordion-item title="3.1.1.5/19/A/043">
               <p>
                 Ražošanas telpu izveide saplākšņa specifisko produktu ražošanai
@@ -40,49 +42,70 @@ class CDSPValuationOpen extends LitElement {
               </p>
             </cds-accordion-item>
           </cds-accordion>
-          <div class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-          <p>GLOBAL HERO COMPONENT</p>
+
+          <div class="cds--css-grid cds--css-grid--narrow">
+            <div
+              class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-10 cds--css-grid-column">
+              <cds-main-content-item size="08">
+                <h3 class="fluid-heading-04">
+                  Projekta iesnieguma vērtēšanas veidlapa
+                </h3>
+              </cds-main-content-item>
+              <cds-main-content-item size="08">
+                <cds-related-persons></cds-related-persons>
+              </cds-main-content-item>
+              <cds-main-content-item size="08">
+                <cds-status-history></cds-status-history>
+              </cds-main-content-item>
+            </div>
+            <div
+              class="cds--sm:col-span-4 cds--md:col-span-3 cds--lg:col-span-6 cds--css-grid-column">
+              <cds-button size="md">Saglabāt</cds-button>
+              <cds-dropdown-button></cds-dropdown-button>
+            </div>
           </div>
-          
-          <cds-related-documents title="Saistītie dokumenti" class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-                  <cds-related-documents-item
-                    linkTitle="Saistītais PI"
-                    linkUrl="https://google.com"
-                    ">
-                    ${ToolBox16({ slot: 'icon' })}
-                  </cds-related-documents-item>
-                  <cds-related-documents-item
-                    linkTitle="Vērtēšanas veidlapa"
-                    linkUrl="https://google.com">
-                    ${CertificateCheck16({ slot: 'icon' })}
-                  </cds-related-documents-item>
-                  <cds-related-documents-item
-                    linkTitle="Iesniegums par pārskatīšanu/apstrīdēšanu"
-                    target="_self"
-                    linkUrl="https://google.com">
-                  </cds-related-documents-item>
-                </cds-related-documents>
-        </span>
-        <span slot="content" class="cds--css-grid-column cds--col-span-100">
-          <cds-main-content-title 
-            class="cds--css-grid-column cds--col-span-100"
+          <cds-main-content-item size="04">
+            <cds-related-documents
+              title="Saistītie dokumenti"
+              class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+              <cds-related-documents-item
+                linkTitle="Saistītais PI"
+                linkUrl="https://google.com">
+                ${ToolBox16({ slot: 'icon' })}
+              </cds-related-documents-item>
+              <cds-related-documents-item
+                linkTitle="Vērtēšanas veidlapa"
+                linkUrl="https://google.com">
+                ${CertificateCheck16({ slot: 'icon' })}
+              </cds-related-documents-item>
+              <cds-related-documents-item
+                linkTitle="Iesniegums par pārskatīšanu/apstrīdēšanu"
+                target="_self"
+                linkUrl="https://google.com">
+              </cds-related-documents-item>
+            </cds-related-documents>
+          </cds-main-content-item>
+        </div>
+
+        <div slot="content" class="cds--css-grid-column cds--col-span-100">
+          <cds-main-content-title
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang"
             title="Vērtējuma pārskatīšanas izveidosāna">
           </cds-main-content-title>
 
-          <cds-main-content-item
-            size="08"
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
             <cds-label-value
               label="Apstrīdēšanas iesnieguma saņemšanas datums"
               value="23.03.2023">
             </cds-label-value>
             <cds-label-value label="Pārskatīšanas veids" value="Tiesvedība">
             </cds-label-value>
-          </cds-main-content-item>
+          </div>
 
           <cds-main-content-item
             size="08"
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
             <cds-radio-button-group
               legend-text="Pārskatīšanas lēmums"
               label-position="right"
@@ -107,7 +130,7 @@ class CDSPValuationOpen extends LitElement {
           </cds-main-content-item>
           <cds-main-content-item
             size="08"
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
             <cds-text-editor
               editorId="editor1"
               editorConfig='{
@@ -131,7 +154,7 @@ class CDSPValuationOpen extends LitElement {
           </cds-main-content-item>
           <cds-main-content-item
             size="08"
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
             <cds-text-editor
               editorId="editor2"
               editorConfig='{
@@ -154,7 +177,7 @@ class CDSPValuationOpen extends LitElement {
   }'></cds-text-editor>
           </cds-main-content-item>
           <cds-main-content-item
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
             <cds-table>
               <cds-table-header-title slot="title"
                 >Dokumenti</cds-table-header-title
@@ -209,7 +232,7 @@ class CDSPValuationOpen extends LitElement {
               </cds-table-body>
             </cds-table>
           </cds-main-content-item>
-        </span>
+        </div>
       </cds-main-content-block-open>
     `;
   }

@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+
+  &__related-person {
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    svg {
+      padding-right: 5px;
+    }
+  }
+}
