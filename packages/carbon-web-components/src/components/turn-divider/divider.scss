@@ -1,0 +1,59 @@
+//
+// Copyright IBM Corp. 2019, 2023
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+$css--plex: true !default;
+
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/spacing' as *;
+
+.divider {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+
+  &--1  {
+    margin-bottom: $spacing-01;
+  }
+  &--2  {
+    margin-bottom: $spacing-02;
+  }
+  &--3  {
+    margin-bottom: $spacing-03;
+  }
+  &--4  {
+    margin-bottom: $spacing-04;
+  }
+  &--5  {
+    margin-bottom: $spacing-05;
+  }
+  &--6  {
+    margin-bottom: $spacing-06;
+  }
+  &--7  {
+    margin-bottom: $spacing-07;
+  }
+  &--8  {
+    margin-bottom: $spacing-08;
+  }
+  &--9  {
+    margin-bottom: $spacing-09;
+  }
+  &--10 {
+    margin-bottom: $spacing-10;
+  }
+  &--11 {
+    margin-bottom: $spacing-11;
+  }
+  &--12 {
+    margin-bottom: $spacing-12;
+  }
+  &--13 {
+    margin-bottom: $spacing-13;
+  }
+
+}
