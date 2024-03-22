@@ -1,0 +1,13 @@
+@use '@carbon/type';
+.container {
+  &__current-status {
+    display: flex;
+    align-items: center;
+
+    &--date {
+      margin: 0 0 0 10px;
+
+      @include type.type-style('body-compact-01');
+    }
+  }
+}

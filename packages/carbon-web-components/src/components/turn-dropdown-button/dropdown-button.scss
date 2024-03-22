@@ -4,15 +4,14 @@
 
 :host(.cds-theme-zone-turn-dropdown-button),
 .cds-theme-zone-turn-dropdown-button {
-    --cds-text-primary: white;
-    --cds-field: #027070;
-    --cds-field-hover: #0B6969;
-    --cds-icon-primary: white;
-    
+  --cds-text-primary: white;
+  --cds-field: #027070;
+  --cds-field-hover: #0b6969;
+  --cds-icon-primary: white;
 }
 
 //resets the text color, because $text-on-color is not defined in this file
 :host(.cds-theme-zone-turn-dropdown-button-test),
 .cds-theme-zone-turn-dropdown-button-test {
-    --cds-text-primary: $text-on-color;
+  --cds-text-primary: $text-on-color;
 }
