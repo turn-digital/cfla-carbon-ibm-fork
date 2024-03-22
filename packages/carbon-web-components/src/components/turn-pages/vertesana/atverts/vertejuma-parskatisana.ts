@@ -23,6 +23,10 @@ import CertificateCheck16 from '@carbon/icons/lib/certificate--check/16';
 
 @customElement(`${prefix}-page-valuation-open`)
 class CDSPValuationOpen extends LitElement {
+  openModal = () => {
+    //@ts-ignore
+    this.shadowRoot.getElementById('modal-example').open = true;
+  };
   render() {
     const itemsArray = [
       { text: 'Status 1', value: 'Status 1' },
@@ -32,6 +36,7 @@ class CDSPValuationOpen extends LitElement {
     const eventHandler = (event) => {
       console.log('itemSelected', event.detail.item.__value);
     };
+
     return html`
       <link
         rel="stylesheet"
@@ -207,6 +212,8 @@ class CDSPValuationOpen extends LitElement {
                     tooltip-alignment=""
                     tooltip-position="top"
                     type="button"
+                    id="modal-example-button"
+                    @click="${this.openModal}"
                     has-main-content="">
                     Pievienot ${Add16({ slot: 'icon' })}
                   </cds-button>
@@ -251,6 +258,33 @@ class CDSPValuationOpen extends LitElement {
           </cds-main-content-item>
         </div>
       </cds-main-content-block-open>
+
+      <cds-modal id="modal-example">
+        <cds-modal-header>
+          <cds-modal-close-button></cds-modal-close-button>
+          <cds-modal-label>Dokumenti</cds-modal-label>
+          <cds-modal-heading>Dokumenta pievienošana</cds-modal-heading>
+        </cds-modal-header>
+        <cds-modal-body
+          ><cds-file-uploader
+            label-description="Faila izmērs nedrīkst būt lielāks par 2MB. Atbalstāmie failu tipi .jpg, .png, .doc, .docx, .xls, .txt"
+            label-title="Augšupielādēt failus">
+            <cds-file-uploader-drop-container
+              accept="image/jpeg image/png"
+              name=""
+              slot="drop-container">
+              Pievienot failu
+            </cds-file-uploader-drop-container>
+          </cds-file-uploader>
+          <cds-text-editor> </cds-text-editor>
+        </cds-modal-body>
+        <cds-modal-footer>
+          <cds-modal-footer-button kind="secondary" data-modal-close
+            >Cancel</cds-modal-footer-button
+          >
+          <cds-modal-footer-button kind="primary">Save</cds-modal-footer-button>
+        </cds-modal-footer>
+      </cds-modal>
     `;
   }
 
