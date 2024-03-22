@@ -28,7 +28,9 @@ class CDSStatusHistory extends LitElement {
             title="${this.currenStatusTitle}"
             >${this.currenStatusTitle}
           </cds-tag>
-          <span>${this.currenStatusDate}</span>
+          <p class="container__current-status--date">
+            ${this.currenStatusDate}
+          </p>
         </div>
         <div class="container__status-history">
           <cds-accordion alignment="start">
@@ -37,11 +39,13 @@ class CDSStatusHistory extends LitElement {
                 25.10.2019 10:34 Atgriezta precizēšanai - Elīne Millere
                 <cds-link>Pamatojums</cds-link>
               </p>
+              <cds-divider size="2"></cds-divider>
               <p>
                 25.09.2019 16:13 Atgriezta precizēšanai - Elīne Millere
                 <cds-link>Pamatojums</cds-link>
               </p>
             </cds-accordion-item>
+            <cds-divider size="2"></cds-divider>
           </cds-accordion>
         </div>
       </div>

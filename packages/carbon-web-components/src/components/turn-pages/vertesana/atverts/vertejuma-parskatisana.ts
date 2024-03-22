@@ -24,6 +24,14 @@ import CertificateCheck16 from '@carbon/icons/lib/certificate--check/16';
 @customElement(`${prefix}-page-valuation-open`)
 class CDSPValuationOpen extends LitElement {
   render() {
+    const itemsArray = [
+      { text: 'Status 1', value: 'Status 1' },
+      { text: 'Status 2', value: 'Status 2' },
+      { text: 'Status 3', value: 'Status 3' },
+    ];
+    const eventHandler = (event) => {
+      console.log('itemSelected', event.detail.item.__value);
+    };
     return html`
       <link
         rel="stylesheet"
@@ -34,35 +42,44 @@ class CDSPValuationOpen extends LitElement {
           <cds-accordion
             alignment="start"
             class="cds--css-grid-column cds--col-span-100">
-            <cds-accordion-item title="3.1.1.5/19/A/043">
-              <p>
-                Ražošanas telpu izveide saplākšņa specifisko produktu ražošanai
-                ar divlīmju automatizētās finieru un kompozītmateriālu
-                saklāšanas līniju
-              </p>
+            <cds-accordion-item title="Projekta iesniegums: 3.1.1.5/19/A/043">
+              <cds-label-value-horizontal label="Atlases nosaukums">
+                <cds-link href="#"
+                  >Zinātnes politikas ieviešana, vadība un kapacitātes
+                  stiprināšana
+                </cds-link>
+              </cds-label-value-horizontal>
+              <cds-label-value-horizontal label="Atlases nosaukums">
+                <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
+              </cds-label-value-horizontal>
+              <cds-divider size="3"></cds-divider>
+              <cds-label-value-horizontal label="Atlases nosaukums">
+                <cds-link href="#">1.1 </cds-link>
+              </cds-label-value-horizontal>
             </cds-accordion-item>
           </cds-accordion>
 
           <div class="cds--css-grid cds--css-grid--narrow">
             <div
               class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-10 cds--css-grid-column">
-              <cds-main-content-item size="08">
-                <h3 class="fluid-heading-04">
-                  Projekta iesnieguma vērtēšanas veidlapa
-                </h3>
+              <cds-main-content-item size="07">
+                <cds-header-title
+                  title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
               </cds-main-content-item>
-              <cds-main-content-item size="08">
+              <cds-main-content-item size="07">
                 <cds-related-persons></cds-related-persons>
               </cds-main-content-item>
-              <cds-main-content-item size="08">
+              <cds-main-content-item size="07">
                 <cds-status-history></cds-status-history>
               </cds-main-content-item>
             </div>
-            <div
+            <cds-main-content-item
+              size="07"
               class="cds--sm:col-span-4 cds--md:col-span-3 cds--lg:col-span-6 cds--css-grid-column">
-              <cds-button size="md">Saglabāt</cds-button>
-              <cds-dropdown-button></cds-dropdown-button>
-            </div>
+              <cds-status-control-panel
+                .accordionItems=${itemsArray}
+                .dropdownHandler=${eventHandler}></cds-status-control-panel>
+            </cds-main-content-item>
           </div>
           <cds-main-content-item size="04">
             <cds-related-documents

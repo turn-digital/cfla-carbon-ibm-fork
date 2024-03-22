@@ -157,6 +157,7 @@ class CDSPValuationList extends LitElement {
                     linkUrl="https://google.com">
                   </cds-related-documents-item>
                 </cds-related-documents>
+                <cds-divider size=6></cds-divider>
               </cds-table-expanded-row>
               <cds-table-row>
                 <cds-table-cell
@@ -223,6 +224,7 @@ class CDSPValuationList extends LitElement {
                     linkUrl="https://google.com">
                   </cds-related-documents-item>
                 </cds-related-documents>
+                <cds-divider size=6></cds-divider>
               </cds-table-expanded-row>
             </cds-table-body>
           </cds-table>
