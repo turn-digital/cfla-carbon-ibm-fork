@@ -18,6 +18,17 @@ import './tinymce-webcomponent.js';
 class TextEditor extends LitElement {
   @property({ type: Boolean }) readonly = false;
   @property({ type: String }) editorId = 'editor';
+  @property({ type: String })
+  TextEditorData = `<ul>
+  <li>Our <a href="https://www.tiny.cloud/docs/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+  </ul>
+  <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;zx</p>
+  <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+  <p>&nbsp;</p>`;
   @property({ type: String }) onServerValidationErrorText = '';
   @property({ type: String }) onServerLastEditor = '';
   @property({ type: Object }) editorConfig = {
@@ -26,20 +37,21 @@ class TextEditor extends LitElement {
     highlight_on_focus: false,
     branding: false,
     menubar: false,
-    max_length: 100,
+    max_length: 200,
     fetch_obj: {
       urlToFetch: 'https://jsonplaceholder.typicode.com/posts',
       fetchMethod: 'POST',
       errorAlertMessages: 'Error occured while fetching data',
     },
     // need this part to be able to use local plugin so we can test some stuff
-    // external_plugins: {
-    //   pluginId: 'http://localhost:8001/plugins/length_validation/plugin.min.js',
-    // },
     external_plugins: {
       pluginId:
-        'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
+        'http://localhost:8001/plugins/test_plugin_for_local/plugin.min.js',
     },
+    // external_plugins: {
+    //   pluginId:
+    //     'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
+    // },
   };
 
   render() {
@@ -59,12 +71,10 @@ class TextEditor extends LitElement {
         autoresize_bottom_margin: 5
         ?readonly="${this.readonly}"
         toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
-        plugins="length_validation advlist autosave save sender autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
+        plugins=" test_plugin_for_local advlist autosave save sender autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
         content_css="//www.tiny.cloud/css/codepen.min.css"
         promotion="false">
-        &lt;p&gt;This recreates the same settings as the &lt;a
-        href=&quot;https://www.tiny.cloud/docs/demo/basic-example/&quot;&gt;basic
-        example&lt;/a&gt;&lt;p&gt;
+        ${this.TextEditorData}
       </tinymce-editor>
       ${
         this.onServerValidationErrorText?.length > 0
