@@ -44,14 +44,14 @@ class TextEditor extends LitElement {
       errorAlertMessages: 'Error occured while fetching data',
     },
     // need this part to be able to use local plugin so we can test some stuff
-    external_plugins: {
-      pluginId:
-        'http://localhost:8001/plugins/test_plugin_for_local/plugin.min.js',
-    },
     // external_plugins: {
     //   pluginId:
-    //     'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
+    //     'http://localhost:8001/plugins/test_plugin_for_local/plugin.min.js',
     // },
+    external_plugins: {
+      pluginId:
+        'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
+    },
   };
 
   render() {
@@ -71,7 +71,7 @@ class TextEditor extends LitElement {
         autoresize_bottom_margin: 5
         ?readonly="${this.readonly}"
         toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
-        plugins=" test_plugin_for_local advlist autosave save sender autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
+        plugins="length_validation advlist autosave save sender autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
         content_css="//www.tiny.cloud/css/codepen.min.css"
         promotion="false">
         ${this.TextEditorData}
