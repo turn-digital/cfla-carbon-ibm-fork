@@ -1,0 +1,9 @@
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/spacing' as *;
+
+.container {
+  padding: $spacing-06 0px $spacing-06 0px;
+}
+.title {
+  @include type-style('heading-03');
+}

@@ -21,10 +21,11 @@ class TextEditor extends LitElement {
   @property({ type: String }) onServerValidationErrorText = '';
   @property({ type: String }) onServerLastEditor = '';
   @property({ type: Object }) editorConfig = {
-    editorTitle: 'Custom title 1',
+    editorTitle: 'Default title 1',
     height: 200,
     highlight_on_focus: false,
     branding: false,
+    menubar: false,
     max_length: 100,
     fetch_obj: {
       urlToFetch: 'https://jsonplaceholder.typicode.com/posts',

@@ -2,13 +2,21 @@
   background-color: #f4f4f4;
   border: 1px;
   border-radius: 8px;
-  padding: 8px;
+  padding: 16px;
   gap: 8px;
 }
 
 .project-card-header {
   display: flex;
   align-items: center;
+  height: 18px;
+  font-size: 12px;
+  justify-content: space-between;
+}
+.project-card-projects {
+  display: flex;
+  align-items: center;
+  justify-content: left;
   height: 18px;
   font-size: 12px;
 }
@@ -26,6 +34,7 @@
 .project-card-info {
   display: flex;
 }
+
 .project-card-info-section {
   display: flex;
   padding-right: 40px;
@@ -57,4 +66,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .project-card-info {
+    display: block;
+  }
+
+  .project-card-info-section {
+    padding-right: 0;
+    margin-top: 16px;
+  }
+  .project-header-id {
+    padding-right: 0;
+  }
 }

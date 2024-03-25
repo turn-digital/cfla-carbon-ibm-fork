@@ -12,7 +12,8 @@ import { prefix } from '../../../../globals/settings';
 import styles from './vertejuma-parskatisana.scss';
 import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
 import Add16 from '@carbon/icons/lib/add/16';
-import Launch16 from '@carbon/icons/lib/launch/16';
+import ToolBox16 from '@carbon/icons/lib/tool-box/16';
+import CertificateCheck16 from '@carbon/icons/lib/certificate--check/16';
 
 /**
  *
@@ -22,127 +23,268 @@ import Launch16 from '@carbon/icons/lib/launch/16';
 
 @customElement(`${prefix}-page-valuation-open`)
 class CDSPValuationOpen extends LitElement {
+  openModal = () => {
+    //@ts-ignore
+    this.shadowRoot.getElementById('modal-example').open = true;
+  };
   render() {
+    const itemsArray = [
+      { text: 'Status 1', value: 'Status 1' },
+      { text: 'Status 2', value: 'Status 2' },
+      { text: 'Status 3', value: 'Status 3' },
+    ];
+    const eventHandler = (event) => {
+      console.log('itemSelected', event.detail.item.__value);
+    };
+
     return html`
-      <cds-page-title title="Vērtējuma pārskatīšana"></cds-page-title>
+      <link
+        rel="stylesheet"
+        href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
 
-      <h1
-        style="
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 20px;
-        margin-bottom: 12px;
-      ">
-        Saistītie dokumenti
-      </h1>
+      <cds-main-content-block-open>
+        <div slot="header" class="cds--css-grid-column cds--col-span-100">
+          <cds-accordion
+            alignment="start"
+            class="cds--css-grid-column cds--col-span-100">
+            <cds-accordion-item title="Projekta iesniegums: 3.1.1.5/19/A/043">
+              <cds-label-value-horizontal label="Atlases nosaukums">
+                <cds-link href="#"
+                  >Zinātnes politikas ieviešana, vadība un kapacitātes
+                  stiprināšana
+                </cds-link>
+              </cds-label-value-horizontal>
+              <cds-label-value-horizontal label="Atlases nosaukums">
+                <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
+              </cds-label-value-horizontal>
+              <cds-divider size="3"></cds-divider>
+              <cds-label-value-horizontal label="Atlases nosaukums">
+                <cds-link href="#">1.1 </cds-link>
+              </cds-label-value-horizontal>
+            </cds-accordion-item>
+          </cds-accordion>
 
-      <cds-link
-        href="https://www.ibm.com"
-        style="display: flex; align-items: center">
-        Saistītais PI ${Launch16({ slot: 'icon' })}
-      </cds-link>
-
-      <cds-link
-        href="https://www.ibm.com"
-        style="display: flex; align-items: center">
-        Vērtēšanas veidlapa ${Launch16({ slot: 'icon' })}
-      </cds-link>
-
-      <cds-link
-        href="https://www.ibm.com"
-        style="display: flex; align-items: center">
-        Vērtēšanas veidlapa
-      </cds-link>
-
-      <div style="padding: 20px">
-        <h3 style="font-weight: 400; font-size: 20px">
-          Vērtējuma pārskatīšanas būtība
-        </h3>
-
-        <div style="margin-top: 20px;">
-          <p style="font-weight: 400; font-size: 12px">
-            Apstrīdēšanas iesnieguma saņemšanas datums
-          </p>
-          <p style="font-weight: 400; font-size: 14px">23.03.2023</p>
+          <div class="cds--css-grid cds--css-grid--narrow">
+            <div
+              class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-10 cds--css-grid-column">
+              <cds-main-content-item size="07">
+                <cds-header-title
+                  title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
+              </cds-main-content-item>
+              <cds-main-content-item size="07">
+                <cds-related-persons></cds-related-persons>
+              </cds-main-content-item>
+              <cds-main-content-item size="07">
+                <cds-status-history></cds-status-history>
+              </cds-main-content-item>
+            </div>
+            <cds-main-content-item
+              size="07"
+              class="cds--sm:col-span-4 cds--md:col-span-3 cds--lg:col-span-6 cds--css-grid-column">
+              <cds-status-control-panel
+                .accordionItems=${itemsArray}
+                .dropdownHandler=${eventHandler}></cds-status-control-panel>
+            </cds-main-content-item>
+          </div>
+          <cds-main-content-item size="04">
+            <cds-related-documents
+              title="Saistītie dokumenti"
+              class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+              <cds-related-documents-item
+                linkTitle="Saistītais PI"
+                linkUrl="https://google.com">
+                ${ToolBox16({ slot: 'icon' })}
+              </cds-related-documents-item>
+              <cds-related-documents-item
+                linkTitle="Vērtēšanas veidlapa"
+                linkUrl="https://google.com">
+                ${CertificateCheck16({ slot: 'icon' })}
+              </cds-related-documents-item>
+              <cds-related-documents-item
+                linkTitle="Iesniegums par pārskatīšanu/apstrīdēšanu"
+                target="_self"
+                linkUrl="https://google.com">
+              </cds-related-documents-item>
+            </cds-related-documents>
+          </cds-main-content-item>
         </div>
 
-        <div style="margin-top: 20px;">
-          <p style="font-weight: 400; font-size: 12px">Pārskatīšanas veids</p>
-          <p style="font-weight: 400; font-size: 14px">Tiesvedība</p>
-        </div>
+        <div slot="content" class="cds--css-grid-column cds--col-span-100">
+          <cds-main-content-title
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang"
+            title="Vērtējuma pārskatīšanas izveidosāna">
+          </cds-main-content-title>
 
-        <div style="margin-top: 20px;">
-          <p style="font-weight: 400; font-size: 12px">Pārskatīšanas lēmums</p>
-          <p style="font-weight: 400; font-size: 14px"></p>
-          <cds-radio-button-group
-            label-position="right"
-            orientation="vertical"
-            name="radio-group">
-            <!-- Radio button content -->
-          </cds-radio-button-group>
-        </div>
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-label-value
+              label="Apstrīdēšanas iesnieguma saņemšanas datums"
+              value="23.03.2023">
+            </cds-label-value>
+            <cds-label-value label="Pārskatīšanas veids" value="Tiesvedība">
+            </cds-label-value>
+          </div>
 
-        <p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
-        <cds-text-editor></cds-text-editor>
-        <p style="font-size: 12px;">FS: Jānis Bērziņš 23.10.2023 10:01</p>
-        <cds-text-editor></cds-text-editor>
-      </div>
-
-      <div>
-        <cds-table>
-          <cds-table-header-title slot="title"
-            >Dokumenti</cds-table-header-title
-          >
-          <cds-table-toolbar slot="toolbar">
-            <cds-table-toolbar-content>
-              <cds-button
-                size="lg"
-                kind="secondary"
-                tooltip-alignment=""
-                tooltip-position="top"
-                type="button"
-                has-main-content="">
-                Pievienot ${Add16({ slot: 'icon' })}
-              </cds-button>
-            </cds-table-toolbar-content>
-          </cds-table-toolbar>
-          <cds-table-head>
-            <cds-table-header-row>
-              <cds-table-header-cell>Nosaukums</cds-table-header-cell>
-              <cds-table-header-cell
-                >Pievienošanas datums</cds-table-header-cell
+          <cds-main-content-item
+            size="08"
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-radio-button-group
+              legend-text="Pārskatīšanas lēmums"
+              label-position="right"
+              orientation="vertical"
+              name="radio-group">
+              <cds-radio-button
+                label-text="VI Lēmumu atstāj spēkā"
+                value="VI Lēmumu atstāj spēkā"></cds-radio-button>
+              <cds-radio-button
+                label-text="Atcelt lēmumu pilnībā"
+                value="Atcelt lēmumu pilnībā"></cds-radio-button>
+              <cds-radio-button
+                label-text="Atcelt lēmumu kādā daļā"
+                value="Atcelt lēmumu kādā daļā"></cds-radio-button>
+              <cds-radio-button
+                label-text="Lietas izskatīšana izbeigta"
+                value="Lietas izskatīšana izbeigta"></cds-radio-button>
+              <cds-radio-button
+                label-text="Izdot satura ziņā citu lēmumu"
+                value="Izdot satura ziņā citu lēmumu"></cds-radio-button>
+            </cds-radio-button-group>
+          </cds-main-content-item>
+          <cds-main-content-item
+            size="08"
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-text-editor
+              editorId="editor1"
+              editorConfig='{
+    "editorTitle": "Pārskatīšanas būtība",
+    "branding": false,
+    "menubar": false,
+    "height": 200,
+    "highlight_on_focus": true,
+    "promotion": true,
+    "max_length": 100,
+    "fetch_obj": {
+      "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+      "fetchMethod": "POST",
+      "errorAlertMessages": "Error occurred while fetching data",
+      "savedAlertMessages": "All data saved successfully"
+    },
+    "external_plugins": {
+      "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+    }
+  }'></cds-text-editor>
+          </cds-main-content-item>
+          <cds-main-content-item
+            size="08"
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-text-editor
+              editorId="editor2"
+              editorConfig='{
+    "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+    "branding": false,
+    "menubar": false,
+    "height": 200,
+    "highlight_on_focus": true,
+    "promotion": true,
+    "max_length": 100,
+    "fetch_obj": {
+      "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+      "fetchMethod": "POST",
+      "errorAlertMessages": "Error occurred while fetching data",
+      "savedAlertMessages": "All data saved successfully"
+    },
+    "external_plugins": {
+      "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+    }
+  }'></cds-text-editor>
+          </cds-main-content-item>
+          <cds-main-content-item
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-table>
+              <cds-table-header-title slot="title"
+                >Dokumenti</cds-table-header-title
               >
-              <cds-table-header-cell>Pievienotājs</cds-table-header-cell>
-            </cds-table-header-row>
-          </cds-table-head>
-          <cds-table-body>
-            <cds-table-row>
-              <cds-table-cell>
-                <a
-                  href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
-                  download
-                  style="text-decoration: none;">
-                  vērtējums1.pdf
-                </a>
-              </cds-table-cell>
-              <cds-table-cell>22.03.2023 10:15</cds-table-cell>
-              <cds-table-cell>Anna Bērziņa</cds-table-cell>
-            </cds-table-row>
-            <cds-table-row>
-              <cds-table-cell>
-                <a
-                  href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
-                  download
-                  style="text-decoration: none;">
-                  vērtējums2.pdf
-                </a>
-              </cds-table-cell>
-              <cds-table-cell>22.03.2023 10:20</cds-table-cell>
-              <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
-            </cds-table-row>
-          </cds-table-body>
-        </cds-table>
-      </div>
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-button
+                    size="lg"
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    @click="${this.openModal}"
+                    has-main-content="">
+                    Pievienot ${Add16({ slot: 'icon' })}
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
+              <cds-table-head>
+                <cds-table-header-row>
+                  <cds-table-header-cell>Nosaukums</cds-table-header-cell>
+                  <cds-table-header-cell
+                    >Pievienošanas datums</cds-table-header-cell
+                  >
+                  <cds-table-header-cell>Pievienotājs</cds-table-header-cell>
+                </cds-table-header-row>
+              </cds-table-head>
+              <cds-table-body>
+                <cds-table-row>
+                  <cds-table-cell>
+                    <a
+                      href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                      download
+                      style="text-decoration: none;">
+                      vērtējums1.pdf
+                    </a>
+                  </cds-table-cell>
+                  <cds-table-cell>22.03.2023 10:15</cds-table-cell>
+                  <cds-table-cell>Anna Bērziņa</cds-table-cell>
+                </cds-table-row>
+                <cds-table-row>
+                  <cds-table-cell>
+                    <a
+                      href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                      download
+                      style="text-decoration: none;">
+                      vērtējums2.pdf
+                    </a>
+                  </cds-table-cell>
+                  <cds-table-cell>22.03.2023 10:20</cds-table-cell>
+                  <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
+                </cds-table-row>
+              </cds-table-body>
+            </cds-table>
+          </cds-main-content-item>
+        </div>
+      </cds-main-content-block-open>
+
+      <cds-modal id="modal-example">
+        <cds-modal-header>
+          <cds-modal-close-button></cds-modal-close-button>
+          <cds-modal-label>Dokumenti</cds-modal-label>
+          <cds-modal-heading>Dokumenta pievienošana</cds-modal-heading>
+        </cds-modal-header>
+        <cds-modal-body
+          ><cds-file-uploader
+            label-description="Faila izmērs nedrīkst būt lielāks par 2MB. Atbalstāmie failu tipi .jpg, .png, .doc, .docx, .xls, .txt"
+            label-title="Augšupielādēt failus">
+            <cds-file-uploader-drop-container
+              accept="image/jpeg image/png"
+              name=""
+              slot="drop-container">
+              Pievienot failu
+            </cds-file-uploader-drop-container>
+          </cds-file-uploader>
+          <cds-text-editor> </cds-text-editor>
+        </cds-modal-body>
+        <cds-modal-footer>
+          <cds-modal-footer-button kind="secondary" data-modal-close
+            >Cancel</cds-modal-footer-button
+          >
+          <cds-modal-footer-button kind="primary">Save</cds-modal-footer-button>
+        </cds-modal-footer>
+      </cds-modal>
     `;
   }
 

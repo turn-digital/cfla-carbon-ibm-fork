@@ -1,0 +1,10 @@
+.page_main {
+  padding-left: 0px;
+  padding-top: 48px;
+}
+
+@media screen and (min-width: 1056px) {
+  .page_main {
+    padding-left: 256px;
+  }
+}

@@ -1,0 +1,4 @@
+@use '@carbon/type';
+.title {
+  @include type.type-style('heading-03');
+}
