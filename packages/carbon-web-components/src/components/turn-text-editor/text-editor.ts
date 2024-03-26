@@ -34,7 +34,8 @@ class TextEditor extends LitElement {
   @property({ type: Object }) editorConfig = {
     editorTitle: 'Default title 1',
     height: 200,
-    highlight_on_focus: false,
+    highlight_on_focus: true,
+    statusbar: false,
     branding: false,
     menubar: false,
     max_length: 200,
@@ -62,16 +63,13 @@ class TextEditor extends LitElement {
       <tinymce-editor
         id="${this.editorId}"
         config="${'config_' + this.editorId}"
-        statusbar: false,
-        branding: false,
-        menubar: false,
-        toolbar_sticky: true,
-        min_height: 120,
-        max_height: 600,
+        statusbar: false
+        min_height: 120
+        max_height: 600
         autoresize_bottom_margin: 5
         ?readonly="${this.readonly}"
         toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
-        plugins="length_validation advlist autosave save sender autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
+        plugins="length_validation autosave save sender autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
         content_css="//www.tiny.cloud/css/codepen.min.css"
         promotion="false">
         ${this.TextEditorData}
