@@ -9,21 +9,18 @@
 
 import { html } from 'lit';
 import './index';
-import storyDocs from './status-control-panel-story.mdx';
+import storyDocs from './header-project-block-story.mdx';
 
 export const Default = () => {
-  return html` <cds-status-control-panel></cds-status-control-panel> `;
+  return html` <cds-header-project-block></cds-header-project-block> `;
 };
 export const Propsed = () => {
-  return html`
-    <cds-status-control-panel
-    </cds-status-control-panel>
-  `;
+  return html` <cds-header-project-block></cds-header-project-block> `;
 };
 
 export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Custom-components/Satatus control panel',
+  title: 'Custom-components/Header project block',
 };
