@@ -44,25 +44,21 @@ class CDSPValuationOpen extends LitElement {
 
       <cds-main-content-block-open>
         <div slot="header" class="cds--css-grid-column cds--col-span-100">
-          <cds-accordion
-            alignment="start"
-            class="cds--css-grid-column cds--col-span-100">
-            <cds-accordion-item title="Projekta iesniegums: 3.1.1.5/19/A/043">
-              <cds-label-value-horizontal label="Atlases nosaukums">
-                <cds-link href="#"
-                  >Zinātnes politikas ieviešana, vadība un kapacitātes
-                  stiprināšana
-                </cds-link>
-              </cds-label-value-horizontal>
-              <cds-label-value-horizontal label="Atlases nosaukums">
-                <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
-              </cds-label-value-horizontal>
-              <cds-divider size="3"></cds-divider>
-              <cds-label-value-horizontal label="Atlases nosaukums">
-                <cds-link href="#">1.1 </cds-link>
-              </cds-label-value-horizontal>
-            </cds-accordion-item>
-          </cds-accordion>
+          <cds-header-project-block>
+            <cds-label-value-horizontal label="Atlases nosaukums">
+              <cds-link href="#"
+                >Zinātnes politikas ieviešana, vadība un kapacitātes
+                stiprināšana
+              </cds-link>
+            </cds-label-value-horizontal>
+            <cds-label-value-horizontal label="Atlases nosaukums">
+              <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
+            </cds-label-value-horizontal>
+            <cds-divider size="3"></cds-divider>
+            <cds-label-value-horizontal label="Atlases nosaukums">
+              <cds-link href="#">1.1 </cds-link>
+            </cds-label-value-horizontal>
+          </cds-header-project-block>
 
           <div class="cds--css-grid cds--css-grid--narrow">
             <div
@@ -162,7 +158,7 @@ class CDSPValuationOpen extends LitElement {
     "height": 200,
     "highlight_on_focus": true,
     "promotion": true,
-    "max_length": 100,
+    "max_length": 200,
     "fetch_obj": {
       "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
       "fetchMethod": "POST",
@@ -186,7 +182,7 @@ class CDSPValuationOpen extends LitElement {
     "height": 200,
     "highlight_on_focus": true,
     "promotion": true,
-    "max_length": 100,
+    "max_length": 200,
     "fetch_obj": {
       "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
       "fetchMethod": "POST",

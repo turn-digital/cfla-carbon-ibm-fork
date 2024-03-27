@@ -18,7 +18,36 @@ class CDSStatusHistory extends LitElement {
   @property() currenStatusColor = 'green';
   @property() currenStatusTitle = 'CFLA pārdomas';
   @property() currenStatusDate = '25.10.2019 10:34';
-  @property() statusHistoryItems = [{}];
+  @property() statusHistoryItems = [
+    {
+      date: '25.10.2019 10:34',
+      status: 'Atgriezta precizēšanai 1',
+      author: 'Elīne Millere',
+      pamatojums: 'Pamatojums 1',
+      id: '1',
+    },
+    {
+      date: '25.09.2019 16:13',
+      status: 'Atgriezta precizēšanai 2',
+      author: 'Test author',
+      pamatojums: 'Pamatojums 2',
+      id: '2',
+    },
+  ];
+  @property() modalContent = {
+    date: '25.10.2019 10:34',
+    status: 'Atgriezta precizēšanai',
+    author: 'Elīne Millere',
+    pamatojums: 'Pamatojums test',
+    id: '1',
+  };
+
+  statusHistoryInfoModalOpen = (item) => {
+    this.modalContent = item;
+    //@ts-ignore
+    this.shadowRoot.getElementById('status-history-info-modal').open = true;
+  };
+
   render() {
     return html`
       <div class="container">
@@ -35,20 +64,51 @@ class CDSStatusHistory extends LitElement {
         <div class="container__status-history">
           <cds-accordion alignment="start">
             <cds-accordion-item title="Statūsu vēsture">
-              <p>
-                25.10.2019 10:34 Atgriezta precizēšanai - Elīne Millere
-                <cds-link>Pamatojums</cds-link>
-              </p>
-              <cds-divider size="2"></cds-divider>
-              <p>
-                25.09.2019 16:13 Atgriezta precizēšanai - Elīne Millere
-                <cds-link>Pamatojums</cds-link>
-              </p>
+              ${this.statusHistoryItems.map(
+                (item) => html`
+                  <p>
+                    ${item.date} ${item.status} - ${item.author}
+                    <cds-link
+                      style="cursor: pointer;"
+                      @click=${() => this.statusHistoryInfoModalOpen(item)}
+                      >Pamatojums</cds-link
+                    >
+                  </p>
+                  <cds-divider size="2"></cds-divider>
+                `
+              )}
             </cds-accordion-item>
             <cds-divider size="2"></cds-divider>
           </cds-accordion>
         </div>
       </div>
+      <cds-modal id="status-history-info-modal">
+        <cds-modal-header>
+          <cds-modal-close-button></cds-modal-close-button>
+          <cds-modal-label>Statusu vēsture</cds-modal-label>
+          <cds-modal-heading>Statusa maiņas pamatojums</cds-modal-heading>
+        </cds-modal-header>
+        <cds-modal-body>
+          <cds-divider size="4"></cds-divider>
+          <cds-label-value label="Statuss" value="${this.modalContent.status}">
+          </cds-label-value>
+          <cds-divider size="4"></cds-divider>
+          <cds-label-value
+            label="Statusa datums un laiks"
+            value="${this.modalContent.date}">
+          </cds-label-value
+          ><cds-divider size="4"></cds-divider>
+          <cds-label-value
+            label="Statusa autors"
+            value="${this.modalContent.author}">
+          </cds-label-value
+          ><cds-divider size="4"></cds-divider>
+          <cds-label-value
+            label="Pamatojums"
+            value="${this.modalContent.pamatojums}">
+          </cds-label-value
+        ></cds-modal-body>
+      </cds-modal>
     `;
   }
 

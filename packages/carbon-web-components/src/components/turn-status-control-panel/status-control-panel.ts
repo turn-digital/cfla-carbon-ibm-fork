@@ -22,7 +22,11 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 class CDSStatusControlPanel extends LitElement {
   @property({ type: String }) projectId = '1.1.1.1/16/A/004';
 
-  @property({ type: Array }) accordionItems = [{ value: String, text: String }];
+  @property({ type: Array }) accordionItems = [
+    { value: 'Status 1', text: 'Status 1' },
+    { value: 'Status 2', text: 'Status 2' },
+    { value: 'Status 3', text: 'Status 3' },
+  ];
   @property({ type: Function }) dropdownHandler = () => {};
 
   render() {
