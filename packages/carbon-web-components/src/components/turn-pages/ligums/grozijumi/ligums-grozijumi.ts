@@ -17,46 +17,77 @@ import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16
 class CDSPValuationList extends LitElement {
   render() {
     return html`
-      <cds-page-title title="Līgums un grozījumi"></cds-page-title>
-      <cds-table>
-        <cds-table-head>
-          <cds-table-header-row>
-            <cds-table-header-cell>Projekta ID</cds-table-header-cell>
-            <cds-table-header-cell>Projekta nosaukums</cds-table-header-cell>
-            <cds-table-header-cell>Iestādes nosaukums</cds-table-header-cell>
-            <cds-table-header-cell>Projekta st.</cds-table-header-cell>
-            <cds-table-header-cell>Līguma stat.</cds-table-header-cell>
-            <cds-table-header-cell></cds-table-header-cell>
-          </cds-table-header-row>
-        </cds-table-head>
-        <cds-table-body>
-          <cds-table-row>
-            <cds-table-cell>1.1.1.1/16/A</cds-table-cell>
-            <cds-table-cell
-              >Neironu tīkli fleksīvo dabisko valodu apstrādei</cds-table-cell
-            >
-            <cds-table-cell>Latvijas Universitāte</cds-table-cell>
-            <cds-table-cell>Sagatavošanā</cds-table-cell>
-            <cds-table-cell>Neizveidots</cds-table-cell>
-            <cds-table-cell>
-              <cds-overflow-menu>
-                ${OverflowMenuVertical16({
-                  class: `${prefix}--overflow-menu__icon`,
-                  slot: 'icon',
-                })}
-                <span slot="tooltip-content"> Options </span>
-                <cds-overflow-menu-body>
-                  <cds-overflow-menu-item>Izveidot</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
-                  <cds-overflow-menu-item divider danger
-                    >Izdzēst</cds-overflow-menu-item
-                  >
-                </cds-overflow-menu-body>
-              </cds-overflow-menu>
-            </cds-table-cell>
-          </cds-table-row>
-        </cds-table-body>
-      </cds-table>
+      <link
+        rel="stylesheet"
+        href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+
+      <cds-main-content-block storybook>
+        <cds-header-project-block
+          class="cds--css-grid-column cds--col-span-100">
+          <cds-label-value-horizontal label="Atlases nosaukums">
+            <cds-link href="#"
+              >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
+            </cds-link>
+          </cds-label-value-horizontal>
+          <cds-label-value-horizontal label="Atlases nosaukums">
+            <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
+          </cds-label-value-horizontal>
+          <cds-divider size="3"></cds-divider>
+          <cds-label-value-horizontal label="Atlases nosaukums">
+            <cds-link href="#">1.1 </cds-link>
+          </cds-label-value-horizontal>
+        </cds-header-project-block>
+        <cds-main-content-title
+          class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+          title="Līgums un grozījumi"></cds-main-content-title>
+        <div
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-16">
+          <cds-table>
+            <cds-table-head>
+              <cds-table-header-row>
+                <cds-table-header-cell>Projekta ID</cds-table-header-cell>
+                <cds-table-header-cell
+                  >Projekta nosaukums</cds-table-header-cell
+                >
+                <cds-table-header-cell
+                  >Iestādes nosaukums</cds-table-header-cell
+                >
+                <cds-table-header-cell>Projekta st.</cds-table-header-cell>
+                <cds-table-header-cell>Līguma stat.</cds-table-header-cell>
+                <cds-table-header-cell></cds-table-header-cell>
+              </cds-table-header-row>
+            </cds-table-head>
+            <cds-table-body>
+              <cds-table-row>
+                <cds-table-cell>1.1.1.1/16/A</cds-table-cell>
+                <cds-table-cell
+                  >Neironu tīkli fleksīvo dabisko valodu
+                  apstrādei</cds-table-cell
+                >
+                <cds-table-cell>Latvijas Universitāte</cds-table-cell>
+                <cds-table-cell>Sagatavošanā</cds-table-cell>
+                <cds-table-cell>Neizveidots</cds-table-cell>
+                <cds-table-cell>
+                  <cds-overflow-menu>
+                    ${OverflowMenuVertical16({
+                      class: `${prefix}--overflow-menu__icon`,
+                      slot: 'icon',
+                    })}
+                    <span slot="tooltip-content"> Options </span>
+                    <cds-overflow-menu-body>
+                      <cds-overflow-menu-item>Izveidot</cds-overflow-menu-item>
+                      <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
+                      <cds-overflow-menu-item divider danger
+                        >Izdzēst</cds-overflow-menu-item
+                      >
+                    </cds-overflow-menu-body>
+                  </cds-overflow-menu>
+                </cds-table-cell>
+              </cds-table-row>
+            </cds-table-body>
+          </cds-table>
+        </div>
+      </cds-main-content-block>
     `;
   }
 

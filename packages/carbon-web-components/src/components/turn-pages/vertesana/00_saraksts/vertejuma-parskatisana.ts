@@ -26,6 +26,21 @@ class CDSPValuationList extends LitElement {
         rel="stylesheet"
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
       <cds-main-content-block storybook>
+      <cds-header-project-block
+          class="cds--css-grid-column cds--col-span-100">
+          <cds-label-value-horizontal label="Atlases nosaukums">
+            <cds-link href="#"
+              >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
+            </cds-link>
+          </cds-label-value-horizontal>
+          <cds-label-value-horizontal label="Atlases nosaukums">
+            <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
+          </cds-label-value-horizontal>
+          <cds-divider size="3"></cds-divider>
+          <cds-label-value-horizontal label="Atlases nosaukums">
+            <cds-link href="#">1.1 </cds-link>
+          </cds-label-value-horizontal>
+        </cds-header-project-block>
         <cds-main-content-title
           class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
           title="Vērtējuma pārskatīšana">
