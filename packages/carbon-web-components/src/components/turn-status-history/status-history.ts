@@ -67,7 +67,7 @@ class CDSStatusHistory extends LitElement {
               ${this.statusHistoryItems.map(
                 (item) => html`
                   <p>
-                    ${item.date} ${item.status} - ${item.author}
+                    ${item.date} ${item.status} — ${item.author}
                     <cds-link
                       style="cursor: pointer;"
                       @click=${() => this.statusHistoryInfoModalOpen(item)}
