@@ -9,6 +9,7 @@
 
 import { html } from 'lit';
 import './index';
+import storyDocs from './main-content-block-open-story.mdx';
 
 export const Default = () => {
   return html`
@@ -21,4 +22,7 @@ export const Default = () => {
 
 export default {
   title: 'Custom-components/Main content block open',
+  parameters: {
+    ...storyDocs.parameters,
+  },
 };

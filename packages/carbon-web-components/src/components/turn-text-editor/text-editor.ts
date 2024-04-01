@@ -14,6 +14,12 @@ import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import './tinymce-webcomponent.js';
 
+/**
+ * Related documents.
+ *
+ * @element cds-text-editor
+ */
+
 @customElement(`${prefix}-text-editor`)
 class TextEditor extends LitElement {
   @property({ type: Boolean }) readonly = false;

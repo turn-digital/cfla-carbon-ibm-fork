@@ -13,9 +13,15 @@ import styles from './main-content-item.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import { property } from 'lit/decorators.js';
 
+/**
+ * Related documents.
+ *
+ * @element cds-main-content-item
+ */
+
 @customElement(`${prefix}-main-content-item`)
 class CDSMainContentItem extends LitElement {
-  @property() size = '05';
+  @property({ type: String }) size = '05';
   render() {
     return html`
       <div class="size--${this.size}">

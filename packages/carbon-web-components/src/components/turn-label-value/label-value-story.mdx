@@ -1,0 +1,29 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Label Value
+
+### JS (via import)
+
+```imoprt
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+```
+
+### HTML
+
+```html
+<cds-label-value
+  label="Propsed label!"
+  value="Propsed Value!"></cds-label-value>
+<cds-label-value
+  label="Propsed label!"
+  value="Propsed Value!"></cds-label-value>
+
+<cds-label-value label="Propsed label!">
+  <p>Slot Value</p>
+</cds-label-value>
+```
+
+## `<cds-label-value>` attributes and properties
+
+<Props of="cds-label-value" />

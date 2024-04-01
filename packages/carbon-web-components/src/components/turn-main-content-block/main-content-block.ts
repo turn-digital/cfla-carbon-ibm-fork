@@ -13,6 +13,12 @@ import styles from './main-content-block.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import { property } from 'lit/decorators';
 
+/**
+ * Related documents.
+ *
+ * @element cds-main-content-block
+ */
+
 @customElement(`${prefix}-main-content-block`)
 class CDSMainContentBlock extends LitElement {
   @property({ type: Boolean }) storybook = false;

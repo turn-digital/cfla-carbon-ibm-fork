@@ -9,6 +9,7 @@
 
 import { html } from 'lit';
 import './index';
+import storyDocs from './dropdown-button-story.mdx';
 
 export const Default = () => {
   const itemsArray = [
@@ -28,5 +29,8 @@ export const Default = () => {
 };
 
 export default {
+  parameters: {
+    ...storyDocs.parameters,
+  },
   title: 'Custom-components/Dropdown Button',
 };

@@ -13,9 +13,15 @@ import styles from './header-title.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
+/**
+ * Related documents.
+ *
+ * @element cds-header-title
+ */
+
 @customElement(`${prefix}-header-title`)
 class CDSHeaderTitle extends LitElement {
-  @property() title = 'Default Header Title';
+  @property({ type: String }) title = 'Default Header Title';
 
   render() {
     return html` <h1 class="title">${this.title}</h1> `;

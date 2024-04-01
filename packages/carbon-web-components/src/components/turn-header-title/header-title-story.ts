@@ -16,8 +16,7 @@ export const Default = () => {
 };
 export const Propsed = () => {
   return html`
-    <cds-header-title title
-     </cds-header-title>
+    <cds-header-title title="Proposed Header Title"> </cds-header-title>
   `;
 };
 
