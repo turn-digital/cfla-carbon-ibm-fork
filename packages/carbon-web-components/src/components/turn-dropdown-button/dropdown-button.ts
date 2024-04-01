@@ -13,6 +13,12 @@ import styles from './dropdown-button.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import { property } from 'lit/decorators';
 
+/**
+ * Related documents.
+ *
+ * @element cds-dropdown-button
+ */
+
 @customElement(`${prefix}-dropdown-button`)
 class CDSDropdownButtonTest extends LitElement {
   @property({ type: Array }) accordionItems = [{ value: String, text: String }];
@@ -23,12 +29,15 @@ class CDSDropdownButtonTest extends LitElement {
   render() {
     return html`
       <div class="dropdown-container">
-        <cds-dropdown class="cds-theme-zone-turn-dropdown-button"
+        <cds-dropdown
+          class="cds-theme-zone-turn-dropdown-button"
           label="Mainīt statusu"
           @cds-dropdown-selected="${this.dropdownHandler}">
           ${this.accordionItems?.map(
             (item) => html`
-              <cds-dropdown-item class="cds-theme-zone-turn-dropdown-button-test" value="${item.value}"
+              <cds-dropdown-item
+                class="cds-theme-zone-turn-dropdown-button-test"
+                value="${item.value}"
                 >${item.text}</cds-dropdown-item
               >
             `

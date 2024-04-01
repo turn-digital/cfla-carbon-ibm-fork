@@ -13,11 +13,17 @@ import styles from './label-value.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
+/**
+ * Related documents.
+ *
+ * @element cds-label-value
+ */
+
 @customElement(`${prefix}-label-value`)
 class CDSLabelValue extends LitElement {
-  @property() label = 'Default label!';
-  @property() value = '';
-  @property() size = 'sm';
+  @property({ type: String }) label = 'Default label!';
+  @property({ type: String }) value = '';
+  @property({ type: String }) size = 'sm';
 
   render() {
     return html`

@@ -12,6 +12,12 @@ import { prefix } from '../../globals/settings';
 import styles from './main-content-block-open.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
+/**
+ * Related documents.
+ *
+ * @element cds-main-content-block-open
+ */
+
 @customElement(`${prefix}-main-content-block-open`)
 class CDSMainContentBlock extends LitElement {
   render() {

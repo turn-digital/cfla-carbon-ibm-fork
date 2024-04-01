@@ -9,6 +9,7 @@
 
 import { html } from 'lit';
 import './index';
+import storyDocs from './main-content-item-story.mdx';
 
 export const Default = () => {
   return html`
@@ -18,4 +19,7 @@ export const Default = () => {
 
 export default {
   title: 'Custom-components/Main content item',
+  parameters: {
+    ...storyDocs.parameters,
+  },
 };

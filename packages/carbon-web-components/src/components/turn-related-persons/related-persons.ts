@@ -16,11 +16,17 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 import UserAvatar16 from '@carbon/icons/lib/user--avatar/16';
 import UserAdmin16 from '@carbon/icons/lib/user--admin/16';
 
+/**
+ * Related documents.
+ *
+ * @element cds-related-persons
+ */
+
 @customElement(`${prefix}-related-persons`)
 class CDSRelatedPersons extends LitElement {
-  @property() statusHistoryItems = [{}];
-  @property() shortRole = 'PV';
-  @property() personName = 'Inta Štāle';
+  @property({ type: Array }) statusHistoryItems = [{}];
+  @property({ type: String }) shortRole = 'PV';
+  @property({ type: String }) personName = 'Inta Štāle';
 
   render() {
     return html`

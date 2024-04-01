@@ -13,10 +13,16 @@ import styles from './header-project-block.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
+/**
+ * Related documents.
+ *
+ * @element cds-project-block
+ */
+
 @customElement(`${prefix}-header-project-block`)
 class CDSHeaderProjectBlock extends LitElement {
-  @property() title = 'back to somwhere';
-  @property() link = '#';
+  @property({ type: String }) title = 'back to somwhere';
+  @property({ type: String }) link = '#';
 
   render() {
     return html`

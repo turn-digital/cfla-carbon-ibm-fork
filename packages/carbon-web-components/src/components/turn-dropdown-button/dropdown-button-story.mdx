@@ -1,0 +1,34 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Dropdown Button
+
+### JS (via import)
+
+```imoprt
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-dropdown-button.min.js"></script>
+```
+
+### HTML
+
+```JS
+ const itemsArray = [
+    { text: 'Status 1', value: 'Status 1' },
+    { text: 'Status 2', value: 'Status 2' },
+    { text: 'Status 3', value: 'Status 3' },
+  ];
+  const eventHandler = (event) => {
+    console.log('itemSelected', event.detail.item.__value);
+  };
+```
+
+```html
+<cds-dropdown-button
+  .accordionItems="${itemsArray}"
+  .dropdownHandler="${eventHandler}">
+</cds-dropdown-button>
+```
+
+## `<cds-dropdown-button>` attributes and properties
+
+<Props of="cds-dropdown-button" />

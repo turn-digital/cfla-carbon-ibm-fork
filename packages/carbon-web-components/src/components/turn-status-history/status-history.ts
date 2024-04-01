@@ -13,12 +13,18 @@ import styles from './status-history.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
+/**
+ * Related documents.
+ *
+ * @element cds-status-history
+ */
+
 @customElement(`${prefix}-status-history`)
 class CDSStatusHistory extends LitElement {
-  @property() currenStatusColor = 'green';
-  @property() currenStatusTitle = 'CFLA pārdomas';
-  @property() currenStatusDate = '25.10.2019 10:34';
-  @property() statusHistoryItems = [
+  @property({ type: String }) currenStatusColor = 'green';
+  @property({ type: String }) currenStatusTitle = 'CFLA pārdomas';
+  @property({ type: String }) currenStatusDate = '25.10.2019 10:34';
+  @property({ type: Array }) statusHistoryItems = [
     {
       date: '25.10.2019 10:34',
       status: 'Atgriezta precizēšanai 1',

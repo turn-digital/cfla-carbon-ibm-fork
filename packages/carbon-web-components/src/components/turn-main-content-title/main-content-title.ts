@@ -13,11 +13,17 @@ import styles from './main-content-title.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
+/**
+ * Related documents.
+ *
+ * @element cds-main-content-title
+ */
+
 @customElement(`${prefix}-main-content-title`)
 class CDSMainContentTitle extends LitElement {
   static styles = styles;
 
-  @property() title = 'Default page title';
+  @property({ type: String }) title = 'Default page title';
 
   render() {
     return html`

@@ -16,8 +16,7 @@ export const Default = () => {
 };
 export const Propsed = () => {
   return html`
-    <cds-status-control-panel
-    </cds-status-control-panel>
+    <cds-status-control-panel</cds-status-control-panel>
   `;
 };
 

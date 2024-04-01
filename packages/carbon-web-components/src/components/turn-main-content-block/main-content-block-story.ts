@@ -9,13 +9,24 @@
 
 import { html } from 'lit';
 import './index';
+import storyDocs from './main-content-block-story.mdx';
 
 export const Default = () => {
   return html`
     <cds-main-content-block>Some content inside</cds-main-content-block>
   `;
 };
+export const Storybook = () => {
+  return html`
+    <cds-main-content-block storybook
+      >Some content inside</cds-main-content-block
+    >
+  `;
+};
 
 export default {
   title: 'Custom-components/Main content block',
+  parameters: {
+    ...storyDocs.parameters,
+  },
 };
