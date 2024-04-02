@@ -9,10 +9,19 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 <script type="module" src="https://demo.turn.lv/cfla_dist/turn-related-persons.min.js"></script>
 ```
 
+```JS
+const statusHistoryPersons = [
+    { shortRole: 'PV', personName: 'Vards Uzvards', iconType: '1' },
+    { shortRole: 'AV', personName: 'Vards Uzvards', iconType: '2' },
+    { shortRole: 'BN', personName: 'Vards Uzvards', iconType: '3' },
+  ];
+```
+
 ### HTML
 
 ```html
-<cds-related-persons title="Propsed page title"></cds-related-persons>
+<cds-related-persons
+  .statusHistoryPersons="${statusHistoryPersons}"></cds-related-persons>
 ```
 
 ## `<cds-related-persons>` attributes and properties

@@ -14,6 +14,55 @@ import storyDocs from './text-editor-story.mdx';
 export const Default = () => {
   return html` <cds-text-editor></cds-text-editor> `;
 };
+export const Propsed = () => {
+  return html`
+    <cds-text-editor
+      editorId="editor2"
+      editorConfig='{
+"editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+"branding": false,
+"menubar": false,
+"height": 200,
+"highlight_on_focus": true,
+"promotion": true,
+"max_length": 200,
+"fetch_obj": {
+"urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+"fetchMethod": "POST",
+"errorAlertMessages": "Error occurred while fetching data",
+"savedAlertMessages": "All data saved successfully"
+},
+"external_plugins": {
+"pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+}
+}'></cds-text-editor>
+  `;
+};
+export const IsModal = () => {
+  return html`
+    <cds-text-editor
+      editorId="editor2"
+      editorConfig='{
+"editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+"branding": false,
+"menubar": false,
+"height": 200,
+"highlight_on_focus": true,
+"promotion": true,
+"max_length": 200,
+"isModal": true,
+"fetch_obj": {
+"urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+"fetchMethod": "POST",
+"errorAlertMessages": "Error occurred while fetching data",
+"savedAlertMessages": "All data saved successfully"
+},
+"external_plugins": {
+"pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+}
+}'></cds-text-editor>
+  `;
+};
 
 export default {
   parameters: {

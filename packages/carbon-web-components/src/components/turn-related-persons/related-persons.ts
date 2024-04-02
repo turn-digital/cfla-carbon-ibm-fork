@@ -15,6 +15,7 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 
 import UserAvatar16 from '@carbon/icons/lib/user--avatar/16';
 import UserAdmin16 from '@carbon/icons/lib/user--admin/16';
+import UserProfile16 from '@carbon/icons/lib/user--profile/16';
 
 /**
  * Related documents.
@@ -22,26 +23,30 @@ import UserAdmin16 from '@carbon/icons/lib/user--admin/16';
  * @element cds-related-persons
  */
 
+const iconMap = new Map([
+  ['1', UserAvatar16],
+  ['2', UserAdmin16],
+  ['3', UserProfile16],
+]);
+
 @customElement(`${prefix}-related-persons`)
 class CDSRelatedPersons extends LitElement {
-  @property({ type: Array }) statusHistoryItems = [{}];
-  @property({ type: String }) shortRole = 'PV';
-  @property({ type: String }) personName = 'Inta Štāle';
-
+  @property({ type: Array }) statusHistoryPersons = [
+    { shortRole: 'PV', personName: 'Vards Uzvards', iconType: '1' },
+    { shortRole: 'AV', personName: 'Vards Uzvards', iconType: '2' },
+    { shortRole: 'BN', personName: 'Vards Uzvards', iconType: '3' },
+  ];
   render() {
     return html`
       <div class="container">
-        <span class="container__related-person">
-          ${UserAvatar16({ slot: 'icon' })} ${this.shortRole}:
-          ${this.personName}
-        </span>
-        <span class="container__related-person">
-          ${UserAdmin16({ slot: 'icon' })} ${this.shortRole}: ${this.personName}
-        </span>
-        <span class="container__related-person">
-          ${UserAvatar16({ slot: 'icon' })} ${this.shortRole}:
-          ${this.personName}
-        </span>
+        ${this.statusHistoryPersons.map(
+          (person) => html`
+            <span class="container__related-person">
+              ${iconMap.get(person?.iconType)({ slot: 'icon' })}
+              ${person?.shortRole}: ${person?.personName}
+            </span>
+          `
+        )}
       </div>
     `;
   }

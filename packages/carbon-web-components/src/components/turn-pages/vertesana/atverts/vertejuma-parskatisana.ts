@@ -33,6 +33,11 @@ class CDSPValuationOpen extends LitElement {
       { text: 'Status 2', value: 'Status 2' },
       { text: 'Status 3', value: 'Status 3' },
     ];
+    const statusHistoryPersons = [
+      { shortRole: 'PV', personName: 'Vards Uzvards 1', iconType: '1' },
+      { shortRole: 'AV', personName: 'Vards Uzvards 2', iconType: '2' },
+      { shortRole: 'BN', personName: 'Vards Uzvards 3', iconType: '3' },
+    ];
     const eventHandler = (event) => {
       console.log('itemSelected', event.detail.item.__value);
     };
@@ -44,7 +49,7 @@ class CDSPValuationOpen extends LitElement {
 
       <cds-main-content-block-open>
         <div slot="header" class="cds--css-grid-column cds--col-span-100">
-          <cds-header-project-block>
+          <cds-header-project-block title="Projekta iesniegums: 3.1.1.5/19">
             <cds-label-value-horizontal label="Atlases nosaukums">
               <cds-link href="#"
                 >Zinātnes politikas ieviešana, vadība un kapacitātes
@@ -68,7 +73,8 @@ class CDSPValuationOpen extends LitElement {
                   title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
               </cds-main-content-item>
               <cds-main-content-item size="07">
-                <cds-related-persons></cds-related-persons>
+                <cds-related-persons
+                  .statusHistoryPersons=${statusHistoryPersons}></cds-related-persons>
               </cds-main-content-item>
               <cds-main-content-item size="07">
                 <cds-status-history></cds-status-history>

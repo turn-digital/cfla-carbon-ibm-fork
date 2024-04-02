@@ -15,7 +15,11 @@ export const Default = () => {
   return html` <cds-header-project-block></cds-header-project-block> `;
 };
 export const Propsed = () => {
-  return html` <cds-header-project-block></cds-header-project-block> `;
+  return html`
+    <cds-header-project-block title="Header Project Block">
+      Some content
+    </cds-header-project-block>
+  `;
 };
 
 export default {

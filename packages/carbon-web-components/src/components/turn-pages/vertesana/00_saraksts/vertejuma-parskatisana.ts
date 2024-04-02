@@ -27,7 +27,7 @@ class CDSPValuationList extends LitElement {
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
       <cds-main-content-block storybook>
       <cds-header-project-block
-          class="cds--css-grid-column cds--col-span-100">
+          class="cds--css-grid-column cds--col-span-100" title="Projekta iesniegums: 3.1.1.5/19/A/043">
           <cds-label-value-horizontal label="Atlases nosaukums">
             <cds-link href="#"
               >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana

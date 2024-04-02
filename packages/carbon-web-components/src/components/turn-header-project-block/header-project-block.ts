@@ -16,13 +16,12 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 /**
  * Related documents.
  *
- * @element cds-project-block
+ * @element cds-header-project-block
  */
 
 @customElement(`${prefix}-header-project-block`)
 class CDSHeaderProjectBlock extends LitElement {
-  @property({ type: String }) title = 'back to somwhere';
-  @property({ type: String }) link = '#';
+  @property({ type: String }) title = '';
 
   render() {
     return html`
@@ -30,7 +29,7 @@ class CDSHeaderProjectBlock extends LitElement {
         <cds-accordion
           alignment="start"
           class="cds--css-grid-column cds--col-span-100">
-          <cds-accordion-item title="Projekta iesniegums: 3.1.1.5/19/A/043">
+          <cds-accordion-item title="${this.title}">
             <slot></slot>
           </cds-accordion-item>
         </cds-accordion>

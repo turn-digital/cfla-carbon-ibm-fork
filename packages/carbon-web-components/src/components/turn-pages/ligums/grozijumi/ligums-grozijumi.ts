@@ -23,7 +23,8 @@ class CDSPValuationList extends LitElement {
 
       <cds-main-content-block storybook>
         <cds-header-project-block
-          class="cds--css-grid-column cds--col-span-100">
+          class="cds--css-grid-column cds--col-span-100"
+          title="Projekta iesniegums: 3.1.1.5/19/A/A/A/A/A">
           <cds-label-value-horizontal label="Atlases nosaukums">
             <cds-link href="#"
               >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
