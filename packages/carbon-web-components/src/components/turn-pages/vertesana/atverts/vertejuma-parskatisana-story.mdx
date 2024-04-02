@@ -5,6 +5,22 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
 
 ### HTML
 
+```JS
+   const itemsArray = [
+      { text: 'Status 1', value: 'Status 1' },
+      { text: 'Status 2', value: 'Status 2' },
+      { text: 'Status 3', value: 'Status 3' },
+    ];
+    const statusHistoryPersons = [
+      { shortRole: 'PV', personName: 'Vards Uzvards 1', iconType: '1' },
+      { shortRole: 'AV', personName: 'Vards Uzvards 2', iconType: '2' },
+      { shortRole: 'BN', personName: 'Vards Uzvards 3', iconType: '3' },
+    ];
+    const eventHandler = (event) => {
+      console.log('itemSelected', event.detail.item.__value);
+    };
+```
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -85,13 +101,9 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
   </head>
 
   <body class="cds-theme-zone-white">
-    <link
-      rel="stylesheet"
-      href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
-
     <cds-main-content-block-open>
       <div slot="header" class="cds--css-grid-column cds--col-span-100">
-        <cds-header-project-block>
+        <cds-header-project-block title="Projekta iesniegums: 3.1.1.5/19">
           <cds-label-value-horizontal label="Atlases nosaukums">
             <cds-link href="#"
               >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
@@ -114,7 +126,8 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
                 title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
             </cds-main-content-item>
             <cds-main-content-item size="07">
-              <cds-related-persons></cds-related-persons>
+              <cds-related-persons
+                .statusHistoryPersons="${statusHistoryPersons}"></cds-related-persons>
             </cds-main-content-item>
             <cds-main-content-item size="07">
               <cds-status-history></cds-status-history>
@@ -123,7 +136,9 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
           <cds-main-content-item
             size="07"
             class="cds--sm:col-span-4 cds--md:col-span-3 cds--lg:col-span-6 cds--css-grid-column">
-            <cds-status-control-panel></cds-status-control-panel>
+            <cds-status-control-panel
+              .accordionItems="${itemsArray}"
+              .dropdownHandler="${eventHandler}"></cds-status-control-panel>
           </cds-main-content-item>
         </div>
         <cds-main-content-item size="04">

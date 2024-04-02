@@ -25,6 +25,7 @@ class CDSPValuationReview extends LitElement {
       <link
         rel="stylesheet"
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+      <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
       <cds-main-content-block storybook>
         <cds-back-to
           class="cds--css-grid-column cds--col-span-100 cds--grid-column"
@@ -60,7 +61,8 @@ class CDSPValuationReview extends LitElement {
               size="lg"
               style="width: 100%"
               label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
-              placeholder="mm.dd.yyyy">
+              placeholder="mm.dd.gggg"
+              locale="ru">
             </cds-date-picker-input>
           </cds-date-picker>
           <cds-main-content-item

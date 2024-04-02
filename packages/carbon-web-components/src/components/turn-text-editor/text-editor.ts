@@ -44,17 +44,13 @@ class TextEditor extends LitElement {
     statusbar: false,
     branding: false,
     menubar: false,
+    isModal: false,
     max_length: 200,
     fetch_obj: {
       urlToFetch: 'https://jsonplaceholder.typicode.com/posts',
       fetchMethod: 'POST',
       errorAlertMessages: 'Error occured while fetching data',
     },
-    // need this part to be able to use local plugin so we can test some stuff
-    // external_plugins: {
-    //   pluginId:
-    //     'http://localhost:8001/plugins/test_plugin_for_local/plugin.min.js',
-    // },
     external_plugins: {
       pluginId:
         'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
