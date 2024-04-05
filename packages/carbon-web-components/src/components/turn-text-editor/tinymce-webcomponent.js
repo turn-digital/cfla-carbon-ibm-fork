@@ -391,8 +391,6 @@
         href == 'http://localhost:9000'
           ? 'https://demo.turn.lv/cfla_dist/assets/tinymce/tinymce.min.js'
           : 'https://demo.turn.lv/cfla_dist/assets/tinymce/tinymce.min.js';
-
-      console.log('urlToTinymce', urlToTinymce);
       return urlToTinymce;
     }
     _loadTinyDoInit() {

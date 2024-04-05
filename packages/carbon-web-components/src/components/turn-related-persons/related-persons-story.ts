@@ -17,6 +17,11 @@ export const Default = () => {
 export const Propsed = () => {
   return html` <cds-related-persons></cds-related-persons> `;
 };
+export const EmptyArray = () => {
+  return html`
+    <cds-related-persons .statusHistoryPersons=${[]}></cds-related-persons>
+  `;
+};
 
 export default {
   parameters: {

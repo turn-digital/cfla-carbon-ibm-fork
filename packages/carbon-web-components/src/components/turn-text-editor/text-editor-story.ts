@@ -12,12 +12,9 @@ import './index';
 import storyDocs from './text-editor-story.mdx';
 
 export const Default = () => {
-  return html` <cds-text-editor></cds-text-editor> `;
-};
-export const Propsed = () => {
   return html`
     <cds-text-editor
-      editorId="editor2"
+      editorId="editor_example_storybook"
       editorConfig='{
 "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
 "branding": false,
@@ -41,7 +38,7 @@ export const Propsed = () => {
 export const IsModal = () => {
   return html`
     <cds-text-editor
-      editorId="editor2"
+      editorId="editor_example_storybook_modal"
       editorConfig='{
 "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
 "branding": false,
