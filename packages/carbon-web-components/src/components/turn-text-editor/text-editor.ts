@@ -71,7 +71,7 @@ class TextEditor extends LitElement {
         autoresize_bottom_margin: 5
         ?readonly="${this.readonly}"
         toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
-        plugins="length_validation autosave save sender autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
+        plugins="length_validation autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
         content_css="//www.tiny.cloud/css/codepen.min.css"
         promotion="false">
         ${this.TextEditorData}

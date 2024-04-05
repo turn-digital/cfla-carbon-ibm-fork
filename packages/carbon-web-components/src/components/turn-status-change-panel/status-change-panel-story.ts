@@ -9,14 +9,14 @@
 
 import { html } from 'lit';
 import './index';
-import storyDocs from './status-control-panel-story.mdx';
+import storyDocs from './status-change-panel-story.mdx';
 
 export const Default = () => {
-  return html` <cds-status-control-panel></cds-status-control-panel> `;
+  return html` <cds-status-change-panel></cds-status-change-panel> `;
 };
 export const Propsed = () => {
   return html`
-    <cds-status-control-panel</cds-status-control-panel>
+    <cds-status-change-panel</cds-status-change-panel>
   `;
 };
 
@@ -24,5 +24,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Custom-components/Satatus control panel',
+  title: 'Custom-components/Satatus change panel',
 };
