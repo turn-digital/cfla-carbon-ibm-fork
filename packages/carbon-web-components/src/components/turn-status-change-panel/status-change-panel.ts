@@ -21,10 +21,8 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 @customElement(`${prefix}-status-change-panel`)
 class CDSStatusChangePanel extends LitElement {
   @property({ type: String }) projectId = '1.1.1.1/16/A/004';
-  @property({ type: Array }) accordionItems = [
-    { value: 'Status_1', text: 'Status 1' },
-    { value: 'Status_2', text: 'Status 2' },
-    { value: 'Status_3', text: 'Status 3' },
+  @property({ type: Array }) statusItems = [
+    { value: 'String', text: 'status' },
   ];
   @property({ type: String }) selectedStatus = 'Status_1';
   itemSelectedHandler = (event) => {
@@ -45,12 +43,12 @@ class CDSStatusChangePanel extends LitElement {
               class="cds-theme-zone-turn-dropdown-button"
               label="Mainīt statusu"
               @cds-dropdown-selected="${this.itemSelectedHandler}">
-              ${this.accordionItems?.map(
+              ${this.statusItems?.map(
                 (item) => html`
                   <cds-dropdown-item
                     class="cds-theme-zone-turn-dropdown-button-test"
-                    value="${item.value}"
-                    >${item.text}</cds-dropdown-item
+                    value="${item?.value}"
+                    >${item?.text}</cds-dropdown-item
                   >
                 `
               )}

@@ -14,6 +14,16 @@ import storyDocs from './text-editor-story.mdx';
 export const Default = () => {
   return html`
     <cds-text-editor
+      textEditorData='<ul>
+      <li>Our <a href="https://www.tiny.cloud/docs/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+      </ul>
+      <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;zx</p>
+      <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+      <p>&nbsp;</p>'
       editorId="editor_example_storybook"
       editorConfig='{
 "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
@@ -38,6 +48,16 @@ export const Default = () => {
 export const IsModal = () => {
   return html`
     <cds-text-editor
+      textEditorData='<ul>
+    <li>Our <a href="https://www.tiny.cloud/docs/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+    </ul>
+    <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;zx</p>
+    <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+    <p>&nbsp;</p>'
       editorId="editor_example_storybook_modal"
       editorConfig='{
 "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
