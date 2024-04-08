@@ -29,7 +29,7 @@ class CDSPValuationOpen extends LitElement {
     this.shadowRoot.getElementById('modal-example').open = true;
   };
   render() {
-    const itemsArray = [
+    const statusArray = [
       { text: 'Status 1', value: 'Status 1' },
       { text: 'Status 2', value: 'Status 2' },
       { text: 'Status 3', value: 'Status 3' },
@@ -136,7 +136,7 @@ class CDSPValuationOpen extends LitElement {
               size="07"
               class="cds--sm:col-span-4 cds--md:col-span-3 cds--lg:col-span-6 cds--css-grid-column">
               <cds-status-change-panel
-                .accordionItems=${itemsArray}></cds-status-change-panel>
+                .statusItems=${statusArray}></cds-status-change-panel>
             </cds-main-content-item>
           </div>
           <cds-main-content-item size="04">

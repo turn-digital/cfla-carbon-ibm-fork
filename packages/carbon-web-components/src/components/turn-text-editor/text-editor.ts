@@ -25,16 +25,7 @@ class TextEditor extends LitElement {
   @property({ type: Boolean }) readonly = false;
   @property({ type: String }) editorId = 'editor';
   @property({ type: String })
-  TextEditorData = `<ul>
-  <li>Our <a href="https://www.tiny.cloud/docs/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-  </ul>
-  <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;zx</p>
-  <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
-  <p>&nbsp;</p>`;
+  textEditorData = ``;
   @property({ type: String }) onServerValidationErrorText = '';
   @property({ type: String }) onServerLastEditor = '';
   @property({ type: Object }) editorConfig = {
@@ -74,7 +65,7 @@ class TextEditor extends LitElement {
         plugins="length_validation autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
         content_css="//www.tiny.cloud/css/codepen.min.css"
         promotion="false">
-        ${this.TextEditorData}
+        ${this.textEditorData}
       </tinymce-editor>
       ${
         this.onServerValidationErrorText?.length > 0
