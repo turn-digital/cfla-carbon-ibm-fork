@@ -25,61 +25,61 @@ export const Default = () => {
       <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
       <p>&nbsp;</p>'
       editorId="editor_example_storybook"
+      onServerLastEditor='{"name": "Vlad", "date": "123123 12121"}'
       editorConfig='{
-"editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-"branding": false,
-"menubar": false,
-"height": 200,
-"highlight_on_focus": true,
-"promotion": true,
-"max_length": 200,
-"fetch_obj": {
-"urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-"fetchMethod": "POST",
-"errorAlertMessages": "Error occurred while fetching data",
-},
-"external_plugins": {
-"pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
-}
-}'></cds-text-editor>
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+      "branding": false,
+      "menubar": false,
+      "height": 200,
+      "highlight_on_focus": true,
+      "promotion": true,
+      "max_length": 200,
+      "fetch_obj": {
+      "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+      "fetchMethod": "POST",
+      "requestValueKey": "value",
+      "errorAlertMessage": "Error occurred while fetching data"
+      },
+      "external_plugins": {
+      "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+      }
+      }'></cds-text-editor>
   `;
 };
 export const IsModal = () => {
   return html`
     <cds-text-editor
+    "isModal": true,
       textEditorData='<ul>
-    <li>Our <a href="https://www.tiny.cloud/docs/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-    </ul>
-    <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;zx</p>
-    <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
-    <p>&nbsp;</p>'
+      <li>Our <a href="https://www.tiny.cloud/docs/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+      </ul>
+      <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;zx</p>
+      <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+      <p>&nbsp;</p>'
       editorId="editor_example_storybook_modal"
-      onServerLastEditor = {
-        name: Vlad,
-        date: asdasd 123123 12121,
-      };
+      onServerLastEditor='{"name": "Vlad", "date": "123123 12121"}'
       editorConfig='{
-"editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-"branding": false,
-"menubar": false,
-"height": 200,
-"highlight_on_focus": true,
-"promotion": true,
-"max_length": 200,
-"isModal": true,
-"fetch_obj": {
-"urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-"fetchMethod": "POST",
-"errorAlertMessages": "Error occurred while fetching data",
-},
-"external_plugins": {
-"pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
-}
-}'></cds-text-editor>
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+      "branding": false,
+      "menubar": false,
+      "height": 200,
+      "highlight_on_focus": true,
+      "promotion": true,
+      "max_length": 200,
+      "fetch_obj": {
+      "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+      "fetchMethod": "POST",
+      "requestValueKey": "value",
+      "errorAlertMessage": "Error occurred while fetching data"
+      },
+      "external_plugins": {
+      "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+      }
+  }'></cds-text-editor>
   `;
 };
 

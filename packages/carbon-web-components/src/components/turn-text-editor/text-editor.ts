@@ -27,31 +27,15 @@ class TextEditor extends LitElement {
   @property({ type: String })
   textEditorData = ``;
   @property({ type: String }) onServerValidationErrorText = '';
-  @property({ type: String }) onServerLastEditor = '';
-  @property({ type: Object }) editorConfig = {
-    editorTitle: 'Default title 1',
-    height: 200,
-    highlight_on_focus: true,
-    statusbar: false,
-    branding: false,
-    menubar: false,
-    isModal: false,
-    max_length: 200,
-    fetch_obj: {
-      urlToFetch: 'https://jsonplaceholder.typicode.com/posts',
-      fetchMethod: 'POST',
-      errorAlertMessages: 'Error occured while fetching data',
-    },
-    external_plugins: {
-      pluginId:
-        'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
-    },
+  @property({ type: Object }) onServerLastEditor = {
+    name: '',
+    date: '',
   };
+  @property({ type: Object }) editorConfig = {};
 
   render() {
     //@ts-ignore
     window['config_' + this.editorId] = this.editorConfig;
-
     return html`
       <tinymce-editor
         id="${this.editorId}"
@@ -75,12 +59,11 @@ class TextEditor extends LitElement {
           : ''
       }
       ${
-        this.onServerLastEditor?.length > 0
+        this.onServerLastEditor?.name.length > 0
           ? html`<div>
         <p style="color: grey"
-        <span>Name Surname </span> 
-        <span>21.03.2024 </span> 
-        <span>18:34:21</span>
+        <span>${this.onServerLastEditor.name} </span> 
+        <span>${this.onServerLastEditor.date}</span> 
         </p>
           </div>`
           : ''
