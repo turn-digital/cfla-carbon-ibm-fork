@@ -37,7 +37,6 @@ export const Default = () => {
 "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
 "fetchMethod": "POST",
 "errorAlertMessages": "Error occurred while fetching data",
-"savedAlertMessages": "All data saved successfully"
 },
 "external_plugins": {
 "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
@@ -59,6 +58,10 @@ export const IsModal = () => {
     <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
     <p>&nbsp;</p>'
       editorId="editor_example_storybook_modal"
+      onServerLastEditor = {
+        name: Vlad,
+        date: asdasd 123123 12121,
+      };
       editorConfig='{
 "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
 "branding": false,
@@ -72,7 +75,6 @@ export const IsModal = () => {
 "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
 "fetchMethod": "POST",
 "errorAlertMessages": "Error occurred while fetching data",
-"savedAlertMessages": "All data saved successfully"
 },
 "external_plugins": {
 "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
