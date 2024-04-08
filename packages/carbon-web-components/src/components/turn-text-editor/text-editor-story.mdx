@@ -13,7 +13,79 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
 ```html
 <cds-text-editor
-</cds-text-editor>
+  textEditorData='<ul>
+      <li>Our <a href="https://www.tiny.cloud/docs/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+      </ul>
+      <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;zx</p>
+      <p>This recreates the same settings as the <a href="https://www.tiny.cloud/docs/demo/basic-example/">basic example</a></p>
+      <p>&nbsp;</p>'
+  editorId="editor_example_storybook"
+  onServerLastEditor='{"name": "Vlad", "date": "123123 12121"}'
+  editorConfig='{
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+      "branding": false,
+      "menubar": false,
+      "height": 200,
+      "highlight_on_focus": true,
+      "promotion": true,
+      "max_length": 200,
+      "fetch_obj": {
+      "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+      "fetchMethod": "POST",
+      "requestValueKey": "value",
+      "errorAlertMessage": "Error occurred while fetching data"
+      },
+      "external_plugins": {
+      "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+      }
+      }'></cds-text-editor>
+```
+
+### For React
+
+```JS
+    <cds-text-editor
+        textEditorData={
+            grozijumuPamatojums.pamatojums.vertiba !== null
+            ? grozijumuPamatojums.pamatojums.vertiba
+            : ""
+        }
+        editorId={`editor-amend-reasoning13213`}
+        onServerLastEditor={`${
+            grozijumuPamatojums.pamatojums?.pedejaisLabotajs
+            ? {
+                name: grozijumuPamatojums.pamatojums
+                    .pedejaisLabotajs.vardsUzvards,
+                date: grozijumuPamatojums.pamatojums
+                    .pedejaisLabotajs.pedejaisDarbibuDatums,
+                }
+            : {}
+        }
+        `}
+        editorConfig={`{
+            "editorTitle": "${translations.GLOBAL_REASONING}",
+            "branding": false,
+            "menubar": false,
+            "height": 200,
+            "highlight_on_focus": true,
+            "promotion": true,
+            "max_length": 200,
+            "fetch_obj": {
+                "urlToFetch": "${GLOBAL_VARS.API_AMENDMENT_REASONING}/${versionId}",
+                "fetchMethod": "PATCH",
+                "verificationToken": "${GLOBAL_VARS.FORGERY_KEY}",
+                "requestValueKey": "pamatojums",
+                "errorAlertMessages": "${translations.ERROR_IN_SYSTEM}"
+            },
+            "external_plugins": {
+                "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+            }
+            }`}
+    ></cds-text-editor>
 ```
 
 ## `<cds-text-editor>` attributes and properties
