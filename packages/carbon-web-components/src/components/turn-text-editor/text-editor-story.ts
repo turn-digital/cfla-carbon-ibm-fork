@@ -24,17 +24,18 @@ export const Default = () => {
       "menubar": false,
       "highlight_on_focus": true,
       "promotion": true,
-      "max_length": 200,
+      "max_char_length": 200,
       "height": 200,
       "request_obj": {
       "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
       "requestMethod": "POST",
       "requestValueKey": "value",
+      "verificationToken": "token",
       "errorAlertMessage": "Error occurred while fetching data"
       },
       "external_plugins": {
       "pluginId1": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-      "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/plugin.min.js"
+      "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
       }
       }'></cds-text-editor>
   `;
@@ -53,10 +54,11 @@ export const WithoutRequestObject = () => {
       "menubar": false,
       "highlight_on_focus": true,
       "promotion": true,
-      "max_length": 200,
+      "max_char_length": 200,
+      "height": 200,
       "external_plugins": {
         "pluginId1": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-        "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/plugin.min.js"
+        "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
       }
       }'></cds-text-editor>
   `;
@@ -75,16 +77,17 @@ export const WithoutValidation = () => {
       "menubar": false,
       "highlight_on_focus": true,
       "promotion": true,
-      "max_char_length": 200,
+      "height": 200,
       "request_obj": {
       "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
       "requestMethod": "POST",
       "requestValueKey": "value",
+      "verificationToken": "token",
       "errorAlertMessage": "Error occurred while fetching data"
       },
       "external_plugins": {
         "pluginId1": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-        "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/plugin.min.js"
+        "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
       }
       }'></cds-text-editor>
   `;
@@ -103,9 +106,10 @@ export const WithoutMaxCharsAndRequestObj = () => {
       "menubar": false,
       "highlight_on_focus": true,
       "promotion": true,
+      "height": 200,
       "external_plugins": {
         "pluginId1": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-        "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/plugin.min.js"
+        "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
       }
       }'></cds-text-editor>
   `;
