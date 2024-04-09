@@ -25,7 +25,6 @@ class CDSPValuationReview extends LitElement {
       <link
         rel="stylesheet"
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
-      <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
       <cds-main-content-block storybook>
         <cds-back-to
           class="cds--css-grid-column cds--col-span-100 cds--grid-column"
@@ -56,13 +55,63 @@ class CDSPValuationReview extends LitElement {
         <cds-main-content-item
           size="08"
           class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-          <cds-date-picker date-format="d.m.Y">
+          <cds-date-picker
+            id="datePicker"
+            date-format="d.m.Y"
+            .locale=${{
+              firstDayOfWeek: 1,
+              weekdays: {
+                shorthand: ['Sv', 'Pr', 'Ot', 'Tr', 'Ce', 'Pk', 'Se'],
+                longhand: [
+                  'Svētdiena',
+                  'Pirmdiena',
+                  'Otrdiena',
+                  'Trešdiena',
+                  'Ceturtdiena',
+                  'Piektdiena',
+                  'Sestdiena',
+                ],
+              },
+
+              months: {
+                shorthand: [
+                  'Jan',
+                  'Feb',
+                  'Mar',
+                  'Apr',
+                  'Mai',
+                  'Jūn',
+                  'Jūl',
+                  'Aug',
+                  'Sep',
+                  'Okt',
+                  'Nov',
+                  'Dec',
+                ],
+                longhand: [
+                  'Janvāris',
+                  'Februāris',
+                  'Marts',
+                  'Aprīlis',
+                  'Maijs',
+                  'Jūnijs',
+                  'Jūlijs',
+                  'Augusts',
+                  'Septembris',
+                  'Oktobris',
+                  'Novembris',
+                  'Decembris',
+                ],
+              },
+
+              rangeSeparator: ' līdz ',
+              time_24hr: true,
+            }}>
             <cds-date-picker-input
               size="lg"
               style="width: 100%"
               label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
-              placeholder="mm.dd.gggg"
-              locale="ru">
+              placeholder="mm.dd.gggg">
             </cds-date-picker-input>
           </cds-date-picker>
           <cds-main-content-item

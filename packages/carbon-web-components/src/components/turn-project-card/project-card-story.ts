@@ -17,11 +17,15 @@ export const Default = () => {
 export const Propsed = () => {
   return html`
     <cds-project-card
-      projectId="1.1.1.1/123213123"
-      tagTitle="Apstiprināts asdasd title"
-      tagType="green"
-      projectDateInfo="05.01.2034 - 12.05.2086"
-      projectCostInfo="999 999">
+      projectId="1.1.1.1/16/A/004"
+      tagTitle="Apstiprināts ar nosacījumu"
+      supervisorAuthority="CFLA"
+      cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
+      tagType="purple"
+      projectDateTitle="Projekta īstenošanas termiņš"
+      projectDateInfo="05.01.2021 - 30.05.2028"
+      projectCostTitle="Projekta kopējas izmaksas EUR"
+      projectCostInfo="500 345">
     </cds-project-card>
   `;
 };

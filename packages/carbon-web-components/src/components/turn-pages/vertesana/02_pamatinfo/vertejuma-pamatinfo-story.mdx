@@ -76,77 +76,127 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
   </head>
 
   <body class="cds-theme-zone-white">
-    <cds-main-content-block>
-      <cds-back-to
-        class="cds--css-grid-column cds--col-span-100 cds--grid-column"
-        title="Uz sarakstu"
-        link="#"></cds-back-to>
-      <cds-main-content-title
-        class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
-        title="Vērtējuma pārskatīšanas izveidosāna">
-      </cds-main-content-title>
-      <div
-        class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-        <cds-progress-indicator space-equally>
-          <cds-progress-step
-            style="max-inline-size: none;"
-            label="Pārskatīšanas veids"
-            description="Step 1: Register a onChange event"
-            state="complete"></cds-progress-step>
-          <cds-progress-step
-            label="Pamatinfo"
-            description="The progress indicator will listen for clicks on the steps"
-            state="current"></cds-progress-step>
-          <cds-progress-step
-            label="Priekšskatījums"
-            description="The progress indicator will listen for clicks on the steps"
-            state="incomplete"></cds-progress-step>
-        </cds-progress-indicator>
-      </div>
-      <cds-main-content-item
-        size="08"
-        class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
-        <cds-date-picker date-format="d.m.Y">
-          <cds-date-picker-input
-            size="lg"
-            style="width: 100%"
-            label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
-            placeholder="mm.dd.gggg"
-            locale="ru">
-          </cds-date-picker-input>
-        </cds-date-picker>
+      <cds-main-content-block>
+        <cds-back-to
+          class="cds--css-grid-column cds--col-span-100 cds--grid-column"
+          title="Uz sarakstu"
+          link="#"></cds-back-to>
+        <cds-main-content-title
+          class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+          title="Vērtējuma pārskatīšanas izveidosāna">
+        </cds-main-content-title>
+        <div
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+          <cds-progress-indicator space-equally>
+            <cds-progress-step
+              style="max-inline-size: none;"
+              label="Pārskatīšanas veids"
+              description="Step 1: Register a onChange event"
+              state="complete"></cds-progress-step>
+            <cds-progress-step
+              label="Pamatinfo"
+              description="The progress indicator will listen for clicks on the steps"
+              state="current"></cds-progress-step>
+            <cds-progress-step
+              label="Priekšskatījums"
+              description="The progress indicator will listen for clicks on the steps"
+              state="incomplete"></cds-progress-step>
+          </cds-progress-indicator>
+        </div>
         <cds-main-content-item
           size="08"
-          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 ">
-          <div>
-            <cds-file-uploader
-              label-description="Max file size is 500kb. Supported file types are .jpg and .png."
-              label-title="Augšupielādēt pārskatīšanas/apstrīdējuma iesniegumu">
-              <cds-file-uploader-drop-container
-                accept="image/jpeg image/png"
-                name=""
-                slot="drop-container">
-                Ievelciet un nometiet failus šeit vai spiediet, lai
-                augšupielādētu
-              </cds-file-uploader-drop-container>
-            </cds-file-uploader>
-            <cds-file-uploader-item state="edit">
-              Filename.png
-            </cds-file-uploader-item>
-          </div>
-        </cds-main-content-item>
-        <div
-          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 ">
-          <cds-text-editor
-            editorId="editor1"
-            editorConfig='{
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+          <cds-date-picker
+            id="datePicker"
+            date-format="d.m.Y"
+            .locale=${{
+              firstDayOfWeek: 1,
+              weekdays: {
+                shorthand: ['Sv', 'Pr', 'Ot', 'Tr', 'Ce', 'Pk', 'Se'],
+                longhand: [
+                  'Svētdiena',
+                  'Pirmdiena',
+                  'Otrdiena',
+                  'Trešdiena',
+                  'Ceturtdiena',
+                  'Piektdiena',
+                  'Sestdiena',
+                ],
+              },
+
+              months: {
+                shorthand: [
+                  'Jan',
+                  'Feb',
+                  'Mar',
+                  'Apr',
+                  'Mai',
+                  'Jūn',
+                  'Jūl',
+                  'Aug',
+                  'Sep',
+                  'Okt',
+                  'Nov',
+                  'Dec',
+                ],
+                longhand: [
+                  'Janvāris',
+                  'Februāris',
+                  'Marts',
+                  'Aprīlis',
+                  'Maijs',
+                  'Jūnijs',
+                  'Jūlijs',
+                  'Augusts',
+                  'Septembris',
+                  'Oktobris',
+                  'Novembris',
+                  'Decembris',
+                ],
+              },
+
+              rangeSeparator: ' līdz ',
+              time_24hr: true,
+            }}>
+            <cds-date-picker-input
+              size="lg"
+              style="width: 100%"
+              label-text="Pārskatīšanas/Apstrīdējuma iesnieguma saņemšanas datums"
+              placeholder="mm.dd.gggg">
+            </cds-date-picker-input>
+          </cds-date-picker>
+          <cds-main-content-item
+            size="08"
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 ">
+            <div>
+              <cds-file-uploader
+                label-description="Max file size is 500kb. Supported file types are .jpg and .png."
+                label-title="Augšupielādēt pārskatīšanas/apstrīdējuma iesniegumu">
+                <cds-file-uploader-drop-container
+                  accept="image/jpeg image/png"
+                  name=""
+                  slot="drop-container">
+                  Ievelciet un nometiet failus šeit vai spiediet, lai
+                  augšupielādētu
+                </cds-file-uploader-drop-container>
+              </cds-file-uploader>
+              <cds-file-uploader-item state="edit">
+                Filename.png
+              </cds-file-uploader-item>
+            </div>
+          </cds-main-content-item>
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 ">
+            <cds-text-editor
+              editorId="editor1"
+              editorConfig='{
           "editorTitle": "Pārskatīšanas būtība",
           "branding": false,
           "menubar": false,
           "height": 200,
           "highlight_on_focus": true,
           "promotion": true,
-          "max_length": 200,
+          "max_length": 100,
           "fetch_obj": {
             "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
             "fetchMethod": "POST",
@@ -157,16 +207,16 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
             "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
           }
         }'></cds-text-editor>
+          </div>
+        </cds-main-content-item>
+        <div
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+          <cds-button-set>
+            <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
+            <cds-button href="https://www.ibm.com">Izveidot</cds-button>
+          </cds-button-set>
         </div>
-      </cds-main-content-item>
-      <div
-        class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
-        <cds-button-set>
-          <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
-          <cds-button href="https://www.ibm.com">Izveidot</cds-button>
-        </cds-button-set>
-      </div>
-    </cds-main-content-block>
+      </cds-main-content-block>
   </body>
 </html>
 ```

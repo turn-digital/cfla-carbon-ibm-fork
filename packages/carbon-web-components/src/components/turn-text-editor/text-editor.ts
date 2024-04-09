@@ -41,12 +41,12 @@ class TextEditor extends LitElement {
         id="${this.editorId}"
         config="${'config_' + this.editorId}"
         statusbar: false
-        min_height: 120
-        max_height: 600
+        min_height: 200
+        max_height: 800
         autoresize_bottom_margin: 5
         ?readonly="${this.readonly}"
         toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
-        plugins="length_validation autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount"
+        plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen"
         content_css="//www.tiny.cloud/css/codepen.min.css"
         promotion="false">
         ${this.textEditorData}
