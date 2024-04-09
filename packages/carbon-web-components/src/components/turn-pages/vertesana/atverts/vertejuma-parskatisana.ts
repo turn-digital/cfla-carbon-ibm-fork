@@ -113,7 +113,8 @@ class CDSPValuationOpen extends LitElement {
             <cds-inline-notification
               style="min-width: 100%; margin-bottom: .5rem"
               title="Notification title"
-              subtitle="Subtitle text goes here.">
+              subtitle="Subtitle text goes here."
+              low-contrast>
             </cds-inline-notification>
           </div>
 
@@ -260,7 +261,8 @@ class CDSPValuationOpen extends LitElement {
               <cds-inline-notification
                 style="min-width: 100%; margin-bottom: .5rem"
                 title="Notification title"
-                subtitle="Subtitle text goes here.">
+                subtitle="Subtitle text goes here."
+                low-contrast>
               </cds-inline-notification>
               <cds-divider size="3"></cds-divider>
             </div>

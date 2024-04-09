@@ -24,13 +24,28 @@ import ShoppingCart from '@carbon/icons/lib/shopping--cart/16';
 class ProjectCard extends LitElement {
   @property({ type: String }) projectId = '1.1.1.1/16/A/004';
   @property({ type: String }) tagTitle = 'Apstiprināts ar nosacījumu';
+  @property({ type: String }) supervisorAuthority = 'CFLA';
+  @property({ type: String }) cardTitle =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue.';
   @property({ type: String }) tagType = 'purple';
+  @property({ type: String }) projectDateTitle = 'Projekta īstenošanas termiņš';
   @property({ type: String }) projectDateInfo = '05.01.2021 - 30.05.2028';
+  @property({ type: String }) projectCostTitle =
+    'Projekta kopējas izmaksas EUR';
   @property({ type: String }) projectCostInfo = '500 345';
 
   render() {
-    const { projectId, tagType, tagTitle, projectDateInfo, projectCostInfo } =
-      this;
+    const {
+      projectId,
+      tagType,
+      tagTitle,
+      cardTitle,
+      projectDateInfo,
+      projectCostInfo,
+      projectCostTitle,
+      projectDateTitle,
+      supervisorAuthority,
+    } = this;
 
     return html`
       <div class="project-card-container">
@@ -44,19 +59,16 @@ class ProjectCard extends LitElement {
               ${tagTitle}
             </cds-tag>
           </div>
-          <div>CFLA</div>
+          <div>${supervisorAuthority}</div>
         </div>
-        <p class="project-card-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-          condimentum diam id diam blandit congue.
-        </p>
+        <p class="project-card-desc">${cardTitle}</p>
         <div class="project-card-info">
           <div class="project-card-info-section">
             <div class="project-card-info-image">
               ${Calendar({ slot: 'icon', fill: 'black' })}
             </div>
             <div class="project-card-info-item">
-              <p>Projekta īstenošanas termiņš</p>
+              <p>${projectDateTitle}</p>
               <h3>${projectDateInfo}</h3>
             </div>
           </div>
@@ -65,7 +77,7 @@ class ProjectCard extends LitElement {
               ${ShoppingCart({ slot: 'icon', fill: 'black' })}
             </div>
             <div class="project-card-info-item">
-              <p>Projekta kopējas izmaksas EUR</p>
+              <p>${projectCostTitle}</p>
               <h3>${projectCostInfo}</h3>
             </div>
           </div>
