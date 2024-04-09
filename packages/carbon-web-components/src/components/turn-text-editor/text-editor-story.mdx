@@ -23,17 +23,18 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
       "menubar": false,
       "highlight_on_focus": true,
       "promotion": true,
-      "max_length": 200,
+      "max_char_length": 200,
       "height": 200,
       "request_obj": {
-            "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-            "requestMethod": "POST",
-            "requestValueKey": "value",
-            "errorAlertMessage": "Error occurred while fetching data"
+      "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
+      "requestMethod": "POST",
+      "requestValueKey": "value",
+      "verificationToken": "token",
+      "errorAlertMessage": "Error occurred while fetching data"
       },
       "external_plugins": {
-            "pluginId1": "https://demo.turn.lv/cfla_dist/length_validation/plugin.min.js",
-            "pluginId2": "https://demo.turn.lv/cfla_dist/server_request/plugin.min.js"
+      "pluginId1": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
+      "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
       }
       }'></cds-text-editor>
 ```
@@ -67,7 +68,7 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
             "height": 200,
             "highlight_on_focus": true,
             "promotion": true,
-            "max_length": 200,
+            "max_char_length": 200,
             "request_obj": {
                 "urlToRequest": "${GLOBAL_VARS.API_AMENDMENT_REASONING}/${versionId}",
                 "requestMethod": "PATCH",
@@ -76,7 +77,8 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
                 "errorAlertMessages": "${translations.ERROR_IN_SYSTEM}"
             },
             "external_plugins": {
-                "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
+                "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
+                "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
             }
             }`}
     ></cds-text-editor>
