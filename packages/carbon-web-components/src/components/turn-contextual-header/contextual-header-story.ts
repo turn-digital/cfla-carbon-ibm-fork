@@ -9,16 +9,16 @@
 
 import { html } from 'lit';
 import './index';
-import storyDocs from './header-project-block-story.mdx';
+import storyDocs from './contextual-header-story.mdx';
 
 export const Default = () => {
-  return html` <cds-header-project-block></cds-header-project-block> `;
+  return html` <cds-contextual-header></cds-contextual-header> `;
 };
 export const Propsed = () => {
   return html`
-    <cds-header-project-block title="Header Project Block">
+    <cds-contextual-header title="Contextual header">
       Some content
-    </cds-header-project-block>
+    </cds-contextual-header>
   `;
 };
 
@@ -26,5 +26,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Custom-components/Header project block',
+  title: 'Custom-components/Contextual header',
 };
