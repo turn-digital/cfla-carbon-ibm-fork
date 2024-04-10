@@ -1,8 +1,20 @@
 import { Props, Description } from '@storybook/addon-docs/blocks';
 import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
-# Main content title
+# Status history
+## Apraksts
+Komponents attēlo veidlapas pašreizējo statusu un statusu vēsturi, ja ir mainīts statuss.
 
+## Anatomija
+* currenStatusTitle  - šī brīža statuss
+* currenStatusDate - šī brīza statusa iegūšanas datums
+* Statusu vēsture -  statusu vēstures bloks
+* statusHistoryItems - statusa vēstures ieraksts ar datumu, statusu, autoru, pamatojumu, statusa identifikācijas numuru
+
+## Dizaina un UX komentāri
+Izmanto veidlapas headerī, attēlo aktuālo statusu augšā un vēsturiskos statusus izvēršamā statusu vēstures blokā. 
+
+## Getting started
 ### JS (via import)
 
 ```imoprt
