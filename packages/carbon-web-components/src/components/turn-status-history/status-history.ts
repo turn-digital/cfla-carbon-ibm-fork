@@ -69,7 +69,7 @@ class CDSStatusHistory extends LitElement {
         </div>
         <div class="container__status-history">
           <cds-accordion alignment="start">
-            <cds-accordion-item title="Statūsu vēsture">
+            <cds-accordion-item title="Statusu vēsture">
               ${this.statusHistoryItems.map(
                 (item) => html`
                   <p>
