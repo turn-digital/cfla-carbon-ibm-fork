@@ -22,7 +22,7 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 class CDSStatusChangePanel extends LitElement {
   @property({ type: String }) projectId = '1.1.1.1/16/A/004';
   @property({ type: Array }) statusItems = [
-    { value: 'String', text: 'status' },
+    { value: 'String', text: 'Status' },
   ];
   @property({ type: String }) selectedStatus = 'Status_1';
   itemSelectedHandler = (event) => {
@@ -64,33 +64,14 @@ class CDSStatusChangePanel extends LitElement {
           <cds-modal-heading>Dokumenta pievienošana</cds-modal-heading>
         </cds-modal-header>
         <cds-modal-body>
-          chosen satatus: ${this.selectedStatus}
-          <br />
           <p>
             Spiežot “atgriezt nodaļas vadītājam” Jūs... paskaidrot, kādas sekas.
           </p>
           <cds-text-editor
             editorId="editor_status_modal_${this.selectedStatus}"
             editorConfig='{
-                    "isModal": true,
-                    "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-                    "branding": false,
-                    "menubar": false,
-                    "height": 200,
-                    "highlight_on_focus": true,
-                    "promotion": true,
-                    "max_length": 200,
-                    "fetch_obj": {
-                    "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-                    "fetchMethod": "POST",
-                    "errorAlertMessages": "Error occurred while fetching data",
-                    "savedAlertMessages": "All data saved successfully"
-                    },
-                    "external_plugins": {
-                    "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
-                    }
-                }'>
-          </cds-text-editor>
+          "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes"
+          }'></cds-text-editor>
         </cds-modal-body>
         <cds-modal-footer>
           <cds-modal-footer-button kind="secondary" data-modal-close

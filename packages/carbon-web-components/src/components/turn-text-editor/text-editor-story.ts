@@ -14,103 +14,78 @@ import storyDocs from './text-editor-story.mdx';
 export const Default = () => {
   return html`
     <cds-text-editor
-      textEditorData="Some data, can also be in html format"
       editorId="editor_example_storybook_default"
+      textEditorData="This is a text from props"
+      onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
+      editorConfig='{
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes"
+      }'></cds-text-editor>
+  `;
+};
+export const WithRequestObject = () => {
+  return html`
+    <cds-text-editor
+      editorId="editor_example_storybook_default_ro"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-      "length_validation_error_text": "Validation text from props",
-      "branding": false,
-      "menubar": false,
-      "highlight_on_focus": true,
-      "promotion": true,
-      "max_char_length": 200,
-      "height": 200,
       "request_obj": {
-      "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-      "requestMethod": "POST",
-      "requestValueKey": "value",
-      "verificationToken": "token",
-      "errorAlertMessage": "Error occurred while fetching data"
-      },
-      "external_plugins": {
-      "pluginId1": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-      "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
-      }
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
+        "requestMethod": "POST",
+        "requestValueKey": "value",
+        "verificationToken": "token",
+        "errorAlertMessage": "Error occurred while fetching data"
+        }
+      }'></cds-text-editor>
+  `;
+};
+export const WithMaxCahrLength = () => {
+  return html`
+    <cds-text-editor
+      editorId="editor_example_storybook_default_cl"
+      onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
+      editorConfig='{
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+      "length_validation_error_text": "Max char length exceeded! props text",
+      "max_char_length": 200
       }'></cds-text-editor>
   `;
 };
 
-export const WithoutRequestObject = () => {
+export const WithMaxCahrLengthAndRequestObject = () => {
   return html`
     <cds-text-editor
-      textEditorData="Some data, can also be in html format"
-      editorId="editor_example_storybook_wo_obj"
+      editorId="editor_example_storybook_default_cl_ro"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-      "length_validation_error_text": "Validation text from props",
-      "branding": false,
-      "menubar": false,
-      "highlight_on_focus": true,
-      "promotion": true,
       "max_char_length": 200,
-      "height": 200,
-      "external_plugins": {
-        "pluginId1": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-        "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
-      }
-      }'></cds-text-editor>
-  `;
-};
-
-export const WithoutValidation = () => {
-  return html`
-    <cds-text-editor
-      textEditorData="Some data, can also be in html format"
-      editorId="editor_example_storybook_default_wo_validation"
-      onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
-      editorConfig='{
-      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-      "length_validation_error_text": "Validation text from props",
-      "branding": false,
-      "menubar": false,
-      "highlight_on_focus": true,
-      "promotion": true,
-      "height": 200,
       "request_obj": {
-      "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-      "requestMethod": "POST",
-      "requestValueKey": "value",
-      "verificationToken": "token",
-      "errorAlertMessage": "Error occurred while fetching data"
-      },
-      "external_plugins": {
-        "pluginId1": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-        "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
-      }
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
+        "requestMethod": "POST",
+        "requestValueKey": "value",
+        "verificationToken": "token",
+        "errorAlertMessage": "Error occurred while fetching data"
+        }
       }'></cds-text-editor>
   `;
 };
-
-export const WithoutMaxCharsAndRequestObj = () => {
+export const WithMaxCahrLengthAndRequestObjectAndServerErrorText = () => {
   return html`
     <cds-text-editor
-      textEditorData="Some data, can also be in html format"
-      editorId="editor_example_storybook_default_wo_validation_and_request_obj"
+      editorId="editor_example_storybook_default_cl_ro_set"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-      "length_validation_error_text": "Validation text from props",
-      "branding": false,
-      "menubar": false,
-      "highlight_on_focus": true,
-      "promotion": true,
-      "height": 200,
-      "external_plugins": {
-        "pluginId1": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-        "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
-      }
+      "max_char_length": 200,
+      "onServerErrorText": "Error from server text (optional)",
+      "request_obj": {
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
+        "requestMethod": "POST",
+        "requestValueKey": "value",
+        "verificationToken": "token",
+        "errorAlertMessage": "Error occurred while fetching data"
+        }
       }'></cds-text-editor>
   `;
 };

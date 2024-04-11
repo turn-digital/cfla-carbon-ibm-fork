@@ -66,20 +66,12 @@ class CDSPValuationOpen extends LitElement {
             editorId="editor1"
             editorConfig='{
 "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-"branding": false,
-"menubar": false,
-"height": 200,
-"highlight_on_focus": true,
-"promotion": true,
-"max_length": 200,
+"max_char_length": 200,
 "fetch_obj": {
 "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
 "fetchMethod": "POST",
 "errorAlertMessages": "Error occurred while fetching data",
 "savedAlertMessages": "All data saved successfully"
-},
-"external_plugins": {
-"pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
 }
 }'></cds-text-editor>
         </cds-modal-body>
@@ -213,21 +205,14 @@ class CDSPValuationOpen extends LitElement {
               editorId="editor3"
               editorConfig='{
     "editorTitle": "Pārskatīšanas būtība",
-    "branding": false,
-    "menubar": false,
-    "height": 200,
-    "highlight_on_focus": true,
-    "promotion": true,
-    "max_length": 200,
-    "fetch_obj": {
-      "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-      "fetchMethod": "POST",
-      "errorAlertMessages": "Error occurred while fetching data",
-      "savedAlertMessages": "All data saved successfully"
-    },
-    "external_plugins": {
-      "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
-    }
+    "max_char_length": 200,
+    "request_obj": {
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
+        "requestMethod": "POST",
+        "requestValueKey": "value",
+        "verificationToken": "token",
+        "errorAlertMessage": "Error occurred while fetching data"
+        }
   }'></cds-text-editor>
           </cds-main-content-item>
           <cds-main-content-item
@@ -237,21 +222,14 @@ class CDSPValuationOpen extends LitElement {
               editorId="editor4"
               editorConfig='{
     "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-    "branding": false,
-    "menubar": false,
-    "height": 200,
-    "highlight_on_focus": true,
-    "promotion": true,
-    "max_length": 200,
-    "fetch_obj": {
-      "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-      "fetchMethod": "POST",
-      "errorAlertMessages": "Error occurred while fetching data",
-      "savedAlertMessages": "All data saved successfully"
-    },
-    "external_plugins": {
-      "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
-    }
+    "max_char_length": 200,
+    "request_obj": {
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
+        "requestMethod": "POST",
+        "requestValueKey": "value",
+        "verificationToken": "token",
+        "errorAlertMessage": "Error occurred while fetching data"
+        }
   }'></cds-text-editor>
           </cds-main-content-item>
           <cds-main-content-item
