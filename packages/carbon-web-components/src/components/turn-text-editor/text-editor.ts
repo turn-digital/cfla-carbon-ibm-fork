@@ -26,38 +26,57 @@ class TextEditor extends LitElement {
   @property({ type: String }) editorId = 'editor';
   @property({ type: String })
   textEditorData = ``;
-  @property({ type: String }) onServerValidationErrorText = '';
   @property({ type: Object }) onServerLastEditor = {
     name: '',
     date: '',
   };
   @property({ type: Object }) editorConfig = {};
 
+  get combinedEditorConfig() {
+    const defaultConfig = {
+      language: 'lv',
+      language_url: 'https://demo.turn.lv/cfla_dist/assets/tinymce/langs/lv.js',
+      branding: false,
+      menubar: false,
+      highlight_on_focus: true,
+      promotion: true,
+      min_height: 200,
+      max_height: 500,
+      external_plugins: {
+        pluginId1:
+          'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
+        pluginId2:
+          'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js',
+      },
+    };
+
+    // Merge defaultConfig with this.editorConfig, prioritizing properties from editorConfig
+
+    return { ...defaultConfig, ...this.editorConfig };
+  }
   render() {
     //@ts-ignore
-    window['config_' + this.editorId] = this.editorConfig;
+    const configKey = `config_${this.editorId}`;
+    window[configKey] = this.combinedEditorConfig;
+
+    window.localStorage.setItem(
+      `${this.editorId}_content`,
+      this.textEditorData
+    );
+
     return html`
       <tinymce-editor
         id="${this.editorId}"
         config="${'config_' + this.editorId}"
         statusbar: false
-        min_height: 200
-        max_height: 800
         autoresize_bottom_margin: 5
         ?readonly="${this.readonly}"
         toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
-        plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen"
+        plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize"
         content_css="//www.tiny.cloud/css/codepen.min.css"
         promotion="false">
         ${this.textEditorData}
       </tinymce-editor>
-      ${
-        this.onServerValidationErrorText?.length > 0
-          ? html`<div>
-              <p style="color: red">${this.onServerValidationErrorText}</p>
-            </div>`
-          : ''
-      }
       ${
         this.onServerLastEditor?.name.length > 0
           ? html`<div>

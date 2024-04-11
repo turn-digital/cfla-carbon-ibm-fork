@@ -273,48 +273,33 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
           size="08"
           class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
           <cds-text-editor
-            editorId="editor3"
+            editorId="editor1"
             editorConfig='{
-    "editorTitle": "Pārskatīšanas būtība",
-    "branding": false,
-    "menubar": false,
-    "height": 200,
-    "highlight_on_focus": true,
-    "promotion": true,
-    "max_length": 200,
-    "fetch_obj": {
-      "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-      "fetchMethod": "POST",
-      "errorAlertMessages": "Error occurred while fetching data",
-      "savedAlertMessages": "All data saved successfully"
-    },
-    "external_plugins": {
-      "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
-    }
-  }'></cds-text-editor>
+"editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+"max_char_length": 200,
+"fetch_obj": {
+"urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+"fetchMethod": "POST",
+"errorAlertMessages": "Error occurred while fetching data",
+"savedAlertMessages": "All data saved successfully"
+}
+}'></cds-text-editor>
         </cds-main-content-item>
         <cds-main-content-item
           size="08"
           class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
           <cds-text-editor
-            editorId="editor4"
+            editorId="editor3"
             editorConfig='{
-    "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-    "branding": false,
-    "menubar": false,
-    "height": 200,
-    "highlight_on_focus": true,
-    "promotion": true,
-    "max_length": 200,
-    "fetch_obj": {
-      "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-      "fetchMethod": "POST",
-      "errorAlertMessages": "Error occurred while fetching data",
-      "savedAlertMessages": "All data saved successfully"
-    },
-    "external_plugins": {
-      "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
-    }
+    "editorTitle": "Pārskatīšanas būtība",
+    "max_char_length": 200,
+    "request_obj": {
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
+        "requestMethod": "POST",
+        "requestValueKey": "value",
+        "verificationToken": "token",
+        "errorAlertMessage": "Error occurred while fetching data"
+        }
   }'></cds-text-editor>
         </cds-main-content-item>
         <cds-main-content-item
@@ -435,27 +420,18 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
           </cds-file-uploader-drop-container>
         </cds-file-uploader>
         <cds-text-editor
-          editorId="editorAddItemDatatable"
+          editorId="editor4"
           editorConfig='{
-                "isModal": true,
-                "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-                "branding": false,
-                "menubar": false,
-                "height": 200,
-                "highlight_on_focus": true,
-                "promotion": true,
-                "max_length": 200,
-                "isModal": true,
-                "fetch_obj": {
-                "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-                "fetchMethod": "POST",
-                "errorAlertMessages": "Error occurred while fetching data",
-                "savedAlertMessages": "All data saved successfully"
-                },
-                "external_plugins": {
-                "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js"
-                }
-                }'></cds-text-editor>
+    "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+    "max_char_length": 200,
+    "request_obj": {
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
+        "requestMethod": "POST",
+        "requestValueKey": "value",
+        "verificationToken": "token",
+        "errorAlertMessage": "Error occurred while fetching data"
+        }
+  }'></cds-text-editor>
       </cds-modal-body>
       <cds-modal-footer>
         <cds-modal-footer-button kind="secondary" data-modal-close
