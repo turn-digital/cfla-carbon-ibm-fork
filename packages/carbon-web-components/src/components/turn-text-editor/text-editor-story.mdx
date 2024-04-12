@@ -6,7 +6,7 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 ### JS (via import)
 
 ```imoprt
-<script type="module" src="https://demo.turn.lv/cfla_dist/text-editor.min.js"></script>
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-text-editor.min.js"></script>
 ```
 
 ### HTML
@@ -50,7 +50,6 @@ Also custom variants with some props
 
 <cds-text-editor
   editorId="editor_example_storybook_default_ro"
-  onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
   editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "request_obj": {
@@ -59,7 +58,11 @@ Also custom variants with some props
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
-        }
+        },
+      "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
       }'></cds-text-editor>
 
 <cds-text-editor
@@ -68,7 +71,11 @@ Also custom variants with some props
   editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "length_validation_error_text": "Max char length exceeded! props text",
-      "max_char_length": 200
+      "max_char_length": 200,
+      "onServerLastEditor": {
+        "name": "Vlad",
+        "date": "123123 12312312"
+    }
       }'></cds-text-editor>
 
 <cds-text-editor
@@ -78,12 +85,16 @@ Also custom variants with some props
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "max_char_length": 200,
       "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
+        "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
-        }
+        },
+        "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
       }'></cds-text-editor>
 
 <cds-text-editor
@@ -99,7 +110,11 @@ Also custom variants with some props
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
-        }
+        },
+        "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
       }'></cds-text-editor>
 ```
 

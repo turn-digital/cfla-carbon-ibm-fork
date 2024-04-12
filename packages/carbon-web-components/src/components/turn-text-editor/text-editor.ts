@@ -26,10 +26,6 @@ class TextEditor extends LitElement {
   @property({ type: String }) editorId = 'editor';
   @property({ type: String })
   textEditorData = ``;
-  @property({ type: Object }) onServerLastEditor = {
-    name: '',
-    date: '',
-  };
   @property({ type: Object }) editorConfig = {};
 
   get combinedEditorConfig() {
@@ -59,6 +55,8 @@ class TextEditor extends LitElement {
     const configKey = `config_${this.editorId}`;
     window[configKey] = this.combinedEditorConfig;
 
+    console.log('editorConfig', this.editorConfig);
+
     window.localStorage.setItem(
       `${this.editorId}_content`,
       this.textEditorData
@@ -77,16 +75,6 @@ class TextEditor extends LitElement {
         promotion="false">
         ${this.textEditorData}
       </tinymce-editor>
-      ${
-        this.onServerLastEditor?.name.length > 0
-          ? html`<div>
-        <p style="color: grey"
-        <span>${this.onServerLastEditor.name} </span> 
-        <span>${this.onServerLastEditor.date}</span> 
-        </p>
-          </div>`
-          : ''
-      }
     `;
   }
 

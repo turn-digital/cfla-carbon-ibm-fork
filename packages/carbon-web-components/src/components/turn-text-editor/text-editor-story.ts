@@ -26,7 +26,6 @@ export const WithRequestObject = () => {
   return html`
     <cds-text-editor
       editorId="editor_example_storybook_default_ro"
-      onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "request_obj": {
@@ -35,7 +34,11 @@ export const WithRequestObject = () => {
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
-        }
+        },
+      "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
       }'></cds-text-editor>
   `;
 };
@@ -47,7 +50,11 @@ export const WithMaxCahrLength = () => {
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "length_validation_error_text": "Max char length exceeded! props text",
-      "max_char_length": 200
+      "max_char_length": 200,
+      "onServerLastEditor": {
+        "name": "Vlad",
+        "date": "123123 12312312"
+    }
       }'></cds-text-editor>
   `;
 };
@@ -61,12 +68,16 @@ export const WithMaxCahrLengthAndRequestObject = () => {
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "max_char_length": 200,
       "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
+        "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
-        }
+        },
+        "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
       }'></cds-text-editor>
   `;
 };
@@ -85,7 +96,11 @@ export const WithMaxCahrLengthAndRequestObjectAndServerErrorText = () => {
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
-        }
+        },
+        "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
       }'></cds-text-editor>
   `;
 };
