@@ -22,7 +22,7 @@ class CDSPValuationList extends LitElement {
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
 
       <cds-main-content-block storybook>
-        <cds-header-project-block
+        <cds-contextual-header
           class="cds--css-grid-column cds--col-span-100"
           title="Projekta iesniegums: 3.1.1.5/19/A/A/A/A/A">
           <cds-label-value-horizontal label="Atlases nosaukums">
@@ -37,7 +37,7 @@ class CDSPValuationList extends LitElement {
           <cds-label-value-horizontal label="Atlases nosaukums">
             <cds-link href="#">1.1 </cds-link>
           </cds-label-value-horizontal>
-        </cds-header-project-block>
+        </cds-contextual-header>
         <cds-main-content-title
           class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
           title="Līgums un grozījumi"></cds-main-content-title>

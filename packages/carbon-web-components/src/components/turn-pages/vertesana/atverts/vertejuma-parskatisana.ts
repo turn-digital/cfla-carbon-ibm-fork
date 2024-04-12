@@ -85,7 +85,7 @@ class CDSPValuationOpen extends LitElement {
 
       <cds-main-content-block-open>
         <div slot="header" class="cds--css-grid-column cds--col-span-100">
-          <cds-header-project-block title="Projekta iesniegums: 3.1.1.5/19">
+          <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19">
             <cds-label-value-horizontal label="Atlases nosaukums">
               <cds-link href="#"
                 >Zinātnes politikas ieviešana, vadība un kapacitātes
@@ -99,7 +99,7 @@ class CDSPValuationOpen extends LitElement {
             <cds-label-value-horizontal label="Atlases nosaukums">
               <cds-link href="#">1.1 </cds-link>
             </cds-label-value-horizontal>
-          </cds-header-project-block>
+          </cds-contextual-header>
           <div>
             <cds-divider size="3"></cds-divider>
             <cds-inline-notification
