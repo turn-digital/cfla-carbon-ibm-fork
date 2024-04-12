@@ -9,17 +9,17 @@
 
 import { LitElement, html } from 'lit';
 import { prefix } from '../../globals/settings';
-import styles from './header-project-block.scss';
+import styles from './contextual-header.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
 /**
  * Related documents.
  *
- * @element cds-header-project-block
+ * @element cds-contextual-header
  */
 
-@customElement(`${prefix}-header-project-block`)
+@customElement(`${prefix}-contextual-header`)
 class CDSHeaderProjectBlock extends LitElement {
   @property({ type: String }) title = '';
 
