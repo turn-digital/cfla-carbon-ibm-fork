@@ -181,6 +181,9 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
       src="https://demo.turn.lv/cfla_dist/turn-status-change-panel.min.js"></script>
     <script
       type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-dropdown-button.min.js"></script>
+    <script
+      type="module"
       src="https://demo.turn.lv/cfla_dist/turn-contextual-header.min.js"></script>
     <link
       rel="stylesheet"
@@ -194,10 +197,6 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
   </head>
 
   <body class="cds-theme-zone-white">
-    <link
-      rel="stylesheet"
-      href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
-
     <cds-modal id="modal-example">
       <cds-modal-header>
         <cds-modal-close-button></cds-modal-close-button>
@@ -305,16 +304,12 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
             class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6 cds--css-grid-column">
             <div>
               <cds-main-content-item size="07" isStatusChangePanel>
-                <cds-button
-                  size="md"
-                  type="Primary"
-                  @click="${this.saveButtonHandler}"
+                <cds-button size="md" type="Primary" id="status-save-button"
                   >Saglabāt</cds-button
                 >
                 <cds-dropdown-button
-                  label="Mainīt statusu"
-                  .dropdownHandler="${this.itemSelectedHandler}"
-                  .statusArray="${statusArray}"></cds-dropdown-button>
+                  id="dropdown-button"
+                  label="Mainīt statusu"></cds-dropdown-button>
               </cds-main-content-item>
             </div>
           </div>
@@ -530,24 +525,57 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
       // Add the event listener after the DOM content is loaded
       document.addEventListener('DOMContentLoaded', () => {
         // Select the button by its ID
-        const openModalButton = document.getElementById(
-          'open-example-modal-button'
-        );
+        const openModalButton = document.getElementById('modal-example-button');
         // Correctly add an event listener to the button
         openModalButton.addEventListener('click', addDataTableItemModal);
       });
     </script>
     <script>
+      // Function to pass array to dropdown button
       const statusArray = [
-        { text: 'test Status 1', value: 'Status_1_test1' },
-        { text: 'props Status 2', value: 'Status_2' },
-        { text: 'props Status 3', value: 'Status_3' },
+        { text: 'Status 1', value: 'Status_1' },
+        { text: 'Status 2', value: 'Status_2' },
+        { text: 'Status 3', value: 'Status_3' },
       ];
 
       // Access the web component and pass the function as a prop
       document.addEventListener('DOMContentLoaded', () => {
-        const statusDropdown = document.getElementById('status-change-panel');
-        statusDropdown.statusItems = statusArray; // Passing the function
+        const statusDropdown = document.getElementById('dropdown-button');
+        statusDropdown.statusArray = statusArray; // Passing the function
+
+        // Optional: Directly call the function through the component
+        // myComponent.callMyFunction();
+      });
+    </script>
+    <script>
+      // Function to pass function to dropdown button
+      const itemSelectedHandler = (event) => {
+        this.selectedStatus = event.detail.item.__value;
+        //part to open modal
+        document.getElementById('status-change-modal').open = true;
+
+        console.log('selectedStatus', this.selectedStatus);
+      };
+
+      // Access the web component and pass the function as a prop
+      document.addEventListener('DOMContentLoaded', () => {
+        const statusDropdown = document.getElementById('dropdown-button');
+        statusDropdown.dropdownHandler = itemSelectedHandler; // Passing the function
+
+        // Optional: Directly call the function through the component
+        // myComponent.callMyFunction();
+      });
+    </script>
+    <script>
+      // Function to pass function to dropdown button
+      const statusSaveButtonHandler = (event) => {
+        console.log('Save button pressed');
+      };
+
+      // Access the web component and pass the function as a prop
+      document.addEventListener('DOMContentLoaded', () => {
+        const statusSaveButton = document.getElementById('status-save-button');
+        statusSaveButton.addEventListener('click', statusSaveButtonHandler); // Passing the function
 
         // Optional: Directly call the function through the component
         // myComponent.callMyFunction();
