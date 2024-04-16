@@ -58,3 +58,8 @@
     margin-bottom: $spacing-13;
   }
 }
+
+.statusChangePanel {
+  display: flex;
+  justify-content: right;
+}

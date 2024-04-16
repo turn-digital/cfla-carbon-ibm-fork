@@ -67,6 +67,45 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
             // myComponent.callMyFunction();
         });
     </script>
+
+
+
+
+
+  Can be passed with scripts if using html
+
+  const openModal = () => {
+    //@ts-ignore
+    this.shadowRoot.getElementById('modal-example').open = true;
+  };
+
+  const itemSelectedHandler = (event) => {
+    //@ts-ignore
+    this.selectedStatus = event.detail.item.__value;
+    //@ts-ignore
+    this.shadowRoot.getElementById('status-change-modal').open = true;
+    //@ts-ignore
+    console.log('selectedStatus', this.selectedStatus);
+  };
+
+  saveButtonHandler = () => {
+    console.log('test func');
+  };
+
+    const statusArray = [
+      { text: 'Status 1', value: 'Status 1' },
+      { text: 'Status 2', value: 'Status 2' },
+      { text: 'Status 3', value: 'Status 3' },
+    ];
+    const statusHistoryPersons = [
+      { shortRole: 'PV', personName: 'Vards Uzvards 1', iconType: '1' },
+      { shortRole: 'AV', personName: 'Vards Uzvards 2', iconType: '2' },
+      { shortRole: 'BN', personName: 'Vards Uzvards 3', iconType: '3' },
+    ];
+
+
+
+
 ```
 
 ```html
@@ -155,6 +194,72 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
   </head>
 
   <body class="cds-theme-zone-white">
+    <link
+      rel="stylesheet"
+      href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+
+    <cds-modal id="modal-example">
+      <cds-modal-header>
+        <cds-modal-close-button></cds-modal-close-button>
+        <cds-modal-label>Dokumenti</cds-modal-label>
+        <cds-modal-heading>Dokumenta pievienošana</cds-modal-heading>
+      </cds-modal-header>
+      <cds-modal-body
+        ><cds-file-uploader
+          label-description="Faila izmērs nedrīkst būt lielāks par 2MB. Atbalstāmie failu tipi .jpg, .png, .doc, .docx, .xls, .txt"
+          label-title="Augšupielādēt failus">
+          <cds-file-uploader-drop-container
+            accept="image/jpeg image/png"
+            name=""
+            slot="drop-container">
+            Pievienot failu
+          </cds-file-uploader-drop-container>
+        </cds-file-uploader>
+        <cds-text-editor
+          editorId="editor1"
+          editorConfig='{
+"editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+"max_char_length": 200,
+"fetch_obj": {
+"urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+"fetchMethod": "POST",
+"errorAlertMessages": "Error occurred while fetching data",
+"savedAlertMessages": "All data saved successfully"
+}
+}'></cds-text-editor>
+      </cds-modal-body>
+      <cds-modal-footer>
+        <cds-modal-footer-button kind="secondary" data-modal-close
+          >Cancel</cds-modal-footer-button
+        >
+        <cds-modal-footer-button kind="primary">Save</cds-modal-footer-button>
+      </cds-modal-footer>
+    </cds-modal>
+
+    <cds-modal id="status-change-modal">
+      <cds-modal-header>
+        <cds-modal-close-button></cds-modal-close-button>
+        <cds-modal-label>Dokumenti</cds-modal-label>
+        <cds-modal-heading>Dokumenta pievienošana</cds-modal-heading>
+      </cds-modal-header>
+      <cds-modal-body>
+        <p>
+          Spiežot “atgriezt nodaļas vadītājam” Jūs... paskaidrot, kādas sekas.
+        </p>
+        <cds-text-editor
+          editorId="editor_status_modal"
+          editorConfig='{
+        "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes"
+        }'></cds-text-editor>
+      </cds-modal-body>
+      <cds-modal-footer>
+        <cds-modal-footer-button kind="secondary" data-modal-close
+          >Cancel</cds-modal-footer-button
+        >
+        <cds-modal-footer-button kind="primary">Save</cds-modal-footer-button>
+      </cds-modal-footer>
+    </cds-modal>
+
     <cds-main-content-block-open>
       <div slot="header" class="cds--css-grid-column cds--col-span-100">
         <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19">
@@ -196,12 +301,23 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
               <cds-status-history></cds-status-history>
             </cds-main-content-item>
           </div>
-          <cds-main-content-item
-            size="07"
-            class="cds--sm:col-span-4 cds--md:col-span-3 cds--lg:col-span-6 cds--css-grid-column">
-            <cds-status-change-panel
-              id="status-change-panel"></cds-status-change-panel>
-          </cds-main-content-item>
+          <div
+            class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6 cds--css-grid-column">
+            <div>
+              <cds-main-content-item size="07" isStatusChangePanel>
+                <cds-button
+                  size="md"
+                  type="Primary"
+                  @click="${this.saveButtonHandler}"
+                  >Saglabāt</cds-button
+                >
+                <cds-dropdown-button
+                  label="Mainīt statusu"
+                  .dropdownHandler="${this.itemSelectedHandler}"
+                  .statusArray="${statusArray}"></cds-dropdown-button>
+              </cds-main-content-item>
+            </div>
+          </div>
         </div>
         <cds-main-content-item size="04">
           <cds-related-documents
@@ -273,25 +389,26 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
           size="08"
           class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
           <cds-text-editor
-            editorId="editor1"
+            editorId="editor3"
             editorConfig='{
-"editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-"max_char_length": 200,
-"fetch_obj": {
-"urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-"fetchMethod": "POST",
-"errorAlertMessages": "Error occurred while fetching data",
-"savedAlertMessages": "All data saved successfully"
-}
-}'></cds-text-editor>
+    "editorTitle": "Pārskatīšanas būtība",
+    "max_char_length": 200,
+    "request_obj": {
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
+        "requestMethod": "POST",
+        "requestValueKey": "value",
+        "verificationToken": "token",
+        "errorAlertMessage": "Error occurred while fetching data"
+        }
+  }'></cds-text-editor>
         </cds-main-content-item>
         <cds-main-content-item
           size="08"
           class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
           <cds-text-editor
-            editorId="editor3"
+            editorId="editor4"
             editorConfig='{
-    "editorTitle": "Pārskatīšanas būtība",
+    "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
     "max_char_length": 200,
     "request_obj": {
         "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
@@ -326,7 +443,8 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
                   tooltip-alignment=""
                   tooltip-position="top"
                   type="button"
-                  id="open-example-modal-button"
+                  id="modal-example-button"
+                  @click="${this.openModal}"
                   has-main-content="">
                   Pievienot ${Add16({ slot: 'icon' })}
                 </cds-button>
@@ -402,44 +520,6 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
         </cds-main-content-item>
       </div>
     </cds-main-content-block-open>
-    <cds-modal id="modal-example">
-      <cds-modal-header>
-        <cds-modal-close-button></cds-modal-close-button>
-        <cds-modal-label>Dokumenti</cds-modal-label>
-        <cds-modal-heading>Dokumenta pievienošana</cds-modal-heading>
-      </cds-modal-header>
-      <cds-modal-body
-        ><cds-file-uploader
-          label-description="Faila izmērs nedrīkst būt lielāks par 2MB. Atbalstāmie failu tipi .jpg, .png, .doc, .docx, .xls, .txt"
-          label-title="Augšupielādēt failus">
-          <cds-file-uploader-drop-container
-            accept="image/jpeg image/png"
-            name=""
-            slot="drop-container">
-            Pievienot failu
-          </cds-file-uploader-drop-container>
-        </cds-file-uploader>
-        <cds-text-editor
-          editorId="editor4"
-          editorConfig='{
-    "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-    "max_char_length": 200,
-    "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
-        "requestValueKey": "value",
-        "verificationToken": "token",
-        "errorAlertMessage": "Error occurred while fetching data"
-        }
-  }'></cds-text-editor>
-      </cds-modal-body>
-      <cds-modal-footer>
-        <cds-modal-footer-button kind="secondary" data-modal-close
-          >Cancel</cds-modal-footer-button
-        >
-        <cds-modal-footer-button kind="primary">Save</cds-modal-footer-button>
-      </cds-modal-footer>
-    </cds-modal>
     <script>
       // Function to open add new item to DT modal
       function addDataTableItemModal() {
