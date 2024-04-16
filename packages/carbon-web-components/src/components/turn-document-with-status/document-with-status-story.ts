@@ -18,41 +18,48 @@ import './index';
 import storyDocs from './document-with-status-story.mdx';
 
 export const Default = () => {
-  return html`<cds-document-with-status>`;
+  return html`<cds-document-with-status></cds-document-with-status>`;
 };
 Default.storyName = 'Default';
 
 export const Propsed = () => {
-  return html`
+  return html` <cds-document-with-status
+      title="Projekta satura izmaiņu salīdzināšana"
+      status="success"
+      statusText="Izmaiņas ir veiktas"
+      linkUrl="https://google.com"
+      linkText="Apskatīt!"></cds-document-with-status>
+
     <cds-document-with-status
+      title="Projekta Budžeta izmaiņu salīdzīnāšana"
+      status="information"
+      statusText="Izmaiņu nav"
+      linkUrl="https://google.com"
+      linkText="Apskatīt!"></cds-document-with-status>
+
+    <cds-document-with-status
+      title="Projekta Budžeta izmaiņu salīdzīnāšana"
+      status="warning"
+      statusText="Izmaiņu nav"
+      linkUrl="https://google.com"
+      linkText="Apskatīt!"></cds-document-with-status>
+
+    <cds-document-with-status
+      title="Projekta satura izmaiņu salīdzināšana"
+      status="error"
+      statusText="Izmaiņas nav saglabātas"
+      linkUrl="https://google.com"
+      linkText="Apskatīt!"></cds-document-with-status>`;
+};
+export const isNewWindow = () => {
+  return html` <cds-document-with-status
     title="Projekta satura izmaiņu salīdzināšana"
     status="success"
     statusText="Izmaiņas ir veiktas"
     linkUrl="https://google.com"
-    linkText="Apskatīt!"></cds-document-with-status>
-
-    <cds-document-with-status
-    title="Projekta Budžeta izmaiņu salīdzīnāšana"
-    status="information"
-    statusText="Izmaiņu nav"
-    linkUrl="https://google.com"
-    linkText="Apskatīt!"></cds-document-with-status>
-    
-    <cds-document-with-status
-    title="Projekta Budžeta izmaiņu salīdzīnāšana"
-    status="warning"
-    statusText="Izmaiņu nav"
-    linkUrl="https://google.com"
-    linkText="Apskatīt!"></cds-document-with-status>
-
-    <cds-document-with-status
-    title="Projekta satura izmaiņu salīdzināšana"
-    status="error"
-    statusText="Izmaiņas nav saglabātas"
-    linkUrl="https://google.com"
-    linkText="Apskatīt!"></cds-document-with-status>`;
+    linkText="Apskatīt!"
+    .isNewWindow=${true}></cds-document-with-status>`;
 };
-
 
 export default {
   title: 'Custom-components/Document with status',

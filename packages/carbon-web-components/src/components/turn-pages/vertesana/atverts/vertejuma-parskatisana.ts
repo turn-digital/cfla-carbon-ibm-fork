@@ -28,6 +28,19 @@ class CDSPValuationOpen extends LitElement {
     //@ts-ignore
     this.shadowRoot.getElementById('modal-example').open = true;
   };
+
+  itemSelectedHandler = (event) => {
+    //@ts-ignore
+    this.selectedStatus = event.detail.item.__value;
+    //@ts-ignore
+    this.shadowRoot.getElementById('status-change-modal').open = true;
+    //@ts-ignore
+    console.log('selectedStatus', this.selectedStatus);
+  };
+
+  saveButtonHandler = () => {
+    console.log('test func');
+  };
   render() {
     const statusArray = [
       { text: 'Status 1', value: 'Status 1' },
@@ -83,6 +96,30 @@ class CDSPValuationOpen extends LitElement {
         </cds-modal-footer>
       </cds-modal>
 
+      <cds-modal id="status-change-modal">
+        <cds-modal-header>
+          <cds-modal-close-button></cds-modal-close-button>
+          <cds-modal-label>Dokumenti</cds-modal-label>
+          <cds-modal-heading>Dokumenta pievienošana</cds-modal-heading>
+        </cds-modal-header>
+        <cds-modal-body>
+          <p>
+            Spiežot “atgriezt nodaļas vadītājam” Jūs... paskaidrot, kādas sekas.
+          </p>
+          <cds-text-editor
+            editorId="editor_status_modal"
+            editorConfig='{
+        "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes"
+        }'></cds-text-editor>
+        </cds-modal-body>
+        <cds-modal-footer>
+          <cds-modal-footer-button kind="secondary" data-modal-close
+            >Cancel</cds-modal-footer-button
+          >
+          <cds-modal-footer-button kind="primary">Save</cds-modal-footer-button>
+        </cds-modal-footer>
+      </cds-modal>
+
       <cds-main-content-block-open>
         <div slot="header" class="cds--css-grid-column cds--col-span-100">
           <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19">
@@ -125,12 +162,23 @@ class CDSPValuationOpen extends LitElement {
                 <cds-status-history></cds-status-history>
               </cds-main-content-item>
             </div>
-            <cds-main-content-item
-              size="07"
-              class="cds--sm:col-span-4 cds--md:col-span-3 cds--lg:col-span-6 cds--css-grid-column">
-              <cds-status-change-panel
-                .statusItems=${statusArray}></cds-status-change-panel>
-            </cds-main-content-item>
+            <div
+              class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6 cds--css-grid-column">
+              <div>
+                <cds-main-content-item size="07" isStatusChangePanel>
+                  <cds-button
+                    size="md"
+                    type="Primary"
+                    @click="${this.saveButtonHandler}"
+                    >Saglabāt</cds-button
+                  >
+                  <cds-dropdown-button
+                    label="Mainīt statusu"
+                    .dropdownHandler="${this.itemSelectedHandler}"
+                    .statusArray="${statusArray}"></cds-dropdown-button>
+                </cds-main-content-item>
+              </div>
+            </div>
           </div>
           <cds-main-content-item size="04">
             <cds-related-documents

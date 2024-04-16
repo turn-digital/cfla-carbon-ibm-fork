@@ -21,8 +21,9 @@ import { property } from 'lit/decorators';
 
 @customElement(`${prefix}-dropdown-button`)
 class CDSDropdownButtonTest extends LitElement {
-  @property({ type: Array }) accordionItems = [{ value: String, text: String }];
+  @property({ type: Array }) statusArray = [{ value: String, text: String }];
   @property({ type: Function }) dropdownHandler = () => {};
+  @property({ type: String }) selectedStatus = '';
 
   static styles = styles;
 
@@ -33,7 +34,7 @@ class CDSDropdownButtonTest extends LitElement {
           class="cds-theme-zone-turn-dropdown-button"
           label="Mainīt statusu"
           @cds-dropdown-selected="${this.dropdownHandler}">
-          ${this.accordionItems?.map(
+          ${this.statusArray?.map(
             (item) => html`
               <cds-dropdown-item
                 class="cds-theme-zone-turn-dropdown-button-test"
