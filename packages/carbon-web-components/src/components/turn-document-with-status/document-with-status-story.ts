@@ -58,7 +58,7 @@ export const isNewWindow = () => {
     statusText="Izmaiņas ir veiktas"
     linkUrl="https://google.com"
     linkText="Apskatīt!"
-    .isNewWindow=${true}></cds-document-with-status>`;
+    isNewWindow></cds-document-with-status>`;
 };
 
 export default {
