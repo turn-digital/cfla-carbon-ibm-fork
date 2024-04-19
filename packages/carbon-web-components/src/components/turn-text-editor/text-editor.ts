@@ -55,8 +55,6 @@ class TextEditor extends LitElement {
     const configKey = `config_${this.editorId}`;
     window[configKey] = this.combinedEditorConfig;
 
-    console.log('editorConfig', this.editorConfig);
-
     window.localStorage.setItem(
       `${this.editorId}_content`,
       this.textEditorData

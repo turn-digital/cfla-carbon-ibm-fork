@@ -29,8 +29,8 @@ export const WithRequestObject = () => {
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
+        "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
@@ -91,8 +91,8 @@ export const WithMaxCahrLengthAndRequestObjectAndServerErrorText = () => {
       "max_char_length": 200,
       "onServerErrorText": "Error from server text (optional)",
       "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
+        "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
