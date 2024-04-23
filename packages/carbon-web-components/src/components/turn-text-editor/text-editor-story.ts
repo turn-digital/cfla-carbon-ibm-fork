@@ -22,6 +22,7 @@ export const Default = () => {
       }'></cds-text-editor>
   `;
 };
+
 export const WithRequestObject = () => {
   return html`
     <cds-text-editor
@@ -33,7 +34,13 @@ export const WithRequestObject = () => {
         "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
-        "errorAlertMessage": "Error occurred while fetching data"
+        "errorAlertMessage": "Error occurred while fetching data",
+        "propsBodyObj": ${JSON.stringify({
+        izveletaVertiba: null,
+        jautajumsId: 2,
+        jautajumsNosaukums: 'Kāds ir jautājums?',
+        jautajumsTips: 'teksts',
+      })}
         },
       "onServerLastEditor": {
           "name": "Vlad",
