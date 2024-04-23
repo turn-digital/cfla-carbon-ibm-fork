@@ -13,28 +13,6 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
 ### Component contains default config which have default parameters that can be changed if you pass something in config
 
-the default config is shown below
-
-```JS
-defaultConfig = {
-    external_plugins: {
-      pluginId1:
-        'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
-      pluginId2:
-        'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js',
-    },
-    language: 'lv',
-    language_url: 'https://demo.turn.lv/cfla_dist/assets/tinymce/langs/lv.js',
-    branding: false,
-    menubar: false,
-    highlight_on_focus: true,
-    promotion: true,
-    height: 200,
-    min_height: 200,
-    max_height: 500,
-  };
-```
-
 ### So by default we can use text editor without anything like request_obj and max_char_length only passing title, id and last editor and we will have the default text-editor based on default config that is mentioned above any inserted data will be stored in localstorage under id + \_content
 
 Also custom variants with some props
@@ -118,49 +96,30 @@ Also custom variants with some props
       }'></cds-text-editor>
 ```
 
-### For React
+### For React example
 
-```JS
-    <cds-text-editor
-        textEditorData={
-            grozijumuPamatojums.pamatojums.vertiba !== null
-            ? grozijumuPamatojums.pamatojums.vertiba
-            : ""
-        }
-        editorId={`editor-amend-reasoning13213`}
-        onServerLastEditor={`${
-            grozijumuPamatojums.pamatojums?.pedejaisLabotajs
-            ? {
-                name: grozijumuPamatojums.pamatojums
-                    .pedejaisLabotajs.vardsUzvards,
-                date: grozijumuPamatojums.pamatojums
-                    .pedejaisLabotajs.pedejaisDarbibuDatums,
-                }
-            : {}
-        }
-        `}
-        editorConfig={`{
-            "editorTitle": "${translations.GLOBAL_REASONING}",
-            "length_validation_error_text": "Validation text from props",
-            "branding": false,
-            "menubar": false,
-            "height": 200,
-            "highlight_on_focus": true,
-            "promotion": true,
-            "max_char_length": 200,
-            "request_obj": {
-                "urlToRequest": "${GLOBAL_VARS.API_AMENDMENT_REASONING}/${versionId}",
-                "requestMethod": "PATCH",
-                "verificationToken": "${GLOBAL_VARS.FORGERY_KEY}",
-                "requestValueKey": "pamatojums",
-                "errorAlertMessages": "${translations.ERROR_IN_SYSTEM}"
-            },
-            "external_plugins": {
-                "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-                "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
-            }
-            }`}
-    ></cds-text-editor>
+```js
+<cds-text-editor
+  textEditorData={
+    grozijumuPamatojums.pamatojums.vertiba !== null
+      ? grozijumuPamatojums.pamatojums.vertiba
+      : ''
+  }
+  editorId={`editor-amend-reasoning13213`}
+  editorConfig={`{
+    "editorTitle": "${translations.GLOBAL_REASONING}",
+    "length_validation_error_text": "Validation text from props",
+    "height": 200,
+    "max_char_length": 200,
+    "onServerLastEditor": {"name": "${grozijumuPamatojums.pamatojums?.pedejaisLabotajs?.vardsUzvards}", "date": "${grozijumuPamatojums.pamatojums?.pedejaisLabotajs?.pedejaisDarbibuDatums}"},
+    "request_obj": {
+        "urlToRequest": "${GLOBAL_VARS.API_AMENDMENT_REASONING}/${versionId}",
+        "requestMethod": "PATCH",
+        "verificationToken": "${GLOBAL_VARS.FORGERY_KEY}",
+        "requestValueKey": "pamatojums",
+        "errorAlertMessages": "${translations.ERROR_IN_SYSTEM}"
+    }
+}`}></cds-text-editor>
 ```
 
 ## `<cds-text-editor>` attributes and properties
