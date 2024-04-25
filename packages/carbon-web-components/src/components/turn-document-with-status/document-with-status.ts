@@ -15,7 +15,6 @@ import styles from './document-with-status.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import Circle16 from '@carbon/icons/lib/circle-fill';
 import { green, gray, red, yellow } from '@carbon/colors';
-import { isNull } from 'lodash-es';
 
 /**
  * Related documents.
