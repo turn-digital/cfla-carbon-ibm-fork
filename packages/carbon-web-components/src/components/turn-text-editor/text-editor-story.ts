@@ -18,7 +18,8 @@ export const Default = () => {
       textEditorData="This is a text from props"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
-      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes"
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+      "autosave_ask_before_unload": false
       }'></cds-text-editor>
   `;
 };

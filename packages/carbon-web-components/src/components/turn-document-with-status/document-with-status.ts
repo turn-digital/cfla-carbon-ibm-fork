@@ -15,6 +15,7 @@ import styles from './document-with-status.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import Circle16 from '@carbon/icons/lib/circle-fill';
 import { green, gray, red, yellow } from '@carbon/colors';
+import { isNull } from 'lodash-es';
 
 /**
  * Related documents.
@@ -29,7 +30,7 @@ class CDSDocumentsWithStatus extends FocusMixin(LitElement) {
    */
   @property({ type: String }) status = 'information';
   @property({ type: String }) statusText = 'Izmaiņu nav';
-  @property({ type: String }) linkUrl = 'https://google.com';
+  @property({ type: String }) linkUrl = '';
   @property({ type: String }) linkText = 'Apskatīt';
   @property({ type: Boolean }) isNewWindow = false; // This can be used to toggle the behavior
 
@@ -73,14 +74,16 @@ class CDSDocumentsWithStatus extends FocusMixin(LitElement) {
             <p class="document-with-status__status-text">${statusText}</p>
           </div>
         </div>
-        <div class="document-with-status__link">
-          <cds-link
-            href="${linkUrl}"
-            @click="${handleLinkClick}"
-            target="_blank"
-            >${linkText}</cds-link
-          >
-        </div>
+        ${linkUrl === null
+          ? html``
+          : html`<div class="document-with-status__link">
+              <cds-link
+                href="${linkUrl}"
+                @click="${handleLinkClick}"
+                target="_blank"
+                >${linkText}</cds-link
+              >
+            </div>`}
       </div>
     `;
   }

@@ -32,7 +32,7 @@ class CDSStatusChangePanel extends LitElement {
   itemSelectedHandler = (event) => {
     this.selectedStatus = event.detail.item.__value;
     //@ts-ignore
-    // this.shadowRoot.getElementById('status-change-modal').open = true;
+    this.shadowRoot.getElementById('status-change-modal').open = true;
 
     console.log('selectedStatus', this.selectedStatus);
   };
