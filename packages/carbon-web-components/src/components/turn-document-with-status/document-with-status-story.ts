@@ -60,6 +60,15 @@ export const isNewWindow = () => {
     linkText="Apskatīt!"
     isNewWindow></cds-document-with-status>`;
 };
+export const linkNull = () => {
+  return html` <cds-document-with-status
+    title="Projekta satura izmaiņu salīdzināšana"
+    status="success"
+    statusText="Izmaiņas ir veiktas"
+    .linkUrl=${null}
+    linkText="Apskatīt!"
+    isNewWindow></cds-document-with-status>`;
+};
 
 export default {
   title: 'Custom-components/Document with status',
