@@ -25,7 +25,7 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
       { text: 'Status 2', value: 'Status 2' },
       { text: 'Status 3', value: 'Status 3' },
     ];
-    const statusRelatedPersons = [
+    const statusHistoryPersons = [
       { shortRole: 'PV', personName: 'Vards Uzvards 1', iconType: '1' },
       { shortRole: 'AV', personName: 'Vards Uzvards 2', iconType: '2' },
       { shortRole: 'BN', personName: 'Vards Uzvards 3', iconType: '3' },
@@ -102,22 +102,6 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
       { shortRole: 'AV', personName: 'Vards Uzvards 2', iconType: '2' },
       { shortRole: 'BN', personName: 'Vards Uzvards 3', iconType: '3' },
     ];
-    const statusHistoryItemsArr = [
-    {
-      date: '25.10.2019 10:34',
-      status: 'Atgriezta precizēšanai 1',
-      author: 'Elīne Millere',
-      pamatojums: 'Pamatojums 1',
-      id: '1',
-    },
-    {
-      date: '25.09.2019 16:13',
-      status: 'Atgriezta precizēšanai 2',
-      author: 'Test author',
-      pamatojums: 'Pamatojums 2',
-      id: '2',
-    },
-  ];
 
 
 
@@ -241,10 +225,10 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
                         <cds-header-title title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
                     </cds-main-content-item>
                     <cds-main-content-item size="07">
-                        <cds-related-persons .statusRelatedPersons="${statusRelatedPersons}"></cds-related-persons>
+                        <cds-related-persons .statusHistoryPersons="${statusHistoryPersons}"></cds-related-persons>
                     </cds-main-content-item>
                     <cds-main-content-item size="07">
-                        <cds-status-history .statusHistoryPersons=${statusHistoryItemsArr}></cds-status-history>
+                        <cds-status-history></cds-status-history>
                     </cds-main-content-item>
                 </div>
                 <div class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6 cds--css-grid-column">

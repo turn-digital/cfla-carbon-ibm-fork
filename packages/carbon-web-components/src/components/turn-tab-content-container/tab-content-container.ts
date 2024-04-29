@@ -9,39 +9,24 @@
 
 import { LitElement, html } from 'lit';
 import { prefix } from '../../globals/settings';
-import styles from './main-content-block-open.scss';
+import styles from './tab-content-container.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
-import { property } from 'lit/decorators';
 
 /**
  * Related documents.
  *
- * @element cds-main-content-block-open
+ * @element cds-tab-content-container
  */
 
-@customElement(`${prefix}-main-content-block-open`)
+@customElement(`${prefix}-tab-content-container`)
 class CDSMainContentBlock extends LitElement {
-  @property({ type: Boolean }) withTabs = false;
   render() {
     return html`
       <link
         rel="stylesheet"
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
       <div class="container">
-        <div class="green-block"></div>
-        <div class="header-block cds--css-grid cds--css-grid--narrow">
-          <slot name="header"></slot>
-        </div>
-        ${this.withTabs
-          ? html`<div class="tabs-block cds--css-grid cds--css-grid--narrow">
-              <slot name="tabs"></slot>
-            </div>`
-          : ''}
-        ${!this.withTabs
-          ? html`<div class="content-block cds--css-grid cds--css-grid--narrow">
-              <slot name="content" class="content-block"></slot>
-            </div>`
-          : ''}
+        <slot></slot>
       </div>
     `;
   }

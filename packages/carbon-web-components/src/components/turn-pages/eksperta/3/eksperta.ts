@@ -9,12 +9,11 @@
 
 import { LitElement, html } from 'lit';
 import { prefix } from '../../../../globals/settings';
-import styles from './vertejuma-parskatisana.scss';
+import styles from './eksperta.scss';
 import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
-import Add16 from '@carbon/icons/lib/add/16';
-import ToolBox16 from '@carbon/icons/lib/tool-box/16';
-import CertificateCheck16 from '@carbon/icons/lib/certificate--check/16';
+import Edit16 from '@carbon/icons/lib/edit/16';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
+import Add16 from '@carbon/icons/lib/add/16';
 
 /**
  *
@@ -22,7 +21,7 @@ import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16
  *
  */
 
-@customElement(`${prefix}-page-valuation-open`)
+@customElement(`${prefix}-eksperta-3`)
 class CDSPValuationOpen extends LitElement {
   openModal = () => {
     //@ts-ignore
@@ -47,10 +46,12 @@ class CDSPValuationOpen extends LitElement {
       { text: 'Status 2', value: 'Status 2' },
       { text: 'Status 3', value: 'Status 3' },
     ];
-    const statusRelatedPersons = [
-      { shortRole: 'PV', personName: 'Vards Uzvards 1', iconType: '1' },
-      { shortRole: 'AV', personName: 'Vards Uzvards 2', iconType: '2' },
-      { shortRole: 'BN', personName: 'Vards Uzvards 3', iconType: '3' },
+    const statusRelatedPersonsArr = [
+      {
+        shortRole: 'CFLA atbildīgai',
+        personName: 'Anna Bērziņa',
+        iconType: '1',
+      },
     ];
     const statusHistoryItemsArr = [
       {
@@ -69,7 +70,7 @@ class CDSPValuationOpen extends LitElement {
       },
       {
         date: '25.09.2019 16:13',
-        status: 'Atgriezta precizēšanai 2',
+        status: 'Atgriezta precizēšanai 2adas',
         author: 'Test author',
         pamatojums: 'Pamatojums 2',
         id: '3',
@@ -80,6 +81,277 @@ class CDSPValuationOpen extends LitElement {
       <link
         rel="stylesheet"
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+
+      <link
+        rel="stylesheet"
+        href="https://demo.turn.lv/kase/dist/assets/css/themes.css" />
+
+      <cds-main-content-block-open withTabs>
+        <div slot="header" class="cds--css-grid-column cds--col-span-100">
+          <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19">
+            <cds-label-value-horizontal label="Atlases nosaukums">
+              <cds-link href="#"
+                >Zinātnes politikas ieviešana, vadība un kapacitātes
+                stiprināšana
+              </cds-link>
+            </cds-label-value-horizontal>
+            <cds-label-value-horizontal label="Atlases nosaukums">
+              <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
+            </cds-label-value-horizontal>
+            <cds-divider size="3"></cds-divider>
+            <cds-label-value-horizontal label="Atlases nosaukums">
+              <cds-link href="#">1.1 </cds-link>
+            </cds-label-value-horizontal>
+          </cds-contextual-header>
+          <div>
+            <cds-divider size="3"></cds-divider>
+            <cds-inline-notification
+              style="min-width: 100%; margin-bottom: .5rem"
+              title="Notification title"
+              subtitle="Subtitle text goes here."
+              low-contrast>
+            </cds-inline-notification>
+          </div>
+
+          <div class="cds--css-grid cds--css-grid--narrow">
+            <div
+              class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-10 cds--css-grid-column">
+              <cds-main-content-item size="07">
+                <cds-header-title
+                  title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
+              </cds-main-content-item>
+              <cds-main-content-item size="07">
+                <cds-related-persons
+                  .statusRelatedPersons=${statusRelatedPersonsArr}></cds-related-persons>
+              </cds-main-content-item>
+              <cds-main-content-item size="07">
+                <cds-status-history
+                  .statusHistoryItems=${statusHistoryItemsArr}></cds-status-history>
+              </cds-main-content-item>
+            </div>
+            <div
+              class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6 cds--css-grid-column">
+              <div>
+                <cds-main-content-item size="07" isStatusChangePanel>
+                  <cds-dropdown-button
+                    label="Mainīt statusu"
+                    .dropdownHandler="${this.itemSelectedHandler}"
+                    .statusArray="${statusArray}"></cds-dropdown-button>
+                </cds-main-content-item>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div slot="tabs" class="cds--css-grid-column cds--col-span-100">
+          <cds-tabs trigger-content="Select an item" value="tab1" type="contained" class="cds-theme-zone-g10">
+            <cds-tab id="tab1" target="panel1" value="tab1">Vērtēšana</cds-tab>
+            <cds-tab id="tab-2" target="panel-2" value="tab-2"
+              disabled>Projekts</cds-tab
+            >
+          </cds-tabs>
+          <cds-tab-content-container class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10"
+            id="panel1"
+            role="tabpanel"
+            aria-labelledby="tab1"
+            hidden>
+            <cds-main-content-item
+            size="08"
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-label-value
+              label="Projekta cikls"
+              value="Vidusposma"></cds-label-value>
+            <cds-label-value
+              label="Eksperta veids"
+              value="LZP ekspertu vērtējums"></cds-label-value>
+            <cds-label-value label="Vērtēšanas termiņš">
+              <span>12.01.2024</span>
+              <cds-button kind="ghost" size="sm"
+                >${Edit16({ slot: 'icon' })}</cds-button
+              ></cds-label-value
+            >
+          </cds-main-content-item>
+
+          <cds-main-content-item
+            size="08"
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10">
+            <cds-table>
+              <cds-table-header-title slot="title"
+                >Veidlapas sagatave</cds-table-header-title
+              >
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-button
+                    size="lg"
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    @click="${this.openModal}"
+                    has-main-content="">
+                    Pievienot ${Add16({ slot: 'icon' })}
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
+              <cds-table-head>
+                <cds-table-header-row>
+                  <cds-table-header-cell>Nosaukums</cds-table-header-cell>
+                  <cds-table-header-cell
+                    >Pievienošanas datums</cds-table-header-cell
+                  >
+                  <cds-table-header-cell
+                    >Pievienotājs</cds-table-header-cell
+                  >
+                  <cds-table-header-cell></cds-table-header-cell>
+                </cds-table-header-row>
+              </cds-table-head>
+              <cds-table-body>
+                <cds-table-row>
+                  <cds-table-cell>
+                    <a
+                      href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                      download
+                      style="text-decoration: none;">
+                      Paraugs.docx
+                    </a>
+                  </cds-table-cell>
+                  <cds-table-cell>22.03.2023 10:15</cds-table-cell>
+                  <cds-table-cell>Anna Bērziņa</cds-table-cell>
+                  <cds-table-cell>
+                    <cds-overflow-menu>
+                      ${OverflowMenuVertical16({
+                        class: `${prefix}--overflow-menu__icon`,
+                        slot: 'icon',
+                      })}
+                      <span slot="tooltip-content"> Options </span>
+                      <cds-overflow-menu-body>
+                        <cds-overflow-menu-item
+                          >Lejupielādēt</cds-overflow-menu-item
+                        >
+                        <cds-overflow-menu-item divider danger
+                          >Dzēst</cds-overflow-menu-item
+                        >
+                      </cds-overflow-menu-body>
+                    </cds-overflow-menu>
+                  </cds-table-cell>
+                </cds-table-row>
+              </cds-table-body>
+            </cds-table>
+          </cds-main-content-item>
+          <div
+            size="08"
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10">
+            <cds-table>
+              <cds-table-header-title slot="title"
+                >Vērtēšanai nododamie dokumenti</cds-table-header-title
+              >
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-button
+                    size="lg"
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    @click="${this.openModal}"
+                    has-main-content="">
+                    Pievienot ${Add16({ slot: 'icon' })}
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
+              <cds-table-head>
+                <cds-table-header-row>
+                  <cds-table-header-cell>Nosaukums</cds-table-header-cell>
+                  <cds-table-header-cell
+                    >Pievienošanas datums</cds-table-header-cell
+                  >
+                  <cds-table-header-cell
+                    >Pievienotājs</cds-table-header-cell
+                  >
+                  <cds-table-header-cell></cds-table-header-cell>
+                </cds-table-header-row>
+              </cds-table-head>
+              <cds-table-body>
+                <cds-table-row>
+                  <cds-table-cell>
+                    <a
+                      href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                      download
+                      style="text-decoration: none;">
+                      projekta iesniegums.pdf
+                    </a>
+                  </cds-table-cell>
+                  <cds-table-cell>22.03.2023 10:15</cds-table-cell>
+                  <cds-table-cell>Anna Bērziņa</cds-table-cell>
+                  <cds-table-cell>
+                    <cds-overflow-menu>
+                      ${OverflowMenuVertical16({
+                        class: `${prefix}--overflow-menu__icon`,
+                        slot: 'icon',
+                      })}
+                      <span slot="tooltip-content"> Options </span>
+                      <cds-overflow-menu-body>
+                        <cds-overflow-menu-item
+                          >Lejupielādēt</cds-overflow-menu-item
+                        >
+                        <cds-overflow-menu-item divider danger
+                          >Dzēst</cds-overflow-menu-item
+                        >
+                      </cds-overflow-menu-body>
+                    </cds-overflow-menu>
+                  </cds-table-cell>
+                </cds-table-row>
+                <cds-table-row>
+                  <cds-table-cell>
+                    <a
+                      href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                      download
+                      style="text-decoration: none;">
+                      PI_pielikums_1.pdf
+                    </a>
+                  </cds-table-cell>
+                  <cds-table-cell>22.03.2023 10:20</cds-table-cell>
+                  <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
+                  <cds-table-cell>
+                    <cds-overflow-menu>
+                      ${OverflowMenuVertical16({
+                        class: `${prefix}--overflow-menu__icon`,
+                        slot: 'icon',
+                      })}
+                      <span slot="tooltip-content"> Options </span>
+                      <cds-overflow-menu-body>
+                        <cds-overflow-menu-item
+                          >Lejupielādēt</cds-overflow-menu-item
+                        >
+                        <cds-overflow-menu-item divider danger
+                          >Dzēst</cds-overflow-menu-item
+                        >
+                      </cds-overflow-menu-body>
+                    </cds-overflow-menu>
+                  </cds-table-cell>
+                </cds-table-row>
+              </cds-table-body>
+            </cds-table>
+          </div>
+        </div>
+          </cds-tab-content-container>
+          <cds-tab-content-container
+            id="panel-2"
+            role="tabpanel"
+            aria-labelledby="tab-2"
+            hidden>
+            <h4>Content for option 2</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </cds-tab-content-container>
+        </div>
+      </cds-main-content-block-open>
 
       <cds-modal id="modal-example">
         <cds-modal-header>
@@ -142,273 +414,6 @@ class CDSPValuationOpen extends LitElement {
           <cds-modal-footer-button kind="primary">Save</cds-modal-footer-button>
         </cds-modal-footer>
       </cds-modal>
-
-      <cds-main-content-block-open>
-        <div slot="header" class="cds--css-grid-column cds--col-span-100">
-          <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19">
-            <cds-label-value-horizontal label="Atlases nosaukums">
-              <cds-link href="#"
-                >Zinātnes politikas ieviešana, vadība un kapacitātes
-                stiprināšana
-              </cds-link>
-            </cds-label-value-horizontal>
-            <cds-label-value-horizontal label="Atlases nosaukums">
-              <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
-            </cds-label-value-horizontal>
-            <cds-divider size="3"></cds-divider>
-            <cds-label-value-horizontal label="Atlases nosaukums">
-              <cds-link href="#">1.1 </cds-link>
-            </cds-label-value-horizontal>
-          </cds-contextual-header>
-          <div>
-            <cds-divider size="3"></cds-divider>
-            <cds-inline-notification
-              style="min-width: 100%; margin-bottom: .5rem"
-              title="Notification title"
-              subtitle="Subtitle text goes here."
-              low-contrast>
-            </cds-inline-notification>
-          </div>
-
-          <div class="cds--css-grid cds--css-grid--narrow">
-            <div
-              class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-10 cds--css-grid-column">
-              <cds-main-content-item size="07">
-                <cds-header-title
-                  title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
-              </cds-main-content-item>
-              <cds-main-content-item size="07">
-                <cds-related-persons
-                  .statusRelatedPersons=${statusRelatedPersons}></cds-related-persons>
-              </cds-main-content-item>
-              <cds-main-content-item size="07">
-                <cds-status-history
-                  .statusHistoryItems=${statusHistoryItemsArr}></cds-status-history>
-              </cds-main-content-item>
-            </div>
-            <div
-              class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6 cds--css-grid-column">
-              <div>
-                <cds-main-content-item size="07" isStatusChangePanel>
-                  <cds-button
-                    size="md"
-                    type="Primary"
-                    @click="${this.saveButtonHandler}"
-                    >Saglabāt</cds-button
-                  >
-                  <cds-dropdown-button
-                    label="Mainīt statusu"
-                    .dropdownHandler="${this.itemSelectedHandler}"
-                    .statusArray="${statusArray}"></cds-dropdown-button>
-                </cds-main-content-item>
-              </div>
-            </div>
-          </div>
-          <cds-main-content-item size="04">
-            <cds-related-documents
-              title="Saistītie dokumenti"
-              class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
-              <cds-related-documents-item
-                linkTitle="Saistītais PI"
-                linkUrl="https://google.com">
-                ${ToolBox16({ slot: 'icon' })}
-              </cds-related-documents-item>
-              <cds-related-documents-item
-                linkTitle="Vērtēšanas veidlapa"
-                linkUrl="https://google.com">
-                ${CertificateCheck16({ slot: 'icon' })}
-              </cds-related-documents-item>
-              <cds-related-documents-item
-                linkTitle="Iesniegums par pārskatīšanu/apstrīdēšanu"
-                target="_self"
-                linkUrl="https://google.com">
-              </cds-related-documents-item>
-            </cds-related-documents>
-          </cds-main-content-item>
-        </div>
-
-        <div
-          slot="content"
-          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10">
-          <cds-main-content-title
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang"
-            title="Vērtējuma pārskatīšanas izveidosāna">
-          </cds-main-content-title>
-
-          <div
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
-            <cds-label-value
-              label="Apstrīdēšanas iesnieguma saņemšanas datums"
-              value="23.03.2023">
-            </cds-label-value>
-            <cds-label-value label="Pārskatīšanas veids" value="Tiesvedība">
-            </cds-label-value>
-          </div>
-
-          <cds-main-content-item
-            size="08"
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
-            <cds-radio-button-group
-              legend-text="Pārskatīšanas lēmums"
-              label-position="right"
-              orientation="vertical"
-              name="radio-group">
-              <cds-radio-button
-                label-text="VI Lēmumu atstāj spēkā"
-                value="VI Lēmumu atstāj spēkā"></cds-radio-button>
-              <cds-radio-button
-                label-text="Atcelt lēmumu pilnībā"
-                value="Atcelt lēmumu pilnībā"></cds-radio-button>
-              <cds-radio-button
-                label-text="Atcelt lēmumu kādā daļā"
-                value="Atcelt lēmumu kādā daļā"></cds-radio-button>
-              <cds-radio-button
-                label-text="Lietas izskatīšana izbeigta"
-                value="Lietas izskatīšana izbeigta"></cds-radio-button>
-              <cds-radio-button
-                label-text="Izdot satura ziņā citu lēmumu"
-                value="Izdot satura ziņā citu lēmumu"></cds-radio-button>
-            </cds-radio-button-group>
-          </cds-main-content-item>
-          <cds-main-content-item
-            size="08"
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
-            <cds-text-editor
-              editorId="editor3"
-              editorConfig='{
-    "editorTitle": "Pārskatīšanas būtība",
-    "max_char_length": 200,
-    "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
-        "requestValueKey": "value",
-        "verificationToken": "token",
-        "errorAlertMessage": "Error occurred while fetching data"
-        }
-  }'></cds-text-editor>
-          </cds-main-content-item>
-          <cds-main-content-item
-            size="08"
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
-            <cds-text-editor
-              editorId="editor4"
-              editorConfig='{
-    "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-    "max_char_length": 200,
-    "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
-        "requestValueKey": "value",
-        "verificationToken": "token",
-        "errorAlertMessage": "Error occurred while fetching data"
-        }
-  }'></cds-text-editor>
-          </cds-main-content-item>
-          <cds-main-content-item
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-8 cds--grid-column-hang">
-            <div>
-              <cds-divider size="3"></cds-divider>
-              <cds-inline-notification
-                style="min-width: 100%; margin-bottom: .5rem"
-                title="Notification title"
-                subtitle="Subtitle text goes here."
-                low-contrast>
-              </cds-inline-notification>
-              <cds-divider size="3"></cds-divider>
-            </div>
-            <cds-table>
-              <cds-table-header-title slot="title"
-                >Dokumenti</cds-table-header-title
-              >
-              <cds-table-toolbar slot="toolbar">
-                <cds-table-toolbar-content>
-                  <cds-button
-                    size="lg"
-                    kind="secondary"
-                    tooltip-alignment=""
-                    tooltip-position="top"
-                    type="button"
-                    id="modal-example-button"
-                    @click="${this.openModal}"
-                    has-main-content="">
-                    Pievienot ${Add16({ slot: 'icon' })}
-                  </cds-button>
-                </cds-table-toolbar-content>
-              </cds-table-toolbar>
-              <cds-table-head>
-                <cds-table-header-row>
-                  <cds-table-header-cell>Nosaukums</cds-table-header-cell>
-                  <cds-table-header-cell
-                    >Pievienošanas datums</cds-table-header-cell
-                  >
-                  <cds-table-header-cell>Pievienotājs</cds-table-header-cell>
-                  <cds-table-header-cell></cds-table-header-cell>
-                </cds-table-header-row>
-              </cds-table-head>
-              <cds-table-body>
-                <cds-table-row>
-                  <cds-table-cell>
-                    <a
-                      href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
-                      download
-                      style="text-decoration: none;">
-                      vērtējums1.pdf
-                    </a>
-                  </cds-table-cell>
-                  <cds-table-cell>22.03.2023 10:15</cds-table-cell>
-                  <cds-table-cell>Anna Bērziņa</cds-table-cell>
-                  <cds-table-cell>
-                    <cds-overflow-menu>
-                      ${OverflowMenuVertical16({
-                        class: `${prefix}--overflow-menu__icon`,
-                        slot: 'icon',
-                      })}
-                      <span slot="tooltip-content"> Options </span>
-                      <cds-overflow-menu-body>
-                        <cds-overflow-menu-item
-                          >Lejupielādēt</cds-overflow-menu-item
-                        >
-                        <cds-overflow-menu-item divider danger
-                          >Dzēst</cds-overflow-menu-item
-                        >
-                      </cds-overflow-menu-body>
-                    </cds-overflow-menu>
-                  </cds-table-cell>
-                </cds-table-row>
-                <cds-table-row>
-                  <cds-table-cell>
-                    <a
-                      href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
-                      download
-                      style="text-decoration: none;">
-                      vērtējums2.pdf
-                    </a>
-                  </cds-table-cell>
-                  <cds-table-cell>22.03.2023 10:20</cds-table-cell>
-                  <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
-                  <cds-table-cell>
-                    <cds-overflow-menu>
-                      ${OverflowMenuVertical16({
-                        class: `${prefix}--overflow-menu__icon`,
-                        slot: 'icon',
-                      })}
-                      <span slot="tooltip-content"> Options </span>
-                      <cds-overflow-menu-body>
-                        <cds-overflow-menu-item
-                          >Lejupielādēt</cds-overflow-menu-item
-                        >
-                        <cds-overflow-menu-item divider danger
-                          >Dzēst</cds-overflow-menu-item
-                        >
-                      </cds-overflow-menu-body>
-                    </cds-overflow-menu>
-                  </cds-table-cell>
-                </cds-table-row>
-              </cds-table-body>
-            </cds-table>
-          </cds-main-content-item>
-        </div>
-      </cds-main-content-block-open>
     `;
   }
 

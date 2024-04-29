@@ -61,5 +61,7 @@
 
 .statusChangePanel {
   display: flex;
-  justify-content: right;
+  @media screen and (min-width: 1000px) {
+    justify-content: right;
+  }
 }

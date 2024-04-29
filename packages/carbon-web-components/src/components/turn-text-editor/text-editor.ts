@@ -24,6 +24,7 @@ import './tinymce-webcomponent.js';
 class TextEditor extends LitElement {
   @property({ type: Boolean }) readonly = false;
   @property({ type: String }) editorId = 'editor';
+  @property({ type: String }) onServerErrorTextUnderline = '';
   @property({ type: String })
   textEditorData = ``;
   @property({ type: Object }) editorConfig = {};
@@ -51,6 +52,10 @@ class TextEditor extends LitElement {
     return { ...defaultConfig, ...this.editorConfig };
   }
   render() {
+    console.log(
+      'this.onServerErrorTextUnderline',
+      this.onServerErrorTextUnderline
+    );
     //@ts-ignore
     const configKey = `config_${this.editorId}`;
     window[configKey] = this.combinedEditorConfig;
@@ -73,6 +78,12 @@ class TextEditor extends LitElement {
         promotion="false">
         ${this.textEditorData}
       </tinymce-editor>
+      ${
+        this.onServerErrorTextUnderline.length > 0
+          ? html`<p style="color: red">${this.onServerErrorTextUnderline}</p>`
+          : ''
+      }
+      </p>
     `;
   }
 

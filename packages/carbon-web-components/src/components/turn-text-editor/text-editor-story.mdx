@@ -102,10 +102,11 @@ Also custom variants with some props
 <cds-text-editor
   editorId="editor_example_storybook_default_cl_ro_set"
   onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
+  onServerErrorTextUnderline="Error from server text (optional) for the underline error msg"
   editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "max_char_length": 200,
-      "onServerErrorText": "Error from server text (optional)",
+      "onServerErrorTextNotification": "Error from server text (optional)",
       "request_obj": {
         "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
         "requestMethod": "PATCH",
