@@ -11,7 +11,7 @@ import { LitElement, html } from 'lit';
 import { prefix } from '../../globals/settings';
 import styles from './main-content-block-open.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
-import { property } from 'lit/decorators';
+import { property } from 'lit/decorators.js';
 
 /**
  * Related documents.
