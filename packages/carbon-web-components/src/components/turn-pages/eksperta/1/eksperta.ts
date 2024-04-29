@@ -12,7 +12,7 @@ import { prefix } from '../../../../globals/settings';
 import styles from './eksperta.scss';
 import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
-import Download16 from '@carbon/web-components/es/icons/download/16';
+import Download16 from '@carbon/icons/lib/download/16';
 
 @customElement(`${prefix}-eksperta-1`)
 class CDSPValuationList extends LitElement {
