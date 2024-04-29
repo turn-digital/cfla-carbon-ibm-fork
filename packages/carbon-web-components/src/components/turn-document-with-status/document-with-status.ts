@@ -73,16 +73,18 @@ class CDSDocumentsWithStatus extends FocusMixin(LitElement) {
             <p class="document-with-status__status-text">${statusText}</p>
           </div>
         </div>
-        ${linkUrl === null
-          ? html``
-          : html`<div class="document-with-status__link">
-              <cds-link
-                href="${linkUrl}"
-                @click="${handleLinkClick}"
-                target="_blank"
-                >${linkText}</cds-link
-              >
-            </div>`}
+        ${linkUrl.length > 0
+          ? html`
+              <div class="document-with-status__link">
+                <cds-link
+                  href="${linkUrl}"
+                  @click="${handleLinkClick}"
+                  target="${isNewWindow ? '_blank' : '_self'}"
+                  >${linkText}</cds-link
+                >
+              </div>
+            `
+          : ''}
       </div>
     `;
   }
