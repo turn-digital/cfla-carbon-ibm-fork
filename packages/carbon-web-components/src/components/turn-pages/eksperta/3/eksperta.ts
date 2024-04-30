@@ -150,7 +150,7 @@ class CDSPValuationOpen extends LitElement {
               disabled>Projekts</cds-tab
             >
           </cds-tabs>
-          <cds-tab-content-container class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10"
+          <cds-tab-content-container class="cds--css-grid-column cds--col-span-100"
             id="panel1"
             role="tabpanel"
             aria-labelledby="tab1"
