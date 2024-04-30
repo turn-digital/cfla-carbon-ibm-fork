@@ -33,7 +33,7 @@ class CDSMainContentBlock extends LitElement {
           <slot name="header"></slot>
         </div>
         ${this.withTabs
-          ? html`<div class="tabs-block cds--css-grid cds--css-grid--narrow">
+          ? html`<div class="tabs-block">
               <slot name="tabs"></slot>
             </div>`
           : ''}
