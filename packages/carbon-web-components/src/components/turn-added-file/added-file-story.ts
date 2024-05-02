@@ -9,15 +9,20 @@
 
 import { html } from 'lit';
 import './index';
-import storyDocs from './eksperta-story.mdx';
+import storyDocs from './added-file-story.mdx';
 
-export const Default = () => {
-  return html` <cds-eksperta-1></cds-eksperta-1> `;
+export const Propsed = () => {
+  return html`
+    <cds-added-file
+      fileName="ZunL.jpg (0.4 MB)"
+      fileCreationDate="15.02.2024 15:35"
+      fileCreatedPerson="Ivans Bistrovs"></cds-added-file>
+  `;
 };
 
 export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Views/Eksperta/Eksperta-1',
+  title: 'Custom-components/Added-file',
 };

@@ -14,7 +14,7 @@ import { carbonElement as customElement } from '../../../../globals/decorators/c
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 import Download16 from '@carbon/icons/lib/download/16';
 
-@customElement(`${prefix}-eksperta-1`)
+@customElement(`${prefix}-eksperta-manas-veidlapas`)
 class CDSPValuationList extends LitElement {
   render() {
     return html`
