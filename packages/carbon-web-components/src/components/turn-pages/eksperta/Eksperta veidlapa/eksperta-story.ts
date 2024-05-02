@@ -12,12 +12,12 @@ import './index';
 import storyDocs from './eksperta-story.mdx';
 
 export const Default = () => {
-  return html` <cds-eksperta-3></cds-eksperta-3> `;
+  return html` <cds-eksperta-veidlapa></cds-eksperta-veidlapa> `;
 };
 
 export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Views/Eksperta/Eksperta-3',
+  title: 'Views/Ekspertu vērtēšanas/Eksperta skati/Eksperta veidlapa',
 };

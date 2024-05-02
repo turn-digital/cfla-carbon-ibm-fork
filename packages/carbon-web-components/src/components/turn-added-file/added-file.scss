@@ -1,0 +1,15 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/type' as *;
+
+.file-container {
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+.file-name {
+  @include type-style('body-compact-01');
+  cursor: pointer;
+}
+.doc-icon {
+  padding-right: 4px;
+}

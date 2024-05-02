@@ -21,7 +21,7 @@ import Add16 from '@carbon/icons/lib/add/16';
  *
  */
 
-@customElement(`${prefix}-eksperta-3`)
+@customElement(`${prefix}-eksperta-vertesana`)
 class CDSPValuationOpen extends LitElement {
   openModal = () => {
     //@ts-ignore

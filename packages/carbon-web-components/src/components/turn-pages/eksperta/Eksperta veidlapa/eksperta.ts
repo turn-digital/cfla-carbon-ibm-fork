@@ -17,11 +17,11 @@ import Add16 from '@carbon/icons/lib/add/16';
 
 /**
  *
- * VĒRTĒJUMA PĀRSKATĪŠANA
+ * eksperta-veidlapa
  *
  */
 
-@customElement(`${prefix}-eksperta-2`)
+@customElement(`${prefix}-eksperta-veidlapa`)
 class CDSPValuationOpen extends LitElement {
   openModal = () => {
     //@ts-ignore
