@@ -28,6 +28,7 @@ class TextEditor extends LitElement {
   @property({ type: String })
   textEditorData = ``;
   @property({ type: Object }) editorConfig = {};
+  @property({ type: Function }) invalidateQueriesFunc = () => {};
 
   get combinedEditorConfig() {
     const defaultConfig = {
@@ -52,13 +53,10 @@ class TextEditor extends LitElement {
     return { ...defaultConfig, ...this.editorConfig };
   }
   render() {
-    console.log(
-      'this.onServerErrorTextUnderline',
-      this.onServerErrorTextUnderline
-    );
     //@ts-ignore
     const configKey = `config_${this.editorId}`;
     window[configKey] = this.combinedEditorConfig;
+    window[`${configKey}_invalidateQueriesFunc`] = this.invalidateQueriesFunc;
 
     window.localStorage.setItem(
       `${this.editorId}_content`,
@@ -67,10 +65,11 @@ class TextEditor extends LitElement {
 
     return html`
       <tinymce-editor
+      class="tinymce-editor"
         id="${this.editorId}"
         config="${'config_' + this.editorId}"
         statusbar: false
-        autoresize_bottom_margin: 5
+        left_margin: 50
         ?readonly="${this.readonly}"
         toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
         plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize"

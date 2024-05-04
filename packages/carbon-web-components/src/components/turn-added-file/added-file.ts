@@ -26,6 +26,8 @@ class CDSAddedFile extends LitElement {
    * The file name.
    */
   @property({ type: String }) fileName = '';
+  @property({ type: String }) fileCreationDate = '';
+  @property({ type: String }) fileCreatedPerson = '';
 
   render() {
     return html`
@@ -35,9 +37,9 @@ class CDSAddedFile extends LitElement {
           <cds-link class="file-name">${this.fileName}</cds-link>
         </div>
         <div class="file-date">
-          <span>12.01.2024</span>
+          <span>${this.fileCreationDate}</span>
           <span>Pievienots fails</span> -
-          <span>Ivans Bistrovs</span>
+          <span>${this.fileCreatedPerson}</span>
         </div>
       </div>
     `;

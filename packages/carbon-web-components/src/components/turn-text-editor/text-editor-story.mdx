@@ -28,15 +28,26 @@ Also custom variants with some props
       }'></cds-text-editor>
 
 <cds-text-editor
-  editorId="editor_example_storybook_default_ro"
-  editorConfig='{
+      editorId="editor_example_storybook_default_ro"
+      .invalidateQueriesFunc=${() => {
+        console.log(
+          'propsed invalidate query functon called from text editor on blur'
+        );
+      }}
+      editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "request_obj": {
         "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
         "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
-        "errorAlertMessage": "Error occurred while fetching data"
+        "errorAlertMessage": "Error occurred while fetching data",
+        "propsBodyObj": ${JSON.stringify({
+        izveletaVertiba: null,
+        jautajumsId: 2,
+        jautajumsNosaukums: 'Kāds ir jautājums?',
+        jautajumsTips: 'teksts',
+      })}
         },
       "onServerLastEditor": {
           "name": "Vlad",
