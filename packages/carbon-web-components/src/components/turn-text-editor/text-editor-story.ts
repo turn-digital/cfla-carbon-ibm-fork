@@ -28,6 +28,11 @@ export const WithRequestObject = () => {
   return html`
     <cds-text-editor
       editorId="editor_example_storybook_default_ro"
+      .invalidateQueriesFunc=${() => {
+        console.log(
+          'propsed invalidate query functon called from text editor on blur'
+        );
+      }}
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "request_obj": {

@@ -385,7 +385,6 @@
       this._getTinymce().init(conf);
     }
     _getTinymceSrc() {
-      console.log(window.location.origin);
       var href = window.location.origin;
       var urlToTinymce =
         href == 'http://localhost:9000'
