@@ -23,7 +23,15 @@ const statusHistoryItems = [
     date: '25.09.2019 16:13',
     status: 'Atgriezta precizēšanai 2',
     author: 'Test author',
-    pamatojums: 'Pamatojums 2',
+    pamatojums: `<p><em><strong>zxczxczxczxczxczxcczxczxczxczxczxczxczxczxczx</strong></em></p>
+    <p><strong>zxczxczxczxczxczxcczxczxczxczxczxczxczxczxczx</strong></p>
+    <p style="padding-left: 120px;">zxczxczxczxczxczxcczxczxczxczxczxczxczxczxczx</p>
+    <ol>
+    <li>zxczxczxczxczxczxcczx</li>
+    <li>zxczxczxczxczxczxcczx</li>
+    <li>zxczxczxczxczxczxcczx</li>
+    <li>zxczxczxczxczxczxcczx</li>
+    </ol>`,
     id: '2',
   },
   {
@@ -53,6 +61,12 @@ export const Default = () => {
   return html` <cds-status-history></cds-status-history> `;
 };
 export const Propsed = () => {
+  return html`
+    <cds-status-history
+      .statusHistoryItems=${statusHistoryItems}></cds-status-history>
+  `;
+};
+export const withHtmlInPamatojums = () => {
   return html`
     <cds-status-history
       .statusHistoryItems=${statusHistoryItems}></cds-status-history>
