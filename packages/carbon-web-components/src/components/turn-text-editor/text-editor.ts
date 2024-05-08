@@ -28,7 +28,7 @@ class TextEditor extends LitElement {
   @property({ type: String })
   textEditorData = ``;
   @property({ type: Object }) editorConfig = {};
-  @property({ type: Function }) invalidateQueriesFunc = () => {};
+  // @property({ type: Object }) invalidateQueriesFunc = () => {};
 
   get combinedEditorConfig() {
     const defaultConfig = {
@@ -56,9 +56,9 @@ class TextEditor extends LitElement {
     //@ts-ignore
     const configKey = `config_${this.editorId}`;
     window[configKey] = this.combinedEditorConfig;
-    window[`${configKey}_invalidateQueriesFunc`] = this.invalidateQueriesFunc;
+    // window[`${configKey}_invalidateQueriesFunc`] = this.invalidateQueriesFunc;
 
-    console.log('this.invalidateQueriesFunc', this.invalidateQueriesFunc);
+    // console.log('this.invalidateQueriesFunc', this.invalidateQueriesFunc);
 
     window.localStorage.setItem(
       `${this.editorId}_content`,
