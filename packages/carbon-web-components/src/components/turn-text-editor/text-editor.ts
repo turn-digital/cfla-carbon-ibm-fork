@@ -58,6 +58,8 @@ class TextEditor extends LitElement {
     window[configKey] = this.combinedEditorConfig;
     window[`${configKey}_invalidateQueriesFunc`] = this.invalidateQueriesFunc;
 
+    console.log('this.invalidateQueriesFunc', this.invalidateQueriesFunc);
+
     window.localStorage.setItem(
       `${this.editorId}_content`,
       this.textEditorData
