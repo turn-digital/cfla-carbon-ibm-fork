@@ -38,6 +38,7 @@ class TextEditor extends LitElement {
       menubar: false,
       highlight_on_focus: true,
       promotion: true,
+      autoresize_overflow_padding: 16,
       min_height: 200,
       max_height: 500,
       external_plugins: {
@@ -48,7 +49,7 @@ class TextEditor extends LitElement {
       },
     };
 
-    // Merge defaultConfig with this.editorConfig, prioritizing properties from editorConfig
+    // Merge defaultConfig with this.editorConfig, prioritizing properties from this.editorConfig
 
     return { ...defaultConfig, ...this.editorConfig };
   }

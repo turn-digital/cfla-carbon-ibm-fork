@@ -23,9 +23,9 @@ import Add16 from '@carbon/icons/lib/add/16';
 
 @customElement(`${prefix}-eksperta-veidlapa`)
 class CDSPValuationOpen extends LitElement {
-  openModal = () => {
+  openModal = (modalName) => {
     //@ts-ignore
-    this.shadowRoot.getElementById('modal-example').open = true;
+    this.shadowRoot.getElementById(modalName).open = true;
   };
 
   itemSelectedHandler = (event) => {
@@ -169,7 +169,9 @@ class CDSPValuationOpen extends LitElement {
                 tooltip-position="top"
                 type="button"
                 id="modal-example-button"
-                @click="${this.openModal}"
+                @click="${() => {
+                  this.openModal('modal-example');
+                }}"
                 has-main-content="">
                 Pievienot ${Add16({ slot: 'icon' })}
               </cds-button>
@@ -246,6 +248,9 @@ class CDSPValuationOpen extends LitElement {
                 tooltip-position="top"
                 type="button"
                 id="modal-example-button"
+                @click="${() => {
+                  this.openModal('add-expert-modal');
+                }}"
                 has-main-content="">
                 Pievienot 
                 ${Add16({ slot: 'icon' })}
@@ -322,6 +327,117 @@ class CDSPValuationOpen extends LitElement {
             editorConfig='{
         "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes"
         }'></cds-text-editor>
+        </cds-modal-body>
+        <cds-modal-footer>
+          <cds-modal-footer-button kind="secondary" data-modal-close
+            >Cancel</cds-modal-footer-button
+          >
+          <cds-modal-footer-button kind="primary">Save</cds-modal-footer-button>
+        </cds-modal-footer>
+      </cds-modal>
+
+
+
+      <cds-modal id="add-expert-modal">
+        <cds-modal-header>
+          <cds-modal-close-button></cds-modal-close-button>
+          <cds-modal-label>3.1.1.5/19/A/043 Sākumposma vērtēšana</cds-modal-label>
+          <cds-modal-heading>Vērtēšanai nododamo dokumentu pievienošana</cds-modal-heading>
+        </cds-modal-header>
+        <cds-modal-body>
+      <cds-tabs value="tab1">
+      <cds-tab id="tab1" target="tab1" value="tab1">No sistēmas</cds-tab>
+      <cds-tab
+        id="tab2"
+        target="tab2"
+        value="tab2" disabled>
+        Augšupielādēt
+      </cds-tab>
+    </cds-tabs>
+
+    <div id="tab1" role="tabpanel" aria-labelledby="tab1">
+    <cds-divider size="3"></cds-divider>
+    <cds-table size="sm">
+        <cds-table-toolbar slot="toolbar">
+        <cds-table-toolbar-content ?has-batch-actions="true">
+          <cds-table-toolbar-search
+            placeholder="Filter table"></cds-table-toolbar-search>
+        </cds-table-toolbar-content>
+      </cds-table-toolbar>
+  
+        <cds-table-head>
+          <cds-table-header-row selection-name="header">
+            <cds-table-header-cell>Nosaukums</cds-table-header-cell>
+            <cds-table-header-cell>Pievienošanas datums</cds-table-header-cell>
+            <cds-table-header-cell>Pievienotājs</cds-table-header-cell>
+            <cds-table-header-cell>Sadaļa</cds-table-header-cell>
+          </cds-table-header-row>
+        </cds-table-head>
+        <cds-table-body>
+        
+          <cds-table-row selection-name="0">
+            <cds-table-cell>Dokuments 1</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+          <cds-table-row selection-name="1">
+            <cds-table-cell>Dokuments 2</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+          <cds-table-row selection-name="2">
+            <cds-table-cell>Dokuments 3</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+          <cds-table-row selection-name="3">
+            <cds-table-cell>Dokuments 4</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+          <cds-table-row selection-name="4">
+            <cds-table-cell>Dokuments 5</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+          <cds-table-row selection-name="5">
+            <cds-table-cell>Dokuments 6</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+          <cds-table-row selection-name="6">
+            <cds-table-cell>Dokuments 7</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+          <cds-table-row selection-name="7">
+            <cds-table-cell>Dokuments 8</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+          <cds-table-row selection-name="8">
+            <cds-table-cell>Dokuments 9</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+          <cds-table-row selection-name="9">
+            <cds-table-cell>Dokuments 10</cds-table-cell>
+            <cds-table-cell>23.01.2023</cds-table-cell>
+            <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+            <cds-table-cell>PI / Apraksts</cds-table-cell>
+          </cds-table-row>
+        
+      </cds-table>
+    </div>
         </cds-modal-body>
         <cds-modal-footer>
           <cds-modal-footer-button kind="secondary" data-modal-close
