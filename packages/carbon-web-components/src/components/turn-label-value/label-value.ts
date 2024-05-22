@@ -12,7 +12,7 @@ import { prefix } from '../../globals/settings';
 import styles from './label-value.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
-
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 /**
  * Related documents.
  *
@@ -30,9 +30,8 @@ class CDSLabelValue extends LitElement {
       <div class="container container--${this.size}">
         <div class="label">${this.label}</div>
         ${this.value.length > 0
-          ? html`<div class="value">${this.value}</div>`
+          ? html`<div class="value">${unsafeHTML(this.value)}</div>`
           : html``}
-        <slot></slot>
       </div>
     `;
   }

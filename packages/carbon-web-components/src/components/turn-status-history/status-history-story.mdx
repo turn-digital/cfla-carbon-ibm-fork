@@ -2,19 +2,27 @@ import { Props, Description } from '@storybook/addon-docs/blocks';
 import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
 # Status history
+
 ## Apraksts
-Komponents attēlo veidlapas pašreizējo statusu un statusu vēsturi, ja ir mainīts statuss.
+
+Komponents attēlo veidlapas pašreizējo statusu un statusu vēsturi, ja ir mainīts
+statuss.
 
 ## Anatomija
-* currenStatusTitle  - šī brīža statuss
-* currenStatusDate - šī brīza statusa iegūšanas datums
-* Statusu vēsture -  statusu vēstures bloks
-* statusHistoryItems - statusa vēstures ieraksts ar datumu, statusu, autoru, pamatojumu, statusa identifikācijas numuru
+
+- currenStatusTitle - šī brīža statuss
+- currenStatusDate - šī brīza statusa iegūšanas datums
+- Statusu vēsture - statusu vēstures bloks
+- statusHistoryItems - statusa vēstures ieraksts ar datumu, statusu, autoru,
+  pamatojumu, statusa identifikācijas numuru
 
 ## Dizaina un UX komentāri
-Izmanto veidlapas headerī, attēlo aktuālo statusu augšā un vēsturiskos statusus izvēršamā statusu vēstures blokā. 
+
+Izmanto veidlapas headerī, attēlo aktuālo statusu augšā un vēsturiskos statusus
+izvēršamā statusu vēstures blokā.
 
 ## Getting started
+
 ### JS (via import)
 
 ```imoprt
@@ -23,8 +31,49 @@ Izmanto veidlapas headerī, attēlo aktuālo statusu augšā un vēsturiskos sta
 
 ### HTML
 
+```JS
+const statusHistoryItems = [
+  {
+    date: '25.10.2019 10:34',
+    status: 'Atgriezta precizēšanai 1',
+    author: 'Elīne Millere',
+    pamatojums: 'Pamatojums 1',
+    id: '1',
+  },
+  {
+    date: '25.09.2019 16:13',
+    status: 'Atgriezta precizēšanai 2',
+    author: 'Test author',
+    pamatojums: 'Pamatojums 2',
+    id: '2',
+  },
+  {
+    date: '25.09.2019 16:13',
+    status: 'Atgriezta precizēšanai 3',
+    author: 'Test author',
+    pamatojums: 'Pamatojums 3',
+    id: '3',
+  },
+  {
+    date: '25.09.2019 16:13',
+    status: 'Atgriezta precizēšanai 4',
+    author: 'Test author',
+    pamatojums: '',
+    id: '4',
+  },
+  {
+    date: '25.09.2019 16:13',
+    status: 'Atgriezta precizēšanai 5',
+    author: '',
+    pamatojums: '',
+    id: '5',
+  },
+];
+```
+
 ```html
-<cds-status-history></cds-status-history>
+<cds-status-history
+  .statusHistoryItems="${statusHistoryItems}"></cds-status-history>
 ```
 
 ## `<cds-status-history>` attributes and properties

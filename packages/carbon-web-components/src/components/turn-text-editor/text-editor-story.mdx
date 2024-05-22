@@ -6,60 +6,76 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 ### JS (via import)
 
 ```imoprt
-<script type="module" src="https://demo.turn.lv/cfla_dist/text-editor.min.js"></script>
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-text-editor.min.js"></script>
 ```
 
 ### HTML
 
 ### Component contains default config which have default parameters that can be changed if you pass something in config
 
-the default config is shown below
-
-```JS
-defaultConfig = {
-    external_plugins: {
-      pluginId1:
-        'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
-      pluginId2:
-        'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js',
-    },
-    language: 'lv',
-    language_url: 'https://demo.turn.lv/cfla_dist/assets/tinymce/langs/lv.js',
-    branding: false,
-    menubar: false,
-    highlight_on_focus: true,
-    promotion: true,
-    height: 200,
-    min_height: 200,
-    max_height: 500,
-  };
-```
-
 ### So by default we can use text editor without anything like request_obj and max_char_length only passing title, id and last editor and we will have the default text-editor based on default config that is mentioned above any inserted data will be stored in localstorage under id + \_content
 
 Also custom variants with some props
 
 ```html
-<cds-text-editor
-  editorId="editor_example_storybook_default"
-  textEditorData="This is a text from props"
-  onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
-  editorConfig='{
-      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes"
+    <cds-text-editor
+      editorId="editor_example_storybook_default"
+      textEditorData="This is a text from props"
+      onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
+      editorConfig='{
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+      "autosave_ask_before_unload": false
       }'></cds-text-editor>
 
 <cds-text-editor
-  editorId="editor_example_storybook_default_ro"
-  onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
-  editorConfig='{
+      editorId="editor_example_storybook_default_ro"
+      .invalidateQueriesFunc=${() => {
+        console.log(
+          'propsed invalidate query functon called from text editor on blur'
+        );
+      }}
+      editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
+        "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
-        "errorAlertMessage": "Error occurred while fetching data"
-        }
+        "errorAlertMessage": "Error occurred while fetching data",
+        "propsBodyObj": ${JSON.stringify({
+        izveletaVertiba: null,
+        jautajumsId: 2,
+        jautajumsNosaukums: 'Kāds ir jautājums?',
+        jautajumsTips: 'teksts',
+      })}
+        },
+      "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
+      }'></cds-text-editor>
+
+<cds-text-editor
+      editorId="editor_example_storybook_default_ro"
+      editorConfig='{
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+      "request_obj": {
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
+        "requestMethod": "PATCH",
+        "requestValueKey": "value",
+        "verificationToken": "token",
+        "errorAlertMessage": "Error occurred while fetching data",
+        "propsBodyObj": ${JSON.stringify({
+        izveletaVertiba: null,
+        jautajumsId: 2,
+        jautajumsNosaukums: 'Kāds ir jautājums?',
+        jautajumsTips: 'teksts',
+      })}
+        },
+      "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
       }'></cds-text-editor>
 
 <cds-text-editor
@@ -68,7 +84,11 @@ Also custom variants with some props
   editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "length_validation_error_text": "Max char length exceeded! props text",
-      "max_char_length": 200
+      "max_char_length": 200,
+      "onServerLastEditor": {
+        "name": "Vlad",
+        "date": "123123 12312312"
+    }
       }'></cds-text-editor>
 
 <cds-text-editor
@@ -78,74 +98,64 @@ Also custom variants with some props
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "max_char_length": 200,
       "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
+        "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
-        }
+        },
+        "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
       }'></cds-text-editor>
 
 <cds-text-editor
   editorId="editor_example_storybook_default_cl_ro_set"
   onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
+  onServerErrorTextUnderline="Error from server text (optional) for the underline error msg"
   editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "max_char_length": 200,
-      "onServerErrorText": "Error from server text (optional)",
+      "onServerErrorTextNotification": "Error from server text (optional)",
       "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts",
-        "requestMethod": "POST",
+        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
+        "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data"
-        }
+        },
+        "onServerLastEditor": {
+          "name": "Vlad",
+          "date": "123123 12312312"
+      }
       }'></cds-text-editor>
 ```
 
-### For React
+### For React example
 
-```JS
-    <cds-text-editor
-        textEditorData={
-            grozijumuPamatojums.pamatojums.vertiba !== null
-            ? grozijumuPamatojums.pamatojums.vertiba
-            : ""
-        }
-        editorId={`editor-amend-reasoning13213`}
-        onServerLastEditor={`${
-            grozijumuPamatojums.pamatojums?.pedejaisLabotajs
-            ? {
-                name: grozijumuPamatojums.pamatojums
-                    .pedejaisLabotajs.vardsUzvards,
-                date: grozijumuPamatojums.pamatojums
-                    .pedejaisLabotajs.pedejaisDarbibuDatums,
-                }
-            : {}
-        }
-        `}
-        editorConfig={`{
-            "editorTitle": "${translations.GLOBAL_REASONING}",
-            "length_validation_error_text": "Validation text from props",
-            "branding": false,
-            "menubar": false,
-            "height": 200,
-            "highlight_on_focus": true,
-            "promotion": true,
-            "max_char_length": 200,
-            "request_obj": {
-                "urlToRequest": "${GLOBAL_VARS.API_AMENDMENT_REASONING}/${versionId}",
-                "requestMethod": "PATCH",
-                "verificationToken": "${GLOBAL_VARS.FORGERY_KEY}",
-                "requestValueKey": "pamatojums",
-                "errorAlertMessages": "${translations.ERROR_IN_SYSTEM}"
-            },
-            "external_plugins": {
-                "pluginId": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js",
-                "pluginId2": "https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js"
-            }
-            }`}
-    ></cds-text-editor>
+```js
+<cds-text-editor
+  textEditorData={
+    grozijumuPamatojums.pamatojums.vertiba !== null
+      ? grozijumuPamatojums.pamatojums.vertiba
+      : ''
+  }
+  editorId={`editor-amend-reasoning13213`}
+  editorConfig={`{
+    "editorTitle": "${translations.GLOBAL_REASONING}",
+    "length_validation_error_text": "Validation text from props",
+    "height": 200,
+    "max_char_length": 200,
+    "onServerLastEditor": {"name": "${grozijumuPamatojums.pamatojums?.pedejaisLabotajs?.vardsUzvards}", "date": "${grozijumuPamatojums.pamatojums?.pedejaisLabotajs?.pedejaisDarbibuDatums}"},
+    "request_obj": {
+        "urlToRequest": "${GLOBAL_VARS.API_AMENDMENT_REASONING}/${versionId}",
+        "requestMethod": "PATCH",
+        "verificationToken": "${GLOBAL_VARS.FORGERY_KEY}",
+        "requestValueKey": "pamatojums",
+        "errorAlertMessages": "${translations.ERROR_IN_SYSTEM}"
+    }
+}`}></cds-text-editor>
 ```
 
 ## `<cds-text-editor>` attributes and properties

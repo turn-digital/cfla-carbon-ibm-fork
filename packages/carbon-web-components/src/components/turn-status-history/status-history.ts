@@ -40,6 +40,7 @@ class CDSStatusHistory extends LitElement {
       id: '2',
     },
   ];
+
   @property() modalContent = {
     date: '25.10.2019 10:34',
     status: 'Atgriezta precizēšanai',
@@ -72,13 +73,19 @@ class CDSStatusHistory extends LitElement {
             <cds-accordion-item title="Statusu vēsture">
               ${this.statusHistoryItems.map(
                 (item) => html`
-                  <p>
-                    ${item.date} ${item.status} — ${item.author}
-                    <cds-link
-                      style="cursor: pointer;"
-                      @click=${() => this.statusHistoryInfoModalOpen(item)}
-                      >Pamatojums</cds-link
-                    >
+                  <p id="${item.id}">
+                    ${item.date} ${item.status}
+                    ${item.author ? ' — ' + item.author : ''}
+                    ${item.pamatojums && item.pamatojums.length > 0
+                      ? html`
+                          <cds-link
+                            style="cursor: pointer;"
+                            @click=${() =>
+                              this.statusHistoryInfoModalOpen(item)}
+                            >Pamatojums</cds-link
+                          >
+                        `
+                      : ''}
                   </p>
                   <cds-divider size="2"></cds-divider>
                 `

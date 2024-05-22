@@ -22,9 +22,13 @@ import { property } from 'lit/decorators.js';
 @customElement(`${prefix}-main-content-item`)
 class CDSMainContentItem extends LitElement {
   @property({ type: String }) size = '05';
+  @property({ type: Boolean }) isStatusChangePanel = false;
   render() {
     return html`
-      <div class="size--${this.size}">
+      <div
+        class="size--${this.size} ${this.isStatusChangePanel
+          ? 'statusChangePanel'
+          : ''}">
         <slot></slot>
       </div>
     `;

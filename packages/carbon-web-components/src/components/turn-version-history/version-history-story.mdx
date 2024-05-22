@@ -1,0 +1,53 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# version-history
+
+## Getting started
+
+### JS (via import)
+
+```javascript
+<script
+  type="module"
+  src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"></script>
+```
+
+```js
+const versionHistoryArray = [
+  {
+    versionLink: 'google',
+    version: '1.0',
+    date: '29.03.2022',
+    tagType: 'green',
+    tagText: 'good',
+  },
+  {
+    versionLink: 'google',
+    version: '2.0',
+    date: '29.03.2023',
+    tagType: 'green',
+    tagText: 'good',
+  },
+  {
+    versionLink: 'google',
+    version: '3.0',
+    date: '29.03.2024',
+    tagType: 'red',
+    tagText: 'conflict',
+  },
+];
+```
+
+### HTML
+
+```html
+<cds-version-history
+  version="3.0"
+  date="01.04.2022"
+  .versionHistoryArray="${versionHistoryArray}"></cds-version-history>
+```
+
+## `<cds-version-history>` attributes and properties
+
+<Props of="cds-version-history" />

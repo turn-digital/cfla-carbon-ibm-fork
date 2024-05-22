@@ -11,6 +11,7 @@ import { LitElement, html } from 'lit';
 import { prefix } from '../../globals/settings';
 import styles from './main-content-block-open.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
+import { property } from 'lit/decorators.js';
 
 /**
  * Related documents.
@@ -20,6 +21,7 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 
 @customElement(`${prefix}-main-content-block-open`)
 class CDSMainContentBlock extends LitElement {
+  @property({ type: Boolean }) withTabs = false;
   render() {
     return html`
       <link
@@ -30,9 +32,16 @@ class CDSMainContentBlock extends LitElement {
         <div class="header-block cds--css-grid cds--css-grid--narrow">
           <slot name="header"></slot>
         </div>
-        <div class="content-block cds--css-grid cds--css-grid--narrow">
-          <slot name="content"></slot>
-        </div>
+        ${this.withTabs
+          ? html`<div class="tabs-block cds--css-grid cds--css-grid--narrow">
+              <slot name="tabs"></slot>
+            </div>`
+          : ''}
+        ${!this.withTabs
+          ? html`<div class="content-block cds--css-grid cds--css-grid--narrow">
+              <slot name="content" class="content-block"></slot>
+            </div>`
+          : ''}
       </div>
     `;
   }

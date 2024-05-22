@@ -21,27 +21,42 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 @customElement(`${prefix}-status-change-panel`)
 class CDSStatusChangePanel extends LitElement {
   @property({ type: String }) projectId = '1.1.1.1/16/A/004';
+  @property({ type: String }) saveButtonText = 'Saglabāt';
+  @property({ type: String }) saveButtonType = 'Primary';
+  @property({ type: String }) dropdownButtonText = 'Mainīt statusu';
   @property({ type: Array }) statusItems = [
     { value: 'String', text: 'Status' },
   ];
-  @property({ type: String }) selectedStatus = 'Status_1';
+  @property({ type: String }) selectedStatus = '';
+
   itemSelectedHandler = (event) => {
     this.selectedStatus = event.detail.item.__value;
     //@ts-ignore
     this.shadowRoot.getElementById('status-change-modal').open = true;
+
+    console.log('selectedStatus', this.selectedStatus);
+  };
+
+  saveButtonHandler = () => {
+    console.log('test func');
   };
 
   render() {
     return html`
       <div class="container">
         <div>
-          <cds-button size="md">Saglabāt</cds-button>
+          <cds-button
+            size="md"
+            type="${this.saveButtonType}"
+            @click="${this.saveButtonHandler}"
+            >${this.saveButtonText}</cds-button
+          >
         </div>
         <div class="right-button">
           <div class="dropdown-container">
             <cds-dropdown
               class="cds-theme-zone-turn-dropdown-button"
-              label="Mainīt statusu"
+              label="${this.dropdownButtonText}"
               @cds-dropdown-selected="${this.itemSelectedHandler}">
               ${this.statusItems?.map(
                 (item) => html`

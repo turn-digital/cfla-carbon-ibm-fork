@@ -24,13 +24,11 @@ import './tinymce-webcomponent.js';
 class TextEditor extends LitElement {
   @property({ type: Boolean }) readonly = false;
   @property({ type: String }) editorId = 'editor';
+  @property({ type: String }) onServerErrorTextUnderline = '';
   @property({ type: String })
   textEditorData = ``;
-  @property({ type: Object }) onServerLastEditor = {
-    name: '',
-    date: '',
-  };
   @property({ type: Object }) editorConfig = {};
+  // @property({ type: Object }) invalidateQueriesFunc = () => {};
 
   get combinedEditorConfig() {
     const defaultConfig = {
@@ -40,6 +38,7 @@ class TextEditor extends LitElement {
       menubar: false,
       highlight_on_focus: true,
       promotion: true,
+      autoresize_overflow_padding: 16,
       min_height: 200,
       max_height: 500,
       external_plugins: {
@@ -50,7 +49,7 @@ class TextEditor extends LitElement {
       },
     };
 
-    // Merge defaultConfig with this.editorConfig, prioritizing properties from editorConfig
+    // Merge defaultConfig with this.editorConfig, prioritizing properties from this.editorConfig
 
     return { ...defaultConfig, ...this.editorConfig };
   }
@@ -58,6 +57,7 @@ class TextEditor extends LitElement {
     //@ts-ignore
     const configKey = `config_${this.editorId}`;
     window[configKey] = this.combinedEditorConfig;
+    // window[`${configKey}_invalidateQueriesFunc`] = this.invalidateQueriesFunc;
 
     window.localStorage.setItem(
       `${this.editorId}_content`,
@@ -66,10 +66,11 @@ class TextEditor extends LitElement {
 
     return html`
       <tinymce-editor
+      class="tinymce-editor"
         id="${this.editorId}"
         config="${'config_' + this.editorId}"
         statusbar: false
-        autoresize_bottom_margin: 5
+        left_margin: 50
         ?readonly="${this.readonly}"
         toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
         plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize"
@@ -78,15 +79,11 @@ class TextEditor extends LitElement {
         ${this.textEditorData}
       </tinymce-editor>
       ${
-        this.onServerLastEditor?.name.length > 0
-          ? html`<div>
-        <p style="color: grey"
-        <span>${this.onServerLastEditor.name} </span> 
-        <span>${this.onServerLastEditor.date}</span> 
-        </p>
-          </div>`
+        this.onServerErrorTextUnderline.length > 0
+          ? html`<p style="color: red">${this.onServerErrorTextUnderline}</p>`
           : ''
       }
+      </p>
     `;
   }
 
