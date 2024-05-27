@@ -32,6 +32,7 @@ class CDSLabelValue extends LitElement {
         ${this.value.length > 0
           ? html`<div class="value">${unsafeHTML(this.value)}</div>`
           : html``}
+        <slot></slot>
       </div>
     `;
   }

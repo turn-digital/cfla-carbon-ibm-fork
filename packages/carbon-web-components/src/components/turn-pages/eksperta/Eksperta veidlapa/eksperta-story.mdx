@@ -63,6 +63,15 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
     ];
 ```
 
+To have loader on the page add this to the code you also can add condition top
+only show it when the data is still loading
+
+```html
+<div style="position: relative; padding: 3rem; display: flex;">
+  <cds-loading overlay></cds-loading>
+</div>
+```
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
