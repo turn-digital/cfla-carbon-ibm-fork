@@ -23,7 +23,9 @@ import './tinymce-webcomponent.js';
 @customElement(`${prefix}-text-editor`)
 class TextEditor extends LitElement {
   @property({ type: Boolean }) readonly = false;
-  @property({ type: String }) editorId = 'editor';
+  @property({ type: String }) editorId = Math.floor(
+    Math.random() * 1000000000000000000000000
+  );
   @property({ type: String }) onServerErrorTextUnderline = '';
   @property({ type: String })
   textEditorData = ``;

@@ -17,11 +17,6 @@ import { prefix } from '../../globals/settings';
 import './index';
 import storyDocs from './document-with-status-story.mdx';
 
-export const Default = () => {
-  return html`<cds-document-with-status></cds-document-with-status>`;
-};
-Default.storyName = 'Default';
-
 export const Propsed = () => {
   return html` <cds-document-with-status
       title="Projekta satura izmaiņu salīdzināšana"

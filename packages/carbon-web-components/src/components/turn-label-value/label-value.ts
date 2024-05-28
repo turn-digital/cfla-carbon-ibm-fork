@@ -21,7 +21,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 @customElement(`${prefix}-label-value`)
 class CDSLabelValue extends LitElement {
-  @property({ type: String }) label = 'Default label!';
+  @property({ type: String }) label = '';
   @property({ type: String }) value = '';
   @property({ type: String }) size = 'sm';
 

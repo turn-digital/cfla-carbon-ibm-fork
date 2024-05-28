@@ -14,7 +14,6 @@ import FocusMixin from '../../globals/mixins/focus';
 import styles from './label-value-horizontal.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
-
 /**
  * Divider
  *
@@ -22,16 +21,13 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
  */
 @customElement(`${prefix}-label-value-horizontal`)
 class CDSTurnLabelValueHorizontal extends FocusMixin(LitElement) {
-  @property({ type: String }) label = "Atlases nosaukums";
- 
+  @property({ type: String }) label = '';
+
   render() {
-  
     return html`
       <div class="label-value-horizontal">
         <div class="label-value-horizontal__item">
-          <div class="label-value-horizontal__label">
-            ${this.label}: 
-          </div>
+          <div class="label-value-horizontal__label">${this.label}:</div>
           <div class="label-value-horizontal__slot">
             <slot></slot>
           </div>

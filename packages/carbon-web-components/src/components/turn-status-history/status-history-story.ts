@@ -57,19 +57,22 @@ const statusHistoryItems = [
   },
 ];
 
-export const Default = () => {
-  return html` <cds-status-history></cds-status-history> `;
-};
 export const Propsed = () => {
   return html`
     <cds-status-history
-      .statusHistoryItems=${statusHistoryItems}></cds-status-history>
+      .statusHistoryItems=${statusHistoryItems}
+      currenStatusColor="green"
+      currenStatusTitle="CFLA pārdomas"
+      currenStatusDate="25.10.2019 10:34"></cds-status-history>
   `;
 };
 export const withHtmlInPamatojums = () => {
   return html`
     <cds-status-history
-      .statusHistoryItems=${statusHistoryItems}></cds-status-history>
+      .statusHistoryItems=${statusHistoryItems}
+      currenStatusColor="red"
+      currenStatusTitle="CFLA pārdomas"
+      currenStatusDate="25.10.2019 10:34"></cds-status-history>
   `;
 };
 

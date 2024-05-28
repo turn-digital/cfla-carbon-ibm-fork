@@ -11,9 +11,6 @@ import { html } from 'lit';
 import './index';
 import storyDocs from './label-value-story.mdx';
 
-export const Default = () => {
-  return html` <cds-label-value></cds-label-value> `;
-};
 export const Propsed = () => {
   return html`
     <cds-label-value

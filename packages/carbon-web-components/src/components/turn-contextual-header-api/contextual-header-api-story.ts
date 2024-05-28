@@ -11,9 +11,6 @@ import { html } from 'lit';
 import './index';
 import storyDocs from './contextual-header-api-story.mdx';
 
-export const Default = () => {
-  return html` <cds-contextual-header-api></cds-contextual-header-api> `;
-};
 export const Propsed = () => {
   const contextualHeaderApiData = {
     virsraksts: 'Atlase: 1.1.1',

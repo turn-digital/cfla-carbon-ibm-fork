@@ -11,9 +11,6 @@ import { html } from 'lit';
 import './index';
 import storyDocs from './project-card-story.mdx';
 
-export const Default = () => {
-  return html` <cds-project-card></cds-project-card> `;
-};
 export const Propsed = () => {
   return html`
     <cds-project-card

@@ -27,10 +27,10 @@ class CDSDocumentsWithStatus extends FocusMixin(LitElement) {
   /**
    * Can be one of: information, success, error or warning.
    */
-  @property({ type: String }) status = 'information';
-  @property({ type: String }) statusText = 'Izmaiņu nav';
+  @property({ type: String }) status = '';
+  @property({ type: String }) statusText = '';
   @property({ type: String }) linkUrl = '';
-  @property({ type: String }) linkText = 'Apskatīt';
+  @property({ type: String }) linkText = '';
   @property({ type: Boolean }) isNewWindow = false; // This can be used to toggle the behavior
 
   render() {

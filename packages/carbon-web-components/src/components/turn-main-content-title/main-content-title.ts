@@ -23,7 +23,7 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 class CDSMainContentTitle extends LitElement {
   static styles = styles;
 
-  @property({ type: String }) title = 'Default page title';
+  @property({ type: String }) title = '';
 
   render() {
     return html`

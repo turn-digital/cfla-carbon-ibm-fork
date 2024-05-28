@@ -11,11 +11,16 @@ import { html } from 'lit';
 import './index';
 import storyDocs from './related-persons-story.mdx';
 
-export const Default = () => {
-  return html` <cds-related-persons></cds-related-persons> `;
-};
 export const Propsed = () => {
-  return html` <cds-related-persons></cds-related-persons> `;
+  const statusRelatedPersons = [
+    { shortRole: 'PV', personName: 'Vards Uzvards', iconType: '1' },
+    { shortRole: 'AV', personName: 'Vards Uzvards', iconType: '2' },
+    { shortRole: 'BN', personName: 'Vards Uzvards', iconType: '3' },
+  ];
+  return html`
+    <cds-related-persons
+      .statusRelatedPersons=${statusRelatedPersons}></cds-related-persons>
+  `;
 };
 export const EmptyArray = () => {
   return html`

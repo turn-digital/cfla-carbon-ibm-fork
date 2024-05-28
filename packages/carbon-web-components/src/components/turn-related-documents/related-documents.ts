@@ -21,7 +21,7 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
  */
 @customElement(`${prefix}-related-documents`)
 class CDSRelatedDocuments extends FocusMixin(LitElement) {
-  @property({ type: String }) title = 'Saistītie dokumenti';
+  @property({ type: String }) title = '';
 
   render() {
     // const { _handleSlotChange: handleSlotChange } = this;
