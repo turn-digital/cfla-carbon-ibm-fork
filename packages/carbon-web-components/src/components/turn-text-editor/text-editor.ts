@@ -28,7 +28,6 @@ class TextEditor extends LitElement {
   @property({ type: String })
   textEditorData = ``;
   @property({ type: Object }) editorConfig = {};
-  // @property({ type: Object }) invalidateQueriesFunc = () => {};
 
   get combinedEditorConfig() {
     const defaultConfig = {
@@ -36,6 +35,7 @@ class TextEditor extends LitElement {
       language_url: 'https://demo.turn.lv/cfla_dist/assets/tinymce/langs/lv.js',
       branding: false,
       menubar: false,
+      elementpath: false,
       highlight_on_focus: true,
       promotion: true,
       autoresize_overflow_padding: 16,
@@ -57,7 +57,6 @@ class TextEditor extends LitElement {
     //@ts-ignore
     const configKey = `config_${this.editorId}`;
     window[configKey] = this.combinedEditorConfig;
-    // window[`${configKey}_invalidateQueriesFunc`] = this.invalidateQueriesFunc;
 
     window.localStorage.setItem(
       `${this.editorId}_content`,

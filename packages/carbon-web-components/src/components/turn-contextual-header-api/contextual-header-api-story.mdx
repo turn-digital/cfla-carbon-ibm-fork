@@ -1,0 +1,70 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Contextual header
+## Apraksts
+Kontekstuāls hederis - attēlo atrašanās vietu sistēmā, piemēram, projekta nosaukumu, kurš šobrīd redzams. Atverot dropdown daļu, iespējams iegūt vairāk informācijas par konkrēto vienumu.
+
+## Anatomija
+* Virsraksts
+* Chevron
+* Dropdown daļa ar slotu
+
+## Dizaina un UX komentāri
+Kontekstuālais headeris, kas tiek lietots atlasē, projektā, projekta iesniegumā. 
+
+## Getting started
+
+### JS (via import)
+
+```imoprt
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-contextual-header.min.js"></script>
+```
+
+### HTML
+
+```html
+<cds-contextual-header title="Atlase: 3.1.1.5/19/A/043">
+  <cds-label-value-horizontal label="Atlases nosaukums">
+    <cds-link href="#">Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
+    </cds-link>
+  </cds-label-value-horizontal>
+  <cds-label-value-horizontal label="Atlases status">
+    <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
+  </cds-label-value-horizontal>
+  <cds-divider size="3"></cds-divider>
+  <cds-label-value-horizontal label="Politikas programma">
+    <cds-link href="#">1.1 </cds-link>
+  </cds-label-value-horizontal>
+</cds-contextual-header>
+
+<cds-contextual-header title="Projekt: 3.1.1.5/19/A/043">
+  <cds-label-value-horizontal label="Projekta nosaukums">
+      <cds-link href="#">Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
+      </cds-link>
+  </cds-label-value-horizontal>
+  <cds-label-value-horizontal label="Finansējuma saņēmējs">
+    Latvijas Universitāte
+  </cds-label-value-horizontal>
+  <cds-label-value-horizontal label="Projekta statuss">
+    <cds-tag type="blue">Līgums</cds-tag> 25.10.2019 10:34
+  </cds-label-value-horizontal>
+</cds-contextual-header>
+
+<cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19/A/043">
+  <cds-label-value-horizontal label="Projekta nosaukums">
+      <cds-link href="#">MVU inovatīvas uzņēmējdarbības attīstība
+      </cds-link>
+  </cds-label-value-horizontal>
+  <cds-label-value-horizontal label="Iesniedzējs">
+    Latvijas Universitāte
+  </cds-label-value-horizontal>
+  <cds-label-value-horizontal label="Projekta iensieguma statuss">
+    <cds-tag type="blue">Sagatavošanā</cds-tag> 25.10.2019 10:34
+  </cds-label-value-horizontal>
+</cds-contextual-header>
+```
+
+## `<cds-contextual-header>` attributes and properties
+
+<Props of="cds-contextual-header" />
