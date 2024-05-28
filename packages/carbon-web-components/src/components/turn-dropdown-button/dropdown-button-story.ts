@@ -11,7 +11,7 @@ import { html } from 'lit';
 import './index';
 import storyDocs from './dropdown-button-story.mdx';
 
-export const Default = () => {
+export const Propsed = () => {
   const itemsArray = [
     { text: 'Status 1', value: 'Status 1' },
     { text: 'Status 2', value: 'Status 2' },

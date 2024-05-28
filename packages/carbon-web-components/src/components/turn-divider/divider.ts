@@ -14,7 +14,6 @@ import FocusMixin from '../../globals/mixins/focus';
 import styles from './divider.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
-
 /**
  * Divider
  *
@@ -26,9 +25,8 @@ class CDSTurnDivider extends FocusMixin(LitElement) {
    * Can be one of: 1-13. Sets margin-bottom using carbon $spacing.
    */
   @property({ type: Number }) size = 5;
- 
+
   render() {
-  
     return html`
       <hr class="divider divider--${this.size}"></hr>
     `;

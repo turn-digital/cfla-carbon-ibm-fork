@@ -59,8 +59,12 @@ class CDSPValuationReview extends LitElement {
           <cds-project-card
             projectId="1.1.1.1/16/A/004"
             tagTitle="Apstiprināts ar nosacījumu"
+            supervisorAuthority="CFLA"
+            cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
             tagType="purple"
+            projectDateTitle="Projekta īstenošanas termiņš"
             projectDateInfo="05.01.2021 - 30.05.2028"
+            projectCostTitle="Projekta kopējas izmaksas EUR"
             projectCostInfo="500 345">
           </cds-project-card>
         </cds-main-content-item>

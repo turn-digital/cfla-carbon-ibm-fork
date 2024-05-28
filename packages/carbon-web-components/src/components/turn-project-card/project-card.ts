@@ -22,17 +22,15 @@ import ShoppingCart from '@carbon/icons/lib/shopping--cart/16';
  */
 @customElement(`${prefix}-project-card`)
 class ProjectCard extends LitElement {
-  @property({ type: String }) projectId = '1.1.1.1/16/A/004';
-  @property({ type: String }) tagTitle = 'Apstiprināts ar nosacījumu';
-  @property({ type: String }) supervisorAuthority = 'CFLA';
-  @property({ type: String }) cardTitle =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue.';
-  @property({ type: String }) tagType = 'purple';
-  @property({ type: String }) projectDateTitle = 'Projekta īstenošanas termiņš';
-  @property({ type: String }) projectDateInfo = '05.01.2021 - 30.05.2028';
-  @property({ type: String }) projectCostTitle =
-    'Projekta kopējas izmaksas EUR';
-  @property({ type: String }) projectCostInfo = '500 345';
+  @property({ type: String }) projectId = '';
+  @property({ type: String }) tagTitle = '';
+  @property({ type: String }) supervisorAuthority = '';
+  @property({ type: String }) cardTitle = '';
+  @property({ type: String }) tagType = '';
+  @property({ type: String }) projectDateTitle = '';
+  @property({ type: String }) projectDateInfo = '';
+  @property({ type: String }) projectCostTitle = '';
+  @property({ type: String }) projectCostInfo = '';
 
   render() {
     const {

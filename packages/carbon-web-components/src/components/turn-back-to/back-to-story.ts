@@ -11,9 +11,6 @@ import { html } from 'lit';
 import './index';
 import storyDocs from './back-to-story.mdx';
 
-export const Default = () => {
-  return html` <cds-back-to></cds-back-to> `;
-};
 export const Propsed = () => {
   return html`
     <cds-back-to

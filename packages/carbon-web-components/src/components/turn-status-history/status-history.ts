@@ -21,32 +21,17 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 
 @customElement(`${prefix}-status-history`)
 class CDSStatusHistory extends LitElement {
-  @property({ type: String }) currenStatusColor = 'green';
-  @property({ type: String }) currenStatusTitle = 'CFLA pārdomas';
-  @property({ type: String }) currenStatusDate = '25.10.2019 10:34';
-  @property({ type: Array }) statusHistoryItems = [
-    {
-      date: '25.10.2019 10:34',
-      status: 'Atgriezta precizēšanai 1',
-      author: 'Elīne Millere',
-      pamatojums: 'Pamatojums 1',
-      id: '1',
-    },
-    {
-      date: '25.09.2019 16:13',
-      status: 'Atgriezta precizēšanai 2',
-      author: 'Test author',
-      pamatojums: 'Pamatojums 2',
-      id: '2',
-    },
-  ];
+  @property({ type: String }) currenStatusColor = '';
+  @property({ type: String }) currenStatusTitle = '';
+  @property({ type: String }) currenStatusDate = '';
+  @property({ type: Array }) statusHistoryItems: any = [];
 
   @property() modalContent = {
-    date: '25.10.2019 10:34',
-    status: 'Atgriezta precizēšanai',
-    author: 'Elīne Millere',
-    pamatojums: 'Pamatojums test',
-    id: '1',
+    date: '',
+    status: '',
+    author: '',
+    pamatojums: '',
+    id: '',
   };
 
   statusHistoryInfoModalOpen = (item) => {

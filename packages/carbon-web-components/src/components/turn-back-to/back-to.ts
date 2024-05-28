@@ -22,8 +22,8 @@ import ArrowLeft from '@carbon/icons/lib/arrow--left/32';
 
 @customElement(`${prefix}-back-to`)
 class CDSBackTo extends LitElement {
-  @property({ type: String }) title = 'Back to';
-  @property({ type: String }) link = '#';
+  @property({ type: String }) title = '';
+  @property({ type: String }) link = '';
 
   render() {
     return html`

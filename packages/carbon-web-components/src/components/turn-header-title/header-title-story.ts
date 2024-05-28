@@ -11,9 +11,6 @@ import { html } from 'lit';
 import './index';
 import storyDocs from './header-title-story.mdx';
 
-export const Default = () => {
-  return html` <cds-header-title></cds-header-title> `;
-};
 export const Propsed = () => {
   return html`
     <cds-header-title title="Proposed Header Title"> </cds-header-title>

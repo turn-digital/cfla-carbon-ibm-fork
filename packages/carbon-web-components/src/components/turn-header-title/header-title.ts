@@ -21,7 +21,7 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 
 @customElement(`${prefix}-header-title`)
 class CDSHeaderTitle extends LitElement {
-  @property({ type: String }) title = 'Default Header Title';
+  @property({ type: String }) title = '';
 
   render() {
     return html` <h1 class="title">${this.title}</h1> `;

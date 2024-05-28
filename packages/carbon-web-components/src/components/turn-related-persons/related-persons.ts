@@ -31,11 +31,7 @@ const iconMap = new Map([
 
 @customElement(`${prefix}-related-persons`)
 class CDSRelatedPersons extends LitElement {
-  @property({ type: Array }) statusRelatedPersons = [
-    { shortRole: 'PV', personName: 'Vards Uzvards', iconType: '1' },
-    { shortRole: 'AV', personName: 'Vards Uzvards', iconType: '2' },
-    { shortRole: 'BN', personName: 'Vards Uzvards', iconType: '3' },
-  ];
+  @property({ type: Array }) statusRelatedPersons: any = [];
   render() {
     return html`
       <div class="container">

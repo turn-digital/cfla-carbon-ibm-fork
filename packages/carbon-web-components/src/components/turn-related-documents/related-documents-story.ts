@@ -17,14 +17,6 @@ import { prefix } from '../../globals/settings';
 import './index';
 import storyDocs from './related-documents-story.mdx';
 
-export const Default = () => {
-  return html`
-    <cds-related-documents>
-      <cds-related-documents-item>
-    </cds-related-documents>`;
-};
-Default.storyName = 'Default';
-
 export const Propsed = () => {
   return html`
     <cds-related-documents title="Saistītie dokumenti">

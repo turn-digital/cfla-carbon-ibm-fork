@@ -183,7 +183,10 @@ class CDSPValuationOpen extends LitElement {
               </cds-main-content-item>
               <cds-main-content-item size="07">
                 <cds-status-history
-                  .statusHistoryItems=${statusHistoryItemsArr}></cds-status-history>
+                  .statusHistoryItems=${statusHistoryItemsArr}
+                  currenStatusColor="green"
+                  currenStatusTitle="CFLA pārdomas"
+                  currenStatusDate="25.10.2019 10:34"></cds-status-history>
               </cds-main-content-item>
             </div>
             <div
