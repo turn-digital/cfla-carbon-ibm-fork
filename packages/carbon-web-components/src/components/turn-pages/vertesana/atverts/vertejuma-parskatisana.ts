@@ -244,7 +244,10 @@ class CDSPValuationOpen extends LitElement {
               label="Apstrīdēšanas iesnieguma saņemšanas datums"
               value="23.03.2023">
             </cds-label-value>
-            <cds-label-value label="Pārskatīšanas veids" value="Tiesvedība">
+            <cds-label-value
+              size="sm"
+              label="Pārskatīšanas veids"
+              value="Tiesvedība">
             </cds-label-value>
           </div>
 

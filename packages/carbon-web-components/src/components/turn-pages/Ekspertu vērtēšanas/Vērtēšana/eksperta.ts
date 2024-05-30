@@ -166,7 +166,7 @@ class CDSPValuationOpen extends LitElement {
             <cds-label-value
               label="Eksperta veids"
               value="LZP ekspertu vērtējums"></cds-label-value>
-            <cds-label-value label="Vērtēšanas termiņš">
+            <cds-label-value size="sm" label="Vērtēšanas termiņš">
               <span>12.01.2024</span>
               <cds-button kind="ghost" size="sm"
                 >${Edit16({ slot: 'icon' })}</cds-button
@@ -337,8 +337,9 @@ class CDSPValuationOpen extends LitElement {
               </cds-table-body>
             </cds-table>
           </div>
-        </div>
           </cds-tab-content-container>
+        </div>
+      
           <cds-tab-content-container
             id="panel-2"
             role="tabpanel"
@@ -375,15 +376,15 @@ class CDSPValuationOpen extends LitElement {
           <cds-text-editor
             editorId="editor1"
             editorConfig='{
-"editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-"max_char_length": 200,
-"fetch_obj": {
-"urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-"fetchMethod": "POST",
-"errorAlertMessages": "Error occurred while fetching data",
-"savedAlertMessages": "All data saved successfully"
-}
-}'></cds-text-editor>
+            "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+            "max_char_length": 200,
+            "fetch_obj": {
+            "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+            "fetchMethod": "POST",
+            "errorAlertMessages": "Error occurred while fetching data",
+            "savedAlertMessages": "All data saved successfully"
+            }
+            }'></cds-text-editor>
         </cds-modal-body>
         <cds-modal-footer>
           <cds-modal-footer-button kind="secondary" data-modal-close

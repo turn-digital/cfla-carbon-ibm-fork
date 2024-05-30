@@ -47,12 +47,12 @@ class CDSPValuationList extends LitElement {
         </cds-main-content-title>
         <div class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-16">
           <cds-table expandable size="xs">
-            <cds-table-toolbar slot="toolbar" role="section" size="xs">
+            <cds-table-toolbar slot="toolbar" role="toolbar" size="xs">
               <cds-table-toolbar-content size="xs" tabindex="">
                 <cds-table-toolbar-search
                   placeholder="Filter table"
                   role="search"
-                  size="xs"></cds-table-toolbar-search>
+                  size="sm"></cds-table-toolbar-search>
               </cds-table-toolbar-content>
             </cds-table-toolbar>
             <cds-table-head>
@@ -116,7 +116,7 @@ class CDSPValuationList extends LitElement {
                 <cds-label-value
                   label="PI nosaukums"
                   value="Pētniecības pakalpojumi"></cds-label-value>
-                <cds-label-value
+                <cds-label-value size="sm"
                   label="Iesniedzējs"
                   value="Latvijas Universitāte"></cds-label-value>
                 <cds-related-documents title="Saistītie dokumenti">
@@ -217,10 +217,10 @@ class CDSPValuationList extends LitElement {
                 >
               </cds-table-row>
               <cds-table-expanded-row>
-                <cds-label-value
+                <cds-label-value size="sm"
                   label="PI nosaukums"
                   value="Pētniecības pakalpojumi"></cds-label-value>
-                <cds-label-value
+                <cds-label-value size="sm"
                   label="Iesniedzējs"
                   value="Latvijas Universitāte"></cds-label-value>
                 <cds-related-documents title="Saistītie dokumenti">

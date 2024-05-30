@@ -26,7 +26,7 @@ class CDSStatusHistory extends LitElement {
   @property({ type: String }) currenStatusDate = '';
   @property({ type: Array }) statusHistoryItems: any = [];
 
-  @property() modalContent = {
+  @property({ type: Object }) modalContent = {
     date: '',
     status: '',
     author: '',
@@ -88,7 +88,10 @@ class CDSStatusHistory extends LitElement {
         </cds-modal-header>
         <cds-modal-body>
           <cds-divider size="4"></cds-divider>
-          <cds-label-value label="Statuss" value="${this.modalContent.status}">
+          <cds-label-value
+            size="sm"
+            label="Statuss"
+            value="${this.modalContent.status}">
           </cds-label-value>
           <cds-divider size="4"></cds-divider>
           <cds-label-value

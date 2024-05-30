@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem 0;
+}
+
+.cds-label-value-container {
+  flex: 1 1 calc(25% - 1rem); /* Adjust 25% to control the maximum items per row */
+  box-sizing: border-box;
+  margin: 0;
+}
+.cds-label-value {
+  max-width: 215px;
+}

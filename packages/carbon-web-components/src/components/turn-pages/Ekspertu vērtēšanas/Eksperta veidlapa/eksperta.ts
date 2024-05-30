@@ -153,7 +153,7 @@ class CDSPValuationOpen extends LitElement {
             label="Uzdevums ekspertam"
             value="Aprakstīts, kas tiek sagaidīts no eksperta">
           </cds-label-value>
-          <cds-label-value label="Saistītais PI">
+          <cds-label-value size="sm" label="Saistītais PI">
             <cds-link href="google.com"> 3.1.1.5/19/A/042 </cds-link>
             ${Launch16({ fill: 'black' })}
           </cds-label-value>
@@ -437,7 +437,7 @@ class CDSPValuationOpen extends LitElement {
             <cds-table-cell>Jānis Bērziņš</cds-table-cell>
             <cds-table-cell>PI / Apraksts</cds-table-cell>
           </cds-table-row>
-        
+      </cds-table-body>
       </cds-table>
     </div>
         </cds-modal-body>
