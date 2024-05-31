@@ -3,10 +3,7 @@ import { prefix } from '../../../../../globals/settings';
 import { carbonElement as customElement } from '../../../../../globals/decorators/carbon-element';
 
 import Add from '@carbon/web-components/es/icons/add/16';
-import Save from '@carbon/web-components/es/icons/save/16';
-import TrashCan from '@carbon/web-components/es/icons/trash-can/16';
 import Upload16 from '@carbon/web-components/es/icons/upload/16';
-import Settings16 from '@carbon/web-components/es/icons/settings/16';
 
 @customElement(`${prefix}-projektu-saraksts`)
 class CDSProjektuSaraksts extends LitElement {
