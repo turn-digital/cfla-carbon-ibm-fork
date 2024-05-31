@@ -1,0 +1,217 @@
+import { LitElement, html } from 'lit';
+import { prefix } from '../../../../../globals/settings';
+import { carbonElement as customElement } from '../../../../../globals/decorators/carbon-element';
+
+@customElement(`${prefix}-vertesanas-veids`)
+class CDSPVertesanasVeids extends LitElement {
+  render() {
+    const contextualHeaderApiData = {
+      virsraksts: 'Atlase: 1.1.1',
+      saturs: [
+        {
+          tips: 'status',
+          nosaukums: 'Atlases statuss',
+          links: {
+            nosaukums: null,
+            saite: null,
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: 'Izsludināta',
+            krasa: 'red',
+            datums: null,
+          },
+        },
+        {
+          tips: 'link',
+          nosaukums: 'Nosaukums',
+          links: {
+            nosaukums:
+              'Pētniecības un inovāciju kapacitātes stiprināšana un progresīvu tehnoloģiju ieviešana',
+            saite: 'http://localhost:31475/LV/SAMPamatdati/View/4',
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: null,
+            krasa: null,
+            datums: null,
+          },
+        },
+        {
+          tips: 'status',
+          nosaukums: 'Atlases statuss',
+          links: {
+            nosaukums: null,
+            saite: null,
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: 'Izsludināta',
+            krasa: 'green',
+            datums: '12.12.2012',
+          },
+        },
+
+        {
+          tips: 'divider',
+          nosaukums: null,
+          links: {
+            nosaukums: null,
+            saite: null,
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: null,
+            krasa: null,
+            datums: null,
+          },
+        },
+        {
+          tips: 'link',
+          nosaukums: 'Politikas programma',
+          links: {
+            nosaukums: '1.1',
+            saite:
+              'http://localhost:31475/LV/IeguldijumuPrioritatesPamatdati/View/3',
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: null,
+            krasa: null,
+            datums: null,
+          },
+        },
+      ],
+    };
+    return html`
+      <link
+        rel="stylesheet"
+        href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+      <cds-main-content-block storybook>
+        <cds-contextual-header-api
+          class="cds--css-grid-column cds--col-span-100"
+          .contextualHeaderApiData=${contextualHeaderApiData}>
+        </cds-contextual-header-api>
+        <cds-main-content-title
+          class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+          title="Ekspertu vērtējuma izveidošana">
+        </cds-main-content-title>
+        <div
+          class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+          <cds-progress-indicator space-equally>
+            <cds-progress-step
+              style="max-inline-size: none;"
+              label="Vērtēšanas veids"
+              state="current"></cds-progress-step>
+            <cds-progress-step
+              label="Termiņš"
+              state="incomplete"></cds-progress-step>
+            <cds-progress-step
+              label="Ekspertu katalogs"
+              state="incomplete"></cds-progress-step>
+            <cds-progress-step
+              label="Projektu saraksts "
+              state="incomplete"></cds-progress-step>
+            <cds-progress-step
+              label="Dokumenti"
+              state="incomplete"></cds-progress-step>
+            <cds-progress-step
+              label="Priekšskatījums"
+              state="incomplete"></cds-progress-step>
+          </cds-progress-indicator>
+        </div>
+
+        <div
+          class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+          <cds-divider size="8"></cds-divider>
+          <cds-radio-button-group
+            legend-text="Projekta cikls"
+            orientation="vertical"
+            name="radio-group"
+            value="radio-1">
+            <cds-radio-button
+              label-text="Sākumposma"
+              value="radio-1"></cds-radio-button>
+            <cds-radio-button
+              label-text="Vidusposma"
+              value="radio-2"></cds-radio-button>
+            <cds-radio-button
+              label-text="Gala atskaite"
+              value="radio-3"></cds-radio-button>
+            <cds-radio-button
+              label-text="Ārpuskārtas"
+              value="radio-4"></cds-radio-button>
+          </cds-radio-button-group>
+
+          <cds-divider size="5"></cds-divider>
+
+          <cds-radio-button-group
+            legend-text="Eksperta tips"
+            orientation="vertical"
+            name="radio-group"
+            value="radio-1">
+            <cds-radio-button
+              label-text="CFLA eksperts (bez VK)"
+              value="radio-1"></cds-radio-button>
+            <cds-radio-button
+              label-text="CFLA ārējais eksperts"
+              value="radio-2"></cds-radio-button>
+            <cds-radio-button
+              label-text="CFLA ekspertu vērtējums ar nodaļas vadītāja iesaisti"
+              value="radio-3"></cds-radio-button>
+            <cds-radio-button
+              label-text="LZP ekspertu vērtējums"
+              value="radio-4"></cds-radio-button>
+          </cds-radio-button-group>
+
+          <cds-divider size="5"></cds-divider>
+
+          <cds-radio-button-group
+            legend-text="Ekspertīzes joma"
+            orientation="vertical"
+            name="radio-group"
+            value="radio-1">
+            <cds-radio-button
+              label-text="Valsts atbalsta"
+              value="radio-1"></cds-radio-button>
+            <cds-radio-button
+              label-text="Energoefektivitāte"
+              value="radio-2"></cds-radio-button>
+            <cds-radio-button
+              label-text="Būvniecība, t.sk. bauhaus princips"
+              value="radio-3"></cds-radio-button>
+            <cds-radio-button
+              label-text="Finanses"
+              value="radio-4"></cds-radio-button>
+            <cds-radio-button
+              label-text="Horizontālās prioritātes"
+              value="radio-5"></cds-radio-button>
+            <cds-radio-button
+              label-text="Vide"
+              value="radio-6"></cds-radio-button>
+            <cds-radio-button
+              label-text="Iekārtas"
+              value="radio-7"></cds-radio-button>
+            <cds-radio-button
+              label-text="Tehnoloģijas"
+              value="radio-8"></cds-radio-button>
+            <cds-radio-button
+              label-text="Cita"
+              value="radio-9"></cds-radio-button>
+          </cds-radio-button-group>
+        </div>
+
+        <div
+          class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+          <cds-divider size="5"></cds-divider>
+          <cds-button-set>
+            <cds-button href="https://www.ibm.com">Atcelt</cds-button>
+            <cds-button href="https://www.ibm.com">Turpināt</cds-button>
+          </cds-button-set>
+        </div>
+      </cds-main-content-block>
+    `;
+  }
+}
+
+export default CDSPVertesanasVeids;

@@ -23,7 +23,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 class CDSLabelValue extends LitElement {
   @property({ type: String }) label = '';
   @property({ type: String }) value = '';
-  @property({ type: String }) size = 'sm';
+  @property({ type: String }) size = '';
 
   render() {
     return html`

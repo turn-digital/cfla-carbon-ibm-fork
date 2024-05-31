@@ -25,7 +25,7 @@ class TextEditor extends LitElement {
   @property({ type: Boolean }) readonly = false;
   @property({ type: String }) editorId = Math.floor(
     Math.random() * 1000000000000000000000000
-  );
+  ).toString();
   @property({ type: String }) onServerErrorTextUnderline = '';
   @property({ type: String })
   textEditorData = ``;
