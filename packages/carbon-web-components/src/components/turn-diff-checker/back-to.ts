@@ -44,6 +44,7 @@ class CDSBackTo extends LitElement {
   //@ts-ignore
   renderDiff(text, type) {
     const differences = Diff.diffChars(this.oldText, this.newText);
+    // @ts-ignore
     return differences.map((part) => {
       const className =
         part.added && type === 'new'
