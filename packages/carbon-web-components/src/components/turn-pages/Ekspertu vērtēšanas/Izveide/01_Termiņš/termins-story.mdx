@@ -1,0 +1,168 @@
+```js
+const contextualHeaderApiData = {
+  virsraksts: 'Atlase: 1.1.1',
+  saturs: [
+    {
+      tips: 'status',
+      nosaukums: 'Atlases statuss',
+      links: {
+        nosaukums: null,
+        saite: null,
+      },
+      teksts: null,
+      statuss: {
+        nosaukums: 'Izsludināta',
+        krasa: 'red',
+        datums: null,
+      },
+    },
+    {
+      tips: 'link',
+      nosaukums: 'Nosaukums',
+      links: {
+        nosaukums:
+          'Pētniecības un inovāciju kapacitātes stiprināšana un progresīvu tehnoloģiju ieviešana',
+        saite: 'http://localhost:31475/LV/SAMPamatdati/View/4',
+      },
+      teksts: null,
+      statuss: {
+        nosaukums: null,
+        krasa: null,
+        datums: null,
+      },
+    },
+    {
+      tips: 'status',
+      nosaukums: 'Atlases statuss',
+      links: {
+        nosaukums: null,
+        saite: null,
+      },
+      teksts: null,
+      statuss: {
+        nosaukums: 'Izsludināta',
+        krasa: 'green',
+        datums: '12.12.2012',
+      },
+    },
+
+    {
+      tips: 'divider',
+      nosaukums: null,
+      links: {
+        nosaukums: null,
+        saite: null,
+      },
+      teksts: null,
+      statuss: {
+        nosaukums: null,
+        krasa: null,
+        datums: null,
+      },
+    },
+    {
+      tips: 'link',
+      nosaukums: 'Politikas programma',
+      links: {
+        nosaukums: '1.1',
+        saite:
+          'http://localhost:31475/LV/IeguldijumuPrioritatesPamatdati/View/3',
+      },
+      teksts: null,
+      statuss: {
+        nosaukums: null,
+        krasa: null,
+        datums: null,
+      },
+    },
+  ],
+};
+
+const chosenCategoriesData = [
+  { label: 'Projekta dzīves cikla posms', value: 'Sākumposma' },
+  {
+    label: 'Eksperta tips',
+    value: 'CFLA ekspertu vērtējumsar nodaļas vadītāja iesaisti',
+  },
+  { label: 'Ekspertīzes joma', value: 'Valsts atbalsta ' },
+];
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/button.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/progress-indicator.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/date-picker.min.js"></script>
+
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-title.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-block.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-chosen-categories.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-contextual-header-api.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
+    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/fonts/css/ibm-plex.css" />
+</head>
+
+<body class="cds-theme-zone-white">
+
+    <cds-main-content-block>
+        <cds-contextual-header-api class="cds--css-grid-column cds--col-span-100"
+            .contextualHeaderApiData=${contextualHeaderApiData}>
+        </cds-contextual-header-api>
+        <cds-main-content-title class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+            title="Ekspertu vērtējuma izveidošana">
+        </cds-main-content-title>
+        <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+            <cds-progress-indicator space-equally>
+                <cds-progress-step style="max-inline-size: none;" label="Vērtēšanas veids"
+                    state="complete"></cds-progress-step>
+                <cds-progress-step label="Termiņš" state="current"></cds-progress-step>
+                <cds-progress-step label="Ekspertu katalogs" state="incomplete"></cds-progress-step>
+                <cds-progress-step label="Projektu saraksts " state="incomplete"></cds-progress-step>
+                <cds-progress-step label="Dokumenti" state="incomplete"></cds-progress-step>
+                <cds-progress-step label="Priekšskatījums" state="incomplete"></cds-progress-step>
+            </cds-progress-indicator>
+        </div>
+
+        <div class="cds--css-grid-column cds--col-span-100 ">
+            <cds-divider size="10"></cds-divider>
+            <cds-chosen-categories .chosenCategoriesData=${chosenCategoriesData}>
+            </cds-chosen-categories>
+        </div>
+
+        <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-divider></cds-divider>
+            <cds-date-picker id="datePicker" date-format="d.m.Y" .locale=${{ firstDayOfWeek: 1, weekdays: { shorthand:
+                ['Sv', 'Pr' , 'Ot' , 'Tr' , 'Ce' , 'Pk' , 'Se' ], longhand: [ 'Svētdiena' , 'Pirmdiena' , 'Otrdiena'
+                , 'Trešdiena' , 'Ceturtdiena' , 'Piektdiena' , 'Sestdiena' , ], }, months: { shorthand: [ 'Jan' , 'Feb'
+                , 'Mar' , 'Apr' , 'Mai' , 'Jūn' , 'Jūl' , 'Aug' , 'Sep' , 'Okt' , 'Nov' , 'Dec' , ], longhand:
+                [ 'Janvāris' , 'Februāris' , 'Marts' , 'Aprīlis' , 'Maijs' , 'Jūnijs' , 'Jūlijs' , 'Augusts'
+                , 'Septembris' , 'Oktobris' , 'Novembris' , 'Decembris' , ], }, rangeSeparator: ' līdz ' , time_24hr:
+                true, }}>
+                <cds-date-picker-input size="lg" label-text="Vērtējuma iesniegšanas termiņš" placeholder="mm.dd.gggg">
+                </cds-date-picker-input>
+            </cds-date-picker>
+        </div>
+
+        <div class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
+            <cds-divider size="5"></cds-divider>
+            <cds-button-set>
+                <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
+                <cds-button href="https://www.ibm.com">Turpināt</cds-button>
+            </cds-button-set>
+        </div>
+    </cds-main-content-block>
+</body>
+
+</html>
+```

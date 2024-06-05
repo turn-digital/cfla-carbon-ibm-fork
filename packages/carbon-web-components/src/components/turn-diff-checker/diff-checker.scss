@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.text-container {
+  width: 48%;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+.added {
+  color: green;
+  font-weight: bold; /* Green background for additions */
+}
+.removed {
+  color: red;
+  text-decoration: line-through;
+  text-decoration: line-through; /* Red background for deletions */
+}
+
+p,
+body {
+  font-family: sans-serif;
+}
