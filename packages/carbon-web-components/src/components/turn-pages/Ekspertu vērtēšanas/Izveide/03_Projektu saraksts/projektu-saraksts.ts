@@ -2,9 +2,6 @@ import { LitElement, html } from 'lit';
 import { prefix } from '../../../../../globals/settings';
 import { carbonElement as customElement } from '../../../../../globals/decorators/carbon-element';
 
-import Add from '@carbon/icons/lib/add/16';
-import Upload16 from '@carbon/icons/lib/upload/16';
-
 @customElement(`${prefix}-projektu-saraksts`)
 class CDSProjektuSaraksts extends LitElement {
   render() {
@@ -207,6 +204,7 @@ class CDSProjektuSaraksts extends LitElement {
               </cds-table-row>
             </cds-table-body>
           </cds-table>
+          <cds-pagination></cds-pagination>
         </div>
 
         <div

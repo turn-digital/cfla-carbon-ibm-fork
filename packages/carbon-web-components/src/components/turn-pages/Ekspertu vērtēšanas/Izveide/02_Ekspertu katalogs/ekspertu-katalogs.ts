@@ -200,6 +200,7 @@ class CDSPVertesanasEkspertuKatalogs extends LitElement {
               </cds-table-row>
             </cds-table-body>
           </cds-table>
+          <cds-pagination></cds-pagination>
         </div>
 
         <div
