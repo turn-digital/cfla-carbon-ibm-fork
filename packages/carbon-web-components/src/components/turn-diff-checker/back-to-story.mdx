@@ -1,0 +1,37 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Back to
+
+## Apraksts
+
+Komponente "Back to" ir lietotāja saskarnes saite, kas ļauj lietotājiem atgriezties iepriekšējā lapā vai ekrānā
+
+## Anatomija
+* Saite (bulta)
+* Virsraksts, pēc noklusējuma “Back to”
+
+## Dizaina un UX komentāri:
+
+Lieto jebkur, kur nepieciešams pievienot saiti uz iepriekšējo skatu
+
+
+
+### JS (via import)
+
+```imoprt
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-back-to.min.js"></script>
+```
+
+### HTML
+
+```html
+<cds-back-to
+  title="Custom title"
+  link="http://localhost:9000/?path=/story/custom-compnents-back-to--default">
+</cds-back-to>
+```
+
+## `<cds-back-to>` attributes and properties
+
+<Props of="cds-back-to" />
