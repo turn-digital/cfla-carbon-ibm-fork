@@ -144,6 +144,7 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
     <script type="module" src="https://demo.turn.lv/cfla_dist/tag.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/file-uploader.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-header-title.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-text-editor.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-related-persons.min.js"></script>
@@ -341,7 +342,7 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
                     </cds-inline-notification>
                     <cds-divider size="3"></cds-divider>
                 </div>
-                <cds-table>
+                <cds-table expandable>
                     <cds-table-header-title slot="title">Dokumenti</cds-table-header-title>
                     <cds-table-toolbar slot="toolbar">
                         <cds-table-toolbar-content>
@@ -394,6 +395,11 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
                                 </cds-overflow-menu>
                             </cds-table-cell>
                         </cds-table-row>
+                        <cds-table-expanded-row>
+                  <cds-divider></cds-divider>
+                  <cds-label-value label="Komentars">qweqweqwe</cds-label-value
+                  ><cds-divider></cds-divider
+                ></cds-table-expanded-row>
                         <cds-table-row>
                             <cds-table-cell>
                                 <a href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" download
@@ -429,6 +435,11 @@ import { cdnJs, cdnCss } from '../../../../globals/internal/storybook-cdn';
         </div>
         </cds-table-cell>
         </cds-table-row>
+        <cds-table-expanded-row>
+                  <cds-divider></cds-divider>
+                  <cds-label-value label="Komentars">qweqweqwe</cds-label-value
+                  ><cds-divider></cds-divider
+                ></cds-table-expanded-row>
         </cds-table-body>
         </cds-table>
         </cds-main-content-item>

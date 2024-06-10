@@ -322,7 +322,7 @@ class CDSPValuationOpen extends LitElement {
               </cds-inline-notification>
               <cds-divider size="3"></cds-divider>
             </div>
-            <cds-table>
+            <cds-table expandable>
               <cds-table-header-title slot="title"
                 >Dokumenti</cds-table-header-title
               >
@@ -381,6 +381,11 @@ class CDSPValuationOpen extends LitElement {
                     </cds-overflow-menu>
                   </cds-table-cell>
                 </cds-table-row>
+                <cds-table-expanded-row>
+                  <cds-divider></cds-divider>
+                  <cds-label-value label="Komentars">qweqweqwe</cds-label-value
+                  ><cds-divider></cds-divider
+                ></cds-table-expanded-row>
                 <cds-table-row>
                   <cds-table-cell>
                     <a
@@ -410,6 +415,11 @@ class CDSPValuationOpen extends LitElement {
                     </cds-overflow-menu>
                   </cds-table-cell>
                 </cds-table-row>
+                <cds-table-expanded-row>
+                  <cds-divider></cds-divider>
+                  <cds-label-value label="Komentars">qweqweqwe</cds-label-value
+                  ><cds-divider></cds-divider
+                ></cds-table-expanded-row>
               </cds-table-body>
             </cds-table>
           </cds-main-content-item>
