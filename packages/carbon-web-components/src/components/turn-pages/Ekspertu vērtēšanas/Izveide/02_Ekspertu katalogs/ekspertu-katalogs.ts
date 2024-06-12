@@ -260,7 +260,7 @@ class CDSPVertesanasEkspertuKatalogs extends LitElement {
             }}>
             <cds-date-picker-input
               size="lg"
-              label-text="Vērtējuma iesniegšanas termiņš"
+              label-text="Eksperta vērtējuma termiņš"
               placeholder="mm.dd.gggg">
             </cds-date-picker-input>
           </cds-date-picker>

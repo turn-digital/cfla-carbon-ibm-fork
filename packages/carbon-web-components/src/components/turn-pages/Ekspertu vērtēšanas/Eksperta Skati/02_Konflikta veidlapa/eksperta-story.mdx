@@ -1,29 +1,14 @@
-/**
- * @license
- *
- * Copyright IBM Corp. 2019, 2023
- *
- * This source code is licensed under the Apache-2.0 license found in the
- * LICENSE file in the root directory of this source tree.
- */
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
 
-import { LitElement, html } from 'lit';
-import { prefix } from '../../../../globals/settings';
-import styles from './eksperta.scss';
-import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
-import Launch16 from '@carbon/icons/lib/launch/16';
-import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
-import Add16 from '@carbon/icons/lib/add/16';
+# Tag
 
-/**
- *
- * eksperta-veidlapa
- *
- */
+[Kā lietot Lietot Storybook](https://github.com/turn-digital/cfla-how-to-use)
 
-@customElement(`${prefix}-eksperta-veidlapa`)
-class CDSPValuationOpen extends LitElement {
-  openModal = (modalName) => {
+### HTML
+
+```js
+ openModal = (modalName) => {
     //@ts-ignore
     this.shadowRoot.getElementById(modalName).open = true;
   };
@@ -76,16 +61,56 @@ class CDSPValuationOpen extends LitElement {
         id: '3',
       },
     ];
+```
 
-    return html`
-      <link
-        rel="stylesheet"
-        href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+To have loader on the page add this to the code you also can add condition top
+only show it when the data is still loading
 
-      <link
-        rel="stylesheet"
-        href="https://demo.turn.lv/kase/dist/assets/css/themes.css" />
+```html
+<div style="position: relative; padding: 3rem; display: flex;">
+  <cds-loading overlay></cds-loading>
+</div>
+```
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- JavaScript Modules for Carbon Components (assuming they are modularized similarly) -->
+    <script type="module" src="https://demo.turn.lv/cfla_dist/radio-button.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/data-table.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/overflow-menu.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/link.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/modal.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/accordion.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/button.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/dropdown.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/tag.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/file-uploader.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-header-title.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-text-editor.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-related-persons.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-related-documents.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-title.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value-horizontal.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-block.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-block-open.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-item.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-status-history.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-status-change-panel.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-dropdown-button.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-contextual-header.min.js"></script>
+    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+    <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
+    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
+</head>
+
+<body>
       <cds-main-content-block-open>
         <div slot="header" class="cds--css-grid-column cds--col-span-100">
           <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19">
@@ -127,8 +152,8 @@ class CDSPValuationOpen extends LitElement {
               <cds-main-content-item size="07">
                 <cds-status-history
                   .statusHistoryItems=${statusHistoryItemsArr} currenStatusColor="green"
-                  currenStatusTitle="CFLA pārdomas"
-                  currenStatusDate="25.10.2019 10:34"></cds-status-history>
+      currenStatusTitle="CFLA pārdomas"
+      currenStatusDate="25.10.2019 10:34"></cds-status-history>
               </cds-main-content-item>
             </div>
             <div
@@ -254,7 +279,7 @@ class CDSPValuationOpen extends LitElement {
                   this.openModal('add-expert-modal');
                 }}"
                 has-main-content="">
-                Pievienot 
+                Pievienot
                 ${Add16({ slot: 'icon' })}
               </cds-button>
             </cds-table-toolbar-content>
@@ -271,7 +296,7 @@ class CDSPValuationOpen extends LitElement {
           <cds-table-body>
           </cds-table-body>
         </cds-table>
-    
+
         <cds-empty-state></cds-empty-state>
         </div>
       </cds-main-content-block-open>
@@ -366,7 +391,7 @@ class CDSPValuationOpen extends LitElement {
             placeholder="Filter table"></cds-table-toolbar-search>
         </cds-table-toolbar-content>
       </cds-table-toolbar>
-  
+
         <cds-table-head>
           <cds-table-header-row selection-name="header">
             <cds-table-header-cell>Nosaukums</cds-table-header-cell>
@@ -376,7 +401,7 @@ class CDSPValuationOpen extends LitElement {
           </cds-table-header-row>
         </cds-table-head>
         <cds-table-body>
-        
+
           <cds-table-row selection-name="0">
             <cds-table-cell>Dokuments 1</cds-table-cell>
             <cds-table-cell>23.01.2023</cds-table-cell>
@@ -437,7 +462,7 @@ class CDSPValuationOpen extends LitElement {
             <cds-table-cell>Jānis Bērziņš</cds-table-cell>
             <cds-table-cell>PI / Apraksts</cds-table-cell>
           </cds-table-row>
-      </cds-table-body>
+
       </cds-table>
     </div>
         </cds-modal-body>
@@ -448,10 +473,7 @@ class CDSPValuationOpen extends LitElement {
           <cds-modal-footer-button kind="primary">Save</cds-modal-footer-button>
         </cds-modal-footer>
       </cds-modal>
-    `;
-  }
+</body>
 
-  static styles = styles; // `styles` here is a `CSSResult` generated by custom WebPack loader
-}
-
-export default CDSPValuationOpen;
+</html>
+```
