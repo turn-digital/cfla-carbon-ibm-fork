@@ -28,13 +28,19 @@ class CDSAddedFile extends LitElement {
   @property({ type: String }) fileName = '';
   @property({ type: String }) fileCreationDate = '';
   @property({ type: String }) fileCreatedPerson = '';
+  @property({ type: String }) fileUrl = '';
 
   render() {
     return html`
       <div class="container">
         <div class="file-container">
           <span class="doc-icon"> ${Document16({ class: 'icon' })} </span>
-          <cds-link class="file-name">${this.fileName}</cds-link>
+          <cds-link
+            class="file-name"
+            href="${this.fileUrl}"
+            download="${this.fileName}"
+            >${this.fileName}</cds-link
+          >
         </div>
         <div class="file-date">
           <span>${this.fileCreationDate}</span>

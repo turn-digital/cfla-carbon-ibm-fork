@@ -24,42 +24,51 @@ class CDSHeaderProjectBlock extends LitElement {
   @property({ type: Object }) contextualHeaderApiData: any = {};
 
   render() {
+    console.log(
+      'this.contextualHeaderApiData',
+      this.contextualHeaderApiData?.length
+    );
     return html`
-      <div class="container">
-        <cds-accordion
-          alignment="start"
-          class="cds--css-grid-column cds--col-span-100">
-          <cds-accordion-item
-            title="${this.contextualHeaderApiData.virsraksts}">
-            ${this.contextualHeaderApiData.saturs.map(
-              (item) =>
-                (item.tips === 'link' &&
-                  html` <cds-label-value-horizontal label="${item.nosaukums}">
-                    <cds-link href="${item.links.saite}"
-                      >${item.links.nosaukums}
-                    </cds-link>
-                  </cds-label-value-horizontal>`) ||
-                (item.tips === 'status' &&
-                  html` <cds-label-value-horizontal label="${item.nosaukums}">
-                    <cds-tag type="${item.statuss.krasa}"
-                      >${item.statuss.nosaukums}</cds-tag
-                    >
-                    ${item.statuss.datums
-                      ? item.statuss.datums
-                      : ''}</cds-label-value-horizontal
-                  >`) ||
-                (item.tips === 'divider' &&
-                  html`<cds-divider size="3"></cds-divider>`) ||
-                (item.tips === 'text' &&
-                  html`<cds-label-value-horizontal label="${item.nosaukums}">
-                    ${item.teksts
-                      ? item.teksts
-                      : ''}</cds-label-value-horizontal
-                  >`)
-            )}
-          </cds-accordion-item>
-        </cds-accordion>
-      </div>
+      ${this.contextualHeaderApiData
+        ? html`<div class="container">
+            <cds-accordion
+              alignment="start"
+              class="cds--css-grid-column cds--col-span-100">
+              <cds-accordion-item
+                title="${this.contextualHeaderApiData.virsraksts}">
+                ${this.contextualHeaderApiData.saturs.map(
+                  (item) =>
+                    (item.tips === 'link' &&
+                      html` <cds-label-value-horizontal
+                        label="${item.nosaukums}">
+                        <cds-link href="${item.links.saite}"
+                          >${item.links.nosaukums}
+                        </cds-link>
+                      </cds-label-value-horizontal>`) ||
+                    (item.tips === 'status' &&
+                      html` <cds-label-value-horizontal
+                        label="${item.nosaukums}">
+                        <cds-tag type="${item.statuss.krasa}"
+                          >${item.statuss.nosaukums}</cds-tag
+                        >
+                        ${item.statuss.datums
+                          ? item.statuss.datums
+                          : ''}</cds-label-value-horizontal
+                      >`) ||
+                    (item.tips === 'divider' &&
+                      html`<cds-divider size="3"></cds-divider>`) ||
+                    (item.tips === 'text' &&
+                      html`<cds-label-value-horizontal
+                        label="${item.nosaukums}">
+                        ${item.teksts
+                          ? item.teksts
+                          : ''}</cds-label-value-horizontal
+                      >`)
+                )}
+              </cds-accordion-item>
+            </cds-accordion>
+          </div>`
+        : ''}
     `;
   }
 

@@ -153,7 +153,7 @@ class CDSPVertesanasEkspertuDokumenti extends LitElement {
             label-title="Vertēšanas veidlapas sagatave">
           </cds-file-uploader>
           <cds-divider size="5"></cds-divider>
-          <cds-button kind="tertiary">Pievienot</cds-button>
+          <cds-button kind="tertiary" size="md">Pievienot</cds-button>
           <cds-divider size="5"></cds-divider>
           <cds-file-uploader-item state="edit">
             Filename.png

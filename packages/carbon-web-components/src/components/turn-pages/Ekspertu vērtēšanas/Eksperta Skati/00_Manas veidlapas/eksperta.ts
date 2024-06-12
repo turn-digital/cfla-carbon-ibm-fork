@@ -8,9 +8,9 @@
  */
 
 import { LitElement, html } from 'lit';
-import { prefix } from '../../../../globals/settings';
+import { prefix } from '../../../../../globals/settings';
 import styles from './eksperta.scss';
-import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
+import { carbonElement as customElement } from '../../../../../globals/decorators/carbon-element';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 import Download16 from '@carbon/icons/lib/download/16';
 
@@ -28,7 +28,7 @@ class CDSPValuationList extends LitElement {
           title="Manas vērtēšanas veidlapas"></cds-main-content-title>
         <div
           class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-16">
-          <cds-table>
+          <cds-table size="xs">
             <cds-table-toolbar slot="toolbar">
               <cds-table-toolbar-content ?has-batch-actions="true">
                 <cds-table-toolbar-search
@@ -53,7 +53,7 @@ class CDSPValuationList extends LitElement {
                 <cds-table-header-cell></cds-table-header-cell>
               </cds-table-header-row>
             </cds-table-head>
-            <cds-table-body>
+            <cds-table-body size="sm">
               <cds-table-row>
                 <cds-table-cell>3.1.1.5/19/A/043c</cds-table-cell>
                 <cds-table-cell>Konflikts nav zināms</cds-table-cell>

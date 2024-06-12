@@ -8,9 +8,9 @@
  */
 
 import { LitElement, html } from 'lit';
-import { prefix } from '../../../../globals/settings';
+import { prefix } from '../../../../../globals/settings';
 import styles from './eksperta.scss';
-import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
+import { carbonElement as customElement } from '../../../../../globals/decorators/carbon-element';
 import Edit16 from '@carbon/icons/lib/edit/16';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 import Add16 from '@carbon/icons/lib/add/16';
@@ -163,6 +163,7 @@ class CDSPValuationOpen extends LitElement {
             <cds-label-value
               label="Projekta cikls"
               value="Vidusposma"></cds-label-value>
+              <cds-divider></cds-divider>
             <cds-label-value
               label="Eksperta veids"
               value="LZP ekspertu vērtējums"></cds-label-value>
@@ -177,7 +178,7 @@ class CDSPValuationOpen extends LitElement {
           <cds-main-content-item
             size="08"
             class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10">
-            <cds-table>
+            <cds-table size="xs">
               <cds-table-header-title slot="title"
                 >Veidlapas sagatave</cds-table-header-title
               >
@@ -244,7 +245,7 @@ class CDSPValuationOpen extends LitElement {
           <div
             size="08"
             class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10">
-            <cds-table>
+            <cds-table size="xs">
               <cds-table-header-title slot="title"
                 >Vērtēšanai nododamie dokumenti</cds-table-header-title
               >

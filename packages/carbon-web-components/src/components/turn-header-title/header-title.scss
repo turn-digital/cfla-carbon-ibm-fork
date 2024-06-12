@@ -2,3 +2,6 @@
 .title {
   @include type.type-style('heading-03');
 }
+.subtitle {
+  @include type.type-style('body-02');
+}
