@@ -13,7 +13,21 @@ import storyDocs from './header-title-story.mdx';
 
 export const Propsed = () => {
   return html`
-    <cds-header-title title="Proposed Header Title"> </cds-header-title>
+    <cds-header-title title="Proposed Header Title" subtitle="Header subTitle">
+    </cds-header-title>
+    <cds-header-title
+      title="Proposed Header Title"
+      subtitle="Header subTitle"
+      leftNoGridSpacing
+      marginWrapper>
+    </cds-header-title>
+    <cds-header-title
+      title="Proposed Header Title"
+      subtitle="Header subTitle"
+      leftNoGridSpacing>
+    </cds-header-title>
+    <cds-header-title title="Proposed Header Title" leftNoGridSpacing>
+    </cds-header-title>
   `;
 };
 
