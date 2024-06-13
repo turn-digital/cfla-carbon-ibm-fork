@@ -45,6 +45,8 @@ export const Propsed = () => {
     <cds-version-history
       version="3.0"
       date="01.04.2022"
+      modalLabel="Statusu vēsture props"
+      modalHeading="Statusa maiņas pamatojums props"
       .versionHistoryArray=${versionHistoryArray}></cds-version-history>
   `;
 };

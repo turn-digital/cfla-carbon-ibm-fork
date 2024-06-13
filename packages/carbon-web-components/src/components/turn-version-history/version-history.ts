@@ -24,6 +24,9 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 class CDSTurnVersionHistory extends FocusMixin(LitElement) {
   @property({ type: String }) version = '';
   @property({ type: String }) date = '';
+  @property({ type: String }) modalLabel = '';
+  @property({ type: String }) modalHeading = '';
+
   @property({ type: Array }) versionHistoryArray = [
     {
       versionLink: String,
@@ -51,8 +54,8 @@ class CDSTurnVersionHistory extends FocusMixin(LitElement) {
       <cds-modal id="version-history-modal">
         <cds-modal-header>
           <cds-modal-close-button></cds-modal-close-button>
-          <cds-modal-label>Statusu vēsture</cds-modal-label>
-          <cds-modal-heading>Statusa maiņas pamatojums</cds-modal-heading>
+          <cds-modal-label>${this.modalLabel}</cds-modal-label>
+          <cds-modal-heading>${this.modalHeading}</cds-modal-heading>
         </cds-modal-header>
         <cds-modal-body>
           <cds-table>
@@ -60,7 +63,7 @@ class CDSTurnVersionHistory extends FocusMixin(LitElement) {
               <cds-table-header-row>
                 <cds-table-header-cell>Versija</cds-table-header-cell>
                 <cds-table-header-cell
-                  >Publicesanas datus</cds-table-header-cell
+                  >Publicēšanas datums</cds-table-header-cell
                 >
                 <cds-table-header-cell>Statuss</cds-table-header-cell>
               </cds-table-header-row>
