@@ -24,13 +24,22 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 class CDSHeaderTitle extends LitElement {
   @property({ type: String }) title = '';
   @property({ type: String }) subTitle = '';
+  @property({ type: Boolean }) leftNoGridSpacing = false;
+  @property({ type: Boolean }) marginWrapper = false;
 
   render() {
     return html`
-      <h1 class="title">${this.title}</h1>
-      ${this.subTitle.length > 0
-        ? html`<h2 class="subtitle">${unsafeHTML(this.subTitle)}</h2>`
-        : ''}
+      <div
+        class="header-title-container ${this.marginWrapper
+          ? 'header-title-container--margin-wrapper'
+          : ''} ${this.leftNoGridSpacing
+          ? 'header-title-container--left-no-grid-spacing'
+          : ''}">
+        <h1 class="title">${this.title}</h1>
+        ${this.subTitle.length > 0
+          ? html`<h2 class="subtitle">${unsafeHTML(this.subTitle)}</h2>`
+          : ''}
+      </div>
     `;
   }
 
