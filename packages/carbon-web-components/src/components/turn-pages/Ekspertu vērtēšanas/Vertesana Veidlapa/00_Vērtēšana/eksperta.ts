@@ -146,7 +146,7 @@ class CDSPValuationOpen extends LitElement {
         </div>
 
         <div slot="tabs" class="cds--css-grid-column cds--col-span-100">
-          <cds-tabs trigger-content="Select an item" value="tab1" type="contained" class="cds-theme-zone-g10">
+          <cds-tabs trigger-content="Select an item" value="tab1" type="contained" class="cds-theme-zone-g10 cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
             <cds-tab id="tab1" target="panel1" value="tab1">Vērtēšana</cds-tab>
             <cds-tab id="tab-2" target="panel-2" value="tab-2"
               disabled>Projekts</cds-tab
@@ -177,7 +177,7 @@ class CDSPValuationOpen extends LitElement {
 
           <cds-main-content-item
             size="08"
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10">
+            class="cds--css-grid-column cds--col-span-100">
             <cds-table size="xs">
               <cds-table-header-title slot="title"
                 >Veidlapas sagatave</cds-table-header-title
@@ -244,7 +244,7 @@ class CDSPValuationOpen extends LitElement {
           </cds-main-content-item>
           <div
             size="08"
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10">
+            class="cds--css-grid-column cds--col-span-100">
             <cds-table size="xs">
               <cds-table-header-title slot="title"
                 >Vērtēšanai nododamie dokumenti</cds-table-header-title
