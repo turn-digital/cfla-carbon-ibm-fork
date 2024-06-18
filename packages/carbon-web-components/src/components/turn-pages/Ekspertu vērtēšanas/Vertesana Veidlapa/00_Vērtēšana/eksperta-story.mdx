@@ -130,6 +130,7 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
     <script type="module" src="https://demo.turn.lv/cfla_dist/file-uploader.min.js"></script>
 
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-print-download.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-tab-content-container.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-header-title.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-text-editor.min.js"></script>
@@ -280,16 +281,27 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
                 <cds-tab id="tab-2" target="panel-2" value="tab-2" disabled>Projekts</cds-tab>
             </cds-tabs>
             <cds-tab-content-container id="panel1" role="tabpanel" aria-labelledby="tab1" hidden>
-                <cds-main-content-item size="08"
-                    class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
-                    <cds-label-value label="Projekta cikls" value="Vidusposma"></cds-label-value>
-                    <cds-divider></cds-divider>
-                    <cds-label-value label="Eksperta veids" value="LZP ekspertu vērtējums"></cds-label-value>
-                    <cds-label-value size="sm" label="Vērtēšanas termiņš">
-                        <span>12.01.2024</span>
-                        <cds-button kind="ghost" size="sm">${Edit16({ slot: 'icon' })}</cds-button></cds-label-value>
-                </cds-main-content-item>
-
+                <cds-print-download class="cds--css-grid-column cds--col-span-100"
+                downloadLink="https://example.com/download"
+                printLink="https://example.com/print">
+            </cds-print-download>
+            <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-divider></cds-divider>
+            <cds-label-value
+              label="Projekta cikls"
+              value="Vidusposma"></cds-label-value>
+              <cds-divider></cds-divider>
+            <cds-label-value
+              label="Eksperta veids"
+              value="LZP ekspertu vērtējums"></cds-label-value>
+            <cds-label-value size="sm" label="Vērtēšanas termiņš">
+              <span>12.01.2024</span>
+              <cds-button kind="ghost" size="sm"
+                >${Edit16({ slot: 'icon' })}</cds-button
+              ></cds-label-value
+            >
+          </div>
                 <cds-main-content-item size="08" class="cds--css-grid-column cds--col-span-100">
                     <cds-table size="xs">
                         <cds-table-header-title slot="title">Veidlapas sagatave</cds-table-header-title>

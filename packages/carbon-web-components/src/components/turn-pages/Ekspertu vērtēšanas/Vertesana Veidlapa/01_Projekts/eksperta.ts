@@ -225,10 +225,14 @@ class CDSPValuationOpen extends LitElement {
             id="panel2"
             role="tabpanel"
             aria-labelledby="tab2"
-            hidden>
+            hidden
+            ><cds-print-download
+              class="cds--css-grid-column cds--col-span-100"
+              downloadLink="https://example.com/download"
+              printLink="https://example.com/print"></cds-print-download>
             <div
               class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
-              <cds-divider size="10"></cds-divider>
+              <cds-divider></cds-divider>
               <cds-label-value
                 label="Apraksts"
                 value="Eiropas Savienības kohēzijas politikas programmas 2021.–2027.gadam 2.2.3. specifiskā atbalsta mērķa “Uzlabot dabas aizsardzību un bioloģisko daudzveidību, “zaļo” infrastruktūru, it īpaši pilsētvidē, un samazināt piesārņojumu” 2.2.3.6. specifiskā atbalsta mērķa pasākuma “Gaisa piesārņojumu mazinošu pasākumu īstenošana, uzlabojot mājsaimniecību siltumapgādes sistēmas” projektu iesniegumu atlases nolikums"></cds-label-value>

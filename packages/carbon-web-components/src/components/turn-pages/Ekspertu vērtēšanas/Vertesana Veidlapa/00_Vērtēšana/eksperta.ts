@@ -157,9 +157,13 @@ class CDSPValuationOpen extends LitElement {
             role="tabpanel"
             aria-labelledby="tab1"
             hidden>
-            <cds-main-content-item
-            size="08"
+            <cds-print-download class="cds--css-grid-column cds--col-span-100"
+                downloadLink="https://example.com/download"
+                printLink="https://example.com/print">
+            </cds-print-download>
+            <div
             class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-divider></cds-divider>
             <cds-label-value
               label="Projekta cikls"
               value="Vidusposma"></cds-label-value>
@@ -173,8 +177,7 @@ class CDSPValuationOpen extends LitElement {
                 >${Edit16({ slot: 'icon' })}</cds-button
               ></cds-label-value
             >
-          </cds-main-content-item>
-
+          </div>
           <cds-main-content-item
             size="08"
             class="cds--css-grid-column cds--col-span-100">
