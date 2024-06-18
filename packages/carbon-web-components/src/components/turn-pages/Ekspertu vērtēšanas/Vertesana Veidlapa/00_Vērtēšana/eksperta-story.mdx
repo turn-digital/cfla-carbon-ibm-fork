@@ -116,7 +116,7 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- JavaScript Modules for Carbon Components (assuming they are modularized similarly) -->
+
     <script type="module" src="https://demo.turn.lv/cfla_dist/radio-button.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/data-table.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/overflow-menu.min.js"></script>
@@ -128,7 +128,9 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
     <script type="module" src="https://demo.turn.lv/cfla_dist/tag.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/tabs.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/file-uploader.min.js"></script>
+
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-print-download.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-tab-content-container.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-header-title.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-text-editor.min.js"></script>
@@ -141,30 +143,106 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-status-history.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-status-change-panel.min.js"></script>
     <script type="module" src="https://demo.turn.lv/cfla_dist/turn-dropdown-button.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-contextual-header.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-contextual-header-api.min.js"></script>
+
     <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
     <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
     <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
 </head>
 
-<body>
+<body class="cds-theme-zone-white">
+    <script>
+        const contextualHeaderApiData = {
+            virsraksts: 'Atlase: 1.1.1',
+            saturs: [
+                {
+                    tips: 'status',
+                    nosaukums: 'Atlases statuss',
+                    links: {
+                        nosaukums: null,
+                        saite: null,
+                    },
+                    teksts: null,
+                    statuss: {
+                        nosaukums: 'Izsludināta',
+                        krasa: 'red',
+                        datums: null,
+                    },
+                },
+                {
+                    tips: 'link',
+                    nosaukums: 'Nosaukums',
+                    links: {
+                        nosaukums:
+                            'Pētniecības un inovāciju kapacitātes stiprināšana un progresīvu tehnoloģiju ieviešana',
+                        saite: 'http://localhost:31475/LV/SAMPamatdati/View/4',
+                    },
+                    teksts: null,
+                    statuss: {
+                        nosaukums: null,
+                        krasa: null,
+                        datums: null,
+                    },
+                },
+                {
+                    tips: 'status',
+                    nosaukums: 'Atlases statuss',
+                    links: {
+                        nosaukums: null,
+                        saite: null,
+                    },
+                    teksts: null,
+                    statuss: {
+                        nosaukums: 'Izsludināta',
+                        krasa: 'green',
+                        datums: '12.12.2012',
+                    },
+                },
 
+                {
+                    tips: 'divider',
+                    nosaukums: null,
+                    links: {
+                        nosaukums: null,
+                        saite: null,
+                    },
+                    teksts: null,
+                    statuss: {
+                        nosaukums: null,
+                        krasa: null,
+                        datums: null,
+                    },
+                },
+                {
+                    tips: 'link',
+                    nosaukums: 'Politikas programma',
+                    links: {
+                        nosaukums: '1.1',
+                        saite:
+                            'http://localhost:31475/LV/IeguldijumuPrioritatesPamatdati/View/3',
+                    },
+                    teksts: null,
+                    statuss: {
+                        nosaukums: null,
+                        krasa: null,
+                        datums: null,
+                    },
+                },
+            ],
+        };
+
+        // Access the web component and pass the function as a prop
+        document.addEventListener('DOMContentLoaded', () => {
+            const contextualHeaderApi = document.querySelector(
+                '#cds-contextual-header-api'
+            );
+            contextualHeaderApi.contextualHeaderApiData = contextualHeaderApiData; // Passing the prop
+        });
+    </script>
     <cds-main-content-block-open withTabs>
         <div slot="header" class="cds--css-grid-column cds--col-span-100">
-            <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19">
-                <cds-label-value-horizontal label="Atlases nosaukums">
-                    <cds-link href="#">Zinātnes politikas ieviešana, vadība un kapacitātes
-                        stiprināšana
-                    </cds-link>
-                </cds-label-value-horizontal>
-                <cds-label-value-horizontal label="Atlases nosaukums">
-                    <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
-                </cds-label-value-horizontal>
-                <cds-divider size="3"></cds-divider>
-                <cds-label-value-horizontal label="Atlases nosaukums">
-                    <cds-link href="#">1.1 </cds-link>
-                </cds-label-value-horizontal>
-            </cds-contextual-header>
+            <cds-contextual-header-api id="cds-contextual-header-api">
+            </cds-contextual-header-api>
             <div>
                 <cds-divider size="3"></cds-divider>
                 <cds-inline-notification style="min-width: 100%; margin-bottom: .5rem" title="Notification title"
@@ -182,8 +260,7 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
                     </cds-main-content-item>
                     <cds-main-content-item size="07">
                         <cds-status-history .statusHistoryItems=${statusHistoryItemsArr} currenStatusColor="green"
-      currenStatusTitle="CFLA pārdomas"
-      currenStatusDate="25.10.2019 10:34"></cds-status-history>
+                            currenStatusTitle="CFLA pārdomas" currenStatusDate="25.10.2019 10:34"></cds-status-history>
                     </cds-main-content-item>
                 </div>
                 <div class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6 cds--css-grid-column">
@@ -198,23 +275,35 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
         </div>
 
         <div slot="tabs" class="cds--css-grid-column cds--col-span-100">
-            <cds-tabs trigger-content="Select an item" value="tab1" type="contained" class="cds-theme-zone-g10">
+            <cds-tabs trigger-content="Select an item" value="tab1" type="contained"
+                class="cds-theme-zone-g10 cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
                 <cds-tab id="tab1" target="panel1" value="tab1">Vērtēšana</cds-tab>
                 <cds-tab id="tab-2" target="panel-2" value="tab-2" disabled>Projekts</cds-tab>
             </cds-tabs>
             <cds-tab-content-container id="panel1" role="tabpanel" aria-labelledby="tab1" hidden>
-                <cds-main-content-item size="08"
-                    class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
-                    <cds-label-value size="sm" label="Projekta cikls" value="Vidusposma"></cds-label-value>
-                    <cds-label-value size="sm" label="Eksperta veids" value="LZP ekspertu vērtējums"></cds-label-value>
-                    <cds-label-value size="sm" label="Vērtēšanas termiņš">
-                        <span>12.01.2024</span>
-                        <cds-button kind="ghost" size="sm">${Edit16({ slot: 'icon' })}</cds-button></cds-label-value>
-                </cds-main-content-item>
-
-                <cds-main-content-item size="08"
-                    class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10">
-                    <cds-table>
+                <cds-print-download class="cds--css-grid-column cds--col-span-100"
+                downloadLink="https://example.com/download"
+                printLink="https://example.com/print">
+            </cds-print-download>
+            <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
+            <cds-divider></cds-divider>
+            <cds-label-value
+              label="Projekta cikls"
+              value="Vidusposma"></cds-label-value>
+              <cds-divider></cds-divider>
+            <cds-label-value
+              label="Eksperta veids"
+              value="LZP ekspertu vērtējums"></cds-label-value>
+            <cds-label-value size="sm" label="Vērtēšanas termiņš">
+              <span>12.01.2024</span>
+              <cds-button kind="ghost" size="sm"
+                >${Edit16({ slot: 'icon' })}</cds-button
+              ></cds-label-value
+            >
+          </div>
+                <cds-main-content-item size="08" class="cds--css-grid-column cds--col-span-100">
+                    <cds-table size="xs">
                         <cds-table-header-title slot="title">Veidlapas sagatave</cds-table-header-title>
                         <cds-table-toolbar slot="toolbar">
                             <cds-table-toolbar-content>
@@ -260,8 +349,8 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
                         </cds-table-body>
                     </cds-table>
                 </cds-main-content-item>
-                <div size="08" class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10">
-                    <cds-table>
+                <div size="08" class="cds--css-grid-column cds--col-span-100">
+                    <cds-table size="xs">
                         <cds-table-header-title slot="title">Vērtēšanai nododamie dokumenti</cds-table-header-title>
                         <cds-table-toolbar slot="toolbar">
                             <cds-table-toolbar-content>
@@ -330,8 +419,9 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
                         </cds-table-body>
                     </cds-table>
                 </div>
+            </cds-tab-content-container>
         </div>
-        </cds-tab-content-container>
+
         <cds-tab-content-container id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
             <h4>Content for option 2</h4>
             <p>
@@ -358,15 +448,15 @@ import { cdnJs, cdnCss } from '../../../../../globals/internal/storybook-cdn';
                 </cds-file-uploader-drop-container>
             </cds-file-uploader>
             <cds-text-editor editorId="editor1" editorConfig='{
-"editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
-"max_char_length": 200,
-"fetch_obj": {
-"urlToFetch": "https://jsonplaceholder.typicode.com/posts",
-"fetchMethod": "POST",
-"errorAlertMessages": "Error occurred while fetching data",
-"savedAlertMessages": "All data saved successfully"
-}
-}'></cds-text-editor>
+            "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+            "max_char_length": 200,
+            "fetch_obj": {
+            "urlToFetch": "https://jsonplaceholder.typicode.com/posts",
+            "fetchMethod": "POST",
+            "errorAlertMessages": "Error occurred while fetching data",
+            "savedAlertMessages": "All data saved successfully"
+            }
+            }'></cds-text-editor>
         </cds-modal-body>
         <cds-modal-footer>
             <cds-modal-footer-button kind="secondary" data-modal-close>Cancel</cds-modal-footer-button>
