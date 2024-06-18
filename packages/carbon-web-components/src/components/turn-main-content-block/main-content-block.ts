@@ -22,12 +22,16 @@ import { property } from 'lit/decorators';
 @customElement(`${prefix}-main-content-block`)
 class CDSMainContentBlock extends LitElement {
   @property({ type: Boolean }) storybook = false;
+  @property({ type: Boolean }) legacyNav = false;
   render() {
     return html`
       <link
         rel="stylesheet"
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
-      <main class="${this.storybook === false ? 'page_main' : ''}">
+      <main
+        class="${this.storybook === true || this.legacyNav === true
+          ? ''
+          : 'page_main'}">
         <div class="cds--css-grid  cds--css-grid--narrow">
           <slot></slot>
         </div>
