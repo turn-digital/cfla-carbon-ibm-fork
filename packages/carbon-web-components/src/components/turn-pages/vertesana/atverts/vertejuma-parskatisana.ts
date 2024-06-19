@@ -384,7 +384,7 @@ class CDSPValuationOpen extends LitElement {
                 <cds-table-expanded-row>
                   <cds-divider></cds-divider>
                   <cds-label-value label="Komentars">qweqweqwe</cds-label-value
-                  ><cds-divider></cds-divider
+                  ><cds-divider size="08"></cds-divider
                 ></cds-table-expanded-row>
                 <cds-table-row>
                   <cds-table-cell>
@@ -418,7 +418,7 @@ class CDSPValuationOpen extends LitElement {
                 <cds-table-expanded-row>
                   <cds-divider></cds-divider>
                   <cds-label-value label="Komentars">qweqweqwe</cds-label-value
-                  ><cds-divider></cds-divider
+                  ><cds-divider size="08"></cds-divider
                 ></cds-table-expanded-row>
               </cds-table-body>
             </cds-table>
