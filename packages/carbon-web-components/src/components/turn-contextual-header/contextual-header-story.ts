@@ -14,7 +14,7 @@ import storyDocs from './contextual-header-story.mdx';
 export const Propsed = () => {
   return html`
     <cds-contextual-header title="Atlase: 3.1.1.5/19/A/043">
-      <cds-label-value-horizontal label="Atlases nosaukums">
+      <cds-label-value-horizontal label="Atlases nosaukums:">
         <cds-link href="#"
           >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
         </cds-link>

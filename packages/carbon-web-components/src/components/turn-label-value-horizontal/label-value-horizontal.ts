@@ -27,7 +27,7 @@ class CDSTurnLabelValueHorizontal extends FocusMixin(LitElement) {
     return html`
       <div class="label-value-horizontal">
         <div class="label-value-horizontal__item">
-          <div class="label-value-horizontal__label">${this.label}:</div>
+          <div class="label-value-horizontal__label">${this.label}</div>
           <div class="label-value-horizontal__slot">
             <slot></slot>
           </div>
