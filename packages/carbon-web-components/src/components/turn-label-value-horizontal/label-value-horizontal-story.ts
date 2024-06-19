@@ -19,7 +19,7 @@ import storyDocs from './label-value-horizontal-story.mdx';
 
 export const ProposedLink = () => {
   return html`
-    <cds-label-value-horizontal label="Atlases nosaukums">
+    <cds-label-value-horizontal label="Atlases nosaukums:">
       <cds-link href="#saite">
         Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
       </cds-link>
@@ -30,7 +30,7 @@ ProposedLink.storyName = 'Label With Link';
 
 export const ProposedTag = () => {
   return html`
-    <cds-label-value-horizontal label="Atlases nosaukums">
+    <cds-label-value-horizontal label="Atlases nosaukums:">
       <cds-tag type="blue"> Noslēgusies </cds-tag> 25.10.2019 10:34
     </cds-label-value-horizontal>
   `;

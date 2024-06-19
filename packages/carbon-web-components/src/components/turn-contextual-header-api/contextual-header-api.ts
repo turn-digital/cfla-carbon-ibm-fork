@@ -24,10 +24,6 @@ class CDSHeaderProjectBlock extends LitElement {
   @property({ type: Object }) contextualHeaderApiData: any = {};
 
   render() {
-    console.log(
-      'this.contextualHeaderApiData',
-      this.contextualHeaderApiData?.length
-    );
     return html`
       ${this.contextualHeaderApiData
         ? html`<div class="container">
