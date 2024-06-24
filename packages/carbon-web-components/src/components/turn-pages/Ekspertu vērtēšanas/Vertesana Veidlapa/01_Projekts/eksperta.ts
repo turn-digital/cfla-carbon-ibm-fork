@@ -212,7 +212,7 @@ class CDSPValuationOpen extends LitElement {
 
         <div slot="tabs" class="cds--css-grid-column cds--col-span-100">
           <cds-tabs
-            class="cds-theme-zone-g10 cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+            class="cds-theme-zone-g10 cds--css-grid-column cds--col-span-100"
             trigger-content="Select an item"
             value="tab2"
             type="contained">

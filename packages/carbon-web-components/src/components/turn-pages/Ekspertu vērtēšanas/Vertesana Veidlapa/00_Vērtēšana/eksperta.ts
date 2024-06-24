@@ -146,7 +146,7 @@ class CDSPValuationOpen extends LitElement {
         </div>
 
         <div slot="tabs" class="cds--css-grid-column cds--col-span-100">
-          <cds-tabs trigger-content="Select an item" value="tab1" type="contained" class="cds-theme-zone-g10 cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+          <cds-tabs trigger-content="Select an item" value="tab1" type="contained" class="cds-theme-zone-g10 cds--css-grid-column cds--col-span-100">
             <cds-tab id="tab1" target="panel1" value="tab1">Vērtēšana</cds-tab>
             <cds-tab id="tab-2" target="panel-2" value="tab-2"
               disabled>Projekts</cds-tab
