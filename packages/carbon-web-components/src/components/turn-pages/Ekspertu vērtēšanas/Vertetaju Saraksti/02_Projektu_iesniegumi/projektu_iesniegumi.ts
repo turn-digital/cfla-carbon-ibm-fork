@@ -175,12 +175,12 @@ class CDSPProjektuIesniegumi extends LitElement {
             </cds-table-body>
           </cds-table>
           <cds-pagination page-size="10" total-items="100">
-              <cds-select-item value="10">10</cds-select-item>
-              <cds-select-item value="20">20</cds-select-item>
-              <cds-select-item value="30">30</cds-select-item>
-              <cds-select-item value="40">40</cds-select-item>
-              <cds-select-item value="50">50</cds-select-item>
-            </cds-pagination>
+            <cds-select-item value="10">10</cds-select-item>
+            <cds-select-item value="20">20</cds-select-item>
+            <cds-select-item value="30">30</cds-select-item>
+            <cds-select-item value="40">40</cds-select-item>
+            <cds-select-item value="50">50</cds-select-item>
+          </cds-pagination>
         </div>
       </cds-main-content-block>
     `;
