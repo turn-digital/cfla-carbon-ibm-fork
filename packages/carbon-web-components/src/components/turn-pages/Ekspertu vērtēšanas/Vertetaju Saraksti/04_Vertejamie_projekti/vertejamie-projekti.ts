@@ -1,0 +1,258 @@
+import { LitElement, html } from 'lit';
+import { prefix } from '../../../../../globals/settings';
+import { carbonElement as customElement } from '../../../../../globals/decorators/carbon-element';
+
+import Filter16 from '@carbon/icons/lib/filter/16';
+import Upload16 from '@carbon/icons/lib/upload/16';
+
+@customElement(`${prefix}-vertejamie-projekti`)
+class CDSPVertejamieProjekti extends LitElement {
+
+
+  render() {
+    const contextualHeaderApiData = {
+      virsraksts: 'Atlase: 1.1.1',
+      saturs: [
+        {
+          tips: 'status',
+          nosaukums: 'Atlases statuss',
+          links: {
+            nosaukums: null,
+            saite: null,
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: 'Izsludināta',
+            krasa: 'red',
+            datums: null,
+          },
+        },
+        {
+          tips: 'link',
+          nosaukums: 'Nosaukums',
+          links: {
+            nosaukums:
+              'Pētniecības un inovāciju kapacitātes stiprināšana un progresīvu tehnoloģiju ieviešana',
+            saite: 'http://localhost:31475/LV/SAMPamatdati/View/4',
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: null,
+            krasa: null,
+            datums: null,
+          },
+        },
+        {
+          tips: 'status',
+          nosaukums: 'Atlases statuss',
+          links: {
+            nosaukums: null,
+            saite: null,
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: 'Izsludināta',
+            krasa: 'green',
+            datums: '12.12.2012',
+          },
+        },
+
+        {
+          tips: 'divider',
+          nosaukums: null,
+          links: {
+            nosaukums: null,
+            saite: null,
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: null,
+            krasa: null,
+            datums: null,
+          },
+        },
+        {
+          tips: 'link',
+          nosaukums: 'Politikas programma',
+          links: {
+            nosaukums: '1.1',
+            saite:
+              'http://localhost:31475/LV/IeguldijumuPrioritatesPamatdati/View/3',
+          },
+          teksts: null,
+          statuss: {
+            nosaukums: null,
+            krasa: null,
+            datums: null,
+          },
+        },
+      ],
+    };
+    return html`
+      <link
+        rel="stylesheet"
+        href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+      <cds-main-content-block storybook>
+        <cds-contextual-header-api
+          class="cds--css-grid-column cds--col-span-100"
+          .contextualHeaderApiData=${contextualHeaderApiData}>
+        </cds-contextual-header-api>
+        <cds-header-title class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang" title="LZP vērtējamie projekti" marginWrapper></cds-header-title>
+
+        <cds-divider></cds-divider>
+
+        <div class="cds--css-grid-column cds--col-span-100">
+
+          <cds-table size="sm" expandable is-selectable>
+            <cds-table-toolbar slot="toolbar">
+              <cds-table-toolbar-content>
+                <cds-table-toolbar-search
+                  placeholder="Filter table"></cds-table-toolbar-search>
+                <cds-button kind="ghost">${Filter16({slot:"icon", fill:"black" })}</cds-button>
+                <cds-button kind="ghost">${Upload16({slot:"icon", fill:"black" })}</cds-button>
+              </cds-table-toolbar-content>
+            </cds-table-toolbar>
+
+            <cds-table-head>
+              <cds-table-header-row>
+                <cds-table-header-cell>PI ID</cds-table-header-cell>
+                <cds-table-header-cell>Iesniedzējs</cds-table-header-cell>
+                <cds-table-header-cell>Statuss</cds-table-header-cell>
+                <cds-table-header-cell>Statusa datums</cds-table-header-cell>
+                <cds-table-header-cell>Termiņš</cds-table-header-cell>
+                <cds-table-header-cell>Eksperti</cds-table-header-cell>
+              </cds-table-header-row>
+            </cds-table-head>
+
+            <cds-table-body>
+              <cds-table-row>
+                <cds-table-cell>1.1.1.1/18</cds-table-cell>
+                <cds-table-cell>Latvijas Universitāte</cds-table-cell>
+                <cds-table-cell>Vērtējums iesniegts CFLA</cds-table-cell>
+                <cds-table-cell>12.03.2023</cds-table-cell>
+                <cds-table-cell>12.03.2023</cds-table-cell>
+                <cds-table-cell>1</cds-table-cell>
+              </cds-table-row>
+              <cds-table-expanded-row>
+
+                <cds-divider size="6"></cds-divider>
+
+                <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                  <cds-label-value
+                    label="Projekta cikls"
+                    value="Sākumposma">
+                  </cds-label-value>
+                </div>
+
+                <cds-divider size="7"></cds-divider>
+
+                <cds-table hide-checkbox size="sm">
+                  <cds-table-header-title slot="title">Ekspertu vērtēšanas veidlapas</cds-table-header-title>
+                  <cds-table-head>
+                    <cds-table-header-row hide-checkbox>
+                      <cds-table-header-cell>Vērtētājs</cds-table-header-cell>
+                      <cds-table-header-cell>Tips</cds-table-header-cell>
+                      <cds-table-header-cell>Veidlapas statuss</cds-table-header-cell>
+                      <cds-table-header-cell>Statusa datums</cds-table-header-cell>
+                      <cds-table-header-cell>Vērtēšanas termiņš</cds-table-header-cell>
+                    </cds-table-header-row>
+                  </cds-table-head>
+                  <cds-table-body>
+                    <cds-table-row hide-checkbox>
+                      <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
+                      <cds-table-cell>Priekšvērtēšana</cds-table-cell>
+                      <cds-table-cell>Vērtēšanas veidlapa slēgta</cds-table-cell>
+                      <cds-table-cell>12.01.2024</cds-table-cell>
+                      <cds-table-cell>12.01.2024</cds-table-cell>
+                    </cds-table-row>
+                  </cds-table-body>
+                </cds-table>
+
+                <cds-divider size="7"></cds-divider>
+
+                <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                  <cds-label-value
+                    label="Atlases nosaukums"
+                    value="Gaisa piesārņojumu mazinošu pasākumu īstenošana, uzlabojot mājsaimniecību siltumapgādes sistēmas">
+                  </cds-label-value>
+                </div>
+
+                <cds-divider size="7"></cds-divider>
+
+                <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                  <cds-label-value
+                    label="Projekta nosaukums"
+                    value="Bioloģiski noārdāmo atkritumu pārstrādes iekārtu izveide">
+                  </cds-label-value>
+                </div>
+
+                <cds-divider size="7"></cds-divider>
+
+                <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                  <cds-label-value
+                    label="Apraksts"
+                    value="Eiropas Savienības kohēzijas politikas programmas 2021.–2027.gadam 2.2.3. specifiskā atbalsta mērķa “Uzlabot dabas aizsardzību un bioloģisko daudzveidību, “zaļo” infrastruktūru, it īpaši pilsētvidē, un samazināt piesārņojumu” 2.2.3.6. specifiskā atbalsta mērķa pasākuma “Gaisa piesārņojumu mazinošu pasākumu īstenošana, uzlabojot mājsaimniecību siltumapgādes sistēmas” projektu iesniegumu atlases nolikums">
+                  </cds-label-value>
+                </div>
+
+                <cds-divider size="7"></cds-divider>
+
+                <cds-table hide-checkbox size="sm">
+                  <cds-table-header-title slot="title">Atbildīgie</cds-table-header-title>
+                  <cds-table-head>
+                    <cds-table-header-row hide-checkbox>
+                      <cds-table-header-cell>Vārds Uzvārds</cds-table-header-cell>
+                      <cds-table-header-cell>Puses</cds-table-header-cell>
+                      <cds-table-header-cell>Telefons</cds-table-header-cell>
+                      <cds-table-header-cell>E-pasts</cds-table-header-cell>
+                    </cds-table-header-row>
+                  </cds-table-head>
+                  <cds-table-body>
+                    <cds-table-row hide-checkbox>
+                      <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+                      <cds-table-cell>FS Projektu vadītājs</cds-table-cell>
+                      <cds-table-cell>+37112345678</cds-table-cell>
+                      <cds-table-cell>maris@company.lv</cds-table-cell>
+                    </cds-table-row>
+                    <cds-table-row hide-checkbox>
+                      <cds-table-cell>Māra Kalniņa</cds-table-cell>
+                      <cds-table-cell>CFLA atbildīgais</cds-table-cell>
+                      <cds-table-cell>+37112345678</cds-table-cell>
+                      <cds-table-cell>anna@cfla.gov.lv</cds-table-cell>
+                    </cds-table-row>
+                  </cds-table-body>
+                </cds-table>
+
+                <cds-divider size="7"></cds-divider>
+                
+                <cds-table hide-checkbox size="sm">
+                  <cds-table-header-title slot="title">Sadarbības partneri</cds-table-header-title>
+                  <cds-table-head>
+                    <cds-table-header-row hide-checkbox>
+                      <cds-table-header-cell>Iestādes nosaukums</cds-table-header-cell>
+                      <cds-table-header-cell>Reģistrācijas nr.</cds-table-header-cell>
+                    </cds-table-header-row>
+                  </cds-table-head>
+                  <cds-table-body>
+                    <cds-table-row hide-checkbox>
+                      <cds-table-cell>Turn Digital</cds-table-cell>
+                      <cds-table-cell>LV40412345678</cds-table-cell>
+                    </cds-table-row>
+                    <cds-table-row hide-checkbox>
+                      <cds-table-cell>BIOR</cds-table-cell>
+                      <cds-table-cell>LV40412345678</cds-table-cell>
+                    </cds-table-row>
+                  </cds-table-body>
+                </cds-table>
+
+                <cds-divider size="5"></cds-divider>
+              </cds-table-expanded-row>
+            </cds-table-body>
+          </cds-table>
+        </div>
+      </cds-main-content-block>
+    `;
+  }
+}
+
+export default CDSPVertejamieProjekti;
