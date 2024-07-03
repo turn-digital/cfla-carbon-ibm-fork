@@ -34,7 +34,6 @@ class TextEditor extends LitElement {
   get combinedEditorConfig() {
     const defaultConfig = {
       language: 'lv',
-      language_url: 'https://demo.turn.lv/cfla_dist/assets/tinymce/langs/lv.js',
       branding: false,
       menubar: false,
       elementpath: false,
@@ -43,12 +42,6 @@ class TextEditor extends LitElement {
       autoresize_overflow_padding: 16,
       min_height: 200,
       max_height: 500,
-      external_plugins: {
-        pluginId1:
-          'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/length_validation/plugin.min.js',
-        pluginId2:
-          'https://demo.turn.lv/cfla_dist/assets/tinymce/plugins/server_request/plugin.min.js',
-      },
     };
 
     // Merge defaultConfig with this.editorConfig, prioritizing properties from this.editorConfig
@@ -65,6 +58,27 @@ class TextEditor extends LitElement {
       this.textEditorData
     );
 
+    var href = window.location.origin;
+
+    const getBaseUrl = () => {
+      const domain = window.location.origin;
+      const pathname = window.location.pathname.split('/')[1];
+      let madeurl = '';
+      if (window.location.host.includes('localhost')) {
+        madeurl = `${domain}`;
+      } else {
+        madeurl = `${domain}/${pathname}`;
+      }
+      console.log('madeurl', madeurl);
+      return madeurl;
+    };
+    var urlToTinymceCssFile =
+      href == 'http://localhost:3002' ||
+      href == 'https://demo.turn.lv' ||
+      href == 'http://localhost:9000'
+        ? 'https://demo.turn.lv/cfla_dist/assets/css/text-editor.min.css'
+        : `${getBaseUrl()}/Content/Carbon/assets/css/text-editor.min.css`;
+
     return html`
       <tinymce-editor
       class="tinymce-editor"
@@ -75,7 +89,7 @@ class TextEditor extends LitElement {
         ?readonly="${this.readonly}"
         toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
         plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize"
-        content_css="//www.tiny.cloud/css/codepen.min.css"
+        content_css="${urlToTinymceCssFile}"
         promotion="false">
         ${this.textEditorData}
       </tinymce-editor>

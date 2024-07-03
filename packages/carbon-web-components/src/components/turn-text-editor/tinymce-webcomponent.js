@@ -386,10 +386,24 @@
     }
     _getTinymceSrc() {
       var href = window.location.origin;
+      const getBaseUrl = () => {
+        const domain = window.location.origin;
+        const pathname = window.location.pathname.split('/')[1];
+        let madeurl = '';
+        if (window.location.host.includes('localhost')) {
+          madeurl = `${domain}`;
+        } else {
+          madeurl = `${domain}/${pathname}`;
+        }
+        console.log('madeurl', madeurl);
+        return madeurl;
+      };
       var urlToTinymce =
+        href == 'http://localhost:3002' ||
+        href == 'https://demo.turn.lv' ||
         href == 'http://localhost:9000'
           ? 'https://demo.turn.lv/cfla_dist/assets/tinymce/tinymce.min.js'
-          : 'https://demo.turn.lv/cfla_dist/assets/tinymce/tinymce.min.js';
+          : `${getBaseUrl()}/Content/Carbon/assets/tinymce/tinymce.min.js`;
       return urlToTinymce;
     }
     _loadTinyDoInit() {
