@@ -390,7 +390,10 @@
         const domain = window.location.origin;
         const pathname = window.location.pathname.split('/')[1];
         let madeurl = '';
-        if (window.location.host.includes('localhost')) {
+        if (
+          window.location.host.includes('localhost') ||
+          window.location.host.includes('fondi.cfla.gov.lv')
+        ) {
           madeurl = `${domain}`;
         } else {
           madeurl = `${domain}/${pathname}`;
