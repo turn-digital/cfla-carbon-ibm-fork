@@ -83,163 +83,84 @@ const contextualHeaderApiData = {
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script
-      type="module"
-      src="https://demo.turn.lv/cfla_dist/button.min.js"></script>
-    <script
-      type="module"
-      src="https://demo.turn.lv/cfla_dist/progress-indicator.min.js"></script>
-    <script
-      type="module"
-      src="https://demo.turn.lv/cfla_dist/radio-button.min.js"></script>
 
-    <script
-      type="module"
-      src="https://demo.turn.lv/cfla_dist/turn-main-content-title.min.js"></script>
-    <script
-      type="module"
-      src="https://demo.turn.lv/cfla_dist/turn-main-content-block.min.js"></script>
-    <script
-      type="module"
-      src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"></script>
-    <script
-      type="module"
-      src="https://demo.turn.lv/cfla_dist/turn-contextual-header-api.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-block.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-contextual-header-api.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-header-title.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
-    <link
-      rel="stylesheet"
-      href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
-    <link
-      rel="stylesheet"
-      href="https://demo.turn.lv/cfla_dist/assets/fonts/css/ibm-plex.css" />
+    <script type="module" src="https://demo.turn.lv/cfla_dist/tabs.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/data-table.min.js"></script>
+    <script type="module" src="https://demo.turn.lv/cfla_dist/button.min.js"></script>
+
+    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+    <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
+    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
   </head>
 
   <body class="cds-theme-zone-white">
-    <cds-main-content-block>
+    <cds-main-content-block storybook>
       <cds-contextual-header-api
         class="cds--css-grid-column cds--col-span-100"
-        .contextualHeaderApiData="${contextualHeaderApiData}">
+        .contextualHeaderApiData=${contextualHeaderApiData}>
       </cds-contextual-header-api>
-      <cds-main-content-title
-        class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
-        title="Ekspertu vērtējuma izveidošana">
-      </cds-main-content-title>
-      <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-        <cds-progress-indicator space-equally>
-          <cds-progress-step
-            style="max-inline-size: none;"
-            label="Vērtēšanas veids"
-            state="current"></cds-progress-step>
-          <cds-progress-step
-            label="Termiņš"
-            state="incomplete"></cds-progress-step>
-          <cds-progress-step
-            label="Ekspertu katalogs"
-            state="incomplete"></cds-progress-step>
-          <cds-progress-step
-            label="Projektu saraksts "
-            state="incomplete"></cds-progress-step>
-          <cds-progress-step
-            label="Dokumenti"
-            state="incomplete"></cds-progress-step>
-          <cds-progress-step
-            label="Priekšskatījums"
-            state="incomplete"></cds-progress-step>
-        </cds-progress-indicator>
+      <cds-header-title class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang" title="Ekspertu vērtēšanas" marginWrapper></cds-header-title>
+
+      <div class="cds--css-grid-column cds--col-span-100">
+        <cds-tabs
+          trigger-content="Select an item"
+          value="tab4"
+          type="contained"
+          class="cds-theme-zone-g10">
+          <cds-tab id="tab1" target="panel1" value="tab1" disabled>Vertēšanu saraksts</cds-tab>
+          <cds-tab id="tab2" target="panel2" value="tab2" disabled>Ekspertu saraksts</cds-tab>
+          <cds-tab id="tab3" target="panel3" value="tab3" disabled>Projektu iesniegumi</cds-tab>
+          <cds-tab id="tab4" target="panel4" value="tab4">Termiņi</cds-tab>
+        </cds-tabs>
       </div>
 
-      <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-        <cds-divider size="8"></cds-divider>
-        <cds-radio-button-group
-          legend-text="Projekta cikls"
-          orientation="vertical"
-          name="radio-group"
-          value="radio-1">
-          <cds-radio-button
-            label-text="Sākumposma"
-            value="radio-1"></cds-radio-button>
-          <cds-radio-button
-            label-text="Vidusposma"
-            value="radio-2"></cds-radio-button>
-          <cds-radio-button
-            label-text="Gala atskaite"
-            value="radio-3"></cds-radio-button>
-          <cds-radio-button
-            label-text="Ārpuskārtas"
-            value="radio-4"></cds-radio-button>
-        </cds-radio-button-group>
+      <cds-divider></cds-divider>
 
-        <cds-divider size="5"></cds-divider>
+      <div class="cds--css-grid-column cds--col-span-100"
+        id="panel4"
+        role="tabpanel"
+        aria-labelledby="tab4"
+        >
 
-        <cds-radio-button-group
-          legend-text="Eksperta tips"
-          orientation="vertical"
-          name="radio-group"
-          value="radio-1">
-          <cds-radio-button
-            label-text="CFLA eksperts (bez VK)"
-            value="radio-1"></cds-radio-button>
-          <cds-radio-button
-            label-text="CFLA ārējais eksperts"
-            value="radio-2"></cds-radio-button>
-          <cds-radio-button
-            label-text="CFLA ekspertu vērtējums ar nodaļas vadītāja iesaisti"
-            value="radio-3"></cds-radio-button>
-          <cds-radio-button
-            label-text="LZP ekspertu vērtējums"
-            value="radio-4"></cds-radio-button>
-        </cds-radio-button-group>
+        <cds-table size="sm">
+          <cds-table-head>
+            <cds-table-header-row>
+              <cds-table-header-cell>Eksperta Veidlapas ID</cds-table-header-cell>
+              <cds-table-header-cell>Vērtēšanas cikls</cds-table-header-cell>
+              <cds-table-header-cell>Ekperts</cds-table-header-cell>
+              <cds-table-header-cell>Eksperta tips</cds-table-header-cell>
+              <cds-table-header-cell>Eksperta vērtējuma termiņš</cds-table-header-cell>
+              <cds-table-header-cell>Vērt. veidlapas statuss</cds-table-header-cell>
+            </cds-table-header-row>
+          </cds-table-head>
 
-        <cds-divider size="5"></cds-divider>
-
-        <cds-radio-button-group
-          legend-text="Ekspertīzes joma"
-          orientation="vertical"
-          name="radio-group"
-          value="radio-1">
-          <cds-radio-button
-            label-text="Valsts atbalsta"
-            value="radio-1"></cds-radio-button>
-          <cds-radio-button
-            label-text="Energoefektivitāte"
-            value="radio-2"></cds-radio-button>
-          <cds-radio-button
-            label-text="Būvniecība, t.sk. bauhaus princips"
-            value="radio-3"></cds-radio-button>
-          <cds-radio-button
-            label-text="Finanses"
-            value="radio-4"></cds-radio-button>
-          <cds-radio-button
-            label-text="Horizontālās prioritātes"
-            value="radio-5"></cds-radio-button>
-          <cds-radio-button
-            label-text="Vide"
-            value="radio-6"></cds-radio-button>
-          <cds-radio-button
-            label-text="Iekārtas"
-            value="radio-7"></cds-radio-button>
-          <cds-radio-button
-            label-text="Tehnoloģijas"
-            value="radio-8"></cds-radio-button>
-          <cds-radio-button
-            label-text="Cita"
-            value="radio-9"></cds-radio-button>
-        </cds-radio-button-group>
-      </div>
-
-      <div
-        class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--lg:col-span-10">
-        <cds-divider size="5"></cds-divider>
-        <cds-button-set>
-          <cds-button href="https://www.ibm.com">Atcelt</cds-button>
-          <cds-button href="https://www.ibm.com">Turpināt</cds-button>
-        </cds-button-set>
+          <cds-table-body>
+            <cds-table-row>
+              <cds-table-cell>1.1.1.1 S2E1</cds-table-cell>
+              <cds-table-cell>Sākumposma</cds-table-cell>
+              <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+              <cds-table-cell>CFLA</cds-table-cell>
+              <cds-table-cell>21.03.2022</cds-table-cell>
+              <cds-table-cell>Iesniegts vērtējums</cds-table-cell>
+            </cds-table-row>
+            <cds-table-row>
+              <cds-table-cell>1.1.1.1 S2E1</cds-table-cell>
+              <cds-table-cell>Vidusposma</cds-table-cell>
+              <cds-table-cell>Ārējais eksperts</cds-table-cell>
+              <cds-table-cell>CFLA</cds-table-cell>
+              <cds-table-cell>21.03.2022</cds-table-cell>
+              <cds-table-cell>Apstiprināts KN</cds-table-cell>
+            </cds-table-row>
+          </cds-table-body>
+        </cds-table>
       </div>
     </cds-main-content-block>
   </body>
