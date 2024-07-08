@@ -23,3 +23,7 @@
 .value {
   @include type-style('body-compact-01');
 }
+
+.value > * {
+  margin-top: 0 !important;
+}

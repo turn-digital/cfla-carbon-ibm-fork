@@ -18,13 +18,13 @@ export const Propsed = () => {
       value="Propsed Value!"></cds-label-value>
     <cds-label-value
       label="Propsed label!"
-      value="Propsed Value!"></cds-label-value>
+      value="<p style='margin: 24px'>Info in p tag with 24px margin for margin top 0 test</p>"></cds-label-value>
   `;
 };
 export const SlotUsage = () => {
   return html`
     <cds-label-value label="Propsed label!">
-      <p>Slot Value</p>
+      <p style="margin: 24px">Slot Value</p>
     </cds-label-value>
   `;
 };
