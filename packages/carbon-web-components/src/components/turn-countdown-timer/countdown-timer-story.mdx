@@ -1,0 +1,38 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Back to
+
+## Apraksts
+
+Komponente "Back to" ir lietotāja saskarnes saite, kas ļauj lietotājiem
+atgriezties iepriekšējā lapā vai ekrānā
+
+## Anatomija
+
+- Saite (bulta)
+- Virsraksts, pēc noklusējuma “Back to”
+
+## Dizaina un UX komentāri:
+
+Lieto jebkur, kur nepieciešams pievienot saiti uz iepriekšējo skatu
+
+### JS (via import)
+
+```imoprt
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-countdown-timer.min.js"></script>
+```
+
+### HTML
+
+```html
+    <cds-countdown-timer deadline="2024-12-16T00:00:00"></cds-countdown-timer>
+</br>
+</br>
+</br>
+    <cds-countdown-timer deadline="2024-07-08T00:00:00"></cds-countdown-timer>
+```
+
+## `<cds-back-to>` attributes and properties
+
+<Props of="cds-back-to" />

@@ -1,0 +1,34 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/type' as *;
+
+.countdown-timer {
+  width: 175px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin-top: 20px;
+
+  &__title {
+    text-align: center;
+    @include type-style('label-01');
+  }
+
+  &__overdue {
+    text-align: center;
+    color: #a2191f;
+    @include type-style('heading-03');
+  }
+
+  &__time-left {
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+    color: #064a4a;
+  }
+  &__time-actual {
+    text-align: center;
+    margin-top: 10px;
+    @include type-style('label-01');
+  }
+}
