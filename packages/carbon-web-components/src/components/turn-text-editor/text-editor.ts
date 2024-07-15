@@ -24,7 +24,7 @@ import './tinymce-webcomponent.js';
 class TextEditor extends LitElement {
   @property({ type: Boolean }) readonly = false;
   @property({ type: String }) editorId = Math.floor(
-    Math.random() * 1000000000000000000000000
+    Math.random() * 1000000000000
   ).toString();
   @property({ type: String }) onServerErrorTextUnderline = '';
   @property({ type: String })
@@ -42,6 +42,7 @@ class TextEditor extends LitElement {
       autoresize_overflow_padding: 16,
       min_height: 200,
       max_height: 500,
+      editorId: this.editorId,
     };
 
     // Merge defaultConfig with this.editorConfig, prioritizing properties from this.editorConfig
@@ -58,7 +59,7 @@ class TextEditor extends LitElement {
       this.textEditorData
     );
 
-    var href = window.location.origin;
+    const href = window.location.origin;
 
     const getBaseUrl = () => {
       const domain = window.location.origin;
@@ -72,7 +73,7 @@ class TextEditor extends LitElement {
       console.log('madeurl', madeurl);
       return madeurl;
     };
-    var urlToTinymceCssFile =
+    const urlToTinymceCssFile =
       href == 'http://localhost:3002' ||
       href == 'https://demo.turn.lv' ||
       href == 'http://localhost:9000'
@@ -81,9 +82,8 @@ class TextEditor extends LitElement {
 
     return html`
       <tinymce-editor
-      class="tinymce-editor"
-        id="${this.editorId}"
-        config="${'config_' + this.editorId}"
+        class="tinymce-editor"
+        config="${configKey}"
         statusbar: false
         left_margin: 50
         ?readonly="${this.readonly}"
