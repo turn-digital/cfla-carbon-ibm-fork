@@ -56,6 +56,7 @@ export const WithRequestObject = () => {
 export const WithMaxCahrLength = () => {
   return html`
     <cds-text-editor
+      editorId="testPass11"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
