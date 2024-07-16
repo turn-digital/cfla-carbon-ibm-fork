@@ -14,7 +14,6 @@ import storyDocs from './text-editor-story.mdx';
 export const Default = () => {
   return html`
     <cds-text-editor
-      editorId="editor_example_storybook_default"
       textEditorData="This is a text from props"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
@@ -27,7 +26,6 @@ export const Default = () => {
 export const WithRequestObject = () => {
   return html`
     <cds-text-editor
-      editorId="editor_example_storybook_default_ro"
       .invalidateQueriesFunc=${() => {
         console.log(
           'propsed invalidate query functon called from text editor on blur'
@@ -58,7 +56,6 @@ export const WithRequestObject = () => {
 export const WithMaxCahrLength = () => {
   return html`
     <cds-text-editor
-      editorId="editor_example_storybook_default_cl"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
@@ -75,7 +72,6 @@ export const WithMaxCahrLength = () => {
 export const WithMaxCahrLengthAndRequestObject = () => {
   return html`
     <cds-text-editor
-      editorId="editor_example_storybook_default_cl_ro"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
@@ -97,7 +93,6 @@ export const WithMaxCahrLengthAndRequestObject = () => {
 export const WithMaxCahrLengthAndRequestObjectAndServerErrorText = () => {
   return html`
     <cds-text-editor
-      editorId="editor_example_storybook_default_cl_ro_set"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       onServerErrorTextUnderline="Error from server text (optional) for the underline error msg"
       editorConfig='{
