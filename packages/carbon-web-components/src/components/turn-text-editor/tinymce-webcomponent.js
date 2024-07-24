@@ -403,6 +403,7 @@
       };
       var urlToTinymce =
         href == 'http://localhost:3002' ||
+        href == 'http://localhost:3000' ||
         href == 'https://demo.turn.lv' ||
         href == 'http://localhost:9000'
           ? 'https://demo.turn.lv/cfla_dist/assets/tinymce/tinymce.min.js'
