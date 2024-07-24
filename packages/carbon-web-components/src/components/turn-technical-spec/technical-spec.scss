@@ -1,0 +1,47 @@
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/spacing' as *;
+
+@use '@carbon/styles/scss/theme' as *;
+
+.technical-spec {
+  display: inline-block;
+  line-height: 16px;
+
+  &__wrapper {
+    display: flex;
+    gap: $spacing-03;
+    align-items: center;
+  }
+
+  &__box {
+    display: flex;
+    gap: $spacing-01;
+    align-items: center;
+    background-color: $layer-03;
+    border-radius: $spacing-02;
+  }
+
+  &__icon {
+    display: inline-flex;
+    padding: $spacing-02 $spacing-01;
+
+    &--disabled {
+      color: $layer-selected-disabled;
+    }
+  }
+
+  &__type {
+    @include type-style('label-01');
+    padding-right: $spacing-01;
+
+    &--disabled {
+      color: $layer-selected-disabled;
+    }
+  }
+
+  &__label {
+    // selected type-style 'heading-01' weight is 600, but in design it is 700
+    @include type-style('heading-01');
+  }
+
+}
