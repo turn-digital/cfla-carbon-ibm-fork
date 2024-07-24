@@ -1,0 +1,22 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/type' as *;
+
+.container {
+  position: relative;
+  display: block;
+  border-left: 6px solid #027070; /* Add the left border */
+  border-top-left-radius: 8px; /* Adjust the radius as needed */
+  border-top-right-radius: 8px; /* Adjust the radius as needed */
+  border-bottom-left-radius: 8px; /* Bottom left radius */
+  border-bottom-right-radius: 8px; /* Bottom right radius */
+}
+
+.top-line {
+  width: 100%; /* Ensure it takes the full width */
+  background-color: #e0e0e0; /* Grey background color */
+  padding: 0 8px; /* Adjust padding as needed */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+}
