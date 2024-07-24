@@ -13,7 +13,7 @@ import styles from './diff-checker-btn.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 
-import { green, gray, red, yellow, blue, purple  } from '@carbon/colors';
+import { green, gray, purple } from '@carbon/colors';
 
 import LowSeverityIcon from '@carbon/icons/lib/low-severity';
 import CautionIcon from '@carbon/icons/lib/caution';
