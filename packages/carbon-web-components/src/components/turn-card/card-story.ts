@@ -9,13 +9,13 @@
 
 import { html } from 'lit';
 import './index';
-import storyDocs from './form-number-story.mdx';
+import storyDocs from './card-story.mdx';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 import Incomplete16 from '@carbon/icons/lib/incomplete/16';
 
 export const Propsed = () => {
   return html`
-    <cds-form-number type="green">
+    <cds-card type="green">
       <span slot="status">
         <cds-diff-checker-btn type="added" date="2021-02-02">
         </cds-diff-checker-btn>
@@ -67,12 +67,12 @@ export const Propsed = () => {
         <cds-label-value
           label="PV: Inta Štāle 20.10.2019 10:32"></cds-label-value>
       </div>
-    </cds-form-number>
+    </cds-card>
   `;
 };
 export const DifferentTypes = () => {
   return html`
-    <cds-form-number type="black">
+    <cds-card type="black">
       <span slot="status">
         <cds-diff-checker-btn type="added" date="2021-02-02">
         </cds-diff-checker-btn>
@@ -124,9 +124,9 @@ export const DifferentTypes = () => {
         <cds-label-value
           label="PV: Inta Štāle 20.10.2019 10:32"></cds-label-value>
       </div>
-    </cds-form-number>
+    </cds-card>
 
-    <cds-form-number type="red">
+    <cds-card type="red">
       <span slot="status">
         <cds-diff-checker-btn type="added" date="2021-02-02">
         </cds-diff-checker-btn>
@@ -178,8 +178,8 @@ export const DifferentTypes = () => {
         <cds-label-value
           label="PV: Inta Štāle 20.10.2019 10:32"></cds-label-value>
       </div>
-    </cds-form-number>
-    <cds-form-number type="green">
+    </cds-card>
+    <cds-card type="green">
       <span slot="status">
         <cds-diff-checker-btn type="added" date="2021-02-02">
         </cds-diff-checker-btn>
@@ -231,7 +231,7 @@ export const DifferentTypes = () => {
         <cds-label-value
           label="PV: Inta Štāle 20.10.2019 10:32"></cds-label-value>
       </div>
-    </cds-form-number>
+    </cds-card>
   `;
 };
 

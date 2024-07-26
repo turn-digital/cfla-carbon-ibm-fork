@@ -3,8 +3,7 @@
 
 @use '@carbon/styles/scss/theme' as *;
 
-.label-underline {
-
+.heading-underline {
   &__label-box {
     display: flex;
     align-items: center;
@@ -20,7 +19,6 @@
     display: inline-block;
     margin-top: $spacing-03;
     width: 100%;
-
   }
 
   &__notifications {
@@ -44,7 +42,7 @@
     }
 
     &--red {
-      background-color: #D12771;
+      background-color: #d12771;
     }
   }
 }
