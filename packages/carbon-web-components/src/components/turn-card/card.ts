@@ -35,7 +35,7 @@ class CDSCard extends LitElement {
           <slot name="status" class="status"></slot>
           <slot name="overflow-menu" class="overflow-menu"></slot>
         </div>
-        <cds-expandable-tile color-scheme="light" has-rounded-corners>
+        <cds-expandable-tile color-scheme="light" with-interactive>
           <cds-tile-above-the-fold-content slot="above-the-fold-content">
             <slot name="above-the-fold-content"></slot>
           </cds-tile-above-the-fold-content>
