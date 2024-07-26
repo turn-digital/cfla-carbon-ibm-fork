@@ -12,7 +12,6 @@ import { prefix } from '../../globals/settings';
 import styles from './form-number.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
-
 /**
  * Related documents.
  *
@@ -21,15 +20,22 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 
 @customElement(`${prefix}-form-number`)
 class CDSFormNumber extends LitElement {
+  /**
+   * Can be green red and blakc to set the border color.
+   */
   @property({ type: String }) type = 'green';
+
   render() {
+    const { type } = this;
+    const typeClass = type ? `container__border-left-${type}` : '';
+
     return html`
-      <div class="container">
+      <div class="container ${typeClass}">
         <div class="top-line">
           <slot name="status" class="status"></slot>
           <slot name="overflow-menu" class="overflow-menu"></slot>
         </div>
-        <cds-expandable-tile color-scheme="light">
+        <cds-expandable-tile color-scheme="light" has-rounded-corners>
           <cds-tile-above-the-fold-content slot="above-the-fold-content">
             <slot name="above-the-fold-content"></slot>
           </cds-tile-above-the-fold-content>
