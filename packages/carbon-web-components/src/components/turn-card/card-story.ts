@@ -239,5 +239,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Custom-components/Form Number',
+  title: 'Custom-components/Card',
 };
