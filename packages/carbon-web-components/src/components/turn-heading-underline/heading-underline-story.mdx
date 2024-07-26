@@ -8,25 +8,23 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 ### JS (via import)
 
 ```imoprt
-<script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-underline.min.js"></script>
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-heading-underline.min.js"></script>
 ```
 
 ### HTML
 
 ```JS
- const notifications = [
+ const counterArr = [
     { type: 'red', count: 2 },
     { type: 'green', count: 1 },
   ];
 ```
 
 ```html
-<cds-label-underline
-  label="Apraksts"
-  .notifications="${notifications}">
-</cds-label-underline>
+<cds-heading-underline label="Apraksts" .counterArr="${counterArr}">
+</cds-heading-underline>
 ```
 
-## `<cds-label-underline>` attributes and properties
+## `<cds-heading-underline>` attributes and properties
 
-<Props of="cds-label-underline" />
+<Props of="cds-heading-underline" />
