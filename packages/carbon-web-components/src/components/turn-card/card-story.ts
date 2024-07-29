@@ -17,8 +17,7 @@ export const Propsed = () => {
   return html`
     <cds-card type="green">
       <span slot="status">
-        <cds-diff-checker-btn type="added" date="2021-02-02">
-        </cds-diff-checker-btn>
+        <cds-diff-status type="added" date="2021-02-02"> </cds-diff-status>
       </span>
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
@@ -74,8 +73,7 @@ export const DifferentTypes = () => {
   return html`
     <cds-card type="black">
       <span slot="status">
-        <cds-diff-checker-btn type="added" date="2021-02-02">
-        </cds-diff-checker-btn>
+        <cds-diff-status type="added" date="2021-02-02"> </cds-diff-status>
       </span>
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
@@ -128,8 +126,7 @@ export const DifferentTypes = () => {
 
     <cds-card type="red">
       <span slot="status">
-        <cds-diff-checker-btn type="added" date="2021-02-02">
-        </cds-diff-checker-btn>
+        <cds-diff-status type="added" date="2021-02-02"> </cds-diff-status>
       </span>
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
@@ -181,8 +178,7 @@ export const DifferentTypes = () => {
     </cds-card>
     <cds-card type="green">
       <span slot="status">
-        <cds-diff-checker-btn type="added" date="2021-02-02">
-        </cds-diff-checker-btn>
+        <cds-diff-status type="added" date="2021-02-02"> </cds-diff-status>
       </span>
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
