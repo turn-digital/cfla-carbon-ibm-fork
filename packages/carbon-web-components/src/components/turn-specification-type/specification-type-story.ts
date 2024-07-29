@@ -46,25 +46,6 @@ export const Propsed = () => {
   `;
 };
 
-export const Disabled = () => {
-  return html`
-    <cds-specification-type
-      label="ID:TP3"
-      type="tehnical-specification"
-      status="disabled">
-    </cds-specification-type>
-    <cds-divider></cds-divider>
-    <cds-specification-type
-      label="ID:TP3"
-      type="clarification"
-      status="disabled">
-    </cds-specification-type>
-    <cds-divider></cds-divider>
-    <cds-specification-type label="ID:TP3" type="requirement" status="disabled">
-    </cds-specification-type>
-  `;
-};
-
 export default {
   parameters: {
     ...storyDocs.parameters,
