@@ -13,9 +13,36 @@ import storyDocs from './diff-status-story.mdx';
 
 export const Propsed = () => {
   return html`
-    <cds-diff-status type="added" date="2021-02-02"> </cds-diff-status>
-    <cds-diff-status type="edited" date="2021-02-02"> </cds-diff-status>
-    <cds-diff-status type="deleted" date="2021-02-02"> </cds-diff-status>
+    <cds-diff-status
+      diffStatusType="0"
+      diffStatusText="TestText"
+      diffStatusDate="2021-02-02"
+      diffStatusEditor="asdasdasdasd">
+    </cds-diff-status>
+    <cds-diff-status
+      diffStatusType="1"
+      diffStatusText="No tooltip"
+      diffStatusDate="2021-02-02"
+      diffStatusEditor="">
+    </cds-diff-status>
+    <cds-diff-status
+      diffStatusType="2"
+      diffStatusText="TestText"
+      diffStatusDate="2021-02-02"
+      diffStatusEditor="asdasdasdasd">
+    </cds-diff-status>
+    <cds-diff-status
+      diffStatusType="3"
+      diffStatusText="TestText"
+      diffStatusDate="2021-02-02"
+      diffStatusEditor="asdasdasdasd">
+    </cds-diff-status>
+    <cds-diff-status
+      diffStatusType="4"
+      diffStatusText="TestText"
+      diffStatusDate="2021-02-02"
+      diffStatusEditor="asdasdasdasd">
+    </cds-diff-status>
   `;
 };
 
