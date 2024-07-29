@@ -3,7 +3,7 @@
 
 @use '@carbon/styles/scss/theme' as *;
 
-.technical-spec {
+.specification-type {
   display: inline-block;
   line-height: 16px;
 
@@ -43,5 +43,4 @@
     // selected type-style 'heading-01' weight is 600, but in design it is 700
     @include type-style('heading-01');
   }
-
 }

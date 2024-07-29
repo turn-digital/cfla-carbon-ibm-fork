@@ -17,7 +17,12 @@ export const Propsed = () => {
   return html`
     <cds-card type="green">
       <span slot="status">
-        <cds-diff-status type="added" date="2021-02-02"> </cds-diff-status>
+        <cds-diff-status
+          diffStatusType="1"
+          diffStatusText="No tooltip"
+          diffStatusDate="2021-02-02"
+          diffStatusEditor="">
+        </cds-diff-status>
       </span>
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
@@ -36,8 +41,11 @@ export const Propsed = () => {
         </cds-overflow-menu>
       </span>
       <div slot="above-the-fold-content">
-        <cds-technical-spec label="ID:TP3" type="tehnical-specification">
-        </cds-technical-spec>
+        <cds-specification-type
+          specificationKods="TP1"
+          specificationLable="asdasdasdas 1"
+          specificationGroup="1">
+        </cds-specification-type>
       </div>
       <div slot="below-the-fold-content">
         <cds-label-value label="Izpildes statuss">
@@ -73,7 +81,7 @@ export const DifferentTypes = () => {
   return html`
     <cds-card type="black">
       <span slot="status">
-        <cds-diff-status type="added" date="2021-02-02"> </cds-diff-status>
+        <cds-diff-status type="0" date="2021-02-02"> </cds-diff-status>
       </span>
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
@@ -126,7 +134,7 @@ export const DifferentTypes = () => {
 
     <cds-card type="red">
       <span slot="status">
-        <cds-diff-status type="added" date="2021-02-02"> </cds-diff-status>
+        <cds-diff-status type="0" date="2021-02-02"> </cds-diff-status>
       </span>
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
@@ -178,7 +186,7 @@ export const DifferentTypes = () => {
     </cds-card>
     <cds-card type="green">
       <span slot="status">
-        <cds-diff-status type="added" date="2021-02-02"> </cds-diff-status>
+        <cds-diff-status type="0" date="2021-02-02"> </cds-diff-status>
       </span>
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
