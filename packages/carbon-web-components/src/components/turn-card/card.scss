@@ -1,6 +1,8 @@
 @use '@carbon/styles/scss/spacing' as *;
 @use '@carbon/styles/scss/type' as *;
 
+@use '@carbon/styles/scss/theme' as *;
+
 .container {
   position: relative;
   display: block;
@@ -24,7 +26,7 @@
 }
 
 .top-line {
-  background-color: #e0e0e0; /* Grey background color */
+  background-color: $layer-01; /* Grey background color */
   padding: 0 8px; /* Adjust padding as needed */
   display: flex;
   align-items: center;
