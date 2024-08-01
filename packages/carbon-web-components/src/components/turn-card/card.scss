@@ -1,6 +1,5 @@
 @use '@carbon/styles/scss/spacing' as *;
 @use '@carbon/styles/scss/type' as *;
-
 @use '@carbon/styles/scss/theme' as *;
 
 .container {
@@ -8,30 +7,42 @@
   display: block;
   border-right: 33px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
-
-  border-top-left-radius: 8px; /* Adjust the radius as needed */
-  border-top-right-radius: 8px; /* Adjust the radius as needed */
-  border-bottom-left-radius: 8px; /* Bottom left radius */
-  border-bottom-right-radius: 8px; /* Bottom right radius */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   border-left: 6px solid #161616;
+
   &__border-left-black {
     border-left: 6px solid #161616;
   }
+
   &__border-left-green {
     border-left: 6px solid #027070;
   }
+
   &__border-left-red {
     border-left: 6px solid #d12771;
+  }
+
+  &.solved {
+    .top-line {
+      background-color: $layer-hover-01;
+    }
   }
 }
 
 .top-line {
-  background-color: $layer-01; /* Grey background color */
-  padding: 0 8px; /* Adjust padding as needed */
+  background-color: $layer-01;
+  padding: 0 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 32px;
   margin-right: -32px;
   border-top-right-radius: 6px;
+}
+
+cds-expandable-tile.solved {
+  background-color: $layer-active-01;
 }
