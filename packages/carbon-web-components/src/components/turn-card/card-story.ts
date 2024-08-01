@@ -13,7 +13,7 @@ import storyDocs from './card-story.mdx';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 import Incomplete16 from '@carbon/icons/lib/incomplete/16';
 
-export const Propsed = () => {
+export const Default = () => {
   return html`
     <cds-card type="green">
       <span slot="status">
@@ -44,7 +44,73 @@ export const Propsed = () => {
         <cds-specification-type
           specificationKods="TP1"
           specificationLable="asdasdasdas 1"
-          specificationGroup="1">
+          specificationGroup="1"
+          ?isDisabled=${false}>
+        </cds-specification-type>
+      </div>
+      <div slot="below-the-fold-content">
+        <cds-label-value label="Izpildes statuss">
+          ${Incomplete16()} Nav atrisināts
+          <cds-label-value
+            label="Labot var projekta iesniegumā"></cds-label-value>
+        </cds-label-value>
+        <cds-divider></cds-divider>
+        <cds-label-value
+          label="Nepieciešamās darbības"
+          value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+        </cds-label-value>
+        <cds-divider></cds-divider>
+        <cds-label-value label="Izpildes statuss">
+          <cds-unordered-list>
+            <cds-list-item>
+              <cds-link href="#">Apraksts</cds-link> >
+              <cds-link href="#"
+                >1.2. Problēmas un risinājuma apraksts, t.sk. mērķa grupa, tās
+                problēmu un risinājumu apraksts</cds-link
+              >
+            </cds-list-item>
+          </cds-unordered-list>
+        </cds-label-value>
+        <cds-divider></cds-divider>
+        <cds-label-value
+          label="PV: Inta Štāle 20.10.2019 10:32"></cds-label-value>
+      </div>
+    </cds-card>
+  `;
+};
+export const isSolved = () => {
+  return html`
+    <cds-card type="green" isSolved>
+      <span slot="status">
+        <cds-diff-status
+          diffStatusType="1"
+          diffStatusText="No tooltip"
+          diffStatusDate="2021-02-02"
+          diffStatusEditor="">
+        </cds-diff-status>
+      </span>
+      <span slot="overflow-menu">
+        <cds-overflow-menu size="sm">
+          ${OverflowMenuVertical16({
+            class: `cds--overflow-menu__icon`,
+            slot: 'icon',
+          })}
+          <span slot="tooltip-content"> Options </span>
+          <cds-overflow-menu-body flipped>
+            <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+          </cds-overflow-menu-body>
+        </cds-overflow-menu>
+      </span>
+      <div slot="above-the-fold-content">
+        <cds-specification-type
+          specificationKods="TP1"
+          specificationLable="asdasdasdas 1"
+          specificationGroup="1"
+          ?isDisabled=${true}>
         </cds-specification-type>
       </div>
       <div slot="below-the-fold-content">
