@@ -11,27 +11,24 @@ class CDSCard extends LitElement {
 
   updated(changedProperties) {
     super.updated(changedProperties);
-    if (changedProperties.has('isSolved')) {
-      if (this.isSolved) {
-        this.style.setProperty('--cds-layer-02', '#c6c6c6');
-      } else {
-        this.style.removeProperty('--cds-layer-02');
-      }
-    }
+    this.style.setProperty('--cds-layer', 'white');
   }
 
   render() {
-    const { type } = this;
-    const typeClass = type ? `container__border-left-${type}` : '';
-    const solved = this.isSolved ? 'solved' : '';
+    const { type, isSolved } = this;
+    const typeClass = isSolved
+      ? 'container__solved'
+      : type
+      ? `container__border-left-${type}`
+      : '';
 
     return html`
-      <div class="container ${typeClass} ${solved}">
+      <div class="container ${typeClass}">
         <div class="top-line">
           <slot name="status" class="status"></slot>
           <slot name="overflow-menu" class="overflow-menu"></slot>
         </div>
-        <cds-expandable-tile color-scheme="light" with-interactive>
+        <cds-expandable-tile with-interactive>
           <cds-tile-above-the-fold-content slot="above-the-fold-content">
             <slot name="above-the-fold-content"></slot>
           </cds-tile-above-the-fold-content>
@@ -47,7 +44,7 @@ class CDSCard extends LitElement {
   static styles = [
     css`
       :host {
-        --cds-layer-02: initial; /* Default value */
+        --cds-layer: initial; /* Default value */
       }
     `,
     styles,
