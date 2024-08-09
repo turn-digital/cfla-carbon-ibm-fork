@@ -1,0 +1,46 @@
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/spacing' as *;
+
+@use '@carbon/styles/scss/theme' as *;
+
+.result-card {
+  border: 1px solid #e0e0e0;
+  min-width: 260px;
+  max-width: fit-content;
+  width: fit-content;
+  height: auto;
+
+  &__wrapper {
+    margin: $spacing-05 $spacing-05 $spacing-06 $spacing-05;
+  }
+
+  &__icon-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-05;
+  }
+
+  &__icon {
+    display: flex;
+    margin-right: $spacing-02;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &--red svg {
+      fill: $support-error;
+    }
+
+    &--green svg {
+      fill: $support-success;
+    }
+  }
+
+  &__icon-title {
+    @include type-style('heading-02');
+    color: $chat-avatar-agent;
+    white-space: nowrap;
+  }
+}
