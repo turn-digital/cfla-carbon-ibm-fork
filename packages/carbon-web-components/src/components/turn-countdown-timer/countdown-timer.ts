@@ -62,21 +62,22 @@ class CDSCountdownTimer extends LitElement {
 
     this.countdownDate = { years, days, hours, minutes };
     return html`
-      ${isDeadlineOver
-        ? html`<div class="countdown-timer">
-            <p class="countdown-timer__overdue">Laiks ir beidzies</p>
-          </div>`
-        : html`<div class="countdown-timer">
-            <div class="countdown-timer__title">
-              Atlikušais laiks līdz iesniegšanai
-            </div>
-            <div class="countdown-timer__time-left">
+      <div class="countdown-timer">
+        <div class="countdown-timer__title">
+          Atlikušais laiks līdz iesniegšanai
+        </div>
+        ${isDeadlineOver
+          ? html` <div
+              class="countdown-timer__time-left countdown-timer__time-left--overdue">
+              0 dienas 0:00
+            </div>`
+          : html`<div class="countdown-timer__time-left">
               ${this.countdownDate.days !== 0
                 ? `${this.countdownDate.days} dienas ${this.countdownDate.hours}:${this.countdownDate.minutes}`
                 : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
-            </div>
-            <div class="countdown-timer__time-actual">${formattedDate}</div>
-          </div>`}
+            </div>`}
+        <div class="countdown-timer__time-actual">${formattedDate}</div>
+      </div>
     `;
   }
 
