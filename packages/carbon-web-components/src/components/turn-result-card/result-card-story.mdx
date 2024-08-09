@@ -1,0 +1,27 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Result card
+
+## Getting started
+
+### JS (via import)
+
+```imoprt
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-result-card.min.js"></script>
+```
+
+### HTML
+
+```html
+<cds-result-card
+  label="Vērtēšanas rezultāts"
+  value="Apstiprināts ar nosacījumu"
+  icon="approved">
+  <cds-link href="#" target="_blank">Lejupielādēt lēmumu</cds-link>
+</cds-result-card>
+```
+
+## `<cds-result-card>` attributes and properties
+
+<Props of="cds-result-card" />
