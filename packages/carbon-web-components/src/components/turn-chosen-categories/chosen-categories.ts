@@ -12,6 +12,7 @@ import { prefix } from '../../globals/settings';
 import styles from './chosen-categories.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 /**
  * Related documents.
@@ -25,13 +26,13 @@ class CDSBackTo extends LitElement {
 
   render() {
     return html`
-      <cds-tile class="container"
-        >${this.chosenCategoriesData.map(
+      <cds-tile class="container">
+        ${this.chosenCategoriesData.map(
           (item) =>
             html`<div class="cds-label-value-container">
               <div class="cds-label-value">
                 <cds-label-value label=${item.label}
-                  >${item.value}</cds-label-value
+                  >${unsafeHTML(item.value)}</cds-label-value
                 >
               </div>
             </div>`
