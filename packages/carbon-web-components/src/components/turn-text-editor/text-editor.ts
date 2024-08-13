@@ -43,6 +43,7 @@ class TextEditor extends LitElement {
       min_height: 200,
       max_height: 500,
       editorId: this.editorId,
+      fullscreen_native: true,
     };
 
     // Merge defaultConfig with this.editorConfig, prioritizing properties from this.editorConfig
@@ -87,7 +88,12 @@ class TextEditor extends LitElement {
         statusbar: false
         left_margin: 50
         ?readonly="${this.readonly}"
-        toolbar="blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen"
+        toolbar="${
+          !this.readonly
+            ? 'blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen'
+            : false
+        }"
+        contextmenu=${false}
         plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize"
         content_css="${urlToTinymceCssFile}"
         promotion="false">
