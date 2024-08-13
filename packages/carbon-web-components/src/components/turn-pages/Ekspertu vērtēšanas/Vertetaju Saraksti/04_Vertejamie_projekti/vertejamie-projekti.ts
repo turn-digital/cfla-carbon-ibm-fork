@@ -4,11 +4,11 @@ import { carbonElement as customElement } from '../../../../../globals/decorator
 
 import Filter16 from '@carbon/icons/lib/filter/16';
 import Upload16 from '@carbon/icons/lib/upload/16';
+import Add from '@carbon/web-components/es/icons/add/16';
+import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 
 @customElement(`${prefix}-vertejamie-projekti`)
 class CDSPVertejamieProjekti extends LitElement {
-
-
   render() {
     const contextualHeaderApiData = {
       virsraksts: 'Atlase: 1.1.1',
@@ -97,19 +97,33 @@ class CDSPVertejamieProjekti extends LitElement {
           class="cds--css-grid-column cds--col-span-100"
           .contextualHeaderApiData=${contextualHeaderApiData}>
         </cds-contextual-header-api>
-        <cds-header-title class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang" title="LZP vērtējamie projekti" marginWrapper></cds-header-title>
+        <cds-header-title
+          class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+          title="LZP vērtējamie projekti"
+          marginWrapper></cds-header-title>
 
         <cds-divider></cds-divider>
 
         <div class="cds--css-grid-column cds--col-span-100">
-
           <cds-table size="sm" expandable is-selectable>
             <cds-table-toolbar slot="toolbar">
+              <cds-table-batch-actions ?active="true">
+                <cds-button
+                  tooltip-position="bottom"
+                  tooltip-text="Piesaistīt sekretāru"
+                  >Piesaistīt sekretāru ${Add({ slot: 'icon' })}</cds-button
+                >
+                <cds-button slot="cancel-button-content">Atcelt</cds-button>
+              </cds-table-batch-actions>
               <cds-table-toolbar-content>
                 <cds-table-toolbar-search
                   placeholder="Filter table"></cds-table-toolbar-search>
-                <cds-button kind="ghost">${Filter16({slot:"icon", fill:"black" })}</cds-button>
-                <cds-button kind="ghost">${Upload16({slot:"icon", fill:"black" })}</cds-button>
+                <cds-button kind="ghost"
+                  >${Filter16({ slot: 'icon', fill: 'black' })}</cds-button
+                >
+                <cds-button kind="ghost"
+                  >${Upload16({ slot: 'icon', fill: 'black' })}</cds-button
+                >
               </cds-table-toolbar-content>
             </cds-table-toolbar>
 
@@ -121,6 +135,7 @@ class CDSPVertejamieProjekti extends LitElement {
                 <cds-table-header-cell>Statusa datums</cds-table-header-cell>
                 <cds-table-header-cell>Termiņš</cds-table-header-cell>
                 <cds-table-header-cell>Eksperti</cds-table-header-cell>
+                <cds-table-header-cell></cds-table-header-cell>
               </cds-table-header-row>
             </cds-table-head>
 
@@ -132,36 +147,58 @@ class CDSPVertejamieProjekti extends LitElement {
                 <cds-table-cell>12.03.2023</cds-table-cell>
                 <cds-table-cell>12.03.2023</cds-table-cell>
                 <cds-table-cell>1</cds-table-cell>
+                <cds-table-cell>
+                  <cds-overflow-menu>
+                    ${OverflowMenuVertical16({
+                      class: `${prefix}--overflow-menu__icon`,
+                      slot: 'icon',
+                    })}
+                    <span slot="tooltip-content"> Options </span>
+                    <cds-overflow-menu-body>
+                      <cds-overflow-menu-item
+                        >Piesaistīt sekretāru</cds-overflow-menu-item
+                      >
+                    </cds-overflow-menu-body>
+                  </cds-overflow-menu>
+                </cds-table-cell>
               </cds-table-row>
               <cds-table-expanded-row>
-
                 <cds-divider size="6"></cds-divider>
 
-                <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-                  <cds-label-value
-                    label="Projekta cikls"
-                    value="Sākumposma">
+                <div
+                  class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                  <cds-label-value label="Projekta cikls" value="Sākumposma">
                   </cds-label-value>
                 </div>
 
                 <cds-divider size="7"></cds-divider>
 
                 <cds-table hide-checkbox size="sm">
-                  <cds-table-header-title slot="title">Ekspertu vērtēšanas veidlapas</cds-table-header-title>
+                  <cds-table-header-title slot="title"
+                    >Ekspertu vērtēšanas veidlapas</cds-table-header-title
+                  >
                   <cds-table-head>
                     <cds-table-header-row hide-checkbox>
                       <cds-table-header-cell>Vērtētājs</cds-table-header-cell>
                       <cds-table-header-cell>Tips</cds-table-header-cell>
-                      <cds-table-header-cell>Veidlapas statuss</cds-table-header-cell>
-                      <cds-table-header-cell>Statusa datums</cds-table-header-cell>
-                      <cds-table-header-cell>Vērtēšanas termiņš</cds-table-header-cell>
+                      <cds-table-header-cell
+                        >Veidlapas statuss</cds-table-header-cell
+                      >
+                      <cds-table-header-cell
+                        >Statusa datums</cds-table-header-cell
+                      >
+                      <cds-table-header-cell
+                        >Vērtēšanas termiņš</cds-table-header-cell
+                      >
                     </cds-table-header-row>
                   </cds-table-head>
                   <cds-table-body>
                     <cds-table-row hide-checkbox>
                       <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
                       <cds-table-cell>Priekšvērtēšana</cds-table-cell>
-                      <cds-table-cell>Vērtēšanas veidlapa slēgta</cds-table-cell>
+                      <cds-table-cell
+                        >Vērtēšanas veidlapa slēgta</cds-table-cell
+                      >
                       <cds-table-cell>12.01.2024</cds-table-cell>
                       <cds-table-cell>12.01.2024</cds-table-cell>
                     </cds-table-row>
@@ -170,7 +207,8 @@ class CDSPVertejamieProjekti extends LitElement {
 
                 <cds-divider size="7"></cds-divider>
 
-                <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                <div
+                  class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
                   <cds-label-value
                     label="Atlases nosaukums"
                     value="Gaisa piesārņojumu mazinošu pasākumu īstenošana, uzlabojot mājsaimniecību siltumapgādes sistēmas">
@@ -179,7 +217,8 @@ class CDSPVertejamieProjekti extends LitElement {
 
                 <cds-divider size="7"></cds-divider>
 
-                <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                <div
+                  class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
                   <cds-label-value
                     label="Projekta nosaukums"
                     value="Bioloģiski noārdāmo atkritumu pārstrādes iekārtu izveide">
@@ -188,7 +227,8 @@ class CDSPVertejamieProjekti extends LitElement {
 
                 <cds-divider size="7"></cds-divider>
 
-                <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                <div
+                  class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
                   <cds-label-value
                     label="Apraksts"
                     value="Eiropas Savienības kohēzijas politikas programmas 2021.–2027.gadam 2.2.3. specifiskā atbalsta mērķa “Uzlabot dabas aizsardzību un bioloģisko daudzveidību, “zaļo” infrastruktūru, it īpaši pilsētvidē, un samazināt piesārņojumu” 2.2.3.6. specifiskā atbalsta mērķa pasākuma “Gaisa piesārņojumu mazinošu pasākumu īstenošana, uzlabojot mājsaimniecību siltumapgādes sistēmas” projektu iesniegumu atlases nolikums">
@@ -198,10 +238,14 @@ class CDSPVertejamieProjekti extends LitElement {
                 <cds-divider size="7"></cds-divider>
 
                 <cds-table hide-checkbox size="sm">
-                  <cds-table-header-title slot="title">Atbildīgie</cds-table-header-title>
+                  <cds-table-header-title slot="title"
+                    >Atbildīgie</cds-table-header-title
+                  >
                   <cds-table-head>
                     <cds-table-header-row hide-checkbox>
-                      <cds-table-header-cell>Vārds Uzvārds</cds-table-header-cell>
+                      <cds-table-header-cell
+                        >Vārds Uzvārds</cds-table-header-cell
+                      >
                       <cds-table-header-cell>Puses</cds-table-header-cell>
                       <cds-table-header-cell>Telefons</cds-table-header-cell>
                       <cds-table-header-cell>E-pasts</cds-table-header-cell>
@@ -224,13 +268,19 @@ class CDSPVertejamieProjekti extends LitElement {
                 </cds-table>
 
                 <cds-divider size="7"></cds-divider>
-                
+
                 <cds-table hide-checkbox size="sm">
-                  <cds-table-header-title slot="title">Sadarbības partneri</cds-table-header-title>
+                  <cds-table-header-title slot="title"
+                    >Sadarbības partneri</cds-table-header-title
+                  >
                   <cds-table-head>
                     <cds-table-header-row hide-checkbox>
-                      <cds-table-header-cell>Iestādes nosaukums</cds-table-header-cell>
-                      <cds-table-header-cell>Reģistrācijas nr.</cds-table-header-cell>
+                      <cds-table-header-cell
+                        >Iestādes nosaukums</cds-table-header-cell
+                      >
+                      <cds-table-header-cell
+                        >Reģistrācijas nr.</cds-table-header-cell
+                      >
                     </cds-table-header-row>
                   </cds-table-head>
                   <cds-table-body>

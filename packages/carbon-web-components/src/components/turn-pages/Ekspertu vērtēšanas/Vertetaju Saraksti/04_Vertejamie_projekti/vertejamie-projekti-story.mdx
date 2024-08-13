@@ -83,49 +83,98 @@ const contextualHeaderApiData = {
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-main-content-block.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-contextual-header-api.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-header-title.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-main-content-block.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-contextual-header-api.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-header-title.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"></script>
 
-    <script type="module" src="https://demo.turn.lv/cfla_dist/tabs.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/data-table.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/button.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/modal.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/checkbox.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/radio-button.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/pagination.min.js"></script>
-    <script type="module" src="https://demo.turn.lv/cfla_dist/select.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/tabs.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/data-table.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/button.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/modal.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/checkbox.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/radio-button.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/pagination.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/select.min.js"></script>
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/overflow-menu.min.js"></script>
 
-    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
-    <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
-    <link rel="stylesheet" href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
+    <link
+      rel="stylesheet"
+      href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
+    <link
+      rel="stylesheet"
+      href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
   </head>
 
   <body class="cds-theme-zone-white">
     <cds-main-content-block storybook>
       <cds-contextual-header-api
         class="cds--css-grid-column cds--col-span-100"
-        .contextualHeaderApiData=${contextualHeaderApiData}>
+        .contextualHeaderApiData="${contextualHeaderApiData}">
       </cds-contextual-header-api>
-      <cds-header-title class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang" title="LZP vērtējamie projekti" marginWrapper></cds-header-title>
+      <cds-header-title
+        class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang"
+        title="LZP vērtējamie projekti"
+        marginWrapper></cds-header-title>
 
       <cds-divider></cds-divider>
 
       <div class="cds--css-grid-column cds--col-span-100">
-
         <cds-table size="sm" expandable is-selectable>
           <cds-table-toolbar slot="toolbar">
+            <cds-table-batch-actions ?active="true">
+              <cds-button
+                tooltip-position="bottom"
+                tooltip-text="Piesaistīt sekretāru"
+                >Piesaistīt sekretāru ${Add({ slot: 'icon' })}</cds-button
+              >
+              <cds-button slot="cancel-button-content">Atcelt</cds-button>
+            </cds-table-batch-actions>
             <cds-table-toolbar-content>
               <cds-table-toolbar-search
                 placeholder="Filter table"></cds-table-toolbar-search>
-              <cds-button kind="ghost">${Filter16({slot:"icon", fill:"black" })}</cds-button>
-              <cds-button kind="ghost">${Upload16({slot:"icon", fill:"black" })}</cds-button>
+              <cds-button kind="ghost"
+                >${Filter16({slot:"icon", fill:"black" })}</cds-button
+              >
+              <cds-button kind="ghost"
+                >${Upload16({slot:"icon", fill:"black" })}</cds-button
+              >
             </cds-table-toolbar-content>
           </cds-table-toolbar>
 
@@ -137,6 +186,7 @@ const contextualHeaderApiData = {
               <cds-table-header-cell>Statusa datums</cds-table-header-cell>
               <cds-table-header-cell>Termiņš</cds-table-header-cell>
               <cds-table-header-cell>Eksperti</cds-table-header-cell>
+              <cds-table-header-cell></cds-table-header-cell>
             </cds-table-header-row>
           </cds-table-head>
 
@@ -148,29 +198,47 @@ const contextualHeaderApiData = {
               <cds-table-cell>12.03.2023</cds-table-cell>
               <cds-table-cell>12.03.2023</cds-table-cell>
               <cds-table-cell>1</cds-table-cell>
+              <cds-table-cell>
+                <cds-overflow-menu>
+                  ${OverflowMenuVertical16({ class:
+                  `${prefix}--overflow-menu__icon`, slot: 'icon', })}
+                  <span slot="tooltip-content"> Options </span>
+                  <cds-overflow-menu-body>
+                    <cds-overflow-menu-item
+                      >Piesaistīt sekretāru</cds-overflow-menu-item
+                    >
+                  </cds-overflow-menu-body>
+                </cds-overflow-menu>
+              </cds-table-cell>
             </cds-table-row>
             <cds-table-expanded-row>
-
               <cds-divider size="6"></cds-divider>
 
-              <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-                <cds-label-value
-                  label="Projekta cikls"
-                  value="Sākumposma">
+              <div
+                class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                <cds-label-value label="Projekta cikls" value="Sākumposma">
                 </cds-label-value>
               </div>
 
               <cds-divider size="7"></cds-divider>
 
               <cds-table hide-checkbox size="sm">
-                <cds-table-header-title slot="title">Ekspertu vērtēšanas veidlapas</cds-table-header-title>
+                <cds-table-header-title slot="title"
+                  >Ekspertu vērtēšanas veidlapas</cds-table-header-title
+                >
                 <cds-table-head>
                   <cds-table-header-row hide-checkbox>
                     <cds-table-header-cell>Vērtētājs</cds-table-header-cell>
                     <cds-table-header-cell>Tips</cds-table-header-cell>
-                    <cds-table-header-cell>Veidlapas statuss</cds-table-header-cell>
-                    <cds-table-header-cell>Statusa datums</cds-table-header-cell>
-                    <cds-table-header-cell>Vērtēšanas termiņš</cds-table-header-cell>
+                    <cds-table-header-cell
+                      >Veidlapas statuss</cds-table-header-cell
+                    >
+                    <cds-table-header-cell
+                      >Statusa datums</cds-table-header-cell
+                    >
+                    <cds-table-header-cell
+                      >Vērtēšanas termiņš</cds-table-header-cell
+                    >
                   </cds-table-header-row>
                 </cds-table-head>
                 <cds-table-body>
@@ -186,7 +254,8 @@ const contextualHeaderApiData = {
 
               <cds-divider size="7"></cds-divider>
 
-              <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+              <div
+                class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
                 <cds-label-value
                   label="Atlases nosaukums"
                   value="Gaisa piesārņojumu mazinošu pasākumu īstenošana, uzlabojot mājsaimniecību siltumapgādes sistēmas">
@@ -195,7 +264,8 @@ const contextualHeaderApiData = {
 
               <cds-divider size="7"></cds-divider>
 
-              <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+              <div
+                class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
                 <cds-label-value
                   label="Projekta nosaukums"
                   value="Bioloģiski noārdāmo atkritumu pārstrādes iekārtu izveide">
@@ -204,7 +274,8 @@ const contextualHeaderApiData = {
 
               <cds-divider size="7"></cds-divider>
 
-              <div class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+              <div
+                class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
                 <cds-label-value
                   label="Apraksts"
                   value="Eiropas Savienības kohēzijas politikas programmas 2021.–2027.gadam 2.2.3. specifiskā atbalsta mērķa “Uzlabot dabas aizsardzību un bioloģisko daudzveidību, “zaļo” infrastruktūru, it īpaši pilsētvidē, un samazināt piesārņojumu” 2.2.3.6. specifiskā atbalsta mērķa pasākuma “Gaisa piesārņojumu mazinošu pasākumu īstenošana, uzlabojot mājsaimniecību siltumapgādes sistēmas” projektu iesniegumu atlases nolikums">
@@ -214,7 +285,9 @@ const contextualHeaderApiData = {
               <cds-divider size="7"></cds-divider>
 
               <cds-table hide-checkbox size="sm">
-                <cds-table-header-title slot="title">Atbildīgie</cds-table-header-title>
+                <cds-table-header-title slot="title"
+                  >Atbildīgie</cds-table-header-title
+                >
                 <cds-table-head>
                   <cds-table-header-row hide-checkbox>
                     <cds-table-header-cell>Vārds Uzvārds</cds-table-header-cell>
@@ -240,13 +313,19 @@ const contextualHeaderApiData = {
               </cds-table>
 
               <cds-divider size="7"></cds-divider>
-              
+
               <cds-table hide-checkbox size="sm">
-                <cds-table-header-title slot="title">Sadarbības partneri</cds-table-header-title>
+                <cds-table-header-title slot="title"
+                  >Sadarbības partneri</cds-table-header-title
+                >
                 <cds-table-head>
                   <cds-table-header-row hide-checkbox>
-                    <cds-table-header-cell>Iestādes nosaukums</cds-table-header-cell>
-                    <cds-table-header-cell>Reģistrācijas nr.</cds-table-header-cell>
+                    <cds-table-header-cell
+                      >Iestādes nosaukums</cds-table-header-cell
+                    >
+                    <cds-table-header-cell
+                      >Reģistrācijas nr.</cds-table-header-cell
+                    >
                   </cds-table-header-row>
                 </cds-table-head>
                 <cds-table-body>
@@ -276,14 +355,12 @@ const contextualHeaderApiData = {
         <cds-divider size="5"></cds-divider>
       </cds-modal-header>
       <cds-modal-body>
-
         <cds-table size="sm" radio>
           <cds-table-toolbar slot="toolbar">
             <cds-table-toolbar-content>
               <cds-table-toolbar-search
                 placeholder="Filter table"></cds-table-toolbar-search>
               <cds-button>Pievienot jaunu ${Add16({slot:"icon"})}</cds-button>
-              
             </cds-table-toolbar-content>
           </cds-table-toolbar>
 
@@ -324,14 +401,15 @@ const contextualHeaderApiData = {
         </cds-pagination>
 
         <div></div>
-
       </cds-modal-body>
-      
+
       <cds-modal-footer>
         <cds-modal-footer-button kind="secondary" data-modal-close
           >Atcelt</cds-modal-footer-button
         >
-        <cds-modal-footer-button kind="primary">Izvēlēties</cds-modal-footer-button>
+        <cds-modal-footer-button kind="primary"
+          >Izvēlēties</cds-modal-footer-button
+        >
       </cds-modal-footer>
     </cds-modal>
   </body>
