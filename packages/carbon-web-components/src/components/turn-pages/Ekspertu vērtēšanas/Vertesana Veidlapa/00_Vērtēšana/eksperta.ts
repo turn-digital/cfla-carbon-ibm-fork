@@ -134,15 +134,35 @@ class CDSPValuationOpen extends LitElement {
             <div
               class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6 cds--css-grid-column">
               <div>
-                <cds-main-content-item size="07" isStatusChangePanel>
+                <cds-main-content-item size="05" isStatusChangePanel>
                   <cds-dropdown-button
                     label="Mainīt statusu"
                     .dropdownHandler="${this.itemSelectedHandler}"
                     .statusArray="${statusArray}"></cds-dropdown-button>
                 </cds-main-content-item>
+
+                <cds-main-content-item size="01" isStatusChangePanel>
+                  <cds-countdown-timer deadline="2024-12-16T00:00:00"></cds-countdown-timer>
+                </cds-main-content-item>
               </div>
             </div>
           </div>
+
+          <div class="cds--css-grid cds--css-grid--narrow">
+            <div
+              class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6 cds--css-grid-column">
+              <cds-main-content-item size="03">
+                <cds-document-with-status
+                  title="LZP sekretāra pārbaudes lapa"
+                  status="information"
+                  statusText="Sagatavošanā"
+                  linkUrl="https://google.com"
+                  linkText="Atvērt">
+                </cds-document-with-status>
+              </cds-main-content-item>
+            </div>
+          </div>
+
         </div>
 
         <div slot="tabs" class="cds--css-grid-column cds--col-span-100">
@@ -161,9 +181,83 @@ class CDSPValuationOpen extends LitElement {
                 downloadLink="https://example.com/download"
                 printLink="https://example.com/print">
             </cds-print-download>
+
+            <cds-main-content-item
+            size="05"
+            class="cds--css-grid-column cds--col-span-100">
+            <cds-table size="xs">
+              <cds-table-header-title slot="title"
+                >Gala vērtējums</cds-table-header-title
+              >
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-button
+                    size="lg"
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    @click="${this.openModal}"
+                    has-main-content="">
+                    Pievienot ${Add16({ slot: 'icon' })}
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
+              <cds-table-head>
+                <cds-table-header-row>
+                  <cds-table-header-cell>Nosaukums</cds-table-header-cell>
+                  <cds-table-header-cell
+                    >Pievienošanas datums</cds-table-header-cell
+                  >
+                  <cds-table-header-cell
+                    >Pievienotājs</cds-table-header-cell
+                  >
+                  <cds-table-header-cell></cds-table-header-cell>
+                </cds-table-header-row>
+              </cds-table-head>
+              <cds-table-body>
+                <cds-table-row>
+                  <cds-table-cell>
+                    <a
+                      href="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+                      download
+                      style="text-decoration: none;">
+                      Gala_vertejums.docx
+                    </a>
+                  </cds-table-cell>
+                  <cds-table-cell>22.03.2023 10:15</cds-table-cell>
+                  <cds-table-cell>LZP sekretārs: Ieva Kļaviņa</cds-table-cell>
+                  <cds-table-cell>
+                    <cds-overflow-menu>
+                      ${OverflowMenuVertical16({
+                        class: `${prefix}--overflow-menu__icon`,
+                        slot: 'icon',
+                      })}
+                      <span slot="tooltip-content"> Options </span>
+                      <cds-overflow-menu-body>
+                        <cds-overflow-menu-item
+                          >Lejupielādēt</cds-overflow-menu-item
+                        >
+                        <cds-overflow-menu-item divider danger
+                          >Dzēst</cds-overflow-menu-item
+                        >
+                      </cds-overflow-menu-body>
+                    </cds-overflow-menu>
+                  </cds-table-cell>
+                </cds-table-row>
+              </cds-table-body>
+            </cds-table>
+          </cds-main-content-item>
+
+
             <div
             class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-8 cds--lg:col-span-10 cds--grid-column-hang">
             <cds-divider></cds-divider>
+
+
+
+            
             <cds-label-value
               label="Projekta cikls"
               value="Vidusposma"></cds-label-value>
@@ -320,27 +414,68 @@ class CDSPValuationOpen extends LitElement {
                   </cds-table-cell>
                   <cds-table-cell>22.03.2023 10:20</cds-table-cell>
                   <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
-                  <cds-table-cell>
-                    <cds-overflow-menu>
-                      ${OverflowMenuVertical16({
-                        class: `${prefix}--overflow-menu__icon`,
-                        slot: 'icon',
-                      })}
-                      <span slot="tooltip-content"> Options </span>
-                      <cds-overflow-menu-body>
-                        <cds-overflow-menu-item
-                          >Lejupielādēt</cds-overflow-menu-item
-                        >
-                        <cds-overflow-menu-item divider danger
-                          >Dzēst</cds-overflow-menu-item
-                        >
-                      </cds-overflow-menu-body>
-                    </cds-overflow-menu>
-                  </cds-table-cell>
+                  <cds-table-cell></cds-table-cell>
                 </cds-table-row>
               </cds-table-body>
             </cds-table>
           </div>
+
+          <cds-main-content-item
+            size="08"
+            class="cds--css-grid-column cds--col-span-100">
+            <cds-table size="xs">
+              <cds-table-header-title slot="title"
+                >Ekspertu vērtēšanas veidlapas</cds-table-header-title
+              >
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-button
+                    size="lg"
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    @click="${this.openModal}"
+                    has-main-content="">
+                    Pievienot ${Add16({ slot: 'icon' })}
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
+              <cds-table-head>
+                <cds-table-header-row>
+                  <cds-table-header-cell>Vērtētājs</cds-table-header-cell>
+                  <cds-table-header-cell>Tips</cds-table-header-cell>
+                  <cds-table-header-cell>Veidlapas statuss</cds-table-header-cell>
+                  <cds-table-header-cell>Statusa datums</cds-table-header-cell>
+                  <cds-table-header-cell>Vērtēšanas termiņš</cds-table-header-cell>
+                </cds-table-header-row>
+              </cds-table-head>
+              <cds-table-body>
+                <cds-table-row>
+                  <cds-table-cell>Pēteris Jurčenko</cds-table-cell>
+                  <cds-table-cell>Priekšvērtēšana</cds-table-cell>
+                  <cds-table-cell>Priekšvērtēšana noslēgusies</cds-table-cell>
+                  <cds-table-cell>12.01.2024</cds-table-cell>
+                  <cds-table-cell>12.01.2024</cds-table-cell>
+                </cds-table-row>
+                <cds-table-row>
+                  <cds-table-cell>Jānis Bērziņš</cds-table-cell>
+                  <cds-table-cell>Priekšvērtēšana</cds-table-cell>
+                  <cds-table-cell>Priekšvērtēšana noslēgusies</cds-table-cell>
+                  <cds-table-cell>12.01.2024</cds-table-cell>
+                  <cds-table-cell>12.01.2024</cds-table-cell>
+                </cds-table-row>
+                <cds-table-row>
+                  <cds-table-cell>Māra Kalniņa</cds-table-cell>
+                  <cds-table-cell>Apkopošana</cds-table-cell>
+                  <cds-table-cell>Iesniegts vērtējums</cds-table-cell>
+                  <cds-table-cell>12.01.2024</cds-table-cell>
+                  <cds-table-cell>12.01.2024</cds-table-cell>
+                </cds-table-row>
+              </cds-table-body>
+            </cds-table>
+          </cds-main-content-item>
           </cds-tab-content-container>
         </div>
       
