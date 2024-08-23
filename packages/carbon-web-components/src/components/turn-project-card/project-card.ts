@@ -61,24 +61,32 @@ class ProjectCard extends LitElement {
         </div>
         <p class="project-card-desc">${cardTitle}</p>
         <div class="project-card-info">
-          <div class="project-card-info-section">
-            <div class="project-card-info-image">
-              ${Calendar({ slot: 'icon', fill: 'black' })}
-            </div>
-            <div class="project-card-info-item">
-              <p>${projectDateTitle}</p>
-              <h3>${projectDateInfo}</h3>
-            </div>
-          </div>
-          <div class="project-card-info-section">
-            <div class="project-card-info-image">
-              ${ShoppingCart({ slot: 'icon', fill: 'black' })}
-            </div>
-            <div class="project-card-info-item">
-              <p>${projectCostTitle}</p>
-              <h3>${projectCostInfo}</h3>
-            </div>
-          </div>
+          ${projectDateInfo
+            ? html`
+                <div class="project-card-info-section">
+                  <div class="project-card-info-image">
+                    ${Calendar({ slot: 'icon', fill: 'black' })}
+                  </div>
+                  <div class="project-card-info-item">
+                    <p>${projectDateTitle}</p>
+                    <h3>${projectDateInfo}</h3>
+                  </div>
+                </div>
+              `
+            : ''}
+          ${projectCostInfo
+            ? html`
+                <div class="project-card-info-section">
+                  <div class="project-card-info-image">
+                    ${ShoppingCart({ slot: 'icon', fill: 'black' })}
+                  </div>
+                  <div class="project-card-info-item">
+                    <p>${projectCostTitle}</p>
+                    <h3>${projectCostInfo}</h3>
+                  </div>
+                </div>
+              `
+            : ''}
         </div>
       </div>
     `;
