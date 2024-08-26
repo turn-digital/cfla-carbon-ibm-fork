@@ -86,6 +86,7 @@ export const WithMaxCahrLengthAndRequestObject = () => {
   return html`
     <cds-text-editor
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
+      textEditorData="This is a text from props"
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "max_char_length": 200,

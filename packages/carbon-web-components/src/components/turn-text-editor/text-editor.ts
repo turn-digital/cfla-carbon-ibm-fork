@@ -44,6 +44,7 @@ class TextEditor extends LitElement {
       max_height: 500,
       editorId: this.editorId,
       fullscreen_native: true,
+      browser_spellcheck: true,
     };
 
     // Merge defaultConfig with this.editorConfig, prioritizing properties from this.editorConfig
