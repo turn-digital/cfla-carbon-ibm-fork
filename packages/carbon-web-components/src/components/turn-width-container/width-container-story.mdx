@@ -1,0 +1,48 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Avatar
+
+## Description:
+
+## Anatomy:
+
+A coloured circular area with two white capital letters.
+
+Background token $background-avatar  
+Text token $text-inverse
+
+Avatar properties are:
+
+- Symbols, by default “VK”
+- avatarText, by default “”, appears to the right of the avatar
+
+## Design and UX comments:
+
+The avatar is used in the Left panel component. In the case of the expanded
+panel, the avatar is placed next to the avatarText - title of the section , on
+its left side. In a collapsed panel, the section title is not shown and only the
+avatar is visible.
+
+The avatar is used in the Left panel component. In the case of the expanded
+panel, the avatar is placed next to the title of the section, on its left side.
+In a collapsed panel, the section title is not shown and only the avatar is
+visible.
+
+```
+<script type="module" src="https://storybook.kase.gov.lv/dist/turn-avatar.min.js"></script>
+```
+
+### HTML
+
+```html
+<cds-avatar></cds-avatar>
+```
+
+```html
+<cds-avatar symbols="VT" avatarText="Some Text" />
+```
+
+## `<cds-avatar>` attributes and properties
+
+<Props of="cds-avatar" />
