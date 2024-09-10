@@ -342,18 +342,27 @@ only show it when the data is still loading
       <cds-modal id="status-change-modal">
         <cds-modal-header>
           <cds-modal-close-button></cds-modal-close-button>
-          <cds-modal-label>Dokumenti</cds-modal-label>
-          <cds-modal-heading>Dokumenta pievienošana</cds-modal-heading>
+          <cds-modal-label>3.1.1.5/19/A/043 Sākumposma vērtēšana</cds-modal-label>
+          <cds-modal-heading>Statusa maiņa</cds-modal-heading>
         </cds-modal-header>
         <cds-modal-body>
-          <p>
-            Spiežot “atgriezt nodaļas vadītājam” Jūs... paskaidrot, kādas sekas.
-          </p>
+          <cds-divider></cds-divider>
+          <cds-width-container width="180px">
+            <cds-dropdown title-text="Nodaļas vadītājs" value="foo">
+              <cds-dropdown-item value="foo">Anna Bērza 1</cds-dropdown-item>
+              <cds-dropdown-item value="bar">Anna Bērza 2</cds-dropdown-item>
+              <cds-dropdown-item value="baz">Anna Bērza 3</cds-dropdown-item>
+            </cds-dropdown>
+          </cds-width-container>
+
+          <cds-divider></cds-divider>
           <cds-text-editor
             editorId="editor_status_modal"
             editorConfig='{
-        "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes"
-        }'></cds-text-editor>
+        "editorTitle": "?Komentārs"
+        }'
+        textEditorData="Projekta iesniegums iesniegts Kohēzijas politikas fondu vadības informācijas sistēmā 2014.-2020.gadam (turpmāk – KPVIS). "
+        ></cds-text-editor>
         </cds-modal-body>
         <cds-modal-footer>
           <cds-modal-footer-button kind="secondary" data-modal-close
