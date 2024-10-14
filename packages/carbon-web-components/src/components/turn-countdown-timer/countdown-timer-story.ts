@@ -18,6 +18,10 @@ export const Propsed = () => {
 </br>
 </br>
     <cds-countdown-timer deadline="2024-07-08T00:00:00"></cds-countdown-timer>
+</br>
+</br>
+</br>
+    <cds-countdown-timer deadline="2024-11-26T00:00:00"></cds-countdown-timer>
   `;
 };
 

@@ -30,18 +30,16 @@ class CDSCountdownTimer extends LitElement {
   @property({ type: String }) deadline = '';
 
   render() {
-    // const apiDate = new Date(iesniegsanasTermins);
     const deadline = new Date(`${this.deadline}`);
 
-    const formattedDate = `${(deadline.getMonth() + 1)
-      .toString()
-      .padStart(2, '0')}.${deadline
-      .getDate()
-      .toString()
-      .padStart(2, '0')}.${deadline.getFullYear()} ${deadline
-      .getHours()
-      .toString()
-      .padStart(2, '0')}:${deadline.getMinutes().toString().padStart(2, '0')}`;
+    const formattedDate = `${deadline.toLocaleDateString('lv-LV', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    })} ${deadline.toLocaleTimeString('lv-LV', {
+      hour: '2-digit',
+      minute: '2-digit',
+    })}`;
 
     const currentDate = new Date();
     const isDeadlineOver = deadline.getTime() < currentDate.getTime();
