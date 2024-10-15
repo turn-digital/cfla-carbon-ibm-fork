@@ -27,6 +27,29 @@ class CDSDropdownButtonTest extends LitElement {
 
   static styles = styles;
 
+  //update cds-dropdown-item styles
+  firstUpdated() {
+    const dropdownItems = this.renderRoot.querySelectorAll(
+      '.cds-theme-zone-turn-dropdown-button-test'
+    );
+
+    dropdownItems.forEach((dropdownItem) => {
+      const shadowRoot = dropdownItem.shadowRoot;
+
+      if (shadowRoot) {
+        setTimeout(() => {
+          const menuItemOption = shadowRoot.querySelector(
+            '.cds--list-box__menu-item__option'
+          );
+
+          if (menuItemOption) {
+            menuItemOption.style.paddingInlineEnd = '0px';
+          }
+        }, 0);
+      }
+    });
+  }
+
   render() {
     return html`
       <div class="dropdown-container">
