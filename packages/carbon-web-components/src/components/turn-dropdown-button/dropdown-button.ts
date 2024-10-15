@@ -43,7 +43,7 @@ class CDSDropdownButtonTest extends LitElement {
           );
 
           if (menuItemOption) {
-            menuItemOption.style.paddingInlineEnd = '0px';
+            (menuItemOption as HTMLElement).style.paddingInlineEnd = '0px';
           }
         }, 0);
       }
