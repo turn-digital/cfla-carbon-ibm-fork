@@ -1856,18 +1856,19 @@
 
 
 
-:host(.cds-theme-zone-external),
-.cds-theme-zone-external {
+:host(.cds-theme-zone-internal),
+.cds-theme-zone-internal {
     --cds-background: #F2F5F4;
     --cds-background-brand: #064A4A;
+    /* --cds-background-brand: #027070; */
 
-    --cds-button-primary: #027070;
-    --cds-button-primary-hover: #064A4A;
+    --cds-button-primary: #064A4A;
+    --cds-button-primary-hover: #027070;
     --cds-button-primary-active: #032B2B;
 
     --cds-button-secondary: #393939;
-    --cds-button-secondary-hover: #4c4c4c;
-    --cds-button-secondary-active: #6f6f6f;
+    --cds-button-secondary-hover: #4C4C4C;
+    --cds-button-secondary-active: #6F6F6F;
 
     --cds-button-tertiary: #027070;
     --cds-button-tertiary-hover: #064A4A;
@@ -1889,10 +1890,22 @@
 
 
 
-:host(.cds-theme-zone-internal),
-.cds-theme-zone-internal {
-    --cds-background: #F7F8FB;
+:host(.cds-theme-zone-external),
+.cds-theme-zone-external {
+    --cds-background: #027070;
     --cds-background-brand: #022069;
+
+    --cds-button-primary: #022069;
+    --cds-button-primary-hover: #2F53AB;
+    --cds-button-primary-active: #265BDE;
+
+    --cds-button-secondary: #393939;
+    --cds-button-secondary-hover: #4C4C4C;
+    --cds-button-secondary-active: #6F6F6F;
+
+    --cds-button-tertiary: #022069;
+    --cds-button-tertiary-hover: #2F53AB;
+    --cds-button-tertiary-active: #265BDE;
 
     --cds-focus: #022069;
 
