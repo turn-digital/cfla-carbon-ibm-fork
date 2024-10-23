@@ -1845,3 +1845,57 @@
     --cds-border-strong: var(--cds-border-strong-01, #8d8d8d);
     --cds-border-tile: var(--cds-border-tile-01, #c6c6c6)
 }
+
+
+
+
+
+
+
+
+
+
+
+:host(.cds-theme-zone-external),
+.cds-theme-zone-external {
+    --cds-background: #F2F5F4;
+    --cds-background-brand: #064A4A;
+
+    --cds-button-primary: #027070;
+    --cds-button-primary-hover: #064A4A;
+    --cds-button-primary-active: #032B2B;
+
+    --cds-button-secondary: #393939;
+    --cds-button-secondary-hover: #4c4c4c;
+    --cds-button-secondary-active: #6f6f6f;
+
+    --cds-button-tertiary: #027070;
+    --cds-button-tertiary-hover: #064A4A;
+    --cds-button-tertiary-active: #032B2B;
+
+    --cds-link-primary: #027070;
+    --cds-link-primary-hover: #064A4A;
+    --cds-link-secondary: #265BDE;
+    --cds-link-secondary-hover: #2F53AB;
+    --cds-link-inverse: #78a9ff;
+    --cds-link-visited: #8a3ffc;
+
+    --cds-focus: #027070;
+
+    --cds-interactive: #027070;
+}
+
+
+
+
+
+:host(.cds-theme-zone-internal),
+.cds-theme-zone-internal {
+    --cds-background: #F7F8FB;
+    --cds-background-brand: #022069;
+
+    --cds-focus: #022069;
+
+    --cds-interactive: #265BDE;
+
+}
