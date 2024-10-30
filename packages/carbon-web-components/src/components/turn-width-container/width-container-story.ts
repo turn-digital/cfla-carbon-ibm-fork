@@ -6,8 +6,19 @@ export const Default = (args) => {
   const {} = args?.['cds-width-container'] ?? {};
   return html`
     <cds-width-container flex
-      ><div>asdasdasdas</div>
-      <div>.b,mcv.b,mvcbc</div></cds-width-container
+      ><div>some info in flex</div>
+      <div>some more info</div></cds-width-container
+    >
+    <br />
+    <br />
+    <cds-width-container width="200px"
+      ><div>some info in 200px</div>
+      <div>some more info</div></cds-width-container
+    ><br />
+    <br />
+    <cds-width-container width="100px"
+      ><div>some info in 100px</div>
+      <div>some more info</div></cds-width-container
     >
   `;
 };

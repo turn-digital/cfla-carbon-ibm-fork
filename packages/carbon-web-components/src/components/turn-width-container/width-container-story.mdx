@@ -1,36 +1,10 @@
 import { Props, Description } from '@storybook/addon-docs/blocks';
 import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
-# Avatar
-
-## Description:
-
-## Anatomy:
-
-A coloured circular area with two white capital letters.
-
-Background token $background-avatar  
-Text token $text-inverse
-
-Avatar properties are:
-
-- Symbols, by default “VK”
-- avatarText, by default “”, appears to the right of the avatar
-
-## Design and UX comments:
-
-The avatar is used in the Left panel component. In the case of the expanded
-panel, the avatar is placed next to the avatarText - title of the section , on
-its left side. In a collapsed panel, the section title is not shown and only the
-avatar is visible.
-
-The avatar is used in the Left panel component. In the case of the expanded
-panel, the avatar is placed next to the title of the section, on its left side.
-In a collapsed panel, the section title is not shown and only the avatar is
-visible.
+# Width Container
 
 ```
-<script type="module" src="https://storybook.kase.gov.lv/dist/turn-avatar.min.js"></script>
+<script type="module" src="https://storybook.kase.gov.lv/dist/turn-width-container.min.js"></script>
 ```
 
 ### HTML
@@ -40,9 +14,23 @@ visible.
 ```
 
 ```html
-<cds-avatar symbols="VT" avatarText="Some Text" />
+<cds-width-container flex
+  ><div>some info in flex</div>
+  <div>some more info</div></cds-width-container
+>
+<br />
+<br />
+<cds-width-container width="200px"
+  ><div>some info in 200px</div>
+  <div>some more info</div></cds-width-container
+><br />
+<br />
+<cds-width-container width="100px"
+  ><div>some info in 100px</div>
+  <div>some more info</div></cds-width-container
+>
 ```
 
-## `<cds-avatar>` attributes and properties
+## `<cds-width-container>` attributes and properties
 
-<Props of="cds-avatar" />
+<Props of="cds-width-container" />
