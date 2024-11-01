@@ -398,7 +398,6 @@
         } else {
           madeurl = `${domain}/${pathname}`;
         }
-        console.log('madeurl', madeurl);
         return madeurl;
       };
       var urlToTinymce =

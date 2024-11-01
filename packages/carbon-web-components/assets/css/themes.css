@@ -1870,7 +1870,7 @@
     --cds-button-secondary-hover: #4C4C4C;
     --cds-button-secondary-active: #6F6F6F;
 
-    --cds-button-tertiary: #027070;
+    --cds-button-tertiary: #064A4A;
     --cds-button-tertiary-hover: #064A4A;
     --cds-button-tertiary-active: #032B2B;
 
@@ -1883,7 +1883,8 @@
 
     --cds-focus: #027070;
 
-    --cds-interactive: #027070;
+    --cds-interactive: #064a4a;
+    --cds-border-interactive: #064a4a;
 }
 
 
@@ -1904,11 +1905,12 @@
     --cds-button-secondary-active: #6F6F6F;
 
     --cds-button-tertiary: #022069;
-    --cds-button-tertiary-hover: #2F53AB;
+    --cds-button-tertiary-hover: #022069;
     --cds-button-tertiary-active: #265BDE;
 
     --cds-focus: #022069;
 
-    --cds-interactive: #265BDE;
+    --cds-interactive: #022069;
+    --cds-border-interactive: #022069;
 
 }
