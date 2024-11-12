@@ -1,0 +1,30 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Chosen categories
+
+## Getting started
+
+### JS (via import)
+
+```javascript
+<script
+  type="module"
+  src="https://demo.turn.lv/cfla_dist/turn-chosen-categories.min.js"></script>
+```
+
+### HTML
+
+```html
+const chosenCategoriesData = [ { label: 'Projekta dzīves cikla posms', value:
+'Sākumposma' }, { label: 'Eksperta tips', value: 'CFLA ekspertu vērtējumsar
+nodaļas vadītāja iesaisti', }, { label: 'Ekspertīzes joma', value: 'Valsts
+atbalsta ' }, ];
+
+<cds-chosen-categories .chosenCategoriesData="${chosenCategoriesData}">
+</cds-chosen-categories>
+```
+
+## `<cds-chosen-categories>` attributes and properties
+
+<Props of="cds-chosen-categories" />
