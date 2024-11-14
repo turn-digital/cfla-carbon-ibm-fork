@@ -61,6 +61,13 @@ export const Propsed = () => {
   return html`
     <cds-status-history
       .statusHistoryItems=${statusHistoryItems}
+      statusHistoryTitle="Statusu vēsture"
+      currenStatusColor="green"
+      currenStatusTitle="CFLA pārdomas"
+      currenStatusDate="25.10.2019 10:34"></cds-status-history>
+    <cds-status-history
+      .statusHistoryItems=${statusHistoryItems}
+      statusHistoryTitle="Status history"
       currenStatusColor="green"
       currenStatusTitle="CFLA pārdomas"
       currenStatusDate="25.10.2019 10:34"></cds-status-history>
@@ -70,6 +77,7 @@ export const withHtmlInPamatojums = () => {
   return html`
     <cds-status-history
       .statusHistoryItems=${statusHistoryItems}
+      statusHistoryTitle="Statusu vēsture"
       currenStatusColor="red"
       currenStatusTitle="CFLA pārdomas"
       currenStatusDate="25.10.2019 10:34"></cds-status-history>

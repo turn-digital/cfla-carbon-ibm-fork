@@ -23,6 +23,7 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 class CDSStatusHistory extends LitElement {
   @property({ type: String }) currenStatusColor = '';
   @property({ type: String }) currenStatusTitle = '';
+  @property({ type: String }) statusHistoryTitle = '';
   @property({ type: String }) currenStatusDate = '';
   @property({ type: Array }) statusHistoryItems: any = [];
 
@@ -55,7 +56,7 @@ class CDSStatusHistory extends LitElement {
         </div>
         <div class="container__status-history">
           <cds-accordion alignment="start">
-            <cds-accordion-item title="Statusu vēsture">
+            <cds-accordion-item title="${this.statusHistoryTitle}">
               ${this.statusHistoryItems.map(
                 (item) => html`
                   <p id="${item.id}">
