@@ -45,7 +45,7 @@ class TextEditor extends LitElement {
       editorId: this.editorId,
       fullscreen_native: true,
       browser_spellcheck: true,
-      cache_suffix: '?v=1.1',
+      cache_suffix: '?v=1.2',
     };
 
     // Merge defaultConfig with this.editorConfig, prioritizing properties from this.editorConfig
