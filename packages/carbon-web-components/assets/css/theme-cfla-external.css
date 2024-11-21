@@ -1,0 +1,21 @@
+:root {
+    --cds-background: #027070;
+    --cds-background-brand: #022069;
+
+    --cds-button-primary: #022069;
+    --cds-button-primary-hover: #2F53AB;
+    --cds-button-primary-active: #265BDE;
+
+    --cds-button-secondary: #393939;
+    --cds-button-secondary-hover: #4C4C4C;
+    --cds-button-secondary-active: #6F6F6F;
+
+    --cds-button-tertiary: #022069;
+    --cds-button-tertiary-hover: #022069;
+    --cds-button-tertiary-active: #265BDE;
+
+    --cds-focus: #022069;
+
+    --cds-interactive: #022069;
+    --cds-border-interactive: #022069;
+}
