@@ -1860,7 +1860,6 @@
 .cds-theme-zone-internal {
     --cds-background: #F2F5F4;
     --cds-background-brand: #064A4A;
-    /* --cds-background-brand: #027070; */
 
     --cds-button-primary: #064A4A;
     --cds-button-primary-hover: #027070;
@@ -1893,7 +1892,7 @@
 
 :host(.cds-theme-zone-external),
 .cds-theme-zone-external {
-    --cds-background: #027070;
+    --cds-background: #F7F8FB;
     --cds-background-brand: #022069;
 
     --cds-button-primary: #022069;
