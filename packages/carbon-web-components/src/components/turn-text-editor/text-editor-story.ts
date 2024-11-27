@@ -116,7 +116,7 @@ export const WithMaxCahrLengthAndRequestObjectAndServerErrorText = () => {
         "urlToRequest": "https://jsonplaceholder",
         "requestMethod": "PATCH",
         "requestValueKey": "value",
-        "verificationToken": "token",
+        "verificationToken": "token"
         },
         "onServerLastEditor": {
           "name": "Vlad",
