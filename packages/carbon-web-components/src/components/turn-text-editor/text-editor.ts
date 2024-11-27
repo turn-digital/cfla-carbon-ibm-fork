@@ -27,7 +27,7 @@ class TextEditor extends LitElement {
     Math.random() * 1000000000000
   ).toString();
   @property({ type: String }) onServerErrorTextUnderline = '';
-  @property({ type: String })
+  @property({ type: String, reflect: true })
   textEditorData = ``;
   @property({ type: Object }) editorConfig = {};
 
@@ -45,13 +45,21 @@ class TextEditor extends LitElement {
       editorId: this.editorId,
       fullscreen_native: true,
       browser_spellcheck: true,
-      cache_suffix: '?v=1.2',
+      cache_suffix: '?v=1.3',
+      setup: (editor) => {
+        editor.on('input undo redo Change', () => {
+          const newContent = editor.getContent({ format: 'html' });
+          // Update the property/attribute with the new content
+          this.textEditorData = newContent;
+        });
+      },
     };
 
     // Merge defaultConfig with this.editorConfig, prioritizing properties from this.editorConfig
 
     return { ...defaultConfig, ...this.editorConfig };
   }
+
   render() {
     //@ts-ignore
     const configKey = `config_${this.editorId}`;
@@ -83,7 +91,7 @@ class TextEditor extends LitElement {
         : `${getBaseUrl()}/Content/Carbon/assets/css/text-editor.min.css`;
 
     return html`
-      <tinymce-editor
+      <tinymce-editor 
         class="tinymce-editor"
         config="${configKey}"
         statusbar: false

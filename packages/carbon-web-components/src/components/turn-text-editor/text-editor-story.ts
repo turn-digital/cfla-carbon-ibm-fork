@@ -112,13 +112,11 @@ export const WithMaxCahrLengthAndRequestObjectAndServerErrorText = () => {
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "max_char_length": 200,
-      "onServerErrorTextNotification": "Error from server text (optional)",
       "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
+        "urlToRequest": "https://jsonplaceholder",
         "requestMethod": "PATCH",
         "requestValueKey": "value",
         "verificationToken": "token",
-        "errorAlertMessage": "Error occurred while fetching data"
         },
         "onServerLastEditor": {
           "name": "Vlad",
