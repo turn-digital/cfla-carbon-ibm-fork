@@ -30,6 +30,7 @@ class TextEditor extends LitElement {
   @property({ type: String, reflect: true })
   textEditorData = ``;
   @property({ type: Object }) editorConfig = {};
+  @property({ attribute: false }) onChange: ((newContent: string) => void) | null = null;
 
   get combinedEditorConfig() {
     const defaultConfig = {
@@ -51,6 +52,11 @@ class TextEditor extends LitElement {
           const newContent = editor.getContent({ format: 'html' });
           // Update the property/attribute with the new content
           this.textEditorData = newContent;
+
+          // Call the onChange function if it exists
+          if (typeof this.onChange === 'function') {
+            this.onChange(newContent);
+          }
         });
       },
     };
