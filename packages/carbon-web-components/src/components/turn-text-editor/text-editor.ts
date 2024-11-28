@@ -30,7 +30,9 @@ class TextEditor extends LitElement {
   @property({ type: String, reflect: true })
   textEditorData = ``;
   @property({ type: Object }) editorConfig = {};
-  @property({ attribute: false }) onChange: ((newContent: string) => void) | null = null;
+  @property({ attribute: false }) onChange:
+    | ((newContent: string) => void)
+    | null = null;
 
   get combinedEditorConfig() {
     const defaultConfig = {
@@ -46,7 +48,7 @@ class TextEditor extends LitElement {
       editorId: this.editorId,
       fullscreen_native: true,
       browser_spellcheck: true,
-      cache_suffix: '?v=1.3',
+      cache_suffix: '?v=1.4',
       setup: (editor) => {
         editor.on('input undo redo Change', () => {
           const newContent = editor.getContent({ format: 'html' });

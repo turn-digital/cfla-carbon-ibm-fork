@@ -14,6 +14,7 @@ import storyDocs from './text-editor-story.mdx';
 export const Default = () => {
   return html`
     <cds-text-editor
+      .onChange=${(newContent) => console.log(newContent)}
       textEditorData="This is a text from props"
       onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
       editorConfig='{
