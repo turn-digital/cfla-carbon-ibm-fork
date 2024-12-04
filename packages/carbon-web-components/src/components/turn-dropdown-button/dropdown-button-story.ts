@@ -23,7 +23,8 @@ export const Propsed = () => {
   return html`
     <cds-dropdown-button
       .accordionItems=${itemsArray}
-      .dropdownHandler=${eventHandler}>
+      .dropdownHandler=${eventHandler}
+      buttonLabel="Props Label">
     </cds-dropdown-button>
   `;
 };

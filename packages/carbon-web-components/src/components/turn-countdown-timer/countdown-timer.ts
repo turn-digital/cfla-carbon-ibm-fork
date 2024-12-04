@@ -29,6 +29,25 @@ class CDSCountdownTimer extends LitElement {
   };
   @property({ type: String }) deadline = '';
 
+  /**
+   * Language of the text inside can be lv and en
+   */
+  @property({ type: String }) language = 'lv';
+  /**
+   * Title for the countdown timer
+   */
+  @property({ type: String }) title = '';
+
+  getDayLabel(count, language) {
+    if (language === 'en') {
+      return count === 1 ? 'day' : 'days';
+    }
+    if (language === 'lv') {
+      return count === 1 ? 'diena' : 'dienas';
+    }
+    return '';
+  }
+
   render() {
     const deadline = new Date(`${this.deadline}`);
 
@@ -62,17 +81,20 @@ class CDSCountdownTimer extends LitElement {
     return html`
       <div class="countdown-timer">
         <div class="countdown-timer__wrapper">
-          <div class="countdown-timer__title">
-            Atlikušais laiks līdz iesniegšanai
-          </div>
+          <div class="countdown-timer__title">${this.title}</div>
           ${isDeadlineOver
             ? html` <div
                 class="countdown-timer__time-left countdown-timer__time-left--overdue">
-                0 dienas 0:00
+                0 ${this.language === 'en' ? 'days' : 'dienas'} 0:00
               </div>`
             : html`<div class="countdown-timer__time-left">
                 ${this.countdownDate.days !== 0
-                  ? `${this.countdownDate.days} dienas ${this.countdownDate.hours}:${this.countdownDate.minutes}`
+                  ? `${this.countdownDate.days} ${this.getDayLabel(
+                      this.countdownDate.days,
+                      this.language
+                    )} ${this.countdownDate.hours}:${
+                      this.countdownDate.minutes
+                    }`
                   : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
               </div>`}
           <div class="countdown-timer__time-actual">${formattedDate}</div>

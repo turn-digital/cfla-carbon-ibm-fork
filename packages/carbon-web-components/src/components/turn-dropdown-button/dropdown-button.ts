@@ -24,6 +24,10 @@ class CDSDropdownButtonTest extends LitElement {
   @property({ type: Array }) statusArray = [{ value: String, text: String }];
   @property({ type: Function }) dropdownHandler = () => {};
   @property({ type: String }) selectedStatus = '';
+  /**
+   * Title for the dropdown button
+   */
+  @property({ type: String }) buttonLabel = '';
 
   static styles = styles;
 
@@ -55,7 +59,7 @@ class CDSDropdownButtonTest extends LitElement {
       <div class="dropdown-container">
         <cds-dropdown
           class="cds-theme-zone-turn-dropdown-button"
-          label="Mainīt statusu"
+          label=${this.buttonLabel}
           @cds-dropdown-selected="${this.dropdownHandler}">
           ${this.statusArray?.map(
             (item) => html`
