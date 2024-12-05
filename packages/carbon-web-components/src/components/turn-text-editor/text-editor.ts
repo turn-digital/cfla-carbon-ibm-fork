@@ -48,7 +48,7 @@ class TextEditor extends LitElement {
       editorId: this.editorId,
       fullscreen_native: true,
       browser_spellcheck: true,
-      cache_suffix: '?v=1.4',
+      cache_suffix: '?v=1.5',
       setup: (editor) => {
         editor.on('input undo redo Change', () => {
           const newContent = editor.getContent({ format: 'html' });
