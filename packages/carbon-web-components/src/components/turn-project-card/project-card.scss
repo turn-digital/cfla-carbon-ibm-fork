@@ -1,8 +1,16 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/config' as *;
+
 .project-card-container {
   background-color: #f4f4f4;
   border: 1px;
   border-radius: 8px;
   padding: 16px;
+
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -29,10 +37,27 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 20px;
+  margin-bottom: 4px;
 }
 
 .project-card-info {
   display: flex;
+}
+
+.project-card-authority {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.project-card-authority-title {
+  @include type-style('label-01');
+  color: #5f6367;
+}
+
+.project-card-authority-desc {
+  @include type-style('body-compact-01');
+  color: #161616;
 }
 
 .project-card-info-section {

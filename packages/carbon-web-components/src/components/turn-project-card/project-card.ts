@@ -57,9 +57,17 @@ class ProjectCard extends LitElement {
               ${tagTitle}
             </cds-tag>
           </div>
-          <div>${supervisorAuthority}</div>
+          <slot name="overflow-menu" class="overflow-menu"></slot>
         </div>
-        <p class="project-card-desc">${cardTitle}</p>
+        <div class="project-card-content">
+          <div class="project-card-desc">${cardTitle}</div>
+          <div class="project-card-authority">
+            <span class="project-card-authority-title">Uzraugs:</span>
+            <span class="project-card-authority-desc"
+              >${supervisorAuthority}</span
+            >
+          </div>
+        </div>
         <div class="project-card-info">
           ${projectDateInfo
             ? html`

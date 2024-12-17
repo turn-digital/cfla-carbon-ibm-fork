@@ -10,6 +10,7 @@
 import { html } from 'lit';
 import './index';
 import storyDocs from './project-card-story.mdx';
+import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 
 export const Propsed = () => {
   return html`
@@ -23,6 +24,22 @@ export const Propsed = () => {
       projectDateInfo="05.01.2021 - 30.05.2028"
       projectCostTitle="Projekta kopējas izmaksas EUR"
       projectCostInfo="500 345">
+      <span slot="overflow-menu">
+        <cds-overflow-menu size="sm">
+          ${OverflowMenuVertical16({
+            class: `cds--overflow-menu__icon`,
+            slot: 'icon',
+          })}
+          <span slot="tooltip-content"> Options </span>
+          <cds-overflow-menu-body flipped>
+            <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+          </cds-overflow-menu-body>
+        </cds-overflow-menu>
+      </span>
     </cds-project-card>
   `;
 };
