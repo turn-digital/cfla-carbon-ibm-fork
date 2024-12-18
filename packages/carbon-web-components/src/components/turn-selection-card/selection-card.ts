@@ -13,6 +13,7 @@ import styles from './selection-card.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import Calendar from '@carbon/icons/lib/calendar/16';
+import Launch16 from '@carbon/icons/lib/launch/16';
 
 /**
  * Selection card.
@@ -21,11 +22,12 @@ import Calendar from '@carbon/icons/lib/calendar/16';
  */
 @customElement(`${prefix}-selection-card`)
 class CDSSelectionCard extends LitElement {
-  @property({ type: String }) selectionUrl = '';
   @property({ type: String }) selectionTitle = '';
+  @property({ type: String }) selectionUrl = '';
   @property({ type: String }) cardTitle = '';
   @property({ type: String }) projectDateTitle = '';
   @property({ type: String }) projectDateInfo = '';
+  @property({ type: String }) buttonText = '';
 
   render() {
     const {
@@ -34,31 +36,38 @@ class CDSSelectionCard extends LitElement {
       cardTitle,
       projectDateInfo,
       projectDateTitle,
+      buttonText,
     } = this;
 
     return html`
-      <div class="project-card-container">
-        <div class="project-card-header">
-          <div class="project-card-projects">
-            <span class="project-header-id">Atlase ${selectionTitle}</span>
+      <div class="selection-card">
+        <div class="selection-card__header">
+          <div class="selection-card__selections">
+            <span class="selection-card__selections-title">Atlase </span>
+            <cds-link href="${selectionUrl}">
+              ${selectionTitle} ${Launch16({ slot: 'icon' })}</cds-link
+            >
           </div>
           <slot name="overflow-menu"></slot>
         </div>
-        <p class="project-card-desc">${cardTitle}</p>
-        <div class="project-card-info">
+        <div class="selection-card__desc">${cardTitle}</div>
+        <div class="selection-card__info">
           ${projectDateInfo
             ? html`
-                <div class="project-card-info-section">
-                  <div class="project-card-info-image">
+                <div class="selection-card__info-section">
+                  <div class="selection-card__info-image">
                     ${Calendar({ slot: 'icon', fill: 'black' })}
                   </div>
-                  <div class="project-card-info-item">
-                    <p>${projectDateTitle}</p>
-                    <h3>${projectDateInfo}</h3>
+                  <div class="selection-card__info-item">
+                    <h3>${projectDateTitle}</h3>
+                    <p>${projectDateInfo}</p>
                   </div>
                 </div>
               `
             : ''}
+        </div>
+        <div class="selection-card__button">
+          <cds-button size="sm" kind="secondary">${buttonText}</cds-button>
         </div>
       </div>
     `;

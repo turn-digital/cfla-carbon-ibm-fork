@@ -15,10 +15,12 @@ import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16
 export const Propsed = () => {
   return html`
     <cds-selection-card
-      projectId="1.1.1.1/16/A/004"
+      selectionTitle="2.1.3.2."
+      selectionUrl="#1231231"
       cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
       projectDateTitle="Projekta īstenošanas termiņš"
-      projectDateInfo="05.01.2021 - 30.05.2028">
+      projectDateInfo="05.01.2021 - 30.05.2028"
+      buttonText="Izveidot PI">
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
           ${OverflowMenuVertical16({
