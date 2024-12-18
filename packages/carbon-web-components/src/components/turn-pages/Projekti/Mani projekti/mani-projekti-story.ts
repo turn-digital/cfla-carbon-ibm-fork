@@ -3,9 +3,9 @@ import storyDocs from './mani-projekti-story.mdx';
 import './mani-projekti';
 import styles from '../../../../../assets/css/themes.css';
 
-import Notification20 from '@carbon/icons/lib/notification/20';
-import Search20 from '@carbon/icons/lib/search/20';
-import SwitcherIcon20 from '@carbon/icons/lib/switcher/20';
+import WarningAlt20 from '@carbon/icons/lib/warning--alt/20';
+import UserAvatar20 from '@carbon/icons/lib/user--avatar/20';
+import Help20 from '@carbon/icons/lib/help/20';
 
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 
@@ -32,19 +32,19 @@ export const Propsed = () => {
         >
       </cds-header-nav>
       <div class="cds--header__global">
-        <cds-header-global-action aria-label="Search" tooltip-text="Search">
-          ${Search20({ slot: 'icon' })}
+        <cds-header-global-action aria-label="Warning" tooltip-text="Warning">
+          ${WarningAlt20({ slot: 'icon' })}
         </cds-header-global-action>
         <cds-header-global-action
           aria-label="Notification"
           tooltip-text="Notification">
-          ${Notification20({ slot: 'icon' })}
+          ${Help20({ slot: 'icon' })}
         </cds-header-global-action>
         <cds-header-global-action
           aria-label="App Switcher"
           tooltip-text="App Switcher"
           tooltip-alignment="right">
-          ${SwitcherIcon20({ slot: 'icon' })}
+          ${UserAvatar20({ slot: 'icon' })}
         </cds-header-global-action>
       </div>
       <cds-side-nav
@@ -69,63 +69,76 @@ export const Propsed = () => {
     </cds-header>
 
     <div class="cds-theme-zone-white cds-page-main-content">
-      <cds-project-card
-        projectId="1.1.1.1/16/A/004"
-        tagTitle="Līgums"
-        supervisorAuthority="CFLA"
-        organization="Latvijas Universitāte"
-        cardTitle="Efektīvāka un viedāka Latvijas zinātnes politikas ieviešana un vadība"
-        tagType="purple"
-        projectDateTitle="Projekta īstenošanas termiņš"
-        projectDateInfo="05.01.2021 - 30.05.2028"
-        projectCostTitle="Projekta kopējas izmaksas EUR"
-        projectCostInfo="500 345">
-        <span slot="overflow-menu">
-          <cds-overflow-menu size="sm">
-            ${OverflowMenuVertical16({
-              class: `cds--overflow-menu__icon`,
-              slot: 'icon',
-            })}
-            <span slot="tooltip-content"> Options </span>
-            <cds-overflow-menu-body flipped>
-              <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
-              <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
-              <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
-              <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
-              <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
-            </cds-overflow-menu-body>
-          </cds-overflow-menu>
-        </span>
-      </cds-project-card>
-      <cds-divider size="6"></cds-divider>
-      <cds-project-card
-        projectId="1.1.1.1/16/A/004"
-        tagTitle="Līgums"
-        supervisorAuthority="CFLA"
-        organization="Latvijas Universitāte"
-        cardTitle="Efektīvāka un viedāka Latvijas zinātnes politikas ieviešana un vadība"
-        tagType="purple"
-        projectDateTitle="Projekta īstenošanas termiņš"
-        projectDateInfo="05.01.2021 - 30.05.2028"
-        projectCostTitle="Projekta kopējas izmaksas EUR"
-        projectCostInfo="500 345">
-        <span slot="overflow-menu">
-          <cds-overflow-menu size="sm">
-            ${OverflowMenuVertical16({
-              class: `cds--overflow-menu__icon`,
-              slot: 'icon',
-            })}
-            <span slot="tooltip-content"> Options </span>
-            <cds-overflow-menu-body flipped>
-              <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
-              <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
-              <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
-              <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
-              <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
-            </cds-overflow-menu-body>
-          </cds-overflow-menu>
-        </span>
-      </cds-project-card>
+      <div class="cds--css-grid cds--css-grid--narrow">
+        <div
+          class="cds--css-grid-column cds--grid-column-hang cds--col-span-100">
+          <cds-main-content-title
+            title="Mani projekti"></cds-main-content-title>
+          <cds-main-content-item
+            >Projekti, kuros ir noslēgts līgums</cds-main-content-item
+          >
+        </div>
+        <div
+          class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-100 cds--lg:col-span-12 cds--xlg:col-span-12">
+          <cds-project-card
+            projectId="1.1.1.1/16/A/004"
+            tagTitle="Līgums"
+            supervisorAuthority="CFLA"
+            organization="Latvijas Universitāte"
+            cardTitle="Efektīvāka un viedāka Latvijas zinātnes politikas ieviešana un vadība"
+            tagType="purple"
+            projectDateTitle="Projekta īstenošanas termiņš"
+            projectDateInfo="05.01.2021 - 30.05.2028"
+            projectCostTitle="Projekta kopējas izmaksas EUR"
+            projectCostInfo="500 345">
+            <span slot="overflow-menu">
+              <cds-overflow-menu size="sm">
+                ${OverflowMenuVertical16({
+                  class: `cds--overflow-menu__icon`,
+                  slot: 'icon',
+                })}
+                <span slot="tooltip-content"> Options </span>
+                <cds-overflow-menu-body flipped>
+                  <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+                </cds-overflow-menu-body>
+              </cds-overflow-menu>
+            </span>
+          </cds-project-card>
+          <cds-divider size="6"></cds-divider>
+          <cds-project-card
+            projectId="1.1.1.1/16/A/004"
+            tagTitle="Līgums"
+            supervisorAuthority="CFLA"
+            organization="Latvijas Universitāte"
+            cardTitle="Efektīvāka un viedāka Latvijas zinātnes politikas ieviešana un vadība"
+            tagType="purple"
+            projectDateTitle="Projekta īstenošanas termiņš"
+            projectDateInfo="05.01.2021 - 30.05.2028"
+            projectCostTitle="Projekta kopējas izmaksas EUR"
+            projectCostInfo="500 345">
+            <span slot="overflow-menu">
+              <cds-overflow-menu size="sm">
+                ${OverflowMenuVertical16({
+                  class: `cds--overflow-menu__icon`,
+                  slot: 'icon',
+                })}
+                <span slot="tooltip-content"> Options </span>
+                <cds-overflow-menu-body flipped>
+                  <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+                </cds-overflow-menu-body>
+              </cds-overflow-menu>
+            </span>
+          </cds-project-card>
+        </div>
+      </div>
     </div>
     <style>
       ${styles}
