@@ -25,6 +25,7 @@ class ProjectCard extends LitElement {
   @property({ type: String }) projectId = '';
   @property({ type: String }) tagTitle = '';
   @property({ type: String }) supervisorAuthority = '';
+  @property({ type: String }) organization = '';
   @property({ type: String }) cardTitle = '';
   @property({ type: String }) tagType = '';
   @property({ type: String }) projectDateTitle = '';
@@ -43,6 +44,7 @@ class ProjectCard extends LitElement {
       projectCostTitle,
       projectDateTitle,
       supervisorAuthority,
+      organization,
     } = this;
 
     return html`
@@ -61,12 +63,7 @@ class ProjectCard extends LitElement {
         </div>
         <div class="project-card-content">
           <div class="project-card-desc">${cardTitle}</div>
-          <div class="project-card-authority">
-            <span class="project-card-authority-title">Uzraugs:</span>
-            <span class="project-card-authority-desc"
-              >${supervisorAuthority}</span
-            >
-          </div>
+          <div class="project-card-organization">${organization}</div>
         </div>
         <div class="project-card-info">
           ${projectDateInfo
@@ -96,6 +93,16 @@ class ProjectCard extends LitElement {
               `
             : ''}
         </div>
+        ${supervisorAuthority
+          ? html`
+              <div class="project-card-authority">
+                <span class="project-card-authority-title">Uzraugs:</span>
+                <span class="project-card-authority-desc"
+                  >${supervisorAuthority}</span
+                >
+              </div>
+            `
+          : ''}
       </div>
     `;
   }

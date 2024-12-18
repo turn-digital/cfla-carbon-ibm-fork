@@ -18,6 +18,7 @@ export const Propsed = () => {
       projectId="1.1.1.1/16/A/004"
       tagTitle="Apstiprināts ar nosacījumu"
       supervisorAuthority="CFLA"
+      organization="Latvijas Universitāte"
       cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
       tagType="purple"
       projectDateTitle="Projekta īstenošanas termiņš"
