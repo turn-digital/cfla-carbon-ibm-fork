@@ -1,0 +1,19 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/theme' as *;
+
+.project-title {
+  padding: $spacing-05 $spacing-05 $spacing-06 0;
+  &__title {
+    @include type-style('heading-03');
+    margin: 0;
+    padding-bottom: $spacing-05;
+    color: $text-primary;
+  }
+
+  &__subtitle {
+    @include type-style('body-compact-01');
+    margin: 0;
+    color: $text-primary;
+  }
+}
