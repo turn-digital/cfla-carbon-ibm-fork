@@ -35,14 +35,12 @@ export const Propsed = () => {
         <cds-header-global-action aria-label="Warning" tooltip-text="Warning">
           ${WarningAlt20({ slot: 'icon' })}
         </cds-header-global-action>
-        <cds-header-global-action
-          aria-label="Notification"
-          tooltip-text="Notification">
+        <cds-header-global-action aria-label="Help" tooltip-text="Help">
           ${Help20({ slot: 'icon' })}
         </cds-header-global-action>
         <cds-header-global-action
-          aria-label="App Switcher"
-          tooltip-text="App Switcher"
+          aria-label="User profile"
+          tooltip-text="User profile"
           tooltip-alignment="right">
           ${UserAvatar20({ slot: 'icon' })}
         </cds-header-global-action>
