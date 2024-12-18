@@ -47,10 +47,7 @@ export const Propsed = () => {
           ${UserAvatar20({ slot: 'icon' })}
         </cds-header-global-action>
       </div>
-      <cds-side-nav
-        aria-label="Side navigation"
-        class="cds-theme-zone-kase-header-sidebar"
-        expanded>
+      <cds-side-nav aria-label="Side navigation">
         <cds-side-nav-items>
           <cds-side-nav-link href="javascript:void(0)"
             >Mani projekti</cds-side-nav-link
