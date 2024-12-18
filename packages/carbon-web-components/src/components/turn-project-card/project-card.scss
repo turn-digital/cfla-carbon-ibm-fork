@@ -1,16 +1,23 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/config' as *;
+
 .project-card-container {
-  background-color: #f4f4f4;
+  background-color: $layer-01;
   border: 1px;
   border-radius: 8px;
-  padding: 16px;
-  gap: 8px;
+  padding: $spacing-05;
+
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-03;
 }
 
 .project-card-header {
   display: flex;
   align-items: center;
   height: 18px;
-  font-size: 12px;
   justify-content: space-between;
 }
 .project-card-projects {
@@ -18,26 +25,42 @@
   align-items: center;
   justify-content: left;
   height: 18px;
-  font-size: 12px;
+  @include type-style('label-01');
 }
 
 .project-header-id {
-  padding-right: 10px;
+  padding-right: $spacing-03;
 }
 
 .project-card-desc {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 20px;
+  @include type-style('heading-compact-01');
+  color: $text-secondary;
+  margin-bottom: $spacing-02;
 }
 
 .project-card-info {
   display: flex;
 }
 
+.project-card-authority {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-03;
+}
+
+.project-card-authority-title {
+  @include type-style('label-01');
+  color: $text-on-color-disabled;
+}
+
+.project-card-authority-desc {
+  @include type-style('body-compact-01');
+  color: $text-secondary;
+}
+
 .project-card-info-section {
   display: flex;
-  padding-right: 40px;
+  padding-right: 35px;
 }
 
 .project-card-info-item {
@@ -47,16 +70,14 @@
   padding-left: 10px;
 
   p {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
+    @include type-style('label-01');
+    color: $text-secondary;
     margin: 0;
   }
 
   h3 {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
+    @include type-style('body-compact-01');
+    color: $text-secondary;
     margin: 0;
   }
 }
@@ -66,7 +87,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e0e0e0;
+  background-color: $layer-accent-01;
 }
 
 @media (max-width: 768px) {
@@ -76,7 +97,7 @@
 
   .project-card-info-section {
     padding-right: 0;
-    margin-top: 16px;
+    margin-top: $spacing-05;
   }
   .project-header-id {
     padding-right: 0;
