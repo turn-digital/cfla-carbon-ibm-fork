@@ -31,6 +31,7 @@
 
   &__desc {
     @include type-style('heading-compact-01');
+    color: $text-secondary;
   }
 
   &__info-section {
@@ -45,7 +46,7 @@
 
     p {
       @include type-style('body-compact-01');
-      color: $text-secondary;
+      color: $text-primary;
       margin: 0;
     }
 
