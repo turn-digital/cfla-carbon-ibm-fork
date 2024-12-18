@@ -63,6 +63,13 @@ body {
 #main-content {
   padding: 42px;
   position: relative;
+  .fix-full-width {
+    position: relative;
+    margin-top: -84px;
+    bottom: -42px;
+    left: -42px;
+    width: calc(100% + 84px);
+  }
 }
 
 .#{$prefix}--content.#{$prefix}-ce-demo-devenv--ui-shell-content {
