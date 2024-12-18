@@ -203,6 +203,7 @@ class CDSPValuationOpen extends LitElement {
               </cds-main-content-item>
               <cds-main-content-item size="07">
                 <cds-status-history
+                statusHistoryTitle="Statusu vēsture"
                   .statusHistoryItems=${statusHistoryItemsArr}
                   currenStatusColor="green"
                   currenStatusTitle="CFLA pārdomas"
@@ -226,7 +227,7 @@ class CDSPValuationOpen extends LitElement {
               <div>
                 <cds-main-content-item size="07" isStatusChangePanel>
                   <cds-dropdown-button
-                    label="Mainīt statusu"
+                  buttonLabel="Props Label"
                     .dropdownHandler="${this.itemSelectedHandler}"
                     .statusArray="${statusArray}"></cds-dropdown-button>
                 </cds-main-content-item>
@@ -237,6 +238,10 @@ class CDSPValuationOpen extends LitElement {
         </div>
 
         <div slot="content" class="cds--css-grid-column cds--col-span-100">
+        <cds-print-download
+          downloadLink="https://example.com/download"
+          printLink="https://example.com/print"></cds-print-download>
+          <cds-divider size="3"></cds-divider>
           <cds-inline-notification
             style="min-width: 100%; margin-bottom: .5rem"
             kind="warning"
@@ -245,10 +250,12 @@ class CDSPValuationOpen extends LitElement {
             subtitle="Lai uzsāktu vērtēšanu, jāaizpilda šī konflikta neesamības veidlapa">
           </cds-inline-notification>
           <cds-divider size="6"></cds-divider>
+          <div slot="content" class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
           <cds-header-title
             class="cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-10 cds--css-grid-column"
             title="Projekta iesniegumi"></cds-header-title>
           <cds-divider></cds-divider>
+          </div>
           <cds-accordion>
             <cds-accordion-item
               title="Katlu mājas efektivitātes paaugstināšana Mālpilī">
@@ -259,8 +266,8 @@ class CDSPValuationOpen extends LitElement {
               <cds-divider></cds-divider>
               <cds-label-value label="Sadarbības partneri"></cds-label-value>
                Ekonomikas ministrija, LV4047126371
-SIA Turn Digital,LV4047126371 
-Latvijas Dzelzceļš, LV4047126371
+              SIA Turn Digital,LV4047126371 
+              Latvijas Dzelzceļš, LV4047126371
               </cds-label-value>
               <cds-divider> </cds-divider>
               <cds-radio-button-group legend-text="Konflikta neesamības apliecinājums">

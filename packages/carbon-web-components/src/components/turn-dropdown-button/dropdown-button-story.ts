@@ -12,7 +12,7 @@ import './index';
 import storyDocs from './dropdown-button-story.mdx';
 
 export const Propsed = () => {
-  const itemsArray = [
+  const statusArray = [
     { text: 'Status 1', value: 'Status 1' },
     { text: 'Status 2', value: 'Status 2' },
     { text: 'Status 3', value: 'Status 3' },
@@ -22,7 +22,7 @@ export const Propsed = () => {
   };
   return html`
     <cds-dropdown-button
-      .accordionItems=${itemsArray}
+      .statusArray=${statusArray}
       .dropdownHandler=${eventHandler}
       buttonLabel="Props Label">
     </cds-dropdown-button>
