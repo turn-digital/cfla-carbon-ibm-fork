@@ -48,6 +48,17 @@ export const Propsed = () => {
         </cds-header-global-action>
       </div>
       <cds-side-nav aria-label="Side navigation">
+        <cds-header-side-nav-items has-divider>
+          <cds-side-nav-link href="javascript:void(0)">
+            Sākumlapa
+          </cds-side-nav-link>
+          <cds-side-nav-link href="javascript:void(0)">
+            Projekti
+          </cds-side-nav-link>
+          <cds-side-nav-link href="javascript:void(0)">
+            Ziņojuma dēlis
+          </cds-side-nav-link>
+        </cds-header-side-nav-items>
         <cds-side-nav-items>
           <cds-side-nav-link href="javascript:void(0)"
             >Mani projekti</cds-side-nav-link
