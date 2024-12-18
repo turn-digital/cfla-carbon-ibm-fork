@@ -1,0 +1,83 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/theme' as *;
+
+.selection-card {
+  background-color: $layer-01;
+  border: 1px;
+  border-radius: 8px;
+  padding: $spacing-05;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-03;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__selections {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: $spacing-03;
+  }
+
+  &__selections-title {
+    @include type-style('label-01');
+    color: $text-secondary;
+  }
+
+  &__desc {
+    @include type-style('heading-compact-01');
+  }
+
+  &__info-section {
+    display: flex;
+  }
+
+  &__info-item {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    p {
+      @include type-style('body-compact-01');
+      color: $text-secondary;
+      margin: 0;
+    }
+
+    h3 {
+      @include type-style('label-01');
+      color: $text-secondary;
+      margin: 0;
+    }
+  }
+
+  &__info-image {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $layer-accent-01;
+  }
+
+  &__button {
+    padding-top: $spacing-03;
+  }
+}
+
+@media (max-width: 768px) {
+  .selection-card {
+    &__info {
+      display: block;
+    }
+
+    &__info-section {
+      padding-right: 0;
+      margin-top: $spacing-05;
+    }
+  }
+}
