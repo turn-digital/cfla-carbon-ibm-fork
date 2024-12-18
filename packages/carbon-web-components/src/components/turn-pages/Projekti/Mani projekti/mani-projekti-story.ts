@@ -80,19 +80,18 @@ export const Propsed = () => {
       <div class="cds--css-grid cds--css-grid--narrow">
         <div
           class="cds--css-grid-column cds--grid-column-hang cds--col-span-100">
-          <cds-main-content-title
-            title="Mani projekti"></cds-main-content-title>
-          <cds-main-content-item
-            >Projekti, kuros ir noslēgts līgums</cds-main-content-item
-          >
+          <cds-divider size="6"></cds-divider>
+          <cds-project-title
+            title="Mani projekti"
+            subtitle="Projekti, kuros ir noslēgts līgums">
+          </cds-project-title>
+          <cds-divider></cds-divider>
         </div>
         <div
           class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-100 cds--lg:col-span-12 cds--xlg:col-span-12">
           <cds-project-card
             projectId="1.1.1.1/16/A/004"
             tagTitle="Līgums"
-            supervisorAuthority="CFLA"
-            organization="Latvijas Universitāte"
             cardTitle="Efektīvāka un viedāka Latvijas zinātnes politikas ieviešana un vadība"
             tagType="purple"
             projectDateTitle="Projekta īstenošanas termiņš"
@@ -120,8 +119,6 @@ export const Propsed = () => {
           <cds-project-card
             projectId="1.1.1.1/16/A/004"
             tagTitle="Līgums"
-            supervisorAuthority="CFLA"
-            organization="Latvijas Universitāte"
             cardTitle="Efektīvāka un viedāka Latvijas zinātnes politikas ieviešana un vadība"
             tagType="purple"
             projectDateTitle="Projekta īstenošanas termiņš"
