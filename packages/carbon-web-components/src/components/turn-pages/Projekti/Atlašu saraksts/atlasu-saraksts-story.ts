@@ -85,16 +85,16 @@ export const Propsed = () => {
         <div
           class="cds--css-grid-column cds--grid-column-hang cds--col-span-100">
           <cds-divider size="6"></cds-divider>
-          <cds-project-title
+          <cds-page-title
             title="Atlašu saraksts"
             subtitle="Atlases, kurās var iesniegt pieteikumus">
-          </cds-project-title>
+          </cds-page-title>
           <cds-divider></cds-divider>
         </div>
         <div
           class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-100 cds--lg:col-span-14 cds--xlg:col-span-12 cds--max:col-span-10">
           <cds-selection-card
-            selectionTitle="2.1.3.2."
+            selectionNumber="2.1.3.2."
             selectionUrl="#123"
             cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
             projectDateTitle="Iesniegšanas termiņš"
@@ -119,7 +119,7 @@ export const Propsed = () => {
           </cds-selection-card>
           <cds-divider size="5"></cds-divider>
           <cds-selection-card
-            selectionTitle="2.1.3.2."
+            selectionNumber="2.1.3.2."
             selectionUrl="#123"
             cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
             projectDateTitle="Iesniegšanas termiņš"
@@ -144,7 +144,7 @@ export const Propsed = () => {
           </cds-selection-card>
           <cds-divider size="5"></cds-divider>
           <cds-selection-card
-            selectionTitle="2.1.3.2."
+            selectionNumber="2.1.3.2."
             selectionUrl="#123"
             cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum diam ilanit."
             projectDateTitle="Iesniegšanas termiņš"

@@ -15,7 +15,7 @@ import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16
 export const Propsed = () => {
   return html`
     <cds-selection-card
-      selectionTitle="2.1.3.2."
+      selectionNumber="2.1.3.2."
       selectionUrl="#1231231"
       cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
       projectDateTitle="Projekta īstenošanas termiņš"

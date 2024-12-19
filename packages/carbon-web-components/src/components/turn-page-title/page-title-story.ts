@@ -9,14 +9,12 @@
 
 import { html } from 'lit';
 import './index';
-import storyDocs from './project-title-story.mdx';
+import storyDocs from './page-title-story.mdx';
 
 export const Propsed = () => {
   return html`
-    <cds-project-title
-      title="Proposed Project Title"
-      subtitle="Project subTitle">
-    </cds-project-title>
+    <cds-page-title title="Proposed Project Title" subtitle="Project subTitle">
+    </cds-page-title>
   `;
 };
 
@@ -24,5 +22,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Custom-components/Project Title',
+  title: 'Custom-components/Page Title',
 };

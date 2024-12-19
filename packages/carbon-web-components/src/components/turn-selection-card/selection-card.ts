@@ -22,7 +22,7 @@ import Launch16 from '@carbon/icons/lib/launch/16';
  */
 @customElement(`${prefix}-selection-card`)
 class CDSSelectionCard extends LitElement {
-  @property({ type: String }) selectionTitle = '';
+  @property({ type: String }) SelectionNumber = '';
   @property({ type: String }) selectionUrl = '';
   @property({ type: String }) cardTitle = '';
   @property({ type: String }) projectDateTitle = '';
@@ -31,7 +31,7 @@ class CDSSelectionCard extends LitElement {
 
   render() {
     const {
-      selectionTitle,
+      SelectionNumber,
       selectionUrl,
       cardTitle,
       projectDateInfo,
@@ -45,7 +45,7 @@ class CDSSelectionCard extends LitElement {
           <div class="selection-card__selections">
             <span class="selection-card__selections-title">Atlase </span>
             <cds-link href="${selectionUrl}">
-              ${selectionTitle} ${Launch16({ slot: 'icon' })}</cds-link
+              ${SelectionNumber} ${Launch16({ slot: 'icon' })}</cds-link
             >
           </div>
           <slot name="overflow-menu"></slot>
