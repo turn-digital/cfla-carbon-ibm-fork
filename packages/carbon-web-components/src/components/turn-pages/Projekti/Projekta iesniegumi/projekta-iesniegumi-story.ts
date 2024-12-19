@@ -112,7 +112,7 @@ export const Propsed = () => {
               </cds-overflow-menu>
             </span>
           </cds-project-card>
-          <cds-divider size="6"></cds-divider>
+          <cds-divider size="5"></cds-divider>
           <cds-project-card
             projectId="1.1.1.1/16/A/004"
             tagTitle="Sagatavošana"

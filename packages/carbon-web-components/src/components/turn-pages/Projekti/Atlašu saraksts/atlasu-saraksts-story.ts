@@ -110,7 +110,7 @@ export const Propsed = () => {
               </cds-overflow-menu>
             </span>
           </cds-selection-card>
-          <cds-divider size="6"></cds-divider>
+          <cds-divider size="5"></cds-divider>
           <cds-selection-card
             selectionTitle="2.1.3.2."
             selectionUrl="#123"
@@ -135,7 +135,7 @@ export const Propsed = () => {
               </cds-overflow-menu>
             </span>
           </cds-selection-card>
-          <cds-divider size="6"></cds-divider>
+          <cds-divider size="5"></cds-divider>
           <cds-selection-card
             selectionTitle="2.1.3.2."
             selectionUrl="#123"
