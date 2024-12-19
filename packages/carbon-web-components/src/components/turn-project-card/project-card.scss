@@ -17,14 +17,13 @@
 .project-card-header {
   display: flex;
   align-items: center;
-  height: 18px;
+  height: 32px;
   justify-content: space-between;
 }
 .project-card-projects {
   display: flex;
   align-items: center;
   justify-content: left;
-  height: 18px;
   @include type-style('label-01');
 }
 
@@ -34,7 +33,7 @@
 
 .project-card-desc {
   @include type-style('heading-compact-01');
-  color: $text-secondary;
+  color: $text-primary;
   margin-bottom: $spacing-02;
 }
 
@@ -103,8 +102,5 @@
   .project-card-info-section {
     padding-right: 0;
     margin-top: $spacing-05;
-  }
-  .project-header-id {
-    padding-right: 0;
   }
 }
