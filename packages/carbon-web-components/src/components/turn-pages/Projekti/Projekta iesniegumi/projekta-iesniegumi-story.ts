@@ -85,10 +85,10 @@ export const Propsed = () => {
         <div
           class="cds--css-grid-column cds--grid-column-hang cds--col-span-100">
           <cds-divider size="6"></cds-divider>
-          <cds-project-title
+          <cds-page-title
             title="Projektu iesniegumi"
             subtitle="Atlases, kurās gatavojat pieteikumu, bet vēl nav noslēgts līgums">
-          </cds-project-title>
+          </cds-page-title>
           <cds-divider></cds-divider>
         </div>
         <div
