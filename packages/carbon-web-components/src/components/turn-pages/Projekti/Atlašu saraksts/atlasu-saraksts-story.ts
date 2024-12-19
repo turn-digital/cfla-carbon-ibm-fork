@@ -7,10 +7,12 @@ import WarningAlt20 from '@carbon/icons/lib/warning--alt/20';
 import UserAvatar20 from '@carbon/icons/lib/user--avatar/20';
 import Help20 from '@carbon/icons/lib/help/20';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
+import Search20 from '@carbon/icons/lib/search/20';
 
 export const Propsed = () => {
   return html` <div class="cds-theme-zone-white fix-full-width">
     <cds-header
+      class="cds-theme-zone-cfla-header"
       aria-label="Kohēzijas politikas fondu vadības informācijas sistēma">
       <cds-header-menu-button
         button-label-active="Close menu"
@@ -20,7 +22,7 @@ export const Propsed = () => {
         prefix="Kohēzijas politikas fondu vadības informācijas sistēma"></cds-header-name>
       <cds-header-nav
         menu-bar-label="Kohēzijas politikas fondu vadības informācijas sistēma!">
-        <cds-header-nav-item href="javascript:void 0"
+        <cds-header-nav-item is-active href="javascript:void 0"
           >Sākumlapa</cds-header-nav-item
         >
         <cds-header-nav-item href="javascript:void 0"
@@ -31,6 +33,9 @@ export const Propsed = () => {
         >
       </cds-header-nav>
       <div class="cds--header__global">
+        <cds-header-global-action aria-label="Search" tooltip-text="Search">
+          ${Search20({ slot: 'icon' })}
+        </cds-header-global-action>
         <cds-header-global-action aria-label="Warning" tooltip-text="Warning">
           ${WarningAlt20({ slot: 'icon' })}
         </cds-header-global-action>
@@ -44,7 +49,9 @@ export const Propsed = () => {
           ${UserAvatar20({ slot: 'icon' })}
         </cds-header-global-action>
       </div>
-      <cds-side-nav aria-label="Side navigation">
+      <cds-side-nav
+        class="cds-theme-zone-cfla-side-nav"
+        aria-label="Side navigation">
         <cds-header-side-nav-items has-divider>
           <cds-side-nav-link href="javascript:void(0)">
             Sākumlapa
@@ -57,7 +64,7 @@ export const Propsed = () => {
           </cds-side-nav-link>
         </cds-header-side-nav-items>
         <cds-side-nav-items>
-          <cds-side-nav-link href="javascript:void(0)"
+          <cds-side-nav-link active href="javascript:void(0)"
             >Mani projekti</cds-side-nav-link
           >
           <cds-side-nav-link href="javascript:void(0)"
@@ -85,7 +92,7 @@ export const Propsed = () => {
           <cds-divider></cds-divider>
         </div>
         <div
-          class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-100 cds--lg:col-span-12 cds--xlg:col-span-12">
+          class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-100 cds--lg:col-span-14 cds--xlg:col-span-12 cds--max:col-span-10">
           <cds-selection-card
             selectionTitle="2.1.3.2."
             selectionUrl="#123"

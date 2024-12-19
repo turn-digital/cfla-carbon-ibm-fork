@@ -40,6 +40,7 @@
   <body>
     <div class="cds-theme-zone-white fix-full-width">
       <cds-header
+        class="cds-theme-zone-cfla-header"
         aria-label="Kohēzijas politikas fondu vadības informācijas sistēma">
         <cds-header-menu-button
           button-label-active="Close menu"
@@ -49,7 +50,7 @@
           prefix="Kohēzijas politikas fondu vadības informācijas sistēma"></cds-header-name>
         <cds-header-nav
           menu-bar-label="Kohēzijas politikas fondu vadības informācijas sistēma!">
-          <cds-header-nav-item href="javascript:void 0"
+          <cds-header-nav-item is-active href="javascript:void 0"
             >Sākumlapa</cds-header-nav-item
           >
           <cds-header-nav-item href="javascript:void 0"
@@ -60,6 +61,9 @@
           >
         </cds-header-nav>
         <div class="cds--header__global">
+          <cds-header-global-action aria-label="Search" tooltip-text="Search">
+            ${Search20({ slot: 'icon' })}
+          </cds-header-global-action>
           <cds-header-global-action aria-label="Warning" tooltip-text="Warning">
             ${WarningAlt20({ slot: 'icon' })}
           </cds-header-global-action>
@@ -73,7 +77,9 @@
             ${UserAvatar20({ slot: 'icon' })}
           </cds-header-global-action>
         </div>
-        <cds-side-nav aria-label="Side navigation">
+        <cds-side-nav
+          class="cds-theme-zone-cfla-side-nav"
+          aria-label="Side navigation">
           <cds-header-side-nav-items has-divider>
             <cds-side-nav-link href="javascript:void(0)">
               Sākumlapa
@@ -86,7 +92,7 @@
             </cds-side-nav-link>
           </cds-header-side-nav-items>
           <cds-side-nav-items>
-            <cds-side-nav-link href="javascript:void(0)"
+            <cds-side-nav-link active href="javascript:void(0)"
               >Mani projekti</cds-side-nav-link
             >
             <cds-side-nav-link href="javascript:void(0)"
@@ -114,7 +120,7 @@
             <cds-divider></cds-divider>
           </div>
           <div
-            class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-100 cds--lg:col-span-12 cds--xlg:col-span-12">
+            class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-100 cds--lg:col-span-14 cds--xlg:col-span-12 cds--max:col-span-10">
             <cds-project-card
               projectId="1.1.1.1/16/A/004"
               tagTitle="Sagatavošana"
