@@ -97,6 +97,7 @@ export const Propsed = () => {
             selectionNumber="2.1.3.2."
             selectionUrl="#123"
             cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
+            cardTitleUrl="https://www.carbondesignsystem.com/"
             projectDateTitle="Iesniegšanas termiņš"
             projectDateInfo="05.01.2021 - 30.05.2028"
             buttonText="Izveidot PI">
@@ -122,6 +123,7 @@ export const Propsed = () => {
             selectionNumber="2.1.3.2."
             selectionUrl="#123"
             cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
+            cardTitleUrl="https://www.carbondesignsystem.com/"
             projectDateTitle="Iesniegšanas termiņš"
             projectDateInfo="05.01.2021 - 30.05.2028"
             buttonText="Izveidot PI">
@@ -147,6 +149,7 @@ export const Propsed = () => {
             selectionNumber="2.1.3.2."
             selectionUrl="#123"
             cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum diam ilanit."
+            cardTitleUrl="https://www.carbondesignsystem.com/"
             projectDateTitle="Iesniegšanas termiņš"
             projectDateInfo="05.01.2021 - 30.05.2028"
             buttonText="Izveidot PI">
