@@ -27,6 +27,7 @@ class ProjectCard extends LitElement {
   @property({ type: String }) supervisorAuthority = '';
   @property({ type: String }) organization = '';
   @property({ type: String }) cardTitle = '';
+  @property({ type: String }) cardTitleUrl = '';
   @property({ type: String }) tagType = '';
   @property({ type: String }) projectDateTitle = '';
   @property({ type: String }) projectDateInfo = '';
@@ -39,6 +40,7 @@ class ProjectCard extends LitElement {
       tagType,
       tagTitle,
       cardTitle,
+      cardTitleUrl,
       projectDateInfo,
       projectCostInfo,
       projectCostTitle,
@@ -62,7 +64,7 @@ class ProjectCard extends LitElement {
           <slot name="overflow-menu" class="overflow-menu"></slot>
         </div>
         <div class="project-card-content">
-          <div class="project-card-desc">${cardTitle}</div>
+          <a href="${cardTitleUrl}" class="project-card-desc">${cardTitle}</a>
           <div class="project-card-organization">${organization}</div>
         </div>
         <div class="project-card-info">

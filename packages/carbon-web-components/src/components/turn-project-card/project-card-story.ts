@@ -20,6 +20,7 @@ export const Propsed = () => {
       supervisorAuthority="CFLA"
       organization="Latvijas Universitāte"
       cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
+      cardTitleUrl="https://www.carbondesignsystem.com/"
       tagType="purple"
       projectDateTitle="Projekta īstenošanas termiņš"
       projectDateInfo="05.01.2021 - 30.05.2028"

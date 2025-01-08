@@ -25,6 +25,7 @@ class CDSSelectionCard extends LitElement {
   @property({ type: String }) SelectionNumber = '';
   @property({ type: String }) selectionUrl = '';
   @property({ type: String }) cardTitle = '';
+  @property({ type: String }) cardTitleUrl = '';
   @property({ type: String }) projectDateTitle = '';
   @property({ type: String }) projectDateInfo = '';
   @property({ type: String }) buttonText = '';
@@ -34,6 +35,7 @@ class CDSSelectionCard extends LitElement {
       SelectionNumber,
       selectionUrl,
       cardTitle,
+      cardTitleUrl,
       projectDateInfo,
       projectDateTitle,
       buttonText,
@@ -50,7 +52,7 @@ class CDSSelectionCard extends LitElement {
           </div>
           <slot name="overflow-menu"></slot>
         </div>
-        <div class="selection-card__desc">${cardTitle}</div>
+        <a href="${cardTitleUrl}" class="selection-card__desc">${cardTitle}</a>
         <div class="selection-card__info">
           ${projectDateInfo
             ? html`

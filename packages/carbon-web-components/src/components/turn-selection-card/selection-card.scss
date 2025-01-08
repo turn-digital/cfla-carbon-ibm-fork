@@ -31,7 +31,13 @@
 
   &__desc {
     @include type-style('heading-compact-01');
+    text-decoration: none;
     color: $text-primary;
+  }
+
+  &__desc:hover,
+  &__desc:focus {
+    text-decoration: underline;
   }
 
   &__info-section {

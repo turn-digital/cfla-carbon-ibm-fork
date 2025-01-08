@@ -33,8 +33,14 @@
 
 .project-card-desc {
   @include type-style('heading-compact-01');
+  text-decoration: none;
   color: $text-primary;
   margin-bottom: $spacing-02;
+}
+
+.project-card-desc:hover,
+.project-card-desc:focus {
+  text-decoration: underline;
 }
 
 .project-card-info {

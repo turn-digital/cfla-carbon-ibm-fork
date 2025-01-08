@@ -18,6 +18,7 @@ export const Propsed = () => {
       selectionNumber="2.1.3.2."
       selectionUrl="#1231231"
       cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
+      cardTitleUrl="https://www.carbondesignsystem.com/"
       projectDateTitle="Projekta īstenošanas termiņš"
       projectDateInfo="05.01.2021 - 30.05.2028"
       buttonText="Izveidot PI">
