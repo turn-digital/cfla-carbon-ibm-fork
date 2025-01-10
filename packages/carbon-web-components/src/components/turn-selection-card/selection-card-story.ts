@@ -16,7 +16,7 @@ export const Propsed = () => {
   return html`
     <cds-selection-card
       selectionNumber="2.1.3.2."
-      selectionUrl="#1231231"
+      selectionUrl="https://www.google.com/"
       cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
       cardTitleUrl="https://www.carbondesignsystem.com/"
       projectDateTitle="Projekta īstenošanas termiņš"
@@ -30,11 +30,10 @@ export const Propsed = () => {
           })}
           <span slot="tooltip-content"> Options </span>
           <cds-overflow-menu-body flipped>
-            <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
-            <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
-            <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
-            <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
-            <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Open</cds-overflow-menu-item>
+            <cds-overflow-menu-item danger divider
+              >Delete</cds-overflow-menu-item
+            >
           </cds-overflow-menu-body>
         </cds-overflow-menu>
       </span>

@@ -34,11 +34,10 @@ export const Propsed = () => {
           })}
           <span slot="tooltip-content"> Options </span>
           <cds-overflow-menu-body flipped>
-            <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
-            <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
-            <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
-            <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
-            <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Open</cds-overflow-menu-item>
+            <cds-overflow-menu-item danger divider
+              >Delete</cds-overflow-menu-item
+            >
           </cds-overflow-menu-body>
         </cds-overflow-menu>
       </span>
