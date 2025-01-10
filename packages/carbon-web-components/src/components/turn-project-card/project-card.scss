@@ -127,6 +127,7 @@
 @media (max-width: 320px) {
   .project-card-projects {
     flex-direction: column;
+    align-items: start;
   }
   .project-card-header {
     padding-bottom: 8px;
