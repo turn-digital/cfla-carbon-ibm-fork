@@ -26,12 +26,13 @@
 .project-card-header {
   display: flex;
   align-items: center;
-  height: 32px;
+  // height: 32px;
   justify-content: space-between;
 }
 
 .project-card-projects {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: left;
   @include type-style('label-01');
@@ -120,5 +121,14 @@
   .project-card-info-section {
     padding-right: 0;
     margin-top: $spacing-05;
+  }
+}
+
+@media (max-width: 320px) {
+  .project-card-projects {
+    flex-direction: column;
+  }
+  .project-card-header {
+    padding-bottom: 8px;
   }
 }
