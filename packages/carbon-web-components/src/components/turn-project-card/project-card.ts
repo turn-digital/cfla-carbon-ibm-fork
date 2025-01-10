@@ -55,7 +55,10 @@ class ProjectCard extends LitElement {
     } = this;
 
     return html`
-      <a href="${cardTitleUrl}" class="project-card-container">
+      <a
+        href="${cardTitleUrl}"
+        aria-label="${cardTitle}"
+        class="project-card-container">
         <div class="project-card-header">
           <div class="project-card-projects">
             <span class="project-header-id">Projekts - ${projectId}</span>

@@ -51,7 +51,10 @@ class CDSSelectionCard extends LitElement {
     } = this;
 
     return html`
-      <a href="${cardTitleUrl}" class="selection-card">
+      <a
+        href="${cardTitleUrl}"
+        aria-label="${cardTitle}"
+        class="selection-card">
         <div class="selection-card__header">
           <div class="selection-card__selections">
             <span class="selection-card__selections-title">Atlase </span>
