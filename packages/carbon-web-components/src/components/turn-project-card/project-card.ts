@@ -34,6 +34,11 @@ class ProjectCard extends LitElement {
   @property({ type: String }) projectCostTitle = '';
   @property({ type: String }) projectCostInfo = '';
 
+  handleOverflowMenuClick(event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+
   render() {
     const {
       projectId,
@@ -50,7 +55,7 @@ class ProjectCard extends LitElement {
     } = this;
 
     return html`
-      <div class="project-card-container">
+      <a href="${cardTitleUrl}" class="project-card-container">
         <div class="project-card-header">
           <div class="project-card-projects">
             <span class="project-header-id">Projekts - ${projectId}</span>
@@ -61,10 +66,12 @@ class ProjectCard extends LitElement {
               ${tagTitle}
             </cds-tag>
           </div>
-          <slot name="overflow-menu" class="overflow-menu"></slot>
+          <div class="overflow-menu" @click="${this.handleOverflowMenuClick}">
+            <slot name="overflow-menu"></slot>
+          </div>
         </div>
         <div class="project-card-content">
-          <a href="${cardTitleUrl}" class="project-card-desc">${cardTitle}</a>
+          <div class="project-card-desc">${cardTitle}</div>
           <div class="project-card-organization">${organization}</div>
         </div>
         <div class="project-card-info">
@@ -105,7 +112,7 @@ class ProjectCard extends LitElement {
               </div>
             `
           : ''}
-      </div>
+      </a>
     `;
   }
 

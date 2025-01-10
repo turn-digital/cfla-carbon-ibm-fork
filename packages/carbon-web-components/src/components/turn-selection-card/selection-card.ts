@@ -30,6 +30,15 @@ class CDSSelectionCard extends LitElement {
   @property({ type: String }) projectDateInfo = '';
   @property({ type: String }) buttonText = '';
 
+  handleOverflowMenuClick(event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+
+  handleButtonClick(event) {
+    event.preventDefault();
+  }
+
   render() {
     const {
       SelectionNumber,
@@ -42,7 +51,7 @@ class CDSSelectionCard extends LitElement {
     } = this;
 
     return html`
-      <div class="selection-card">
+      <a href="${cardTitleUrl}" class="selection-card">
         <div class="selection-card__header">
           <div class="selection-card__selections">
             <span class="selection-card__selections-title">Atlase </span>
@@ -50,9 +59,13 @@ class CDSSelectionCard extends LitElement {
               ${SelectionNumber} ${Launch16({ slot: 'icon' })}</cds-link
             >
           </div>
-          <slot name="overflow-menu"></slot>
+          <div
+            class="selection-card__overflow-menu"
+            @click="${this.handleOverflowMenuClick}">
+            <slot name="overflow-menu"></slot>
+          </div>
         </div>
-        <a href="${cardTitleUrl}" class="selection-card__desc">${cardTitle}</a>
+        <div class="selection-card__desc">${cardTitle}</div>
         <div class="selection-card__info">
           ${projectDateInfo
             ? html`
@@ -68,10 +81,10 @@ class CDSSelectionCard extends LitElement {
               `
             : ''}
         </div>
-        <div class="selection-card__button">
+        <div class="selection-card__button" @click="${this.handleButtonClick}">
           <cds-button size="sm" kind="secondary">${buttonText}</cds-button>
         </div>
-      </div>
+      </a>
     `;
   }
 
