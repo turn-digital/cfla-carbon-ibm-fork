@@ -26,12 +26,14 @@ class CDSTurnPageTitle extends LitElement {
 
   render() {
     return html`
+      <cds-divider size="8"></cds-divider>
       <div class="project-title">
         <h3 class="project-title__title">${this.title}</h3>
         ${this.subTitle
           ? html`<div class="project-title__subtitle">${this.subTitle}</div>`
           : ''}
       </div>
+      <cds-divider size="5"></cds-divider>
     `;
   }
 
