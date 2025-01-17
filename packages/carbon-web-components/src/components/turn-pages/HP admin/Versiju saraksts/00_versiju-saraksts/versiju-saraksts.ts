@@ -8,14 +8,14 @@
  */
 
 import { LitElement, html } from 'lit';
-import { prefix } from '../../../../globals/settings';
-import { carbonElement as customElement } from '../../../../globals/decorators/carbon-element';
+import { prefix } from '../../../../../globals/settings';
+import { carbonElement as customElement } from '../../../../../globals/decorators/carbon-element';
 
-@customElement(`${prefix}-hp-admin-view-01`)
-class CDSHPAdminView01 extends LitElement {
+@customElement(`${prefix}-hp-admin-view-00`)
+class CDSHPAdminView00 extends LitElement {
   render() {
     return html` <div></div> `;
   }
 }
 
-export default CDSHPAdminView01;
+export default CDSHPAdminView00;

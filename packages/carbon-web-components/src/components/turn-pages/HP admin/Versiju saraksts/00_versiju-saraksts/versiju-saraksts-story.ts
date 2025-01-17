@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import storyDocs from './versiju-saraksts-story.mdx';
 import './versiju-saraksts';
-import styles from '../../../../../assets/css/themes.css';
+import styles from '../../../../../../assets/css/themes.css';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 import Add16 from '@carbon/icons/lib/add/16';
 
