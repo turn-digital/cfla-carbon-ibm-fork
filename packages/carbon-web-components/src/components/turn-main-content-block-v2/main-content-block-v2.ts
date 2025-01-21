@@ -13,6 +13,8 @@ import styles from './main-content-block-v2.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import { property } from 'lit/decorators.js';
 
+import '@carbon/ibmdotcom-web-components/es/components/table-of-contents/index.js';
+
 /**
  * Related documents.
  *
@@ -27,21 +29,29 @@ class CDSMainContentBlockv2 extends LitElement {
       <link
         rel="stylesheet"
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+      <link
+        rel="stylesheet"
+        href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/version/v2.16.2/table-of-contents.css" />
+
       <div class="container">
         <div class="green-block"></div>
         <div class="header-block cds--css-grid cds--css-grid--narrow">
           <slot name="header"></slot>
         </div>
-        <div class="cds--css-grid cds--css-grid--narrow">
-          <div class="cds--css-grid-column cds--col-span-100">
-            <slot name="tabs"></slot>
-          </div>
-        </div>
+
+        <!-- Conditionally render the tabs block -->
+        ${this.withTabs
+          ? html`
+              <div class="tabs-block cds--css-grid cds--css-grid--narrow">
+                <div class="cds--css-grid-column cds--col-span-100">
+                  <slot name="tabs"></slot>
+                </div>
+              </div>
+            `
+          : null}
+
         <div class="content-block cds--css-grid cds--css-grid--narrow">
-          <div class="cds--css-grid-column cds--col-span-4">
-            <slot name="sidenav"></slot>
-          </div>
-          <div class="cds--css-grid-column cds--col-span-5">
+          <div class="cds--css-grid-column cds--col-span-100">
             <slot name="content"></slot>
           </div>
         </div>
