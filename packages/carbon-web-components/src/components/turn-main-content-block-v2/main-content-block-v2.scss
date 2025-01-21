@@ -1,8 +1,6 @@
 @use '@carbon/styles/scss/type' as *;
 @use '@carbon/styles/scss/spacing' as *;
 
-@use '@carbon/ibmdotcom-styles/scss/globals/vars';
-@use '@carbon/ibmdotcom-styles/scss/components/tableofcontents';
 .green-block {
   position: absolute;
   top: 0;
@@ -14,13 +12,11 @@
 }
 .container {
   position: relative;
-
   background-color: #f4f4f4;
   z-index: 0; /* Ensure the container is above the green block */
 }
 .header-block {
   background-color: white;
-
   min-height: $spacing-10;
 }
 .content-block {
@@ -29,9 +25,8 @@
   margin-top: $spacing-05; /* Add margin between inner divs */
 }
 .tabs-block {
-  // margin-top: $spacing-07; /* Add margin between inner divs */
-  margin-top: 10px;
-  margin-bottom: -16px;
+  margin-top: $spacing-07;
+  margin-bottom: -$spacing-05; //to fix margin under tabs
   padding-left: 0; // Remove default grid left padding
   background: linear-gradient(to bottom, transparent 48px, white 48px);
 }

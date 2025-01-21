@@ -13,10 +13,8 @@ import styles from './main-content-block-v2.scss';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
 import { property } from 'lit/decorators.js';
 
-import '@carbon/ibmdotcom-web-components/es/components/table-of-contents/index.js';
-
 /**
- * Related documents.
+ * main-content-block-v2
  *
  * @element cds-main-content-block-v2
  */
