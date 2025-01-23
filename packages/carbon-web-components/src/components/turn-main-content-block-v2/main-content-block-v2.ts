@@ -33,14 +33,16 @@ class CDSMainContentBlockv2 extends LitElement {
 
       <div class="container">
         <div class="green-block"></div>
-        <div class="header-block cds--css-grid cds--css-grid--narrow">
-          <slot name="header"></slot>
+        <div class="header-block cds--css-grid cds--css-grid--condensed">
+          <div class="cds--css-grid-column cds--col-span-100">
+            <slot name="header"></slot>
+          </div>
         </div>
 
         <!-- Conditionally render the tabs block -->
         ${this.withTabs
           ? html`
-              <div class="tabs-block cds--css-grid cds--css-grid--narrow">
+              <div class="tabs-block cds--css-grid cds--css-grid--condensed">
                 <div class="cds--css-grid-column cds--col-span-100">
                   <slot name="tabs"></slot>
                 </div>
@@ -48,7 +50,7 @@ class CDSMainContentBlockv2 extends LitElement {
             `
           : null}
 
-        <div class="content-block cds--css-grid cds--css-grid--narrow">
+        <div class="content-block cds--css-grid cds--css-grid--condensed">
           <div class="cds--css-grid-column cds--col-span-100">
             <slot name="content"></slot>
           </div>

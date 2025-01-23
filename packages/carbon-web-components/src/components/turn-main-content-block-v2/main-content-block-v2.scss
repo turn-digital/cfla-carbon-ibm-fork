@@ -13,20 +13,24 @@
 .container {
   position: relative;
   background-color: #f4f4f4;
+  padding-top: $spacing-05; //add green line above the container
   z-index: 0; /* Ensure the container is above the green block */
 }
 .header-block {
   background-color: white;
   min-height: $spacing-10;
+  // padding-left: 0; // Remove default grid left padding
 }
 .content-block {
   background-color: white;
   padding-left: 0; // Remove default grid left padding
+  padding-right: 0;
   margin-top: $spacing-05; /* Add margin between inner divs */
 }
 .tabs-block {
   margin-top: $spacing-07;
   margin-bottom: -$spacing-05; //to fix margin under tabs
-  padding-left: 0; // Remove default grid left padding
+  // padding-left: 0; // Remove default grid left padding
+  background-color: white;
   background: linear-gradient(to bottom, transparent 48px, white 48px);
 }
