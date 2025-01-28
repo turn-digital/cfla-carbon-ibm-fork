@@ -154,6 +154,12 @@ export const tabs = () => {
             value="cloudFoundry">
             Tab label 2
           </cds-tab>
+          <cds-tab id="tab-three" target="panel-three" value="three">
+            Tab label 3
+          </cds-tab>
+          <cds-tab id="tab-four" target="panel-four" value="four">
+            Tab label 4
+          </cds-tab>
         </cds-tabs>
       </span>
 
@@ -289,6 +295,150 @@ export const tabs = () => {
             </span>
 
             <span slot="tab-content">
+              <cds-table>
+                <cds-table-head>
+                  <cds-table-header-row>
+                    <cds-table-header-cell>Name</cds-table-header-cell>
+                    <cds-table-header-cell>Status</cds-table-header-cell>
+                  </cds-table-header-row>
+                </cds-table-head>
+                <cds-table-body>
+                  <cds-table-row>
+                    <cds-table-cell>Load Balancer 1</cds-table-cell>
+                    <cds-table-cell>Disabled</cds-table-cell>
+                  </cds-table-row>
+                  <cds-table-row>
+                    <cds-table-cell>Load Balancer 2</cds-table-cell>
+                    <cds-table-cell>Starting</cds-table-cell>
+                  </cds-table-row>
+                  <cds-table-row>
+                    <cds-table-cell>Load Balancer 3</cds-table-cell>
+                    <cds-table-cell>Active</cds-table-cell>
+                  </cds-table-row>
+                </cds-table-body>
+              </cds-table>
+            </span>
+          </cds-doc-page-tab-content>
+        </div>
+        <div
+          id="panel-three"
+          role="tabpanel"
+          aria-labelledby="tab-three"
+          hidden="">
+          <cds-doc-page-tab-content withPrintDownload>
+            <span slot="tab-print-download">
+              <cds-print-download
+                downloadLink="https://example.com/download"
+                printLink="https://example.com/print"></cds-print-download>
+            </span>
+            <span slot="tab-breadcrumbs">
+              <cds-breadcrumb>
+                <cds-breadcrumb-item>
+                  <cds-breadcrumb-link href="/#">Darbības</cds-breadcrumb-link>
+                </cds-breadcrumb-item>
+                <cds-breadcrumb-item>
+                  <cds-breadcrumb-link href="#"
+                    >Darbība 123</cds-breadcrumb-link
+                  >
+                </cds-breadcrumb-item>
+              </cds-breadcrumb>
+            </span>
+
+            <span slot="tab-content">
+              <cds-table>
+                <cds-table-head>
+                  <cds-table-header-row>
+                    <cds-table-header-cell>Name</cds-table-header-cell>
+                    <cds-table-header-cell>Status</cds-table-header-cell>
+                  </cds-table-header-row>
+                </cds-table-head>
+                <cds-table-body>
+                  <cds-table-row>
+                    <cds-table-cell>Load Balancer 1</cds-table-cell>
+                    <cds-table-cell>Disabled</cds-table-cell>
+                  </cds-table-row>
+                  <cds-table-row>
+                    <cds-table-cell>Load Balancer 2</cds-table-cell>
+                    <cds-table-cell>Starting</cds-table-cell>
+                  </cds-table-row>
+                  <cds-table-row>
+                    <cds-table-cell>Load Balancer 3</cds-table-cell>
+                    <cds-table-cell>Active</cds-table-cell>
+                  </cds-table-row>
+                </cds-table-body>
+              </cds-table>
+            </span>
+          </cds-doc-page-tab-content>
+        </div>
+        <div
+          id="panel-four"
+          role="tabpanel"
+          aria-labelledby="tab-four"
+          hidden="">
+          <cds-doc-page-tab-content withSidenav withPrintDownload>
+            <span slot="tab-sidenav">
+              <cds-side-nav-items>
+                <cds-side-nav-link active href="#">L0 link</cds-side-nav-link>
+                <cds-side-nav-link href="#">L0 link</cds-side-nav-link>
+              </cds-side-nav-items>
+            </span>
+            <span slot="tab-sidenav-mobile">
+              <cds-dropdown label="Darbības">
+                <cds-dropdown-item value="foo">Foo</cds-dropdown-item>
+                <cds-dropdown-item value="bar">Bar</cds-dropdown-item>
+                <cds-dropdown-item value="baz">Baz</cds-dropdown-item>
+              </cds-dropdown>
+            </span>
+            <span slot="tab-print-download">
+              <cds-print-download
+                downloadLink="https://example.com/download"
+                printLink="https://example.com/print"></cds-print-download>
+            </span>
+            <span slot="tab-content">
+              <cds-table>
+                <cds-table-header-title slot="title"
+                  >Dokumenti</cds-table-header-title
+                >
+                <cds-table-head>
+                  <cds-table-header-row>
+                    <cds-table-header-cell>Name</cds-table-header-cell>
+                    <cds-table-header-cell>Status</cds-table-header-cell>
+                  </cds-table-header-row>
+                </cds-table-head>
+                <cds-table-body>
+                  <cds-table-row>
+                    <cds-table-cell>Load Balancer 1</cds-table-cell>
+                    <cds-table-cell>Disabled</cds-table-cell>
+                  </cds-table-row>
+                  <cds-table-row>
+                    <cds-table-cell>Load Balancer 2</cds-table-cell>
+                    <cds-table-cell>Starting</cds-table-cell>
+                  </cds-table-row>
+                  <cds-table-row>
+                    <cds-table-cell>Load Balancer 3</cds-table-cell>
+                    <cds-table-cell>Active</cds-table-cell>
+                  </cds-table-row>
+                </cds-table-body>
+              </cds-table>
+              <cds-divider></cds-divider>
+              <div class="cds--subgrid cds--subgrid--narrow">
+                <div
+                  style="background-color:red;"
+                  class="cds--css-grid-column cds--col-span-25 cds--grid-column-hang">
+                  <cds-header-title
+                    title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
+                </div>
+              </div>
+              <cds-divider></cds-divider>
+              <div class="cds--subgrid cds--subgrid--narrow">
+                <div
+                  style="background-color:yellow;"
+                  class="cds--css-grid-column cds--col-span-10 cds--grid-column-hang">
+                  <cds-header-title
+                    title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
+                </div>
+              </div>
+              <cds-divider></cds-divider>
               <cds-table>
                 <cds-table-head>
                   <cds-table-header-row>

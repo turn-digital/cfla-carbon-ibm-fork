@@ -54,7 +54,8 @@ class CDSDocPageTabContent extends LitElement {
                   ? html` <div class="doc-breadcrumbs">
                       <slot name="tab-breadcrumbs"></slot>
                     </div>`
-                  : html` <div class="doc-print-sidenav-block-gray"></div>`}
+                  : html` <div
+                      class="doc-content-empty-breadcrumb-block"></div>`}
                 <cds-divider size="8"></cds-divider>
                 <slot name="tab-content"></slot>
               </div>
@@ -70,7 +71,7 @@ class CDSDocPageTabContent extends LitElement {
                 ? html` <div class="doc-breadcrumbs-full">
                     <slot name="tab-breadcrumbs"></slot>
                   </div>`
-                : html` <div class="doc-print-sidenav-block-gray"></div>`}
+                : html``}
               <cds-divider size="6"></cds-divider>
               <slot name="tab-content"></slot>
             </div>

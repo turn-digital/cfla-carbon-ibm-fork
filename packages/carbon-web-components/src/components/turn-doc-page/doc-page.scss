@@ -69,6 +69,15 @@
   background-color: $layer-01;
 }
 
+//block for main-content with sidenav when no breadcrumbs
+.doc-content-empty-breadcrumb-block {
+  display: none;
+  height: $spacing-05;
+  background-color: $layer-01;
+  margin-left: -$spacing-05;
+  margin-right: -$spacing-05;
+}
+
 //breacrumbs block with sidenav
 .doc-breadcrumbs {
   height: 50px;
@@ -106,6 +115,9 @@
   .doc-breadcrumbs {
     margin-top: 0;
     background-color: $layer-01;
+  }
+  .doc-content-empty-breadcrumb-block {
+    display: block;
   }
 
   :host ::slotted([slot='tab-sidenav-mobile']) {
