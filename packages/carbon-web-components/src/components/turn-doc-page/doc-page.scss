@@ -1,0 +1,126 @@
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/utilities' as *;
+
+.green-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 66px;
+  background-color: #064a4a;
+  z-index: -1; /* Move the green block behind the container */
+}
+.container {
+  position: relative;
+  background-color: $layer-01;
+  padding-top: $spacing-05; //add green line above the container
+  z-index: 0; /* Ensure the container is above the green block */
+}
+.header-block {
+  background-color: $layer-02;
+  min-height: $spacing-10;
+}
+.content-block {
+  background-color: $layer-02;
+  padding-left: 0; // Remove default grid left padding
+  padding-right: 0;
+  margin-top: $spacing-05; /* Add margin between inner divs */
+}
+.tabs-block {
+  margin-top: $spacing-07;
+  margin-bottom: -$spacing-05; //to fix margin under tabs
+  background-color: $layer-02;
+  background: linear-gradient(to bottom, transparent 48px, $layer-02 48px);
+}
+
+//show dropdown nav on mobile
+:host ::slotted([slot='tab-sidenav-mobile']) {
+  display: block;
+}
+
+// desktop sidenav
+.doc-sidenav {
+  display: none; // Hide on mobile devices
+  background-color: $layer-01;
+  padding-right: $spacing-05;
+}
+
+.doc-grey-bgr {
+  background-color: $layer-01;
+}
+
+.doc-white-bgr {
+  background-color: $layer-02;
+}
+
+//block for sidenav which copy look of print-download block
+.doc-print-sidenav-block {
+  height: $spacing-08;
+  margin-right: -$spacing-05;
+  background-color: $layer-02;
+}
+
+//block for sidenav which separate sidenav blocks
+.doc-print-sidenav-block-gray {
+  height: $spacing-05;
+  background-color: $layer-01;
+}
+
+//block for main-content with sidenav when no breadcrumbs
+.doc-content-empty-breadcrumb-block {
+  display: none;
+  height: $spacing-05;
+  background-color: $layer-01;
+  margin-left: -$spacing-05;
+  margin-right: -$spacing-05;
+}
+
+//breacrumbs block with sidenav
+.doc-breadcrumbs {
+  height: 50px;
+  background-color: $layer-02;
+  display: flex;
+  align-items: center;
+
+  // extend breadcrumbs to left and right
+  margin-left: -$spacing-05;
+  margin-right: -$spacing-05;
+
+  margin-top: $spacing-05;
+  padding-left: $spacing-07;
+}
+
+//breadcrumbs block without sidenav
+.doc-breadcrumbs-full {
+  height: 50px;
+  background-color: $layer-02;
+  display: flex;
+  align-items: center;
+  padding-left: $spacing-05;
+}
+
+//block for main-content if print-download block is empty
+.doc-print-download-empty-block {
+  height: $spacing-07;
+  background-color: $layer-02;
+}
+
+@include breakpoint(md) {
+  .doc-sidenav {
+    display: block;
+  }
+  .doc-breadcrumbs {
+    margin-top: 0;
+    background-color: $layer-01;
+  }
+  .doc-content-empty-breadcrumb-block {
+    display: block;
+  }
+
+  :host ::slotted([slot='tab-sidenav-mobile']) {
+    display: none;
+  }
+}
