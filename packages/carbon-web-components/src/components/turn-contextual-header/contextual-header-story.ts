@@ -19,6 +19,7 @@ export const Propsed = () => {
           >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
         </cds-link>
       </cds-label-value-horizontal>
+      <cds-divider size="3"></cds-divider>
       <cds-label-value-horizontal label="Atlases status">
         <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
       </cds-label-value-horizontal>
@@ -34,9 +35,11 @@ export const Propsed = () => {
           >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
         </cds-link>
       </cds-label-value-horizontal>
+      <cds-divider size="3"></cds-divider>
       <cds-label-value-horizontal label="Finansējuma saņēmējs">
         Latvijas Universitāte
       </cds-label-value-horizontal>
+      <cds-divider size="3"></cds-divider>
       <cds-label-value-horizontal label="Projekta statuss">
         <cds-tag type="blue">Līgums</cds-tag> 25.10.2019 10:34
       </cds-label-value-horizontal>
@@ -46,9 +49,11 @@ export const Propsed = () => {
       <cds-label-value-horizontal label="Projekta nosaukums">
         <cds-link href="#">MVU inovatīvas uzņēmējdarbības attīstība </cds-link>
       </cds-label-value-horizontal>
+      <cds-divider size="3"></cds-divider>
       <cds-label-value-horizontal label="Iesniedzējs">
         Latvijas Universitāte
       </cds-label-value-horizontal>
+      <cds-divider size="3"></cds-divider>
       <cds-label-value-horizontal label="Projekta iensieguma statuss">
         <cds-tag type="blue">Sagatavošanā</cds-tag> 25.10.2019 10:34
       </cds-label-value-horizontal>
