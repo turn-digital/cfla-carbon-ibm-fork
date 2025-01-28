@@ -1,5 +1,6 @@
 @use '@carbon/styles/scss/type' as *;
 @use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/breakpoint' as *;
 
 .green-block {
   position: absolute;
@@ -19,7 +20,6 @@
 .header-block {
   background-color: white;
   min-height: $spacing-10;
-  // padding-left: 0; // Remove default grid left padding
 }
 .content-block {
   background-color: white;
@@ -30,7 +30,83 @@
 .tabs-block {
   margin-top: $spacing-07;
   margin-bottom: -$spacing-05; //to fix margin under tabs
-  // padding-left: 0; // Remove default grid left padding
   background-color: white;
   background: linear-gradient(to bottom, transparent 48px, white 48px);
+}
+
+//show dropdown nav on mobile
+:host ::slotted([slot='tab-sidenav-mobile']) {
+  display: block;
+}
+
+// desktop sidenav
+.doc-sidenav {
+  display: none; // Hide on mobile devices
+  background-color: #f4f4f4;
+  padding-right: $spacing-05;
+}
+
+.doc-grey-bgr {
+  background-color: #f4f4f4;
+}
+
+.doc-white-bgr {
+  background-color: white;
+}
+
+//block for sidenav which copy look of print-download block
+.doc-print-sidenav-block {
+  height: $spacing-08;
+  margin-right: -$spacing-05;
+  background-color: white;
+}
+
+//block for sidenav which separate sidenav blocks
+.doc-print-sidenav-block-gray {
+  height: $spacing-05;
+  background-color: #f4f4f4;
+}
+
+//breacrumbs block with sidenav
+.doc-breadcrumbs {
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+
+  // extend breadcrumbs to left and right
+  margin-left: -$spacing-05;
+  margin-right: -$spacing-05;
+
+  margin-top: $spacing-05;
+  padding-left: $spacing-07;
+}
+
+//breadcrumbs block without sidenav
+.doc-breadcrumbs-full {
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding-left: $spacing-05;
+}
+
+//block for main-content if print-download block is empty
+.doc-print-download-empty-block {
+  height: $spacing-07;
+  background-color: white;
+}
+
+@include breakpoint(md) {
+  .doc-sidenav {
+    display: block;
+  }
+  .doc-breadcrumbs {
+    margin-top: 0;
+    background-color: #f4f4f4;
+  }
+
+  :host ::slotted([slot='tab-sidenav-mobile']) {
+    display: none;
+  }
 }

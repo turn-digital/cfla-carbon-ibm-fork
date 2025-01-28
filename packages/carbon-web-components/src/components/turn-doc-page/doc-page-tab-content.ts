@@ -23,7 +23,8 @@ import { property } from 'lit/decorators.js';
 class CDSDocPageTabContent extends LitElement {
   // Property to accept the array of tabs
   @property({ type: Boolean }) withSidenav = false;
-  // @property({ type: String }) panelID = '';
+  @property({ type: Boolean }) withBreadcrumbs = false;
+  @property({ type: Boolean }) withPrintDownload = false;
 
   render() {
     return html`
@@ -32,20 +33,29 @@ class CDSDocPageTabContent extends LitElement {
         href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
       ${this.withSidenav
         ? html`
-            <div class="cds--subgrid cds--subgrid--narrow">
+            <div class="doc-white-bgr cds--subgrid cds--subgrid--narrow">
               <div
-                class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-4 cds--lg:col-span-4 cds--xlg:col-span-4 cds--max:col-span-4">
-                <cds-divider size="8"></cds-divider>
-                <cds-divider size="6"></cds-divider>
-                <slot name="tab-sidenav"></slot>
+                class="doc-sidenav cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-4 cds--lg:col-span-4 cds--xlg:col-span-4 cds--max:col-span-4">
+                <div class="doc-print-sidenav-block"></div>
+                <div class="doc-print-sidenav-block-gray"></div>
+                <div class="doc-white-bgr">
+                  <slot name="tab-sidenav"></slot>
+                </div>
               </div>
               <div
-                class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-4 cds--lg:col-span-12 cds--xlg:col-span-12 cds--max:col-span-12">
+                class="doc-white-bgr cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-4 cds--lg:col-span-12 cds--xlg:col-span-12 cds--max:col-span-12">
                 <cds-divider size="3"></cds-divider>
-                <cds-print-download
-                  downloadLink="https://example.com/download"
-                  printLink="https://example.com/print"></cds-print-download>
-                <cds-divider></cds-divider>
+                ${this.withPrintDownload
+                  ? html` <slot name="tab-print-download"></slot>`
+                  : html` <div class="doc-print-download-empty-block"></div>`}
+
+                <slot name="tab-sidenav-mobile"></slot>
+                ${this.withBreadcrumbs
+                  ? html` <div class="doc-breadcrumbs">
+                      <slot name="tab-breadcrumbs"></slot>
+                    </div>`
+                  : html` <div class="doc-print-sidenav-block-gray"></div>`}
+                <cds-divider size="8"></cds-divider>
                 <slot name="tab-content"></slot>
               </div>
             </div>
@@ -53,10 +63,15 @@ class CDSDocPageTabContent extends LitElement {
         : html` <div class="cds--css-grid cds--css-grid--narrow">
             <div class="cds--css-grid-column cds--col-span-100">
               <cds-divider size="3"></cds-divider>
-              <cds-print-download
-                downloadLink="https://example.com/download"
-                printLink="https://example.com/print"></cds-print-download>
-              <cds-divider></cds-divider>
+              ${this.withPrintDownload
+                ? html` <slot name="tab-print-download"></slot>`
+                : html` <div class="doc-print-download-empty-block"></div>`}
+              ${this.withBreadcrumbs
+                ? html` <div class="doc-breadcrumbs-full">
+                    <slot name="tab-breadcrumbs"></slot>
+                  </div>`
+                : html` <div class="doc-print-sidenav-block-gray"></div>`}
+              <cds-divider size="6"></cds-divider>
               <slot name="tab-content"></slot>
             </div>
           </div>`}

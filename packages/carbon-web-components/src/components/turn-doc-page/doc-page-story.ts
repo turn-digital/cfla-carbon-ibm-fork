@@ -159,12 +159,39 @@ export const tabs = () => {
 
       <span slot="content">
         <div id="panel-all" role="tabpanel" aria-labelledby="tab-all" hidden="">
-          <cds-doc-page-tab-content withSidenav>
+          <cds-doc-page-tab-content
+            withSidenav
+            withBreadcrumbs
+            withPrintDownload>
             <span slot="tab-sidenav">
               <cds-side-nav-items>
                 <cds-side-nav-link active href="#">L0 link</cds-side-nav-link>
                 <cds-side-nav-link href="#">L0 link</cds-side-nav-link>
               </cds-side-nav-items>
+            </span>
+            <span slot="tab-sidenav-mobile">
+              <cds-dropdown label="Darbības">
+                <cds-dropdown-item value="foo">Foo</cds-dropdown-item>
+                <cds-dropdown-item value="bar">Bar</cds-dropdown-item>
+                <cds-dropdown-item value="baz">Baz</cds-dropdown-item>
+              </cds-dropdown>
+            </span>
+            <span slot="tab-print-download">
+              <cds-print-download
+                downloadLink="https://example.com/download"
+                printLink="https://example.com/print"></cds-print-download>
+            </span>
+            <span slot="tab-breadcrumbs">
+              <cds-breadcrumb>
+                <cds-breadcrumb-item>
+                  <cds-breadcrumb-link href="/#">Darbības</cds-breadcrumb-link>
+                </cds-breadcrumb-item>
+                <cds-breadcrumb-item>
+                  <cds-breadcrumb-link href="#"
+                    >Darbība 123</cds-breadcrumb-link
+                  >
+                </cds-breadcrumb-item>
+              </cds-breadcrumb>
             </span>
             <span slot="tab-content">
               <cds-table>
@@ -242,7 +269,25 @@ export const tabs = () => {
           role="tabpanel"
           aria-labelledby="tab-cloudFoundry"
           hidden="">
-          <cds-doc-page-tab-content>
+          <cds-doc-page-tab-content withBreadcrumbs>
+            <span slot="tab-print-download">
+              <cds-print-download
+                downloadLink="https://example.com/download"
+                printLink="https://example.com/print"></cds-print-download>
+            </span>
+            <span slot="tab-breadcrumbs">
+              <cds-breadcrumb>
+                <cds-breadcrumb-item>
+                  <cds-breadcrumb-link href="/#">Darbības</cds-breadcrumb-link>
+                </cds-breadcrumb-item>
+                <cds-breadcrumb-item>
+                  <cds-breadcrumb-link href="#"
+                    >Darbība 123</cds-breadcrumb-link
+                  >
+                </cds-breadcrumb-item>
+              </cds-breadcrumb>
+            </span>
+
             <span slot="tab-content">
               <cds-table>
                 <cds-table-head>
