@@ -10,7 +10,6 @@
 import { html } from 'lit';
 import './index';
 import storyDocs from './doc-page-story.mdx';
-import Fade16 from '@carbon/web-components/es/icons/fade/16';
 import ToolBox16 from '@carbon/web-components/es/icons/tool-box/16';
 import CertificateCheck16 from '@carbon/web-components/es/icons/certificate--check/16';
 
@@ -67,6 +66,7 @@ export const tabs = () => {
               >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
             </cds-link>
           </cds-label-value-horizontal>
+          <cds-divider size="3"></cds-divider>
           <cds-label-value-horizontal label="Atlases nosaukums:">
             <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
           </cds-label-value-horizontal>
@@ -228,7 +228,6 @@ export const tabs = () => {
               <cds-divider></cds-divider>
               <div class="cds--subgrid cds--subgrid--narrow">
                 <div
-                  style="background-color:red;"
                   class="cds--css-grid-column cds--col-span-25 cds--grid-column-hang">
                   <cds-header-title
                     title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
@@ -237,7 +236,6 @@ export const tabs = () => {
               <cds-divider></cds-divider>
               <div class="cds--subgrid cds--subgrid--narrow">
                 <div
-                  style="background-color:yellow;"
                   class="cds--css-grid-column cds--col-span-10 cds--grid-column-hang">
                   <cds-header-title
                     title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
@@ -423,7 +421,6 @@ export const tabs = () => {
               <cds-divider></cds-divider>
               <div class="cds--subgrid cds--subgrid--narrow">
                 <div
-                  style="background-color:red;"
                   class="cds--css-grid-column cds--col-span-25 cds--grid-column-hang">
                   <cds-header-title
                     title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
@@ -432,7 +429,6 @@ export const tabs = () => {
               <cds-divider></cds-divider>
               <div class="cds--subgrid cds--subgrid--narrow">
                 <div
-                  style="background-color:yellow;"
                   class="cds--css-grid-column cds--col-span-10 cds--grid-column-hang">
                   <cds-header-title
                     title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
@@ -479,6 +475,7 @@ export const noTabsSidenav = () => {
               >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
             </cds-link>
           </cds-label-value-horizontal>
+          <cds-divider size="3"></cds-divider>
           <cds-label-value-horizontal label="Atlases nosaukums:">
             <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
           </cds-label-value-horizontal>
@@ -564,6 +561,13 @@ export const noTabsSidenav = () => {
               <cds-side-nav-link href="#">L0 link</cds-side-nav-link>
             </cds-side-nav-items>
           </span>
+          <span slot="tab-sidenav-mobile">
+            <cds-dropdown label="Darbības">
+              <cds-dropdown-item value="foo">Foo</cds-dropdown-item>
+              <cds-dropdown-item value="bar">Bar</cds-dropdown-item>
+              <cds-dropdown-item value="baz">Baz</cds-dropdown-item>
+            </cds-dropdown>
+          </span>
           <span slot="tab-content">
             <cds-table>
               <cds-table-header-title slot="title"
@@ -593,7 +597,6 @@ export const noTabsSidenav = () => {
             <cds-divider></cds-divider>
             <div class="cds--subgrid cds--subgrid--narrow">
               <div
-                style="background-color:red;"
                 class="cds--css-grid-column cds--col-span-25 cds--grid-column-hang">
                 <cds-header-title
                   title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
@@ -602,7 +605,6 @@ export const noTabsSidenav = () => {
             <cds-divider></cds-divider>
             <div class="cds--subgrid cds--subgrid--narrow">
               <div
-                style="background-color:yellow;"
                 class="cds--css-grid-column cds--col-span-10 cds--grid-column-hang">
                 <cds-header-title
                   title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
@@ -648,6 +650,7 @@ export const noTabsNoSidenav = () => {
               >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
             </cds-link>
           </cds-label-value-horizontal>
+          <cds-divider size="3"></cds-divider>
           <cds-label-value-horizontal label="Atlases nosaukums:">
             <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
           </cds-label-value-horizontal>
@@ -756,7 +759,6 @@ export const noTabsNoSidenav = () => {
             <cds-divider></cds-divider>
             <div class="cds--subgrid cds--subgrid--narrow">
               <div
-                style="background-color:red;"
                 class="cds--css-grid-column cds--col-span-25 cds--grid-column-hang">
                 <cds-header-title
                   title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
@@ -765,7 +767,6 @@ export const noTabsNoSidenav = () => {
             <cds-divider></cds-divider>
             <div class="cds--subgrid cds--subgrid--narrow">
               <div
-                style="background-color:yellow;"
                 class="cds--css-grid-column cds--col-span-10 cds--grid-column-hang">
                 <cds-header-title
                   title="Projekta iesnieguma vērtēšanas veidlapa"></cds-header-title>
