@@ -85,12 +85,10 @@ export const Propsed = () => {
       <div class="cds--css-grid cds--css-grid--narrow">
         <div
           class="cds--css-grid-column cds--grid-column-hang cds--col-span-100">
-          <cds-divider size="6"></cds-divider>
           <cds-page-title
             title="Mani projekti"
             subtitle="Projekti, kuros ir noslēgts līgums">
           </cds-page-title>
-          <cds-divider></cds-divider>
         </div>
         <div
           class="cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-100 cds--lg:col-span-14 cds--xlg:col-span-12 cds--max:col-span-10">
