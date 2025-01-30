@@ -128,6 +128,7 @@ export const Propsed = () => {
 
             <cds-divider size="6"></cds-divider>
             <cds-inline-notification
+              style="min-width: 100%;"
               low-contrast
               kind="warning"
               title="Nav izvēlēts minimāli nepieciešamais darbību skaits"

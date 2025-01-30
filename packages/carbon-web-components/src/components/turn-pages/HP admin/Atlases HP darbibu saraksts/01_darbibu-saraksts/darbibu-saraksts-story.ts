@@ -91,6 +91,7 @@ export const Propsed = () => {
         ></span>
         <span slot="tab-content">
           <cds-inline-notification
+            style="min-width: 100%;"
             low-contrast
             kind="error"
             title="Nav izvēlēts minimāli nepieciešamais darbību skaits"
