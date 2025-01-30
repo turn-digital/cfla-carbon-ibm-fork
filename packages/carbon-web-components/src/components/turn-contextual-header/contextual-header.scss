@@ -1,5 +1,7 @@
+@use '@carbon/styles/scss/theme' as *;
+
 .container {
   --cds-border-subtle: none;
-  background-color: #f4f4f4;
+  background-color: $layer-01;
   max-block-size: none;
 }
