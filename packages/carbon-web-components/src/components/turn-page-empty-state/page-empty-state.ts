@@ -12,6 +12,7 @@ import { prefix } from '../../globals/settings';
 import styles from './page-empty-state.scss';
 import { property } from 'lit/decorators.js';
 import { carbonElement as customElement } from '../../globals/decorators/carbon-element';
+import Sprout32 from '@carbon/icons/lib/sprout/32';
 
 /**
  * page-empty-state
@@ -22,15 +23,21 @@ import { carbonElement as customElement } from '../../globals/decorators/carbon-
 @customElement(`${prefix}-page-empty-state`)
 class CDSTurnPageTitle extends LitElement {
   @property({ type: String }) title = '';
-  @property({ type: String }) subTitle = '';
 
   render() {
     return html` <div class="page-empty-state">
       <div class="page-empty-state__container">
+        <div class="page-empty-state__icon">${Sprout32()}</div>
         <div class="page-empty-state__title">${this.title}</div>
-        <div class="page-empty-state__subtitle">${this.subTitle}</div>
-        <slot name="button"></slot>
-        <slot name="link"></slot>
+        <div class="page-empty-state__text">
+          <slot name="content"></slot>
+        </div>
+        <div class="page-empty-state__button">
+          <slot name="button"></slot>
+        </div>
+        <div class="page-empty-state__link">
+          <slot name="link"></slot>
+        </div>
       </div>
     </div>`;
   }
