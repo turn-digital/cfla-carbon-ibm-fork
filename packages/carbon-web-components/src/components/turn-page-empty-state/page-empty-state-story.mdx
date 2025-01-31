@@ -1,0 +1,83 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Page empty state
+
+## Apraksts
+
+- argument title - Virsraksts
+- slot text - Apraksts
+- slot button - Poga
+- slot link - Saite
+
+## Dizaina un UX komentāri
+
+Tiek ievietos, kad lapai nav satura
+
+## Getting started
+
+### JS (via import)
+
+```import
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-page-empty-state.min.js"></script>
+```
+
+### HTML
+
+#### Mani projekti
+
+```html
+<cds-page-empty-state title="Mani projekti">
+  <span slot="content">
+    Šajā sadaļā tiek atspoguļoti projekti, kuros ir noslēgts līgums. Šobrīd Jums
+    vēl nav neviens noslēgts līgums par projekta īstenošanu. Atlases procesā
+    esošie projektu iesniegumi ir pieejami sadaļā "Projektu iesniegumi".
+  </span>
+  <span slot="button">
+    <cds-button href="https://www.ibm.com"> Button </cds-button>
+  </span>
+  <span slot="link">
+    <cds-link href="https://www.ibm.com"> Link </cds-link>
+  </span>
+</cds-page-empty-state>
+```
+
+#### Projekta iesniegumi
+
+```html
+<cds-page-empty-state title="Projekta iesniegumi">
+  <span slot="content">
+    Šajā sadaļā tiek atspoguļoti projekta iesniegumi, kuri ir atlases procesā.
+    Šobrīd Jums nav neviens projekta iesniegums. Lai uzsāktu projekta iesnieguma
+    sagatavošanu, izvēlieties projekta atlasi sadaļā "2021-2027 pieejamās
+    atlases".
+  </span>
+  <span slot="button">
+    <cds-button href="https://www.ibm.com"> Button </cds-button>
+  </span>
+  <span slot="link">
+    <cds-link href="https://www.ibm.com"> Link </cds-link>
+  </span>
+</cds-page-empty-state>
+```
+
+#### 2021-2027 pieejamās atlases
+
+```html
+<cds-page-empty-state title="2021-2027 pieejamās atlases">
+  <span slot="content">
+    Šajā sadaļā tiek atspoguļotas projektu atlases, kurās var iesniegt
+    pieteikumus. Šobrīd nav neviena izsludināta projekta atlase.
+  </span>
+  <span slot="button">
+    <cds-button href="https://www.ibm.com"> Button </cds-button>
+  </span>
+  <span slot="link">
+    <cds-link href="https://www.ibm.com"> Link </cds-link>
+  </span>
+</cds-page-empty-state>
+```
+
+## `<cds-page-empty-state>` attributes and properties
+
+<Props of="cds-page-empty-state" />

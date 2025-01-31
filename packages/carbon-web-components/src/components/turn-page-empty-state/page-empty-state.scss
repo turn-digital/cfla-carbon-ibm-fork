@@ -1,0 +1,47 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/breakpoint' as *;
+
+.page-empty-state {
+  background-color: $layer-01;
+  width: 100vw;
+  height: 100vh;
+
+  &__container {
+    max-width: 354px;
+    padding-top: 40px;
+    padding-left: 16px;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: $spacing-03;
+  }
+
+  &__title {
+    @include type-style('heading-03');
+    color: $text-primary;
+    margin-bottom: $spacing-03;
+  }
+
+  &__text {
+    @include type-style('body-compact-01');
+    color: $text-primary;
+    margin-bottom: $spacing-05;
+  }
+
+  &__button {
+    margin-bottom: $spacing-03;
+  }
+}
+
+@include breakpoint(md) {
+  .page-empty-state {
+    &__container {
+      padding-top: 160px;
+      padding-left: 80px;
+    }
+  }
+}
