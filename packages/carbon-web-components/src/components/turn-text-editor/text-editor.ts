@@ -33,6 +33,7 @@ class TextEditor extends LitElement {
   @property({ attribute: false }) onChange:
     | ((newContent: string) => void)
     | null = null;
+  @property({ type: String }) toolbarType = 'default';
 
   get combinedEditorConfig() {
     const defaultConfig = {

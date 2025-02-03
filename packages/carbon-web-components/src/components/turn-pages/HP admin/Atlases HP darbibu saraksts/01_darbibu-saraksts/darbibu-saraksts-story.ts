@@ -411,22 +411,15 @@ export const Modal = () => {
       <cds-modal-body>
         <cds-text-editor
           editorId="editor_example_storybook_default_cl_ro_set"
-          onServerLastEditor='{"name": "Ieva Bērziņa", "date": "10.10.2022 10:22"}'
           editorConfig='{
-      "editorTitle": "Komentārs",
-      "max_char_length": 1000,
-      "request_obj": {
-        "urlToRequest": "https://jsonplaceholder.typicode.com/posts/1",
-        "requestMethod": "PATCH",
-        "requestValueKey": "value",
-        "verificationToken": "token",
-        "errorAlertMessage": "Error occurred while fetching data"
-        },
-        "onServerLastEditor": {
-          "name": "Ieva Bērziņa",
-          "date": "10.10.2022 10:22"
-      }
-      }'></cds-text-editor>
+            "editorTitle": "Komentārs",
+            "max_char_length": 1000,
+            "onServerLastEditor": {
+              "name": "Ieva Bērziņa",
+              "date": " 10.10.2022 10:22"
+              }
+            }'>
+        </cds-text-editor>
       </cds-modal-body>
 
       <cds-modal-footer>
