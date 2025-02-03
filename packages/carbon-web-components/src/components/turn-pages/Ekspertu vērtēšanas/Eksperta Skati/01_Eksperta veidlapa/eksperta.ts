@@ -163,7 +163,7 @@ class CDSPValuationOpen extends LitElement {
 
       <link
         rel="stylesheet"
-        href="https://demo.turn.lv/kase/dist/assets/css/themes.css" />
+        href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
 
       <cds-main-content-block-open>
         <div slot="header" class="cds--css-grid-column cds--col-span-100">
