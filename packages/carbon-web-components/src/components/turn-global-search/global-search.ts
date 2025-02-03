@@ -25,19 +25,23 @@ class CDSTurnGlobalSearch extends LitElement {
   @property({ type: Array }) searchResults: SearchResult[] = [];
   @property({ type: String }) value = '';
   @property({ type: Boolean }) loading = false;
+  @property({ type: Boolean }) expanded = false;
   @property({ type: Boolean }) isActive = false;
   @property({ type: Number }) focusedIndex = -1; // Track the focused list item index
-  @property({type: String}) urlToPost = 'https://5ea5e181-a7fe-4f98-a5cb-ba5676937d64.mock.pstmn.io/AttistibasPlans/Search'
-
+  @property({type: String}) urlToPost = 'https://5ea5e181-a7fe-4f98-a5cb-ba5676937d64.mock.pstmn.io/AttistibasPlans/Meklet'
+  @property({type: String}) requestVerificationToken = ''
+  
   // Fetch data from an API using POST method
-  async fetchData(url, body = {}) {
+  async fetchData() {
+    const formData = new FormData()
+    formData.append("q", this.value)
     try {
-      const response = await fetch(url, {
+      const response = await fetch(this.urlToPost, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          '__RequestVerificationToken' : this.requestVerificationToken
         },
-        body: JSON.stringify(body),
+        body: formData,
       });
       if (!response.ok) throw new Error('Failed to fetch data');
       return await response.json();
@@ -58,16 +62,11 @@ class CDSTurnGlobalSearch extends LitElement {
 
     if (value.length >= 3) {
       this.loading = true;
-      const dynamicResults = await this.fetchData(
-        this.urlToPost,
-        { query: value }
-      );
+      const dynamicResults = await this.fetchData();
       this.searchResults = dynamicResults;
       this.loading = false;
     }else{
-      const initialResults = await this.fetchData(
-        this.urlToPost
-      );
+      const initialResults = await this.fetchData();
       this.searchResults = initialResults;
     }
   }
@@ -79,10 +78,7 @@ class CDSTurnGlobalSearch extends LitElement {
 
     if (value.length >= 3) {
       this.loading = true;
-      const dynamicResults = await this.fetchData(
-        this.urlToPost,
-        { query: value }
-      );
+      const dynamicResults = await this.fetchData();
       this.searchResults = dynamicResults;
       this.loading = false;
     }
@@ -95,11 +91,13 @@ class CDSTurnGlobalSearch extends LitElement {
       const isInsideComponent =
         focusedElement?.closest('.global-search-input') || focusedElement?.closest('.search-results');
       
+        console.log(isInsideComponent)
       // Only clear results if the focus is outside of the search component
       if (!isInsideComponent) {
         this.searchResults = [];
         this.value = '';
         this.isActive = false;
+        this.expanded = false;
       }
     }, 0);
   }
@@ -112,6 +110,7 @@ class CDSTurnGlobalSearch extends LitElement {
   }
 
   handleKeyDown(event) {
+    console.log("handlekeydown")
     // @ts-ignore
     const listLength = this.searchResults[0]?.Ieraksti.length || 0;
     if (!listLength) return;
@@ -136,15 +135,18 @@ class CDSTurnGlobalSearch extends LitElement {
         window.location.href = focusedItem.Url; // Navigate to the URL
       }
     } 
-    
+
     // Prevent closing search if the user is navigating with keyboard
-    this.shadowRoot?.getElementById("cds-search-global-component")?.setAttribute("expanded", "expanded")
+    this.expanded = true
     this.isActive = true;
 
-    if (event.key === 'Escape') {
-      this.shadowRoot?.getElementById("cds-search-global-component")?.removeAttribute("expanded")
-      this.handleClearInputButtonClick()
-    }
+    // if (event.key === 'Escape') {
+    //   this.shadowRoot?.getElementById("cds-search-global-component")?.removeAttribute("expanded")
+    //   this.focusedIndex = -1
+    //   this.searchResults = [];
+    //   this.value = '';
+    //   this.isActive = false;
+    // }
   }
 
   updateFocusedItem() {
@@ -159,16 +161,36 @@ class CDSTurnGlobalSearch extends LitElement {
     });
   }
 
+
+  connectedCallback() {
+    super.connectedCallback();
+    document.addEventListener('click', this.handleClickOutside);
+  }
+  
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener('click', this.handleClickOutside);
+  }
+  
+  handleClickOutside = (event: MouseEvent) => {
+    const searchContainer = this.shadowRoot?.querySelector('div');
+    if (searchContainer && !searchContainer.contains(event.target as Node) && this.expanded) {
+      this.handleBlur();
+    }
+  };
+
   render() {
     return html`
       <div style="${this.isActive ? "padding-right: 0px" : "padding-right: 48px"}" @keydown=${this.handleKeyDown}>
         <cds-search
-        id="cds-search-global-component"
+          id="cds-search-global-component"
           expandable
           label-text="Search"
+          @open=${()=>{console.log("asdasdas")}}
           @focus=${this.handleOpen}
           @input=${this.handleInputChange}
           @blur=${this.handleBlur}
+          .expanded=${this.expanded}
           ._handleClearInputButtonClick=${this.handleClearInputButtonClick}
           .value=${this.value}
           size="lg"

@@ -21,7 +21,7 @@ export const Propsed = () => {
         >[Platform]</cds-header-name
       >
       <div class="cds--header__global">
-         <cds-global-search>
+         <cds-global-search urlToPost = 'https://5ea5e181-a7fe-4f98-a5cb-ba5676937d64.mock.pstmn.io/AttistibasPlans/Search'>
          </cds-global-search>
         <cds-header-global-action
           aria-label="Notification"
