@@ -16,6 +16,7 @@ export const Propsed = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </cds-link>
             </cds-label-value-horizontal>
+            <cds-divider size="3"></cds-divider>
             <cds-label-value-horizontal label="Atlases status">
               <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
             </cds-label-value-horizontal>
@@ -136,10 +137,13 @@ export const Modal = () => {
         <!-- <cds-divider size="5"></cds-divider> -->
       </cds-modal-header>
       <cds-modal-body>
-        <p>
-          HP nosacījumi, tai skaitā minimālais darbību un rādītāju skaits, ir
-          definēti kritēriju piemērošanas metodikā.
-        </p>
+        <div class="cds--subgrid cds--subgrid--condensed">
+          <p class="cds--css-grid-column cds--col-span-75">
+            HP nosacījumi, tai skaitā minimālais darbību un rādītāju skaits, ir
+            definēti kritēriju piemērošanas metodikā.
+          </p>
+        </div>
+        <cds-divider size="6"></cds-divider>
         <cds-radio-button-group
           legend-text="Kā pievienot versiju?"
           orientation="vertical"
