@@ -99,6 +99,13 @@ class TextEditor extends LitElement {
         ? 'https://demo.turn.lv/cfla_dist/assets/css/text-editor.min.css'
         : `${getBaseUrl()}/Content/Carbon/assets/css/text-editor.min.css`;
 
+    const toolbarOptions = {
+      default:
+        'blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen',
+      simple:
+        'bold italic underline | numlist bullist | outdent indent | link removeformat fullscreen',
+    };
+
     return html`
       <tinymce-editor 
         class="tinymce-editor"
@@ -106,11 +113,7 @@ class TextEditor extends LitElement {
         statusbar: false
         left_margin: 50
         ?readonly="${this.readonly}"
-        toolbar="${
-          !this.readonly
-            ? 'blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen'
-            : false
-        }"
+        toolbar="${!this.readonly ? toolbarOptions[this.toolbarType] : false}"
         contextmenu=${false}
         plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize"
         content_css="${urlToTinymceCssFile}"
