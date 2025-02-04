@@ -181,8 +181,8 @@ class CDSTurnGlobalSearch extends LitElement {
 
   render() {
     return html`
-      <div style="${this.isActive ? "padding-right: 0px" : "padding-right: 48px"}" @keydown=${this.handleKeyDown}>
-        <cds-search
+      <div class="${this.isActive ? "search-icon-background__opened" : "search-icon-background__closed"}" @keydown=${this.handleKeyDown}>
+        <cds-search class="cds-theme-zone-cfla-search-icon"
           id="cds-search-global-component"
           expandable
           label-text="Search"

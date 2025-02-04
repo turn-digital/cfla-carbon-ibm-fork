@@ -3,12 +3,35 @@
 @use '@carbon/styles/scss/theme' as *;
 
 
+.search-icon-background{
+  &__closed{
+    padding-right: 48px; 
+    background-color: #064A4A;
+    &:hover{
+      background-color:#166060;
+    }
+  }
+  &__opened{
+    padding-right: 0; 
+  }
+}
+
+
 cds-search::part(input) {
   background-color: black; /* Change background color */
   color: white;
 }
+
 cds-search .cds--search-magnifier{
   background-color: red;
+  
+}
+
+:host(.cds-theme-zone-cfla-search-icon),
+.cds-theme-zone-cfla-search-icon {
+  --cds-icon-primary: white;
+  --cds-field-hover: #393939;
+  --cds-field: #393939;
 }
 
 
@@ -16,6 +39,7 @@ cds-search .cds--search-magnifier{
   max-width: 500px;
   max-height: 400px;
   overflow: auto;
+  --cds-icon-primary: white;
 }
 
 .search-results ul {
