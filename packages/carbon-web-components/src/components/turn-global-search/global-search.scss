@@ -59,7 +59,8 @@ cds-search .cds--search-magnifier{
   font-size: 14px;
 }
 
-.search-results a:hover {
+.search-results li a:hover,
+.search-results li a.active { 
   background-color: #393939;
 }
 

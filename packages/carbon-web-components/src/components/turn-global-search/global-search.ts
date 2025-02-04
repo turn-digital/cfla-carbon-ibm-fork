@@ -152,11 +152,13 @@ class CDSTurnGlobalSearch extends LitElement {
   updateFocusedItem() {
     const items = this.shadowRoot?.querySelectorAll('.search-results li a');
     items?.forEach((item, index) => {
+      item.classList.remove('active'); // Remove from all items
       item.setAttribute('tabindex', '-1');
+      
       if (index === this.focusedIndex) {
+        item.classList.add('active'); // Add active class to focused item
         item.setAttribute('tabindex', '0');
-        // @ts-ignore
-        item.focus();
+        (item as HTMLElement).focus();
       }
     });
   }
