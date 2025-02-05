@@ -31,19 +31,19 @@ export const Propsed = () => {
   return html`
     <cds-doc-page>
       <span slot="header">
-        <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19/A/043">
-          <cds-label-value-horizontal label="Projekta nosaukums">
+        <cds-contextual-header title="Atlase: 1.1.1.1">
+          <cds-label-value-horizontal label="Atlases nosaukums:">
             <cds-link href="#"
-              >MVU inovatīvas uzņēmējdarbības attīstība
+              >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
             </cds-link>
           </cds-label-value-horizontal>
           <cds-divider size="3"></cds-divider>
-          <cds-label-value-horizontal label="Iesniedzējs">
-            Latvijas Universitāte
+          <cds-label-value-horizontal label="Atlases status">
+            <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
           </cds-label-value-horizontal>
           <cds-divider size="3"></cds-divider>
-          <cds-label-value-horizontal label="Projekta iensieguma statuss">
-            <cds-tag type="blue">Sagatavošanā</cds-tag> 25.10.2019 10:34
+          <cds-label-value-horizontal label="Politikas programma">
+            <cds-link href="#">1.1 </cds-link>
           </cds-label-value-horizontal>
         </cds-contextual-header>
         <cds-divider size="5"></cds-divider>
@@ -104,10 +104,12 @@ export const Propsed = () => {
               <cds-checkbox checked
                 >Energoefektivitāte pirmajā vietā</cds-checkbox
               >
-              <cds-checkbox>VINPI</cds-checkbox>
+              <cds-checkbox checked disabled>VINPI</cds-checkbox>
               <cds-subselection>
                 <cds-checkbox-group legend-text="VINPI vispārīgās darbības">
-                  <cds-checkbox>VINPI vispārīgās darbības</cds-checkbox>
+                  <cds-checkbox checked disabled
+                    >VINPI vispārīgās darbības</cds-checkbox
+                  >
                 </cds-checkbox-group>
                 <cds-divider size="3"></cds-divider>
                 <cds-checkbox-group legend-text="VINPI specifiskās darbības">

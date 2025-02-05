@@ -10,7 +10,7 @@ export const Propsed = () => {
     <div class="">
       <div class="cds--css-grid cds--css-grid--narrow">
         <div class="cds--css-grid-column cds--col-span-100">
-          <cds-contextual-header title="Atlase: 3.1.1.5/19/A/043">
+          <cds-contextual-header title="Atlase: 1.1.1.1">
             <cds-label-value-horizontal label="Atlases nosaukums:">
               <cds-link href="#"></cds-link>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -28,13 +28,13 @@ export const Propsed = () => {
         </div>
         <div
           class="cds--css-grid-column cds--grid-column-hang cds--col-span-100">
-          <cds-page-title title="Ekspertu vērtējuma izveidošana">
+          <cds-page-title title="Horizontālie principi (HP)">
           </cds-page-title>
         </div>
         <div class="cds--css-grid-column cds--col-span-100">
           <cds-table size="sm">
             <cds-table-header-title slot="title"
-              >Gala vērtējums</cds-table-header-title
+              >Atlases HP konfigurāciju versijas</cds-table-header-title
             >
             <cds-table-toolbar slot="toolbar">
               <cds-table-toolbar-content>
@@ -186,7 +186,7 @@ export const Modal = () => {
 
       <cds-modal-footer>
         <cds-modal-footer-button kind="secondary" data-modal-close
-          >Atcelts</cds-modal-footer-button
+          >Atcelt</cds-modal-footer-button
         >
         <cds-modal-footer-button kind="primary"
           >Pievienot</cds-modal-footer-button

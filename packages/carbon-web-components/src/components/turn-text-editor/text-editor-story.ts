@@ -23,6 +23,21 @@ export const Default = () => {
       }'></cds-text-editor>
   `;
 };
+
+export const Simple = () => {
+  return html`
+    <cds-text-editor
+      .onChange=${(newContent) => console.log(newContent)}
+      textEditorData="This is a text from props"
+      toolbarType="simple"
+      onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
+      editorConfig='{
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+      "autosave_ask_before_unload": false
+      }'></cds-text-editor>
+  `;
+};
+
 export const Readonly = () => {
   return html`
     <cds-text-editor

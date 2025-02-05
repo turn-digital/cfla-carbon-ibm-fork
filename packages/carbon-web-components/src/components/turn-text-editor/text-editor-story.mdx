@@ -28,6 +28,16 @@ Also custom variants with some props
       }'></cds-text-editor>
 
 <cds-text-editor
+      editorId="editor_example_storybook_simple"
+      textEditorData="This is a text from props"
+      toolbarType="simple"
+      onServerLastEditor='{"name": "Vlad", "date": "123123 12312312"}'
+      editorConfig='{
+      "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
+      "autosave_ask_before_unload": false
+      }'></cds-text-editor>
+
+<cds-text-editor
       editorId="editor_example_storybook_default_ro"
       .invalidateQueriesFunc=${() => {
         console.log(
