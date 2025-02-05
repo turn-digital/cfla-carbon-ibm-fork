@@ -11,7 +11,7 @@ import Search20 from '@carbon/icons/lib/search/20';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 
 export const Propsed = () => {
-  return html` <div class="cds-theme-zone-white fix-full-width">
+  return html` <div>
     <cds-header
       class="cds-theme-zone-cfla-header"
       aria-label="Kohēzijas politikas fondu vadības informācijas sistēma">
@@ -81,7 +81,7 @@ export const Propsed = () => {
       </cds-side-nav>
     </cds-header>
 
-    <div class="cds-theme-zone-white cds-page-main-content">
+    <div class="cds-page-main-content">
       <div class="cds--css-grid cds--css-grid--narrow">
         <div
           class="cds--css-grid-column cds--grid-column-hang cds--col-span-100">
@@ -108,13 +108,12 @@ export const Propsed = () => {
                   class: `cds--overflow-menu__icon`,
                   slot: 'icon',
                 })}
-                <span slot="tooltip-content"> Options </span>
+                <span slot="tooltip-content"> Opcijas </span>
                 <cds-overflow-menu-body flipped>
-                  <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
+                  <cds-overflow-menu-item danger divider
+                    >Dzēst</cds-overflow-menu-item
+                  >
                 </cds-overflow-menu-body>
               </cds-overflow-menu>
             </span>
@@ -136,13 +135,12 @@ export const Propsed = () => {
                   class: `cds--overflow-menu__icon`,
                   slot: 'icon',
                 })}
-                <span slot="tooltip-content"> Options </span>
+                <span slot="tooltip-content"> Opcijas </span>
                 <cds-overflow-menu-body flipped>
-                  <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
+                  <cds-overflow-menu-item danger divider
+                    >Dzēst</cds-overflow-menu-item
+                  >
                 </cds-overflow-menu-body>
               </cds-overflow-menu>
             </span>

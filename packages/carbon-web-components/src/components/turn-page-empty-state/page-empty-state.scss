@@ -5,8 +5,8 @@
 
 .page-empty-state {
   background-color: $layer-01;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: calc(100vh - 48px); // 48px is the height of main nav
 
   &__container {
     padding-right: 16px;

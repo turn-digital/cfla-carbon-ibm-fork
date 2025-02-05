@@ -32,11 +32,11 @@ export const Propsed = () => {
             class: `cds--overflow-menu__icon`,
             slot: 'icon',
           })}
-          <span slot="tooltip-content"> Options </span>
+          <span slot="tooltip-content"> Opcijas </span>
           <cds-overflow-menu-body flipped>
-            <cds-overflow-menu-item>Open</cds-overflow-menu-item>
+            <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
             <cds-overflow-menu-item danger divider
-              >Delete</cds-overflow-menu-item
+              >Dzēst</cds-overflow-menu-item
             >
           </cds-overflow-menu-body>
         </cds-overflow-menu>
