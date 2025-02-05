@@ -58,6 +58,7 @@ class CDSDocPageTabContent extends LitElement {
                       class="doc-content-empty-breadcrumb-block"></div>`}
                 <cds-divider size="8"></cds-divider>
                 <slot name="tab-content"></slot>
+                <cds-divider size="11"></cds-divider>
               </div>
             </div>
           `
@@ -74,6 +75,7 @@ class CDSDocPageTabContent extends LitElement {
                 : html``}
               <cds-divider size="6"></cds-divider>
               <slot name="tab-content"></slot>
+              <cds-divider size="11"></cds-divider>
             </div>
           </div>`}
     `;

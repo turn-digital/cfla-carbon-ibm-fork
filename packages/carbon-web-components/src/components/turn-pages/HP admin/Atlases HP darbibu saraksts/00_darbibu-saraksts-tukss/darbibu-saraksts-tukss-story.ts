@@ -126,7 +126,7 @@ export const Propsed = () => {
               <cds-table-body> </cds-table-body>
             </cds-table>
             <cds-empty-state
-              text="Šobrīd nav veikti līguma grozījumi"
+              text="Šobrīd atlases HP darbības nav pievienotas"
               linkUrl="#"
               linkText="Pievienot">
             </cds-empty-state>

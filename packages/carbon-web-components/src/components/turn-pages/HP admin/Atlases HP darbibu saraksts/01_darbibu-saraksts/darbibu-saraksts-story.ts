@@ -102,19 +102,6 @@ export const Propsed = () => {
             <cds-table-header-title slot="title"
               >Atlases HP darbību saraksts</cds-table-header-title
             >
-            <cds-table-toolbar slot="toolbar">
-              <cds-table-toolbar-content>
-                <cds-button
-                  kind="secondary"
-                  tooltip-alignment=""
-                  tooltip-position="top"
-                  type="button"
-                  id="modal-example-button"
-                  has-main-content="">
-                  Pievienot ${Add16({ slot: 'icon' })}
-                </cds-button>
-              </cds-table-toolbar-content>
-            </cds-table-toolbar>
             <cds-table-head>
               <cds-table-header-row>
                 <cds-table-header-cell>HP darbību grupa</cds-table-header-cell>
@@ -411,6 +398,7 @@ export const Modal = () => {
       <cds-modal-body>
         <cds-text-editor
           editorId="editor_example_storybook_default_cl_ro_set"
+          toolbarType="simple"
           editorConfig='{
             "editorTitle": "Komentārs",
             "max_char_length": 1000,
