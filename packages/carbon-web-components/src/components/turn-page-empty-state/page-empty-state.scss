@@ -5,18 +5,18 @@
 
 .page-empty-state {
   background-color: $layer-01;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: calc(100vh - $spacing-09); // 48px is the height of main nav
 
   &__container {
-    padding-right: 16px;
-    padding-top: 80px;
-    padding-left: 16px;
+    padding-right: $spacing-05;
+    padding-top: $spacing-11;
+    padding-left: $spacing-05;
   }
 
   &__icon {
-    width: 32px;
-    height: 32px;
+    width: $spacing-07;
+    height: $spacing-07;
     margin-bottom: $spacing-03;
   }
 
@@ -41,8 +41,8 @@
   .page-empty-state {
     &__container {
       max-width: 354px;
-      padding-top: 160px;
-      padding-left: 80px;
+      padding-top: $spacing-13;
+      padding-left: $spacing-11;
     }
   }
 }

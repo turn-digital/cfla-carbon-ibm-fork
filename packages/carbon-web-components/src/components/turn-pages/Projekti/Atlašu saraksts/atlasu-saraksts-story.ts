@@ -10,7 +10,7 @@ import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16
 import Search20 from '@carbon/icons/lib/search/20';
 
 export const Propsed = () => {
-  return html` <div class="cds-theme-zone-white fix-full-width">
+  return html` <div>
     <cds-header
       class="cds-theme-zone-cfla-header"
       aria-label="Kohēzijas politikas fondu vadības informācijas sistēma">
@@ -80,7 +80,7 @@ export const Propsed = () => {
       </cds-side-nav>
     </cds-header>
 
-    <div class="cds-theme-zone-white cds-page-main-content">
+    <div class="cds-page-main-content">
       <div class="cds--css-grid cds--css-grid--narrow">
         <div
           class="cds--css-grid-column cds--grid-column-hang cds--col-span-100">
@@ -105,13 +105,12 @@ export const Propsed = () => {
                   class: `cds--overflow-menu__icon`,
                   slot: 'icon',
                 })}
-                <span slot="tooltip-content"> Options </span>
+                <span slot="tooltip-content"> Opcijas </span>
                 <cds-overflow-menu-body flipped>
-                  <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
+                  <cds-overflow-menu-item danger divider
+                    >Dzēst</cds-overflow-menu-item
+                  >
                 </cds-overflow-menu-body>
               </cds-overflow-menu>
             </span>
@@ -131,13 +130,12 @@ export const Propsed = () => {
                   class: `cds--overflow-menu__icon`,
                   slot: 'icon',
                 })}
-                <span slot="tooltip-content"> Options </span>
+                <span slot="tooltip-content"> Opcijas </span>
                 <cds-overflow-menu-body flipped>
-                  <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
+                  <cds-overflow-menu-item danger divider
+                    >Dzēst</cds-overflow-menu-item
+                  >
                 </cds-overflow-menu-body>
               </cds-overflow-menu>
             </span>
@@ -157,19 +155,109 @@ export const Propsed = () => {
                   class: `cds--overflow-menu__icon`,
                   slot: 'icon',
                 })}
-                <span slot="tooltip-content"> Options </span>
+                <span slot="tooltip-content"> Opcijas </span>
                 <cds-overflow-menu-body flipped>
-                  <cds-overflow-menu-item>Option 1</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 2</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 3</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 4</cds-overflow-menu-item>
-                  <cds-overflow-menu-item>Option 5</cds-overflow-menu-item>
+                  <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
+                  <cds-overflow-menu-item danger divider
+                    >Dzēst</cds-overflow-menu-item
+                  >
                 </cds-overflow-menu-body>
               </cds-overflow-menu>
             </span>
           </cds-selection-card>
         </div>
       </div>
+    </div>
+    <style>
+      ${styles}
+    </style>
+  </div>`;
+};
+
+export const Empty = () => {
+  return html` <div>
+    <cds-header
+      class="cds-theme-zone-cfla-header"
+      aria-label="Kohēzijas politikas fondu vadības informācijas sistēma">
+      <cds-header-menu-button
+        button-label-active="Close menu"
+        button-label-inactive="Open menu"></cds-header-menu-button>
+      <cds-header-name
+        href="javascript:void 0"
+        prefix="Kohēzijas politikas fondu vadības informācijas sistēma"></cds-header-name>
+      <cds-header-nav
+        menu-bar-label="Kohēzijas politikas fondu vadības informācijas sistēma!">
+        <cds-header-nav-item is-active href="javascript:void 0"
+          >Sākumlapa</cds-header-nav-item
+        >
+        <cds-header-nav-item href="javascript:void 0"
+          >Projekti</cds-header-nav-item
+        >
+        <cds-header-nav-item href="javascript:void 0"
+          >Ziņojuma dēlis</cds-header-nav-item
+        >
+      </cds-header-nav>
+      <div class="cds--header__global">
+        <cds-header-global-action aria-label="Search" tooltip-text="Search">
+          ${Search20({ slot: 'icon' })}
+        </cds-header-global-action>
+        <cds-header-global-action aria-label="Warning" tooltip-text="Warning">
+          ${WarningAlt20({ slot: 'icon' })}
+        </cds-header-global-action>
+        <cds-header-global-action aria-label="Help" tooltip-text="Help">
+          ${Help20({ slot: 'icon' })}
+        </cds-header-global-action>
+        <cds-header-global-action
+          aria-label="User profile"
+          tooltip-text="User profile"
+          tooltip-alignment="right">
+          ${UserAvatar20({ slot: 'icon' })}
+        </cds-header-global-action>
+      </div>
+      <cds-side-nav
+        class="cds-theme-zone-cfla-side-nav"
+        aria-label="Side navigation">
+        <cds-header-side-nav-items has-divider>
+          <cds-side-nav-link href="javascript:void(0)">
+            Sākumlapa
+          </cds-side-nav-link>
+          <cds-side-nav-link href="javascript:void(0)">
+            Projekti
+          </cds-side-nav-link>
+          <cds-side-nav-link href="javascript:void(0)">
+            Ziņojuma dēlis
+          </cds-side-nav-link>
+        </cds-header-side-nav-items>
+        <cds-side-nav-items>
+          <cds-side-nav-link active href="javascript:void(0)"
+            >Mani projekti</cds-side-nav-link
+          >
+          <cds-side-nav-link href="javascript:void(0)"
+            >Projektu iesniegumi</cds-side-nav-link
+          >
+          <cds-side-nav-link href="javascript:void(0)"
+            >2021-2027 pieejamās atlases</cds-side-nav-link
+          >
+          <cds-side-nav-link href="javascript:void(0)"
+            >AF pieejamās atlases</cds-side-nav-link
+          >
+        </cds-side-nav-items>
+      </cds-side-nav>
+    </cds-header>
+
+    <div class="cds-page-main-content">
+      <cds-page-empty-state title="2021-2027 pieejamās atlases">
+        <span slot="content">
+          Šajā sadaļā tiek atspoguļotas projektu atlases, kurās var iesniegt
+          pieteikumus. Šobrīd nav neviena izsludināta projekta atlase.
+        </span>
+        <span slot="button">
+          <cds-button href="https://www.ibm.com"> Button </cds-button>
+        </span>
+        <span slot="link">
+          <cds-link href="https://www.ibm.com"> Link </cds-link>
+        </span>
+      </cds-page-empty-state>
     </div>
     <style>
       ${styles}
