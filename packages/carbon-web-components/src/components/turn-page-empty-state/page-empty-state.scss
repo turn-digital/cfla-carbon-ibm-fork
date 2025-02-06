@@ -6,11 +6,11 @@
 .page-empty-state {
   background-color: $layer-01;
   width: 100%;
-  min-height: calc(100vh - $spacing-09); // 48px is the height of main nav
+  min-height: 100vh;
 
   &__container {
     padding-right: $spacing-05;
-    padding-top: $spacing-11;
+    padding-top: $spacing-11 + $spacing-09; // 48px (spacing 9) is the height of main nav
     padding-left: $spacing-05;
   }
 
@@ -18,6 +18,7 @@
     width: $spacing-07;
     height: $spacing-07;
     margin-bottom: $spacing-03;
+    fill: $text-primary;
   }
 
   &__title {
