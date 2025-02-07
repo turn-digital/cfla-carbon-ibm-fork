@@ -7,7 +7,7 @@ import styles from '../../../../../../assets/css/themes.css';
 
 export const Modal = () => {
   return html`
-    <cds-modal id="hp-admin-create-modal" open>
+    <cds-modal id="hp-admin-create-modal" size="lg" open>
       <cds-modal-header>
         <cds-modal-close-button></cds-modal-close-button>
         <cds-modal-label>Atlases HP darbību saraksts</cds-modal-label>
