@@ -100,27 +100,32 @@ export const Propsed = () => {
             </cds-print-download
           ></span>
           <span slot="tab-content">
-            <cds-page-title title="Horizontālo principu pievienošana">
-            </cds-page-title>
+            <div class="cds--subgrid cds--subgrid--condensed">
+              <div
+                class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                <cds-page-title title="Horizontālo principu pievienošana">
+                </cds-page-title>
 
-            <cds-progress-indicator space-equally>
-              <cds-progress-step
-                label="Principi"
-                state="complete"></cds-progress-step>
-              <cds-progress-step
-                label="Ietekme un minimālais skaits"
-                state="complete"></cds-progress-step>
-              <cds-progress-step
-                label="HP darbību pievienošana"
-                state="current"></cds-progress-step>
-              <cds-progress-step
-                label="Priekšskatījums"
-                state="incomplete"></cds-progress-step>
-            </cds-progress-indicator>
+                <cds-progress-indicator space-equally>
+                  <cds-progress-step
+                    label="Principi"
+                    state="complete"></cds-progress-step>
+                  <cds-progress-step
+                    label="Ietekme un minimālais skaits"
+                    state="complete"></cds-progress-step>
+                  <cds-progress-step
+                    label="HP darbību pievienošana"
+                    state="current"></cds-progress-step>
+                  <cds-progress-step
+                    label="Priekšskatījums"
+                    state="incomplete"></cds-progress-step>
+                </cds-progress-indicator>
 
-            <cds-divider size="6"></cds-divider>
-            <cds-header-title title="Energoefektivitāte pirmajā vietā">
-            </cds-header-title>
+                <cds-divider size="6"></cds-divider>
+                <cds-header-title title="Energoefektivitāte pirmajā vietā">
+                </cds-header-title>
+              </div>
+            </div>
 
             <cds-divider size="5"></cds-divider>
             <cds-chosen-categories
@@ -188,9 +193,14 @@ export const Propsed = () => {
               </cds-table-body>
             </cds-table>
 
-            <cds-divider size="6"></cds-divider>
-            <cds-header-title title="VINPI"> </cds-header-title>
-            <cds-divider size="5"></cds-divider>
+            <div class="cds--subgrid cds--subgrid--condensed">
+              <div
+                class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                <cds-divider size="6"></cds-divider>
+                <cds-header-title title="VINPI"> </cds-header-title>
+                <cds-divider size="5"></cds-divider>
+              </div>
+            </div>
 
             <cds-chosen-categories
               .chosenCategoriesData="${chosenCategoriesData1}">
