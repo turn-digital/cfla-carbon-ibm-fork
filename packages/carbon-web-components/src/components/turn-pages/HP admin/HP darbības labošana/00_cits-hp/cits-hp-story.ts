@@ -7,7 +7,7 @@ import styles from '../../../../../../assets/css/themes.css';
 
 export const Modal = () => {
   return html`
-    <cds-modal id="hp-admin-create-modal" open>
+    <cds-modal id="hp-admin-create-modal" size="lg" open>
       <cds-modal-header>
         <cds-modal-close-button></cds-modal-close-button>
         <cds-modal-label>Atlases HP darbību saraksts</cds-modal-label>
@@ -36,13 +36,19 @@ export const Modal = () => {
             id="radio-2"></cds-radio-button>
         </cds-radio-button-group>
         <cds-divider size="6"></cds-divider>
-        <cds-number-input
-          value="1"
-          min="0"
-          max="100"
-          label="Minimāli nepieciešamaiss VINPI vispārīgo HP darbību skaits"
-          helper-text="Definēts kritēriju piemērošanas metodikā">
-        </cds-number-input>
+        <div class="cds--subgrid cds--subgrid--condensed">
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-7 cds--xlg:col-span-6">
+            <cds-number-input
+              value="1"
+              min="0"
+              max="100"
+              hide-steppers
+              label="Minimāli nepieciešamaiss VINPI vispārīgo HP darbību skaits"
+              helper-text="Definēts kritēriju piemērošanas metodikā">
+            </cds-number-input>
+          </div>
+        </div>
         <cds-divider size="6"></cds-divider>
         <cds-table size="sm" expandable>
           <cds-table-header-title slot="title"
@@ -112,10 +118,10 @@ export const Modal = () => {
 
       <cds-modal-footer>
         <cds-modal-footer-button kind="secondary" data-modal-close
-          >Atcelts</cds-modal-footer-button
+          >Atcelt</cds-modal-footer-button
         >
         <cds-modal-footer-button kind="primary"
-          >Pievienot</cds-modal-footer-button
+          >Saglabāt</cds-modal-footer-button
         >
       </cds-modal-footer>
     </cds-modal>
