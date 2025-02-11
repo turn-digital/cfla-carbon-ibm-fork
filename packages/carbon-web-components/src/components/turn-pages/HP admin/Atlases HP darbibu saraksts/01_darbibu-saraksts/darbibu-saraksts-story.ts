@@ -140,108 +140,109 @@ export const Propsed = () => {
                 >
               </cds-table-row>
               <cds-table-expanded-row>
-                <cds-divider size="5"></cds-divider>
-
-                <cds-table size="sm">
-                  <cds-table-header-title slot="title"
-                    >VINPI vispārīgās</cds-table-header-title
-                  >
-                  <cds-table-head>
-                    <cds-table-header-row>
-                      <cds-table-header-cell>ID</cds-table-header-cell>
-                      <cds-table-header-cell
-                        >HP darbības nosaukums</cds-table-header-cell
-                      >
-                      <cds-table-header-cell
-                        >Projekti, kuros izvēlēts</cds-table-header-cell
-                      >
-                    </cds-table-header-row>
-                  </cds-table-head>
-                  <cds-table-body>
-                    <cds-table-row>
-                      <cds-table-cell>VP01 </cds-table-cell>
-                      <cds-table-cell
-                        >Diskrimināciju un stereotipus mazinoša
-                        komunikācija</cds-table-cell
-                      >
-                      <cds-table-cell>2</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>VP02 </cds-table-cell>
-                      <cds-table-cell
-                        >Informācijas piekļūstamība cilvēkiem ar funkcionālajiem
-                        traucējumiem</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>VP04 </cds-table-cell>
-                      <cds-table-cell
-                        >Norāde tīmekļa vietnē par projekta īstenošanas vietas
-                        piekļūstamību</cds-table-cell
-                      >
-                      <cds-table-cell>3</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>VP05 </cds-table-cell>
-                      <cds-table-cell
-                        >Naida runas izskaušana digitālajā vidē</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                    </cds-table-row>
-                  </cds-table-body>
-                </cds-table>
-                <cds-divider size="6"></cds-divider>
-                <cds-table size="sm">
-                  <cds-table-header-title slot="title"
-                    >VINPI specifiskās - Pētījumi, izvērtējumi,
-                    aptaujas</cds-table-header-title
-                  >
-                  <cds-table-head>
-                    <cds-table-header-row>
-                      <cds-table-header-cell>ID</cds-table-header-cell>
-                      <cds-table-header-cell
-                        >HP darbības nosaukums</cds-table-header-cell
-                      >
-                      <cds-table-header-cell
-                        >Projekti, kuros izvēlēts</cds-table-header-cell
-                      >
-                    </cds-table-header-row>
-                  </cds-table-head>
-                  <cds-table-body>
-                    <cds-table-row>
-                      <cds-table-cell>P01 </cds-table-cell>
-                      <cds-table-cell
-                        >Konsultācijas ar ekspertiem nediskriminācijas
-                        jomā</cds-table-cell
-                      >
-                      <cds-table-cell>2</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>P02 </cds-table-cell>
-                      <cds-table-cell
-                        >Pētījumi par sabiedrības novecošanos</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>P03 </cds-table-cell>
-                      <cds-table-cell
-                        >Pētījumos integrēti dzimumu līdztiesības
-                        jautājumi</cds-table-cell
-                      >
-                      <cds-table-cell>3</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>P04 </cds-table-cell>
-                      <cds-table-cell
-                        >Sabiedriskās aptaujas vairākās valodās</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                    </cds-table-row>
-                  </cds-table-body>
-                </cds-table>
-                <cds-divider size="6"></cds-divider>
+                <cds-table-expanded-row-wrapper>
+                  <cds-table size="sm">
+                    <cds-table-header-title slot="title"
+                      >VINPI vispārīgās</cds-table-header-title
+                    >
+                    <cds-table-head>
+                      <cds-table-header-row>
+                        <cds-table-header-cell>ID</cds-table-header-cell>
+                        <cds-table-header-cell
+                          >HP darbības nosaukums</cds-table-header-cell
+                        >
+                        <cds-table-header-cell
+                          >Projekti, kuros izvēlēts</cds-table-header-cell
+                        >
+                      </cds-table-header-row>
+                    </cds-table-head>
+                    <cds-table-body>
+                      <cds-table-row>
+                        <cds-table-cell>VP01 </cds-table-cell>
+                        <cds-table-cell
+                          >Diskrimināciju un stereotipus mazinoša
+                          komunikācija</cds-table-cell
+                        >
+                        <cds-table-cell>2</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>VP02 </cds-table-cell>
+                        <cds-table-cell
+                          >Informācijas piekļūstamība cilvēkiem ar
+                          funkcionālajiem traucējumiem</cds-table-cell
+                        >
+                        <cds-table-cell>1</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>VP04 </cds-table-cell>
+                        <cds-table-cell
+                          >Norāde tīmekļa vietnē par projekta īstenošanas vietas
+                          piekļūstamību</cds-table-cell
+                        >
+                        <cds-table-cell>3</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>VP05 </cds-table-cell>
+                        <cds-table-cell
+                          >Naida runas izskaušana digitālajā
+                          vidē</cds-table-cell
+                        >
+                        <cds-table-cell>1</cds-table-cell>
+                      </cds-table-row>
+                    </cds-table-body>
+                  </cds-table>
+                  <cds-divider size="6"></cds-divider>
+                  <cds-table size="sm">
+                    <cds-table-header-title slot="title"
+                      >VINPI specifiskās - Pētījumi, izvērtējumi,
+                      aptaujas</cds-table-header-title
+                    >
+                    <cds-table-head>
+                      <cds-table-header-row>
+                        <cds-table-header-cell>ID</cds-table-header-cell>
+                        <cds-table-header-cell
+                          >HP darbības nosaukums</cds-table-header-cell
+                        >
+                        <cds-table-header-cell
+                          >Projekti, kuros izvēlēts</cds-table-header-cell
+                        >
+                      </cds-table-header-row>
+                    </cds-table-head>
+                    <cds-table-body>
+                      <cds-table-row>
+                        <cds-table-cell>P01 </cds-table-cell>
+                        <cds-table-cell
+                          >Konsultācijas ar ekspertiem nediskriminācijas
+                          jomā</cds-table-cell
+                        >
+                        <cds-table-cell>2</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>P02 </cds-table-cell>
+                        <cds-table-cell
+                          >Pētījumi par sabiedrības novecošanos</cds-table-cell
+                        >
+                        <cds-table-cell>1</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>P03 </cds-table-cell>
+                        <cds-table-cell
+                          >Pētījumos integrēti dzimumu līdztiesības
+                          jautājumi</cds-table-cell
+                        >
+                        <cds-table-cell>3</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>P04 </cds-table-cell>
+                        <cds-table-cell
+                          >Sabiedriskās aptaujas vairākās
+                          valodās</cds-table-cell
+                        >
+                        <cds-table-cell>1</cds-table-cell>
+                      </cds-table-row>
+                    </cds-table-body>
+                  </cds-table>
+                </cds-table-expanded-row-wrapper>
               </cds-table-expanded-row>
               <cds-table-row>
                 <cds-table-cell>VINPI</cds-table-cell>
@@ -267,108 +268,109 @@ export const Propsed = () => {
                 >
               </cds-table-row>
               <cds-table-expanded-row>
-                <cds-divider size="5"></cds-divider>
-
-                <cds-table size="sm">
-                  <cds-table-header-title slot="title"
-                    >VINPI vispārīgās</cds-table-header-title
-                  >
-                  <cds-table-head>
-                    <cds-table-header-row>
-                      <cds-table-header-cell>ID</cds-table-header-cell>
-                      <cds-table-header-cell
-                        >HP darbības nosaukums</cds-table-header-cell
-                      >
-                      <cds-table-header-cell
-                        >Projekti, kuros izvēlēts</cds-table-header-cell
-                      >
-                    </cds-table-header-row>
-                  </cds-table-head>
-                  <cds-table-body>
-                    <cds-table-row>
-                      <cds-table-cell>VP01 </cds-table-cell>
-                      <cds-table-cell
-                        >Diskrimināciju un stereotipus mazinoša
-                        komunikācija</cds-table-cell
-                      >
-                      <cds-table-cell>2</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>VP02 </cds-table-cell>
-                      <cds-table-cell
-                        >Informācijas piekļūstamība cilvēkiem ar funkcionālajiem
-                        traucējumiem</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>VP04 </cds-table-cell>
-                      <cds-table-cell
-                        >Norāde tīmekļa vietnē par projekta īstenošanas vietas
-                        piekļūstamību</cds-table-cell
-                      >
-                      <cds-table-cell>3</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>VP05 </cds-table-cell>
-                      <cds-table-cell
-                        >Naida runas izskaušana digitālajā vidē</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                    </cds-table-row>
-                  </cds-table-body>
-                </cds-table>
-                <cds-divider size="6"></cds-divider>
-                <cds-table size="sm">
-                  <cds-table-header-title slot="title"
-                    >VINPI specifiskās - Pētījumi, izvērtējumi,
-                    aptaujas</cds-table-header-title
-                  >
-                  <cds-table-head>
-                    <cds-table-header-row>
-                      <cds-table-header-cell>ID</cds-table-header-cell>
-                      <cds-table-header-cell
-                        >HP darbības nosaukums</cds-table-header-cell
-                      >
-                      <cds-table-header-cell
-                        >Projekti, kuros izvēlēts</cds-table-header-cell
-                      >
-                    </cds-table-header-row>
-                  </cds-table-head>
-                  <cds-table-body>
-                    <cds-table-row>
-                      <cds-table-cell>P01 </cds-table-cell>
-                      <cds-table-cell
-                        >Konsultācijas ar ekspertiem nediskriminācijas
-                        jomā</cds-table-cell
-                      >
-                      <cds-table-cell>2</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>P02 </cds-table-cell>
-                      <cds-table-cell
-                        >Pētījumi par sabiedrības novecošanos</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>P03 </cds-table-cell>
-                      <cds-table-cell
-                        >Pētījumos integrēti dzimumu līdztiesības
-                        jautājumi</cds-table-cell
-                      >
-                      <cds-table-cell>3</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell>P04 </cds-table-cell>
-                      <cds-table-cell
-                        >Sabiedriskās aptaujas vairākās valodās</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                    </cds-table-row>
-                  </cds-table-body>
-                </cds-table>
-                <cds-divider size="6"></cds-divider>
+                <cds-table-expanded-row-wrapper>
+                  <cds-table size="sm">
+                    <cds-table-header-title slot="title"
+                      >VINPI vispārīgās</cds-table-header-title
+                    >
+                    <cds-table-head>
+                      <cds-table-header-row>
+                        <cds-table-header-cell>ID</cds-table-header-cell>
+                        <cds-table-header-cell
+                          >HP darbības nosaukums</cds-table-header-cell
+                        >
+                        <cds-table-header-cell
+                          >Projekti, kuros izvēlēts</cds-table-header-cell
+                        >
+                      </cds-table-header-row>
+                    </cds-table-head>
+                    <cds-table-body>
+                      <cds-table-row>
+                        <cds-table-cell>VP01 </cds-table-cell>
+                        <cds-table-cell
+                          >Diskrimināciju un stereotipus mazinoša
+                          komunikācija</cds-table-cell
+                        >
+                        <cds-table-cell>2</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>VP02 </cds-table-cell>
+                        <cds-table-cell
+                          >Informācijas piekļūstamība cilvēkiem ar
+                          funkcionālajiem traucējumiem</cds-table-cell
+                        >
+                        <cds-table-cell>1</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>VP04 </cds-table-cell>
+                        <cds-table-cell
+                          >Norāde tīmekļa vietnē par projekta īstenošanas vietas
+                          piekļūstamību</cds-table-cell
+                        >
+                        <cds-table-cell>3</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>VP05 </cds-table-cell>
+                        <cds-table-cell
+                          >Naida runas izskaušana digitālajā
+                          vidē</cds-table-cell
+                        >
+                        <cds-table-cell>1</cds-table-cell>
+                      </cds-table-row>
+                    </cds-table-body>
+                  </cds-table>
+                  <cds-divider size="6"></cds-divider>
+                  <cds-table size="sm">
+                    <cds-table-header-title slot="title"
+                      >VINPI specifiskās - Pētījumi, izvērtējumi,
+                      aptaujas</cds-table-header-title
+                    >
+                    <cds-table-head>
+                      <cds-table-header-row>
+                        <cds-table-header-cell>ID</cds-table-header-cell>
+                        <cds-table-header-cell
+                          >HP darbības nosaukums</cds-table-header-cell
+                        >
+                        <cds-table-header-cell
+                          >Projekti, kuros izvēlēts</cds-table-header-cell
+                        >
+                      </cds-table-header-row>
+                    </cds-table-head>
+                    <cds-table-body>
+                      <cds-table-row>
+                        <cds-table-cell>P01 </cds-table-cell>
+                        <cds-table-cell
+                          >Konsultācijas ar ekspertiem nediskriminācijas
+                          jomā</cds-table-cell
+                        >
+                        <cds-table-cell>2</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>P02 </cds-table-cell>
+                        <cds-table-cell
+                          >Pētījumi par sabiedrības novecošanos</cds-table-cell
+                        >
+                        <cds-table-cell>1</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>P03 </cds-table-cell>
+                        <cds-table-cell
+                          >Pētījumos integrēti dzimumu līdztiesības
+                          jautājumi</cds-table-cell
+                        >
+                        <cds-table-cell>3</cds-table-cell>
+                      </cds-table-row>
+                      <cds-table-row>
+                        <cds-table-cell>P04 </cds-table-cell>
+                        <cds-table-cell
+                          >Sabiedriskās aptaujas vairākās
+                          valodās</cds-table-cell
+                        >
+                        <cds-table-cell>1</cds-table-cell>
+                      </cds-table-row>
+                    </cds-table-body>
+                  </cds-table>
+                </cds-table-expanded-row-wrapper>
               </cds-table-expanded-row>
             </cds-table-body>
           </cds-table>
