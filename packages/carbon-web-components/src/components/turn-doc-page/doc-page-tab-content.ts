@@ -21,9 +21,7 @@ import { property } from 'lit/decorators.js';
 
 @customElement(`${prefix}-doc-page-tab-content`)
 class CDSDocPageTabContent extends LitElement {
-  // Property to accept the array of tabs
   @property({ type: Boolean }) withSidenav = false;
-  @property({ type: Boolean }) withBreadcrumbs = false;
   @property({ type: Boolean }) withPrintDownload = false;
 
   render() {
@@ -37,7 +35,6 @@ class CDSDocPageTabContent extends LitElement {
               <div
                 class="doc-sidenav cds--css-grid-column cds--sm:col-span-100 cds--md:col-span-4 cds--lg:col-span-4 cds--xlg:col-span-4 cds--max:col-span-4">
                 <div class="doc-print-sidenav-block"></div>
-                <div class="doc-print-sidenav-block-gray"></div>
                 <div class="doc-white-bgr">
                   <slot name="tab-sidenav"></slot>
                 </div>
@@ -50,13 +47,8 @@ class CDSDocPageTabContent extends LitElement {
                   : html` <div class="doc-print-download-empty-block"></div>`}
 
                 <slot name="tab-sidenav-mobile"></slot>
-                ${this.withBreadcrumbs
-                  ? html` <div class="doc-breadcrumbs">
-                      <slot name="tab-breadcrumbs"></slot>
-                    </div>`
-                  : html` <div
-                      class="doc-content-empty-breadcrumb-block"></div>`}
-                <cds-divider size="8"></cds-divider>
+
+                <cds-divider size="5"></cds-divider>
                 <slot name="tab-content"></slot>
                 <cds-divider size="11"></cds-divider>
               </div>
@@ -68,12 +60,7 @@ class CDSDocPageTabContent extends LitElement {
               ${this.withPrintDownload
                 ? html` <slot name="tab-print-download"></slot>`
                 : html` <div class="doc-print-download-empty-block"></div>`}
-              ${this.withBreadcrumbs
-                ? html` <div class="doc-breadcrumbs-full">
-                    <slot name="tab-breadcrumbs"></slot>
-                  </div>`
-                : html``}
-              <cds-divider size="6"></cds-divider>
+              <cds-divider size="5"></cds-divider>
               <slot name="tab-content"></slot>
               <cds-divider size="11"></cds-divider>
             </div>
