@@ -77,12 +77,14 @@ export const Propsed = () => {
             </cds-print-download
           ></span>
           <span slot="tab-content">
+            <cds-doc-page-header
+              type="subtitle"
+              title="Horizontālo principu pievienošana">
+            </cds-doc-page-header>
+            <cds-divider size="9"></cds-divider>
             <div class="cds--subgrid cds--subgrid--condensed">
               <div
                 class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-                <cds-page-title title="Horizontālo principu pievienošana">
-                </cds-page-title>
-
                 <cds-progress-indicator space-equally>
                   <cds-progress-step
                     label="Principi"

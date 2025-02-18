@@ -100,12 +100,14 @@ export const Propsed = () => {
             </cds-print-download
           ></span>
           <span slot="tab-content">
+            <cds-doc-page-header
+              type="subtitle"
+              title="Horizontālo principu pievienošana">
+            </cds-doc-page-header>
+            <cds-divider size="9"></cds-divider>
             <div class="cds--subgrid cds--subgrid--condensed">
               <div
                 class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-                <cds-page-title title="Horizontālo principu pievienošana">
-                </cds-page-title>
-
                 <cds-progress-indicator space-equally>
                   <cds-progress-step
                     label="Principi"
@@ -325,12 +327,11 @@ export const Propsed = () => {
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>
+                    <cds-label-value
+                      label="HP darbība"
+                      value="Veicot pētījumus un izvērtējumus, kur vien tas ir iespējams, visi dati tiks apkopoti un analizēti  dalījumā pēc dzimuma, vecuma, etniskās piederības u.c. pazīmēm"></cds-label-value>
+                    <cds-divider size="5"></cds-divider>
                     <cds-table size="sm">
-                      <cds-table-header-title slot="title">
-                        <cds-label-value
-                          label="HP darbība"
-                          value="Veicot pētījumus un izvērtējumus, kur vien tas ir iespējams, visi dati tiks apkopoti un analizēti  dalījumā pēc dzimuma, vecuma, etniskās piederības u.c. pazīmēm"></cds-label-value
-                      ></cds-table-header-title>
                       <cds-table-head>
                         <cds-table-header-row>
                           <cds-table-header-cell>ID</cds-table-header-cell>
