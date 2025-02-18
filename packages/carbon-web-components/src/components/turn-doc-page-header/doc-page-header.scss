@@ -1,0 +1,52 @@
+@use '@carbon/styles/scss/type' as *;
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/styles/scss/theme' as *;
+
+.doc-page-header {
+  margin-top: $spacing-05;
+  padding-left: $spacing-05;
+  // align-items: center;
+  // padding: $spacing-05 $spacing-06;
+  // border-bottom: 1px solid $ui-04;
+
+  &__breadcrumb {
+    padding-top: $spacing-03;
+    padding-bottom: $spacing-05;
+  }
+
+  &__title {
+    padding-bottom: $spacing-05;
+    color: $text-primary;
+    &--title {
+      @include type-style('heading-04');
+    }
+
+    &--subtitle {
+      @include type-style('heading-03');
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@include breakpoint(md) {
+  .doc-page-header {
+    &__title {
+      padding-bottom: 0;
+    }
+
+    &__content {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__button {
+      margin-left: $spacing-05;
+    }
+  }
+}
