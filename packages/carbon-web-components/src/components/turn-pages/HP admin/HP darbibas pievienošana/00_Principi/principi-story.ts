@@ -82,61 +82,71 @@ export const Propsed = () => {
               title="Horizontālo principu pievienošana">
             </cds-doc-page-header>
             <cds-divider size="9"></cds-divider>
-            <cds-progress-indicator space-equally>
-              <cds-progress-step
-                label="Principi"
-                state="current"></cds-progress-step>
-              <cds-progress-step
-                label="Ietekme un minimālais skaits"
-                state="incomplete"></cds-progress-step>
-              <cds-progress-step
-                label="HP darbību pievienošana"
-                state="incomplete"></cds-progress-step>
-              <cds-progress-step
-                label="Priekšskatījums"
-                state="incomplete"></cds-progress-step>
-            </cds-progress-indicator>
+            <div class="cds--subgrid cds--subgrid--condensed">
+              <div
+                class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                <cds-progress-indicator space-equally>
+                  <cds-progress-step
+                    label="Principi"
+                    state="current"></cds-progress-step>
+                  <cds-progress-step
+                    label="Ietekme un minimālais skaits"
+                    state="incomplete"></cds-progress-step>
+                  <cds-progress-step
+                    label="HP darbību pievienošana"
+                    state="incomplete"></cds-progress-step>
+                  <cds-progress-step
+                    label="Priekšskatījums"
+                    state="incomplete"></cds-progress-step>
+                </cds-progress-indicator>
 
-            <cds-divider size="6"></cds-divider>
-            <cds-header-title title="Principu izvēle"> </cds-header-title>
-            <cds-divider size="6"></cds-divider>
-            <cds-checkbox-group legend-text="Horizontālo principu saraksts">
-              <cds-checkbox>Nenodarīt būtisku kaitējumu</cds-checkbox>
-              <cds-checkbox>Klimatdrošināšana</cds-checkbox>
-              <cds-checkbox checked
-                >Energoefektivitāte pirmajā vietā</cds-checkbox
-              >
-              <cds-checkbox checked disabled>VINPI</cds-checkbox>
-              <cds-subselection>
-                <cds-checkbox-group legend-text="VINPI vispārīgās darbības">
-                  <cds-checkbox checked disabled
-                    >VINPI vispārīgās darbības</cds-checkbox
-                  >
-                </cds-checkbox-group>
-                <cds-divider size="3"></cds-divider>
-                <cds-checkbox-group legend-text="VINPI specifiskās darbības">
-                  <cds-checkbox
-                    >HP integrēšana izglītojošo un informatīvo materiālu un
-                    pasākumu saturā</cds-checkbox
-                  >
-                  <cds-checkbox
-                    >Projekta pasākumu satura un norises vietas
-                    piekļūstamība</cds-checkbox
-                  >
-                  <cds-checkbox
-                    >Atbalsta pasākumi zinātniskā darba veicējiem un
-                    studējošiem</cds-checkbox
-                  >
+                <cds-divider size="6"></cds-divider>
+                <cds-header-title title="Principu izvēle"> </cds-header-title>
+                <cds-divider size="6"></cds-divider>
+                <div class="turn-body-01">
+                  <p>Jāizvēlas principi, kurus parādīt finansējuma saņēmējam</p>
+                </div>
+                <cds-divider size="6"></cds-divider>
+                <cds-checkbox-group legend-text="Horizontālo principu saraksts">
+                  <cds-checkbox>Nenodarīt būtisku kaitējumu</cds-checkbox>
+                  <cds-checkbox>Klimatdrošināšana</cds-checkbox>
                   <cds-checkbox checked
-                    >Pētījumi, izvērtējumi, aptaujas</cds-checkbox
+                    >Energoefektivitāte pirmajā vietā</cds-checkbox
                   >
-                  <cds-checkbox>Veselību veicinoši pasākumi</cds-checkbox>
+                  <cds-checkbox checked disabled>VINPI</cds-checkbox>
+                  <cds-subselection>
+                    <cds-checkbox-group legend-text="VINPI vispārīgās darbības">
+                      <cds-checkbox checked disabled
+                        >VINPI vispārīgās darbības</cds-checkbox
+                      >
+                    </cds-checkbox-group>
+                    <cds-divider size="3"></cds-divider>
+                    <cds-checkbox-group
+                      legend-text="VINPI specifiskās darbības">
+                      <cds-checkbox
+                        >HP integrēšana izglītojošo un informatīvo materiālu un
+                        pasākumu saturā</cds-checkbox
+                      >
+                      <cds-checkbox
+                        >Projekta pasākumu satura un norises vietas
+                        piekļūstamība</cds-checkbox
+                      >
+                      <cds-checkbox
+                        >Atbalsta pasākumi zinātniskā darba veicējiem un
+                        studējošiem</cds-checkbox
+                      >
+                      <cds-checkbox checked
+                        >Pētījumi, izvērtējumi, aptaujas</cds-checkbox
+                      >
+                      <cds-checkbox>Veselību veicinoši pasākumi</cds-checkbox>
+                    </cds-checkbox-group>
+                  </cds-subselection>
                 </cds-checkbox-group>
-              </cds-subselection>
-            </cds-checkbox-group>
-            <cds-divider size="6"></cds-divider>
+                <cds-divider size="6"></cds-divider>
+              </div>
+            </div>
             <cds-button-set>
-              <cds-button href="https://www.ibm.com">Atpakaļ</cds-button>
+              <cds-button href="https://www.ibm.com">Atcelt</cds-button>
               <cds-button href="https://www.ibm.com">Turpināt</cds-button>
             </cds-button-set>
           </span>

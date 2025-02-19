@@ -12,7 +12,7 @@ export const Propsed = () => {
         <div class="cds--css-grid-column cds--col-span-100">
           <cds-contextual-header title="Atlase: 1.1.1.1">
             <cds-label-value-horizontal label="Atlases nosaukums:">
-              <cds-link href="#"></cds-link>
+              <cds-link href="#">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </cds-link>
             </cds-label-value-horizontal>
@@ -28,8 +28,7 @@ export const Propsed = () => {
         </div>
         <div
           class="cds--css-grid-column cds--grid-column-hang cds--col-span-100">
-          <cds-page-title title="Horizontālie principi (HP)">
-          </cds-page-title>
+          <cds-page-title title="Horizontālie principi (HP)"> </cds-page-title>
         </div>
         <div class="cds--css-grid-column cds--col-span-100">
           <cds-table size="sm">
@@ -67,22 +66,20 @@ export const Propsed = () => {
                   ><cds-tag type="blue">Sagatavošanā</cds-tag></cds-table-cell
                 >
                 <cds-table-cell>
-                  <div style="text-align: right;">
-                    <cds-overflow-menu>
-                      ${OverflowMenuVertical16({
-                        class: `cds--overflow-menu__icon`,
-                        slot: 'icon',
-                      })}
-                      <span slot="tooltip-content"> Opcijas </span>
-                      <cds-overflow-menu-body>
-                        <cds-overflow-menu-item>Labot</cds-overflow-menu-item>
-                        <cds-overflow-menu-item>Kopēt</cds-overflow-menu-item>
-                        <cds-overflow-menu-item divider danger
-                          >Dzēst</cds-overflow-menu-item
-                        >
-                      </cds-overflow-menu-body>
-                    </cds-overflow-menu>
-                  </div>
+                  <cds-overflow-menu>
+                    ${OverflowMenuVertical16({
+                      class: `cds--overflow-menu__icon`,
+                      slot: 'icon',
+                    })}
+                    <span slot="tooltip-content"> Opcijas </span>
+                    <cds-overflow-menu-body>
+                      <cds-overflow-menu-item>Labot</cds-overflow-menu-item>
+                      <cds-overflow-menu-item>Kopēt</cds-overflow-menu-item>
+                      <cds-overflow-menu-item divider danger
+                        >Dzēst</cds-overflow-menu-item
+                      >
+                    </cds-overflow-menu-body>
+                  </cds-overflow-menu>
                 </cds-table-cell>
               </cds-table-row>
               <cds-table-row>
@@ -137,7 +134,7 @@ export const Modal = () => {
         <!-- <cds-divider size="5"></cds-divider> -->
       </cds-modal-header>
       <cds-modal-body>
-        <div class="cds--subgrid cds--subgrid--condensed">
+        <div class="turn-body-01 cds--subgrid cds--subgrid--condensed">
           <p class="cds--css-grid-column cds--col-span-75">
             HP nosacījumi, tai skaitā minimālais darbību un rādītāju skaits, ir
             definēti kritēriju piemērošanas metodikā.

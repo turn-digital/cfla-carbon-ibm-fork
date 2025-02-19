@@ -404,10 +404,6 @@ export const Modal = () => {
           editorConfig='{
             "editorTitle": "Komentārs",
             "max_char_length": 1000,
-            "onServerLastEditor": {
-              "name": "Ieva Bērziņa",
-              "date": " 10.10.2022 10:22"
-              }
             }'>
         </cds-text-editor>
       </cds-modal-body>
