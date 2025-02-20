@@ -2,12 +2,14 @@ import { html } from 'lit-html';
 import storyDocs from './cits-hp-story.mdx';
 import './cits-hp';
 import styles from '../../../../../../assets/css/themes.css';
-// import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
-// import Add16 from '@carbon/icons/lib/add/16';
 
 export const Modal = () => {
   return html`
-    <cds-modal id="hp-admin-create-modal" size="lg" open>
+    <cds-modal
+      class="cds-theme-zone-white cds-green-theme"
+      id="hp-admin-create-modal"
+      size="lg"
+      open>
       <cds-modal-header>
         <cds-modal-close-button></cds-modal-close-button>
         <cds-modal-label>Atlases HP darbību saraksts</cds-modal-label>
