@@ -2018,3 +2018,10 @@ body.cds-theme-zone-white {
     letter-spacing: 0.16px;
   }
 }
+
+:host(.cds-green-theme),
+.cds-green-theme {
+  --cds-interactive: #027070;
+  --cds-button-primary: #027070;
+  --cds-support-success: #027070;
+}

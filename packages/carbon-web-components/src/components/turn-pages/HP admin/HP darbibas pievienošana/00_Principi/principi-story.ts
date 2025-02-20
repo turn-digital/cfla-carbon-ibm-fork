@@ -29,130 +29,140 @@ const statusHistoryItemsArr = [
 
 export const Propsed = () => {
   return html`
-    <cds-doc-page>
-      <span slot="header">
-        <cds-contextual-header title="Atlase: 1.1.1.1">
-          <cds-label-value-horizontal label="Atlases nosaukums:">
-            <cds-link href="#"
-              >Zinātnes politikas ieviešana, vadība un kapacitātes stiprināšana
-            </cds-link>
-          </cds-label-value-horizontal>
-          <cds-divider size="3"></cds-divider>
-          <cds-label-value-horizontal label="Atlases status">
-            <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
-          </cds-label-value-horizontal>
-          <cds-divider size="3"></cds-divider>
-          <cds-label-value-horizontal label="Politikas programma">
-            <cds-link href="#">1.1 </cds-link>
-          </cds-label-value-horizontal>
-        </cds-contextual-header>
-        <cds-divider size="5"></cds-divider>
-        <div class="cds--subgrid cds--subgrid--condensed">
-          <div
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-10 cds--grid-column-hang">
-            <cds-header-title title="Horizontālo principu konfigurēšana v1">
-            </cds-header-title>
-            <cds-divider size="5"></cds-divider>
-            <cds-status-history
-              .statusHistoryItems="${statusHistoryItemsArr}"
-              statusHistoryTitle="Statusu vēsture"
-              currenStatusColor="grey"
-              currenStatusTitle="Sagatavošanā"
-              currenStatusDate="25.10.2019 10:34">
-            </cds-status-history>
-            <cds-divider size="5"></cds-divider>
-          </div>
-          <div
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6">
-            <cds-divider size="5"></cds-divider>
-          </div>
-        </div>
-      </span>
-      <span slot="content">
-        <cds-doc-page-tab-content withPrintDownload>
-          <span slot="tab-print-download">
-            <cds-print-download
-              downloadLink="https://example.com/download"
-              printLink="https://example.com/print">
-            </cds-print-download
-          ></span>
-          <span slot="tab-content">
-            <cds-doc-page-header
-              type="subtitle"
-              title="Horizontālo principu pievienošana">
-            </cds-doc-page-header>
-            <cds-divider size="9"></cds-divider>
-            <div class="cds--subgrid cds--subgrid--condensed">
-              <div
-                class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-                <cds-progress-indicator space-equally>
-                  <cds-progress-step
-                    label="Principi"
-                    state="current"></cds-progress-step>
-                  <cds-progress-step
-                    label="Ietekme un minimālais skaits"
-                    state="incomplete"></cds-progress-step>
-                  <cds-progress-step
-                    label="HP darbību pievienošana"
-                    state="incomplete"></cds-progress-step>
-                  <cds-progress-step
-                    label="Priekšskatījums"
-                    state="incomplete"></cds-progress-step>
-                </cds-progress-indicator>
-
-                <cds-divider size="6"></cds-divider>
-                <cds-header-title title="Principu izvēle"> </cds-header-title>
-                <cds-divider size="6"></cds-divider>
-                <div class="turn-body-01">
-                  <p>Jāizvēlas principi, kurus parādīt finansējuma saņēmējam</p>
-                </div>
-                <cds-divider size="6"></cds-divider>
-                <cds-checkbox-group legend-text="Horizontālo principu saraksts">
-                  <cds-checkbox>Nenodarīt būtisku kaitējumu</cds-checkbox>
-                  <cds-checkbox>Klimatdrošināšana</cds-checkbox>
-                  <cds-checkbox checked
-                    >Energoefektivitāte pirmajā vietā</cds-checkbox
-                  >
-                  <cds-checkbox checked disabled>VINPI</cds-checkbox>
-                  <cds-subselection>
-                    <cds-checkbox-group legend-text="VINPI vispārīgās darbības">
-                      <cds-checkbox checked disabled
-                        >VINPI vispārīgās darbības</cds-checkbox
-                      >
-                    </cds-checkbox-group>
-                    <cds-divider size="3"></cds-divider>
-                    <cds-checkbox-group
-                      legend-text="VINPI specifiskās darbības">
-                      <cds-checkbox
-                        >HP integrēšana izglītojošo un informatīvo materiālu un
-                        pasākumu saturā</cds-checkbox
-                      >
-                      <cds-checkbox
-                        >Projekta pasākumu satura un norises vietas
-                        piekļūstamība</cds-checkbox
-                      >
-                      <cds-checkbox
-                        >Atbalsta pasākumi zinātniskā darba veicējiem un
-                        studējošiem</cds-checkbox
-                      >
-                      <cds-checkbox checked
-                        >Pētījumi, izvērtējumi, aptaujas</cds-checkbox
-                      >
-                      <cds-checkbox>Veselību veicinoši pasākumi</cds-checkbox>
-                    </cds-checkbox-group>
-                  </cds-subselection>
-                </cds-checkbox-group>
-                <cds-divider size="6"></cds-divider>
-              </div>
+    <div class="cds-theme-zone-white cds-green-theme">
+      <cds-doc-page>
+        <span slot="header">
+          <cds-contextual-header title="Atlase: 1.1.1.1">
+            <cds-label-value-horizontal label="Atlases nosaukums:">
+              <cds-link href="#"
+                >Zinātnes politikas ieviešana, vadība un kapacitātes
+                stiprināšana
+              </cds-link>
+            </cds-label-value-horizontal>
+            <cds-divider size="3"></cds-divider>
+            <cds-label-value-horizontal label="Atlases status">
+              <cds-tag type="blue">Noslēgusies</cds-tag> 25.10.2019 10:34
+            </cds-label-value-horizontal>
+            <cds-divider size="3"></cds-divider>
+            <cds-label-value-horizontal label="Politikas programma">
+              <cds-link href="#">1.1 </cds-link>
+            </cds-label-value-horizontal>
+          </cds-contextual-header>
+          <cds-divider size="5"></cds-divider>
+          <div class="cds--subgrid cds--subgrid--condensed">
+            <div
+              class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-10 cds--grid-column-hang">
+              <cds-header-title title="Horizontālo principu konfigurēšana v1">
+              </cds-header-title>
+              <cds-divider size="5"></cds-divider>
+              <cds-status-history
+                .statusHistoryItems="${statusHistoryItemsArr}"
+                statusHistoryTitle="Statusu vēsture"
+                currenStatusColor="grey"
+                currenStatusTitle="Sagatavošanā"
+                currenStatusDate="25.10.2019 10:34">
+              </cds-status-history>
+              <cds-divider size="5"></cds-divider>
             </div>
-            <cds-button-set>
-              <cds-button href="https://www.ibm.com">Atcelt</cds-button>
-              <cds-button href="https://www.ibm.com">Turpināt</cds-button>
-            </cds-button-set>
-          </span>
-        </cds-doc-page-tab-content>
-      </span>
-    </cds-doc-page>
+            <div
+              class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-6">
+              <cds-divider size="5"></cds-divider>
+            </div>
+          </div>
+        </span>
+        <span slot="content">
+          <cds-doc-page-tab-content withPrintDownload>
+            <span slot="tab-print-download">
+              <cds-print-download
+                downloadLink="https://example.com/download"
+                printLink="https://example.com/print">
+              </cds-print-download
+            ></span>
+            <span slot="tab-content">
+              <cds-doc-page-header
+                type="subtitle"
+                title="Horizontālo principu pievienošana">
+              </cds-doc-page-header>
+              <cds-divider size="9"></cds-divider>
+              <div class="cds--subgrid cds--subgrid--condensed">
+                <div
+                  class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                  <cds-progress-indicator space-equally>
+                    <cds-progress-step
+                      label="Principi"
+                      state="current"></cds-progress-step>
+                    <cds-progress-step
+                      label="Ietekme un minimālais skaits"
+                      state="incomplete"></cds-progress-step>
+                    <cds-progress-step
+                      label="HP darbību pievienošana"
+                      state="incomplete"></cds-progress-step>
+                    <cds-progress-step
+                      label="Priekšskatījums"
+                      state="incomplete"></cds-progress-step>
+                  </cds-progress-indicator>
+
+                  <cds-divider size="6"></cds-divider>
+                  <cds-header-title title="Principu izvēle"> </cds-header-title>
+                  <cds-divider size="6"></cds-divider>
+                  <div class="turn-body-01">
+                    <p>
+                      Jāizvēlas principi, kurus parādīt finansējuma saņēmējam
+                    </p>
+                  </div>
+                  <cds-divider size="6"></cds-divider>
+                  <cds-checkbox-group
+                    legend-text="Horizontālo principu saraksts">
+                    <cds-checkbox>Nenodarīt būtisku kaitējumu</cds-checkbox>
+                    <cds-checkbox>Klimatdrošināšana</cds-checkbox>
+                    <cds-checkbox checked
+                      >Energoefektivitāte pirmajā vietā</cds-checkbox
+                    >
+                    <cds-checkbox checked disabled>VINPI</cds-checkbox>
+                    <cds-subselection>
+                      <cds-checkbox-group
+                        legend-text="VINPI vispārīgās darbības">
+                        <cds-checkbox checked disabled
+                          >VINPI vispārīgās darbības</cds-checkbox
+                        >
+                      </cds-checkbox-group>
+                      <cds-divider size="3"></cds-divider>
+                      <cds-checkbox-group
+                        legend-text="VINPI specifiskās darbības">
+                        <cds-checkbox
+                          >HP integrēšana izglītojošo un informatīvo materiālu
+                          un pasākumu saturā</cds-checkbox
+                        >
+                        <cds-checkbox
+                          >Projekta pasākumu satura un norises vietas
+                          piekļūstamība</cds-checkbox
+                        >
+                        <cds-checkbox
+                          >Atbalsta pasākumi zinātniskā darba veicējiem un
+                          studējošiem</cds-checkbox
+                        >
+                        <cds-checkbox checked
+                          >Pētījumi, izvērtējumi, aptaujas</cds-checkbox
+                        >
+                        <cds-checkbox>Veselību veicinoši pasākumi</cds-checkbox>
+                      </cds-checkbox-group>
+                    </cds-subselection>
+                  </cds-checkbox-group>
+                  <cds-divider size="6"></cds-divider>
+                </div>
+              </div>
+              <cds-button-set>
+                <cds-button href="https://www.ibm.com">Atcelt</cds-button>
+                <cds-button href="https://www.ibm.com">Turpināt</cds-button>
+              </cds-button-set>
+            </span>
+          </cds-doc-page-tab-content>
+        </span>
+      </cds-doc-page>
+      <style>
+        ${styles}
+      </style>
+    </div>
   `;
 };
 export default {
