@@ -2008,3 +2008,21 @@ body.cds-theme-zone-white {
   --cds-background-hover: #8d8d8d33;
   --cds-focus: #265bde;
 }
+
+.turn-body-01 {
+  p {
+    color: #161616;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.16px;
+  }
+}
+
+:host(.cds-green-theme),
+.cds-green-theme {
+  --cds-interactive: #027070;
+  --cds-button-primary: #027070;
+  --cds-support-success: #027070;
+  --cds-border-interactive: #027070;
+}

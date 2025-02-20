@@ -1,0 +1,55 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# doc-page-header
+
+## Anatomija
+
+- title - virsraksts
+- type - virsraksta tips (title, subtitle)
+
+## Dizaina un UX komentāri
+
+Tiek izmantots Veidalapa kā satura sadaļu galvene
+
+## Getting started
+
+### JS (via import)
+
+```imoprt
+<script type="module" src="https://demo.turn.lv/cfla_dist/turn-doc-page-header.min.js"></script>
+```
+
+### HTML
+
+```html
+<cds-doc-page-header title="Darbības">
+  <span slot="breadcrumb">
+    <cds-breadcrumb>
+      <cds-breadcrumb-item>
+        <cds-breadcrumb-link href="/#">Breadcrumb 1</cds-breadcrumb-link>
+      </cds-breadcrumb-item>
+      <cds-breadcrumb-item>
+        <cds-breadcrumb-link href="#">Breadcrumb 2</cds-breadcrumb-link>
+      </cds-breadcrumb-item>
+    </cds-breadcrumb>
+  </span>
+  <span slot="button">
+    <cds-button>Button</cds-button>
+  </span>
+</cds-doc-page-header>
+<cds-doc-page-header
+  type="subtitle"
+  title="Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām">
+  <span slot="breadcrumb">
+    <cds-link href="/#">< Atpakaļ uz sarakstu</cds-link>
+  </span>
+  <span slot="button">
+    <cds-button>Button</cds-button>
+  </span>
+</cds-doc-page-header>
+```
+
+## `<cds-doc-page-header>` attributes and properties
+
+<Props of="cds-doc-page-header" />

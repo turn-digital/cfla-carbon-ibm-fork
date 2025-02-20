@@ -165,10 +165,7 @@ export const tabs = () => {
 
       <span slot="content">
         <div id="panel-all" role="tabpanel" aria-labelledby="tab-all" hidden="">
-          <cds-doc-page-tab-content
-            withSidenav
-            withBreadcrumbs
-            withPrintDownload>
+          <cds-doc-page-tab-content withSidenav withPrintDownload>
             <span slot="tab-sidenav">
               <cds-side-nav-items>
                 <cds-side-nav-link active href="#">L0 link</cds-side-nav-link>
@@ -187,19 +184,31 @@ export const tabs = () => {
                 downloadLink="https://example.com/download"
                 printLink="https://example.com/print"></cds-print-download>
             </span>
-            <span slot="tab-breadcrumbs">
-              <cds-breadcrumb>
-                <cds-breadcrumb-item>
-                  <cds-breadcrumb-link href="/#">Darbības</cds-breadcrumb-link>
-                </cds-breadcrumb-item>
-                <cds-breadcrumb-item>
-                  <cds-breadcrumb-link href="#"
-                    >Darbība 123</cds-breadcrumb-link
-                  >
-                </cds-breadcrumb-item>
-              </cds-breadcrumb>
-            </span>
             <span slot="tab-content">
+              <cds-doc-page-header
+                type="subtitle"
+                title="Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām">
+                <span slot="breadcrumb">
+                  <cds-breadcrumb>
+                    <cds-breadcrumb-item>
+                      <cds-breadcrumb-link href="/#"
+                        >Darbības</cds-breadcrumb-link
+                      >
+                    </cds-breadcrumb-item>
+                    <cds-breadcrumb-item>
+                      <cds-breadcrumb-link href="#"
+                        >Darbība 123</cds-breadcrumb-link
+                      >
+                    </cds-breadcrumb-item>
+                  </cds-breadcrumb>
+                </span>
+                <span slot="button">
+                  <cds-button kind="secondary" size="sm"
+                    >Pārbaudīt sadaļu</cds-button
+                  >
+                </span>
+              </cds-doc-page-header>
+              <cds-divider size="8"></cds-divider>
               <cds-table>
                 <cds-table-header-title slot="title"
                   >Dokumenti</cds-table-header-title
@@ -273,26 +282,30 @@ export const tabs = () => {
           role="tabpanel"
           aria-labelledby="tab-cloudFoundry"
           hidden="">
-          <cds-doc-page-tab-content withBreadcrumbs>
+          <cds-doc-page-tab-content>
             <span slot="tab-print-download">
               <cds-print-download
                 downloadLink="https://example.com/download"
                 printLink="https://example.com/print"></cds-print-download>
             </span>
-            <span slot="tab-breadcrumbs">
-              <cds-breadcrumb>
-                <cds-breadcrumb-item>
-                  <cds-breadcrumb-link href="/#">Darbības</cds-breadcrumb-link>
-                </cds-breadcrumb-item>
-                <cds-breadcrumb-item>
-                  <cds-breadcrumb-link href="#"
-                    >Darbība 123</cds-breadcrumb-link
-                  >
-                </cds-breadcrumb-item>
-              </cds-breadcrumb>
-            </span>
-
             <span slot="tab-content">
+              <cds-doc-page-header title="Darbība">
+                <span slot="breadcrumb">
+                  <cds-breadcrumb>
+                    <cds-breadcrumb-item>
+                      <cds-breadcrumb-link href="/#"
+                        >Darbības</cds-breadcrumb-link
+                      >
+                    </cds-breadcrumb-item>
+                    <cds-breadcrumb-item>
+                      <cds-breadcrumb-link href="#"
+                        >Darbība 123</cds-breadcrumb-link
+                      >
+                    </cds-breadcrumb-item>
+                  </cds-breadcrumb>
+                </span>
+              </cds-doc-page-header>
+              <cds-divider size="8"></cds-divider>
               <cds-table>
                 <cds-table-head>
                   <cds-table-header-row>
@@ -328,18 +341,6 @@ export const tabs = () => {
               <cds-print-download
                 downloadLink="https://example.com/download"
                 printLink="https://example.com/print"></cds-print-download>
-            </span>
-            <span slot="tab-breadcrumbs">
-              <cds-breadcrumb>
-                <cds-breadcrumb-item>
-                  <cds-breadcrumb-link href="/#">Darbības</cds-breadcrumb-link>
-                </cds-breadcrumb-item>
-                <cds-breadcrumb-item>
-                  <cds-breadcrumb-link href="#"
-                    >Darbība 123</cds-breadcrumb-link
-                  >
-                </cds-breadcrumb-item>
-              </cds-breadcrumb>
             </span>
 
             <span slot="tab-content">
@@ -393,6 +394,14 @@ export const tabs = () => {
                 printLink="https://example.com/print"></cds-print-download>
             </span>
             <span slot="tab-content">
+              <cds-doc-page-header
+                type="subtitle"
+                title="Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām">
+                <span slot="breadcrumb">
+                  <cds-link href="/#">< Atpakaļ uz sarakstu</cds-link>
+                </span>
+              </cds-doc-page-header>
+              <cds-divider size="8"></cds-divider>
               <cds-table>
                 <cds-table-header-title slot="title"
                   >Dokumenti</cds-table-header-title
@@ -731,6 +740,14 @@ export const noTabsNoSidenav = () => {
       <span slot="content">
         <cds-doc-page-tab-content>
           <span slot="tab-content">
+            <cds-doc-page-header type="title" title="Darbības">
+              <span slot="button">
+                <cds-button kind="secondary" size="sm"
+                  >Pārbaudīt sadaļu</cds-button
+                >
+              </span>
+            </cds-doc-page-header>
+            <cds-divider size="8"></cds-divider>
             <cds-table>
               <cds-table-header-title slot="title"
                 >Dokumenti</cds-table-header-title

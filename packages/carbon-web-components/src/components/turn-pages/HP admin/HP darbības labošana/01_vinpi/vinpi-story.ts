@@ -5,7 +5,10 @@ import styles from '../../../../../../assets/css/themes.css';
 
 export const Modal = () => {
   return html`
-    <cds-modal id="hp-admin-create-modal" open>
+    <cds-modal
+      class="cds-theme-zone-white cds-green-theme"
+      id="hp-admin-create-modal"
+      open>
       <cds-modal-header>
         <cds-modal-close-button></cds-modal-close-button>
         <cds-modal-label>Atlases HP darbību saraksts</cds-modal-label>
@@ -234,12 +237,11 @@ export const Modal = () => {
               </cds-table-row>
               <cds-table-expanded-row>
                 <cds-table-expanded-row-wrapper>
+                  <cds-label-value
+                    label="HP darbība"
+                    value="Veicot pētījumus un izvērtējumus, kur vien tas ir iespējams, visi dati tiks apkopoti un analizēti  dalījumā pēc dzimuma, vecuma, etniskās piederības u.c. pazīmēm"></cds-label-value>
+                  <cds-divider size="5"></cds-divider>
                   <cds-table size="sm">
-                    <cds-table-header-title slot="title">
-                      <cds-label-value
-                        label="HP darbība"
-                        value="Veicot pētījumus un izvērtējumus, kur vien tas ir iespējams, visi dati tiks apkopoti un analizēti  dalījumā pēc dzimuma, vecuma, etniskās piederības u.c. pazīmēm"></cds-label-value
-                    ></cds-table-header-title>
                     <cds-table-head>
                       <cds-table-header-row>
                         <cds-table-header-cell>ID</cds-table-header-cell>
