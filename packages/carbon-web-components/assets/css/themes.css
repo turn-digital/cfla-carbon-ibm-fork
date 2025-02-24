@@ -2026,3 +2026,8 @@ body.cds-theme-zone-white {
   --cds-support-success: #027070;
   --cds-border-interactive: #027070;
 }
+
+:host(.cds-blue-theme),
+.cds-blue-theme {
+  --cds-border-interactive: #265bde;
+}
