@@ -333,6 +333,121 @@ export const Propsed = () => {
     </div>
   `;
 };
+
+export const Pievienot = () => {
+  return html`
+    <cds-modal
+      class="cds-theme-zone-white cds-blue-theme"
+      id="pi-hp-edit-modal"
+      open>
+      <cds-modal-header>
+        <cds-modal-close-button></cds-modal-close-button>
+        <cds-modal-label>HP darbības un rādītāji</cds-modal-label>
+        <cds-modal-heading>HP darbibas izveidošana</cds-modal-heading>
+        <cds-divider size="5"></cds-divider>
+      </cds-modal-header>
+      <cds-modal-body>
+        <div class="cds--subgrid cds--subgrid--condensed">
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-7 cds--lg:col-span-14">
+            <cds-label-value
+              label="HP darbības grupas nosaukums"
+              value="Projekta pasākumu un izstrādāto materiālu saturā tiks integrēti nediskriminācijas jautājumi (dzimumu līdztiesība, personu ar invaliditāti vienlīdzīgas iespējas, nediskriminācija vecuma, etniskās piederības, reliģiskās pārliecības un seksuālās orientācijas dēļ), tostarp par tiesiskajiem un praktiskajiem aspektiem">
+            </cds-label-value>
+            <cds-divider size="6"></cds-divider>
+            <cds-text-editor
+              editorId="editor_example_storybook_simple"
+              toolbarType="simple"
+              editorConfig='{
+                "editorTitle": "HP darbības īstenošanas apraksts (ja attiecināms)",
+                "onServerLastEditor": {
+                  "name": "Apraksts jāievada kontekstā ar konkrēto projekta darbību vai apakšdarbību, kuras ietvaros īstenos HP darbību",
+                },
+                "autosave_ask_before_unload": false
+                }'>
+            </cds-text-editor>
+          </div>
+        </div>
+      </cds-modal-body>
+      <cds-modal-footer>
+        <cds-modal-footer-button kind="secondary" data-modal-close
+          >Atcelt</cds-modal-footer-button
+        >
+        <cds-modal-footer-button kind="primary"
+          >Saglabāt</cds-modal-footer-button
+        >
+      </cds-modal-footer>
+    </cds-modal>
+  `;
+};
+
+export const Parvaldit = () => {
+  return html`
+    <cds-modal
+      class="cds-theme-zone-white cds-blue-theme"
+      id="pi-hp-edit-modal"
+      open>
+      <cds-modal-header>
+        <cds-modal-close-button></cds-modal-close-button>
+        <cds-modal-label>HP darbības un rādītāji</cds-modal-label>
+        <cds-modal-heading>Saistīto HP rādītāju pārvaldīšana</cds-modal-heading>
+        <cds-divider size="5"></cds-divider>
+      </cds-modal-header>
+      <cds-modal-body>
+        <div class="cds--subgrid cds--subgrid--condensed">
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-7 cds--lg:col-span-14">
+            <cds-label-value
+              label="HP darbība"
+              value="Projekta pasākumu un izstrādāto materiālu saturā tiks integrēti nediskriminācijas jautājumi (dzimumu līdztiesība, personu ar invaliditāti vienlīdzīgas iespējas, nediskriminācija vecuma, etniskās piederības, reliģiskās pārliecības un seksuālās orientācijas dēļ), tostarp par tiesiskajiem un praktiskajiem aspektiem">
+            </cds-label-value>
+          </div>
+        </div>
+        <cds-divider size="6"></cds-divider>
+
+        <cds-table size="sm" expandable>
+          <cds-table-head>
+            <cds-table-header-row>
+              <cds-table-header-cell>ID</cds-table-header-cell>
+              <cds-table-header-cell
+                >HP darbības nosaukums</cds-table-header-cell
+              >
+              <cds-table-header-cell>Īstenošana</cds-table-header-cell>
+            </cds-table-header-row>
+          </cds-table-head>
+          <cds-table-body>
+            <cds-table-row>
+              <cds-table-cell>Vinpi 02.1</cds-table-cell>
+              <cds-table-cell
+                >Pasākumu un izstrādāto materiālu, kuru saturā integrēti
+                nediskriminācijas jautājumi, tostarp par tiesiskajiem un
+                praktiskajiem aspektiem, skaits</cds-table-cell
+              >
+              <cds-table-cell
+                ><cds-toggle
+                  size="sm"
+                  label-a="Izvēlēts"
+                  label-b="Nav izvēlēts"></cds-toggle
+              ></cds-table-cell>
+            </cds-table-row>
+            <cds-table-expanded-row>
+              <cds-table-expanded-row-wrapper></cds-table-expanded-row-wrapper>
+            </cds-table-expanded-row>
+          </cds-table-body>
+        </cds-table>
+      </cds-modal-body>
+      <cds-modal-footer>
+        <cds-modal-footer-button kind="secondary" data-modal-close
+          >Atcelt</cds-modal-footer-button
+        >
+        <cds-modal-footer-button kind="primary"
+          >Saglabāt</cds-modal-footer-button
+        >
+      </cds-modal-footer>
+    </cds-modal>
+  `;
+};
+
 export default {
   parameters: {
     ...storyDocs.parameters,

@@ -2029,5 +2029,8 @@ body.cds-theme-zone-white {
 
 :host(.cds-blue-theme),
 .cds-blue-theme {
+  --cds-interactive: #265bde;
+  --cds-button-primary: #265bde;
+  --cds-support-success: #265bde;
   --cds-border-interactive: #265bde;
 }

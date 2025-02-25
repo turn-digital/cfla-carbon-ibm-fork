@@ -263,6 +263,335 @@ export const Propsed = () => {
     </div>
   `;
 };
+
+export const Parvaldit = () => {
+  return html`
+    <cds-modal
+      class="cds-theme-zone-white cds-blue-theme"
+      id="pi-hp-edit-modal"
+      open>
+      <cds-modal-header>
+        <cds-modal-close-button></cds-modal-close-button>
+        <cds-modal-label>HP darbības un rādītāji</cds-modal-label>
+        <cds-modal-heading>HP darbības</cds-modal-heading>
+        <cds-divider size="5"></cds-divider>
+      </cds-modal-header>
+      <cds-modal-body>
+        <cds-accordion>
+          <cds-accordion-item title="Klimatdrošināšana">
+            <cds-table size="sm" expandable>
+              <cds-table-head>
+                <cds-table-header-row>
+                  <cds-table-header-cell>ID</cds-table-header-cell>
+                  <cds-table-header-cell
+                    >HP darbības nosaukums</cds-table-header-cell
+                  >
+                  <cds-table-header-cell>Īstenošana</cds-table-header-cell>
+                </cds-table-header-row>
+              </cds-table-head>
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-table-toolbar-search
+                    placeholder="Filter table"></cds-table-toolbar-search>
+                  <cds-button kind="ghost"
+                    >${Download16({
+                      slot: 'icon',
+                      fill: 'black',
+                    })}
+                  </cds-button>
+                  <cds-button
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    has-main-content="">
+                    Veidot jaunu HP darbību ${Add16({ slot: 'icon' })}
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
+              <cds-table-body>
+                <cds-table-row>
+                  <cds-table-cell>KD89</cds-table-cell>
+                  <cds-table-cell
+                    >Noturība pret klimatiskajiem riskiem</cds-table-cell
+                  >
+                  <cds-table-cell
+                    ><cds-toggle
+                      size="sm"
+                      label-a="Izvēlēts"
+                      label-b="Nav izvēlēts"></cds-toggle
+                  ></cds-table-cell>
+                </cds-table-row>
+                <cds-table-expanded-row>
+                  <cds-table-expanded-row-wrapper>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                  </cds-table-expanded-row-wrapper>
+                </cds-table-expanded-row>
+                <cds-table-row>
+                  <cds-table-cell>KD95</cds-table-cell>
+                  <cds-table-cell>Klimata risku izvērtējumus</cds-table-cell>
+                  <cds-table-cell
+                    ><cds-toggle
+                      checked
+                      size="sm"
+                      label-a="Izvēlēts"
+                      label-b="Nav izvēlēts"></cds-toggle
+                  ></cds-table-cell>
+                </cds-table-row>
+                <cds-table-expanded-row>
+                  <cds-table-expanded-row-wrapper></cds-table-expanded-row-wrapper>
+                </cds-table-expanded-row>
+              </cds-table-body>
+            </cds-table>
+          </cds-accordion-item>
+          <cds-accordion-item title="VINPI - Vispārīgās darbības">
+            <cds-table size="sm" expandable>
+              <cds-table-head>
+                <cds-table-header-row>
+                  <cds-table-header-cell>ID</cds-table-header-cell>
+                  <cds-table-header-cell
+                    >HP darbības nosaukums</cds-table-header-cell
+                  >
+                  <cds-table-header-cell>Īstenošana</cds-table-header-cell>
+                </cds-table-header-row>
+              </cds-table-head>
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-table-toolbar-search
+                    placeholder="Filter table"></cds-table-toolbar-search>
+                  <cds-button kind="ghost"
+                    >${Download16({
+                      slot: 'icon',
+                      fill: 'black',
+                    })}
+                  </cds-button>
+                  <cds-button
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    has-main-content="">
+                    Veidot jaunu HP darbību ${Add16({ slot: 'icon' })}
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
+              <cds-table-body>
+                <cds-table-row>
+                  <cds-table-cell>Visp72</cds-table-cell>
+                  <cds-table-cell
+                    >Diskrimināciju un stereotipus mazinoša
+                    komunikācija</cds-table-cell
+                  >
+                  <cds-table-cell
+                    ><cds-toggle
+                      size="sm"
+                      label-a="Izvēlēts"
+                      label-b="Nav izvēlēts"></cds-toggle
+                  ></cds-table-cell>
+                </cds-table-row>
+                <cds-table-expanded-row>
+                  <cds-table-expanded-row-wrapper>
+                    <cds-label-value
+                      label="HP darbība"
+                      value="Veicot pētījumus un izvērtējumus, kur vien tas ir iespējams, visi dati tiks apkopoti un analizēti  dalījumā pēc dzimuma, vecuma, etniskās piederības u.c. pazīmēm">
+                    </cds-label-value>
+                  </cds-table-expanded-row-wrapper>
+                </cds-table-expanded-row>
+                <cds-table-row>
+                  <cds-table-cell>Visp74</cds-table-cell>
+                  <cds-table-cell>Sadaļas Viegli lasīt izveide</cds-table-cell>
+                  <cds-table-cell
+                    ><cds-toggle
+                      checked
+                      size="sm"
+                      label-a="Izvēlēts"
+                      label-b="Nav izvēlēts"></cds-toggle
+                  ></cds-table-cell>
+                </cds-table-row>
+                <cds-table-expanded-row>
+                  <cds-table-expanded-row-wrapper></cds-table-expanded-row-wrapper>
+                </cds-table-expanded-row>
+              </cds-table-body>
+            </cds-table>
+          </cds-accordion-item>
+          <cds-accordion-item
+            title="VINPI specifiskās - HP integrēšana izglītojošo un informatīvo materiālu un pasākumu saturā">
+            <cds-label-value
+              label="Attiecas uz"
+              value="Attiecas uz projektiem: 1) kurost tiek..
+            2) kurost tiek.."></cds-label-value>
+            <cds-divider size="7"></cds-divider>
+            <cds-table size="sm" expandable>
+              <cds-table-head>
+                <cds-table-header-row>
+                  <cds-table-header-cell>ID</cds-table-header-cell>
+                  <cds-table-header-cell
+                    >HP darbības nosaukums</cds-table-header-cell
+                  >
+                  <cds-table-header-cell>Īstenošana</cds-table-header-cell>
+                </cds-table-header-row>
+              </cds-table-head>
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-table-toolbar-search
+                    placeholder="Filter table"></cds-table-toolbar-search>
+                  <cds-button kind="ghost"
+                    >${Download16({
+                      slot: 'icon',
+                      fill: 'black',
+                    })}
+                  </cds-button>
+                  <cds-button
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    has-main-content="">
+                    Veidot jaunu HP darbību ${Add16({ slot: 'icon' })}
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
+              <cds-table-body>
+                <cds-table-row>
+                  <cds-table-cell>Izg01</cds-table-cell>
+                  <cds-table-cell
+                    >HP jautājumu integrēšana projekta pasākumu un izstrādāto
+                    materiālu saturā</cds-table-cell
+                  >
+                  <cds-table-cell
+                    ><cds-toggle
+                      size="sm"
+                      label-a="Izvēlēts"
+                      label-b="Nav izvēlēts"></cds-toggle
+                  ></cds-table-cell>
+                </cds-table-row>
+                <cds-table-expanded-row>
+                  <cds-table-expanded-row-wrapper>
+                    <cds-label-value
+                      label="HP darbība"
+                      value="Projekta pasākumu un izstrādāto materiālu saturā tiks...">
+                    </cds-label-value>
+                    <cds-divider size="5"></cds-divider>
+                    <cds-table size="sm">
+                      <cds-table-head>
+                        <cds-table-header-row>
+                          <cds-table-header-cell>ID</cds-table-header-cell>
+                          <cds-table-header-cell
+                            >Saistītais HP rādītājs</cds-table-header-cell
+                          >
+                          <cds-table-header-cell
+                            >Īstenošana</cds-table-header-cell
+                          >
+                        </cds-table-header-row>
+                      </cds-table-head>
+                      <cds-table-body>
+                        <cds-table-row>
+                          <cds-table-cell>Vinpi 02.1</cds-table-cell>
+                          <cds-table-cell
+                            >Pasākumu un izstrādāto materiālu..</cds-table-cell
+                          >
+                          <cds-table-cell
+                            ><cds-toggle
+                              size="sm"
+                              label-a="Izvēlēts"
+                              label-b="Nav izvēlēts"></cds-toggle
+                          ></cds-table-cell>
+                        </cds-table-row>
+                      </cds-table-body>
+                    </cds-table>
+                  </cds-table-expanded-row-wrapper>
+                </cds-table-expanded-row>
+              </cds-table-body>
+            </cds-table>
+          </cds-accordion-item>
+        </cds-accordion>
+      </cds-modal-body>
+
+      <cds-modal-footer>
+        <cds-modal-footer-button kind="secondary" data-modal-close
+          >Atcelt</cds-modal-footer-button
+        >
+        <cds-modal-footer-button kind="primary"
+          >Saglabāt</cds-modal-footer-button
+        >
+      </cds-modal-footer>
+    </cds-modal>
+  `;
+};
+
+export const Pievienot = () => {
+  return html`
+    <cds-modal
+      class="cds-theme-zone-white cds-blue-theme"
+      id="pi-hp-edit-modal"
+      open>
+      <cds-modal-header>
+        <cds-modal-close-button></cds-modal-close-button>
+        <cds-modal-label>HP darbības un rādītāji</cds-modal-label>
+        <cds-modal-heading>HP darbibas izveidošana</cds-modal-heading>
+        <cds-divider size="5"></cds-divider>
+      </cds-modal-header>
+      <cds-modal-body>
+        <div class="cds--subgrid cds--subgrid--condensed">
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-10">
+            <cds-label-value
+              label="HP darbības grupas nosaukums"
+              value="VINPI specifiskās - HP integrēšana izglītojošo un informatīvo materiālu un pasākumu saturā">
+            </cds-label-value>
+          </div>
+        </div>
+        <cds-divider size="6"></cds-divider>
+        <div class="cds--subgrid cds--subgrid--condensed">
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-7 cds--xlg:col-span-6">
+            <cds-form-item>
+              <cds-text-input
+                label="HP darbības nosaukums"
+                placeholder="Ievadiet nosaukumu"
+                invalid-text="Error message">
+              </cds-text-input>
+            </cds-form-item>
+          </div>
+        </div>
+        <cds-divider size="6"></cds-divider>
+        <div class="cds--subgrid cds--subgrid--condensed">
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-7 cds--lg:col-span-14">
+            <cds-text-editor
+              editorId="editor_example_storybook_simple"
+              toolbarType="simple"
+              editorConfig='{
+          "editorTitle": "Īstenošanas apraksts",
+          "onServerLastEditor": {
+            "name": "Ieva Bērziņa",
+            "date": "10.10.2022 10:22"
+          },
+          "autosave_ask_before_unload": false
+          }'>
+            </cds-text-editor>
+          </div>
+        </div>
+      </cds-modal-body>
+      <cds-modal-footer>
+        <cds-modal-footer-button kind="secondary" data-modal-close
+          >Atcelt</cds-modal-footer-button
+        >
+        <cds-modal-footer-button kind="primary"
+          >Saglabāt</cds-modal-footer-button
+        >
+      </cds-modal-footer>
+    </cds-modal>
+  `;
+};
+
 export default {
   parameters: {
     ...storyDocs.parameters,
