@@ -325,11 +325,6 @@ export const Parvaldit = () => {
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
                   </cds-table-expanded-row-wrapper>
                 </cds-table-expanded-row>
                 <cds-table-row>
@@ -424,8 +419,7 @@ export const Parvaldit = () => {
             title="VINPI specifiskās - HP integrēšana izglītojošo un informatīvo materiālu un pasākumu saturā">
             <cds-label-value
               label="Attiecas uz"
-              value="Attiecas uz projektiem: 1) kurost tiek..
-            2) kurost tiek.."></cds-label-value>
+              value="Attiecas uz projektiem: <br> <ol><li>kuros tiek izstrādāti izglītojošie un informatīvie materiāli (stratēģijas, plāni, vadlīnijas, mācību programmas, metodiskie materiāli, informatīvie bukleti);</li><li>kuros tiek īstenoti klātienes un tiešsaistes pasākumi (mediju kampaņas, rīkotas konferences, semināri, festivāli, darba grupas, diskusijas u.c.)</li></ol> "></cds-label-value>
             <cds-divider size="7"></cds-divider>
             <cds-table size="sm" expandable>
               <cds-table-head>
@@ -476,7 +470,7 @@ export const Parvaldit = () => {
                   <cds-table-expanded-row-wrapper>
                     <cds-label-value
                       label="HP darbība"
-                      value="Projekta pasākumu un izstrādāto materiālu saturā tiks...">
+                      value="Projekta pasākumu un izstrādāto materiālu saturā tiks integrēti nediskriminācijas jautājumi (dzimumu līdztiesība, personu ar invaliditāti vienlīdzīgas iespējas, nediskriminācija vecuma, etniskās piederības, reliģiskās pārliecības un seksuālās orientācijas dēļ), tostarp par tiesiskajiem un praktiskajiem aspektiem">
                     </cds-label-value>
                     <cds-divider size="5"></cds-divider>
                     <cds-table size="sm">
@@ -495,7 +489,10 @@ export const Parvaldit = () => {
                         <cds-table-row>
                           <cds-table-cell>Vinpi 02.1</cds-table-cell>
                           <cds-table-cell
-                            >Pasākumu un izstrādāto materiālu..</cds-table-cell
+                            >Pasākumu un izstrādāto materiālu, kuru saturā
+                            integrēti nediskriminācijas jautājumi, tostarp par
+                            tiesiskajiem un praktiskajiem aspektiem,
+                            skaits</cds-table-cell
                           >
                           <cds-table-cell
                             ><cds-toggle
