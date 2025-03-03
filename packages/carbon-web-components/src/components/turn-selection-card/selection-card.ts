@@ -25,46 +25,36 @@ class CDSSelectionCard extends LitElement {
   @property({ type: String }) SelectionNumber = '';
   @property({ type: String }) selectionUrl = '';
   @property({ type: String }) cardTitle = '';
-  @property({ type: String }) cardTitleUrl = '';
   @property({ type: String }) projectDateTitle = '';
   @property({ type: String }) projectDateInfo = '';
-  @property({ type: String }) buttonText = '';
-
-  handleOverflowMenuClick(event) {
-    event.stopPropagation();
-    event.preventDefault();
-  }
-
-  handleButtonClick(event) {
-    event.preventDefault();
-  }
 
   render() {
     const {
       SelectionNumber,
       selectionUrl,
       cardTitle,
-      cardTitleUrl,
       projectDateInfo,
       projectDateTitle,
-      buttonText,
     } = this;
 
     return html`
-      <a
-        href="${cardTitleUrl}"
-        aria-label="${cardTitle}"
-        class="selection-card">
+      <div aria-label="${cardTitle}" class="selection-card">
         <div class="selection-card__header">
           <div class="selection-card__selections">
             <span class="selection-card__selections-title">Atlase </span>
-            <cds-link href="${selectionUrl}">
-              ${SelectionNumber} ${Launch16({ slot: 'icon' })}</cds-link
-            >
+            ${selectionUrl
+              ? html`
+                  <cds-link href="${selectionUrl}">
+                    ${SelectionNumber} ${Launch16({ slot: 'icon' })}
+                  </cds-link>
+                `
+              : html`
+                  <span class="selection-card__selections-number"
+                    >${SelectionNumber}</span
+                  >
+                `}
           </div>
-          <div
-            class="selection-card__overflow-menu"
-            @click="${this.handleOverflowMenuClick}">
+          <div class="selection-card__overflow-menu">
             <slot name="overflow-menu"></slot>
           </div>
         </div>
@@ -84,10 +74,10 @@ class CDSSelectionCard extends LitElement {
               `
             : ''}
         </div>
-        <div class="selection-card__button" @click="${this.handleButtonClick}">
-          <cds-button size="sm" kind="secondary">${buttonText}</cds-button>
+        <div class="selection-card__button">
+          <slot name="button"></slot>
         </div>
-      </a>
+      </div>
     `;
   }
 
