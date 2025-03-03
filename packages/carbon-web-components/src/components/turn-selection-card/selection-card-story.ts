@@ -18,10 +18,36 @@ export const Propsed = () => {
       selectionNumber="2.1.3.2."
       selectionUrl="https://www.google.com/"
       cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
-      cardTitleUrl="https://www.carbondesignsystem.com/"
       projectDateTitle="Projekta īstenošanas termiņš"
-      projectDateInfo="05.01.2021 - 30.05.2028"
-      buttonText="Izveidot PI">
+      projectDateInfo="05.01.2021 - 30.05.2028">
+      <span slot="overflow-menu">
+        <cds-overflow-menu size="sm">
+          ${OverflowMenuVertical16({
+            class: `cds--overflow-menu__icon`,
+            slot: 'icon',
+          })}
+          <span slot="tooltip-content"> Opcijas </span>
+          <cds-overflow-menu-body flipped>
+            <cds-overflow-menu-item>Atvērt</cds-overflow-menu-item>
+            <cds-overflow-menu-item danger divider
+              >Dzēst</cds-overflow-menu-item
+            >
+          </cds-overflow-menu-body>
+        </cds-overflow-menu>
+      </span>
+      <span slot="button">
+        <cds-button size="sm" kind="secondary"> Izveidot PI </cds-button>
+      </span>
+    </cds-selection-card>
+  `;
+};
+export const Minimum = () => {
+  return html`
+    <cds-selection-card
+      selectionNumber="2.1.3.2."
+      cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
+      projectDateTitle="Projekta īstenošanas termiņš"
+      projectDateInfo="05.01.2021 - 30.05.2028">
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
           ${OverflowMenuVertical16({

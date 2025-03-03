@@ -12,11 +12,10 @@ Komponents tiek lietots, lai attēlotu galveno informāciju par atlasi.
 - SelectionNumber - Atlases numurs
 - SelectionUrl - Saite uz atlasi CFLA mājaslapā
 - CardTitle - Atlases nosaukums
-- CardTitleUrl - Atlases saite
 - ProjectDateTitle - Nosaukums, kas redzams virs datuma, atlases kartītē, tas ir
   "iesniegšanas termiņš"
 - ProjectDateInfo - Datums. Atlases iesniegšanas periods.
-- buttonText - Pogas teksts. Atlases kartītē - Izveidot PI
+- Button - Pogas teksts. Atlases kartītē - Izveidot PI
 - Overflow menu - Darbības, kuras var veikt ar kartīti, piemēram, atvērt,
   izveidot PI u.tml.
 
@@ -53,10 +52,8 @@ Komponents tiek lietots, lai attēlotu galveno informāciju par atlasi.
       selectionNumber="2.1.3.2."
       selectionUrl="https://www.google.com/"
       cardTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Utcondimentum diam id diam blandit congue."
-      cardTitleUrl="https://www.carbondesignsystem.com/"
       projectDateTitle="Projekta īstenošanas termiņš"
-      projectDateInfo="05.01.2021 - 30.05.2028"
-      buttonText="Izveidot PI">
+      projectDateInfo="05.01.2021 - 30.05.2028">
       <span slot="overflow-menu">
         <cds-overflow-menu size="sm">
           ${OverflowMenuVertical16({ class: `cds--overflow-menu__icon`, slot:
@@ -69,6 +66,9 @@ Komponents tiek lietots, lai attēlotu galveno informāciju par atlasi.
             >
           </cds-overflow-menu-body>
         </cds-overflow-menu>
+      </span>
+      <span slot="button">
+        <cds-button size="sm" kind="secondary"> Izveidot PI </cds-button>
       </span>
     </cds-selection-card>
   </body>

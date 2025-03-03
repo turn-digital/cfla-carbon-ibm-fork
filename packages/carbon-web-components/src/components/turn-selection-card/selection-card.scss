@@ -12,14 +12,6 @@
   gap: $spacing-03;
   text-decoration: none;
 
-  &:hover {
-    background-color: $layer-hover;
-
-    .selection-card__info-image {
-      background-color: $layer-accent-hover-01;
-    }
-  }
-
   &__header {
     display: flex;
     align-items: center;
@@ -38,15 +30,15 @@
     color: $text-secondary;
   }
 
+  &__selections-number {
+    @include type-style('label-01');
+    color: $text-primary;
+  }
+
   &__desc {
     @include type-style('heading-compact-01');
     text-decoration: none;
     color: $text-primary;
-  }
-
-  &__desc:hover,
-  &__desc:focus {
-    text-decoration: underline;
   }
 
   &__info-section {
