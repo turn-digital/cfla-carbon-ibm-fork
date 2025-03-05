@@ -4,6 +4,7 @@ import './pi-darbibu-saraksts';
 import styles from '../../../../../../assets/css/themes.css';
 import Download16 from '@carbon/icons/lib/download/16';
 import Add16 from '@carbon/icons/lib/add/16';
+import Launch16 from '@carbon/icons/lib/launch/16';
 
 export const Propsed = () => {
   return html`
@@ -45,6 +46,16 @@ export const Propsed = () => {
           </cds-doc-page-header>
 
           <cds-divider size="8"></cds-divider>
+
+          <div class="cds--subgrid cds--subgrid--condensed">
+            <div
+              class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+              <cds-link href="https://www.ibm.com">
+                Darbību detalizētais skats ${Launch16({ slot: 'icon' })}
+              </cds-link>
+            </div>
+          </div>
+          <cds-divider size="3"></cds-divider>
 
           <cds-table size="sm" expandable>
             <cds-table-head>
@@ -161,6 +172,7 @@ export const Modal = () => {
   return html`
     <cds-modal
       class="cds-theme-zone-white cds-blue-theme"
+      size="lg"
       id="pi-actions-modal-1"
       open>
       <cds-modal-header>

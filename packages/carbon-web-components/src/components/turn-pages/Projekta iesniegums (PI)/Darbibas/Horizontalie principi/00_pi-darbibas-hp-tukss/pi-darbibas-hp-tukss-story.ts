@@ -268,6 +268,7 @@ export const Parvaldit = () => {
   return html`
     <cds-modal
       class="cds-theme-zone-white cds-blue-theme"
+      size="lg"
       id="pi-hp-edit-modal"
       open>
       <cds-modal-header>
@@ -527,6 +528,7 @@ export const Pievienot = () => {
   return html`
     <cds-modal
       class="cds-theme-zone-white cds-blue-theme"
+      size="lg"
       id="pi-hp-edit-modal"
       open>
       <cds-modal-header>
