@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import storyDocs from './pi-darbibu-saraksts-story.mdx';
 import './pi-darbibu-saraksts';
-import styles from '../../../../../../assets/css/themes.css';
+import styles from '../../../../../../../assets/css/themes.css';
 import Download16 from '@carbon/icons/lib/download/16';
 import Add16 from '@carbon/icons/lib/add/16';
 import Launch16 from '@carbon/icons/lib/launch/16';
@@ -437,5 +437,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Views/Projekta iesniegums (PI)/Saraksts/Darbibu saraksts/Atvērts',
+  title: 'Views/Projekta iesniegums (PI)/Darbības/Darbibu saraksts/Atvērts',
 };

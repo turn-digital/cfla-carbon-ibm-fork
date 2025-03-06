@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import storyDocs from './pi-darbibu-saraksts-tukss-story.mdx';
 import './pi-darbibu-saraksts-tukss';
-import styles from '../../../../../../assets/css/themes.css';
+import styles from '../../../../../../../assets/css/themes.css';
 import Download16 from '@carbon/icons/lib/download/16';
 import Launch16 from '@carbon/icons/lib/launch/16';
 
@@ -117,5 +117,5 @@ export default {
   parameters: {
     ...storyDocs.parameters,
   },
-  title: 'Views/Projekta iesniegums (PI)/Saraksts/Darbibu saraksts/Tukšs',
+  title: 'Views/Projekta iesniegums (PI)/Darbības/Darbibu saraksts/Tukšs',
 };

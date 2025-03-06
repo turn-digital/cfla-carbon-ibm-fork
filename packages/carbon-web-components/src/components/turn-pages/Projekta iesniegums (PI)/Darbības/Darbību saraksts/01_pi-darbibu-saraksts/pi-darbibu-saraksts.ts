@@ -8,8 +8,8 @@
  */
 
 import { LitElement, html } from 'lit';
-import { prefix } from '../../../../../globals/settings';
-import { carbonElement as customElement } from '../../../../../globals/decorators/carbon-element';
+import { prefix } from '../../../../../../globals/settings';
+import { carbonElement as customElement } from '../../../../../../globals/decorators/carbon-element';
 
 @customElement(`${prefix}-pi-list-action-list-view-01`)
 class CDSPIListActionList01 extends LitElement {
