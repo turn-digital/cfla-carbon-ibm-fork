@@ -11,11 +11,11 @@ import { LitElement, html } from 'lit';
 import { prefix } from '../../../../../../globals/settings';
 import { carbonElement as customElement } from '../../../../../../globals/decorators/carbon-element';
 
-@customElement(`${prefix}-pi-actions-hp-empty-view-00`)
-class CDSPIActionsHPEMptyView00 extends LitElement {
+@customElement(`${prefix}-pi-action-with-sub-action-00`)
+class CDSPiActionWithSubAction00 extends LitElement {
   render() {
     return html` <div></div> `;
   }
 }
 
-export default CDSPIActionsHPEMptyView00;
+export default CDSPiActionWithSubAction00;
