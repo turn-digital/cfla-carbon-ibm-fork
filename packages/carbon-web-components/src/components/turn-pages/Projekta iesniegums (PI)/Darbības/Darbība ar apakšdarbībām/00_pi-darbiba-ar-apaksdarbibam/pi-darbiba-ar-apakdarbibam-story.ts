@@ -31,7 +31,7 @@ export const Propsed = () => {
             type="subtitle"
             title="8.darbība - Komunikācijas un vizuālās identitātes pasākumi par projekta īstenošanu">
             <span slot="breadcrumb">
-              <cds-breadcrumb>
+              <cds-breadcrumb no-trailing-slash>
                 <cds-breadcrumb-item>
                   <cds-breadcrumb-link href="/#"
                     >Projekta iesniegums</cds-breadcrumb-link

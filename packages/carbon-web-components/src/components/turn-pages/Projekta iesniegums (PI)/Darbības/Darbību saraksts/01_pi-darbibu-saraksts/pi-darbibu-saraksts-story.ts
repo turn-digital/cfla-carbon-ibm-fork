@@ -29,7 +29,7 @@ export const Propsed = () => {
 
           <cds-doc-page-header type="subtitle" title="Darbības">
             <span slot="breadcrumb">
-              <cds-breadcrumb>
+              <cds-breadcrumb no-trailing-slash>
                 <cds-breadcrumb-item>
                   <cds-breadcrumb-link href="/#"
                     >Projekta iesniegums</cds-breadcrumb-link

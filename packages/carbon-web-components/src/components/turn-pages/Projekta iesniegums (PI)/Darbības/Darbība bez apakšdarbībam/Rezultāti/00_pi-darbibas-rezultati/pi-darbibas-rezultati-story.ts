@@ -30,7 +30,7 @@ export const Propsed = () => {
             type="subtitle"
             title="1.Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām">
             <span slot="breadcrumb">
-              <cds-breadcrumb>
+              <cds-breadcrumb no-trailing-slash>
                 <cds-breadcrumb-item>
                   <cds-breadcrumb-link href="/#"
                     >Projekta iesniegums</cds-breadcrumb-link

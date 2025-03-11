@@ -28,7 +28,7 @@ export const Propsed = () => {
             type="subtitle"
             title="8.1 Apakšdarbība - Informatīvās plāksnes izvietošana">
             <span slot="breadcrumb">
-              <cds-breadcrumb>
+              <cds-breadcrumb no-trailing-slash>
                 <cds-breadcrumb-item>
                   <cds-breadcrumb-link href="/#"
                     >Projekta iesniegums</cds-breadcrumb-link
