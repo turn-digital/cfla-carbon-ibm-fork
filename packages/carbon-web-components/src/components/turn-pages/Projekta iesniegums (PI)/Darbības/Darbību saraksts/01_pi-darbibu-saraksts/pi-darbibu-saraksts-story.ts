@@ -29,7 +29,7 @@ export const Propsed = () => {
 
           <cds-doc-page-header type="subtitle" title="Darbības">
             <span slot="breadcrumb">
-              <cds-breadcrumb>
+              <cds-breadcrumb no-trailing-slash>
                 <cds-breadcrumb-item>
                   <cds-breadcrumb-link href="/#"
                     >Projekta iesniegums</cds-breadcrumb-link
@@ -45,7 +45,7 @@ export const Propsed = () => {
             </span>
           </cds-doc-page-header>
 
-          <cds-divider size="8"></cds-divider>
+          <cds-divider size="7"></cds-divider>
 
           <div class="cds--subgrid cds--subgrid--condensed">
             <div
@@ -98,10 +98,10 @@ export const Propsed = () => {
               </cds-table-row>
               <cds-table-expanded-row>
                 <cds-table-expanded-row-wrapper>
-                  <cds-table>
+                  <cds-table size="sm">
                     <cds-table-head>
                       <cds-table-header-row>
-                        <cds-table-header-cell>ID</cds-table-header-cell>
+                        <cds-table-header-cell>Kods</cds-table-header-cell>
                         <cds-table-header-cell
                           >Apakšdarbība</cds-table-header-cell
                         >
@@ -134,10 +134,10 @@ export const Propsed = () => {
               </cds-table-row>
               <cds-table-expanded-row>
                 <cds-table-expanded-row-wrapper>
-                  <cds-table>
+                  <cds-table size="sm">
                     <cds-table-head>
                       <cds-table-header-row>
-                        <cds-table-header-cell>ID</cds-table-header-cell>
+                        <cds-table-header-cell>Kods</cds-table-header-cell>
                         <cds-table-header-cell
                           >Apakšdarbība</cds-table-header-cell
                         >

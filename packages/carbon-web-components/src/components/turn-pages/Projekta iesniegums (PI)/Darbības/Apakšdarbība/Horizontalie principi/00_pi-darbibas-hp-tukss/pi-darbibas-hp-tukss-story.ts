@@ -30,7 +30,7 @@ export const Propsed = () => {
             type="subtitle"
             title="8.1 Apakšdarbība - Informatīvās plāksnes izvietošana">
             <span slot="breadcrumb">
-              <cds-breadcrumb>
+              <cds-breadcrumb no-trailing-slash>
                 <cds-breadcrumb-item>
                   <cds-breadcrumb-link href="/#"
                     >Projekta iesniegums</cds-breadcrumb-link
@@ -51,7 +51,7 @@ export const Propsed = () => {
               >
             </span>
           </cds-doc-page-header>
-          <cds-divider size="8"></cds-divider>
+          <cds-divider size="10"></cds-divider>
           <div class="cds--subgrid cds--subgrid--condensed">
             <div
               class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
@@ -152,13 +152,13 @@ export const Propsed = () => {
                 <cds-divider size="6"></cds-divider>
                 <cds-table size="sm">
                   <cds-table-header-title slot="title"
-                    >HP darbības</cds-table-header-title
+                    >HP rādītāji</cds-table-header-title
                   >
 
                   <cds-table-head>
                     <cds-table-header-row>
                       <cds-table-header-cell
-                        >HP darbību grupas nosaukums</cds-table-header-cell
+                        >HP rādītāju grupas nosaukums</cds-table-header-cell
                       >
                       <cds-table-header-cell
                         >Min. nepiec. projektā</cds-table-header-cell
@@ -173,23 +173,7 @@ export const Propsed = () => {
                   </cds-table-head>
                   <cds-table-body>
                     <cds-table-row>
-                      <cds-table-cell>Klimatdrošināšana</cds-table-cell>
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>0</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell
-                        >VINPI - Vispārīgās darbības</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>0</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell
-                        >VINPI - Specifiskās darbības</cds-table-cell
-                      >
+                      <cds-table-cell>VINPI rādītāji</cds-table-cell>
                       <cds-table-cell>2</cds-table-cell>
                       <cds-table-cell>1</cds-table-cell>
                       <cds-table-cell>0</cds-table-cell>
@@ -527,7 +511,7 @@ export const Pievienot = () => {
         <cds-divider size="6"></cds-divider>
         <div class="cds--subgrid cds--subgrid--condensed">
           <div
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-7 cds--xlg:col-span-6">
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-7 cds--lg:col-span-14">
             <cds-form-item>
               <cds-text-input
                 label="HP darbības nosaukums"
@@ -535,21 +519,13 @@ export const Pievienot = () => {
                 invalid-text="Error message">
               </cds-text-input>
             </cds-form-item>
-          </div>
-        </div>
-        <cds-divider size="6"></cds-divider>
-        <div class="cds--subgrid cds--subgrid--condensed">
-          <div
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-7 cds--lg:col-span-14">
+
+            <cds-divider size="6"></cds-divider>
             <cds-text-editor
               editorId="editor_example_storybook_simple"
               toolbarType="simple"
               editorConfig='{
           "editorTitle": "Īstenošanas apraksts",
-          "onServerLastEditor": {
-            "name": "Ieva Bērziņa",
-            "date": "10.10.2022 10:22"
-          },
           "autosave_ask_before_unload": false
           }'>
             </cds-text-editor>

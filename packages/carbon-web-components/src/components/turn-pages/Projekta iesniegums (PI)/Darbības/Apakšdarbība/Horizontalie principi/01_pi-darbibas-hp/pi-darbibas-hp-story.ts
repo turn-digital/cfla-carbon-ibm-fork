@@ -28,7 +28,7 @@ export const Propsed = () => {
             type="subtitle"
             title="8.1 Apakšdarbība - Informatīvās plāksnes izvietošana">
             <span slot="breadcrumb">
-              <cds-breadcrumb>
+              <cds-breadcrumb no-trailing-slash>
                 <cds-breadcrumb-item>
                   <cds-breadcrumb-link href="/#"
                     >Projekta iesniegums</cds-breadcrumb-link
@@ -49,7 +49,7 @@ export const Propsed = () => {
               >
             </span>
           </cds-doc-page-header>
-          <cds-divider size="8"></cds-divider>
+          <cds-divider size="10"></cds-divider>
           <div class="cds--subgrid cds--subgrid--condensed">
             <div
               class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
@@ -149,13 +149,13 @@ export const Propsed = () => {
                 <cds-divider size="6"></cds-divider>
                 <cds-table size="sm">
                   <cds-table-header-title slot="title"
-                    >HP darbības</cds-table-header-title
+                    >HP rādītāji</cds-table-header-title
                   >
 
                   <cds-table-head>
                     <cds-table-header-row>
                       <cds-table-header-cell
-                        >HP darbību grupas nosaukums</cds-table-header-cell
+                        >HP rādītāju grupas nosaukums</cds-table-header-cell
                       >
                       <cds-table-header-cell
                         >Min. nepiec. projektā</cds-table-header-cell
@@ -170,23 +170,7 @@ export const Propsed = () => {
                   </cds-table-head>
                   <cds-table-body>
                     <cds-table-row>
-                      <cds-table-cell>Klimatdrošināšana</cds-table-cell>
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>0</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell
-                        >VINPI - Vispārīgās darbības</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>0</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell
-                        >VINPI - Specifiskās darbības</cds-table-cell
-                      >
+                      <cds-table-cell>VINPI rādītāji</cds-table-cell>
                       <cds-table-cell>2</cds-table-cell>
                       <cds-table-cell>1</cds-table-cell>
                       <cds-table-cell>0</cds-table-cell>
@@ -317,7 +301,7 @@ export const Pievienot = () => {
       <cds-modal-header>
         <cds-modal-close-button></cds-modal-close-button>
         <cds-modal-label>HP darbības un rādītāji</cds-modal-label>
-        <cds-modal-heading>HP darbibas izveidošana</cds-modal-heading>
+        <cds-modal-heading>HP darbības īstenošanas apraksts</cds-modal-heading>
         <cds-divider size="5"></cds-divider>
       </cds-modal-header>
       <cds-modal-body>
@@ -331,15 +315,16 @@ export const Pievienot = () => {
             <cds-divider size="6"></cds-divider>
             <cds-text-editor
               editorId="editor_example_storybook_simple"
+              textEditorData=""
               toolbarType="simple"
               editorConfig='{
                 "editorTitle": "HP darbības īstenošanas apraksts (ja attiecināms)",
+                "autosave_ask_before_unload": false,
                 "onServerLastEditor": {
                   "name": "Apraksts jāievada kontekstā ar konkrēto projekta darbību vai apakšdarbību, kuras ietvaros īstenos HP darbību",
-                },
-                "autosave_ask_before_unload": false
-                }'>
-            </cds-text-editor>
+                  "date": ""
+                }
+              }'></cds-text-editor>
           </div>
         </div>
       </cds-modal-body>
