@@ -511,7 +511,7 @@ export const Pievienot = () => {
         <cds-divider size="6"></cds-divider>
         <div class="cds--subgrid cds--subgrid--condensed">
           <div
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-5 cds--lg:col-span-7 cds--xlg:col-span-6">
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-7 cds--lg:col-span-14">
             <cds-form-item>
               <cds-text-input
                 label="HP darbības nosaukums"
@@ -519,12 +519,8 @@ export const Pievienot = () => {
                 invalid-text="Error message">
               </cds-text-input>
             </cds-form-item>
-          </div>
-        </div>
-        <cds-divider size="6"></cds-divider>
-        <div class="cds--subgrid cds--subgrid--condensed">
-          <div
-            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-7 cds--lg:col-span-14">
+
+            <cds-divider size="6"></cds-divider>
             <cds-text-editor
               editorId="editor_example_storybook_simple"
               toolbarType="simple"
