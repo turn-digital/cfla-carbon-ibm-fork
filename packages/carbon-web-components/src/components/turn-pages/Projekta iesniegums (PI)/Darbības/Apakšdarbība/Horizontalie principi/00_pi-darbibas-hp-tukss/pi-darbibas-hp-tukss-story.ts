@@ -530,10 +530,6 @@ export const Pievienot = () => {
               toolbarType="simple"
               editorConfig='{
           "editorTitle": "Īstenošanas apraksts",
-          "onServerLastEditor": {
-            "name": "Ieva Bērziņa",
-            "date": "10.10.2022 10:22"
-          },
           "autosave_ask_before_unload": false
           }'>
             </cds-text-editor>
