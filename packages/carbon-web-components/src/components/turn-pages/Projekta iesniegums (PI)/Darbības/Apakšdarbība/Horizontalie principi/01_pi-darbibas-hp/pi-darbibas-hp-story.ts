@@ -149,13 +149,13 @@ export const Propsed = () => {
                 <cds-divider size="6"></cds-divider>
                 <cds-table size="sm">
                   <cds-table-header-title slot="title"
-                    >HP darbības</cds-table-header-title
+                    >HP rādītāji</cds-table-header-title
                   >
 
                   <cds-table-head>
                     <cds-table-header-row>
                       <cds-table-header-cell
-                        >HP darbību grupas nosaukums</cds-table-header-cell
+                        >HP rādītāju grupas nosaukums</cds-table-header-cell
                       >
                       <cds-table-header-cell
                         >Min. nepiec. projektā</cds-table-header-cell
@@ -170,23 +170,7 @@ export const Propsed = () => {
                   </cds-table-head>
                   <cds-table-body>
                     <cds-table-row>
-                      <cds-table-cell>Klimatdrošināšana</cds-table-cell>
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>0</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell
-                        >VINPI - Vispārīgās darbības</cds-table-cell
-                      >
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>1</cds-table-cell>
-                      <cds-table-cell>0</cds-table-cell>
-                    </cds-table-row>
-                    <cds-table-row>
-                      <cds-table-cell
-                        >VINPI - Specifiskās darbības</cds-table-cell
-                      >
+                      <cds-table-cell>VINPI rādītāji</cds-table-cell>
                       <cds-table-cell>2</cds-table-cell>
                       <cds-table-cell>1</cds-table-cell>
                       <cds-table-cell>0</cds-table-cell>
