@@ -98,10 +98,10 @@ export const Propsed = () => {
               </cds-table-row>
               <cds-table-expanded-row>
                 <cds-table-expanded-row-wrapper>
-                  <cds-table>
+                  <cds-table size="sm">
                     <cds-table-head>
                       <cds-table-header-row>
-                        <cds-table-header-cell>ID</cds-table-header-cell>
+                        <cds-table-header-cell>Kods</cds-table-header-cell>
                         <cds-table-header-cell
                           >Apakšdarbība</cds-table-header-cell
                         >
@@ -134,10 +134,10 @@ export const Propsed = () => {
               </cds-table-row>
               <cds-table-expanded-row>
                 <cds-table-expanded-row-wrapper>
-                  <cds-table>
+                  <cds-table size="sm">
                     <cds-table-head>
                       <cds-table-header-row>
-                        <cds-table-header-cell>ID</cds-table-header-cell>
+                        <cds-table-header-cell>Kods</cds-table-header-cell>
                         <cds-table-header-cell
                           >Apakšdarbība</cds-table-header-cell
                         >
