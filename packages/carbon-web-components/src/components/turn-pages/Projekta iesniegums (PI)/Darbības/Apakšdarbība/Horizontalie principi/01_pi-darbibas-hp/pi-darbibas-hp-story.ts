@@ -301,7 +301,7 @@ export const Pievienot = () => {
       <cds-modal-header>
         <cds-modal-close-button></cds-modal-close-button>
         <cds-modal-label>HP darbības un rādītāji</cds-modal-label>
-        <cds-modal-heading>HP darbibas izveidošana</cds-modal-heading>
+        <cds-modal-heading>HP darbības īstenošanas apraksts</cds-modal-heading>
         <cds-divider size="5"></cds-divider>
       </cds-modal-header>
       <cds-modal-body>
@@ -315,15 +315,16 @@ export const Pievienot = () => {
             <cds-divider size="6"></cds-divider>
             <cds-text-editor
               editorId="editor_example_storybook_simple"
+              textEditorData=""
               toolbarType="simple"
               editorConfig='{
                 "editorTitle": "HP darbības īstenošanas apraksts (ja attiecināms)",
+                "autosave_ask_before_unload": false,
                 "onServerLastEditor": {
                   "name": "Apraksts jāievada kontekstā ar konkrēto projekta darbību vai apakšdarbību, kuras ietvaros īstenos HP darbību",
-                },
-                "autosave_ask_before_unload": false
-                }'>
-            </cds-text-editor>
+                  "date": ""
+                }
+              }'></cds-text-editor>
           </div>
         </div>
       </cds-modal-body>
