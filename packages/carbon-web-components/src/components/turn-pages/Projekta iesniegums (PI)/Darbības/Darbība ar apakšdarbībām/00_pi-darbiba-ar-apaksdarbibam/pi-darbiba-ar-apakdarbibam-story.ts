@@ -50,7 +50,7 @@ export const Propsed = () => {
             </span>
           </cds-doc-page-header>
 
-          <cds-divider size="8"></cds-divider>
+          <cds-divider size="10"></cds-divider>
 
           <div class="cds--subgrid cds--subgrid--condensed">
             <div

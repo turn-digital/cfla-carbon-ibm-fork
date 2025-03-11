@@ -46,7 +46,7 @@ export const Propsed = () => {
               >
             </span>
           </cds-doc-page-header>
-          <cds-divider size="8"></cds-divider>
+          <cds-divider size="7"></cds-divider>
           <cds-table size="sm" expandable>
             <cds-table-header-title slot="title">
               Uzraudzības rādītāji
