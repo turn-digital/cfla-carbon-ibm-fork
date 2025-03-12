@@ -3,7 +3,6 @@ import storyDocs from './pi-darbibas-raditaji-story.mdx';
 import './pi-darbibas-raditaji';
 import styles from '../../../../../../../../assets/css/themes.css';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
-import Download16 from '@carbon/icons/lib/download/16';
 
 export const Propsed = () => {
   return html`
@@ -102,12 +101,6 @@ export const Propsed = () => {
                 <cds-table-toolbar-content>
                   <cds-table-toolbar-search
                     placeholder="Filter table"></cds-table-toolbar-search>
-                  <cds-button kind="ghost"
-                    >${Download16({
-                      slot: 'icon',
-                      fill: 'black',
-                    })}
-                  </cds-button>
                   <cds-button
                     kind="secondary"
                     tooltip-alignment=""
@@ -164,6 +157,23 @@ export const Propsed = () => {
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>
+                    <cds-label-value label="Rādītāja veids" value="Iznākuma">
+                    </cds-label-value>
+                    <cds-divider size="5"></cds-divider>
+                    <cds-label-value
+                      label="Sākuma vērtība"
+                      value="⚠️ Nav ievadīts">
+                    </cds-label-value>
+                    <cds-divider size="5"></cds-divider>
+                    <cds-label-value
+                      label="Beigu vērtība"
+                      value="⚠️ Nav ievadīts">
+                    </cds-label-value>
+                    <cds-divider size="5"></cds-divider>
+                    <cds-label-value
+                      label="Saistītās darbības"
+                      value="<ul><li><cds-link href='https://www.ibm.com'>4 vētru postijumu mazinošas infrastruktūras (t.sk. “zaļās” infrastruktūras) un aprīkojuma iegāde un izveide</cds-link></li></ul>">
+                    </cds-label-value>
                   </cds-table-expanded-row-wrapper>
                 </cds-table-expanded-row>
               </cds-table-body>
