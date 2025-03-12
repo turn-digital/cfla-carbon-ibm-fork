@@ -34,9 +34,6 @@ export const Propsed = () => {
                     >Projekta iesniegums</cds-breadcrumb-link
                   >
                 </cds-breadcrumb-item>
-                <cds-breadcrumb-item>
-                  <cds-breadcrumb-link href="#">8. darbība</cds-breadcrumb-link>
-                </cds-breadcrumb-item>
                 <cds-breadcrumb-item> Rādītāji </cds-breadcrumb-item>
               </cds-breadcrumb>
             </span>
@@ -46,7 +43,7 @@ export const Propsed = () => {
               >
             </span>
           </cds-doc-page-header>
-          <cds-divider size="7"></cds-divider>
+          <cds-divider size="10"></cds-divider>
           <cds-table size="sm" expandable>
             <cds-table-header-title slot="title">
               Uzraudzības rādītāji
@@ -358,9 +355,6 @@ export const Labosana = () => {
             <cds-label-value
               label="Rādītāja nosaukums"
               value="Latvijas līdzdalības monitoringa ziņojuma sagatavošana, ietverot Eiropas Pētniecības telpas dimensijas, kas saistošas Latvijas pētniecības telpai">
-            </cds-label-value>
-            <cds-divider size="6"></cds-divider>
-            <cds-label-value label="Rādītāja veids" value="Iznākuma">
             </cds-label-value>
             <cds-divider size="6"></cds-divider>
             <cds-label-value label="Mērvienības" value="Skaits">
