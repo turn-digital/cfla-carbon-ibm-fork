@@ -3,7 +3,6 @@ import storyDocs from './pi-darbibas-raditaji-story.mdx';
 import './pi-darbibas-raditaji';
 import styles from '../../../../../../../../assets/css/themes.css';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
-import Download16 from '@carbon/icons/lib/download/16';
 
 export const Propsed = () => {
   return html`
