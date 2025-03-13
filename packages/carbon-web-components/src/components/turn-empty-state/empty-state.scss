@@ -24,12 +24,13 @@ $css--plex: true !default;
   border: 1px solid $border-subtle-00;
   box-sizing: border-box;
 
-  &___text {
+  &__text {
     @include type-style('label-01');
     color: $text-secondary;
   }
 
   &__link {
+    @include type-style('label-01');
     margin-top: $spacing-02;
   }
 }
