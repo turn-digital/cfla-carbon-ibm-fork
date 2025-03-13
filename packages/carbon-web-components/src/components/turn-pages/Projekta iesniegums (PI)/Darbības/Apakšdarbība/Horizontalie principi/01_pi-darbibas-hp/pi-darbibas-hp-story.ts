@@ -313,12 +313,14 @@ export const Pievienot = () => {
               value="Projekta pasākumu un izstrādāto materiālu saturā tiks integrēti nediskriminācijas jautājumi (dzimumu līdztiesība, personu ar invaliditāti vienlīdzīgas iespējas, nediskriminācija vecuma, etniskās piederības, reliģiskās pārliecības un seksuālās orientācijas dēļ), tostarp par tiesiskajiem un praktiskajiem aspektiem">
             </cds-label-value>
             <cds-divider size="6"></cds-divider>
+            <cds-label-value
+              label="HP darbības īstenošanas apraksts (ja attiecināms)">
+            </cds-label-value>
             <cds-text-editor
               editorId="editor_example_storybook_simple"
               textEditorData=""
               toolbarType="simple"
               editorConfig='{
-                "editorTitle": "HP darbības īstenošanas apraksts (ja attiecināms)",
                 "autosave_ask_before_unload": false,
                 "onServerLastEditor": {
                   "name": "Apraksts jāievada kontekstā ar konkrēto projekta darbību vai apakšdarbību, kuras ietvaros īstenos HP darbību",

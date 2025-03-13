@@ -28,7 +28,7 @@ export const Propsed = () => {
 
           <cds-doc-page-header
             type="subtitle"
-            title="8.1 Apakšdarbība - Informatīvās plāksnes izvietošana">
+            title="1.Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām">
             <span slot="breadcrumb">
               <cds-breadcrumb no-trailing-slash>
                 <cds-breadcrumb-item>
