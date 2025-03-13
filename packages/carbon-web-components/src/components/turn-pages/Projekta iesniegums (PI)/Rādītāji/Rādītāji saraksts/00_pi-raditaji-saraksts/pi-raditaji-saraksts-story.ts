@@ -258,7 +258,9 @@ export const Parvaldit = () => {
             <cds-table-header-row>
               <cds-table-header-cell>ID</cds-table-header-cell>
               <cds-table-header-cell>Rādītāja nosaukums</cds-table-header-cell>
-              <cds-table-header-cell>Pies. darb. sk</cds-table-header-cell>
+              <cds-table-header-cell
+                >Piesaistīto darb. sk.</cds-table-header-cell
+              >
               <cds-table-header-cell
                 >Piemērojams projektā</cds-table-header-cell
               >
