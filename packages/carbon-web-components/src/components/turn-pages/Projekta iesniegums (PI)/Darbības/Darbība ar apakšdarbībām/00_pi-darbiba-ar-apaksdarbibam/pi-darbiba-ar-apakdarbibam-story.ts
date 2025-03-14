@@ -4,7 +4,6 @@ import './pi-darbiba-ar-apakdarbibam';
 import styles from '../../../../../../../assets/css/themes.css';
 import Download16 from '@carbon/icons/lib/download/16';
 import Add16 from '@carbon/icons/lib/add/16';
-import Launch16 from '@carbon/icons/lib/launch/16';
 
 export const Propsed = () => {
   return html`
