@@ -5,30 +5,6 @@ import styles from '../../../../../../../assets/css/themes.css';
 import Download16 from '@carbon/icons/lib/download/16';
 import Launch16 from '@carbon/icons/lib/launch/16';
 
-const statusHistoryItemsArr = [
-  {
-    date: '25.10.2019 10:34',
-    status: 'Atgriezta precizēšanai 1',
-    author: 'Elīne Millere',
-    pamatojums: 'Pamatojums 1',
-    id: '1',
-  },
-  {
-    date: '25.09.2019 16:13',
-    status: 'Atgriezta precizēšanai 2',
-    author: 'Test author',
-    pamatojums: 'Pamatojums 2',
-    id: '2',
-  },
-  {
-    date: '25.09.2019 16:13',
-    status: 'Atgriezta precizēšanai 2',
-    author: 'Test author',
-    pamatojums: 'Pamatojums 2',
-    id: '3',
-  },
-];
-
 export const Propsed = () => {
   return html`
     <div class="cds-theme-zone-white cds-blue-theme">
