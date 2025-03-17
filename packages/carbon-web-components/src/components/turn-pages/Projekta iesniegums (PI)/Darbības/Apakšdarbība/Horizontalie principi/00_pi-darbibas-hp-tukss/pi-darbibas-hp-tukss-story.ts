@@ -288,6 +288,7 @@ export const Parvaldit = () => {
                     >HP darbības nosaukums</cds-table-header-cell
                   >
                   <cds-table-header-cell>Īstenošana</cds-table-header-cell>
+                  <cds-table-header-cell>HP rādītāji</cds-table-header-cell>
                 </cds-table-header-row>
               </cds-table-head>
               <cds-table-toolbar slot="toolbar">
@@ -318,6 +319,7 @@ export const Parvaldit = () => {
                       label-a="Izvēlēts"
                       label-b="Nav izvēlēts"></cds-toggle
                   ></cds-table-cell>
+                  <cds-table-cell>1</cds-table-cell>
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>
@@ -345,6 +347,7 @@ export const Parvaldit = () => {
                     >HP darbības nosaukums</cds-table-header-cell
                   >
                   <cds-table-header-cell>Īstenošana</cds-table-header-cell>
+                  <cds-table-header-cell>HP rādītāji</cds-table-header-cell>
                 </cds-table-header-row>
               </cds-table-head>
               <cds-table-toolbar slot="toolbar">
@@ -375,6 +378,7 @@ export const Parvaldit = () => {
                       label-a="Izvēlēts"
                       label-b="Nav izvēlēts"></cds-toggle
                   ></cds-table-cell>
+                  <cds-table-cell>2</cds-table-cell>
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>

@@ -2,6 +2,7 @@ import { html } from 'lit-html';
 import storyDocs from './pi-darbibas-hp-story.mdx';
 import './pi-darbibas-hp';
 import styles from '../../../../../../../../assets/css/themes.css';
+import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 
 export const Propsed = () => {
   return html`
@@ -190,7 +191,7 @@ export const Propsed = () => {
                 <cds-inline-notification
                   style="min-width: 100%;"
                   title="Darbība veiksmīgi pievienota"
-                  subtitle="Lūdzu, aizpildiet darbības īstenošanas aprakstu, ja darbībai tas ir nepieciešams."
+                  subtitle="Lūdzu, aizpildiet darbības īstenošanas aprakstu, ja tas ir nepieciešams. Klikšķiniet uz izvēlnes ikonas ar trim punktiem rindas beigās un izvēlieties “Labot”."
                   kind="info"
                   low-contrast>
                 </cds-inline-notification>
@@ -216,12 +217,25 @@ export const Propsed = () => {
                   <cds-table-header-cell
                     >HP darbības nosaukums</cds-table-header-cell
                   >
+                  <cds-table-header-cell></cds-table-header-cell>
                 </cds-table-header-row>
               </cds-table-head>
               <cds-table-body>
                 <cds-table-row>
                   <cds-table-cell>KD95</cds-table-cell>
                   <cds-table-cell>Klimata risku izvērtējums</cds-table-cell>
+                  <cds-table-cell>
+                    <cds-overflow-menu>
+                      ${OverflowMenuVertical16({
+                        class: `cds--overflow-menu__icon`,
+                        slot: 'icon',
+                      })}
+                      <span slot="tooltip-content"> Opcijas </span>
+                      <cds-overflow-menu-body flipped>
+                        <cds-overflow-menu-item>Labot</cds-overflow-menu-item>
+                      </cds-overflow-menu-body>
+                    </cds-overflow-menu>
+                  </cds-table-cell>
                 </cds-table-row>
                 <cds-table-expanded-row> </cds-table-expanded-row>
                 <cds-table-row>
@@ -230,6 +244,18 @@ export const Propsed = () => {
                     >HP jautājumu integrēšana projekta pasākumu un izstrādāto
                     materiālu saturā</cds-table-cell
                   >
+                  <cds-table-cell>
+                    <cds-overflow-menu>
+                      ${OverflowMenuVertical16({
+                        class: `cds--overflow-menu__icon`,
+                        slot: 'icon',
+                      })}
+                      <span slot="tooltip-content"> Opcijas </span>
+                      <cds-overflow-menu-body flipped>
+                        <cds-overflow-menu-item>Labot</cds-overflow-menu-item>
+                      </cds-overflow-menu-body>
+                    </cds-overflow-menu>
+                  </cds-table-cell>
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>
