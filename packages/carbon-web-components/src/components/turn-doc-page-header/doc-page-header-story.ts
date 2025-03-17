@@ -25,7 +25,7 @@ export const Propsed = () => {
         </cds-breadcrumb>
       </span>
       <span slot="button">
-        <cds-button>Button</cds-button>
+        <cds-button kind="secondary" size="sm">Pārbaudīt sadaļu</cds-button>
       </span>
     </cds-doc-page-header>
   `;
@@ -47,7 +47,7 @@ export const Propsed1 = () => {
         </cds-breadcrumb>
       </span>
       <span slot="button">
-        <cds-button>Button</cds-button>
+        <cds-button kind="secondary" size="sm">Pārbaudīt sadaļu</cds-button>
       </span>
     </cds-doc-page-header>
   `;
@@ -62,7 +62,7 @@ export const Propsed2 = () => {
         <cds-link href="/#">< Atpakaļ uz sarakstu</cds-link>
       </span>
       <span slot="button">
-        <cds-button>Button</cds-button>
+        <cds-button kind="secondary" size="sm">Pārbaudīt sadaļu</cds-button>
       </span>
     </cds-doc-page-header>
   `;

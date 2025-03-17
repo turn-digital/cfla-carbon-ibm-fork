@@ -5,9 +5,7 @@ import styles from '../../../../../../assets/css/themes.css';
 import Add16 from '@carbon/icons/lib/add/16';
 
 const statusArray = [
-  { text: 'Status 1', value: 'Status 1' },
-  { text: 'Status 2', value: 'Status 2' },
-  { text: 'Status 3', value: 'Status 3' },
+  { text: 'Darbinieka apstiprināts', value: 'Darbinieka apstiprināts' },
 ];
 
 const statusHistoryItemsArr = [
@@ -84,13 +82,7 @@ export const Propsed = () => {
           </div>
         </span>
         <span slot="content">
-          <cds-doc-page-tab-content withPrintDownload>
-            <span slot="tab-print-download">
-              <cds-print-download
-                downloadLink="https://example.com/download"
-                printLink="https://example.com/print">
-              </cds-print-download
-            ></span>
+          <cds-doc-page-tab-content>
             <span slot="tab-content"
               ><cds-table size="sm">
                 <cds-table-header-title slot="title"

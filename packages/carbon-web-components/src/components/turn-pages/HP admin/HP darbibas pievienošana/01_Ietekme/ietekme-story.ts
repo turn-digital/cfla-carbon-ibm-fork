@@ -111,7 +111,7 @@ export const Propsed = () => {
                 low-contrast
                 kind="error"
                 title="Neatbilstošs minimālo darbību skaits"
-                subtitle="Minimālais nepieciešamais darbību skaits nevar pārsnniegt sistēmā esošo darbību skaitu.">
+                subtitle="Minimālais nepieciešamais darbību skaits nevar pārsniegt sistēmā esošo darbību skaitu.">
               </cds-inline-notification>
 
               <cds-divider size="6"></cds-divider>

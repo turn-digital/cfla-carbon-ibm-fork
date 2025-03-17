@@ -138,7 +138,7 @@ export const Propsed = () => {
 
               <cds-divider size="5"></cds-divider>
 
-              <cds-table size="sm" expandable>
+              <cds-table size="sm">
                 <cds-table-head>
                   <cds-table-header-row>
                     <cds-table-header-cell>ID</cds-table-header-cell>
@@ -163,7 +163,6 @@ export const Propsed = () => {
                         label-b="Nav izvēlēts"></cds-toggle
                     ></cds-table-cell>
                   </cds-table-row>
-                  <cds-table-expanded-row> </cds-table-expanded-row>
                   <cds-table-row>
                     <cds-table-cell>EF02</cds-table-cell>
                     <cds-table-cell
@@ -178,7 +177,6 @@ export const Propsed = () => {
                         label-b="Nav izvēlēts"></cds-toggle
                     ></cds-table-cell>
                   </cds-table-row>
-                  <cds-table-expanded-row> </cds-table-expanded-row>
                   <cds-table-row>
                     <cds-table-cell>EF03</cds-table-cell>
                     <cds-table-cell
@@ -195,7 +193,6 @@ export const Propsed = () => {
                         label-b="Nav izvēlēts"></cds-toggle
                     ></cds-table-cell>
                   </cds-table-row>
-                  <cds-table-expanded-row> </cds-table-expanded-row>
                 </cds-table-body>
               </cds-table>
 
