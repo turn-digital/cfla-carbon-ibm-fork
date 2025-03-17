@@ -3,7 +3,6 @@ import storyDocs from './darbibu-saraksts-story.mdx';
 import './darbibu-saraksts';
 import styles from '../../../../../assets/css/themes.css';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
-import Add16 from '@carbon/icons/lib/add/16';
 
 const statusArray = [
   { text: 'Darbinieka apstiprināts', value: 'Darbinieka apstiprināts' },
@@ -101,6 +100,19 @@ export const Propsed = () => {
               <cds-table-header-title slot="title"
                 >Atlases HP darbību saraksts</cds-table-header-title
               >
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-button
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    has-main-content="">
+                    Pārvaldīt grupas
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
               <cds-table-head>
                 <cds-table-header-row>
                   <cds-table-header-cell
@@ -396,7 +408,7 @@ export const Propsed = () => {
   </div>`;
 };
 
-export const Modal = () => {
+export const Mainit = () => {
   return html`
     <cds-modal
       class="cds-theme-zone-white cds-green-theme"
@@ -425,6 +437,65 @@ export const Modal = () => {
         >
         <cds-modal-footer-button kind="primary"
           >Nodot virskontrolei</cds-modal-footer-button
+        >
+      </cds-modal-footer>
+    </cds-modal>
+  `;
+};
+
+export const Labot = () => {
+  return html`
+    <cds-modal
+      class="cds-theme-zone-white cds-green-theme"
+      id="hp-admin-change-status-modal"
+      open>
+      <cds-modal-header>
+        <cds-modal-close-button></cds-modal-close-button>
+        <cds-modal-label>Atlases HP darbību saraksts</cds-modal-label>
+        <cds-modal-heading>HP grupu izvēle</cds-modal-heading>
+        <cds-divider></cds-divider>
+      </cds-modal-header>
+      <cds-modal-body>
+        <cds-checkbox-group legend-text="Horizontālo principu saraksts">
+          <cds-checkbox>Nenodarīt būtisku kaitējumu</cds-checkbox>
+          <cds-checkbox>Klimatdrošināšana</cds-checkbox>
+          <cds-checkbox checked>Energoefektivitāte pirmajā vietā</cds-checkbox>
+          <cds-checkbox checked disabled>VINPI</cds-checkbox>
+          <cds-subselection>
+            <cds-checkbox-group legend-text="VINPI vispārīgās darbības">
+              <cds-checkbox checked disabled
+                >VINPI vispārīgās darbības</cds-checkbox
+              >
+            </cds-checkbox-group>
+            <cds-divider size="3"></cds-divider>
+            <cds-checkbox-group legend-text="VINPI specifiskās darbības">
+              <cds-checkbox
+                >HP integrēšana izglītojošo un informatīvo materiālu un pasākumu
+                saturā</cds-checkbox
+              >
+              <cds-checkbox
+                >Projekta pasākumu satura un norises vietas
+                piekļūstamība</cds-checkbox
+              >
+              <cds-checkbox
+                >Atbalsta pasākumi zinātniskā darba veicējiem un
+                studējošiem</cds-checkbox
+              >
+              <cds-checkbox checked
+                >Pētījumi, izvērtējumi, aptaujas</cds-checkbox
+              >
+              <cds-checkbox>Veselību veicinoši pasākumi</cds-checkbox>
+            </cds-checkbox-group>
+          </cds-subselection>
+        </cds-checkbox-group>
+      </cds-modal-body>
+
+      <cds-modal-footer>
+        <cds-modal-footer-button kind="secondary" data-modal-close
+          >Atcelt</cds-modal-footer-button
+        >
+        <cds-modal-footer-button kind="primary"
+          >Saglabāt</cds-modal-footer-button
         >
       </cds-modal-footer>
     </cds-modal>

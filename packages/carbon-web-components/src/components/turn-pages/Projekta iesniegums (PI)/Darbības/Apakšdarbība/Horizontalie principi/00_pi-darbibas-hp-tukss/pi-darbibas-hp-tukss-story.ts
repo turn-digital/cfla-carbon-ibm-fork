@@ -235,7 +235,8 @@ export const Parvaldit = () => {
       <cds-modal-body>
         <cds-accordion>
           <cds-accordion-item title="Klimatdrošināšana">
-            <cds-table size="sm" expandable>
+            <cds-divider></cds-divider>
+            <cds-table size="sm">
               <cds-table-head>
                 <cds-table-header-row>
                   <cds-table-header-cell>ID</cds-table-header-cell>
@@ -272,14 +273,11 @@ export const Parvaldit = () => {
                       label-b="Nav izvēlēts"></cds-toggle
                   ></cds-table-cell>
                 </cds-table-row>
-                <cds-table-expanded-row>
-                  <cds-table-expanded-row-wrapper></cds-table-expanded-row-wrapper>
-                </cds-table-expanded-row>
-                <cds-divider></cds-divider>
               </cds-table-body>
             </cds-table>
           </cds-accordion-item>
           <cds-accordion-item title="VINPI - Vispārīgās darbības">
+            <cds-divider></cds-divider>
             <cds-table size="sm" expandable>
               <cds-table-head>
                 <cds-table-header-row>
@@ -288,6 +286,7 @@ export const Parvaldit = () => {
                     >HP darbības nosaukums</cds-table-header-cell
                   >
                   <cds-table-header-cell>Īstenošana</cds-table-header-cell>
+                  <cds-table-header-cell>HP rādītāji</cds-table-header-cell>
                 </cds-table-header-row>
               </cds-table-head>
               <cds-table-toolbar slot="toolbar">
@@ -318,6 +317,7 @@ export const Parvaldit = () => {
                       label-a="Izvēlēts"
                       label-b="Nav izvēlēts"></cds-toggle
                   ></cds-table-cell>
+                  <cds-table-cell>1</cds-table-cell>
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>
@@ -333,6 +333,7 @@ export const Parvaldit = () => {
           </cds-accordion-item>
           <cds-accordion-item
             title="VINPI specifiskās - HP integrēšana izglītojošo un informatīvo materiālu un pasākumu saturā">
+            <cds-divider></cds-divider>
             <cds-label-value
               label="Attiecas uz"
               value="Attiecas uz projektiem: <br> <ol><li>kuros tiek izstrādāti izglītojošie un informatīvie materiāli (stratēģijas, plāni, vadlīnijas, mācību programmas, metodiskie materiāli, informatīvie bukleti);</li><li>kuros tiek īstenoti klātienes un tiešsaistes pasākumi (mediju kampaņas, rīkotas konferences, semināri, festivāli, darba grupas, diskusijas u.c.)</li></ol> "></cds-label-value>
@@ -345,6 +346,7 @@ export const Parvaldit = () => {
                     >HP darbības nosaukums</cds-table-header-cell
                   >
                   <cds-table-header-cell>Īstenošana</cds-table-header-cell>
+                  <cds-table-header-cell>HP rādītāji</cds-table-header-cell>
                 </cds-table-header-row>
               </cds-table-head>
               <cds-table-toolbar slot="toolbar">
@@ -375,6 +377,7 @@ export const Parvaldit = () => {
                       label-a="Izvēlēts"
                       label-b="Nav izvēlēts"></cds-toggle
                   ></cds-table-cell>
+                  <cds-table-cell>2</cds-table-cell>
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>
