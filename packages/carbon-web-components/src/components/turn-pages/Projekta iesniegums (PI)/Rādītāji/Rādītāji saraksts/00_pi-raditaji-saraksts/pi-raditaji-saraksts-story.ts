@@ -4,6 +4,7 @@ import './pi-raditaji-saraksts';
 import styles from '../../../../../../../assets/css/themes.css';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 import Download16 from '@carbon/icons/lib/download/16';
+import Edit16 from '@carbon/icons/lib/edit/16';
 
 export const Propsed = () => {
   return html`
@@ -126,14 +127,18 @@ export const Propsed = () => {
                   <cds-label-value label="Rādītāja veids" value="Iznākuma">
                   </cds-label-value>
                   <cds-divider size="5"></cds-divider>
-                  <cds-label-value
-                    label="Sākuma vērtība"
-                    value="⚠️ Nav ievadīts">
+                  <cds-label-value label="Sākuma vērtība">
+                    <span class="turn-body-compact-01">⚠️ Nav ievadīts</span>
+                    <cds-button kind="ghost" size="sm">
+                      ${Edit16({ slot: 'icon' })}
+                    </cds-button>
                   </cds-label-value>
                   <cds-divider size="5"></cds-divider>
-                  <cds-label-value
-                    label="Beigu vērtība"
-                    value="⚠️ Nav ievadīts">
+                  <cds-label-value label="Beigu vērtība">
+                    <span class="turn-body-compact-01">⚠️ Nav ievadīts</span>
+                    <cds-button kind="ghost" size="sm">
+                      ${Edit16({ slot: 'icon' })}
+                    </cds-button>
                   </cds-label-value>
                   <cds-divider size="5"></cds-divider>
                   <cds-label-value
@@ -212,12 +217,11 @@ export const Propsed = () => {
 
               <cds-table-expanded-row>
                 <cds-table-expanded-row-wrapper>
-                  <cds-label-value label="Rādītāja veids" value="Iznākuma">
-                  </cds-label-value>
-                  <cds-divider size="5"></cds-divider>
-                  <cds-label-value
-                    label="Beigu vērtība"
-                    value="⚠️ Nav ievadīts">
+                  <cds-label-value label="Beigu vērtība">
+                    <span class="turn-body-compact-01">⚠️ Nav ievadīts</span>
+                    <cds-button kind="ghost" size="sm">
+                      ${Edit16({ slot: 'icon' })}
+                    </cds-button>
                   </cds-label-value>
                   <cds-divider size="5"></cds-divider>
                   <cds-label-value

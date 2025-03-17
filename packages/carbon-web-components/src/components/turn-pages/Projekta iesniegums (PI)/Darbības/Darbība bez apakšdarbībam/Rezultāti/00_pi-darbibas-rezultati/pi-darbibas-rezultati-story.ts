@@ -4,6 +4,7 @@ import './pi-darbibas-rezultati';
 import styles from '../../../../../../../../assets/css/themes.css';
 import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16';
 import Download16 from '@carbon/icons/lib/download/16';
+import Edit16 from '@carbon/icons/lib/edit/16';
 
 export const Propsed = () => {
   return html`
@@ -52,12 +53,19 @@ export const Propsed = () => {
           <div class="cds--subgrid cds--subgrid--condensed">
             <div
               class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-              <cds-label-value label="Darbības apraksts" value="Nav pievienots">
+              <cds-label-value label="Darbības apraksts">
+                <span class="turn-body-compact-01">Nav pievienots</span>
+                <cds-button kind="ghost" size="sm">
+                  ${Edit16({ slot: 'icon' })}
+                </cds-button>
               </cds-label-value>
               <cds-divider size="6"></cds-divider>
-              <cds-label-value
-                label="Vai darbībai pardzētas apakšdarbības?"
-                value="Nē, nav apakšdarbību"></cds-label-value>
+              <cds-label-value label="Vai darbībai pardzētas apakšdarbības?">
+                <span class="turn-body-compact-01">Nē, nav apakšdarbību</span>
+                <cds-button kind="ghost" size="sm">
+                  ${Edit16({ slot: 'icon' })}
+                </cds-button>
+              </cds-label-value>
               <cds-divider size="6"></cds-divider>
             </div>
           </div>
@@ -170,9 +178,12 @@ export const Propsed = () => {
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>
-                    <cds-label-value
-                      label="Piezīme"
-                      value="⚠️ Nav ievadīts"></cds-label-value>
+                    <cds-label-value label="Piezīme">
+                      <span class="turn-body-compact-01">⚠️ Nav ievadīts</span>
+                      <cds-button kind="ghost" size="sm">
+                        ${Edit16({ slot: 'icon' })}
+                      </cds-button>
+                    </cds-label-value>
                   </cds-table-expanded-row-wrapper>
                 </cds-table-expanded-row>
                 <cds-table-row>
@@ -184,7 +195,11 @@ export const Propsed = () => {
                 </cds-table-row>
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper>
-                    <cds-label-value label="Piezīme" value="⚠️ Nav ievadīts">
+                    <cds-label-value label="Piezīme">
+                      <span class="turn-body-compact-01">⚠️ Nav ievadīts</span>
+                      <cds-button kind="ghost" size="sm">
+                        ${Edit16({ slot: 'icon' })}
+                      </cds-button>
                     </cds-label-value>
                     <cds-divider size="5"></cds-divider>
                     <cds-label-value

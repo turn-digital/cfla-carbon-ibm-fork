@@ -2019,6 +2019,14 @@ body.cds-theme-zone-white {
   }
 }
 
+.turn-body-compact-01 {
+  color: #161616;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.16px;
+}
+
 :host(.cds-green-theme),
 .cds-green-theme {
   --cds-interactive: #027070;

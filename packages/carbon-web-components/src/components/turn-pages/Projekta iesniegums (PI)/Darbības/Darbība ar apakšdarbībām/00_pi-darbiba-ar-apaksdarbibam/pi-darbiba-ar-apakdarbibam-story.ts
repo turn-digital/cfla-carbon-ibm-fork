@@ -4,6 +4,7 @@ import './pi-darbiba-ar-apakdarbibam';
 import styles from '../../../../../../../assets/css/themes.css';
 import Download16 from '@carbon/icons/lib/download/16';
 import Add16 from '@carbon/icons/lib/add/16';
+import Edit16 from '@carbon/icons/lib/edit/16';
 
 export const Propsed = () => {
   return html`
@@ -54,12 +55,18 @@ export const Propsed = () => {
           <div class="cds--subgrid cds--subgrid--condensed">
             <div
               class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-              <cds-label-value label="Darbības apraksts" value="Nav pievienots">
+              <cds-label-value label="Darbības apraksts">
+                <span class="turn-body-compact-01">Nav pievienots</span>
+                <cds-button kind="ghost" size="sm">
+                  ${Edit16({ slot: 'icon' })}
+                </cds-button>
               </cds-label-value>
               <cds-divider size="6"></cds-divider>
-              <cds-label-value
-                label="Vai darbībai pardzētas apakšdarbības?"
-                value="Jā ir apakšdarbības">
+              <cds-label-value label="Vai darbībai pardzētas apakšdarbības?">
+                <span class="turn-body-compact-01">Jā ir apakšdarbības</span>
+                <cds-button kind="ghost" size="sm">
+                  ${Edit16({ slot: 'icon' })}
+                </cds-button>
               </cds-label-value>
             </div>
           </div>
