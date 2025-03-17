@@ -27,7 +27,6 @@ export const Default = () => {
         <cds-table-header-cell>ID</cds-table-header-cell>
         <cds-table-header-cell>HP darbības nosaukums</cds-table-header-cell>
         <cds-table-header-cell>Projekti, kuros izvēlēts</cds-table-header-cell>
-        <cds-table-header-cell>Īstenošana</cds-table-header-cell>
       </cds-table-header-row>
     </cds-table-head>
     <cds-table-body>
@@ -37,12 +36,6 @@ export const Default = () => {
           >Pētījumos integrēti dzimumu līdztiesības jautājumi</cds-table-cell
         >
         <cds-table-cell>0</cds-table-cell>
-        <cds-table-cell
-          ><cds-toggle
-            size="sm"
-            label-a="Izvēlēts"
-            label-b="Nav izvēlēts"></cds-toggle
-        ></cds-table-cell>
       </cds-table-row>
       <cds-table-expanded-row>
         <cds-table-expanded-row-wrapper>

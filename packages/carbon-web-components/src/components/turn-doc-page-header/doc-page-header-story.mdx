@@ -3,14 +3,31 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
 # doc-page-header
 
+## Apraksts
+
+Sadaļas galvenes komponents, kas parāda sadaļas nosaukumu un galveno pieejamo
+darbību. Tas arī palīdz lietotājam orientēties sistēmā, nodrošinot iespēju
+pārvietoties starp sadaļām un atgriezties uz iepriekšējo līmeni.
+
 ## Anatomija
 
-- title - virsraksts
-- type - virsraksta tips (title, subtitle)
+- Title - virsraksts, ietver atvērtās sadaļas vai apakšsadaļas nosaukumu.
+- Type (title, subtitle) – virsraksta tips. Ja sadaļas nosaukums ir īss (līdz 3
+  vārdiem), izmanto Title; ja garāks – Subtitle. Piemēram, projekta iesniegumā
+  Title tiek izmantots lielajām sadaļām (Darbības, Rādītāji u.tml), bet subtitle
+  – atverot konkrētu darbību vai rādītāju, lai atspoguļotu tā nosaukumu.
+- Button slot – vieta, kas paredzēta galvenajai darbībai ar sadaļu (piemēram,
+  projekta iesnieguma gadījumā – "Pārbaudīt").
+- Breadcrumb - vieta, kur ievietot navigācijas elementu. Iespējami 2 varianti:
+  - Atpakaļceļa navigācija – izmanto, ja sadaļām ir loģiska hierarhija un
+    lietotājs var pārvietoties starp līmeņiem.
+  - Saite “atpakaļ” – izmanto gadījumos, kad nav stingri definētas hierarhijas
+    un nepieciešama ātra atgriešanās uz iepriekšējo skatu.
 
 ## Dizaina un UX komentāri
 
-Tiek izmantots Veidalapa kā satura sadaļu galvene
+Komponentu var izmantot gan veidlapā gan sistēmas sadaļā. Šobrīd pamatā
+izmantots projekta iesnieguma sadaļās.
 
 ## Getting started
 
@@ -35,7 +52,7 @@ Tiek izmantots Veidalapa kā satura sadaļu galvene
     </cds-breadcrumb>
   </span>
   <span slot="button">
-    <cds-button>Button</cds-button>
+    <cds-button kind="secondary" size="sm">Pārbaudīt sadaļu</cds-button>
   </span>
 </cds-doc-page-header>
 <cds-doc-page-header
@@ -45,7 +62,7 @@ Tiek izmantots Veidalapa kā satura sadaļu galvene
     <cds-link href="/#">< Atpakaļ uz sarakstu</cds-link>
   </span>
   <span slot="button">
-    <cds-button>Button</cds-button>
+    <cds-button kind="secondary" size="sm">Pārbaudīt sadaļu</cds-button>
   </span>
 </cds-doc-page-header>
 ```
