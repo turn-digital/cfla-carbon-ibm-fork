@@ -195,12 +195,6 @@ export const Propsed = () => {
                 <cds-table-toolbar-content>
                   <cds-table-toolbar-search
                     placeholder="Filter table"></cds-table-toolbar-search>
-                  <cds-button kind="ghost"
-                    >${Download16({
-                      slot: 'icon',
-                      fill: 'black',
-                    })}
-                  </cds-button>
                   <cds-button
                     kind="secondary"
                     tooltip-alignment=""
@@ -255,12 +249,6 @@ export const Parvaldit = () => {
                 <cds-table-toolbar-content>
                   <cds-table-toolbar-search
                     placeholder="Filter table"></cds-table-toolbar-search>
-                  <cds-button kind="ghost"
-                    >${Download16({
-                      slot: 'icon',
-                      fill: 'black',
-                    })}
-                  </cds-button>
                   <cds-button
                     kind="secondary"
                     tooltip-alignment=""
@@ -273,22 +261,6 @@ export const Parvaldit = () => {
                 </cds-table-toolbar-content>
               </cds-table-toolbar>
               <cds-table-body>
-                <cds-table-row>
-                  <cds-table-cell>KD89</cds-table-cell>
-                  <cds-table-cell
-                    >Noturība pret klimatiskajiem riskiem</cds-table-cell
-                  >
-                  <cds-table-cell
-                    ><cds-toggle
-                      size="sm"
-                      label-a="Izvēlēts"
-                      label-b="Nav izvēlēts"></cds-toggle
-                  ></cds-table-cell>
-                </cds-table-row>
-                <cds-table-expanded-row>
-                  <cds-table-expanded-row-wrapper>
-                  </cds-table-expanded-row-wrapper>
-                </cds-table-expanded-row>
                 <cds-table-row>
                   <cds-table-cell>KD95</cds-table-cell>
                   <cds-table-cell>Klimata risku izvērtējumus</cds-table-cell>
@@ -303,6 +275,7 @@ export const Parvaldit = () => {
                 <cds-table-expanded-row>
                   <cds-table-expanded-row-wrapper></cds-table-expanded-row-wrapper>
                 </cds-table-expanded-row>
+                <cds-divider></cds-divider>
               </cds-table-body>
             </cds-table>
           </cds-accordion-item>
@@ -321,12 +294,6 @@ export const Parvaldit = () => {
                 <cds-table-toolbar-content>
                   <cds-table-toolbar-search
                     placeholder="Filter table"></cds-table-toolbar-search>
-                  <cds-button kind="ghost"
-                    >${Download16({
-                      slot: 'icon',
-                      fill: 'black',
-                    })}
-                  </cds-button>
                   <cds-button
                     kind="secondary"
                     tooltip-alignment=""
@@ -360,20 +327,7 @@ export const Parvaldit = () => {
                     </cds-label-value>
                   </cds-table-expanded-row-wrapper>
                 </cds-table-expanded-row>
-                <cds-table-row>
-                  <cds-table-cell>Visp74</cds-table-cell>
-                  <cds-table-cell>Sadaļas Viegli lasīt izveide</cds-table-cell>
-                  <cds-table-cell
-                    ><cds-toggle
-                      checked
-                      size="sm"
-                      label-a="Izvēlēts"
-                      label-b="Nav izvēlēts"></cds-toggle
-                  ></cds-table-cell>
-                </cds-table-row>
-                <cds-table-expanded-row>
-                  <cds-table-expanded-row-wrapper></cds-table-expanded-row-wrapper>
-                </cds-table-expanded-row>
+                <cds-divider size="8"></cds-divider>
               </cds-table-body>
             </cds-table>
           </cds-accordion-item>
@@ -397,12 +351,6 @@ export const Parvaldit = () => {
                 <cds-table-toolbar-content>
                   <cds-table-toolbar-search
                     placeholder="Filter table"></cds-table-toolbar-search>
-                  <cds-button kind="ghost"
-                    >${Download16({
-                      slot: 'icon',
-                      fill: 'black',
-                    })}
-                  </cds-button>
                   <cds-button
                     kind="secondary"
                     tooltip-alignment=""
@@ -469,6 +417,18 @@ export const Parvaldit = () => {
                 </cds-table-expanded-row>
               </cds-table-body>
             </cds-table>
+            <!--need to solve the problem with scrolled modal when opened-->
+            <div style="opacity: 0;">
+              <cds-table size="xs" expandable>
+                <cds-table-body>
+                  <cds-table-row>
+                    <cds-table-cell>placeholder</cds-table-cell>
+                    <cds-table-cell>placeholder</cds-table-cell>
+                  </cds-table-row>
+                </cds-table-body>
+              </cds-table>
+            </div>
+            <!--need to solve the problem with scrolled modal when opened-->
           </cds-accordion-item>
         </cds-accordion>
       </cds-modal-body>

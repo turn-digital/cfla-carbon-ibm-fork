@@ -420,6 +420,18 @@ export const Modal = () => {
             </cds-table-expanded-row>
           </cds-table-body>
         </cds-table>
+        <!--need to solve the problem with scrolled modal when opened-->
+        <div style="opacity: 0;">
+          <cds-table size="xs" expandable>
+            <cds-table-body>
+              <cds-table-row>
+                <cds-table-cell>placeholder</cds-table-cell>
+                <cds-table-cell>placeholder</cds-table-cell>
+              </cds-table-row>
+            </cds-table-body>
+          </cds-table>
+        </div>
+        <!--need to solve the problem with scrolled modal when opened-->
       </cds-modal-body>
       <cds-modal-footer>
         <cds-modal-footer-button kind="secondary" data-modal-close
