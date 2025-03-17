@@ -3,7 +3,7 @@ import storyDocs from './pi-darbibas-hp-tukss-story.mdx';
 import './pi-darbibas-hp-tukss';
 import styles from '../../../../../../../../assets/css/themes.css';
 import Add16 from '@carbon/icons/lib/add/16';
-import Download16 from '@carbon/icons/lib/download/16';
+import Edit16 from '@carbon/icons/lib/edit/16';
 
 export const Propsed = () => {
   return html`
@@ -55,14 +55,21 @@ export const Propsed = () => {
           <div class="cds--subgrid cds--subgrid--condensed">
             <div
               class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
-              <cds-label-value
-                label="1. līmeņa darbība"
-                value="Vētru postījumu mazinošas infrastruktūras (t. sk. “zaļās” infrastruktūras) un aprīkojuma iegāde un izveide">
+              <cds-label-value label="1. līmeņa darbība">
+                <span class="turn-body-compact-01"
+                  >Vētru postījumu mazinošas infrastruktūras (t. sk. “zaļās”
+                  infrastruktūras) un aprīkojuma iegāde un izveide</span
+                >
+                <cds-button kind="ghost" size="sm">
+                  ${Edit16({ slot: 'icon' })}
+                </cds-button>
               </cds-label-value>
               <cds-divider size="6"></cds-divider>
-              <cds-label-value
-                label="Apakšdarbības apraksts"
-                value="Nav pievienots">
+              <cds-label-value label="Apakšdarbības apraksts">
+                <span class="turn-body-compact-01">Nav pievienots</span>
+                <cds-button kind="ghost" size="sm">
+                  ${Edit16({ slot: 'icon' })}
+                </cds-button>
               </cds-label-value>
               <cds-divider size="6"></cds-divider>
             </div>
