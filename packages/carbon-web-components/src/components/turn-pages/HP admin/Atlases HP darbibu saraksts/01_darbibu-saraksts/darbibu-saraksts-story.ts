@@ -6,9 +6,7 @@ import OverflowMenuVertical16 from '@carbon/icons/lib/overflow-menu--vertical/16
 import Add16 from '@carbon/icons/lib/add/16';
 
 const statusArray = [
-  { text: 'Status 1', value: 'Status 1' },
-  { text: 'Status 2', value: 'Status 2' },
-  { text: 'Status 3', value: 'Status 3' },
+  { text: 'Darbinieka apstiprināts', value: 'Darbinieka apstiprināts' },
 ];
 
 const statusHistoryItemsArr = [

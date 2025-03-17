@@ -70,7 +70,6 @@ export const Propsed = () => {
                   <span slot="tooltip-content"> Opcijas </span>
                   <cds-overflow-menu-body>
                     <cds-overflow-menu-item>Labot</cds-overflow-menu-item>
-                    <cds-overflow-menu-item>Kopēt</cds-overflow-menu-item>
                     <cds-overflow-menu-item divider danger
                       >Dzēst</cds-overflow-menu-item
                     >
@@ -93,7 +92,6 @@ export const Propsed = () => {
                   <span slot="tooltip-content"> Opcijas </span>
                   <cds-overflow-menu-body>
                     <cds-overflow-menu-item>Labot</cds-overflow-menu-item>
-                    <cds-overflow-menu-item>Kopēt</cds-overflow-menu-item>
                     <cds-overflow-menu-item divider danger
                       >Dzēst</cds-overflow-menu-item
                     >
