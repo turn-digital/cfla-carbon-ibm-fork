@@ -80,13 +80,7 @@ export const Propsed = () => {
         </div>
       </span>
       <span slot="content">
-        <cds-doc-page-tab-content withPrintDownload>
-          <span slot="tab-print-download">
-            <cds-print-download
-              downloadLink="https://example.com/download"
-              printLink="https://example.com/print">
-            </cds-print-download
-          ></span>
+        <cds-doc-page-tab-content>
           <span slot="tab-content">
             <cds-inline-notification
               style="min-width: 100%;"
