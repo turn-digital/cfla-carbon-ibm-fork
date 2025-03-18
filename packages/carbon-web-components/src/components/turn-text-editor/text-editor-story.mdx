@@ -3,6 +3,48 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
 # Text Editor
 
+## Apraksts
+
+Nodrošina iespēju ievadīt, rediģēt un formatēt tekstu. Ietver pamata teksta
+apstrādes funkcijas, treknrakstu, kursīvu, sarakstus, saites, atkāpes un
+līdzināšanu, kā arī papildu iespējas, virsrakstu izvēlni, pilnekrāna režīmu un
+formatējuma noņemšanas iespēju.
+
+## Anatomija
+
+Teksta ievades lauks – galvenā rediģēšanas zona, kur lietotājs raksta un formatē
+saturu.
+
+Rīkjosla – satur teksta formatēšanas un strukturēšanas rīkus.
+
+Virsrakstu izvēlne – ļauj izvēlēties virsrakstu līmeņus (H1, H2, H3 utt.).
+
+Saglabāšanas poga - iniciē saglabāšanas funkciju, tāpat kā klikšķis ārpus teksta
+ievadlauka.
+
+Atlikušo zīmju skaits - atspoguļo, cik garu tekstu drīkst ievadīt laukā. Ja
+ievadīto zīmju skaits pārsniedz atļauto, tiek parādīts kļūdas paziņojums
+
+Saistītā metadatu josla - teksta sagatavotāja vārds, uzvārds un pēdējais
+saglabāšanas datums.
+
+## Dizaina un UX komentāri
+
+- Rīkjoslas varianti – iespējami divi rīkjoslu varianti:
+  - Vienkāršotais redaktors – izmantojams vietās, kur nav iespējami dažādi
+    virsraksti un teksta līdzināšana.
+  - Pilnais redaktors – nodrošina visas formatēšanas iespējas, ieskaitot
+    virsrakstu izvēlni un teksta līdzināšanu.
+- Datu saglabāšana – redaktors automātiski saglabā datus, tiklīdz lietotājs ir
+  uzklikšķinājis ārpus lauka. Lai lietotājiem būtu lielāka pārliecība par
+  saglabāšanu, var pievienot saglabāšanas pogu.
+- Lasīšanas režīms – ja ievadītā informācija jāattēlo lasīšanas režīmā,
+  jāizmanto label+value komponents.
+- Ja formu aizpilda vairāki cilvēki, pie teksta redaktora var pievienot saistīto
+  metadatu joslu, kas palīdz saprast, kurš lietotājs ievadījis konkrēto saturu.
+
+## Getting started
+
 ### JS (via import)
 
 ```imoprt
@@ -10,12 +52,6 @@ import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 ```
 
 ### HTML
-
-### Component contains default config which have default parameters that can be changed if you pass something in config
-
-### So by default we can use text editor without anything like request_obj and max_char_length only passing title, id and last editor and we will have the default text-editor based on default config that is mentioned above any inserted data will be stored in localstorage under id + \_content
-
-Also custom variants with some props
 
 ```html
     <cds-text-editor
