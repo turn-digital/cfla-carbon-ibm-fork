@@ -58,14 +58,6 @@ export const Propsed = () => {
           <cds-table size="sm">
             <cds-table-toolbar slot="toolbar">
               <cds-table-toolbar-content>
-                <cds-table-toolbar-search
-                  placeholder="Filter table"></cds-table-toolbar-search>
-                <cds-button kind="ghost"
-                  >${Download16({
-                    slot: 'icon',
-                    fill: 'black',
-                  })}
-                </cds-button>
                 <cds-button
                   kind="secondary"
                   tooltip-alignment=""
