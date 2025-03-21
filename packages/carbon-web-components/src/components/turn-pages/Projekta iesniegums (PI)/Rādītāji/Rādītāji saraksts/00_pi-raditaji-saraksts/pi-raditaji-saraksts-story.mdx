@@ -1,3 +1,300 @@
+### Propsed
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
+    <link
+      rel="stylesheet"
+      href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
+    <script
+      src="https://demo.turn.lv/cfla_dist/button.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-contextual-header.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-doc-page-header.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-label-value-horizontal.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/link.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/overflow-menu.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-table-expanded-row-wrapper.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/tag.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/text-input.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/toggle.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/breadcrumb.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/checkbox.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/modal.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/data-table.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/accordion.min.js"
+      type="module"></script>
+  </head>
+  <body>
+    <div class="cds-theme-zone-white cds-blue-theme">
+      <div class="cds--css-grid cds--css-grid--narrow">
+        <div class="cds--css-grid-column cds--col-span-100">
+          <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19/A/043">
+            <cds-label-value-horizontal label="Projekta nosaukums">
+              <cds-link href="#"
+                >MVU inovatīvas uzņēmējdarbības attīstība
+              </cds-link>
+            </cds-label-value-horizontal>
+            <cds-divider size="3"></cds-divider>
+            <cds-label-value-horizontal label="Iesniedzējs">
+              Latvijas Universitāte
+            </cds-label-value-horizontal>
+            <cds-divider size="3"></cds-divider>
+            <cds-label-value-horizontal label="Projekta iensieguma statuss">
+              <cds-tag type="blue">Sagatavošanā</cds-tag> 25.10.2019 10:34
+            </cds-label-value-horizontal>
+          </cds-contextual-header>
+
+          <cds-doc-page-header type="subtitle" title="Rādītāji">
+            <span slot="breadcrumb">
+              <cds-breadcrumb no-trailing-slash>
+                <cds-breadcrumb-item>
+                  <cds-breadcrumb-link href="/#"
+                    >Projekta iesniegums</cds-breadcrumb-link
+                  >
+                </cds-breadcrumb-item>
+                <cds-breadcrumb-item> Rādītāji </cds-breadcrumb-item>
+              </cds-breadcrumb>
+            </span>
+            <span slot="button">
+              <cds-button kind="secondary" size="sm"
+                >Pārbaudīt sadaļu</cds-button
+              >
+            </span>
+          </cds-doc-page-header>
+          <cds-divider size="10"></cds-divider>
+          <cds-table size="sm" expandable>
+            <cds-table-header-title slot="title">
+              Uzraudzības rādītāji
+            </cds-table-header-title>
+            <cds-table-header-description slot="description">
+              Globāli visā projektā definēti atlases līmenī, jāsasniedz projekta
+              beigās. Vienu un to pašu rādītāju var sasniegt ar vairākām
+              darbībām. Rādītāja vērtība kopīga visā projektā nav jādala pa
+              darbībām.
+            </cds-table-header-description>
+            <cds-table-toolbar slot="toolbar">
+              <cds-table-toolbar-content>
+                <cds-table-toolbar-search
+                  placeholder="Filter table"></cds-table-toolbar-search>
+                <cds-button kind="ghost"
+                  >${Download16({ slot: 'icon', fill: 'black', })}
+                </cds-button>
+                <cds-button
+                  kind="secondary"
+                  tooltip-alignment=""
+                  tooltip-position="top"
+                  type="button"
+                  id="modal-example-button"
+                  has-main-content="">
+                  Pārvaldīt
+                </cds-button>
+              </cds-table-toolbar-content>
+            </cds-table-toolbar>
+            <cds-table-head>
+              <cds-table-header-row>
+                <cds-table-header-cell>ID</cds-table-header-cell>
+                <cds-table-header-cell
+                  >Rādītāja nosaukums</cds-table-header-cell
+                >
+                <cds-table-header-cell>Mērvienība</cds-table-header-cell>
+                <cds-table-header-cell>Beigu vērtība</cds-table-header-cell>
+                <cds-table-header-cell></cds-table-header-cell>
+              </cds-table-header-row>
+            </cds-table-head>
+            <cds-table-body>
+              <cds-table-row>
+                <cds-table-cell>N.2.1.3.1.a</cds-table-cell>
+                <cds-table-cell>
+                  Latvijas līdzdalības monitoringa ziņojuma sagatavošana,
+                  ietverot Eiropas Pētniecības telpas dimensijas, kas saistošas
+                  Latvijas pētniecības telpai
+                </cds-table-cell>
+                <cds-table-cell>Skaits</cds-table-cell>
+                <cds-table-cell>
+                  <cds-link href="https://www.ibm.com">
+                    Ievadīt vērtību
+                  </cds-link>
+                </cds-table-cell>
+                <cds-table-cell>
+                  <cds-overflow-menu toolbar-action>
+                    ${OverflowMenuVertical16({ class:
+                    `cds--overflow-menu__icon`, slot: 'icon', })}
+                    <span slot="tooltip-content"> Options </span>
+
+                    <cds-overflow-menu-body flipped>
+                      <cds-overflow-menu-item>
+                        Stop app
+                      </cds-overflow-menu-item>
+                      <cds-overflow-menu-item>
+                        Restart app
+                      </cds-overflow-menu-item>
+                      <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
+                    </cds-overflow-menu-body>
+                  </cds-overflow-menu>
+                </cds-table-cell>
+              </cds-table-row>
+
+              <cds-table-expanded-row>
+                <cds-table-expanded-row-wrapper>
+                  <cds-label-value label="Rādītāja veids" value="Iznākuma">
+                  </cds-label-value>
+                  <cds-divider size="5"></cds-divider>
+                  <cds-label-value label="Sākuma vērtība">
+                    <span class="turn-body-compact-01">⚠️ Nav ievadīts</span>
+                    <cds-button kind="ghost" size="sm">
+                      ${Edit16({ slot: 'icon' })}
+                    </cds-button>
+                  </cds-label-value>
+                  <cds-divider size="5"></cds-divider>
+                  <cds-label-value label="Beigu vērtība">
+                    <span class="turn-body-compact-01">⚠️ Nav ievadīts</span>
+                    <cds-button kind="ghost" size="sm">
+                      ${Edit16({ slot: 'icon' })}
+                    </cds-button>
+                  </cds-label-value>
+                  <cds-divider size="5"></cds-divider>
+                  <cds-label-value
+                    label="Saistītās darbības"
+                    value="<ul><li><cds-link href='https://www.ibm.com'>4 vētru postijumu mazinošas infrastruktūras (t.sk. “zaļās” infrastruktūras) un aprīkojuma iegāde un izveide</cds-link></li></ul>">
+                  </cds-label-value>
+                </cds-table-expanded-row-wrapper>
+              </cds-table-expanded-row>
+            </cds-table-body>
+          </cds-table>
+          <cds-divider size="6"></cds-divider>
+          <cds-table size="sm" expandable>
+            <cds-table-header-title slot="title">
+              HP rādītāji
+            </cds-table-header-title>
+            <cds-table-header-description slot="description">
+              HP rādītājus ir iespējams pārvaldīt darbību sadaļā pie attiecīgās
+              HP darbības.
+            </cds-table-header-description>
+            <cds-table-toolbar slot="toolbar">
+              <cds-table-toolbar-content>
+                <cds-table-toolbar-search
+                  placeholder="Filter table"></cds-table-toolbar-search>
+                <cds-button kind="ghost"
+                  >${Download16({ slot: 'icon', fill: 'black', })}
+                </cds-button>
+              </cds-table-toolbar-content>
+            </cds-table-toolbar>
+            <cds-table-head>
+              <cds-table-header-row>
+                <cds-table-header-cell>ID</cds-table-header-cell>
+                <cds-table-header-cell
+                  >HP Radītāja nosaukums</cds-table-header-cell
+                >
+                <cds-table-header-cell>Mērvienība</cds-table-header-cell>
+                <cds-table-header-cell>Beigu vērtība</cds-table-header-cell>
+                <cds-table-header-cell></cds-table-header-cell>
+              </cds-table-header-row>
+            </cds-table-head>
+            <cds-table-body>
+              <cds-table-row>
+                <cds-table-cell>Vinpi 02.1</cds-table-cell>
+                <cds-table-cell>
+                  Pasākumu un izstrādāto materiālu, kuru saturā integrēti
+                  nediskriminācijas jautājumi, tostarp par tiesiskajiem un
+                  praktiskajiem aspektiem, skaits
+                </cds-table-cell>
+                <cds-table-cell>Skaits</cds-table-cell>
+                <cds-table-cell>
+                  <cds-link href="https://www.ibm.com">
+                    Ievadīt vērtību
+                  </cds-link>
+                </cds-table-cell>
+                <cds-table-cell>
+                  <cds-overflow-menu toolbar-action>
+                    ${OverflowMenuVertical16({ class:
+                    `cds--overflow-menu__icon`, slot: 'icon', })}
+                    <span slot="tooltip-content"> Opcijas </span>
+
+                    <cds-overflow-menu-body flipped>
+                      <cds-overflow-menu-item>
+                        Stop app
+                      </cds-overflow-menu-item>
+                      <cds-overflow-menu-item>
+                        Restart app
+                      </cds-overflow-menu-item>
+                    </cds-overflow-menu-body>
+                  </cds-overflow-menu>
+                </cds-table-cell>
+              </cds-table-row>
+
+              <cds-table-expanded-row>
+                <cds-table-expanded-row-wrapper>
+                  <cds-label-value label="Beigu vērtība">
+                    <span class="turn-body-compact-01">⚠️ Nav ievadīts</span>
+                    <cds-button kind="ghost" size="sm">
+                      ${Edit16({ slot: 'icon' })}
+                    </cds-button>
+                  </cds-label-value>
+                  <cds-divider size="5"></cds-divider>
+                  <cds-label-value
+                    label="Saistītās darbības un HP darbības"
+                    value="<ul><li><cds-link href='https://www.ibm.com'>KD95 Klimata risku izvērtējums</cds-link></li><ul><li>Vinpi 02.1 Pasākumu un izstrādāto materiālu, kuru saturā integrēti nediskriminācijas jautājumi, tostarp par tiesiskajiem un praktiskajiem aspektiem, skaits</li></ul><li><cds-link href='https://www.ibm.com'>Izg01 HP jautājumu integrēšana projekta pasākumu un izstrādāto materiālu saturā</cds-link></li><ul><li>Vinpi 02.1 Pasākumu un izstrādāto materiālu, kuru saturā integrēti nediskriminācijas jautājumi, tostarp par tiesiskajiem un praktiskajiem aspektiem, skaits</li></ul></ul>">
+                  </cds-label-value>
+                  <cds-divider size="5"></cds-divider>
+                  <cds-label-value
+                    label="HP rādītāja vēsturiskais nosaukums"
+                    value="Izstrādāto vai pilnveidoto stratēģiju, izglītības programmu, metodisko līdzekļu, vadlīniju, mācību līdzekļu (tai skaitā digitālo), skaits, kuros integrēti jautājumi par dzimumu līdztiesību, personu ar invaliditāti vienlīdzīgām iespējām, diskriminācijas novēršanu vecuma, etniskās piederības un citu iemeslu dēļ, kā arī pamattiesību jautājumi, tostarp par tiesiskajiem un praktiskajiem aspektiem.">
+                  </cds-label-value>
+                </cds-table-expanded-row-wrapper>
+              </cds-table-expanded-row>
+            </cds-table-body>
+          </cds-table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
 ### Parvaldit modal
 
 ```html
@@ -137,7 +434,8 @@
     <cds-modal-footer-button kind="primary">Saglabāt</cds-modal-footer-button>
   </cds-modal-footer>
 </cds-modal>
-``` 
+```
+
 ### Ievadisana modal
 
 ```html
@@ -185,293 +483,4 @@
     <cds-modal-footer-button kind="primary">Saglabāt</cds-modal-footer-button>
   </cds-modal-footer>
 </cds-modal>
-``` 
-
-### Propsed 
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
-    <link
-      rel="stylesheet"
-      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
-    <link
-      rel="stylesheet"
-      href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
-    <script
-      src="https://demo.turn.lv/cfla_dist/breadcrumb.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/accordion.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/button.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/data-table.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/link.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/overflow-menu.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/table.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/tag.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/turn-contextual-header.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/turn-doc-page-header.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/turn-label-value-horizontal.min.js"
-      type="module"></script>
-    <script
-      src="https://demo.turn.lv/cfla_dist/turn-table-expanded-row-wrapper.min.js"
-      type="module"></script>
-
-    <script
-      src="https://demo.turn.lv/cfla_dist/modal.min.js"
-      type="module"></script>
-  </head>
-  <body>
-    <div class="cds-theme-zone-white cds-blue-theme">
-      <div class="cds--css-grid cds--css-grid--narrow">
-        <div class="cds--css-grid-column cds--col-span-100">
-          <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19/A/043">
-            <cds-label-value-horizontal label="Projekta nosaukums">
-              <cds-link href="#"
-                >MVU inovatīvas uzņēmējdarbības attīstība
-              </cds-link>
-            </cds-label-value-horizontal>
-            <cds-divider size="3"></cds-divider>
-            <cds-label-value-horizontal label="Iesniedzējs">
-              Latvijas Universitāte
-            </cds-label-value-horizontal>
-            <cds-divider size="3"></cds-divider>
-            <cds-label-value-horizontal label="Projekta iensieguma statuss">
-              <cds-tag type="blue">Sagatavošanā</cds-tag> 25.10.2019 10:34
-            </cds-label-value-horizontal>
-          </cds-contextual-header>
-
-          <cds-doc-page-header type="subtitle" title="Rādītāji">
-            <span slot="breadcrumb">
-              <cds-breadcrumb no-trailing-slash>
-                <cds-breadcrumb-item>
-                  <cds-breadcrumb-link href="/#"
-                    >Projekta iesniegums</cds-breadcrumb-link
-                  >
-                </cds-breadcrumb-item>
-                <cds-breadcrumb-item> Rādītāji </cds-breadcrumb-item>
-              </cds-breadcrumb>
-            </span>
-            <span slot="button">
-              <cds-button kind="secondary" size="sm"
-                >Pārbaudīt sadaļu</cds-button
-              >
-            </span>
-          </cds-doc-page-header>
-          <cds-divider size="10"></cds-divider>
-          <cds-table size="sm" expandable>
-            <cds-table-header-title slot="title">
-              Uzraudzības rādītāji
-            </cds-table-header-title>
-            <cds-table-header-description slot="description">
-              Globāli visā projektā definēti atlases līmenī, jāsasniedz projekta
-              beigās. Vienu un to pašu rādītāju var sasniegt ar vairākām
-              darbībām. Rādītāja vērtība kopīga visā projektā nav jādala pa
-              darbībām.
-            </cds-table-header-description>
-            <cds-table-toolbar slot="toolbar">
-              <cds-table-toolbar-content>
-                <cds-table-toolbar-search
-                  placeholder="Filter table"></cds-table-toolbar-search>
-                <cds-button kind="ghost"
-                  >${Download16({ slot: 'icon', fill: 'black', })}
-                </cds-button>
-                <cds-button
-                  kind="secondary"
-                  tooltip-alignment=""
-                  tooltip-position="top"
-                  type="button"
-                  id="modal-example-button"
-                  has-main-content="">
-                  Pārvaldīt
-                </cds-button>
-              </cds-table-toolbar-content>
-            </cds-table-toolbar>
-            <cds-table-head>
-              <cds-table-header-row>
-                <cds-table-header-cell>ID</cds-table-header-cell>
-                <cds-table-header-cell
-                  >Rādītāja nosaukums</cds-table-header-cell
-                >
-                <cds-table-header-cell>Mērvienība</cds-table-header-cell>
-                <cds-table-header-cell>Beigu vērtība</cds-table-header-cell>
-                <cds-table-header-cell></cds-table-header-cell>
-              </cds-table-header-row>
-            </cds-table-head>
-            <cds-table-body>
-              <cds-table-row>
-                <cds-table-cell>N.2.1.3.1.a</cds-table-cell>
-                <cds-table-cell>
-                  Latvijas līdzdalības monitoringa ziņojuma sagatavošana,
-                  ietverot Eiropas Pētniecības telpas dimensijas, kas saistošas
-                  Latvijas pētniecības telpai
-                </cds-table-cell>
-                <cds-table-cell>Skaits</cds-table-cell>
-                <cds-table-cell>
-                  <cds-link href="https://www.ibm.com">
-                    Ievadīt vērtību
-                  </cds-link>
-                </cds-table-cell>
-                <cds-table-cell>
-                  <cds-overflow-menu toolbar-action>
-                    ${OverflowMenuVertical16({ class:
-                    `cds--overflow-menu__icon`, slot: 'icon', })}
-                    <span slot="tooltip-content"> Options </span>
-
-                    <cds-overflow-menu-body flipped>
-                      <cds-overflow-menu-item>
-                        Stop app
-                      </cds-overflow-menu-item>
-                      <cds-overflow-menu-item>
-                        Restart app
-                      </cds-overflow-menu-item>
-                      <cds-overflow-menu-item> Rename </cds-overflow-menu-item>
-                    </cds-overflow-menu-body>
-                  </cds-overflow-menu>
-                </cds-table-cell>
-              </cds-table-row>
-
-              <cds-table-expanded-row>
-                <cds-table-expanded-row-wrapper>
-                  <cds-label-value label="Rādītāja veids" value="Iznākuma">
-                  </cds-label-value>
-                  <cds-divider size="5"></cds-divider>
-                  <cds-label-value
-                    label="Sākuma vērtība"
-                    value="⚠️ Nav ievadīts">
-                  </cds-label-value>
-                  <cds-divider size="5"></cds-divider>
-                  <cds-label-value
-                    label="Beigu vērtība"
-                    value="⚠️ Nav ievadīts">
-                  </cds-label-value>
-                  <cds-divider size="5"></cds-divider>
-                  <cds-label-value
-                    label="Saistītās darbības"
-                    value="<ul><li><cds-link href='https://www.ibm.com'>4 vētru postijumu mazinošas infrastruktūras (t.sk. “zaļās” infrastruktūras) un aprīkojuma iegāde un izveide</cds-link></li></ul>">
-                  </cds-label-value>
-                </cds-table-expanded-row-wrapper>
-              </cds-table-expanded-row>
-            </cds-table-body>
-          </cds-table>
-          <cds-divider size="6"></cds-divider>
-          <cds-table size="sm" expandable>
-            <cds-table-header-title slot="title">
-              HP rādītāji
-            </cds-table-header-title>
-            <cds-table-header-description slot="description">
-              HP rādītājus ir iespējams pārvaldīt darbību sadaļā pie attiecīgās
-              HP darbības.
-            </cds-table-header-description>
-            <cds-table-toolbar slot="toolbar">
-              <cds-table-toolbar-content>
-                <cds-table-toolbar-search
-                  placeholder="Filter table"></cds-table-toolbar-search>
-                <cds-button kind="ghost"
-                  >${Download16({ slot: 'icon', fill: 'black', })}
-                </cds-button>
-              </cds-table-toolbar-content>
-            </cds-table-toolbar>
-            <cds-table-head>
-              <cds-table-header-row>
-                <cds-table-header-cell>ID</cds-table-header-cell>
-                <cds-table-header-cell
-                  >HP Radītāja nosaukums</cds-table-header-cell
-                >
-                <cds-table-header-cell>Mērvienība</cds-table-header-cell>
-                <cds-table-header-cell>Beigu vērtība</cds-table-header-cell>
-                <cds-table-header-cell></cds-table-header-cell>
-              </cds-table-header-row>
-            </cds-table-head>
-            <cds-table-body>
-              <cds-table-row>
-                <cds-table-cell>Vinpi 02.1</cds-table-cell>
-                <cds-table-cell>
-                  Pasākumu un izstrādāto materiālu, kuru saturā integrēti
-                  nediskriminācijas jautājumi, tostarp par tiesiskajiem un
-                  praktiskajiem aspektiem, skaits
-                </cds-table-cell>
-                <cds-table-cell>Skaits</cds-table-cell>
-                <cds-table-cell>
-                  <cds-link href="https://www.ibm.com">
-                    Ievadīt vērtību
-                  </cds-link>
-                </cds-table-cell>
-                <cds-table-cell>
-                  <cds-overflow-menu toolbar-action>
-                    ${OverflowMenuVertical16({ class:
-                    `cds--overflow-menu__icon`, slot: 'icon', })}
-                    <span slot="tooltip-content"> Opcijas </span>
-
-                    <cds-overflow-menu-body flipped>
-                      <cds-overflow-menu-item>
-                        Stop app
-                      </cds-overflow-menu-item>
-                      <cds-overflow-menu-item>
-                        Restart app
-                      </cds-overflow-menu-item>
-                    </cds-overflow-menu-body>
-                  </cds-overflow-menu>
-                </cds-table-cell>
-              </cds-table-row>
-
-              <cds-table-expanded-row>
-                <cds-table-expanded-row-wrapper>
-                  <cds-label-value label="Rādītāja veids" value="Iznākuma">
-                  </cds-label-value>
-                  <cds-divider size="5"></cds-divider>
-                  <cds-label-value
-                    label="Beigu vērtība"
-                    value="⚠️ Nav ievadīts">
-                  </cds-label-value>
-                  <cds-divider size="5"></cds-divider>
-                  <cds-label-value
-                    label="Saistītās darbības un HP darbības"
-                    value="<ul><li><cds-link href='https://www.ibm.com'>KD95 Klimata risku izvērtējums</cds-link></li><ul><li>Vinpi 02.1 Pasākumu un izstrādāto materiālu, kuru saturā integrēti nediskriminācijas jautājumi, tostarp par tiesiskajiem un praktiskajiem aspektiem, skaits</li></ul><li><cds-link href='https://www.ibm.com'>Izg01 HP jautājumu integrēšana projekta pasākumu un izstrādāto materiālu saturā</cds-link></li><ul><li>Vinpi 02.1 Pasākumu un izstrādāto materiālu, kuru saturā integrēti nediskriminācijas jautājumi, tostarp par tiesiskajiem un praktiskajiem aspektiem, skaits</li></ul></ul>">
-                  </cds-label-value>
-                  <cds-divider size="5"></cds-divider>
-                  <cds-label-value
-                    label="HP rādītāja vēsturiskais nosaukums"
-                    value="Izstrādāto vai pilnveidoto stratēģiju, izglītības programmu, metodisko līdzekļu, vadlīniju, mācību līdzekļu (tai skaitā digitālo), skaits, kuros integrēti jautājumi par dzimumu līdztiesību, personu ar invaliditāti vienlīdzīgām iespējām, diskriminācijas novēršanu vecuma, etniskās piederības un citu iemeslu dēļ, kā arī pamattiesību jautājumi, tostarp par tiesiskajiem un praktiskajiem aspektiem.">
-                  </cds-label-value>
-                </cds-table-expanded-row-wrapper>
-              </cds-table-expanded-row>
-            </cds-table-body>
-          </cds-table>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
-````
+```

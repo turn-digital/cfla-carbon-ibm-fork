@@ -151,56 +151,60 @@ export const Parvaldit = () => {
         <cds-divider size="5"></cds-divider>
       </cds-modal-header>
       <cds-modal-body>
-        <cds-table size="sm">
-          <cds-table-head>
-            <cds-table-header-row>
-              <cds-table-header-cell>Kods</cds-table-header-cell>
-              <cds-table-header-cell>Apakšdarbība</cds-table-header-cell>
-              <cds-table-header-cell>Īstenošana</cds-table-header-cell>
-            </cds-table-header-row>
-          </cds-table-head>
-          <cds-table-toolbar slot="toolbar">
-            <cds-table-toolbar-content>
-              <cds-button
-                kind="secondary"
-                tooltip-alignment=""
-                tooltip-position="top"
-                type="button"
-                id="modal-example-button"
-                has-main-content="">
-                Pievienot apakšdarbību ${Add16({ slot: 'icon' })}
-              </cds-button>
-            </cds-table-toolbar-content>
-          </cds-table-toolbar>
-          <cds-table-body>
-            <cds-table-row>
-              <cds-table-cell>8.1.</cds-table-cell>
-              <cds-table-cell>Informatīvās plāksnes izvietošana</cds-table-cell>
-              <cds-table-cell>
-                <cds-toggle
-                  checked
-                  size="sm"
-                  label-a="Izvēlēts"
-                  label-b="Nav izvēlēts">
-                </cds-toggle>
-              </cds-table-cell>
-            </cds-table-row>
-            <cds-table-row>
-              <cds-table-cell>8.2.</cds-table-cell>
-              <cds-table-cell
-                >Informācijas publicēšana tīmekļvietnē</cds-table-cell
-              >
-              <cds-table-cell>
-                <cds-toggle
-                  checked
-                  size="sm"
-                  label-a="Izvēlēts"
-                  label-b="Nav izvēlēts">
-                </cds-toggle>
-              </cds-table-cell>
-            </cds-table-row>
-          </cds-table-body>
-        </cds-table>
+        <cds-layer>
+          <cds-table size="sm">
+            <cds-table-head>
+              <cds-table-header-row>
+                <cds-table-header-cell>Kods</cds-table-header-cell>
+                <cds-table-header-cell>Apakšdarbība</cds-table-header-cell>
+                <cds-table-header-cell>Īstenošana</cds-table-header-cell>
+              </cds-table-header-row>
+            </cds-table-head>
+            <cds-table-toolbar slot="toolbar">
+              <cds-table-toolbar-content>
+                <cds-button
+                  kind="secondary"
+                  tooltip-alignment=""
+                  tooltip-position="top"
+                  type="button"
+                  id="modal-example-button"
+                  has-main-content="">
+                  Pievienot apakšdarbību ${Add16({ slot: 'icon' })}
+                </cds-button>
+              </cds-table-toolbar-content>
+            </cds-table-toolbar>
+            <cds-table-body>
+              <cds-table-row>
+                <cds-table-cell>8.1.</cds-table-cell>
+                <cds-table-cell
+                  >Informatīvās plāksnes izvietošana</cds-table-cell
+                >
+                <cds-table-cell>
+                  <cds-toggle
+                    checked
+                    size="sm"
+                    label-a="Izvēlēts"
+                    label-b="Nav izvēlēts">
+                  </cds-toggle>
+                </cds-table-cell>
+              </cds-table-row>
+              <cds-table-row>
+                <cds-table-cell>8.2.</cds-table-cell>
+                <cds-table-cell
+                  >Informācijas publicēšana tīmekļvietnē</cds-table-cell
+                >
+                <cds-table-cell>
+                  <cds-toggle
+                    checked
+                    size="sm"
+                    label-a="Izvēlēts"
+                    label-b="Nav izvēlēts">
+                  </cds-toggle>
+                </cds-table-cell>
+              </cds-table-row>
+            </cds-table-body>
+          </cds-table>
+        </cds-layer>
       </cds-modal-body>
       <cds-modal-footer>
         <cds-modal-footer-button kind="secondary" data-modal-close

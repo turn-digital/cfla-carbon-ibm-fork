@@ -1,3 +1,276 @@
+### Propsed
+
 ```html
-hp tab
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://demo.turn.lv/cfla_dist/assets/css/turn-carbon-grid.css" />
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/plex.css" />
+    <link
+      rel="stylesheet"
+      href="https://demo.turn.lv/cfla_dist/assets/css/themes.css" />
+
+    <script
+      src="https://demo.turn.lv/cfla_dist/accordion.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/breadcrumb.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/button.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-contextual-header.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/data-table.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-divider.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-doc-page-header.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-empty-state.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-label-value.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/turn-label-value-horizontal.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/link.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/tabs.min.js"
+      type="module"></script>
+    <script
+      src="https://demo.turn.lv/cfla_dist/tag.min.js"
+      type="module"></script>
+  </head>
+  <body>
+    <div class="cds-theme-zone-white cds-blue-theme">
+      <div class="cds--css-grid cds--css-grid--narrow">
+        <div class="cds--css-grid-column cds--col-span-100">
+          <cds-contextual-header title="Projekta iesniegums: 3.1.1.5/19/A/043">
+            <cds-label-value-horizontal label="Projekta nosaukums">
+              <cds-link href="#"
+                >MVU inovatīvas uzņēmējdarbības attīstība
+              </cds-link>
+            </cds-label-value-horizontal>
+            <cds-divider size="3"></cds-divider>
+            <cds-label-value-horizontal label="Iesniedzējs">
+              Latvijas Universitāte
+            </cds-label-value-horizontal>
+            <cds-divider size="3"></cds-divider>
+            <cds-label-value-horizontal label="Projekta iensieguma statuss">
+              <cds-tag type="blue">Sagatavošanā</cds-tag> 25.10.2019 10:34
+            </cds-label-value-horizontal>
+          </cds-contextual-header>
+
+          <cds-doc-page-header
+            type="subtitle"
+            title="1.Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām">
+            <span slot="breadcrumb">
+              <cds-breadcrumb no-trailing-slash>
+                <cds-breadcrumb-item>
+                  <cds-breadcrumb-link href="/#"
+                    >Projekta iesniegums</cds-breadcrumb-link
+                  >
+                </cds-breadcrumb-item>
+                <cds-breadcrumb-item>
+                  <cds-breadcrumb-link href="#">Darbības</cds-breadcrumb-link>
+                </cds-breadcrumb-item>
+                <cds-breadcrumb-item> 1.darbība </cds-breadcrumb-item>
+              </cds-breadcrumb>
+            </span>
+            <span slot="button">
+              <cds-button kind="secondary" size="sm"
+                >Pārbaudīt sadaļu</cds-button
+              >
+            </span>
+          </cds-doc-page-header>
+          <cds-divider size="10"></cds-divider>
+          <div class="cds--subgrid cds--subgrid--condensed">
+            <div
+              class="cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+              <cds-label-value label="Darbības apraksts">
+                <span class="turn-body-compact-01">Nav pievienots</span>
+                <cds-button kind="ghost" size="sm">
+                  ${Edit16({ slot: 'icon' })}
+                </cds-button>
+              </cds-label-value>
+              <cds-divider size="6"></cds-divider>
+              <cds-label-value label="Vai darbībai pardzētas apakšdarbības?">
+                <span class="turn-body-compact-01">Nē, nav apakšdarbību</span>
+                <cds-button kind="ghost" size="sm">
+                  ${Edit16({ slot: 'icon' })}
+                </cds-button>
+              </cds-label-value>
+              <cds-divider size="6"></cds-divider>
+            </div>
+          </div>
+          <cds-tabs value="sixth" type="contained">
+            <cds-tab id="tab-first" target="panel-first" value="first">
+              Rādītāji
+            </cds-tab>
+            <cds-tab id="tab-second" target="panel-second" value="second">
+              Rezultāti
+            </cds-tab>
+            <cds-tab id="tab-third" target="panel-third" value="third">
+              Īstenošanas grafiks
+            </cds-tab>
+            <cds-tab id="tab-fourth" target="panel-fourth" value="fourth">
+              Budžeta pozīcijas
+            </cds-tab>
+            <cds-tab id="tab-fifth" target="panel-fifth" value="fifth">
+              Sadarbības partneri
+            </cds-tab>
+            <cds-tab id="tab-sixth" target="panel-sixth" value="sixth">
+              Horizontālie principi
+            </cds-tab>
+          </cds-tabs>
+
+          <div
+            id="panel-sixth"
+            role="tabpanel"
+            aria-labelledby="tab-sixth"
+            hidden="">
+            <cds-divider size="8"></cds-divider>
+            <cds-accordion>
+              <cds-accordion-item title="HP nosacījumi atlasē">
+                <cds-divider size="3"></cds-divider>
+                <div class="cds--subgrid cds--subgrid--condensed">
+                  <div
+                    class="turn-body-01 cds--css-grid-column cds--col-span-100 cds--grid-column-hang">
+                    <p>Apraksts par nosacījumiem.</p>
+                  </div>
+                </div>
+                <cds-divider size="7"></cds-divider>
+                <cds-table size="sm">
+                  <cds-table-header-title slot="title"
+                    >HP darbības</cds-table-header-title
+                  >
+                  <cds-table-head>
+                    <cds-table-header-row>
+                      <cds-table-header-cell
+                        >HP darbību grupas nosaukums</cds-table-header-cell
+                      >
+                      <cds-table-header-cell
+                        >Min. nepiec. projektā</cds-table-header-cell
+                      >
+                      <cds-table-header-cell
+                        >Projektā kopā ievadīts</cds-table-header-cell
+                      >
+                      <cds-table-header-cell
+                        >Pie šīs darbības ievadīts</cds-table-header-cell
+                      >
+                    </cds-table-header-row>
+                  </cds-table-head>
+                  <cds-table-body>
+                    <cds-table-row>
+                      <cds-table-cell>Klimatdrošināšana</cds-table-cell>
+                      <cds-table-cell>1</cds-table-cell>
+                      <cds-table-cell>1</cds-table-cell>
+                      <cds-table-cell>0</cds-table-cell>
+                    </cds-table-row>
+                    <cds-table-row>
+                      <cds-table-cell
+                        >VINPI - Vispārīgās darbības</cds-table-cell
+                      >
+                      <cds-table-cell>1</cds-table-cell>
+                      <cds-table-cell>1</cds-table-cell>
+                      <cds-table-cell>0</cds-table-cell>
+                    </cds-table-row>
+                    <cds-table-row>
+                      <cds-table-cell
+                        >VINPI - Specifiskās darbības</cds-table-cell
+                      >
+                      <cds-table-cell>2</cds-table-cell>
+                      <cds-table-cell>1</cds-table-cell>
+                      <cds-table-cell>0</cds-table-cell>
+                    </cds-table-row>
+                  </cds-table-body>
+                </cds-table>
+                <cds-divider size="6"></cds-divider>
+                <cds-table size="sm">
+                  <cds-table-header-title slot="title"
+                    >HP rādītāji</cds-table-header-title
+                  >
+
+                  <cds-table-head>
+                    <cds-table-header-row>
+                      <cds-table-header-cell
+                        >HP rādītāju grupas nosaukums</cds-table-header-cell
+                      >
+                      <cds-table-header-cell
+                        >Min. nepiec. projektā</cds-table-header-cell
+                      >
+                      <cds-table-header-cell
+                        >Projektā kopā ievadīts</cds-table-header-cell
+                      >
+                      <cds-table-header-cell
+                        >Pie šīs darbības ievadīts</cds-table-header-cell
+                      >
+                    </cds-table-header-row>
+                  </cds-table-head>
+                  <cds-table-body>
+                    <cds-table-row>
+                      <cds-table-cell>VINPI rādītāji</cds-table-cell>
+                      <cds-table-cell>2</cds-table-cell>
+                      <cds-table-cell>1</cds-table-cell>
+                      <cds-table-cell>0</cds-table-cell>
+                    </cds-table-row>
+                  </cds-table-body>
+                </cds-table>
+              </cds-accordion-item>
+            </cds-accordion>
+            <cds-divider size="8"></cds-divider>
+            <cds-table size="sm">
+              <cds-table-header-title slot="title"
+                >HP darbības un rādītāji</cds-table-header-title
+              >
+              <cds-table-header-description slot="description"
+                >Apraksts, kas paskaidro, kā strādā HP
+                darbības.</cds-table-header-description
+              >
+              <cds-table-toolbar slot="toolbar">
+                <cds-table-toolbar-content>
+                  <cds-table-toolbar-search
+                    placeholder="Filter table"></cds-table-toolbar-search>
+                  <cds-button kind="ghost"
+                    >${Download16({ slot: 'icon', fill: 'black', })}
+                  </cds-button>
+                  <cds-button
+                    kind="secondary"
+                    tooltip-alignment=""
+                    tooltip-position="top"
+                    type="button"
+                    id="modal-example-button"
+                    has-main-content="">
+                    Pārvaldīt HP darbības ${Add16({ slot: 'icon' })}
+                  </cds-button>
+                </cds-table-toolbar-content>
+              </cds-table-toolbar>
+              <cds-table-body> </cds-table-body>
+            </cds-table>
+            <cds-empty-state
+              text="Šobrīd nav izvēlēta neviena HP darbība"
+              linkUrl="#"
+              linkText="Pārvaldīt"></cds-empty-state>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 ```
