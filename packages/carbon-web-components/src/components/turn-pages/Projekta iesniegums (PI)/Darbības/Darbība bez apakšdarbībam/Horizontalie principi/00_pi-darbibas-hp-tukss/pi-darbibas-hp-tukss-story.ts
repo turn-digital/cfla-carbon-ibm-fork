@@ -66,7 +66,6 @@ export const Propsed = () => {
                   ${Edit16({ slot: 'icon' })}
                 </cds-button>
               </cds-label-value>
-              </cds-label-value>
               <cds-divider size="6"></cds-divider>
             </div>
           </div>

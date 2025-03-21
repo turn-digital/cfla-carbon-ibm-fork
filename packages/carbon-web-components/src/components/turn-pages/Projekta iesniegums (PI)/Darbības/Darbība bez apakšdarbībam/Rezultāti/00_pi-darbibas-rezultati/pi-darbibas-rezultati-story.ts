@@ -230,44 +230,42 @@ export const Labot = () => {
         <cds-divider size="5"></cds-divider>
       </cds-modal-header>
       <cds-modal-body>
-        <cds-layer>
-          <div class="cds--subgrid cds--subgrid--condensed">
-            <div
-              class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-7 cds--lg:col-span-14">
-              <cds-text-input
-                label="Darbības rezultāta nosaukums"
-                placeholder="Melorācijas sistēmu atjaunošana"
-                invalid-text="Error message">
-              </cds-text-input>
-              <cds-divider size="6"></cds-divider>
-              <cds-text-input
-                label="Mērvienība"
-                placeholder="Skaits"
-                invalid-text="Error message">
-              </cds-text-input>
-              <cds-divider size="6"></cds-divider>
-              <cds-text-input
-                label="Beigu vērtība"
-                placeholder="Ievadiet beigu vērtību"
-                helper-text="Attiecas uz konkrēto darbību un nav kumulatīva"
-                invalid-text="Error message">
-              </cds-text-input>
-              <cds-divider size="6"></cds-divider>
-              <cds-text-editor
-                editorId="editor_example_storybook_simple"
-                toolbarType="simple"
-                editorConfig='{
+        <div class="cds--subgrid cds--subgrid--condensed">
+          <div
+            class="cds--css-grid-column cds--sm:col-span-4 cds--md:col-span-7 cds--lg:col-span-14">
+            <cds-text-input
+              label="Darbības rezultāta nosaukums"
+              placeholder="Melorācijas sistēmu atjaunošana"
+              invalid-text="Error message">
+            </cds-text-input>
+            <cds-divider size="6"></cds-divider>
+            <cds-text-input
+              label="Mērvienība"
+              placeholder="Skaits"
+              invalid-text="Error message">
+            </cds-text-input>
+            <cds-divider size="6"></cds-divider>
+            <cds-text-input
+              label="Beigu vērtība"
+              placeholder="Ievadiet beigu vērtību"
+              helper-text="Attiecas uz konkrēto darbību un nav kumulatīva"
+              invalid-text="Error message">
+            </cds-text-input>
+            <cds-divider size="6"></cds-divider>
+            <cds-text-editor
+              editorId="editor_example_storybook_simple"
+              toolbarType="simple"
+              editorConfig='{
           "editorTitle": "Piezīmes",
           "autosave_ask_before_unload": false
           }'>
-              </cds-text-editor>
-              <cds-divider size="6"></cds-divider>
-              <cds-label-value
-                label="Saistītās darbības"
-                value="<ul><li>1.Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām</li></ul>"></cds-label-value>
-            </div>
+            </cds-text-editor>
+            <cds-divider size="6"></cds-divider>
+            <cds-label-value
+              label="Saistītās darbības"
+              value="<ul><li>1.Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām</li></ul>"></cds-label-value>
           </div>
-        </cds-layer>
+        </div>
       </cds-modal-body>
       <cds-modal-footer>
         <cds-modal-footer-button kind="secondary" data-modal-close
