@@ -169,7 +169,15 @@ export const Modal = () => {
                     label-b="Nav izvēlēts"></cds-toggle
                 ></cds-table-cell>
               </cds-table-row>
-              <cds-table-expanded-row> </cds-table-expanded-row>
+              <cds-table-expanded-row>
+                <cds-table-expanded-row-wrapper>
+                  <cds-label-value label="HP darbība" value="Nav apraksta">
+                  </cds-label-value>
+                  <cds-divider size="5"></cds-divider>
+                  <cds-label-value label="Saistītie HP rādītāji" value="Nav">
+                  </cds-label-value>
+                </cds-table-expanded-row-wrapper>
+              </cds-table-expanded-row>
             </cds-table-body>
           </cds-table>
           <cds-divider size="6"></cds-divider>

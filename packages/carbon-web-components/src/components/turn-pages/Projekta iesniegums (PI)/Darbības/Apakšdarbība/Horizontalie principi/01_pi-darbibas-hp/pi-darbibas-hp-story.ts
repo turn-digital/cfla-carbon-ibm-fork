@@ -190,20 +190,20 @@ export const Propsed = () => {
               </cds-accordion-item>
             </cds-accordion>
             <cds-divider size="8"></cds-divider>
+            <cds-inline-notification
+              style="min-width: 100%;"
+              title="Darbība veiksmīgi pievienota"
+              subtitle="Lūdzu, aizpildiet darbības īstenošanas aprakstu, ja tas ir nepieciešams. Klikšķiniet uz izvēlnes ikonas ar trim punktiem rindas beigās un izvēlieties “Labot”."
+              kind="info"
+              low-contrast>
+            </cds-inline-notification>
+            <cds-divider size="5"></cds-divider>
             <cds-table size="sm" expandable>
               <cds-table-header-title slot="title"
                 >HP darbības un rādītāji</cds-table-header-title
               >
               <cds-table-header-description slot="description">
                 Apraksts, kas paskaidro, kā strādā HP darbības.
-                <cds-divider size="6"></cds-divider>
-                <cds-inline-notification
-                  style="min-width: 100%;"
-                  title="Darbība veiksmīgi pievienota"
-                  subtitle="Lūdzu, aizpildiet darbības īstenošanas aprakstu, ja tas ir nepieciešams. Klikšķiniet uz izvēlnes ikonas ar trim punktiem rindas beigās un izvēlieties “Labot”."
-                  kind="info"
-                  low-contrast>
-                </cds-inline-notification>
               </cds-table-header-description>
               <cds-table-toolbar slot="toolbar">
                 <cds-table-toolbar-content>
@@ -230,7 +230,7 @@ export const Propsed = () => {
                 </cds-table-header-row>
               </cds-table-head>
               <cds-table-body>
-                <cds-table-row>
+                <cds-table-row expanded>
                   <cds-table-cell>KD95</cds-table-cell>
                   <cds-table-cell>Klimata risku izvērtējums</cds-table-cell>
                   <cds-table-cell>
@@ -247,7 +247,7 @@ export const Propsed = () => {
                   </cds-table-cell>
                 </cds-table-row>
                 <cds-table-expanded-row> </cds-table-expanded-row>
-                <cds-table-row>
+                <cds-table-row expanded>
                   <cds-table-cell>Izg01</cds-table-cell>
                   <cds-table-cell
                     >HP jautājumu integrēšana projekta pasākumu un izstrādāto
