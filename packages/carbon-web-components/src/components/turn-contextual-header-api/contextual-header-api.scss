@@ -3,3 +3,8 @@
   background-color: #f4f4f4;
   max-block-size: none;
 }
+
+cds-accordion-item::part(title) {
+  user-select: text;
+  cursor: text;
+}

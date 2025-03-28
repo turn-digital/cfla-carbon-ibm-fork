@@ -5,3 +5,8 @@
   background-color: $layer-01;
   max-block-size: none;
 }
+
+cds-accordion-item::part(title) {
+  user-select: text;
+  cursor: text;
+}
