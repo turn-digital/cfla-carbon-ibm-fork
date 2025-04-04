@@ -47,6 +47,7 @@ class TextEditor extends LitElement {
       min_height: 200,
       max_height: 500,
       editorId: this.editorId,
+      paste_convert_word_fake_lists: true, // fixes Word-style list formatting
       fullscreen_native: true,
       browser_spellcheck: true,
       cache_suffix: '?v=1.5',
@@ -94,8 +95,8 @@ class TextEditor extends LitElement {
     };
     const urlToTinymceCssFile =
       href == 'http://localhost:3002' ||
-      href == 'https://demo.turn.lv' ||
-      href == 'http://localhost:9000'
+        href == 'https://demo.turn.lv' ||
+        href == 'http://localhost:9000'
         ? 'https://demo.turn.lv/cfla_dist/assets/css/text-editor.min.css'
         : `${getBaseUrl()}/Content/Carbon/assets/css/text-editor.min.css`;
 
@@ -115,15 +116,14 @@ class TextEditor extends LitElement {
         ?readonly="${this.readonly}"
         toolbar="${!this.readonly ? toolbarOptions[this.toolbarType] : false}"
         contextmenu=${false}
-        plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize"
+        plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize paste"
         content_css="${urlToTinymceCssFile}"
         promotion="false">
         ${this.textEditorData}
       </tinymce-editor>
-      ${
-        this.onServerErrorTextUnderline.length > 0
-          ? html`<p style="color: red">${this.onServerErrorTextUnderline}</p>`
-          : ''
+      ${this.onServerErrorTextUnderline.length > 0
+        ? html`<p style="color: red">${this.onServerErrorTextUnderline}</p>`
+        : ''
       }
       </p>
     `;
