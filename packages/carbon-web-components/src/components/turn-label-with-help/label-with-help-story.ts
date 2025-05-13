@@ -12,7 +12,7 @@ import './index';
 import storyDocs from './label-with-help-story.mdx';
 
 export const Propsed = () => {
-  return html` <cds-label-with-help label="Label">heyo</cds-label-with-help> `;
+  return html` <cds-label-with-help label="Label"></cds-label-with-help> `;
 };
 
 export default {
