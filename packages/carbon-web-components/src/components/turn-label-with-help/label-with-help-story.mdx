@@ -1,0 +1,60 @@
+import { Props, Description } from '@storybook/addon-docs/blocks';
+import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
+
+# Label with help
+
+## Apraksts
+
+Virsraksts ar palīgtekstu izkārtots horizontālā rindā.
+
+## Anatomija
+
+- Label - Nosaukums
+- Slot - Vieta, kas paredzēta React komponentam LabelWithIcon
+
+## Dizaina un UX komentāri
+
+Tiek izmantots, lai attēlotu virsrakstu (label) ar palīdzības pogu.
+
+## Getting started
+
+### JS (via import)
+
+```javascript
+<script
+  type="module"
+  src="https://demo.turn.lv/cfla_dist/turn-label-with-help.min.js"></script>
+```
+
+### HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://demo.turn.lv/cfla_dist/turn-label-with-help.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/latest/plex.css" />
+    <title>Label value horizontal</title>
+  </head>
+
+  <body>
+    <cds-label-with-help label="Label">
+      <LabelWithIcon
+        content="test"
+        setNonModal="{setNonModal}"
+        setNonModalContent="{setNonModalContent}"
+        iconDesc="test" />
+    </cds-label-with-help>
+  </body>
+</html>
+```
+
+## `<cds-label-with-help>` attributes and properties
+
+<Props of="cds-label-with-help" />
