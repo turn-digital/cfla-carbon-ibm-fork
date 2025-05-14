@@ -26,6 +26,14 @@ export const Propsed = () => {
 </br>
 </br>
     <cds-countdown-timer deadline="2024-11-26T00:00:00" title="Atlikušais TITLE iesniegšanai" language = 'en'></cds-countdown-timer>
+</br>
+</br>
+</br>
+    <cds-countdown-timer deadline="2025-07-08T00:00:00" title="Atlikušais TITLE iesniegšanai" language = 'lv' type="simple"></cds-countdown-timer>
+</br>
+</br>
+</br>
+    <cds-countdown-timer deadline="2024-11-26T00:00:00" title="Atlikušais TITLE iesniegšanai" language = 'lv' type="simple"></cds-countdown-timer>
   `;
 };
 

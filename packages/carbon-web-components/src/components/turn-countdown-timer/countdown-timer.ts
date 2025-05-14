@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { LitElement, html } from 'lit';
+import { LitElement, html, nothing } from 'lit';
 import { prefix } from '../../globals/settings';
 import styles from './countdown-timer.scss';
 import { property } from 'lit/decorators.js';
@@ -37,6 +37,12 @@ class CDSCountdownTimer extends LitElement {
    * Title for the countdown timer
    */
   @property({ type: String }) title = '';
+  /**
+   * Type of the countdown timer
+   * default - shows the full countdown timer
+   * simple - shows only the time left
+   */
+  @property({ type: String }) type = 'default';
 
   getDayLabel(count, language) {
     if (language === 'en') {
@@ -78,28 +84,55 @@ class CDSCountdownTimer extends LitElement {
     );
 
     this.countdownDate = { years, days, hours, minutes };
+
     return html`
-      <div class="countdown-timer">
-        <div class="countdown-timer__wrapper">
-          <div class="countdown-timer__title">${this.title}</div>
-          ${isDeadlineOver
-            ? html` <div
-                class="countdown-timer__time-left countdown-timer__time-left--overdue">
-                0 ${this.language === 'en' ? 'days' : 'dienas'} 0:00
-              </div>`
-            : html`<div class="countdown-timer__time-left">
-                ${this.countdownDate.days !== 0
-                  ? `${this.countdownDate.days} ${this.getDayLabel(
-                      this.countdownDate.days,
-                      this.language
-                    )} ${this.countdownDate.hours}:${
-                      this.countdownDate.minutes
-                    }`
-                  : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
-              </div>`}
-          <div class="countdown-timer__time-actual">${formattedDate}</div>
-        </div>
-      </div>
+      ${this.type === 'default'
+        ? html`
+            <div class="countdown-timer">
+              <div class="countdown-timer__wrapper">
+                <div class="countdown-timer__title">${this.title}</div>
+                ${isDeadlineOver
+                  ? html`<div
+                      class="countdown-timer__time-left countdown-timer__time-left--overdue">
+                      0 ${this.language === 'en' ? 'days' : 'dienas'} 0:00
+                    </div>`
+                  : html`<div class="countdown-timer__time-left">
+                      ${this.countdownDate.days !== 0
+                        ? `${this.countdownDate.days} ${this.getDayLabel(
+                            this.countdownDate.days,
+                            this.language
+                          )} ${this.countdownDate.hours}:${
+                            this.countdownDate.minutes
+                          }`
+                        : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
+                    </div>`}
+                <div class="countdown-timer__time-actual">${formattedDate}</div>
+              </div>
+            </div>
+          `
+        : nothing}
+      ${this.type === 'simple'
+        ? html`
+            <div class="mini-timer">
+              <div class="mini-timer__title">${this.title}</div>
+              ${isDeadlineOver
+                ? html`<div
+                    class="mini-timer__time-left mini-timer__time-left--overdue">
+                    0 ${this.language === 'en' ? 'days' : 'dienas'} 0:00
+                  </div>`
+                : html`<div class="mini-timer__time-left">
+                    ${this.countdownDate.days !== 0
+                      ? `${this.countdownDate.days} ${this.getDayLabel(
+                          this.countdownDate.days,
+                          this.language
+                        )} ${this.countdownDate.hours}:${
+                          this.countdownDate.minutes
+                        }`
+                      : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
+                  </div>`}
+            </div>
+          `
+        : nothing}
     `;
   }
 
