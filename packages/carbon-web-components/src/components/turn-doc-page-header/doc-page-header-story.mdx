@@ -12,6 +12,15 @@ pārvietoties starp sadaļām un atgriezties uz iepriekšējo līmeni.
 ## Anatomija
 
 - Title - virsraksts, ietver atvērtās sadaļas vai apakšsadaļas nosaukumu.
+- TimerDeadline – Datums un laiks ISO formātā (YYYY-MM-DDTHH:MM:SSZ), līdz kuram
+  jāparāda atpakaļskaitīšanas taimeris. Ja nav norādīts, taimeris netiek
+  attēlots vispār.
+- TimerTitle – Papildu virsraksts vai teksts, kas tiek rādīts kopā ar taimeri.
+  Parasti lieto, lai norādītu, uz ko attiecas konkrētais laika ierobežojums
+  (piemēram, “Līdz iesniegšanas termiņam:”).
+- TimerLanguage (lv, en) – Valodas iestatījums taimerim. Nosaka valodu, kādā
+  tiek attēlots atlikušais laiks un citi teksti taimerī. Noklusējuma vērtība ir
+  lv (latviešu valoda).
 - Type (title, subtitle) – virsraksta tips. Ja sadaļas nosaukums ir īss (līdz 3
   vārdiem), izmanto Title; ja garāks – Subtitle. Piemēram, projekta iesniegumā
   Title tiek izmantots lielajām sadaļām (Darbības, Rādītāji u.tml), bet subtitle
@@ -60,6 +69,26 @@ izmantots projekta iesnieguma sadaļās.
   title="Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām">
   <span slot="breadcrumb">
     <cds-link href="/#">< Atpakaļ uz sarakstu</cds-link>
+  </span>
+  <span slot="button">
+    <cds-button kind="secondary" size="sm">Pārbaudīt sadaļu</cds-button>
+  </span>
+</cds-doc-page-header>
+<cds-doc-page-header
+  type="subtitle"
+  title="Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām"
+  timerTitle="Atlikušais laiks iesniegšanai"
+  timerLanguage="lv"
+  timerDeadline="2025-07-08T00:00:00">
+  <span slot="breadcrumb">
+    <cds-breadcrumb>
+      <cds-breadcrumb-item>
+        <cds-breadcrumb-link href="/#">Breadcrumb 1</cds-breadcrumb-link>
+      </cds-breadcrumb-item>
+      <cds-breadcrumb-item>
+        <cds-breadcrumb-link href="#">Breadcrumb 2</cds-breadcrumb-link>
+      </cds-breadcrumb-item>
+    </cds-breadcrumb>
   </span>
   <span slot="button">
     <cds-button kind="secondary" size="sm">Pārbaudīt sadaļu</cds-button>
