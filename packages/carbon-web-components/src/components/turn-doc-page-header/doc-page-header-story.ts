@@ -68,6 +68,31 @@ export const Propsed2 = () => {
   `;
 };
 
+export const Propsed3 = () => {
+  return html`
+    <cds-doc-page-header
+      type="subtitle"
+      title="Darbība - Esošo meliorācijas sistēmu un lietusūdens savākšanas sistēmu atjaunošana un vides pielāgošana klimata pārmaiņām"
+      timerTitle="Atlikušais laiks iesniegšanai"
+      timerLanguage="lv"
+      timerDeadline="2025-07-08T00:00:00">
+      <span slot="breadcrumb">
+        <cds-breadcrumb>
+          <cds-breadcrumb-item>
+            <cds-breadcrumb-link href="/#">Breadcrumb 1</cds-breadcrumb-link>
+          </cds-breadcrumb-item>
+          <cds-breadcrumb-item>
+            <cds-breadcrumb-link href="#">Breadcrumb 2</cds-breadcrumb-link>
+          </cds-breadcrumb-item>
+        </cds-breadcrumb>
+      </span>
+      <span slot="button">
+        <cds-button kind="secondary" size="sm">Pārbaudīt sadaļu</cds-button>
+      </span>
+    </cds-doc-page-header>
+  `;
+};
+
 export default {
   parameters: {
     ...storyDocs.parameters,

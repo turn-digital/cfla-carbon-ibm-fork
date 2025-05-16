@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { LitElement, html } from 'lit';
+import { LitElement, html, nothing } from 'lit';
 import { prefix } from '../../globals/settings';
 import styles from './doc-page-header.scss';
 import { property } from 'lit/decorators.js';
@@ -26,17 +26,46 @@ class CDSDocPageHeader extends LitElement {
    * The type of the title. Possible values are `title` and `subtitle`.
    */
   @property({ type: String }) type = 'title';
+  @property({ type: String }) timerTitle = '';
+  @property({ type: String }) timerLanguage = 'lv';
+  @property({ type: String }) timerDeadline = '';
 
   render() {
     return html`
       <div class="doc-page-header">
-        <div class="doc-page-header__breadcrumb">
-          <slot name="breadcrumb"></slot>
+        <div class="doc-page-header__header">
+          <div class="doc-page-header__breadcrumb">
+            <slot name="breadcrumb"></slot>
+          </div>
+          <div class="doc-page-header__timer-desktop">
+            ${this.timerDeadline
+              ? html`
+                  <cds-countdown-timer
+                    deadline="${this.timerDeadline}"
+                    title="${this.timerTitle}"
+                    language="${this.timerLanguage}"
+                    type="simple">
+                  </cds-countdown-timer>
+                `
+              : nothing}
+          </div>
         </div>
         <div class="doc-page-header__content">
           <div
             class="doc-page-header__title doc-page-header__title--${this.type}">
             ${this.title}
+          </div>
+          <div class="doc-page-header__timer-mobile">
+            ${this.timerDeadline
+              ? html`
+                  <cds-countdown-timer
+                    deadline="${this.timerDeadline}"
+                    title="${this.timerTitle}"
+                    language="${this.timerLanguage}"
+                    type="simple">
+                  </cds-countdown-timer>
+                `
+              : nothing}
           </div>
           <div class="doc-page-header__button">
             <slot name="button"></slot>

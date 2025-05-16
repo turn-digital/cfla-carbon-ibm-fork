@@ -25,7 +25,22 @@
     }
   }
 
+  &__timer-desktop {
+    display: none;
+  }
+
+  &__timer-mobile {
+    display: block;
+    margin-bottom: $spacing-03;
+  }
+
   &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -34,17 +49,37 @@
 
 @include breakpoint(md) {
   .doc-page-header {
+    &__header {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__breadcrumb {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &__timer-desktop {
+      display: block;
+    }
+
+    &__timer-mobile {
+      display: none;
+      margin-bottom: 0;
+    }
+
+    &__content {
+      margin-top: $spacing-03;
+      flex-direction: row;
+    }
+
     &__title {
       padding-bottom: 0;
       max-width: 80%;
     }
 
-    &__content {
-      flex-direction: row;
-      align-items: center;
-    }
-
     &__button {
+      margin-top: 0;
       margin-left: $spacing-05;
     }
   }
