@@ -26,9 +26,9 @@ class CDSDocPageHeader extends LitElement {
    * The type of the title. Possible values are `title` and `subtitle`.
    */
   @property({ type: String }) type = 'title';
+  @property({ type: String }) timerDeadline = '';
   @property({ type: String }) timerTitle = '';
   @property({ type: String }) timerLanguage = 'lv';
-  @property({ type: String }) timerDeadline = '';
 
   render() {
     return html`

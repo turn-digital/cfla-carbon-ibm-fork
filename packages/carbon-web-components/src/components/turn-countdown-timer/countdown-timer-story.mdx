@@ -1,21 +1,28 @@
 import { Props, Description } from '@storybook/addon-docs/blocks';
 import { cdnJs, cdnCss } from '../../globals/internal/storybook-cdn';
 
-# Back to
+# Countdown Timer
 
 ## Apraksts
 
-Komponente "Back to" ir lietotāja saskarnes saite, kas ļauj lietotājiem
-atgriezties iepriekšējā lapā vai ekrānā
+Laika atskaites komponents, kas parāda, cik daudz laika atlicis līdz vienības
+iesniegšanai.
 
 ## Anatomija
 
-- Saite (bulta)
-- Virsraksts, pēc noklusējuma “Back to”
+- Deadline – Datums un laiks, līdz kuram jārāda laika atskaites komponents.
+- Language (LV, EN) – Nosaka valodu, kādā tiek attēlots atlikušais laiks un citi
+  teksti. Noklusējuma vērtība ir LV (latviešu valoda).
+- Title – Papildu teksts, kas tiek rādīts kopā ar taimeri. Parasti lieto, lai
+  norādītu, uz ko attiecas konkrētais laika ierobežojums (piemēram, “Līdz
+  iesniegšanas termiņam:”).
+- Type - Nosaka komponenta veidu. Noklusētais (default) komponenta veids ietver
+  gan laika atskaites elementu, gan izpildes termiņu, bet vienkāršotais (simple)
+  attēlo tikai laika atskaiti un ir daudz kompaktāks.
 
 ## Dizaina un UX komentāri:
 
-Lieto jebkur, kur nepieciešams pievienot saiti uz iepriekšējo skatu
+Šobrīd pamatā izmantots projekta iesnieguma sadaļās.
 
 ### JS (via import)
 
@@ -39,8 +46,16 @@ Lieto jebkur, kur nepieciešams pievienot saiti uz iepriekšējo skatu
 </br>
 </br>
     <cds-countdown-timer deadline="2024-11-26T00:00:00" title="Atlikušais TITLE iesniegšanai" language = 'en'></cds-countdown-timer>
+    </br>
+</br>
+</br>
+    <cds-countdown-timer deadline="2025-07-08T00:00:00" title="Atlikušais TITLE iesniegšanai" language = 'lv' type="simple"></cds-countdown-timer>
+</br>
+</br>
+</br>
+    <cds-countdown-timer deadline="2024-11-26T00:00:00" title="Atlikušais TITLE iesniegšanai" language = 'lv' type="simple"></cds-countdown-timer>
 ```
 
-## `<cds-back-to>` attributes and properties
+## `<cds-countdown-timer>` attributes and properties
 
-<Props of="cds-back-to" />
+<Props of="cds-countdown-timer" />
