@@ -14,6 +14,7 @@ import storyDocs from './doc-page-header-story.mdx';
 export const Propsed = () => {
   return html`
     <cds-doc-page-header title="Darbības">
+    <span slot=title-helper-icon>helper icon</span>
       <span slot="breadcrumb">
         <cds-breadcrumb>
           <cds-breadcrumb-item>

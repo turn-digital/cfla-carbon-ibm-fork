@@ -39,7 +39,7 @@ class CDSDocPageHeader extends LitElement {
           </div>
           <div class="doc-page-header__timer-desktop">
             ${this.timerDeadline
-              ? html`
+        ? html`
                   <cds-countdown-timer
                     deadline="${this.timerDeadline}"
                     title="${this.timerTitle}"
@@ -47,17 +47,17 @@ class CDSDocPageHeader extends LitElement {
                     type="simple">
                   </cds-countdown-timer>
                 `
-              : nothing}
+        : nothing}
           </div>
         </div>
         <div class="doc-page-header__content">
           <div
             class="doc-page-header__title doc-page-header__title--${this.type}">
-            ${this.title}
+            ${this.title} <slot name=title-helper-icon></slot>
           </div>
           <div class="doc-page-header__timer-mobile">
             ${this.timerDeadline
-              ? html`
+        ? html`
                   <cds-countdown-timer
                     deadline="${this.timerDeadline}"
                     title="${this.timerTitle}"
@@ -65,7 +65,7 @@ class CDSDocPageHeader extends LitElement {
                     type="simple">
                   </cds-countdown-timer>
                 `
-              : nothing}
+        : nothing}
           </div>
           <div class="doc-page-header__button">
             <slot name="button"></slot>
