@@ -53,7 +53,7 @@ class CDSDocPageHeader extends LitElement {
         <div class="doc-page-header__content">
           <div
             class="doc-page-header__title doc-page-header__title--${this.type}">
-            ${this.title} <slot name=title-helper-icon></slot>
+            <div style="display: flex; align-items: center;">${this.title} <slot name=title-helper-icon></slot></div>
           </div>
           <div class="doc-page-header__timer-mobile">
             ${this.timerDeadline
