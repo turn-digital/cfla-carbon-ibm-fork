@@ -24,11 +24,12 @@ class CDSLabelWithHelp extends LitElement {
   @property({ type: String }) label = '';
   @property({ type: String }) value = '';
   @property({ type: String }) size = '';
+  @property({ type: String }) forLabelValue = '';
 
   render() {
     return html`
       <div class="label-with-help">
-        <div class="label-with-help__label">${this.label}</div>
+        <label for=${this.forLabelValue} class="label-with-help__label">${this.label}</label>
         <slot class="label-with-help__help"></slot>
       </div>
     `;
