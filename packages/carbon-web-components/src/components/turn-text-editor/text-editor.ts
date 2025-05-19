@@ -89,6 +89,7 @@ class TextEditor extends LitElement {
 
     return { ...defaultConfig, ...this.editorConfig };
   }
+  // @ts-ignore
   updated(changedProps: Map<string | number | symbol, unknown>) {
     const configKey = `config_${this.editorId}`;
     window[configKey] = this.combinedEditorConfig;
