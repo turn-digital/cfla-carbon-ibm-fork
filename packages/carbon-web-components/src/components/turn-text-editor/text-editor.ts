@@ -34,6 +34,8 @@ class TextEditor extends LitElement {
     | ((newContent: string) => void)
     | null = null;
   @property({ type: String }) toolbarType = 'default';
+  @property({ attribute: false }) setNonModal: ((val: boolean) => void) | null = null;
+  @property({ attribute: false }) setNonModalContent: ((fn: any) => void) | null = null;
 
   get combinedEditorConfig() {
     const defaultConfig = {
@@ -47,11 +49,25 @@ class TextEditor extends LitElement {
       min_height: 200,
       max_height: 500,
       editorId: this.editorId,
-      paste_convert_word_fake_lists: true, // fixes Word-style list formatting
       fullscreen_native: true,
       browser_spellcheck: true,
-      cache_suffix: '?v=1.5',
+      cache_suffix: '?v=1.6',
       setup: (editor) => {
+        // Add help button only if both props exist
+        if (typeof this.setNonModal === 'function' && typeof this.setNonModalContent === 'function') {
+          editor.ui.registry.addButton('help_button', {
+            icon: 'help',
+            tooltip: 'Help',
+            onAction: () => {
+              this.setNonModal!(true);
+              this.setNonModalContent!((el) => ({
+                ...el,
+                title: 'Editor Help',
+                desc: 'This is your custom help content.',
+              }));
+            },
+          });
+        }
         editor.on('input undo redo Change', () => {
           const newContent = editor.getContent({ format: 'html' });
           // Update the property/attribute with the new content
@@ -102,9 +118,9 @@ class TextEditor extends LitElement {
 
     const toolbarOptions = {
       default:
-        'blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen',
+        'help_button | blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen',
       simple:
-        'bold italic underline | numlist bullist | outdent indent | link removeformat fullscreen',
+        'help_button | bold italic underline | numlist bullist | outdent indent | link removeformat fullscreen',
     };
 
     return html`
@@ -116,7 +132,7 @@ class TextEditor extends LitElement {
         ?readonly="${this.readonly}"
         toolbar="${!this.readonly ? toolbarOptions[this.toolbarType] : false}"
         contextmenu=${false}
-        plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize paste"
+        plugins="length_validation server_request autosave save autolink lists link image charmap preview anchor pagebreak code visualchars wordcount fullscreen autoresize"
         content_css="${urlToTinymceCssFile}"
         promotion="false">
         ${this.textEditorData}
