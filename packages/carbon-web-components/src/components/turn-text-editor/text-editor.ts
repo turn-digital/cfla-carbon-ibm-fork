@@ -34,9 +34,6 @@ class TextEditor extends LitElement {
     | ((newContent: string) => void)
     | null = null;
   @property({ type: String }) toolbarType = 'default';
-  @property({ attribute: false }) setNonModal = null;
-  @property({ attribute: false }) setNonModalContent = null;
-  @property({ type: Boolean }) helpIcon = false;
 
   get combinedEditorConfig() {
     const defaultConfig = {
@@ -54,24 +51,6 @@ class TextEditor extends LitElement {
       browser_spellcheck: true,
       cache_suffix: '?v=1.6',
       setup: (editor) => {
-        // Add help button only if both props exist
-
-        console.log('setNonModal', this.setNonModal);
-        console.log('setNonModalContent', this.setNonModalContent);
-
-
-        editor.ui.registry.addButton('help_button', {
-          icon: 'help',
-          tooltip: 'Help',
-          onAction: () => {
-            console.log('Help button clicked');
-            //@ts-ignore
-            this.setNonModal();
-            //@ts-ignore
-            this.setNonModalContent();
-          },
-        });
-
         editor.on('input undo redo Change', () => {
           const newContent = editor.getContent({ format: 'html' });
           // Update the property/attribute with the new content
@@ -89,11 +68,31 @@ class TextEditor extends LitElement {
 
     return { ...defaultConfig, ...this.editorConfig };
   }
-  // @ts-ignore
-  updated(changedProps: Map<string | number | symbol, unknown>) {
-    const configKey = `config_${this.editorId}`;
-    window[configKey] = this.combinedEditorConfig;
-  }
+
+  // firstUpdated() {
+  //   const tryInjectSlotContent = () => {
+  //     const slot = this.shadowRoot?.querySelector('#text-editor-help-icon');
+  //     //@ts-ignore
+  //     const assigned = slot?.assignedElements() || [];
+
+  //     const targetId = `custom-slot-target-${this.editorId}`;
+  //     const slotTarget = document.querySelector(`#${targetId}`);
+
+  //     if (slotTarget && assigned.length > 0) {
+  //       assigned.forEach((node) => {
+  //         if (!slotTarget.contains(node)) {
+  //           slotTarget.appendChild(node);
+  //         }
+  //       });
+  //     } else {
+  //       // Retry after a short delay
+  //       setTimeout(tryInjectSlotContent, 50);
+  //     }
+  //   };
+
+  //   tryInjectSlotContent();
+  // }
+
   render() {
     //@ts-ignore
     const configKey = `config_${this.editorId}`;
@@ -126,12 +125,15 @@ class TextEditor extends LitElement {
 
     const toolbarOptions = {
       default:
-        'help_button | blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen',
+        'blocks | bold italic underline | numlist bullist | outdent indent | alignleft aligncenter alignright alignjustify | link removeformat fullscreen',
       simple:
-        'help_button | bold italic underline | numlist bullist | outdent indent | link removeformat fullscreen',
+        'bold italic underline | numlist bullist | outdent indent | link removeformat fullscreen',
     };
 
+
+
     return html`
+    <slot name="text-editor-help-icon" id="text-editor-help-icon"></slot>
       <tinymce-editor 
         class="tinymce-editor"
         config="${configKey}"
