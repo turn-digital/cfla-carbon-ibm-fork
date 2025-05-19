@@ -34,8 +34,9 @@ class TextEditor extends LitElement {
     | ((newContent: string) => void)
     | null = null;
   @property({ type: String }) toolbarType = 'default';
-  @property({ attribute: false }) setNonModal: ((val: boolean) => void) | null = null;
-  @property({ attribute: false }) setNonModalContent: ((fn: any) => void) | null = null;
+  @property({ attribute: false }) setNonModal = null;
+  @property({ attribute: false }) setNonModalContent = null;
+  @property({ type: Boolean }) helpIcon = false;
 
   get combinedEditorConfig() {
     const defaultConfig = {
@@ -54,20 +55,23 @@ class TextEditor extends LitElement {
       cache_suffix: '?v=1.6',
       setup: (editor) => {
         // Add help button only if both props exist
-        if (typeof this.setNonModal === 'function' && typeof this.setNonModalContent === 'function') {
-          editor.ui.registry.addButton('help_button', {
-            icon: 'help',
-            tooltip: 'Help',
-            onAction: () => {
-              this.setNonModal!(true);
-              this.setNonModalContent!((el) => ({
-                ...el,
-                title: 'Editor Help',
-                desc: 'This is your custom help content.',
-              }));
-            },
-          });
-        }
+
+        console.log('setNonModal', this.setNonModal);
+        console.log('setNonModalContent', this.setNonModalContent);
+
+
+        editor.ui.registry.addButton('help_button', {
+          icon: 'help',
+          tooltip: 'Help',
+          onAction: () => {
+            console.log('Help button clicked');
+            //@ts-ignore
+            this.setNonModal();
+            //@ts-ignore
+            this.setNonModalContent();
+          },
+        });
+
         editor.on('input undo redo Change', () => {
           const newContent = editor.getContent({ format: 'html' });
           // Update the property/attribute with the new content

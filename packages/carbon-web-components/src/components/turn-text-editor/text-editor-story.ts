@@ -55,10 +55,10 @@ export const WithRequestObject = () => {
   return html`
     <cds-text-editor
       .invalidateQueriesFunc=${() => {
-        console.log(
-          'propsed invalidate query functon called from text editor on blur'
-        );
-      }}
+      console.log(
+        'propsed invalidate query functon called from text editor on blur'
+      );
+    }}
       editorConfig='{
       "editorTitle": "Pārskatīšanas / Apstrīdēšanas gaitas piezīmes",
       "request_obj": {
@@ -68,11 +68,11 @@ export const WithRequestObject = () => {
         "verificationToken": "token",
         "errorAlertMessage": "Error occurred while fetching data",
         "propsBodyObj": ${JSON.stringify({
-        izveletaVertiba: null,
-        jautajumsId: 2,
-        jautajumsNosaukums: 'Kāds ir jautājums?',
-        jautajumsTips: 'teksts',
-      })}
+      izveletaVertiba: null,
+      jautajumsId: 2,
+      jautajumsNosaukums: 'Kāds ir jautājums?',
+      jautajumsTips: 'teksts',
+    })}
         },
       "onServerLastEditor": {
           "name": "Vlad",
