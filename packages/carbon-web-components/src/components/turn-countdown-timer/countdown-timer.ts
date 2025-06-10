@@ -55,7 +55,7 @@ class CDSCountdownTimer extends LitElement {
   }
 
   render() {
-    const deadline = new Date(`${this.deadline}`);
+    const deadline = new Date(this.deadline);
 
     const formattedDate = `${deadline.toLocaleDateString('lv-LV', {
       day: '2-digit',
@@ -71,6 +71,9 @@ class CDSCountdownTimer extends LitElement {
 
     //@ts-ignore
     const timeDifference = deadline - currentDate;
+
+    console.log('Time difference:', timeDifference);
+    console.log('data and deadline:', currentDate, deadline);
 
     const years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
     const days = Math.floor(
@@ -92,19 +95,23 @@ class CDSCountdownTimer extends LitElement {
               <div class="countdown-timer__wrapper">
                 <div class="countdown-timer__title">${this.title}</div>
                 ${isDeadlineOver
-                  ? html`<div
+            ? html`<div
                       class="countdown-timer__time-left countdown-timer__time-left--overdue">
                       0 ${this.language === 'en' ? 'days' : 'dienas'} 0:00
                     </div>`
-                  : html`<div class="countdown-timer__time-left">
+            : html`<div class="countdown-timer__time-left">
+            ${this.countdownDate.years > 0
+                ? `${this.countdownDate.years} ${this.language === 'en'
+                  ? `year${this.countdownDate.years !== 1 ? 's' : ''}`
+                  : this.countdownDate.years === 1 ? 'gads' : 'gadi'}`
+                : ''}
                       ${this.countdownDate.days !== 0
-                        ? `${this.countdownDate.days} ${this.getDayLabel(
-                            this.countdownDate.days,
-                            this.language
-                          )} ${this.countdownDate.hours}:${
-                            this.countdownDate.minutes
-                          }`
-                        : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
+                ? `${this.countdownDate.days} ${this.getDayLabel(
+                  this.countdownDate.days,
+                  this.language
+                )} ${this.countdownDate.hours}:${this.countdownDate.minutes
+                }`
+                : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
                     </div>`}
                 <div class="countdown-timer__time-actual">${formattedDate}</div>
               </div>
@@ -116,19 +123,18 @@ class CDSCountdownTimer extends LitElement {
             <div class="mini-timer">
               <div class="mini-timer__title">${this.title}</div>
               ${isDeadlineOver
-                ? html`<div
+            ? html`<div
                     class="mini-timer__time-left mini-timer__time-left--overdue">
                     0 ${this.language === 'en' ? 'days' : 'dienas'} 0:00
                   </div>`
-                : html`<div class="mini-timer__time-left">
+            : html`<div class="mini-timer__time-left">
                     ${this.countdownDate.days !== 0
-                      ? `${this.countdownDate.days} ${this.getDayLabel(
-                          this.countdownDate.days,
-                          this.language
-                        )} ${this.countdownDate.hours}:${
-                          this.countdownDate.minutes
-                        }`
-                      : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
+                ? `${this.countdownDate.days} ${this.getDayLabel(
+                  this.countdownDate.days,
+                  this.language
+                )} ${this.countdownDate.hours}:${this.countdownDate.minutes
+                }`
+                : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
                   </div>`}
             </div>
           `

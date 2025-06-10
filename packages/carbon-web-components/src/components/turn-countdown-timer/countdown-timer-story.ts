@@ -13,7 +13,11 @@ import storyDocs from './countdown-timer-story.mdx';
 
 export const Propsed = () => {
   return html`
-    <cds-countdown-timer deadline="2025-07-08T00:00:00" title="Atlikušais laiks līdz iesniegšanai" language = 'lv'></cds-countdown-timer>
+    <cds-countdown-timer deadline="2026-12-31 23:59:00" title="Atlikušais laiks līdz iesniegšanai" language = 'lv'></cds-countdown-timer>
+</br>
+</br>
+</br>
+    <cds-countdown-timer deadline="2028-12-31 23:59:00" title="Atlikušais laiks līdz iesniegšanai" language = 'lv'></cds-countdown-timer>
 </br>
 </br>
 </br>
