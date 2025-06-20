@@ -72,9 +72,6 @@ class CDSCountdownTimer extends LitElement {
     //@ts-ignore
     const timeDifference = deadline - currentDate;
 
-    console.log('Time difference:', timeDifference);
-    console.log('data and deadline:', currentDate, deadline);
-
     const years = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
     const days = Math.floor(
       (timeDifference % (365.25 * 24 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)
