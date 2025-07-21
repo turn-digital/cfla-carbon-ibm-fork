@@ -13,7 +13,7 @@ import storyDocs from './countdown-timer-story.mdx';
 
 export const Propsed = () => {
   return html`
-    <cds-countdown-timer deadline="2026-12-31 23:59:00" title="Atlikušais laiks līdz iesniegšanai" language = 'lv'></cds-countdown-timer>
+    <cds-countdown-timer deadline="2026-12-31 23:22:00" title="Atlikušais laiks līdz iesniegšanai" language = 'lv'></cds-countdown-timer>
 </br>
 </br>
 </br>
@@ -37,7 +37,7 @@ export const Propsed = () => {
 </br>
 </br>
 </br>
-    <cds-countdown-timer deadline="2024-11-26T00:00:00" title="Atlikušais TITLE iesniegšanai" language = 'lv' type="simple"></cds-countdown-timer>
+    <cds-countdown-timer deadline="2026-12-31 23:22:00" title="Atlikušais TITLE iesniegšanai" language = 'lv' type="simple"></cds-countdown-timer>
   `;
 };
 

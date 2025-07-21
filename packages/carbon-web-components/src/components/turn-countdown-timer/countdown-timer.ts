@@ -106,9 +106,9 @@ class CDSCountdownTimer extends LitElement {
                 ? `${this.countdownDate.days} ${this.getDayLabel(
                   this.countdownDate.days,
                   this.language
-                )} ${this.countdownDate.hours}:${this.countdownDate.minutes
+                )} ${this.countdownDate.hours}:${String(this.countdownDate.minutes).padStart(2, '0')
                 }`
-                : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
+                : `${this.countdownDate.hours}:${String(this.countdownDate.minutes).padStart(2, '0')}`}
                     </div>`}
                 <div class="countdown-timer__time-actual">${formattedDate}</div>
               </div>
@@ -129,9 +129,9 @@ class CDSCountdownTimer extends LitElement {
                 ? `${this.countdownDate.days} ${this.getDayLabel(
                   this.countdownDate.days,
                   this.language
-                )} ${this.countdownDate.hours}:${this.countdownDate.minutes
+                )} ${this.countdownDate.hours}:${String(this.countdownDate.minutes).padStart(2, '0')
                 }`
-                : `${this.countdownDate.hours}:${this.countdownDate.minutes}`}
+                : `${this.countdownDate.hours}:${String(this.countdownDate.minutes).padStart(2, '0')}`}
                   </div>`}
             </div>
           `
